@@ -1,0 +1,482 @@
+[
+    {
+        "BANK CODE": "AAIIBP",
+        "BANK NAME": "AL-AMANAH ISLAMIC INVESTMENT BANK OF THE PHILIPPINES",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ALB",
+        "BANK NAME": "ALLBANK (A THRIFT BANK), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "AUB",
+        "BANK NAME": "ASIA UNITED BANK CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ANZ",
+        "BANK NAME": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BD",
+        "BANK NAME": "BANCO DIPOLOG",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BM",
+        "BANK NAME": "BANGKO MABUHAY (A RURAL BANK), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BBL",
+        "BANK NAME": "BANGKOK BANK PUBLIC COMPANY LIMITED",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BOFA",
+        "BANK NAME": "BANK OF AMERICA, N.A.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BOC",
+        "BANK NAME": "BANK OF CHINA (HONGKONG) LIMITED-MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BANKCOM",
+        "BANK NAME": "BANK OF COMMERCE",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BMI",
+        "BANK NAME": "BANK OF MAKATI (A SAVINGS BANK), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BPI",
+        "BANK NAME": "BANK OF THE PHILIPPINE ISLANDS",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BWI",
+        "BANK NAME": "BANKWAYS, INC. (A RURAL BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BDONB",
+        "BANK NAME": "BDO NETWORK BANK, INC. (A RURAL BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BDO",
+        "BANK NAME": "BDO UNIBANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "BANKO",
+        "BANK NAME": "BPI DIRECT BANKO, INC., A SAVINGS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CBI",
+        "BANK NAME": "CARD BANK, INC. (A MICROFINANCE - ORIENTED RURAL BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CSME",
+        "BANK NAME": "CARD SME BANK, INC. A THRIFT BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CLRB",
+        "BANK NAME": "CEBUANA LHUILLIER RURAL BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CBS",
+        "BANK NAME": "CHINA BANK SAVINGS, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CHIB",
+        "BANK NAME": "CHINA BANKING CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CIMB",
+        "BANK NAME": "CIMB BANK PHILIPPINES INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CITI",
+        "BANK NAME": "CITIBANK, N.A.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CSB",
+        "BANK NAME": "CITY SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CSSB",
+        "BANK NAME": "CITYSTATE SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "CTBC",
+        "BANK NAME": "CTBC BANK (PHILIPPINES) CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DA",
+        "BANK NAME": "D`ASIAN HILLS",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DCP",
+        "BANK NAME": "DCPAY PHILIPPINES INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DBA",
+        "BANK NAME": "DEUTSCHE BANK AG",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DBP",
+        "BANK NAME": "DEVELOPMENT BANK OF THE PHILIPPINES",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DCDB",
+        "BANK NAME": "DUMAGUETE CITY DEVELOPMENT BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "DB",
+        "BANK NAME": "DUNGGANON BANK (A MICROFINANCE RURAL BANK), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "EWB",
+        "BANK NAME": "EAST WEST BANKING CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "EWRB",
+        "BANK NAME": "EAST WEST RURAL BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "EB",
+        "BANK NAME": "ENTERPRISE BANK, INC. (A RURAL BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ERB",
+        "BANK NAME": "ENTREPRENEUR RURAL BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ESB",
+        "BANK NAME": "EQUICOM SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "FCB",
+        "BANK NAME": "FIRST CONSOLIDATED BANK, INC. (A PRIVATE DEVELOPMENT BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "GP",
+        "BANK NAME": "GRABPAY",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "GCSH",
+        "BANK NAME": "G-XCHANGE, INC. (GCASH)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "HSBC",
+        "BANK NAME": "HSBC SAVINGS BANK (PHILS), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "IBK",
+        "BANK NAME": "INDUSTRIAL BANK OF KOREA MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ING",
+        "BANK NAME": "ING BANK N.V.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "ISLA",
+        "BANK NAME": "ISLA BANK (A THRIFT BANK), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "JPMCB",
+        "BANK NAME": "JP MORGAN CHASE BANK, N.A.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "KB",
+        "BANK NAME": "KATIPUNAN BANKING CORPORATION (A RURAL BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "KHB",
+        "BANK NAME": "KEB HANA BANK - MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "KEB",
+        "BANK NAME": "KOREA EXCHANGE BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "LBP",
+        "BANK NAME": "LAND BANK OF THE PHILIPPINES",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "LSBI",
+        "BANK NAME": "LEGAZPI SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "LDB",
+        "BANK NAME": "LUZON DEVELOPMENT BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MSBI",
+        "BANK NAME": "MALAYAN SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MSPC",
+        "BANK NAME": "MASS-SPECC",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MPI",
+        "BANK NAME": "MAYBANK PHILIPPINES, INCORPORATED",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MICB",
+        "BANK NAME": "MEGA INTERNATIONAL COMMERCIAL BANK CO., LTD.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MBTC",
+        "BANK NAME": "METROPOLITAN BANK AND TRUST COMPANY",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MB",
+        "BANK NAME": "MIZUHO BANK, LTD. - MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MUFG",
+        "BANK NAME": "MUFG BANK, LTD.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "NL",
+        "BANK NAME": "NATIONLINK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "OMNI",
+        "BANK NAME": "OMNIPAY, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "OM",
+        "BANK NAME": "OPPORTUNITY MICROFINANCE",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PASB",
+        "BANK NAME": "PACIFIC ACE SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PRB",
+        "BANK NAME": "PARTNER RURAL BANK (COTABATO), INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "MAYA",
+        "BANK NAME": "PAYMAYA PHILIPPINES, INC. ",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PBC",
+        "BANK NAME": "PHILIPPINE BANK OF COMMUNICATIONS",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PBB",
+        "BANK NAME": "PHILIPPINE BUSINESS BANK, INC., A SAVINGS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PNB",
+        "BANK NAME": "PHILIPPINE NATIONAL BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PSB",
+        "BANK NAME": "PHILIPPINE SAVINGS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PTC",
+        "BANK NAME": "PHILIPPINE TRUST COMPANY",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PVB",
+        "BANK NAME": "PHILIPPINE VETERANS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PRB",
+        "BANK NAME": "PLANBANK \"RURAL BANK OF CANLUBANG PLANTERS, INC.\"",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PB",
+        "BANK NAME": "POSTAL BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PRSB",
+        "BANK NAME": "PR SAVINGS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "PSBC",
+        "BANK NAME": "PRODUCERS SAVINGS BANK CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "QCD",
+        "BANK NAME": "QUEEN CITY DEVELOPMENT BANK, INC. OR QUEENBANK, A THRIFT BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "QCRB",
+        "BANK NAME": "QUEZON CAPITAL RURAL BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "RCBC",
+        "BANK NAME": "RIZAL COMMERCIAL BANKING CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "RBC",
+        "BANK NAME": "ROBINSONS BANK CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "RBG",
+        "BANK NAME": "RURAL BANK OF GUINOBATAN, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SBC",
+        "BANK NAME": "SECURITY BANK CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SHB",
+        "BANK NAME": "SHINHAN BANK - MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SBI",
+        "BANK NAME": "SOUTH BANK (A RURAL BANK), INCORPORATED",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SCB",
+        "BANK NAME": "STANDARD CHARTERED BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "STRPY",
+        "BANK NAME": "STARPAY",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SBA",
+        "BANK NAME": "STERLING BANK OF ASIA, INC. (A SAVINGS BANK)",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SMB",
+        "BANK NAME": "SUMITOMO MITSUI BANKING CORPORATION-MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "SSB",
+        "BANK NAME": "SUN SAVINGS BANK, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "THSB",
+        "BANK NAME": "THE HONGKONG & SHANGHAI BANKING CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "TYB",
+        "BANK NAME": "TONG YANG BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "UCPB",
+        "BANK NAME": "UCPB SAVINGS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "UBP",
+        "BANK NAME": "UNION BANK OF THE PHILIPPINES",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "UOBL",
+        "BANK NAME": "UNITED OVERSEAS BANK LIMITED, MANILA BRANCH",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "WDB",
+        "BANK NAME": "WEALTH DEVELOPMENT BANK CORPORATION",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "WPB",
+        "BANK NAME": "WORLD PARTNERS BANK",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "YSBP",
+        "BANK NAME": "YUANTA SAVINGS BANK PHILIPPINES, INC.",
+        "PROVIDER" : "1"
+    },
+    {
+        "BANK CODE": "S",
+        "BANK NAME": "ZAMBALES RURAL BANK, INC.",
+        "PROVIDER" : "1"
+    }
+]

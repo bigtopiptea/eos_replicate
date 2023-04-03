@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Al-Ektasad United Exchange Company WLL.",
+        "partner_code" : "0u56un0eh",
+        "added_by": 1,
+        "type_of_charging": "add"
+    },
+    {
+        "name": "Citi Express Payment",
+        "partner_code" : "0mf56dq7",
+        "added_by": 1,
+        "type_of_charging": "add"
+    },
+    {
+        "name": "JDEE Remit",
+        "partner_code" : "y85qtf6",
+        "added_by": 1,
+        "type_of_charging": "add"
+    },
+    {
+        "name": "Right Choice Payments",
+        "partner_code" : "idmwqj4",
+        "added_by": 1,
+        "type_of_charging": "add"
+    },
+    {
+        "name": "RNV Forex",
+        "partner_code" : "mcg421p",
+        "added_by": 1,
+        "type_of_charging": "add"
+    },
+    {
+        "name": "Optimum Exchange Remit Inc.",
+        "partner_code" : "69034ta6",
+        "added_by": 1,
+        "type_of_charging": "add"
+    }
+]
+

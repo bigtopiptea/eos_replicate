@@ -1,0 +1,70 @@
+[
+    {
+        "Bank Name": "AllBank (A Thrift Bank), Inc.",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Asia United Bank Corporation",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Bank of Commerce",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Bank of the Philippine Islands",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "BDO Unibank, Inc.",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "China Banking Corporation",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Land Bank of the Philippines",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Philippine National Bank",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Robinsons Bank Corporation",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "Security Bank Corporation",
+        "CODE": "CBA"
+    },
+    {
+        "Bank Name": "ECPay",
+        "CODE": "BP"
+    },
+    {
+        "Bank Name": "Bayad ",
+        "CODE": "BP"
+    },
+    {
+        "Bank Name": "DAPS",
+        "CODE": "BP"
+    },
+    {
+        "Bank Name": "Posible",
+        "CODE": "BP"
+    },
+    {
+        "Bank Name": "G-Xchange Inc.",
+        "CODE": "BP"
+    },
+    {
+        "Bank Name": "Over the Counter",
+        "CODE": "OTC"
+    },
+    {
+        "Bank Name": "Mr. Express",
+        "CODE": "DTD"
+    }
+]

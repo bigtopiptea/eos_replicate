@@ -1,0 +1,21 @@
+{
+    "Banks": {
+        "BDO": [
+            "BDO",
+            "BANCO DE",
+            "BANCE DE",
+            "BANCO DE ORO"
+        ],
+        "MBTC": [
+            "MBTC",
+            "METRO",
+            "METROB"
+        ],
+        "BDONB": [
+            "NETWORK",
+            "BANK",
+            "ONE",
+            "BDO"
+        ]
+    }
+}
