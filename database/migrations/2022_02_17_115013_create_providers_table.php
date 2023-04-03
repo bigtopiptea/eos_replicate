@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->string('account_officer');
             $table->string('address');
             $table->string('fax_no');
             $table->string('account_no');

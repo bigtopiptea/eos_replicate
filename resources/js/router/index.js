@@ -22,6 +22,8 @@ import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
 import Reports from "@/Components/Admin/Reports/Reports.vue";
+import Distribution from "@/Components/Admin/CMT/Distribution.vue";
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Help from "@/Components/Admin/Help/Help.vue";
 
@@ -162,6 +164,15 @@ const routes = [
                 meta: {
                     title: `Processing`,
                     ability: "Processing",
+                },
+            },
+            {
+                path: "/app/distribution",
+                name: "Distribution",
+                component: Distribution,
+                meta: {
+                    title: `Distribution`,
+                    ability: "Distribution",
                 },
             },
             {

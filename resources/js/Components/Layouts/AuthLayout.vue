@@ -37,6 +37,13 @@ export default {
                     children: [],
                     icon: ProcessIcon,
                 },
+                // VDQ (4/3/2023)
+                {
+                    to: "/app/distribution",
+                    label: "Distribution",
+                    children: [],
+                    icon: ProcessIcon,
+                },
                 {
                     to: "/app/monitor-transaction",
                     label: "Monitoring",

@@ -15,16 +15,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            BanksCondition::class,
-            TransactionTypeSeeder::class,
-            BillerCategorySeeder::class,
-            ProviderSeeeder::class,
-            AddressSeeder::class,
+           // BanksCondition::class,
+            // TransactionTypeSeeder::class,
+            // BillerCategorySeeder::class,
+            // ProviderSeeeder::class,
+            // AddressSeeder::class,
             UserSeeder::class,
             CompanySeeder::class,
-            APIAccessSeeder::class,
+            // APIAccessSeeder::class,
 //            BranchSeeder::class,
-            BankSeeder::class,
+            //BankSeeder::class,
         ]);
     }
 }

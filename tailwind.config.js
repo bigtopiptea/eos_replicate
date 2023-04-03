@@ -30,6 +30,10 @@ module.exports = {
                 "mid-red": "rgba(238, 62, 44, 1)",
                 "light-gray": "rgb(107 114 128 / var(--tw-text-opacity))",
             },
+            fontSize: {
+                '1sm': '0.5rem',
+                '2sm': '0.438rem',
+            },
         },
     },
     plugins: [require("@tailwindcss/typography")],
