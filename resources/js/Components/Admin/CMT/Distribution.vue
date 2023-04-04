@@ -1,46 +1,45 @@
 <script>
 
 import {defineComponent} from "vue";
+import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
+import Tab from "@/Components/Misc/Tabs/Tab.vue";
+// import Accordion from "@/Components/Misc/Tabs/Accordion.vue";
+import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import DistributionProcessing from "@/Components/Admin/CMT/DistributionProcessing.vue";
+
+
 export default defineComponent({
+    components: {Tab, TabNav, DateInput,DistributionProcessing},
+    data(){
+        return {
+            selected: "1 Processing",
+        }
+    },
+    methods: {
+        setSelected(tab) {
+            this.selected = tab;
+        },
+    }
 })
 </script>
 <template>
-    <div class="container h-screen p-3 bg-white">
-        <div class="font-rubik-light">
-            <p class="text-base">COMMITED RATE AS OF: <br>
-               <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
-            </p>
-        </div>
-        <div class="grid grid-cols-6 gap-0 mt-3">
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-44 py-4 px-1 bg-#F9951E text-center text-white">
-                <img src="/assets/images/usd_to_php_graph.png" alt="graph-image">
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-        </div>
-    </div>
+    <div class="w-full">
+    <TabNav :selected="selected" :tabs="['1 Processing', '1 Cancellation' , '1 Additional' , '1 Adjustment' , '1 Refund']" @selected="setSelected">
+        <Tab :isSelected="selected === '1 Processing'">
+            <DistributionProcessing/>
+        </Tab>
+        <Tab :isSelected="selected === '1 Cancellation'">
+            <h1>Cancellation</h1>
+        </Tab>
+        <Tab :isSelected="selected === '1 Additional'">
+            <h1>Additional</h1>
+        </Tab>
+        <Tab :isSelected="selected === '1 Adjustment'">
+            <h1>Adjustment</h1>
+        </Tab>
+        <Tab :isSelected="selected === '1 Refund'">
+            <h1>Refund</h1>
+        </Tab>
+    </TabNav>
+</div>
 </template>

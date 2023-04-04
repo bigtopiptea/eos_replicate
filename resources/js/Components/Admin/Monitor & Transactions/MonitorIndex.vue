@@ -60,7 +60,7 @@ export default {
 <template>
     <div class="py-4 px-4">
     <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected">
-        <div class="bg-white border border-gray-300 shadow-sm h-screen p-4">
+        <div class="bg-white border border-gray-300 shadow-sm h-screen p-4 m-4">
             <div class="-mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8 mt-6 mb-10">
                 <div class="min-w-full align-middle md:px-6 lg:px-8">
                     <div class="relative overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
