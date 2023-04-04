@@ -22,22 +22,17 @@ import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
 import Reports from "@/Components/Admin/Reports/Reports.vue";
-import Distribution from "@/Components/Admin/CMT/Distribution.vue";
+import Home from "@/Components/Admin/CMT/Home.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Help from "@/Components/Admin/Help/Help.vue";
-
 import Process from "@/Components/Admin/Process/Process.vue";
-
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
 
 //Settings Sub Components
 import FeesManagement from "@/Components/Admin/Settings/Fees Management/Fees.vue";
-
 import RateManagement from "@/Components/Admin/Settings/Rate Management/Rate.vue";
-
 import HandlingFee from "@/Components/Admin/Settings/Handling Fee/HandlingFee.vue";
-
 import WaiveCharges from "@/Components/Admin/Settings/Waive Charges/WaiveCharges.vue";
 
 import Branch from "@/Components/Admin/Settings/Branches/Branch.vue";
@@ -167,12 +162,12 @@ const routes = [
                 },
             },
             {
-                path: "/app/distribution",
-                name: "Distribution",
-                component: Distribution,
+                path: "/app/home",
+                name: "Home",
+                component: Home,
                 meta: {
-                    title: `Distribution`,
-                    ability: "Distribution",
+                    title: `Home`,
+                    ability: "Home",
                 },
             },
             {

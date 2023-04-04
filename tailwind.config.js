@@ -27,6 +27,8 @@ module.exports = {
                 "#FFFFFF": "#FFFFFF", //gradient end
                 "#0070C0": "#0070C0",
                 "#D7D7D7": "#D7D7D7",
+                "#D9D9D9": "#D9D9D9",
+                "#EAEAEA": "#EAEAEA",
                 "mid-red": "rgba(238, 62, 44, 1)",
                 "light-gray": "rgb(107 114 128 / var(--tw-text-opacity))",
             },
@@ -34,6 +36,9 @@ module.exports = {
                 '1sm': '0.5rem',
                 '2sm': '0.438rem',
             },
+            height: {
+                "3.5/6": "60%",
+            }
         },
     },
     plugins: [require("@tailwindcss/typography")],

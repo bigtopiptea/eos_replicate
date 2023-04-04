@@ -39,10 +39,10 @@ export default {
                 },
                 // VDQ (4/3/2023)
                 {
-                    to: "/app/distribution",
-                    label: "Distribution",
+                    to: "/app/home",
+                    label: "Home",
                     children: [],
-                    icon: ProcessIcon,
+                    icon: HomeIcon,
                 },
                 {
                     to: "/app/monitor-transaction",
