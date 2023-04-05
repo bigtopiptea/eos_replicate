@@ -1,17 +1,11 @@
 <script setup>
 import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
-import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
-import CheckIcon from "@/Components/Misc/Icons/CheckIcon.vue";
-
-import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
-import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
-
-
 </script>
 <script>
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
-import DropDown from '../../Misc/Dropdown/Dropdown.vue';
+import DistributionSummary from "@/Components/Admin/CMT/DistributionSummary.vue";
+import DistributionBreakEntry from "@/Components/Admin/CMT/DistributionBreak&Entry.vue";
+import DistributionJournalEntry from "@/Components/Admin/CMT/DistributionJournalEntry.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
@@ -21,11 +15,11 @@ import { successMessage, errorMessage } from '@/utils/toast.js';
 
 
 export default {
-    components: {SmallHeading},
+    components: {SmallHeading, DistributionSummary, DistributionBreakEntry, DistributionJournalEntry},
     data(){
         return {
 
-            selected: "1 Processing",
+            selected: "Pending",
 
             labels: [
                 {label: 'OPEN'},
@@ -121,153 +115,33 @@ export default {
 
 </script>
 <template>
-    <div class="pt-8 px-4 bg-white h-screen">
-        <div class="py-4 px-4">
-            <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected">
-                <Tab :isSelected="selected === 'Pending'">
-                    <div class="w-full mt-10">
-                    <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange" :icon="ChevRightIcon" @click.prevent="openSummary()" />
-                        <Transition name="slide-fade" >
-                            <div class="mt-6 px-10" v-if="!isOpen">
-                                <div class="-my-2 -mx-20 overflow-x-hidden">
-                                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                                        <div class="flex items-end justify-between p-4 border border-red-600 overflow-auto z-10 h-auto">
-                                            <div class="flex justify-start flex-col space-x-3 ">
-                                                <div class="flex left-side-col-1 ">
-                                                    <div>
-                                                        <InputLabel label="Start Date" />
-                                                        <br/>
-                                                        <input class="text-[11px] border border-gray-300 p-2" type="date" />
-                                                    </div>
-                                                    <div>
-                                                        <InputLabel label="End Date" />
-                                                        <br/>
-                                                        <input class="text-[11px] border border-gray-300 p-2" type="date" />
-                                                    </div>
-                                                    <div>
-                                                        <br/>
-                                                        <NormalButton label="Format"
-                                                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-sm font-medium text-white" />
-                                                    </div>
-                                                </div>
-                                                <div class="left-side-col-2 space-y-3">
-                                                    <DropDown label="bulk action" class="-m-3" />
-                                                    <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-sm text-white px-3 uppercase" />
-                                                </div>
-                                            </div>
-                                                <div class="right-side flex justify-items-start h-20">
-                                                <form class="flex items-start">
-                                                    <div class="relative w-full">
-                                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                                            <SearchIcon />
-                                                        </div>
-                                                        <input type="text" id="simple-search"
-                                                            class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-sm block w-full pl-10 p-2.5"
-                                                            placeholder="Search" required />
-                                                    </div>
-                                                    <NormalButton label="Go"
-                                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-sm font-medium text-white" />
-                                                    <NormalButton label="Export"
-                                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-sm font-medium text-white" />
-                                                </form>
-                                            </div>
-                                         </div>
-                                    </div>
+    <div class="px-4 h-screen  m-2">
+        <div class="border  bg-white border-white shadow-md">
+            <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" >
+                <Tab :isSelected="selected === 'Pending'" >
+                    <div class="w-full h-full mt-10  ">
+                        <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openSummary()" />
+                            <Transition name="slide-fade" >
+                                <div class="mt-6" v-if="!isOpen">
+                                    <DistributionSummary/>
                                 </div>
-                                <div class="mb-8 -mx-4 overflow-hidden sm:-mx-6 lg:-mx-8">
-                                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 border border-red-900 mt-10">
-                                        <table class="w-full divide-y divide-gray-300">
-                                            <thead class="bg-[#D7D7D7]">
-                                            <tr class="divide-x divide-gray-200">
-                                                <th scope="col" class="px-6 whitespace-nowrap ">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        <div class="space-x-7 flex items-center">
-                                                            <input type="checkbox" />
-                                                                <span>BATCH ID</span>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6  w-[24%]">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        FILENAME
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6 ">
-                                                    <div class="flex items-center whitespace-nowrap justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        ITEM COUNT
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6 w-[10%]">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        TOTAL AMOUNT
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6  w-[10%]">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        EXCHANGE RATE
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6 w-[10%]">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        PROCESSED DATE
-                                                    </div>
-                                                </th>
-                                                <th scope="col" class="px-6 w-[10%]">
-                                                    <div class="flex items-center justify-between uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        VALUE DATE                                                        </div>
-                                                </th>
-                                                <th scope="col" class="px-6  w-[10%]">
-                                                    <div class="uppercase text-[13px] font-rubik-normal tracking-wider">
-                                                        ACTION
-                                                    </div>
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody class="divide-y divide-gray-200 ">
-                                            <tr v-for="company in companies" :key="company.id" class="divide-x divide-gray-200">
-                                                <td class="px-6 py-2 text-[14px] space-x-8 font-rubik-normal">
-                                                    <input type="checkbox" />
-                                                    <span>
-                                                    {{company.id}}                                                        </span>
-                                                </td>
-                                                <td class="px-6 py-2 text-[14px] whitespace-nowrap font-rubik-normal">
-                                                    {{company.name}}
-                                                </td>
-                                                <td class="px-6 py-2 text-[14px] font-rubik-normal">
-                                                    {{company.partner_code}}
-                                                </td>
-                                                <td class="px-6 py-2 text-[14px] whitespace-nowrap font-rubik-normal uppercase">
-                                                    {{company.created_at}}
-                                                    {{company.created_at ? $moment(company.created_at).format('MM/DD/YYYY, h:mm:ss a') : ''}}
-                                                </td>
-                                                <td class="px-6 py-2 text-[14px] uppercase whitespace-nowrap font-rubik-normal">
-                                                    {{company.added_by.last_name}}, {{company.added_by.middle_name}} {{company.added_by.first_name}}
-                                                </td>
-                                                <td class="px-6 py-2">
-                                                    <div class="flex items-center justify-center space-x-4">
-                                                        <EditIcon @click="
-                                                            (slideoverOpen =
-                                                                !slideoverOpen),
-                                                                getState('edit'),
-                                                                getCompany(company.id)"
-                                                                class="text-[#F9951E] h-5 hover:cursor-pointer"
-                                                        />
-                                                        <SwitchToggle
-                                                            :status="company.isActive"
-                                                            :isChecked="company.isActive"
-                                                            @click.prevent="
-                                                            toggleStatus(),
-                                                            updateCompanyStatus(company.id,company.isActive,company.label)"
-                                                        />
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                            </Transition>
+                        <SmallHeading :isOpen="isOpen" label="BREAKDOWN AND ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
+                            <Transition name="slide-fade" >
+                                <div class="mt-6" v-if="!isOpen">
+                                    <DistributionBreakEntry/>
                                 </div>
-                            </div>
-                        </Transition>
+                            </Transition>
+                        <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
+                            <Transition name="slide-fade" >
+                                <div class="mt-6" v-if="!isOpen">
+                                    <DistributionJournalEntry/>
+                                </div>
+                            </Transition>
+                        <div class="flex justify-center space-x-4 items-center w-full h-auto mb-3 mt-10 ">
+                            <button class=" uppercase py-3 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-base">CANCEL</button>
+                            <button class=" uppercase py-3 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-base">SUBMIT</button>
+                        </div>
                     </div>
                 </Tab>
             </TabNav>
