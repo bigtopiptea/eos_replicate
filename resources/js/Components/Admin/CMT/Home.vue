@@ -1,31 +1,43 @@
 <script setup>
 
 import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
-import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
+import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
+import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
+import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 
 </script>
 
 <script>
 import {defineComponent} from "vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
+import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
+// import SlideoverTwo from "@/Components/Misc/Slideover/SlideoverTwo.vue";
 
 export default defineComponent({
     components: {
-        SmallHeading, 
+        SmallHeading, Slideover, LoadingIcon, XMarkIcon, ProgressIcon
     },
     data(){
         return{
             isOpen: true,
+            slideoverOpen: false,
         }   
     },
     methods: {
-        openCommittedRate(){
+        openFundingWorkspace(){
             this.isOpen = !this.isOpen;
+        },
+        slideOverToggle() {
+            this.slideoverOpen = false;
+        },
+        getState(type) {
+            this.state = type;
         },
     }
 })
 </script>
 <template>
+    <!-- MAIN CONTENT -->
     <div class="container h-screen p-3 bg-white">
         <div class="font-rubik-light">
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
@@ -125,60 +137,111 @@ export default defineComponent({
             </div>
         </div>
     </div>
-    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSPACE" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openCommittedRate()" />
+
+    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSPACE" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorkspace()" />
     <Transition name="slide-fade" >
         <div class="container h-screen bg-white" v-if="!isOpen">
             <h1>HELLO!</h1>
         </div>
     </Transition>
 
-    <!-- SLIDEOVER -->
-    <div class="container flex flex-col justify-between fixed top-0 right-0 h-screen w-1/3 bg-white z-10 py-10">
-        <div class="slide-title flex justify-center items-center relative h-14 text-white">
-            <div class="absolute left-5">
-                <UserIcon></UserIcon>
-            </div>
-            <h2 class="text-xl">PROFILE</h2>
-        </div>
-        <div class="input-area py-5 mx-10">
-            <div class="profile-upload flex justify-evenly items-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIVjgXETMVBozgM1apBTmVROTQnz9zgJh8d8k6PpY&s" alt="user-logo" class="w-36 h-36 rounded-full">
-                <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold">UPLOAD</button>
-            </div>
-            <div class="mt-5">
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPLETE NAME</span>
-                    <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+    <!-- SLIDEOVER PROFILE DETAILS-->
+    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="input-area mx-10">
+                <div class="profile-upload flex justify-evenly items-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIVjgXETMVBozgM1apBTmVROTQnz9zgJh8d8k6PpY&s" alt="user-logo" class="w-36 h-36 rounded-full">
+                    <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold">UPLOAD</button>
                 </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">USER ROLE</span>
-                    <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPANY</span>
-                    <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DEPARTMENT</span>
-                    <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">EMAIL ADDRESS</span>
-                    <input type="email" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">CONTACT NUMBER</span>
-                    <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                </div>
-                <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                    <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DATE CREATED</span>
-                    <input type="date" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs text-center focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                <div class="mt-5">
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPLETE NAME</span>
+                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">USER ROLE</span>
+                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPANY</span>
+                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DEPARTMENT</span>
+                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">EMAIL ADDRESS</span>
+                        <input type="email" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">CONTACT NUMBER</span>
+                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
+                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DATE CREATED</span>
+                        <input type="date" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs text-center focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    </div>
                 </div>
             </div>
+            <div class="flex justify-center">
+                <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-xl font-medium border-2 border-black">CLOSE</button>
+            </div>
         </div>
-        <div class="flex justify-center">
-            <button type="button" class="py-1 px-5 text-xl font-medium border-2 border-black">CLOSE</button>
-        </div>
-    </div>
+    </Slideover>
 
+    <button type="submit" @click="(slideoverOpen = !slideoverOpen), getState('view')" >Open Slider</button>
+    
+    <!-- SLIDEOVER CHANGE PHOTO -->
+    <!-- <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'CHANGE PHOTO'">
+        <div class="flex flex-col justify-between items-center h-full">
+            <div class="py-5 mx-5 w-4/5">
+                <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
+                    <div class="font-rubik-light text-center mb-5">
+                        <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
+                        <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
+                    </div>
+                    <div class="text-center text-xs">
+                        <p>MAX FILE SIZE: <span class="font-bold">1MB</span><br>
+                        SUPPORTED FILE TYPES: <span class="font-bold">JPEG, JPG, PNG</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="pt-5 font-rubik-light">
+                    <div class="flex justify-between mb-3">
+                        <div class="flex items-center text-sm">
+                            <LoadingIcon></LoadingIcon>
+                            <span>photo_lasconia.jpg</span>
+                        </div>
+                        <div>
+                            <XMarkIcon></XMarkIcon>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <ProgressIcon :progressWidth="'w-96'"></ProgressIcon>
+                    </div>
+                    <div class="flex justify-between text-xs mb-3">
+                        <div>
+                            <p>
+                                <span>0.5 MB</span>
+                                of
+                                <span>1 MB</span>
+                            </p>
+                        </div>
+                        <div class="text-#194E72">
+                            <p>UPLOADING...
+                            <span>50%</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between w-4/5">
+                <buttton @click.prevent="slideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
+                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer">SUBMIT</buttton>
+            </div>
+        </div>
+    </Slideover> -->
 </template>
+

@@ -216,6 +216,7 @@ export default {
     }
 }
 </script>
+
 <template>
     <!-- Sidebar -->
     <div class="border-gradient-top border-t-[3px] z-10 fixed inset-x-0 w-full"></div>

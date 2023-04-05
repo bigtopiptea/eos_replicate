@@ -29,6 +29,8 @@ module.exports = {
                 "#D7D7D7": "#D7D7D7",
                 "#D9D9D9": "#D9D9D9",
                 "#EAEAEA": "#EAEAEA",
+                "#D9D9D9": "#D9D9D9",
+                "#194E72": "#194E72",
                 "mid-red": "rgba(238, 62, 44, 1)",
                 "light-gray": "rgb(107 114 128 / var(--tw-text-opacity))",
             },
