@@ -31,6 +31,7 @@ module.exports = {
                 "#EAEAEA": "#EAEAEA",
                 "#D9D9D9": "#D9D9D9",
                 "#194E72": "#194E72",
+                "#FBB056": "#FBB056",
                 "mid-red": "rgba(238, 62, 44, 1)",
                 "light-gray": "rgb(107 114 128 / var(--tw-text-opacity))",
             },
