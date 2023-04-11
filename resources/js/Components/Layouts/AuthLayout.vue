@@ -45,6 +45,12 @@ export default {
                     icon: HomeIcon,
                 },
                 {
+                    to: "/app/distribution",
+                    label: "Distribution",
+                    children: [],
+                    icon: ProcessIcon,
+                },
+                {
                     to: "/app/monitor-transaction",
                     label: "Monitoring",
                     children: [],
