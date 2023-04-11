@@ -209,7 +209,7 @@ export default{
                                         </td>
                                         <td class="whitespace-nowrap uppercase text-center p-4 font-rubik-light tracking-wider">
                                             <button>
-                                            <img src="../../../../assets/images/Lists.png" alt="Lists Icon" class="h-5 w-5">
+                                                <img src="../../../../../assets/images/ExitIcon.png" alt="Exit Icon" class="h-5 w-5">
                                             </button>
                                         </td>
                                     </tr>
