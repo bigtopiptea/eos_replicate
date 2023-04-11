@@ -1,10 +1,10 @@
 <script setup>
+import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
 import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
-import InputWithLabel from "@/Components/Misc/Input/InputWithLabel.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 </script>
@@ -25,6 +25,7 @@ export default{
         InputLabel,
         ListIcon,
         DateInput,
+        Pagination,
     },
 
     data() {
