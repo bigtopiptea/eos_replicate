@@ -171,7 +171,7 @@ export default{
                                 <td
                                     class="whitespace-nowrap uppercase text-center p-4 text-sm font-rubik-light tracking-wider">
                                     <button>
-                                       <img src="../../../../assets/images/Lists.png" alt="Lists Icon" class="h-5 w-5">
+                                       <img src="../../../../../assets/images/ListIcon.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
                                 </td>
                             </tr>

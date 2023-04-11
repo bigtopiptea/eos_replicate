@@ -9,6 +9,7 @@ import DistributionProcessing from "@/Components/Admin/CMT/Processing/Distributi
 import DistributionCancellation from "@/Components/Admin/CMT/Cancellation/DistributionCancellation.vue";
 import DistributionAdditional from "@/Components/Admin/CMT/Additional/DistributionAdditional.vue";
 import DistributionRefund from "@/Components/Admin/CMT/Refund/DistributionRefund.vue";
+import DistributionAdjustment from "./Adjustment/DistributionAdjustment.vue";
 // import DistributionAdditional from "./Additional/DistributionAdditional.vue";
 
 export default defineComponent({
@@ -20,6 +21,7 @@ export default defineComponent({
         DistributionRefund,
         DistributionCancellation,
         DistributionAdditional,
+        DistributionAdjustment,
 
     },
     data(){
@@ -39,6 +41,7 @@ export default defineComponent({
     <TabNav :selected="selected" :tabs="['1 Processing', '1 Cancellation' , '1 Additional' , '1 Adjustment' , '1 Refund']" @selected="setSelected">
         <Tab :isSelected="selected === '1 Processing'">
             <DistributionProcessing/>
+
         </Tab>
         <Tab :isSelected="selected === '1 Cancellation'">
             <DistributionCancellation/>
@@ -47,7 +50,7 @@ export default defineComponent({
             <DistributionAdditional/>
         </Tab>
         <Tab :isSelected="selected === '1 Adjustment'">
-            <h1>Adjustment</h1>
+            <DistributionAdjustment/>
         </Tab>
         <Tab :isSelected="selected === '1 Refund'">
             <DistributionRefund/>

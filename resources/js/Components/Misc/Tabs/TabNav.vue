@@ -36,7 +36,7 @@ export default {
     },
     computed: {
         tabLength(){
-            return this.tabs.length > 5 ? 'px-4' : 'px-6';
+            return this.tabs.length > 1 ? 'px-4' : 'px-6';
         },
     }
 }
