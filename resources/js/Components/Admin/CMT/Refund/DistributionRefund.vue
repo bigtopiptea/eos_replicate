@@ -85,12 +85,12 @@ export default{
 
 <template>
 
-<div class="border m-3 bg-white border-white shadow-md">
-    <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+<div class="border m-3 bg-white border-white shadow-md ">
+    <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" >
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-auto w-auto mb-3 mx-10 mt-10">
-               <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                  <div class="flex items-end justify-between h-auto min-w-full -mx-12">
+            <div class=" h-full mb-3 -mx-0">
+               <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
+                  <div class="flex items-end justify-between h-auto min-w-full -mx-6">
                     <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
                         <div class="flex items-end left-side-col-1 -ml-3">
                             <div>
@@ -127,9 +127,9 @@ export default{
                     </div>
                  </div>
             </div>
-        <div class="overflow-hidden sm:-mx-6 lg:-mx-8">
+        <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 -mx-4">
+                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-[#D7D7D7]">
                             <tr class="divide-x divide-gray-200">
@@ -217,9 +217,9 @@ export default{
                 :offset="5" />
         </div>
 
-                <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 " :icon="ChevRightIcon" @click.prevent="openHeading()" />
+                <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />
                     <Transition name="slide-fade" >
-                        <div class="mt-6 -mx-5 border border-red-500" v-if="!isOpen">
+                        <div class=" -mx-8 " v-if="!isOpen">
                             <DistributionRefundJournalEntry/>
                         </div>
                     </Transition>
