@@ -128,42 +128,60 @@ export default{
             </div>
         <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
-                    <table class="min-w-full divide-y divide-gray-300">
+                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5  ">
+                    <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
                         <thead class="bg-[#D7D7D7]">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-3.5 px-4 space-x-3 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">                                        <input type="checkbox" />
-                                    <span>
-                                    BATCH ID
-                                    </span>
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    ID
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    FILENAME
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    ITEM COUNT
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    TIE UP
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    TOTAL AMOUNT
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    REFERENCE NO.
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  text-sm font-normal text-gray-900">
-                                    EXCHANGE RATE
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    CMT REFERENCE NO.
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    PROCESSED DATE
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    CURRENCY
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    VALUE DATE
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    AMOUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    PROCESS RATE
+                                </th>
+                                <th scope="col"
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    CURRENT RATE
+                                </th>
+                                <th scope="col"
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    CURRENCY
+                                </th>
+                                <th scope="col"
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    REFUND AMOUNT
+                                </th>
+                                <th scope="col"
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
+                                    AP RATE
+                                </th>
+                                <th scope="col"
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  font-normal text-gray-900">
                                     ACTION
                                 </th>
                             </tr>
@@ -171,38 +189,57 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap space-x-3 uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    <input type="checkbox" />
-                                    <span>
-                                        01
-                                    </span>
+
+                                    class="whitespace-nowrap uppercase p-4  font-rubik-light text-center tracking-wider">
+                                      01
+
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                      Redha_batch2
+                                    class="whitespace-nowrap uppercase p-4 font-rubik-light tracking-wider">
+                                      09/28/2022 12:00:05 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    103
+                                    class="whitespace-nowrap text-center uppercase p-4  font-rubik-light tracking-wider">
+                                    REDHA AL ANSARI EXCHANGE
                              </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    649,394.00
+                                    class="whitespace-nowrap text-center uppercase p-4  font-rubik-light tracking-wider">
+                                    REDHA-09282022-0006
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    48.57
+                                    class="whitespace-nowrap text-center uppercase p-4  font-rubik-light tracking-wider">
+                                    CMT-09282022-0009
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    09/28/2022 12:00:05 PM
+                                    class="whitespace-nowrap text-center uppercase p-4  font-rubik-light tracking-wider">
+                                    PHP
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    09/28/2022 12:00:05 PM
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                    24,900.13
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase text-center p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                    28.25
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                   48.30
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                    USD
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                    515.53
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                    38.28
+                                </td>
+                                <td
+                                    class="whitespace-nowrap uppercase text-center p-4 font-rubik-light tracking-wider">
                                     <button>
                                        <img src="../../../../assets/images/Lists.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
