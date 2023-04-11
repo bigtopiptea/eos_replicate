@@ -24,7 +24,7 @@ export default defineComponent({
         }   
     },
     methods: {
-        openFundingWorkspace(){
+        openFundingWorksheet(){
             this.isOpen = !this.isOpen;
         },
         slideOverToggle() {
@@ -44,35 +44,35 @@ export default defineComponent({
                <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
             </p>
         </div>
-        <div class="flex justify-between mt-3 pb-5 border-b-2 border-solid border-#EAEAEA">
+        <div class="flex justify-between mt-3 pb-5 font-rubik-light border-b-2 border-solid border-#EAEAEA">
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.01</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">49.99</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.02</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">49.98</h3>
-                <p class="text-1sm text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-2sm font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
-            <div class="h-24 w-44 py-4 px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black">
+            <div class="h-24 w-40 px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
                 <img src="../../../../assets/images/usd_to_php_graph.png" alt="graph-image"/>
-                <p class="text-sm text-left">USD to PHP</p>
+                <p class="text-xs text-left font-medium">USD to PHP</p>
             </div>
         </div>
         <div class="flex justify-between w-full h-4/6 my-5">
@@ -84,13 +84,13 @@ export default defineComponent({
                         </tr>
                         <tr>
                             <th class="bg-#D9D9D9 font-extralight text-sm">BANKS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm w-24">AMOUNT</th>
+                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
                         </tr>
                     </thead>
                     <tbody class="overflow-y-auto">
-                        <tr>
-                            <td></td>
-                            <td  class="border-solid border-l-2 border-#EAEAEA"></td>
+                        <tr class="border-b border-#EAEAEA">
+                            <td> - </td>
+                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
                         </tr>
                     </tbody>
                 </table>
@@ -103,15 +103,14 @@ export default defineComponent({
                         </tr>
                         <tr>
                             <th class="bg-#D9D9D9 font-extralight text-sm">TIE-UPS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm w-24">AMOUNT</th>
+                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
                         </tr>
                     </thead>
                     <tbody class="overflow-y-auto">
-                        <tr>
-                            <td></td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"></td>
+                        <tr class="border-b border-#EAEAEA">
+                            <td> - </td>
+                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -123,13 +122,13 @@ export default defineComponent({
                         </tr>
                         <tr>
                             <th class="bg-#D9D9D9 font-extralight text-sm">BANKS & PROVIDERS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm w-24">AMOUNT</th>
+                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
                         </tr>
                     </thead>
                     <tbody class="overflow-y-auto">
-                        <tr>
-                            <td></td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"></td>
+                        <tr class="border-b border-#EAEAEA">
+                            <td> - </td>
+                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
                         </tr>
                     </tbody>
                 </table>
@@ -137,10 +136,160 @@ export default defineComponent({
         </div>
     </div>
 
-    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSPACE" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorkspace()" />
+    <!-- SLIDEOVER TRIGGER FOR TRIAL -->
+    <button type="submit" @click="(slideoverOpen = !slideoverOpen), getState('view')" >Open Slider</button>
+
+    <!-- FUNDING WO -->
+    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()" />
     <Transition name="slide-fade" >
-        <div class="3xl:container h-screen bg-white" v-if="!isOpen">
-            <h1>HELLO!</h1>
+        <div class="3xl:container h-auto bg-white p-3" v-if="!isOpen">
+            <!-- FULL WIDTH TABLE -->
+            <div class="h-full w-full font-rubik-light">
+                <h1 class="text-xs  mb-2">BANKS & WALLET FUNDINGS</h1>
+                <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
+                    <thead class="sticky top-0 bg-#D9D9D9">
+                        <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
+                            <th class="p-2 text-left">BANK</th>
+                            <th class="p-2">BEGINNING BALANCE</th>
+                            <th class="p-2">ITEMS</th>
+                            <th class="p-2">REMITTANCE AMOUNT</th>
+                            <th class="p-2">TRANSACTION COST</th>
+                            <th class="p-2">TOTAL COST</th>
+                            <th class="p-2">ADVANCE FUNDING</th>
+                            <th class="p-2">FOR FUNDING</th>
+                            <th class="p-2">BANK CHARGE</th>
+                            <th class="p-2">FOR RTGS</th>
+                            <th class="p-2">FUND FROM</th>
+                            <th class="p-2">ESTIMATED TRANSACTIONS</th>
+                            <th class="p-2">REMARKS</th>
+                            <th class="p-2">ENDING BALANCE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="overflow-y-auto">
+                        <tr class="border-b border-#EAEAEA  divide-x divide-#EAEAEA">
+                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
+                            <td>1,000,000.00</td>
+                            <td>25</td>
+                            <td>500,000.00</td>
+                            <td>15.00</td>
+                            <td>375.00</td>
+                            <td> - </td>
+                            <td>500.374.00</td>
+                            <td>-</td>
+                            <td>500.374.00</td>
+                            <td>ALL BANK</td>
+                            <td>750,000.00</td>
+                            <td> </td>
+                            <td>250,000.00</td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
+                            <td>1,000,000.00</td>
+                            <td>25</td>
+                            <td>500,000.00</td>
+                            <td>15.00</td>
+                            <td>375.00</td>
+                            <td> - </td>
+                            <td>500.374.00</td>
+                            <td>-</td>
+                            <td>500.374.00</td>
+                            <td>ALL BANK</td>
+                            <td>750,000.00</td>
+                            <td> </td>
+                            <td>250,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex gap-3">
+                <!-- HALF TABLE 1 -->
+                <div class="h-full w-1/2 font-rubik-light">
+                    <h1 class="text-xs  my-2">TRANSFERS</h1>
+                    <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
+                        <thead class="sticky top-0 bg-#D9D9D9 divide-x divide-#EAEAEA">
+                            <tr class="border-b border-#EAEAEA p-5">
+                                <th class="p-2 text-left">FROM BANK</th>
+                                <th class="p-2">TO BANK</th>
+                                <th class="p-2">AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody class="overflow-y-auto">
+                            <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                                <td> --- </td>
+                                <td> --- </td>
+                                <td> --- </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- HALF TABLE 2 -->
+                <div class="h-full w-1/2 font-rubik-light">
+                    <h1 class="text-xs  my-2">TRADING</h1>
+                    <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
+                        <thead class="sticky top-0 bg-#D9D9D9">
+                            <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
+                                <th class="p-2 text-left">COMPANY NAME</th>
+                                <th class="p-2">TO BANK</th>
+                                <th class="p-2">USD AMOUNT</th>
+                                <th class="p-2">RATE</th>
+                                <th class="p-2">TOTAL AMOUNT</th>
+                            </tr>
+                        </thead>
+                        <tbody class="overflow-y-auto">
+                            <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                                <td> --- </td>
+                                <td> --- </td>
+                                <td> --- </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 3/4 TABLE (ALIGN LEFT) -->
+            <div class="h-full w-4/5 font-rubik-light">
+                <h1 class="text-xs  my-2">FUNDING WORKSHEET CASH POSITION</h1>
+                <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
+                    <thead class="sticky top-0 bg-#D9D9D9">
+                        <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
+                            <th class="p-2 text-left">BANK</th>
+                            <th class="p-2">AVAILABLE BALANCE</th>
+                            <th class="p-2">TRANSFERS</th>
+                            <th class="p-2">TRADINGS</th>
+                            <th class="p-2">RTGS</th>
+                            <th class="p-2">ENDING BALANCE</th>
+                        </tr>
+                    </thead>
+                    <tbody class="overflow-y-auto">
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                            <td> --- </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </Transition>
 
@@ -189,8 +338,6 @@ export default defineComponent({
         </div>
     </Slideover> -->
 
-    <button type="submit" @click="(slideoverOpen = !slideoverOpen), getState('view')" >Open Slider</button>
-    
     <!-- SLIDEOVER CHANGE PHOTO - Step 1-->
     <!-- <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center h-full pb-5">
@@ -246,12 +393,12 @@ export default defineComponent({
     <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center py-5 h-full">
             <div class="flex flex-col items-center">
-                <div class="w-auto p-10 bg-#F9951E rounded-md relative">
+                <div class="w-auto p-7 bg-#F9951E rounded-md relative">
                     <div class="absolute top-3 right-3 text-white">
                         <XMarkIcon></XMarkIcon>
                     </div>
                     <div class="flex justify-center items-center w-80 h-60 bg-#EAEAEA">
-                        <img src="../../../../assets/images/user-logo.png" alt="user-logo" class="w-56 h-56 rounded-full border border-black">
+                        <img src="../../../../assets/images/user-logo.png" alt="user-logo" class="w-56 h-56 rounded-full border border-#3E3E3E">
                     </div>
                 </div>
                 <div class="mt-2">
@@ -265,5 +412,7 @@ export default defineComponent({
             </div>
         </div>
     </Slideover>
+
+
 </template>
 
