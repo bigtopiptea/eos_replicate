@@ -20,7 +20,9 @@ export default defineComponent({
     data(){
         return{
             isOpen: true,
-            slideoverOpen: false,
+            slideoverOpen: false, //Slideover 1 (Profile)
+            profileSlideoverOpen: false, //Slideover 2 (Profile Image Upload)
+            adjustProfileSlideoverOpen: false, //Slideover 3 (Profile Image Setup)
         }   
     },
     methods: {
@@ -29,6 +31,12 @@ export default defineComponent({
         },
         slideOverToggle() {
             this.slideoverOpen = false;
+        },
+        profileSlideOverToggle() {
+            this.profileSlideoverOpen = false;
+        },
+        adjustProfileSlideoverToggle(){
+            this.adjustProfileSlideoverOpen = false;
         },
         getState(type) {
             this.state = type;
@@ -136,8 +144,8 @@ export default defineComponent({
         </div>
     </div>
 
-    <!-- SLIDEOVER TRIGGER FOR TRIAL -->
-    <button type="submit" @click="(slideoverOpen = !slideoverOpen), getState('view')" >Open Slider</button>
+    <!-- SLIDEOVER SAMPLE TRIGGER-->
+    <button type="submit" @click="(slideoverOpen = !slideoverOpen)" >Open Slider</button>
 
     <!-- FUNDING WO -->
     <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()" />
@@ -167,6 +175,54 @@ export default defineComponent({
                     </thead>
                     <tbody class="overflow-y-auto">
                         <tr class="border-b border-#EAEAEA  divide-x divide-#EAEAEA">
+                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
+                            <td>1,000,000.00</td>
+                            <td>25</td>
+                            <td>500,000.00</td>
+                            <td>15.00</td>
+                            <td>375.00</td>
+                            <td> - </td>
+                            <td>500.374.00</td>
+                            <td>-</td>
+                            <td>500.374.00</td>
+                            <td>ALL BANK</td>
+                            <td>750,000.00</td>
+                            <td> </td>
+                            <td>250,000.00</td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
+                            <td>1,000,000.00</td>
+                            <td>25</td>
+                            <td>500,000.00</td>
+                            <td>15.00</td>
+                            <td>375.00</td>
+                            <td> - </td>
+                            <td>500.374.00</td>
+                            <td>-</td>
+                            <td>500.374.00</td>
+                            <td>ALL BANK</td>
+                            <td>750,000.00</td>
+                            <td> </td>
+                            <td>250,000.00</td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
+                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
+                            <td>1,000,000.00</td>
+                            <td>25</td>
+                            <td>500,000.00</td>
+                            <td>15.00</td>
+                            <td>375.00</td>
+                            <td> - </td>
+                            <td>500.374.00</td>
+                            <td>-</td>
+                            <td>500.374.00</td>
+                            <td>ALL BANK</td>
+                            <td>750,000.00</td>
+                            <td> </td>
+                            <td>250,000.00</td>
+                        </tr>
+                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
                             <td>ALL BANK (ALL THRIFT BANK) INC.</td>
                             <td>1,000,000.00</td>
                             <td>25</td>
@@ -294,12 +350,12 @@ export default defineComponent({
     </Transition>
 
     <!-- SLIDEOVER PROFILE DETAILS-->
-    <!-- <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
+    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="input-area mx-10">
                 <div class="profile-upload flex justify-evenly items-center">
                     <img src="../../../../assets/images/user-logo.png" alt="user-logo" class="w-36 h-36 rounded-full">
-                    <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold">UPLOAD</button>
+                    <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold" @click="(profileSlideoverOpen = !profileSlideoverOpen)" @click.prevent="slideOverToggle()">UPLOAD</button>
                 </div>
                 <div class="mt-5">
                     <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
@@ -336,10 +392,10 @@ export default defineComponent({
                 <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-xl font-medium border-2 border-black">CLOSE</button>
             </div>
         </div>
-    </Slideover> -->
+    </Slideover>
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 1-->
-    <!-- <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'CHANGE PHOTO'">
+    <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
@@ -383,14 +439,14 @@ export default defineComponent({
                 </div>
             </div>
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="slideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer">SUBMIT</buttton>
+                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
+                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
             </div>
         </div>
-    </Slideover> -->
+    </Slideover>
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 2-->
-    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'CHANGE PHOTO'">
+    <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center py-5 h-full">
             <div class="flex flex-col items-center">
                 <div class="w-auto p-7 bg-#F9951E rounded-md relative">
@@ -407,8 +463,8 @@ export default defineComponent({
             </div>
 
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="slideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer">SUBMIT</buttton>
+                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
+                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer">SAVE</buttton>
             </div>
         </div>
     </Slideover>
