@@ -9,7 +9,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue"
 </script>
 
 <script>
-import DistributionCancellationJournalEntry from "./DistributionCancellationJournalEntry.vue";
+import DistributionAdditionalJournalEntry from "./DistributionAdditionalJournalEntry.vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
@@ -20,10 +20,10 @@ import axios from "axios";
 
 export default{
 
-    name:'DistributionCancellation',
+    name:'DistributionAdditional',
 
     components:{
-    DistributionCancellationJournalEntry,
+    DistributionAdditionalJournalEntry,
     DropDown,
     EditIcon,
     NormalButton,
@@ -38,7 +38,7 @@ export default{
 
     data() {
         return {
-            distributionCancellation: [],
+            distributionAdditional: [],
             pagination: {
                 current_page: 1,
             },
@@ -51,11 +51,11 @@ export default{
         }
     },
     methods: {
-        async getDistributionCancellation() {
+        async getDistributionAdditional() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.distributionCancellation = response.data.data;
+                    this.distributionAdditional = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -223,7 +223,7 @@ export default{
                 <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />
                 <Transition name="slide-fade" >
                     <div class=" -mx-8 " v-if="!isOpen">
-                        <DistributionCancellationJournalEntry/>
+                        <DistributionAdditionalJournalEntry/>
                     </div>
                 </Transition>
             </div>

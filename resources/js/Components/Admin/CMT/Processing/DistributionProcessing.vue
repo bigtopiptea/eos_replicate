@@ -56,33 +56,31 @@ export default {
 
 </script>
 <template>
-    <div class="px-4 h-screen  m-2">
-        <div class="border  bg-white border-white shadow-md">
-            <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
-                <Tab :isSelected="selected === 'Pending'" >
-                    <div class="w-full h-full mt-10  ">
-                        <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openSummary()" />
-                            <Transition name="slide-fade" >
-                                <div class="mt-6" v-if="!isOpen">
-                                    <DistributionSummary/>
-                                </div>
-                            </Transition>
-                        <SmallHeading :isOpen="isOpen" label="BREAKDOWN AND ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
-                            <Transition name="slide-fade" >
-                                <div class="mt-6" v-if="!isOpen">
-                                    <DistributionBreakEntry/>
-                                </div>
-                            </Transition>
-                        <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openJournalEntry()" />
-                            <Transition name="slide-fade" >
-                                <div class="mt-6" v-if="!isOpen">
-                                    <DistributionJournalEntry/>
-                                </div>
-                            </Transition>
-                    </div>
-                </Tab>
-            </TabNav>
-        </div>
+    <div class="border m-3 bg-white border-white shadow-md">
+        <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+            <Tab :isSelected="selected === 'Pending'" >
+                <div class="w-full h-full mt-10  ">
+                    <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openSummary()" />
+                        <Transition name="slide-fade" >
+                            <div class="mt-6" v-if="!isOpen">
+                                <DistributionSummary/>
+                            </div>
+                        </Transition>
+                    <SmallHeading :isOpen="isOpen" label="BREAKDOWN AND ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
+                        <Transition name="slide-fade" >
+                            <div class="mt-6" v-if="!isOpen">
+                                <DistributionBreakEntry/>
+                            </div>
+                        </Transition>
+                    <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openJournalEntry()" />
+                        <Transition name="slide-fade" >
+                            <div class="mt-6" v-if="!isOpen">
+                                <DistributionJournalEntry/>
+                            </div>
+                        </Transition>
+                </div>
+            </Tab>
+        </TabNav>
     </div>
 </template>
 <style>
