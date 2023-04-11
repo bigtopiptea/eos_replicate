@@ -23,7 +23,7 @@ export default defineComponent({
 })
 </script>
 <template>
-    <div class="w-full min-h-full bg-white mb-10 ">
+    <div class="w-full min-h-full bg-white ">
     <TabNav :selected="selected" :tabs="['1 Processing', '1 Cancellation' , '1 Additional' , '1 Adjustment' , '1 Refund']" @selected="setSelected">
         <Tab :isSelected="selected === '1 Processing'">
             <DistributionProcessing/>

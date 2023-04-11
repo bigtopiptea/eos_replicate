@@ -27,13 +27,24 @@ module.exports = {
                 "#FFFFFF": "#FFFFFF", //gradient end
                 "#0070C0": "#0070C0",
                 "#D7D7D7": "#D7D7D7",
+                "#D9D9D9": "#D9D9D9",
+                "#EAEAEA": "#EAEAEA",
+                "#D9D9D9": "#D9D9D9",
+                "#194E72": "#194E72",
+                "#FBB056": "#FBB056",
                 "mid-red": "rgba(238, 62, 44, 1)",
                 "light-gray": "rgb(107 114 128 / var(--tw-text-opacity))",
             },
             fontSize: {
-                '1sm': '0.5rem',
-                '2sm': '0.438rem',
+                '2xs': '0.688rem', // 11px
+                '3xs': '0.625rem', // 10px
+                '4xs': '0.563rem', // 9px
+                '5xs': '0.5rem',   // 8px
+                '6xs': '0.438rem', // 7px
             },
+            height: {
+                "3.5/6": "60%",
+            }
         },
     },
     plugins: [require("@tailwindcss/typography")],
