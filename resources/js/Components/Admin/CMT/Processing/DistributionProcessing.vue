@@ -3,9 +3,9 @@ import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 </script>
 <script>
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
-import DistributionSummary from "@/Components/Admin/CMT/DistributionSummary.vue";
-import DistributionBreakEntry from "@/Components/Admin/CMT/DistributionBreak&Entry.vue";
-import DistributionJournalEntry from "@/Components/Admin/CMT/DistributionJournalEntry.vue";
+import DistributionSummary from "@/Components/Admin/CMT/Processing/DistributionSummary.vue";
+import DistributionBreakEntry from "@/Components/Admin/CMT/Processing/DistributionBreak&Entry.vue";
+import DistributionJournalEntry from "@/Components/Admin/CMT/Processing/DistributionJournalEntry.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
