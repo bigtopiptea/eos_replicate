@@ -115,7 +115,7 @@ export default {
                             </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white">
-                                <tr v-for="item in monitoring" class="divide-x divide-gray-200">
+                                <tr v-for="item in monitoring" :key="item.id" class="divide-x divide-gray-200">
                                     <td class="whitespace-nowrap px-3 text-center py-2 text-[11px] text-[#3E3E3E]">
                                         {{ item.id }}
                                     </td>
