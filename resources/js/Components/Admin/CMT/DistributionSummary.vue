@@ -3,7 +3,9 @@ import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
 import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
-
+import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
+import InputWithLabel from "@/Components/Misc/Input/InputWithLabel.vue";
+import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 </script>
 
@@ -20,8 +22,9 @@ export default{
         EditIcon,
         NormalButton,
         SearchIcon,
-        InputLabel
-
+        InputLabel,
+        ListIcon,
+        DateInput,
     },
 
     data() {
@@ -53,22 +56,17 @@ export default{
     <div class=" h-auto w-auto mb-3 mx-10">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="flex items-end justify-between h-auto min-w-full -mx-12">
-                    <div class="flex justify-start flex-col space-x-3 ">
-                        <div class="flex left-side-col-1 ">
+                    <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
+                        <div class="flex items-end left-side-col-1 -ml-3">
                             <div>
-                                <InputLabel label="Start Date" />
-                                <br/>
-                                <input class="text-[11px] border border-gray-300 p-2 mr-2" type="date" />
+                                <DateInput label="Start Date" />
                             </div>
                             <div>
-                                <InputLabel label="End Date" />
-                                <br/>
-                                <input class="text-[11px] border border-gray-300 p-2 mr-2" type="date" />
+                                <DateInput label="End Date" />
                             </div>
                             <div>
-                                <br/>
                                 <NormalButton label="Format"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-sm font-medium text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-sm font-medium text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
@@ -137,30 +135,42 @@ export default{
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white">
-                            <tr v-for="biller in billers" :key="biller.id" class="divide-x divide-gray-200">
+                            <tr class="divide-x divide-gray-200">
                                 <td
                                     class="whitespace-nowrap space-x-3 uppercase p-4 text-sm font-rubik-light tracking-wider">
                                     <input type="checkbox" />
                                     <span>
-                                        1
+                                        01
                                     </span>
                                 </td>
                                 <td
                                     class="whitespace-nowrap uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                      -12-13
+                                      Redha_batch2
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    {{ biller.name }}
+                                    103
                              </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
-                                    {{ biller.created_at }}
+                                    649,394.00
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    48.57
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    09/28/2022 12:00:05 PM
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    09/28/2022 12:00:05 PM
                                 </td>
                                 <td
                                     class="whitespace-nowrap uppercase text-center p-4 text-sm font-rubik-light tracking-wider">
                                     <button>
-                                        <EditIcon class="text-[#F9951E] w-full" />
+                                       <img src="../../../../assets/images/Lists.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
                                 </td>
                             </tr>

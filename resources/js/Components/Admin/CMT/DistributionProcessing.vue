@@ -9,9 +9,9 @@ import DistributionJournalEntry from "@/Components/Admin/CMT/DistributionJournal
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
-import {Form} from "vform";
-import Swal from "sweetalert2";
-import { successMessage, errorMessage } from '@/utils/toast.js';
+// import {Form} from "vform";
+// // import Swal from "sweetalert2";
+// // import { successMessage, errorMessage } from '@/utils/toast.js';
 
 
 export default {
@@ -20,36 +20,10 @@ export default {
         return {
 
             selected: "Pending",
-
-            labels: [
-                {label: 'OPEN'},
-                {label: 'HIGH'},
-                {label: 'LOW'},
-                {label: 'CLOSE'},
-                {label: 'DATE UPDATED'},
-                {label: 'UPDATED BY'}
-            ],
-            rateLabels: [
-                {label: 'TIE-UP PARTNER'},
-                {label: 'NOON'},
-                {label: 'FINAL'},
-                {label: 'ACTIVATE RATE'},
-                {label: 'DATE UPDATED'},
-                {label: 'UPDATED BY'},
-                {label: 'ACTIONS'},
-            ],
-            activateRate: [
-                {label: 'noon'},
-                {label: 'final'}
-            ],
             isOpen: true,
             rates: [],
             selected: '',
-            cmtRate: new Form({
-                noon_rate: '',
-                activate_rate: '',
-                final_rate: '',
-            }),
+
         }
     },
     methods: {
@@ -73,40 +47,7 @@ export default {
                 .catch((errors) => [
                 ])
         },
-        editMode(rate){
-            this.selected = rate.id;
-            this.cmtRate.noon_rate = rate.noon_rate;
-            this.cmtRate.final_rate = rate.final_rate;
-            this.cmtRate.activate_rate = rate.activated_rate;
-            // this.cmtRate.reset();
-        },
-        async updateCmtRate(id){
-            Swal.fire({
-                title: "Are you sure you want to update?",
-                icon: "warning",
-                iconColor: "rgba(238, 62, 44, 1)",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, Apply!",
-                cancelButtonText: "No",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    this.cmtRate.put(`/api/rates/cmt/${id}`)
-                        .then((response) => {
-                            successMessage('Success!', response.data.message);
-                            this.getRate();
-                            this.selected = '';
-                            this.cmtRate.reset();
-                        })
-                        .catch((errors) => {
-                            errorMessage('Oops!', 'Error');
-                        })
-                }else{
-                    this.selected = '';
-                }
-            });
-        },
+
     },
     created() {
         this.getRate();
@@ -117,7 +58,7 @@ export default {
 <template>
     <div class="px-4 h-screen  m-2">
         <div class="border  bg-white border-white shadow-md">
-            <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" >
+            <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
                 <Tab :isSelected="selected === 'Pending'" >
                     <div class="w-full h-full mt-10  ">
                         <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openSummary()" />
@@ -132,16 +73,12 @@ export default {
                                     <DistributionBreakEntry/>
                                 </div>
                             </Transition>
-                        <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
+                        <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openJournalEntry()" />
                             <Transition name="slide-fade" >
                                 <div class="mt-6" v-if="!isOpen">
                                     <DistributionJournalEntry/>
                                 </div>
                             </Transition>
-                        <div class="flex justify-center space-x-4 items-center w-full h-auto mb-3 mt-10 ">
-                            <button class=" uppercase py-3 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-base">CANCEL</button>
-                            <button class=" uppercase py-3 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-base">SUBMIT</button>
-                        </div>
                     </div>
                 </Tab>
             </TabNav>
