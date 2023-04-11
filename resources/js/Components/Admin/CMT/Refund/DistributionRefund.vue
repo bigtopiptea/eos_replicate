@@ -6,6 +6,7 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import DropDown from "@/Components/Misc/Dropdown/Dropdown.vue";
 
 </script>
 
@@ -29,7 +30,6 @@ export default {
         InputLabel,
         ListIcon,
         DateInput,
-        Pagination,
     },
     data(){
         return {
