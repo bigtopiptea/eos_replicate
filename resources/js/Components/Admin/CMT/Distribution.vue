@@ -6,6 +6,7 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 // import Accordion from "@/Components/Misc/Tabs/Accordion.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import DistributionProcessing from "@/Components/Admin/CMT/Processing/DistributionProcessing.vue";
+import DistributionCancellation from "@/Components/Admin/CMT/Cancellation/DistributionCancellation.vue";
 import DistributionRefund from "@/Components/Admin/CMT/Refund/DistributionRefund.vue";
 
 export default defineComponent({
@@ -15,6 +16,7 @@ export default defineComponent({
         DateInput,
         DistributionProcessing,
         DistributionRefund,
+        DistributionCancellation,
 
     },
     data(){
@@ -36,7 +38,7 @@ export default defineComponent({
             <DistributionProcessing/>
         </Tab>
         <Tab :isSelected="selected === '1 Cancellation'">
-            <h1>Cancellation</h1>
+            <DistributionCancellation/>
         </Tab>
         <Tab :isSelected="selected === '1 Additional'">
             <h1>Additional</h1>

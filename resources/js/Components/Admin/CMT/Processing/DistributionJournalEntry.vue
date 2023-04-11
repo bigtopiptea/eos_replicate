@@ -83,9 +83,9 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto mb-10 mt-10 w-f">
-                            <button class=" uppercase py-3 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-base">CANCEL</button>
-                            <button class=" uppercase py-3 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-base">SUBMIT</button>
-                        </div>
+                <button class=" uppercase py-3 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-base">CANCEL</button>
+                <button class=" uppercase py-3 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-base">SUBMIT</button>
+            </div>
         </div>
     </div>
 </template>

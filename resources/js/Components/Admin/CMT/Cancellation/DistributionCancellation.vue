@@ -9,7 +9,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue"
 </script>
 
 <script>
-import DistributionRefundJournalEntry from "./DistributionRefundJournalEntry.vue";
+import DistributionRefundJournalEntry from "../Refund/DistributionRefundJournalEntry.vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
@@ -135,20 +135,20 @@ export default{
                                 <th scope="col"
                                     class="py-3.5 px-4 space-x-3 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">                                        <input type="checkbox" />
                                     <span>
-                                    BATCH ID
+                                    ID
                                     </span>
                                 </th>
                                 <th scope="col"
                                     class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    FILENAME
+                                    DATE
                                 </th>
                                 <th scope="col"
                                     class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    ITEM COUNT
+                                    TIE UP
                                 </th>
                                 <th scope="col"
                                     class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
-                                    TOTAL AMOUNT
+                                    REFERENCE NO.
                                 </th>
                                 <th scope="col"
                                     class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  text-sm font-normal text-gray-900">
