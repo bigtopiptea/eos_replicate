@@ -11,7 +11,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
-import DropDown from '../../Misc/Dropdown/Dropdown.vue';
+import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 
 export default{
 

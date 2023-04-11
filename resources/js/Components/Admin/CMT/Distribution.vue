@@ -5,11 +5,18 @@ import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 // import Accordion from "@/Components/Misc/Tabs/Accordion.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-import DistributionProcessing from "@/Components/Admin/CMT/DistributionProcessing.vue";
-
+import DistributionProcessing from "@/Components/Admin/CMT/Processing/DistributionProcessing.vue";
+import DistributionRefund from "@/Components/Admin/CMT/Refund/DistributionRefund.vue";
 
 export default defineComponent({
-    components: {Tab, TabNav, DateInput,DistributionProcessing},
+    components: {
+        Tab,
+        TabNav,
+        DateInput,
+        DistributionProcessing,
+        DistributionRefund,
+
+    },
     data(){
         return {
             selected: "1 Processing",
@@ -38,7 +45,7 @@ export default defineComponent({
             <h1>Adjustment</h1>
         </Tab>
         <Tab :isSelected="selected === '1 Refund'">
-            <h1>Refund</h1>
+            <DistributionRefund/>
         </Tab>
     </TabNav>
 </div>
