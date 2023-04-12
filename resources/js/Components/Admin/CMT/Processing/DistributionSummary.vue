@@ -7,6 +7,7 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
+
 </script>
 
 <script>
@@ -100,37 +101,38 @@ export default{
                         <thead class="bg-[#D7D7D7]">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-3.5 px-4 space-x-3 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">                                        <input type="checkbox" />
+                                    class="py-3.5 px-4 space-x-3 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                    <input type="checkbox" />
                                     <span>
                                     BATCH ID
                                     </span>
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     FILENAME
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     ITEM COUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     TOTAL AMOUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center  text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     EXCHANGE RATE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     PROCESSED DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     VALUE DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
                                     ACTION
                                 </th>
                             </tr>
@@ -138,38 +140,38 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap space-x-3 uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap space-x-3 uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     <input type="checkbox" />
                                     <span>
                                         01
                                     </span>
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap uppercase p-4 text-xs font-rubik-light tracking-wider">
                                       Redha_batch2
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     103
                              </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     649,394.00
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     48.57
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     09/28/2022 12:00:05 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-4 text-xs font-rubik-light tracking-wider">
                                     09/28/2022 12:00:05 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase text-center p-4 text-sm font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap uppercase text-center p-4 text-xs font-rubik-light tracking-wider">
                                     <button>
                                        <img src="../../../../../assets/images/ListIcon.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
@@ -180,7 +182,7 @@ export default{
                 </div>
             </div>
             <Pagination @paginate="getDistributionSummary()"  :pagination="pagination"
-                :offset="5" />
+                :offset="1" class = "mt-8"/>
         </div>
     </div>
 </template>

@@ -249,8 +249,8 @@ export default{
                     </table>
                 </div>
             </div>
-            <Pagination @paginate="getDistributionSummary()"  :pagination="pagination"
-                :offset="5" />
+            <Pagination @paginate="getDistributionRefund()"  :pagination="pagination"
+                    :offset="1" class="mt-8" />
         </div>
 
                 <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />

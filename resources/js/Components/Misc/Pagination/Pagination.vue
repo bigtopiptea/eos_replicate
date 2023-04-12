@@ -46,27 +46,31 @@
                 </p>
             </div>
             <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination" >
-                <a @click.prevent="changePage(1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
+                <!-- <a @click.prevent="changePage(1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
                     <span class="sr-only">First Page</span>
                     <DoubleChevronLeft class="h-4" />
-                </a>
-                <a @click.prevent="changePage(pagination.current_page - 1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
+                </a> -->
+                <a @click.prevent="changePage(pagination.current_page - 1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium uppercase text-[#000000] hover:bg-gray-50 focus:z-20">
                     <span class="sr-only">Prev</span>
-                    <ChevLeftIcon class="h-4" />
+                    <DoubleChevronLeft class="h-4" />
+                    <!-- <ChevLeftIcon class="h-4" /> -->
+                    Prev
                 </a>
                 <a v-for="page in pages" :key="page" @click.prevent="changePage(page)" :class="isCurrentPage(page) ? 'active border border-blue-500 text-blue-500' : ''"
-                    class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+                    class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20">
                     {{ page }}
                 </a>
                 <a @click.prevent="changePage(pagination.current_page + 1)"
-                    class="relative uppercase font-rubik-light hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+                    class="relative uppercase font-rubik-light hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20">
                     <span class="sr-only">Next</span>
-                    <ChevRightIcon class="h-4" />
-                </a>
-                <a :class=" pagination.current_page <= 1 ? '' : 'text-red-500'" @click.prevent="changePage(pagination.last_page)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
-                    <span class="sr-only">Last Page</span>
+                    Next
+                    <!-- <ChevRightIcon class="h-4" /> -->
                     <DoubleChevronRight class="h-4" />
                 </a>
+                <!-- <a :class=" pagination.current_page <= 1 ? '' : 'text-red-500'" @click.prevent="changePage(pagination.last_page)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
+                    <span class="sr-only">Last Page</span>
+                    <DoubleChevronRight class="h-4" />
+                </a> -->
             </nav>
         </div>
     </div>
@@ -74,16 +78,16 @@
 
 <script>
 import { defineComponent } from "vue";
-import ChevLeftIcon from "../Icons/ChevLeftIcon.vue";
-import ChevRightIcon from "../Icons/ChevRightIcon.vue";
+// import ChevLeftIcon from "../Icons/ChevLeftIcon.vue";
+// import ChevRightIcon from "../Icons/ChevRightIcon.vue";
 import DoubleChevronLeft from "@/Components/Misc/Icons/DoubleChevronLeft.vue";
 import DoubleChevronRight from "@/Components/Misc/Icons/DoubleChevronRight.vue";
 export default defineComponent({
     components: {
         DoubleChevronRight,
         DoubleChevronLeft,
-        ChevLeftIcon,
-        ChevRightIcon,
+        // ChevLeftIcon,
+        // ChevRightIcon,
     },
     props: ["pagination", "offset"],
     data() {

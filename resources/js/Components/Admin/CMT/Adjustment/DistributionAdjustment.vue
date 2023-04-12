@@ -3,7 +3,6 @@ import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 </script>
 <script>
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
-
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";

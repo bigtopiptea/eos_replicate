@@ -2,6 +2,7 @@
 import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 </script>
 <script>
+import Accordion from "@/Components/Misc/Accordion.vue"
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import DistributionSummary from "@/Components/Admin/CMT/Processing/DistributionSummary.vue";
 import DistributionBreakEntry from "@/Components/Admin/CMT/Processing/DistributionBreak&Entry.vue";
@@ -57,27 +58,18 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
             <Tab :isSelected="selected === 'Pending'" >
-                <div class="w-full h-full mt-10  ">
-                    <SmallHeading :isOpen="isOpen" label="SUMMARY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openSummary()" />
-                        <Transition name="slide-fade" >
-                            <div class="mt-6" v-if="!isOpen">
-                                <DistributionSummary/>
-                            </div>
-                        </Transition>
-                    <SmallHeading :isOpen="isOpen" label="BREAKDOWN AND ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openBreakAndEntry()" />
-                        <Transition name="slide-fade" >
-                            <div class="mt-6" v-if="!isOpen">
-                                <DistributionBreakEntry/>
-                            </div>
-                        </Transition>
-                    <SmallHeading :isOpen="isOpen" label="JOURNAL ENTRY " class="bg-dark-orange mt-10" :icon="ChevRightIcon" @click.prevent="openJournalEntry()" />
-                        <Transition name="slide-fade" >
-                            <div class="mt-6" v-if="!isOpen">
-                                <DistributionJournalEntry/>
-                            </div>
-                        </Transition>
+                <div class="w-full h-full ">
+                        <Accordion sectiontitle="SUMMARY ">
+                            <DistributionSummary/>
+                        </Accordion>
+                        <Accordion sectiontitle="BREAKDOWN AND ENTRY ">
+                            <DistributionBreakEntry/>
+                        </Accordion>
+                        <Accordion sectiontitle="JOURNAL ENTRY ">
+                            <DistributionJournalEntry/>
+                        </Accordion>
                 </div>
             </Tab>
         </TabNav>

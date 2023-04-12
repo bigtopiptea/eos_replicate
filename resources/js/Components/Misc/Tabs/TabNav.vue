@@ -6,11 +6,23 @@
                              to="" href="#" aria-current="page"
                              :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab}]"
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
-                             hover:bg-[#F9951E] hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light"
+                             hover:bg-[#F9951E] hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
-                    {{ tab }}
+                            <!-- <div class=" text-2xl">
+                            {{tab.value}}
+                            </div>
+
+                            <div>
+                            {{tab.name}}
+                            </div> -->
+                            <div v-for="NumTab in NumTabs" :key="Numtab" class="mr-1 ">
+                            {{ NumTab }}
+                            </div>
+                           {{ tab }}
+
                 </router-link>
             </div>
+
         </div>
         <div class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full"></div>
     </div>
@@ -24,6 +36,10 @@ export default {
             type: Array,
             required: true,
         },
+        NumTabs:{
+            type: Array,
+            required:true,
+        },
         selected: {
             type: String,
             required: true,
@@ -31,12 +47,12 @@ export default {
     },
     methods: {
         setTab(tab) {
-            this.$emit('selected', tab);
+            this.$emit('selected',tab);
         }
     },
     computed: {
         tabLength(){
-            return this.tabs.length > 1 ? 'px-4' : 'px-6';
+            return this.tabs.length > 5 ? 'px-4' : 'px-6';
         },
     }
 }

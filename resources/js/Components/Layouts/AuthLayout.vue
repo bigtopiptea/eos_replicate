@@ -347,7 +347,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isLogout" class="bg-white rounded-sm border border-gray-300 w-[15%] border fixed right-4 z-10 top-12">
+            <div v-if="isLogout" class="bg-white rounded-sm border border-gray-300 w-[15%] fixed right-4 z-10 top-12">
                 <div class="text-center py-4">
                     <div class="px-4 m-auto w-full flex items-center justify-center">
                         <img class="rounded-full w-20 h-20 "

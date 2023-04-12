@@ -114,7 +114,7 @@ export default {
                                             class="whitespace-nowrap uppercase p-4 text-sm font-rubik-light tracking-wider">
                                             11-12-13
 
-                                        </td>
+                                        </td>g
                                         <td
                                             class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
                                             {{ biller.name }}

@@ -31,35 +31,29 @@ export default{
                                 class="px-2 py-3 w-[40%] uppercase tracking-wider font-rubik-light text-center  text-[12px] font-semibold text-#FFFFFF">
                                 Remarks
                             </th>
-
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white">
                         <tr class="divide-x divide-gray-200">
-
                             <td
                                 class="whitespace-nowrap uppercase py-3 px-2 text-sm font-rubik-light tracking-wider">
                                 <SettingsInput placeholder="Enter Entries"
                                     class="w-full uppercase font-rubik-light" />
-
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase py-3 px-2 text-sm font-rubik-light tracking-wider">
                                 <SettingsInput  placeholder="Enter Debit"
                                     class="w-full uppercase font-rubik-light" />
-
                             </td>
                             <td
                             class="whitespace-nowrap uppercase py-3 px-2 text-sm font-rubik-light tracking-wider">
                                 <SettingsInput  placeholder="Enter Credit"
                                     class="w-full uppercase font-rubik-light" />
-
                             </td>
                             <td
                             class="whitespace-nowrap uppercase py-3 px-2 text-sm font-rubik-light tracking-wider">
                                 <SettingsInput  placeholder="Enter Remarks"
                                     class="w-full uppercase font-rubik-light" />
-
                             </td>
                         </tr>
                     </tbody>
