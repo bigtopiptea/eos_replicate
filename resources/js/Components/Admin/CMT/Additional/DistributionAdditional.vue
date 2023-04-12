@@ -217,9 +217,9 @@ export default{
                             </table>
                         </div>
                     </div>
-                    <Pagination @paginate="getDistributionAdditional()"  :pagination="pagination"
-                        :offset="1" class="mt-8" />
                 </div>
+                <Pagination @paginate="getDistributionAdditional()"  :pagination="pagination"
+                    :offset="1" class="mt-8" />
                 <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />
                 <Transition name="slide-fade" >
                     <div class=" -mx-8 " v-if="!isOpen">

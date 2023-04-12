@@ -14,12 +14,12 @@
         </div>
 
         <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-            <div class="mt-1 flex ">
+            <div class="mt-1 flex">
                 Show
                 <v-select
                     v-model="perPageOptions.value"
                     selected="active"
-                    class="uppercase border border-gray-300 shadow-sm ml-5 mr-5"
+                    class="uppercase border border-gray-300 shadow-sm ml-5 mr-5 z-50"
                     :options="perPageOptions"
                     @option:selected="perPageValue()"
                 >

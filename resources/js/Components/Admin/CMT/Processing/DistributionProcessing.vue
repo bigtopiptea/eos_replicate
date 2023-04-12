@@ -61,7 +61,7 @@ export default {
         <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-full ">
-                        <Accordion sectiontitle="SUMMARY ">
+                        <Accordion sectiontitle="SUMMARY">
                             <DistributionSummary/>
                         </Accordion>
                         <Accordion sectiontitle="BREAKDOWN AND ENTRY ">

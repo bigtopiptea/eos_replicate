@@ -135,9 +135,9 @@ export default {
                             </table>
                         </div>
                     </div>
-                    <Pagination @paginate="getBreakEntry()"  :pagination="pagination"
-                        :offset="5" />
                 </div>
+                <Pagination @paginate="getBreakEntry()"  :pagination="pagination"
+                    :offset="5" />
             </div>
         </div>
     </div>

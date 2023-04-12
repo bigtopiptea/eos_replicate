@@ -55,10 +55,10 @@ export default{
 </script>
 
 <template>
-    <div class=" h-auto w-auto mb-3 mx-10">
+    <div class="h-auto w-auto mb-3">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="flex items-end justify-between h-auto min-w-full -mx-12">
-                    <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
+                    <div class="flex justify-start flex-col space-x-3">
                         <div class="flex items-end left-side-col-1 -ml-3">
                             <div>
                                 <DateInput label="Start Date" />
@@ -181,9 +181,9 @@ export default{
                     </table>
                 </div>
             </div>
-            <Pagination @paginate="getDistributionSummary()"  :pagination="pagination"
-                :offset="1" class = "mt-8"/>
         </div>
+        <Pagination @paginate="getDistributionSummary()"  :pagination="pagination"
+            :offset="1" class = "mt-8"/>
     </div>
 </template>
 <style>
