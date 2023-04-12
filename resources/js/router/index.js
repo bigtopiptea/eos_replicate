@@ -23,7 +23,7 @@ import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
 import Reports from "@/Components/Admin/Reports/Reports.vue";
 import Home from "@/Components/Admin/CMT/Home.vue";
-import Distribution from "@/Components/Admin/CMT/Distribution.vue";
+import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
