@@ -14,13 +14,17 @@
                             <div>
                             {{tab.name}}
                             </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 27a1ddbdaee73f62b3d37a26f6a287f72e8f1864
                 </router-link>
             </div>
 
         </div>
-        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full"></div>
+        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full">
+        </div>
     </div>
     <slot></slot>
 </template>
