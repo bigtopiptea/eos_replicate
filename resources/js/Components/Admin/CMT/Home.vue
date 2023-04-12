@@ -4,6 +4,7 @@ import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
 import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
+import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
 
 </script>
 
@@ -12,10 +13,13 @@ import {defineComponent} from "vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
+import HomeMainContent from "./HomeComponent/HomeMainContent.vue";
+import FundingWorksheet from "./HomeComponent/FundingWorksheet.vue";
+
 
 export default defineComponent({
     components: {
-        SmallHeading, Slideover, LoadingIcon, XMarkIcon, ProgressIcon, RangeSlider
+        HomeMainContent, SmallHeading, Slideover, LoadingIcon, XMarkIcon, ProgressIcon, RangeSlider, FundingWorksheet, 
     },
     data(){
         return{
@@ -46,306 +50,13 @@ export default defineComponent({
 </script>
 <template>
     <!-- MAIN CONTENT -->
-    <div class="3xl:container h-screen p-3 bg-white">
-        <div class="font-rubik-light">
-            <p class="text-base font-bold">COMMITED RATE AS OF: <br>
-               <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
-            </p>
-        </div>
-        <div class="flex justify-between mt-3 pb-5 font-rubik-light border-b-2 border-solid border-#EAEAEA">
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.01</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">49.99</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.02</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">49.98</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
-                <img src="../../../../assets/images/usd_to_php_graph.png" alt="graph-image"/>
-                <p class="text-xs text-left font-medium">USD to PHP</p>
-            </div>
-        </div>
-        <div class="flex justify-between w-full h-4/6 my-5">
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center">
-                    <thead class="sticky top-0">
-                        <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">BANK BALANCES</th>
-                        </tr>
-                        <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">BANKS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
-                        </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
-                            <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center overflow-auto">
-                    <thead class="sticky top-0">
-                        <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">TIE-UPS FUNDS</th>
-                        </tr>
-                        <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">TIE-UPS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
-                        </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
-                            <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center">
-                    <thead class="sticky top-0">
-                        <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">BANK & PROVIDERS FUNDS</th>
-                        </tr>
-                        <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">BANKS & PROVIDERS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
-                        </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
-                            <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <HomeMainContent/>
 
-    <!-- SLIDEOVER SAMPLE TRIGGER-->
-    <button type="submit" @click="(slideoverOpen = !slideoverOpen)" >Open Slider</button>
-
-    <!-- FUNDING WO -->
-    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()" />
+    <!-- FUNDING WORKSHEET -->
+    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()"/>
     <Transition name="slide-fade" >
         <div class="3xl:container h-auto bg-white p-3" v-if="!isOpen">
-            <!-- FULL WIDTH TABLE -->
-            <div class="h-full w-full font-rubik-light">
-                <h1 class="text-xs  mb-2">BANKS & WALLET FUNDINGS</h1>
-                <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
-                    <thead class="sticky top-0 bg-#D9D9D9">
-                        <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
-                            <th class="p-2 text-left">BANK</th>
-                            <th class="p-2">BEGINNING BALANCE</th>
-                            <th class="p-2">ITEMS</th>
-                            <th class="p-2">REMITTANCE AMOUNT</th>
-                            <th class="p-2">TRANSACTION COST</th>
-                            <th class="p-2">TOTAL COST</th>
-                            <th class="p-2">ADVANCE FUNDING</th>
-                            <th class="p-2">FOR FUNDING</th>
-                            <th class="p-2">BANK CHARGE</th>
-                            <th class="p-2">FOR RTGS</th>
-                            <th class="p-2">FUND FROM</th>
-                            <th class="p-2">ESTIMATED TRANSACTIONS</th>
-                            <th class="p-2">REMARKS</th>
-                            <th class="p-2">ENDING BALANCE</th>
-                        </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA  divide-x divide-#EAEAEA">
-                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
-                            <td>1,000,000.00</td>
-                            <td>25</td>
-                            <td>500,000.00</td>
-                            <td>15.00</td>
-                            <td>375.00</td>
-                            <td> - </td>
-                            <td>500.374.00</td>
-                            <td>-</td>
-                            <td>500.374.00</td>
-                            <td>ALL BANK</td>
-                            <td>750,000.00</td>
-                            <td> </td>
-                            <td>250,000.00</td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
-                            <td>1,000,000.00</td>
-                            <td>25</td>
-                            <td>500,000.00</td>
-                            <td>15.00</td>
-                            <td>375.00</td>
-                            <td> - </td>
-                            <td>500.374.00</td>
-                            <td>-</td>
-                            <td>500.374.00</td>
-                            <td>ALL BANK</td>
-                            <td>750,000.00</td>
-                            <td> </td>
-                            <td>250,000.00</td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
-                            <td>1,000,000.00</td>
-                            <td>25</td>
-                            <td>500,000.00</td>
-                            <td>15.00</td>
-                            <td>375.00</td>
-                            <td> - </td>
-                            <td>500.374.00</td>
-                            <td>-</td>
-                            <td>500.374.00</td>
-                            <td>ALL BANK</td>
-                            <td>750,000.00</td>
-                            <td> </td>
-                            <td>250,000.00</td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
-                            <td>1,000,000.00</td>
-                            <td>25</td>
-                            <td>500,000.00</td>
-                            <td>15.00</td>
-                            <td>375.00</td>
-                            <td> - </td>
-                            <td>500.374.00</td>
-                            <td>-</td>
-                            <td>500.374.00</td>
-                            <td>ALL BANK</td>
-                            <td>750,000.00</td>
-                            <td> </td>
-                            <td>250,000.00</td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td>ALL BANK (ALL THRIFT BANK) INC.</td>
-                            <td>1,000,000.00</td>
-                            <td>25</td>
-                            <td>500,000.00</td>
-                            <td>15.00</td>
-                            <td>375.00</td>
-                            <td> - </td>
-                            <td>500.374.00</td>
-                            <td>-</td>
-                            <td>500.374.00</td>
-                            <td>ALL BANK</td>
-                            <td>750,000.00</td>
-                            <td> </td>
-                            <td>250,000.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="flex gap-3">
-                <!-- HALF TABLE 1 -->
-                <div class="h-full w-1/2 font-rubik-light">
-                    <h1 class="text-xs  my-2">TRANSFERS</h1>
-                    <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
-                        <thead class="sticky top-0 bg-#D9D9D9 divide-x divide-#EAEAEA">
-                            <tr class="border-b border-#EAEAEA p-5">
-                                <th class="p-2 text-left">FROM BANK</th>
-                                <th class="p-2">TO BANK</th>
-                                <th class="p-2">AMOUNT</th>
-                            </tr>
-                        </thead>
-                        <tbody class="overflow-y-auto">
-                            <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                                <td> --- </td>
-                                <td> --- </td>
-                                <td> --- </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- HALF TABLE 2 -->
-                <div class="h-full w-1/2 font-rubik-light">
-                    <h1 class="text-xs  my-2">TRADING</h1>
-                    <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
-                        <thead class="sticky top-0 bg-#D9D9D9">
-                            <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
-                                <th class="p-2 text-left">COMPANY NAME</th>
-                                <th class="p-2">TO BANK</th>
-                                <th class="p-2">USD AMOUNT</th>
-                                <th class="p-2">RATE</th>
-                                <th class="p-2">TOTAL AMOUNT</th>
-                            </tr>
-                        </thead>
-                        <tbody class="overflow-y-auto">
-                            <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                                <td> --- </td>
-                                <td> --- </td>
-                                <td> --- </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 3/4 TABLE (ALIGN LEFT) -->
-            <div class="h-full w-4/5 font-rubik-light">
-                <h1 class="text-xs  my-2">FUNDING WORKSHEET CASH POSITION</h1>
-                <table class="h-full border-collapse border border-#EAEAEA w-full text-center text-3xs font-rubik-light">
-                    <thead class="sticky top-0 bg-#D9D9D9">
-                        <tr class="border-b border-#EAEAEA p-5 divide-x divide-#EAEAEA">
-                            <th class="p-2 text-left">BANK</th>
-                            <th class="p-2">AVAILABLE BALANCE</th>
-                            <th class="p-2">TRANSFERS</th>
-                            <th class="p-2">TRADINGS</th>
-                            <th class="p-2">RTGS</th>
-                            <th class="p-2">ENDING BALANCE</th>
-                        </tr>
-                    </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                        </tr>
-                        <tr class="border-b border-#EAEAEA divide-x divide-#EAEAEA">
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                            <td> --- </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <FundingWorksheet/>
         </div>
     </Transition>
 
@@ -415,7 +126,7 @@ export default defineComponent({
                             <LoadingIcon></LoadingIcon>
                             <span>photo_lasconia.jpg</span>
                         </div>
-                        <div>
+                        <div class="cursor-pointer">
                             <XMarkIcon></XMarkIcon>
                         </div>
                     </div>
@@ -440,7 +151,7 @@ export default defineComponent({
             </div>
             <div class="flex justify-between w-4/5">
                 <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
+                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-lg cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
             </div>
         </div>
     </Slideover>
@@ -449,12 +160,12 @@ export default defineComponent({
     <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center py-5 h-full">
             <div class="flex flex-col items-center">
-                <div class="w-auto p-7 bg-#F9951E rounded-md relative">
-                    <div class="absolute top-3 right-3 text-white">
+                <div class="flex justify-center items-center w-auto h-auto p-7 bg-#F9951E rounded-md relative">
+                    <div class="absolute top-3 right-3 text-white cursor-pointer">
                         <XMarkIcon></XMarkIcon>
                     </div>
-                    <div class="flex justify-center items-center w-80 h-60 bg-#EAEAEA">
-                        <img src="../../../../assets/images/user-logo.png" alt="user-logo" class="w-56 h-56 rounded-full border border-#3E3E3E">
+                    <div class="flex justify-center items-center w-72 h-52 bg-#EAEAEA">
+                        <img src="../../../../assets/images/user-logo.png" alt="user-logo" class=" w-48 h-48 rounded-full border border-#3E3E3E">
                     </div>
                 </div>
                 <div class="mt-2">
@@ -464,11 +175,14 @@ export default defineComponent({
 
             <div class="flex justify-between w-4/5">
                 <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-8 py-2 bg-#F9951E text-white text-lg cursor-pointer">SAVE</buttton>
+                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-lg cursor-pointer">SAVE</buttton>
             </div>
         </div>
     </Slideover>
 
-
+    <!-- SLIDEOVER TRIGGER (FOR DEMONSTRATION)-->
+    <button type="submit" @click="(slideoverOpen = !slideoverOpen)" class="p-3 bg-black text-white rounded-full flex">
+        <UserIcon></UserIcon>
+    </button>
 </template>
 
