@@ -18,7 +18,8 @@
             </div>
 
         </div>
-        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full"></div>
+        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full">
+        </div>
     </div>
     <slot></slot>
 </template>
