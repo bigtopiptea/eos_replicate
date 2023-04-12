@@ -4,9 +4,9 @@ import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 <script>
 import Accordion from "@/Components/Misc/Accordion.vue"
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
-import DistributionSummary from "@/Components/Admin/CMT/Processing/DistributionSummary.vue";
-import DistributionBreakEntry from "@/Components/Admin/CMT/Processing/DistributionBreak&Entry.vue";
-import DistributionJournalEntry from "@/Components/Admin/CMT/Processing/DistributionJournalEntry.vue";
+import DistributionSummary from "@/Components/Admin/Distribution/Processing/DistributionSummary.vue";
+import DistributionBreakEntry from "@/Components/Admin/Distribution/Processing/DistributionBreak&Entry.vue";
+import DistributionJournalEntry from "@/Components/Admin/Distribution/Processing/DistributionJournalEntry.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";

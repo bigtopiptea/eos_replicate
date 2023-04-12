@@ -14,11 +14,7 @@
                             <div>
                             {{tab.name}}
                             </div>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 27a1ddbdaee73f62b3d37a26f6a287f72e8f1864
                 </router-link>
             </div>
 

@@ -22,13 +22,8 @@ import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
 import Reports from "@/Components/Admin/Reports/Reports.vue";
-<<<<<<< HEAD
-import Home from "@/Components/Admin/CMT/Home.vue";
-import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
-=======
 import Home from "@/Components/Admin/Home/Home.vue";
-import Distribution from "@/Components/Admin/CMT/Distribution.vue";
->>>>>>> 27a1ddbdaee73f62b3d37a26f6a287f72e8f1864
+import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
