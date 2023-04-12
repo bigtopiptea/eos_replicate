@@ -15,7 +15,7 @@
                             <div>
                             {{tab.name}}
                             </div> -->
-                            <div v-for="NumTab in NumTabs" :key="Numtab" class="mr-1 ">
+                            <div v-for="NumTab in NumTabs" :key="Numtab" class="mr-1 text-2xl">
                             {{ NumTab }}
                             </div>
                            {{ tab }}

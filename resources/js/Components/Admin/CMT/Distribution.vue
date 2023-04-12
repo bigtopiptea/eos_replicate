@@ -39,7 +39,7 @@ export default defineComponent({
 </script>
 <template>
     <div class="w-full min-h-full bg-white ">
-    <TabNav :selected="selected" :NumTabs="['1','1','1','1','1']" :tabs="['Processing', 'Cancellation' , 'Additional' , 'Adjustment' , 'Refund']" @selected="setSelected ">
+    <TabNav :selected="selected" :NumTabs="['1']" :tabs="['Processing', 'Cancellation' , 'Additional' , 'Adjustment' , 'Refund']" @selected="setSelected ">
         <Tab :isSelected="selected === 'Processing'">
             <DistributionProcessing/>
         </Tab>
