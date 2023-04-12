@@ -58,8 +58,8 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
-            <Tab :isSelected="selected === 'Pending'" >
+        <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" >
+            <Tab :isSelected="selected.name === 'Pending'" >
                 <div class="w-full h-full ">
                         <Accordion sectiontitle="SUMMARY ">
                             <DistributionSummary/>

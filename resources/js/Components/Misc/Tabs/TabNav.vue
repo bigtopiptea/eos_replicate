@@ -4,27 +4,23 @@
             <div v-for="tab in tabs" :key="tab" class="mr-1 ">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
-                             :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab}]"
+                             :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab.name}]"
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
                              hover:bg-[#F9951E] hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
-                            <!-- <div class=" text-2xl">
+                            <div class=" text-lg">
                             {{tab.value}}
                             </div>
-
                             <div>
                             {{tab.name}}
-                            </div> -->
-                            <div v-for="NumTab in NumTabs" :key="Numtab" class="mr-1 text-2xl">
-                            {{ NumTab }}
                             </div>
-                           {{ tab }}
+
 
                 </router-link>
             </div>
 
         </div>
-        <div class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full"></div>
+        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full"></div>
     </div>
     <slot></slot>
 </template>
@@ -47,7 +43,7 @@ export default {
     },
     methods: {
         setTab(tab) {
-            this.$emit('selected',tab);
+            this.$emit('selected', tab);
         }
     },
     computed: {

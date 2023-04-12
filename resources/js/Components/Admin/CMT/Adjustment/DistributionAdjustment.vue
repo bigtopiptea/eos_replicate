@@ -27,15 +27,7 @@ export default {
         setSelected(tab) {
             this.selected = tab;
         },
-        openSummary(){
-            this.isOpen = !this.isOpen;
-        },
-        openBreakAndEntry(){
-            this.isOpen = !this.isOpen;
-        },
-        openJournalEntry(){
-            this.isOpen = !this.isOpen;
-        },
+
         async getRate(){
             await axios.get('/api/rates/cmt/list')
                 .then((response) => {
@@ -54,8 +46,8 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
-            <Tab :isSelected="selected === 'Pending'" >
+        <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+            <Tab :isSelected="selected.name === 'Pending'" >
                 <div class="w-full h-full mt-10  ">
 
                 </div>

@@ -39,20 +39,20 @@ export default defineComponent({
 </script>
 <template>
     <div class="w-full min-h-full bg-white ">
-    <TabNav :selected="selected" :NumTabs="['1']" :tabs="['Processing', 'Cancellation' , 'Additional' , 'Adjustment' , 'Refund']" @selected="setSelected ">
-        <Tab :isSelected="selected === 'Processing'">
+    <TabNav :selected="selected.name" :tabs="[{name:'Processing', value: 1}, {name:'Cancellation', value: 1} , {name:'Additional', value: 1} , {name:'Adjustment', value: 1}  , {name:'Refund', value: 1} , ]" @selected="setSelected" >
+        <Tab :isSelected="selected.name === 'Processing'">
             <DistributionProcessing/>
         </Tab>
-        <Tab :isSelected="selected === 'Cancellation'">
+        <Tab :isSelected="selected.name === 'Cancellation'">
             <DistributionCancellation/>
         </Tab>
-        <Tab :isSelected="selected === 'Additional'">
+        <Tab :isSelected="selected.name === 'Additional'">
             <DistributionAdditional/>
         </Tab>
-        <Tab :isSelected="selected === 'Adjustment'">
+        <Tab :isSelected="selected.name === 'Adjustment'">
             <DistributionAdjustment/>
         </Tab>
-        <Tab :isSelected="selected === 'Refund'">
+        <Tab :isSelected="selected.name === 'Refund'">
             <DistributionRefund/>
         </Tab>
     </TabNav>
