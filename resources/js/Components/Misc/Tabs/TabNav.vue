@@ -13,16 +13,8 @@
                             </div>
                             <div>
                             {{tab.name}}
-<<<<<<< HEAD
-                            </div> -->
-                            <div v-for="NumTab in NumTabs" :key="Numtab" class="mr-1 text-lg">
-                                {{ NumTab }}
-                            </div>
-                                {{ tab }}
-=======
                             </div>
 
->>>>>>> c1ba1974dd4287d3ab0e02090b0ef572fd598eba
 
                 </router-link>
             </div>
