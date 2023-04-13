@@ -18,7 +18,7 @@ const props = defineProps({
             {{ props.label }}
             <span v-if="props.required == 'required'" class="text-red-500">*</span>
         </label>
-        <div class="border border-[#EAEAEA] h-10 mt-1 p-2.5 pl-4 text-[#3E3E3E] text-[12px]">
+        <div class="border border-[#EAEAEA] h-[34px] mt-1 p-2.5 pl-4 text-[#3E3E3E] text-opacity-50 text-[10px]">
             <input type="date"/>
         </div>
     </div>

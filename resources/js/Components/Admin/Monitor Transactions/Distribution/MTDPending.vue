@@ -102,43 +102,43 @@ export default{
                         <thead class="bg-[#D7D7D7]">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider text-center text-[12px] font-bold text-gray-900">
                                     ID
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     TYPE
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     REFERENCE NO.
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     BANK
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     CURRENCY
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     ITEMS
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     NET AMOUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-1 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     WORKFLOW STATUS
                                 </th>
                                 <th scope="col"
-                                    class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                    class="py-3.5 px-4 whitespace-nowrap uppercase tracking-wider  text-center text-[12px] font-bold text-gray-900">
                                     ACTION
                                 </th>
                             </tr>
@@ -146,43 +146,43 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap space-x-3 uppercase p-2 text-xs font-rubik-light tracking-wider text-left  ">
+                                    class="whitespace-nowrap space-x-3 uppercase p-2 text-[12px]  tracking-wider text-left  ">
                                     01
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap uppercase p-2 text-[12px]  tracking-wider">
                                     09/28/2022 11:00:09 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-left uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-left uppercase p-2 text-[12px]  tracking-wider">
                                     PROCESSING
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-left uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-left uppercase p-2 text-[12px]  tracking-wider">
                                     CMT0-09282022-0006
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-left uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-left uppercase p-2 text-[12px]  tracking-wider">
                                     BDO OUT
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-2 text-[12px]  tracking-wider">
                                     PHP
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase p-2 text-[12px]  tracking-wider">
                                     524
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-left uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-left uppercase p-2 text-[12px]  tracking-wider">
                                     9,240,003.25
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-left uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                    class="whitespace-nowrap text-left uppercase p-2 text-[12px]  tracking-wider">
                                     FOR VERIFICATION
                                 </td>
                                 <td
-                                    class="flex whitespace-nowrap uppercase justify-evenly py-2  text-xs font-rubik-light tracking-wider">
+                                    class="flex whitespace-nowrap uppercase justify-evenly py-2  text-[12px]  tracking-wider">
                                     <button>
                                        <img src="../../../../../assets/images/PrintIcon.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
