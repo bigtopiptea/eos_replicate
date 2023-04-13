@@ -4,18 +4,21 @@ import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import MTDistribution from ".//Distribution/MTDistribution.vue"
 import MTFunding from "./Funding/MTFunding.vue";
+import MTTrading from "./Trading/MTTrading.vue"
 
 export default{
     components: {
 
         Tab,
         TabNav,
-        MTDistribution, MTFunding
+        MTDistribution,
+        MTFunding,
+        MTTrading,
 
     },
     data(){
         return {
-            selected: 'Distribution',
+            selected: "Distribution",
         }
     },
     methods: {
@@ -27,7 +30,7 @@ export default{
 </script>
 <template>
        <div class="w-full border bg-white border-white">
-           <TabNav :tabs="[{name: 'Distribution', value: 6}, {name: 'Funding', value: 4 }, {name: 'Trading', value: 2 }]" :selected="selected" @selected="setSelected">
+           <TabNav :selected="selected.name" :tabs="[{name: 'Distribution', value: 6}, {name: 'Funding', value: 4 }, {name: 'Trading', value: 2 }]"  @selected="setSelected">
                <Tab :isSelected="selected.name === 'Distribution'">
                    <MTDistribution/>
                </Tab>
@@ -35,7 +38,7 @@ export default{
                    <MTFunding/>
                </Tab>
                <Tab :isSelected="selected.name === 'Trading'">
-                   <h1>Additional</h1>
+                   <MTTrading/>
                </Tab>
            </TabNav>
        </div>

@@ -19,7 +19,7 @@
             </div>
 
         </div>
-        <div :class="[tabBorder]" class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full">
+        <div class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full">
         </div>
     </div>
     <slot></slot>
@@ -31,10 +31,6 @@ export default {
         tabs: {
             type: Array,
             required: true,
-        },
-        NumTabs:{
-            type: Array,
-            required:true,
         },
         selected: {
             type: String,
