@@ -7,13 +7,22 @@ import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
+import MTDPending from "./MTDPending.vue";
+import MTDApprovalHistory from "./MTDApprovalHistory.vue";
+
 // import {Form} from "vform";
 // // import Swal from "sweetalert2";
 // // import { successMessage, errorMessage } from '@/utils/toast.js';
 
 
 export default {
-    components: {SmallHeading, },
+    components: {
+        SmallHeading,
+        MTDPending,
+        MTDApprovalHistory,
+
+
+    },
     data(){
         return {
 
@@ -28,15 +37,7 @@ export default {
         setSelected(tab) {
             this.selected = tab;
         },
-        openSummary(){
-            this.isOpen = !this.isOpen;
-        },
-        openBreakAndEntry(){
-            this.isOpen = !this.isOpen;
-        },
-        openJournalEntry(){
-            this.isOpen = !this.isOpen;
-        },
+
         async getRate(){
             await axios.get('/api/rates/cmt/list')
                 .then((response) => {
@@ -57,13 +58,13 @@ export default {
     <div class="border m-3 bg-white border-white shadow-md">
         <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" >
             <Tab :isSelected="selected.name === 'Pending'" >
-                <div class="w-full h-full ">
-                    <h1>Approval Pending</h1>
+                <div class="w-full h-auto  ">
+                    <MTDPending/>
                 </div>
             </Tab>
             <Tab :isSelected="selected.name === 'Approval History'" >
-                <div class="w-full h-full ">
-                    <h1>Approval History</h1>
+                <div class="w-full h-screen ">
+                    <MTDApprovalHistory/>
                 </div>
             </Tab>
         </TabNav>
