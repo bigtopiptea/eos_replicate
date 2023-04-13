@@ -7,7 +7,6 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
-
 </script>
 
 <script>
@@ -28,7 +27,7 @@ export default{
         ListIcon,
         DateInput,
         Pagination,
-        Slideover
+        Slideover,
     },
 
     data() {
@@ -108,49 +107,49 @@ export default{
                             <thead class="bg-[#D7D7D7]">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="py-3.5 px-1 space-x-3 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 space-x-3 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         <span>
                                         ID
                                         </span>
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         DATE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         TYPE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         NAME
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         BANK
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         CURRENCY
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         RATE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         NET AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-1 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         WORKFLOW STATUS
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-7 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-3.5 px-7 uppercase tracking-wider  text-center text-xs font-bold text-gray-900">
                                         ACTION
                                     </th>
                                 </tr>
@@ -158,49 +157,49 @@ export default{
                             <tbody class="divide-y divide-gray-200 bg-white">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap space-x-3 uppercase p-2 text-xs text-center font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap space-x-3 uppercase p-2 text-xs text-center  tracking-wider">
                                         <span>
                                         01
                                         </span>
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-normal text-center uppercase p-2 text-xs  tracking-wider">
                                         09/28/2022 10:55:09 AM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         ACCOUNTING
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         CMT-09282022-0021
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         We Have Everything Distributor
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         php
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         1.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase p-2 text-xs  tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-normal text-center uppercase p-2 text-xs  tracking-wider">
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap uppercase text-center p-2 text-xs font-rubik-light tracking-wider flex justify-between">
+                                        class="whitespace-nowrap uppercase text-center p-2 text-xs  tracking-wider flex justify-between">
                                         <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
@@ -223,11 +222,38 @@ export default{
     </div>
 
     <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'">
-        <div class="flex flex-col justify-around items-center mx-5 h-full border border-red-500">
-            <div>
-
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="mx-10 h-auto">
+                <div class="mt-14">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">INVOICE NO.</label>
+                        <input type="invoice-no" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full h-7 mb-5">
+                        <label for="supplier-name" class="h-full w-5/12 px-2 text-left text-[10px]">SUPPLIER NAME</label>
+                        <input type="text" class="w-full h-8 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="due-date" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DUE DATE</label>
+                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="remarks" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">REMARKS</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="amount" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">AMOUNT</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full  mb-5">
+                        <label for="desription" class="w-5/12 px-2 text-left text-[10px]">DESCRIPTION</label>
+                        <textarea rows="4" class="resize-none block p-2.5 h-24 w-full text-sm text-gray-900 bg-#ECECEC border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    </div>
+                </div>
             </div>
-            <buttton @click.prevent="viewDetailsToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
+            <div class="flex justify-center">
+                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-xl font-medium bg-#3E3E3E text-white">CLOSE</button>
+            </div>
         </div>
     </Slideover>
 

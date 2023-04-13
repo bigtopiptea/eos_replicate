@@ -69,33 +69,33 @@ export default defineComponent({
                     <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold" @click="(profileSlideoverOpen = !profileSlideoverOpen)" @click.prevent="slideOverToggle()">UPLOAD</button>
                 </div>
                 <div class="mt-5">
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPLETE NAME</span>
-                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">COMPLETE NAME</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">USER ROLE</span>
-                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">USER ROLE</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">COMPANY</span>
-                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">COMPANY</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DEPARTMENT</span>
-                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DEPARTMENT</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">EMAIL ADDRESS</span>
-                        <input type="email" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">EMAIL ADDRESS</label>
+                        <input type="email" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">CONTACT NUMBER</span>
-                        <input type="text" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">CONTACT NUMBER</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
-                    <div class="flex rounded-md shadow-sm font-rubik-light mb-2">
-                        <span class="px-4 inline-flex items-center w-72 border border-r-0 border-gray-200 text-xs text-#3E3E3E font-bold bg-white">DATE CREATED</span>
-                        <input type="date" class="py-2 px-3 pr-11 block w-full border-gray-200 bg-#ECECEC text-#3E3E3E shadow-sm text-xs text-center focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DATE CREATED</label>
+                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
                     </div>
                 </div>
             </div>

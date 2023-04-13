@@ -54,7 +54,7 @@ export default {
         title: {
             type: String,
             default: 'MODAL TITLE HERE',
-        }
+        },
     },
     components: {
         SwitchToggle, UserIcon
