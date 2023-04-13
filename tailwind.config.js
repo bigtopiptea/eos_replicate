@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
@@ -10,6 +11,7 @@ module.exports = {
             fontFamily: {
                 dokdo: "dokdo",
                 "rubik-light": ["Rubik", "sans-serif"],
+                "be-vietnam": ["Be Vietnam Pro", "sans-serif"],
             },
             colors: {
                 "#ECECEC": "#ECECEC",
