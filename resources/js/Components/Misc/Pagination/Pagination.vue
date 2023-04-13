@@ -19,7 +19,7 @@
                 <v-select
                     v-model="perPageOptions.value"
                     selected="active"
-                    class="uppercase border border-gray-300 shadow-sm ml-5 mr-5 z-50"
+                    class="uppercase border border-gray-300 shadow-sm ml-5 mr-5"
                     :options="perPageOptions"
                     @option:selected="perPageValue()"
                 >

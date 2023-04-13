@@ -3,13 +3,14 @@ import {defineComponent} from "vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import MTDistribution from ".//Distribution/MTDistribution.vue"
+import MTFunding from "./Funding/MTFunding.vue";
 
 export default{
     components: {
 
         Tab,
         TabNav,
-        MTDistribution,
+        MTDistribution, MTFunding
 
     },
     data(){
@@ -31,7 +32,7 @@ export default{
                    <MTDistribution/>
                </Tab>
                <Tab :isSelected="selected.name === 'Funding'">
-                   <h1>Cancellation</h1>
+                   <MTFunding/>
                </Tab>
                <Tab :isSelected="selected.name === 'Trading'">
                    <h1>Additional</h1>
