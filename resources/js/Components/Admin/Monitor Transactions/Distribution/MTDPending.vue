@@ -55,7 +55,7 @@ export default{
 </script>
 
 <template>
-    <div class="flex flex-col justify-between h-full w-auto mx-3 my-6 mb-3 border border-red-500">
+    <div class="flex flex-col justify-between h-full w-auto mx-3 my-6 mb-3">
         <div>
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="flex items-end justify-between h-auto min-w-full -mx-10">

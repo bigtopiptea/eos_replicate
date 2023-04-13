@@ -13,10 +13,11 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
+import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTFPending',
 
     components:{
         DropDown,
@@ -27,6 +28,7 @@ export default{
         ListIcon,
         DateInput,
         Pagination,
+        Slideover
     },
 
     data() {
@@ -34,12 +36,16 @@ export default{
             distributionSummary: [],
             pagination: {
                 current_page: 1,
-            }
-
+            },
+            viewDetailsOpen: false  //Slideover
         }
     },
     methods: {
-        async getDistributionSummary() {
+        //Slideover
+        viewDetailsToggle() {
+            this.viewDetailsOpen = false;
+        },
+        async getMTFPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
@@ -195,7 +201,7 @@ export default{
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase text-center p-2 text-xs font-rubik-light tracking-wider flex justify-between">
-                                        <button>
+                                        <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
                                         <button>
@@ -212,10 +218,24 @@ export default{
                 </div>
             </div>
          </div>
-        <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
+        <Pagination @paginate="getMTFPending()" :pagination="pagination"
             :offset="1" class="mb-6"/>
     </div>
+
+    <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'">
+        <div class="flex flex-col justify-around items-center mx-5 h-full border border-red-500">
+            <div>
+
+            </div>
+            <buttton @click.prevent="viewDetailsToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
+        </div>
+    </Slideover>
+
+    <!-- <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit">
+        Open Slider
+    </button> -->
 </template>
+
 <style>
 .slide-fade-enter-active {
     transition: all 0.3s ease-out;

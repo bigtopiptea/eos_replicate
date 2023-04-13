@@ -5,12 +5,13 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import MTDistribution from ".//Distribution/MTDistribution.vue"
 import MTFunding from "./Funding/MTFunding.vue";
 
-export default{
+export default defineComponent({
     components: {
 
         Tab,
         TabNav,
-        MTDistribution, MTFunding
+        MTDistribution, 
+        MTFunding,
 
     },
     data(){
@@ -23,7 +24,7 @@ export default{
             this.selected = tab;
         },
     }
-}
+})
 </script>
 <template>
        <div class="w-full border bg-white border-white">
