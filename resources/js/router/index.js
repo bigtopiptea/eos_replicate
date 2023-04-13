@@ -24,6 +24,7 @@ import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monito
 import Reports from "@/Components/Admin/Reports/Reports.vue";
 import Home from "@/Components/Admin/Home/Home.vue";
 import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
+import MonitorTransactions from "@/Components/Admin/Monitor Transactions/MonitorTransactions.vue"
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -182,6 +183,7 @@ const routes = [
                 },
             },
 
+
             {
                 path: "/app/status-reversal",
                 name: "status-reversal",
@@ -219,6 +221,16 @@ const routes = [
                 meta: {
                     title: `Monitoring`,
                     ability: "Monitoring",
+                },
+            },
+            // Carl Mendoza Edited
+            {
+                path: "/app/monitor-transactions",
+                name: "monitoringtransactions",
+                component: MonitorTransactions,
+                meta: {
+                    title: `Monitorings`,
+                    ability: "Monitorings",
                 },
             },
 

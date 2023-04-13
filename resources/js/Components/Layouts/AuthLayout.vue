@@ -56,6 +56,13 @@ export default {
                     children: [],
                     icon: MonitoringIcon,
                 },
+                // CM
+                {
+                    to: "/app/monitor-transactions",
+                    label: "Monitoring Transactions",
+                    children: [],
+                    icon: MonitoringIcon,
+                },
                 {
                     to: "/app/inquiry",
                     label: "Inquiry",
