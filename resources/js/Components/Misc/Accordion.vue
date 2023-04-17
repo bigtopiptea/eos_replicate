@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full py-4  border border-blue-500">
+    <div class="w-full py-4 ">
         <h2>
             <button
                 @click="open = !open"

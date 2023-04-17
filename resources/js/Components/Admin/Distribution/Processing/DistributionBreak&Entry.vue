@@ -38,32 +38,32 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full px-0 mx-0 border h-auto  bg-white ">
-        <div class=" sm:px-4 lg:px-0 border border-red-500">
+    <div class="w-full border border-red-500  h-auto  bg-white">
+        <div class=" sm:px-4 lg:px-0">
             <div class="flex flex-col">
                 <div class="flex justify-end mb-8">
                     <div class="mt-4 sm:mt-0 sm:flex-none">
                         <div class="relative w-full">
-                            <form class="flex items-center">
+                            <form class="flex items-center mr-2">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                         <SearchIcon />
                                     </div>
                                     <input type="text" id="simple-search"
-                                        class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-sm block w-full pl-10 p-2.5"
+                                        class="bg-gray-50 h-[34px] border  border-[#EAEAEA] text-gray-900 text-[10px] font-l block w-full pl-10 p-2.5"
                                         placeholder="Search" required />
                                 </div>
                                 <NormalButton label="Go"
-                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#F9951E] text-sm font-medium text-white" />
+                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
                                 <NormalButton label="Export"
-                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-sm font-medium text-white" />
+                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                             </form>
                         </div>
                     </div>
                 </div>
                 <div class="mb-8  overflow-x-auto sm:-mx-4 lg:-mx-6">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
+                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1 ">
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead class="bg-[#D7D7D7] text-[10px] font-bold">
                                     <tr class="divide-x divide-gray-200">
