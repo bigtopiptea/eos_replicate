@@ -13,6 +13,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
+import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 
 export default{
 
@@ -27,6 +28,7 @@ export default{
         ListIcon,
         DateInput,
         Pagination,
+        ModalTwo
     },
 
     data() {
@@ -34,11 +36,15 @@ export default{
             MTDPending: [],
             pagination: {
                 current_page: 1,
-            }
-
+            },
+            viewModalOpen: false,
         }
     },
     methods: {
+        // Modal
+        viewModalToggle() {
+            this.viewModalOpen = false;
+        },
         async getDistributionSummary() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -146,8 +152,10 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-2   tracking-wider  ">
-                                    01
+                                    class="whitespace-nowrap  uppercase py-2 px-2   tracking-wider">
+                                    <a class="underline text-cyan-500" href="#" @click="(viewModalOpen = !viewModalOpen)">
+                                        01
+                                    </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap uppercase py-2 px-1   tracking-wider">
@@ -206,6 +214,115 @@ export default{
         <Pagination @paginate="MTDPending()"  :pagination="pagination"
             :offset="1" class = "mb-6 mt-6"/>
     </div>
+
+    <!-- Modal -->
+    <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'VIEW DETAILS'" :heightModal="'h-[500px]'" :widthModal="'w-[1000px]'">
+        <div class="flex flex-col justify-between mx-5 mb-5 h-full">
+            <table class="min-w-full max-h-[450px] divide-y divide-gray-300 overflow-y-auto">
+                <thead class="bg-[#D7D7D7] text-[10px] font-bold">
+                    <tr class="divide-x divide-gray-200">
+                        <th scope="col"
+                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            REFERENCE NO.
+                        </th>
+                        <th scope="col"
+                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            BENEFICIARY
+                        </th>
+                        <th scope="col"
+                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            BANK
+                        </th>
+                        <th scope="col"
+                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            AMOUNT
+                        </th>
+                        <th scope="col"
+                            class="py-2 px-1 uppercase tracking-wider text-center   text-gray-900">
+                            COST
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
+                    <tr class="divide-x divide-gray-200">
+                        <td
+                            class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
+                            <span>
+                                redha-09282022-0001
+                            </span>
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            dela cruz, anna perez
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            banco de oro
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            25,000.00
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            50.00
+                        </td>                                              
+                    </tr>
+                    <tr class="divide-x divide-gray-200">
+                        <td
+                            class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
+                            <span>
+                                redha-09282022-0001
+                            </span>
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            dela cruz, anna perez
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            banco de oro
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            25,000.00
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            50.00
+                        </td>                                              
+                    </tr>
+                </tbody>
+                <tfoot class="divide-y divide-gray-200 bg-white text-[10px]">
+                    <tr class="divide-x divide-gray-200 font-bold">
+                        <td class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
+                            <span>
+                                
+                            </span>
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            TOTAL
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            250,000,000.00
+                        </td>
+                        <td
+                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            26.00
+                        </td>                                              
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="flex justify-center gap-7">
+                <button @click="(viewModalOpen = !viewModalOpen)"  type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CLOSE</button>
+            </div>
+        </div>
+    </ModalTwo>
 </template>
 <style>
 .slide-fade-enter-active {

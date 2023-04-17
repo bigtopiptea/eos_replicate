@@ -3,20 +3,25 @@ import NormalButton from '@/Components/Misc/Buttons/NormalButton.vue';
 import EditIcon from '@/Components/Misc/Icons/EditIcon.vue';
 import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
 import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
-
+import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 export default {
     name: 'Break&Entry',
-    components: { SearchIcon, NormalButton, EditIcon, Pagination },
+    components: { SearchIcon, NormalButton, EditIcon, Pagination, ModalTwo },
     data() {
         return {
             BreakEntry: [],
             pagination: {
                 current_page: 1,
-            }
-
+            },
+            viewModalOpen: false, //Modal
         }
     },
+
     methods: {
+        // Modal
+        viewModalToggle() {
+            this.viewModalOpen = false;
+        },
         async getBreakEntry() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -38,7 +43,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full border border-red-500  h-auto  bg-white">
+    <div class="w-full h-auto  bg-white">
         <div class=" sm:px-4 lg:px-0">
             <div class="flex flex-col">
                 <div class="flex justify-end mb-8">
@@ -112,7 +117,7 @@ export default {
                                             </span>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             11-12-13
 
                                         </td>
@@ -128,8 +133,23 @@ export default {
                                             OTC-API
                                         </td>
                                         <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <!-- {{ biller.created_at }} -->
+                                            OTC-API
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <!-- {{ biller.created_at }} -->
+                                            OTC-API
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <!-- {{ biller.created_at }} -->
+                                            OTC-API
+                                        </td>
+                                        <td
                                             class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
-                                            <button>
+                                            <button @click="(viewModalOpen = !viewModalOpen)">
                                                 <EditIcon class="text-[#F9951E] w-full" />
                                             </button>
                                         </td>
@@ -144,4 +164,12 @@ export default {
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :title="'OTC API'" :description = "'NOT ALLOWED FOR ADVANCE FUNDING'">
+        <div class="flex justify-center gap-7 mt-14">
+            <button @click="(viewModalOpen = !viewModalOpen)"  type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CANCEL</button>
+            <button type="submit" class="py-1 px-5 text-[17px] font-medium bg-#F9951E text-white">CONFIRM</button>
+        </div>
+    </ModalTwo>
 </template>
