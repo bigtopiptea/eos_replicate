@@ -89,18 +89,19 @@ export default{
         <Tab :isSelected="selected.name === 'Pending'" >
             <div class=" h-full mb-3 -mx-0">
                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
-                  <div class="flex items-end justify-between h-auto min-w-full -mx-6">
-                    <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
+                  <div class="flex items-end justify-between h-auto min-w-full -mx-6 ">
+                    <div class="flex justify-start flex-col space-x-3 ">
                         <div class="flex items-end left-side-col-1 -ml-3">
                             <div>
-                                <DateInput label="Start Date" />
+                                <DateInput label="Start Date" class="h-[34px]" />
+
                             </div>
                             <div>
-                                <DateInput label="End Date" />
+                                <DateInput label="End Date " class="h-[34px]" />
                             </div>
                             <div>
-                                <NormalButton label="Format"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-sm font-medium text-white" />
+                                <NormalButton label="Filter"
+                                class="p-1.5 px-4 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-sm font-medium text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
@@ -128,86 +129,82 @@ export default{
                 </div>
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
-                            <table class="min-w-full divide-y divide-gray-300">
-                                <thead class="bg-[#D7D7D7] font-bold">
-                                    <tr class="divide-x divide-gray-200">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5  m-2">
+                            <table class="min-w-full divide-y divide-gray-300 ">
+                                <thead class="bg-[#D7D7D7] font-bold text-[100px]">
+                                    <tr class="divide-x divide-gray-200 text-[10px]">
                                         <th scope="col"
-                                            class="p-4 space-x-3 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
-                                            <span>
+                                            class="p-2 space-x-3 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             ID
-                                            </span>
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             DATE
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             TIE UP
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             REFERENCE NO.
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center  text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center    text-gray-900">
                                             CMT REFERENCE NO.
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             CURRENCY
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             AMOUNT
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             FROM
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             TO
                                         </th>
                                         <th scope="col"
-                                            class="p-4 uppercase tracking-wider font-rubik-light text-center text-xs font-normal text-gray-900">
+                                            class="p-2 uppercase tracking-wider font-semibold text-center   text-gray-900">
                                             ACTION
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200 bg-white text-xs">
+                                <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap space-x-3 uppercase p-4 font-rubik-light tracking-wider">
-                                            <span>
+                                        <td class="whitespace-nowrap space-x-2 uppercase p-2 font-normal tracking-wider">
                                                 1
-                                            </span>
                                         </td>
-                                        <td class="whitespace-nowrap uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             09/28/2022 12:00:05 PM
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             REDHA AL ANSARI exchange
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider  text-cyan-500">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider  text-cyan-500">
                                             REDHA-09282022-0001
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             CMT-09282022-0009
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             PHP
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             25,000.13
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             BDO
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase p-2 font-normal tracking-wider">
                                             OUT
                                         </td>
-                                        <td class="whitespace-nowrap uppercase text-center p-4 font-rubik-light tracking-wider">
+                                        <td class="whitespace-nowrap uppercase text-center p-2 font-normal tracking-wider">
                                             <button>
                                                 <img src="../../../../../assets/images/ExitIcon.png" alt="Exit Icon" class="h-5 w-5">
                                             </button>
@@ -219,7 +216,7 @@ export default{
                     </div>
                 </div>
                 <Pagination @paginate="getDistributionAdditional()"  :pagination="pagination"
-                    :offset="1" class="mt-8" />
+                    :offset="1" class="mt-8 " />
                 <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />
                 <Transition name="slide-fade" >
                     <div class=" -mx-8 " v-if="!isOpen">

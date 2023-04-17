@@ -13,8 +13,8 @@
             >
         </div>
 
-        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-            <div class="mt-1 flex">
+        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between ">
+            <div class="mt-1 flex text-[10px] items-center">
                 Show
                 <v-select
                     v-model="perPageOptions.value"
@@ -27,7 +27,7 @@
                 Entries
             </div>
             <div>
-                <p class="text-[13px] text-gray-700">
+                <p class="text-[10px] text-gray-700">
                     Showing
                     <!-- {{ " " }}
                     <span class="font-medium">1</span>
@@ -45,29 +45,31 @@
                     results
                 </p>
             </div>
-            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination" >
-                <!-- <a @click.prevent="changePage(1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
+            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm " aria-label="Pagination" >
+                <!-- <a @click.prevent="changePage(1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20 text-[10px]">
                     <span class="sr-only">First Page</span>
                     <DoubleChevronLeft class="h-4" />
                 </a> -->
-                <a @click.prevent="changePage(pagination.current_page - 1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium uppercase text-[#000000] hover:bg-gray-50 focus:z-20">
+
+                <a @click.prevent="changePage(pagination.current_page - 1)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium uppercase text-[#000000] hover:bg-gray-50 focus:z-20 text-[10px]  ">
                     <span class="sr-only">Prev</span>
                     <DoubleChevronLeft class="h-4" />
                     <!-- <ChevLeftIcon class="h-4" /> -->
                     Prev
                 </a>
                 <a v-for="page in pages" :key="page" @click.prevent="changePage(page)" :class="isCurrentPage(page) ? 'active border border-blue-500 text-blue-500' : ''"
-                    class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20">
+                    class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20 text-[10px]">
                     {{ page }}
                 </a>
                 <a @click.prevent="changePage(pagination.current_page + 1)"
-                    class="relative uppercase font-rubik-light hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20">
+                    class="relative uppercase font-rubik-light hover:cursor-pointer inline-flex items-center border border-gray-300 bg-[#E1E1E1] px-2 py-2 text-sm font-medium text-[#000000] hover:bg-gray-50 focus:z-20 text-[10px]">
                     <span class="sr-only">Next</span>
                     Next
                     <!-- <ChevRightIcon class="h-4" /> -->
                     <DoubleChevronRight class="h-4" />
                 </a>
-                <!-- <a :class=" pagination.current_page <= 1 ? '' : 'text-red-500'" @click.prevent="changePage(pagination.last_page)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20">
+
+                <!-- <a :class=" pagination.current_page <= 1 ? '' : 'text-red-500'" @click.prevent="changePage(pagination.last_page)"  class="relative hover:cursor-pointer inline-flex items-center border border-gray-300 bg-white px-2 py-2 text-sm font-medium uppercase text-gray-500 hover:bg-gray-50 focus:z-20 text-[10px]">
                     <span class="sr-only">Last Page</span>
                     <DoubleChevronRight class="h-4" />
                 </a> -->

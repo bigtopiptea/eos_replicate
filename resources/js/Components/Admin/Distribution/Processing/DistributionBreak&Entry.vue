@@ -38,8 +38,8 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full  bg-white ">
-        <div class="px-4 sm:px-6 lg:px-8">
+    <div class="w-full px-0 mx-0 border h-auto  bg-white ">
+        <div class=" sm:px-4 lg:px-0 border border-red-500">
             <div class="flex flex-col">
                 <div class="flex justify-end mb-8">
                     <div class="mt-4 sm:mt-0 sm:flex-none">
@@ -61,71 +61,71 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="mb-8 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
+                <div class="mb-8  overflow-x-auto sm:-mx-4 lg:-mx-6">
+                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
                             <table class="min-w-full divide-y divide-gray-300">
-                                <thead class="bg-[#D7D7D7]">
+                                <thead class="bg-[#D7D7D7] text-[10px] font-bold">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="py-3.5 pl-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             REFERENCE NO.
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 pl-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             PROCESSED DATE
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 pl-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             VALUE DATE
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             BANK
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 pl-4 uppercase tracking-wider font-rubik-light text-center  text-sm font-normal text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center   text-gray-900">
                                             CURRENCY
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             ITEMS
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             AMOUNT
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-4 uppercase tracking-wider font-rubik-light text-center text-sm font-normal text-gray-900">
+                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             Action
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200 bg-white">
+                                <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                     <tr v-for="biller in billers" :key="biller.id" class="divide-x divide-gray-200">
                                         <td
-                                            class="whitespace-nowrap space-x-3 uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                            class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
                                             <input type="checkbox" />
                                             <span>
                                                 1
                                             </span>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                            class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                             11-12-13
 
                                         </td>g
                                         <td
-                                            class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             {{ biller.name }}
                                         </td>
 
                                         <td
-                                            class="whitespace-nowrap text-center uppercase p-4 text-sm font-rubik-light tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             {{ biller.created_at }}
                                         </td>
                                         <td
-                                            class="whitespace-nowrap uppercase text-center p-4 text-sm font-rubik-light tracking-wider">
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
                                             <button>
                                                 <EditIcon class="text-[#F9951E] w-full" />
                                             </button>
