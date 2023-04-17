@@ -60,9 +60,9 @@ export default {
     <div class="border m-3 bg-white border-white shadow-md">
         <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" >
             <Tab :isSelected="selected.name === 'Pending'" >
-                <div class="w-full h-full ">
-                        <Accordion sectiontitle="SUMMARY">
-                            <DistributionSummary/>
+                <div class="w-full h-full  ">
+                        <Accordion sectiontitle="SUMMARY" AccOpen=true>
+                            <DistributionSummary />
                         </Accordion>
                         <Accordion sectiontitle="BREAKDOWN AND ENTRY ">
                             <DistributionBreakEntry/>

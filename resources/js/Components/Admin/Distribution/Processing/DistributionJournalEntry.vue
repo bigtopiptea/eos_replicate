@@ -9,9 +9,9 @@ export default{
 }
 </script>
 <template>
-    <div class="sm:px-4 lg:px-0 border border-red-500">
-        <div class="inline-block min-w-full  align-middle border border-red-500  ">
-            <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 border border-red-500">
+    <div class="sm:px-6 lg:px-8">
+        <div class="inline-block min-w-full py-4 align-middle ">
+            <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
                 <table class="min-w-full divide-y divide-gray-300">
                     <thead class="bg-[#3E3E3E] text-[10px]">
                         <tr class="divide-x divide-#EAEAEA">
@@ -89,7 +89,7 @@ export default{
                     </tfoot>
                 </table>
             </div>
-            <div class="flex justify-center space-x-4 items-center w-full h-auto my-10 ">
+            <div class="flex justify-center space-x-4 items-center w-full h-auto my-5">
                 <button class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-[17px]">CANCEL</button>
                 <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
             </div>
