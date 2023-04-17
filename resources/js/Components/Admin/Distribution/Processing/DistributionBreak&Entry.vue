@@ -38,7 +38,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full border border-red-500  h-auto  bg-white">
+    <div class="w-full  h-auto  bg-white">
         <div class=" sm:px-4 lg:px-0">
             <div class="flex flex-col">
                 <div class="flex justify-end mb-8">
@@ -80,7 +80,7 @@ export default {
                                             VALUE DATE
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             BANK
                                         </th>
                                         <th scope="col"
@@ -88,15 +88,15 @@ export default {
                                             CURRENCY
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             ITEMS
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             AMOUNT
                                         </th>
                                         <th scope="col"
-                                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
                                             Action
                                         </th>
                                     </tr>

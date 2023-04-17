@@ -75,12 +75,12 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-3 uppercase h-[40px] bg-[#3E3E3E] ml-4  tracking-wider text-sm font-medium text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
                             <DropDown label="bulk action"/>
-                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-sm text-white px-3 uppercase" />
+                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
                         <div class="right-side flex h-20 ">
@@ -90,13 +90,13 @@ export default{
                                     <SearchIcon />
                                 </div>
                                 <input type="text" id="simple-search"
-                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-sm block w-full pl-10 p-2.5"
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 font-light text-[10px] block w-full pl-10 py-2 px-1.5"
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-sm font-medium text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
                             <NormalButton label="Export"
-                            class="py-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-sm font-medium text-white" />
+                            class="py-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-[10px]  text-white" />
                         </form>
                     </div>
                 </div>
@@ -105,102 +105,102 @@ export default{
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
                         <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-[#D7D7D7]">
+                            <thead class="bg-[#D7D7D7] font-medium text-[11px]">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="py-3.5 px-1 space-x-3 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         <span>
                                         ID
                                         </span>
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         DATE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         TYPE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         NAME
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         BANK
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         CURRENCY
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         RATE
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         NET AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-1 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
                                         WORKFLOW STATUS
                                     </th>
                                     <th scope="col"
-                                        class="py-3.5 px-7 uppercase tracking-wider font-rubik-light text-center text-xs font-bold text-gray-900">
+                                        class="py-2 px-7 uppercase tracking-wider  text-center  text-gray-900">
                                         ACTION
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white">
+                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap space-x-3 uppercase p-2 text-xs text-center font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         <span>
                                         01
                                         </span>
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         09/28/2022 10:55:09 AM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         ACCOUNTING
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         CMT-09282022-0021
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         We Have Everything Distributor
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         php
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         1.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap uppercase text-center p-2 text-xs font-rubik-light tracking-wider flex justify-center">
+                                        class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider flex justify-center">
                                         <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
@@ -213,7 +213,7 @@ export default{
             </div>
          </div>
         <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
-            :offset="1" class="mb-6"/>
+            :offset="1" class="my-6"/>
     </div>
 
     <!-- Slideover (View Documents) -->
@@ -225,12 +225,12 @@ export default{
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
                         <p class="font-bold">
-                            Date uploaded: 
-                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
                         </p>
                         <p class="font-bold">
-                            Uploaded by:  
-                            <span class="font-normal">SOLTES, CAROL</span> 
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
                         </p>
                     </div>
                 </div>
@@ -239,12 +239,12 @@ export default{
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
                         <p class="font-bold">
-                            Date uploaded: 
-                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
                         </p>
                         <p class="font-bold">
-                            Uploaded by:  
-                            <span class="font-normal">SOLTES, CAROL</span> 
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
                         </p>
                     </div>
                 </div>
@@ -253,12 +253,12 @@ export default{
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">supporting_docs2.pdf</a></p>
                         <p class="font-bold">
-                            Date uploaded: 
-                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
                         </p>
                         <p class="font-bold">
-                            Uploaded by:  
-                            <span class="font-normal">SOLTES, CAROL</span> 
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
                         </p>
                     </div>
                 </div>
@@ -267,7 +267,7 @@ export default{
                 <button class="py-1 px-3 border border-#FB9E30 text-#FB9E30 font-[500] text-[12px]">ATTACH DOCUMENTS</button>
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px]  bg-#3E3E3E text-white">CLOSE</button>
             </div>
         </div>
     </Slideover>

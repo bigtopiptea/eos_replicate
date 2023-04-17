@@ -39,7 +39,7 @@ export default{
         }
     },
     methods: {
-        async getDistributionSummary() {
+        async getMTDPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
