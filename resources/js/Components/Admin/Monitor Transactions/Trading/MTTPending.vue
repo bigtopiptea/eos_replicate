@@ -13,6 +13,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
+import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 
 export default{
 
@@ -27,6 +28,7 @@ export default{
         ListIcon,
         DateInput,
         Pagination,
+        Slideover
     },
 
     data() {
@@ -34,11 +36,15 @@ export default{
             distributionSummary: [],
             pagination: {
                 current_page: 1,
-            }
-
+            },
+            viewDocumentsOpen: false,  //Slideover
         }
     },
     methods: {
+        // Slideover
+        viewDocumentsToggle() {
+            this.viewDocumentsOpen = false;
+        },
         async getDistributionSummary() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -194,15 +200,9 @@ export default{
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap uppercase text-center p-2 text-xs font-rubik-light tracking-wider flex justify-between">
-                                        <button>
+                                        class="whitespace-nowrap uppercase text-center p-2 text-xs font-rubik-light tracking-wider flex justify-center">
+                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
-                                        </button>
-                                        <button>
-                                            <img src="../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
-                                        </button>
-                                        <button>
-                                            <img src="../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                         </button>
                                     </td>
                                 </tr>
@@ -215,6 +215,62 @@ export default{
         <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
             :offset="1" class="mb-6"/>
     </div>
+
+    <!-- Slideover (View Documents) -->
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="flex flex-col mx-10 h-auto">
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs2.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="self-end mx-10">
+                <button class="py-1 px-3 border border-#FB9E30 text-#FB9E30 font-[500] text-[12px]">ATTACH DOCUMENTS</button>
+            </div>
+            <div class="flex justify-center">
+                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+            </div>
+        </div>
+    </Slideover>
 </template>
 <style>
 .slide-fade-enter-active {

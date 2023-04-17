@@ -6,6 +6,7 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
 
 
 </script>
@@ -13,6 +14,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
+import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 
 export default{
 
@@ -27,6 +29,8 @@ export default{
         ListIcon,
         DateInput,
         Pagination,
+        Slideover,
+        PaperClipIcon
     },
 
     data() {
@@ -34,8 +38,7 @@ export default{
             distributionSummary: [],
             pagination: {
                 current_page: 1,
-            }
-
+            },
         }
     },
     methods: {
@@ -148,10 +151,10 @@ export default{
                             <tbody class="divide-y divide-gray-200 bg-white">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap space-x-3 uppercase p-2 text-xs font-rubik-light tracking-wider">
-                                        <span>
-                                            01
-                                        </span>
+                                        class="whitespace-nowrap space-x-3 uppercase p-2 text-xs font-rubik-light tracking-wider text-center">
+                                        <a href="#" class="text-cyan-500 underline">
+                                        01
+                                        </a>
                                     </td>
                                     <td
                                         class="whitespace-normal text-center uppercase p-2 text-xs font-rubik-light tracking-wider">
@@ -199,6 +202,8 @@ export default{
         <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
             :offset="1" class="mb-6"/>
     </div>
+
+
 </template>
 <style>
 .slide-fade-enter-active {

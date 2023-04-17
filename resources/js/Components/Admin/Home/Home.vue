@@ -53,7 +53,7 @@ export default defineComponent({
     <HomeMainContent/>
 
     <!-- FUNDING WORKSHEET -->
-    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()"/>
+    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()" disabled />
     <Transition name="slide-fade" >
         <div class="3xl:container h-auto bg-white p-3" v-if="!isOpen">
             <FundingWorksheet/>
@@ -100,7 +100,7 @@ export default defineComponent({
                 </div>
             </div>
             <div class="flex justify-center">
-                <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-xl font-medium border-2 border-black">CLOSE</button>
+                <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-[17px] font-medium border-2 border-black">CLOSE</button>
             </div>
         </div>
     </Slideover>
@@ -150,8 +150,8 @@ export default defineComponent({
                 </div>
             </div>
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-lg cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
+                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton> 
+                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
             </div>
         </div>
     </Slideover>
@@ -174,8 +174,8 @@ export default defineComponent({
             </div>
 
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-lg cursor-pointer">CANCEL</buttton> 
-                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-lg cursor-pointer">SAVE</buttton>
+                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton> 
+                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</buttton>
             </div>
         </div>
     </Slideover>

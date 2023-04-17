@@ -36,13 +36,21 @@ export default{
             pagination: {
                 current_page: 1,
             },
-            viewDetailsOpen: false  //Slideover
+            viewDetailsOpen: false,  //Slideover
+            viewDocumentsOpen: false,  //Slideover
+            viewVerifyFundingOpen: false  //Slideover
         }
     },
     methods: {
         //Slideover
         viewDetailsToggle() {
             this.viewDetailsOpen = false;
+        },
+        viewDocumentsToggle() {
+            this.viewDocumentsOpen = false;
+        },
+        viewVerifyFundingToggle() {
+            this.viewVerifyFundingOpen = false;
         },
         async getMTFPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
@@ -60,6 +68,7 @@ export default{
 </script>
 
 <template>
+    <!-- Main Content -->
     <div class="flex flex-col justify-between h-full w-auto mx-3 my-6 mb-3">
         <div>
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -158,9 +167,9 @@ export default{
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap space-x-3 uppercase p-2 text-xs text-center  tracking-wider">
-                                        <span>
+                                        <a href="#" class="text-cyan-500 underline" @click="(viewDetailsOpen = !viewDetailsOpen)">
                                         01
-                                        </span>
+                                        </a>
                                     </td>
                                     <td
                                         class="whitespace-normal text-center uppercase p-2 text-xs  tracking-wider">
@@ -200,13 +209,13 @@ export default{
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase text-center p-2 text-xs  tracking-wider flex justify-between">
-                                        <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit">
+                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
                                         <button>
                                             <img src="../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
                                         </button>
-                                        <button>
+                                        <button  @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit">
                                             <img src="../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                         </button>
                                     </td>
@@ -221,6 +230,7 @@ export default{
             :offset="1" class="mb-6"/>
     </div>
 
+    <!-- Slideover (View Details) -->
     <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
@@ -252,14 +262,107 @@ export default{
                 </div>
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-xl font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
             </div>
         </div>
     </Slideover>
 
-    <!-- <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit">
-        Open Slider
-    </button> -->
+    <!-- Slideover (View Documents) -->
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="mx-10 h-auto">
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs2.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded: 
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span> 
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:  
+                            <span class="font-normal">SOLTES, CAROL</span> 
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="flex justify-center">
+                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+            </div>
+        </div>
+    </Slideover>
+
+    <!-- Slideover (Verify Funding) for Maker and Approver-->
+    <Slideover :show="viewVerifyFundingOpen" @close="viewVerifyFundingToggle" :title="'VERIFY FUNDING'">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="mx-10 h-auto">
+                <div class="mt-14">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">INVOICE NO.</label>
+                        <input type="invoice-no" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full h-7 mb-5">
+                        <label for="supplier-name" class="h-full w-5/12 px-2 text-left text-[10px]">SUPPLIER NAME</label>
+                        <input type="text" class="w-full h-8 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="due-date" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DUE DATE</label>
+                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="remarks" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">REMARKS</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="amount" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">AMOUNT</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full  mb-5">
+                        <label for="desription" class="w-5/12 px-2 text-left text-[10px]">DESCRIPTION</label>
+                        <textarea rows="4" class="resize-none block p-2.5 h-24 w-full text-sm text-gray-900 bg-#ECECEC border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between text-center mx-10">
+                <h5 class="uppercase text-[15px] px-10">Are you sure you want to verify this transaction?</h5>
+                <div class="flex justify-between mt-7">
+                    <button @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">DECLINE</button>
+                    <button type="submit" class="py-1 px-5 text-[17px] font-medium bg-#F9951E text-white">VERIFY</button>
+                </div>
+            </div>
+        </div>
+    </Slideover>
+
 </template>
 
 <style>

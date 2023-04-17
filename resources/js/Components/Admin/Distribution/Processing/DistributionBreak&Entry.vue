@@ -102,27 +102,30 @@ export default {
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
-                                    <tr v-for="biller in billers" :key="biller.id" class="divide-x divide-gray-200">
+                                    <!-- v-for="biller in billers" :key="biller.id" -->
+                                    <tr class="divide-x divide-gray-200">
                                         <td
                                             class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
                                             <input type="checkbox" />
                                             <span>
-                                                1
+                                                CMTO-092822-0002
                                             </span>
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                             11-12-13
 
-                                        </td>g
+                                        </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            {{ biller.name }}
+                                            <!-- {{ biller.name }} -->
+                                            CMTO-092822-0002
                                         </td>
 
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            {{ biller.created_at }}
+                                            <!-- {{ biller.created_at }} -->
+                                            OTC-API
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
