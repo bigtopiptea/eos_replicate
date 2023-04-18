@@ -4,7 +4,7 @@
             <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
-                             :class="setHover,[tabLength, {setSelectedBg,'text-white': selected === tab}]"
+                             :class="[setHover, tabLength, {'text-white': selected === tab}]"
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
                               hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
