@@ -4,22 +4,23 @@
             <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
-                             :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab}]"
+                             :class="setHover,[tabLength, {setSelectedBg,'text-white': selected === tab}]"
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
-                             hover:bg-[#F9951E] hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
+                              hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
                             <!-- <div class=" text-lg">
                             {{tab.value}}
                             </div> -->
                             <div>
-                             {{ tab }} 
+                             {{ tab }}
                             </div>
 
                 </router-link>
             </div>
 
         </div>
-        <div class="border-4 border-[#F9951E] absolute -bottom-[0.16rem] w-full">
+        <div class="border-4 absolute -bottom-[0.16rem] w-full"
+            :class="setBorder">
         </div>
     </div>
     <slot></slot>
@@ -35,6 +36,18 @@ export default {
         selected: {
             type: String,
             required: true,
+        },
+        setBorder: {
+            type: String,
+            default: 'border-[#F9951E]'
+        },
+        setHover: {
+            type: String,
+            default: 'hover:bg-[#F9951E]'
+        },
+        setSelectedBg: {
+            type: String,
+            default: 'bg-[#F9951E]'
         }
     },
     methods: {

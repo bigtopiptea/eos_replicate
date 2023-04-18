@@ -86,21 +86,22 @@ export default{
 
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected"  >
-            <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-full mb-3">
+        <Tab :isSelected="selected === 'Pending'" >
+            <div class=" h-auto mb-3">
                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
-                  <div class="flex items-end justify-between h-auto min-w-full -mx-6">
-                    <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
+                  <div class="flex items-end justify-between h-auto min-w-full -mx-6 ">
+                    <div class="flex justify-start flex-col space-x-3 ">
                         <div class="flex items-end left-side-col-1 -ml-3">
                             <div>
-                                <DateInput label="Start Date" />
+                                <DateInput label="Start Date" class="h-[34px]" />
+
                             </div>
                             <div>
-                                <DateInput label="End Date" />
+                                <DateInput label="End Date " class="h-[34px]" />
                             </div>
                             <div>
-                                <NormalButton label="Format"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px] text-white" />
+                                <NormalButton label="Filter"
+                                class="p-1.5 px-4 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
@@ -115,25 +116,25 @@ export default{
                                     <SearchIcon />
                                 </div>
                                 <input type="text" id="simple-search"
-                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-2 px-1.5"
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] font-medium text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                         </form>
                     </div>
                   </div>
                 </div>
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-2">
-                            <table class="min-w-full divide-y divide-gray-300">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5  m-2">
+                            <table class="min-w-full divide-y divide-gray-300 ">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px]">
-                                    <tr class="divide-x divide-gray-200">
+                                    <tr class="divide-x divide-gray-200 ">
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                            class="py-2 px-1 space-x-3 uppercase tracking-wider  text-center   text-gray-900">
                                             ID
                                         </th>
                                         <th scope="col"
@@ -174,10 +175,10 @@ export default{
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] ">
+                                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            1
+                                        <td class="whitespace-nowrap space-x-2 uppercase py-2 px-1  tracking-wider">
+                                                1
                                         </td>
                                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                             09/28/2022 12:00:05 PM

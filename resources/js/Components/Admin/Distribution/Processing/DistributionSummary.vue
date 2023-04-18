@@ -67,11 +67,11 @@
                                 <DateInput label="End Date" />
                             </div>
                             <div>
-                                <NormalButton label="Format"
+                                <NormalButton label="Filter"
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px] font-medium text-white" />
                             </div>
                         </div>
-                        <div class="left-side-col-2 space-y-3 text-[10px]">
+                        <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
                             <DropDown label="bulk action" class="-m-3" />
                             <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>

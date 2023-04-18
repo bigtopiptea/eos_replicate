@@ -99,7 +99,7 @@ export default{
                                     <DateInput label="End Date" />
                                 </div>
                                 <div>
-                                    <NormalButton label="Format"
+                                    <NormalButton label="Filter"
                                     class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
                                 </div>
                             </div>
@@ -186,14 +186,14 @@ export default{
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-200 bg-white font-normal text-[10px]">
+                                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
                                         <td
-                                            class="whitespace-nowrap uppercase py-2 px-1  text-center tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                             01
                                         </td>
                                         <td
-                                            class="whitespace-nowrap uppercase py-2 px-1 text-center tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                             09/28/2022 12:00:05 PM
                                         </td>
                                         <td
