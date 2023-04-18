@@ -6,6 +6,7 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
 
 </script>
 
@@ -28,6 +29,7 @@ export default{
         DateInput,
         Pagination,
         Slideover,
+        PaperClipIcon,
     },
 
     data() {
@@ -38,11 +40,23 @@ export default{
             },
             viewDetailsOpen: false,  //Slideover
             viewDocumentsOpen: false,  //Slideover
-            viewVerifyFundingOpen: false  //Slideover
+            viewVerifyFundingOpen: false,  //Slideover
+            test: '',
+
         }
     },
     methods: {
+
         //Slideover
+        setIconDetailsOpen(){
+            this.viewDetailsOpen === true ? this.test = 'USER' : '';
+        },
+        setIconDocumentsOpen(){
+            this.viewDocumentsOpen === true ? this.test = 'FIND' : '';
+        },
+        setIconVerifyFundingOpen(){
+            this.viewVerifyFundingOpen === true ? this.test = '' : '' ;
+        },
         viewDetailsToggle() {
             this.viewDetailsOpen = false;
         },
@@ -167,7 +181,7 @@ export default{
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        <a href="#" class="text-cyan-500 underline" @click="(viewDetailsOpen = !viewDetailsOpen)">
+                                        <a href="#" class="text-cyan-500 underline" @click="(viewDetailsOpen = !viewDetailsOpen), setIconDetailsOpen()" >
                                         01
                                         </a>
                                     </td>
@@ -209,7 +223,7 @@ export default{
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase  py-2 px-1  tracking-wider flex justify-between">
-                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit">
+                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
                                         <button>
@@ -231,7 +245,7 @@ export default{
     </div>
 
     <!-- Slideover (View Details) -->
-    <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'">
+    <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'" :iconShow="test">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
@@ -268,7 +282,7 @@ export default{
     </Slideover>
 
     <!-- Slideover (View Documents) -->
-    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" >
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="test">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="flex gap-3 mt-10">
