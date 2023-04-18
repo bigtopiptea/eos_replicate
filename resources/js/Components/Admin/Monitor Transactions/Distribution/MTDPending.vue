@@ -41,6 +41,10 @@ export default{
         }
     },
     methods: {
+        // Modal
+        viewModalToggle() {
+            this.viewModalOpen = false;
+        },
         async getMTDPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
