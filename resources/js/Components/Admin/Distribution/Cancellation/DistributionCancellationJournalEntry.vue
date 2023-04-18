@@ -73,17 +73,17 @@ export default{
                         </tr>
                     </tbody>
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
-                        <tr class=" text-left">
-                            <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider text-right text-#3E3E3E">
+                        <tr class="text-left">
+                            <td class="whitespace-nowrap uppercase py-2 px-2 font-bold tracking-wider text-right text-#3E3E3E">
                                 Total
                             </td>
-                            <td type="number" class="whitespace-nowrap uppercase py-2 px-2   tracking-wider text-#3E3E3E">
+                            <td type="number" class="whitespace-nowrap uppercase py-2 px-2 font-bold tracking-wider text-#3E3E3E">
                                 100
                             </td>
-                            <td type="number" class="whitespace-nowrap uppercase py-2 px-2   tracking-wider text-#3E3E3E">
+                            <td type="number" class="whitespace-nowrap uppercase py-2 px-2 font-bold tracking-wider text-#3E3E3E">
                                 100
                             </td>
-                            <td type="none" class="whitespace-nowrap uppercase py-2 px-2   tracking-wider text-#3E3E3E">
+                            <td type="none" class="whitespace-nowrap uppercase py-2 px-2   font-bold tracking-wider text-#3E3E3E">
                             </td>
                         </tr>
                     </tfoot>

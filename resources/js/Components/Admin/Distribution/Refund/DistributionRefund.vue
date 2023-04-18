@@ -11,6 +11,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue"
 <script>
 import DistributionRefundJournalEntry from "./DistributionRefundJournalEntry.vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
+import Accordion from "@/Components/Misc/Accordion.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
@@ -33,7 +34,7 @@ export default{
     DateInput,
     Pagination,
     SmallHeading,
-
+    Accordion
 },
 
     data() {
@@ -250,13 +251,9 @@ export default{
                 </div>
                 <Pagination @paginate="getDistributionRefund()"  :pagination="pagination"
                         :offset="1" class="mt-8" />
-
-                <SmallHeading :isOpen="isOpen" label="Journal Entry " class="bg-dark-orange mt-10 w-full" :icon="ChevRightIcon" @click.prevent="openHeading()" />
-                <Transition name="slide-fade" >
-                    <div class=" -mx-8 " v-if="!isOpen">
-                        <DistributionRefundJournalEntry/>
-                    </div>
-                </Transition>
+                <Accordion sectiontitle="Journal Entry" :setOpen=false>
+                    <DistributionRefundJournalEntry/>
+                </Accordion>   
             </div>
         </Tab>
     </TabNav>
