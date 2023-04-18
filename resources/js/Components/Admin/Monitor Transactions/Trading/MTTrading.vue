@@ -22,9 +22,9 @@ export default {
         return {
 
             selected: "Pending",
-            isOpen: true,
-            rates: [],
-            selected: '',
+            // isOpen: true,
+            // rates: [],
+            // selected: '',
 
         }
     },
@@ -59,13 +59,13 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" >
-            <Tab :isSelected="selected.name === 'Pending'" >
+        <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" >
+            <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-auto ">
                     <MTTPending/>
                 </div>
             </Tab>
-            <Tab :isSelected="selected.name === 'Approval History'" >
+            <Tab :isSelected="selected === 'Approval History'" >
                 <div class="w-full h-auto ">
                     <MTTApprovalHistory/>
                 </div>

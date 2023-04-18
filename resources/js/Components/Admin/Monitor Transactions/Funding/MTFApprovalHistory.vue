@@ -39,9 +39,14 @@ export default{
             pagination: {
                 current_page: 1,
             },
+            viewDetailsOpen: false,  //Slideover
         }
     },
     methods: {
+        //Slideover
+        setIconDetailsOpen(){
+            this.viewDetailsOpen === true ? this.test = 'FIND' : '';
+        },
         async getMTFApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -152,7 +157,7 @@ export default{
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider ">
-                                        <a href="#" class="text-cyan-500 underline">
+                                        <a href="#" class="text-cyan-500 underline" @click="(viewDetailsOpen = !viewDetailsOpen), setIconDetailsOpen()" >
                                         01
                                         </a>
                                     </td>
@@ -203,7 +208,42 @@ export default{
             :offset="1" class="my-6"/>
     </div>
 
-
+     <!-- Slideover (View Details) -->
+     <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'" :iconShow="test">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="mx-10 h-auto">
+                <div class="mt-14">
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">INVOICE NO.</label>
+                        <input type="invoice-no" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full h-7 mb-5">
+                        <label for="supplier-name" class="h-full w-5/12 px-2 text-left text-[10px]">SUPPLIER NAME</label>
+                        <input type="text" class="w-full h-8 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="due-date" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DUE DATE</label>
+                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="remarks" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">REMARKS</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex items-center text-xs w-full h-7 mb-2">
+                        <label for="amount" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">AMOUNT</label>
+                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    </div>
+                    <div class="flex flex-col text-xs w-full  mb-5">
+                        <label for="desription" class="w-5/12 px-2 text-left text-[10px]">DESCRIPTION</label>
+                        <textarea rows="4" class="resize-none block p-2.5 h-24 w-full text-[10px] text-gray-900 bg-#ECECEC border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+            </div>
+        </div>
+    </Slideover>
 </template>
 <style>
 .slide-fade-enter-active {

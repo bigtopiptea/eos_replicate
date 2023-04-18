@@ -30,14 +30,14 @@ export default defineComponent({
 </script>
 <template>
        <div class="w-full border bg-white border-white">
-           <TabNav :selected="selected.name" :tabs="[{name: 'Distribution', value: 6}, {name: 'Funding', value: 4 }, {name: 'Trading', value: 2 }]"  @selected="setSelected">
-               <Tab :isSelected="selected.name === 'Distribution'">
+           <TabNav :tabs="['Distribution', 'Funding', 'Trading']" :selected="selected" @selected="setSelected">
+               <Tab :isSelected="selected === 'Distribution'">
                    <MTDistribution/>
                </Tab>
-               <Tab :isSelected="selected.name === 'Funding'">
+               <Tab :isSelected="selected === 'Funding'">
                    <MTFunding/>
                </Tab>
-               <Tab :isSelected="selected.name === 'Trading'">
+               <Tab :isSelected="selected === 'Trading'">
                    <MTTrading/>
                </Tab>
            </TabNav>

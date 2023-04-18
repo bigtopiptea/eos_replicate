@@ -25,9 +25,7 @@ export default {
     },
     data(){
         return {
-
             selected: "Pending",
-
         }
     },
 
@@ -42,13 +40,13 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" >
-            <Tab :isSelected="selected.name === 'Pending'" >
+        <TabNav :tabs="['Pending' , 'Approval History' ]" :selected="selected" @selected="setSelected" >
+            <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-auto  ">
                     <MTDPending/>
                 </div>
             </Tab>
-            <Tab :isSelected="selected.name === 'Approval History'" >
+            <Tab :isSelected="selected === 'Approval History'" >
                 <div class="w-full h-auto ">
                     <MTDApprovalHistory/>
                 </div>

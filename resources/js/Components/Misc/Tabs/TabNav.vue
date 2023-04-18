@@ -4,15 +4,15 @@
             <div v-for="tab in tabs" :key="tab" class="mr-1 ">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
-                             :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab.name}]"
+                             :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab}]"
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
                              hover:bg-[#F9951E] hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
-                            <div class=" text-lg">
+                            <!-- <div class=" text-lg">
                             {{tab.value}}
-                            </div>
+                            </div> -->
                             <div>
-                            {{tab.name}}
+                             {{ tab }} 
                             </div>
 
                 </router-link>

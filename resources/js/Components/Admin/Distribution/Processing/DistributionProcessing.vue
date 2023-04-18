@@ -21,9 +21,9 @@ export default {
         return {
 
             selected: "Pending",
-            isOpen: true,
-            rates: [],
-            selected: '',
+            // isOpen: true,
+            // rates: [],
+            // selected: '',
 
         }
     },
@@ -58,10 +58,10 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" :example="'border-red-500'" :onHover="'hover:bg-red-500'" >
-            <Tab :isSelected="selected.name === 'Pending'" >
+        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :example="'border-red-500'" :onHover="'hover:bg-red-500'" >
+            <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-full  ">
-                        <Accordion sectiontitle="SUMMARY" AccOpen=true>
+                        <Accordion sectiontitle="SUMMARY">
                             <DistributionSummary />
                         </Accordion>
                         <Accordion sectiontitle="BREAKDOWN AND ENTRY ">

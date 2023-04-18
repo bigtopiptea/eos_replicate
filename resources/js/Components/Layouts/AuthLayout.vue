@@ -263,7 +263,7 @@ export default {
             </div>
             <div>
                 <img class="m-auto h-[100px] w-[100px] my-5 rounded-full"
-                     :src="user.avatar" alt="" />
+                     :src="user.avatar" alt="" @click="(slideoverOpen = !slideoverOpen)"/>
                 <div v-if="isToggled" class="text-center">
                     <div class="text-[11px] font-rubik tracking-widest  uppercase mt-2 text-[#3E3E3E]">
                         {{ user.first_name + " "  + user.middle_name + " " + user.last_name }}
@@ -511,7 +511,7 @@ export default {
                         <XMarkIcon></XMarkIcon>
                     </div>
                     <div class="flex justify-center items-center w-72 h-52 bg-#EAEAEA">
-                        <img src="../../../assets/images/user-logo.png" alt="user-logo" class=" w-48 h-48 rounded-full border-2 border-gray-300">
+                        <img src="../../../assets/images/user-logo.png" alt="user-logo" class=" w-48 h-48 rounded-full border-2 border-[#c6c3bd]">
                     </div>
                 </div>
                 <div class="mt-2">

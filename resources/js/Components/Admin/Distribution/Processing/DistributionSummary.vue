@@ -55,7 +55,7 @@
     </script>
 
     <template>
-     <div class="w-full h-auto overflow-x-hidden  ">
+     <div class="w-full h-auto">
                <div class="inline-block min-w-full  align-middle md:px-6 lg:px-8  ">
                   <div class="flex items-end justify-between h-auto min-w-full -mx-6">
                     <div class="flex justify-start flex-col space-x-3 border-border-blue-5">

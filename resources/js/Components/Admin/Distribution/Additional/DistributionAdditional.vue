@@ -45,8 +45,8 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            rates: [],
-            selected: '',
+            // rates: [],
+            // selected: '',
 
         }
     },
@@ -85,9 +85,9 @@ export default{
 <template>
 
 <div class="border m-3 bg-white border-white shadow-md ">
-    <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
-        <Tab :isSelected="selected.name === 'Pending'" >
-            <div class=" h-auto mb-3 overflow-x-hidden ">
+    <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+        <Tab :isSelected="selected === 'Pending'" >
+            <div class=" h-auto mb-3">
                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
                   <div class="flex items-end justify-between h-auto min-w-full -mx-6 ">
                     <div class="flex justify-start flex-col space-x-3 ">

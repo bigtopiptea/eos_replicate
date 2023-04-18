@@ -45,8 +45,8 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            rates: [],
-            selected: '',
+            // rates: [],
+            // selected: '',
 
         }
     },
@@ -85,46 +85,46 @@ export default{
 <template>
 
 <div class="border m-3 bg-white border-white shadow-md ">
-    <TabNav :tabs="[{name: 'Pending' }, {name: 'Approval History' }]" :selected="selected.name" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
-        <Tab :isSelected="selected.name === 'Pending'" >
+    <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" class="bg-red-500 hover:bg-red-500" >
+        <Tab :isSelected="selected === 'Pending'" >
             <div class=" h-full mb-3 overflow-x-hidden">
                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
-                  <div class="flex items-end justify-between h-auto min-w-full -mx-6">
-                    <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
-                        <div class="flex items-end left-side-col-1 -ml-3">
-                            <div>
-                                <DateInput label="Start Date" />
-                            </div>
-                            <div>
-                                <DateInput label="End Date" />
-                            </div>
-                            <div>
-                                <NormalButton label="Format"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
-                            </div>
-                        </div>
-                        <div class="left-side-col-2 space-y-3">
-                            <DropDown label="bulk action" class="-m-3" />
-                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
-                        </div>
-                    </div>
-                        <div class="right-side flex h-20 ">
-                        <form class="flex items-start">
-                            <div class="relative w-full">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <SearchIcon />
+                    <div class="flex items-end justify-between h-auto min-w-full -mx-6">
+                        <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
+                            <div class="flex items-end left-side-col-1 -ml-3">
+                                <div>
+                                    <DateInput label="Start Date" />
                                 </div>
-                                <input type="text" id="simple-search"
-                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 p-2.5"
-                                    placeholder="Search" required />
+                                <div>
+                                    <DateInput label="End Date" />
+                                </div>
+                                <div>
+                                    <NormalButton label="Format"
+                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
+                                </div>
                             </div>
-                            <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
-                            <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white" />
-                        </form>
+                            <div class="left-side-col-2 space-y-3">
+                                <DropDown label="bulk action" class="-m-3" />
+                                <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
+                            </div>
+                        </div>
+                        <div class="right-side flex h-20 ">
+                            <form class="flex items-start">
+                                <div class="relative w-full">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <SearchIcon />
+                                    </div>
+                                    <input type="text" id="simple-search"
+                                        class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 p-2.5"
+                                        placeholder="Search" required />
+                                </div>
+                                <NormalButton label="Go"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                                <NormalButton label="Export"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white" />
+                            </form>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
