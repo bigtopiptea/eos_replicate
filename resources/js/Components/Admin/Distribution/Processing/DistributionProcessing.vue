@@ -58,11 +58,7 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-<<<<<<< HEAD
-        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-red-500'" :setHover="'hover:bg-red-500'" :setSelectedBg="'bg-red-500'">
-=======
         <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-red-500'" :setHover="'hover:bg-red-500 '" :setSelectedBg="'bg-red-500 text-white'">
->>>>>>> 8b32bf7ac0b651be8c48bcff2ba0e583d6137878
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-full ">
                         <Accordion sectiontitle="SUMMARY" :setOpen=true>
