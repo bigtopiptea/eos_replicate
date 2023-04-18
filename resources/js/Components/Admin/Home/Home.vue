@@ -1,25 +1,25 @@
 <script setup>
 
 import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
-import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
-import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
-import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
-import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
+// import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
+// import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
+// import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
+// import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
 
 </script>
 
 <script>
 import {defineComponent} from "vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
-import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
-import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
+// import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
+// import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
 import HomeMainContent from "./HomeComponent/HomeMainContent.vue";
 import FundingWorksheet from "./HomeComponent/FundingWorksheet.vue";
 
 
 export default defineComponent({
     components: {
-        HomeMainContent, SmallHeading, Slideover, LoadingIcon, XMarkIcon, ProgressIcon, RangeSlider, FundingWorksheet, 
+        HomeMainContent, SmallHeading, FundingWorksheet, 
     },
     data(){
         return{
@@ -33,15 +33,15 @@ export default defineComponent({
         openFundingWorksheet(){
             this.isOpen = !this.isOpen;
         },
-        slideOverToggle() {
-            this.slideoverOpen = false;
-        },
-        profileSlideOverToggle() {
-            this.profileSlideoverOpen = false;
-        },
-        adjustProfileSlideoverToggle(){
-            this.adjustProfileSlideoverOpen = false;
-        },
+        // slideOverToggle() {
+        //     this.slideoverOpen = false;
+        // },
+        // profileSlideOverToggle() {
+        //     this.profileSlideoverOpen = false;
+        // },
+        // adjustProfileSlideoverToggle(){
+        //     this.adjustProfileSlideoverOpen = false;
+        // },
         getState(type) {
             this.state = type;
         },
@@ -52,8 +52,8 @@ export default defineComponent({
     <!-- MAIN CONTENT -->
     <HomeMainContent/>
 
-    <!-- FUNDING WORKSHEET -->
-    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" @clicked="openFundingWorksheet()" disabled />
+    <!-- FUNDING WORKSHEET (Currently Disabled - add '@click="openFundingWorksheet()"' to enable)-->
+    <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" />
     <Transition name="slide-fade" >
         <div class="3xl:container h-auto bg-white p-3" v-if="!isOpen">
             <FundingWorksheet/>
@@ -61,7 +61,7 @@ export default defineComponent({
     </Transition>
 
     <!-- SLIDEOVER PROFILE DETAILS-->
-    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
+    <!-- <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="input-area mx-10">
                 <div class="profile-upload flex justify-evenly items-center">
@@ -103,10 +103,10 @@ export default defineComponent({
                 <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-[17px] font-medium border-2 border-black">CLOSE</button>
             </div>
         </div>
-    </Slideover>
+    </Slideover> -->
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 1-->
-    <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'">
+    <!-- <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
@@ -154,10 +154,10 @@ export default defineComponent({
                 <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
             </div>
         </div>
-    </Slideover>
+    </Slideover> -->
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 2-->
-    <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'">
+    <!-- <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'">
         <div class="flex flex-col justify-between items-center py-5 h-full">
             <div class="flex flex-col items-center">
                 <div class="flex justify-center items-center w-auto h-auto p-7 bg-#F9951E rounded-md relative">
@@ -178,11 +178,11 @@ export default defineComponent({
                 <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</buttton>
             </div>
         </div>
-    </Slideover>
+    </Slideover> -->
 
     <!-- SLIDEOVER TRIGGER (FOR DEMONSTRATION)-->
-    <button type="submit" @click="(slideoverOpen = !slideoverOpen)" class="p-3 bg-black text-white rounded-full flex">
+    <!-- <button type="submit" @click="(slideoverOpen = !slideoverOpen)" class="p-3 bg-black text-white rounded-full flex">
         <UserIcon></UserIcon>
-    </button>
+    </button> -->
 </template>
 

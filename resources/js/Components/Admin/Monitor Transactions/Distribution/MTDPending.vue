@@ -219,7 +219,7 @@ export default{
     <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'VIEW DETAILS'" :heightModal="'h-[500px]'" :widthModal="'w-[1000px]'">
         <div class="flex flex-col justify-between mx-5 mb-5 h-full">
             <table class="min-w-full max-h-[450px] divide-y divide-gray-300 overflow-y-auto">
-                <thead class="bg-[#D7D7D7] text-[10px] font-bold">
+                <thead class="bg-[#D7D7D7] text-[11px] font-medium ">
                     <tr class="divide-x divide-gray-200">
                         <th scope="col"
                             class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
@@ -243,7 +243,7 @@ export default{
                         </th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
+                <tbody class="divide-y divide-gray-200 bg-white text-[10px] font-light">
                     <tr class="divide-x divide-gray-200">
                         <td
                             class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
@@ -293,8 +293,8 @@ export default{
                         </td>                                              
                     </tr>
                 </tbody>
-                <tfoot class="divide-y divide-gray-200 bg-white text-[10px]">
-                    <tr class="divide-x divide-gray-200 font-bold">
+                <tfoot class="divide-y divide-gray-200 bg-white text-[11px] font-bold">
+                    <tr>
                         <td class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
                             <span>
                                 

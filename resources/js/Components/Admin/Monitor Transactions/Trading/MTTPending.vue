@@ -5,6 +5,7 @@ import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
+import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 
@@ -26,6 +27,7 @@ export default{
         SearchIcon,
         InputLabel,
         ListIcon,
+        PaperClipIcon,
         DateInput,
         Pagination,
         Slideover
@@ -268,6 +270,7 @@ export default{
             </div>
             <div class="flex justify-center">
                 <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+                
             </div>
         </div>
     </Slideover>
