@@ -7,7 +7,7 @@ export default {
         },
         label: {
             type: String,
-            default: '',
+            default: 'Hello',
         },
         modelValue: {
             type: [String, Number],
