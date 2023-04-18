@@ -22,9 +22,12 @@ import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
 import Reports from "@/Components/Admin/Reports/Reports.vue";
+
+//OJT EDITED//
 import Home from "@/Components/Admin/Home/Home.vue";
 import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 import MonitorTransactions from "@/Components/Admin/Monitor Transactions/MonitorTransactions.vue"
+import Funding from "@/Components/Admin/Funding/Funding.vue"
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -233,7 +236,16 @@ const routes = [
                     ability: "Monitorings",
                 },
             },
-
+            //Carl Mendoza Edited [4-18]
+            {
+                path: "/app/funding",
+                name: "Funding",
+                component: Funding,
+                meta: {
+                    title: `Funding`,
+                    ability: "Funding",
+                },
+            },
             {
                 path: "/app/reports",
                 name: "reports",

@@ -31,15 +31,7 @@ export default {
         setSelected(tab) {
             this.selected = tab;
         },
-        openSummary(){
-            this.isOpen = !this.isOpen;
-        },
-        openBreakAndEntry(){
-            this.isOpen = !this.isOpen;
-        },
-        openJournalEntry(){
-            this.isOpen = !this.isOpen;
-        },
+
         async getRate(){
             await axios.get('/api/rates/cmt/list')
                 .then((response) => {
@@ -58,7 +50,7 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-red-500'" :setHover="'hover:bg-red-500 '" :setSelectedBg="'bg-red-500 text-white'">
+        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-full ">
                         <Accordion sectiontitle="SUMMARY" :setOpen=true>

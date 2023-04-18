@@ -24,13 +24,14 @@ import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
+import FundIcon from "../Misc/Icons/FundIcon.vue";
 
 export default {
     components: {
         CircleCheckIcon, ChevLeftIcon, RadioIcon,
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
-        XMarkIcon, ProgressIcon,RangeSlider
+        XMarkIcon, ProgressIcon,RangeSlider,FundIcon
 
     },
     data(){
@@ -76,6 +77,13 @@ export default {
                     children: [],
                     icon: MonitoringIcon,
                 },
+                {
+                    to: "/app/funding",
+                    label: "Funding",
+                    children: [],
+                    icon: FundIcon,
+                },
+                // CM
                 {
                     to: "/app/inquiry",
                     label: "Inquiry",
