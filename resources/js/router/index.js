@@ -28,6 +28,7 @@ import Home from "@/Components/Admin/Home/Home.vue";
 import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 import MonitorTransactions from "@/Components/Admin/Monitor Transactions/MonitorTransactions.vue"
 import Funding from "@/Components/Admin/Funding/Funding.vue"
+import PaymentVoucher from "@/Components/Admin/Funding/Banks & Providers/PaymentVoucher.vue"
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -244,6 +245,25 @@ const routes = [
                 meta: {
                     title: `Funding`,
                     ability: "Funding",
+                },
+            },
+            //Vedasto Quintans Edited [4-18 - 3:26pm]
+            {
+                path: "/app/funding",
+                name: "Funding",
+                component: Funding,
+                meta: {
+                    title: `Funding`,
+                    ability: "Funding",
+                },
+            },
+            {
+                path: "/app/funding/payment-voucher",
+                name: "Payment Voucher",
+                component: PaymentVoucher,
+                meta: {
+                    title: `Payment Voucher`,
+                    ability: "Payment Voucher",
                 },
             },
             {
