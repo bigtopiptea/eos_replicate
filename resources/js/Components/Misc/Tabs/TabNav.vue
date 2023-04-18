@@ -4,7 +4,11 @@
             <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
+<<<<<<< HEAD
                              :class="[setHover, tabLength, {'text-white': selected === tab}]"
+=======
+                             :class="[tabLength,setHover, [selected === tab ? setSelectedBg : '']]"
+>>>>>>> 8b32bf7ac0b651be8c48bcff2ba0e583d6137878
                              class="inline-block py-2 border border-gray-200 duration-300 my-1 uppercase
                               hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
                              >
@@ -43,11 +47,11 @@ export default {
         },
         setHover: {
             type: String,
-            default: 'hover:bg-[#F9951E]'
+            default: 'hover:bg-[#F9951E] '
         },
         setSelectedBg: {
             type: String,
-            default: 'bg-[#F9951E]'
+            default: 'bg-[#F9951E] text-white'
         }
     },
     methods: {
