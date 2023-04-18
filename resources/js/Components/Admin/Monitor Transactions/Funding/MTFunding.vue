@@ -59,7 +59,7 @@ export default {
 </script>
 <template>
     <div class="border m-3 bg-white border-white shadow-md">
-        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" >
+        <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-auto ">
                     <MTFPending/>
