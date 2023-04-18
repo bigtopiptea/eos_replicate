@@ -40,10 +40,14 @@ export default{
                 current_page: 1,
             },
             viewDocumentsOpen: false,  //Slideover
+            paraIcon:'',
         }
     },
     methods: {
         // Slideover
+        setIconDocumentsOpen(){
+            this.viewDocumentsOpen === true ? this.paraIcon = 'FIND' : '';
+        },
         viewDocumentsToggle() {
             this.viewDocumentsOpen = false;
         },
@@ -203,7 +207,7 @@ export default{
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider flex justify-center">
-                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit">
+                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen),setIconDocumentsOpen()" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
                                     </td>
@@ -219,7 +223,7 @@ export default{
     </div>
 
     <!-- Slideover (View Documents) -->
-    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'">
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="flex flex-col mx-10 h-auto">
                 <div class="flex gap-3 mt-10">

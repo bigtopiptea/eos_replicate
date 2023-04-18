@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <div class="flex whitespace-nowrap font-medium text-center text-gray-500 border-gray-200">
-            <div v-for="tab in tabs" :key="tab" class="mr-1 ">
+            <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
                              :class="[tabLength, {'bg-[#F9951E] text-white' : selected === tab}]"

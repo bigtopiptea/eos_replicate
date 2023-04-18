@@ -24,16 +24,19 @@ import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
+
 export default {
     components: {
-        CircleCheckIcon, ChevLeftIcon, RadioIcon, 
-        SelectedRadioButton, ChevronLeftIcon, 
+        CircleCheckIcon, ChevLeftIcon, RadioIcon,
+        SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider
+
     },
     data(){
         return {
             user: this.$store.state.auth.user,
+
             navItems: [
                 {
                     to: "/app/dashboard",
@@ -194,9 +197,11 @@ export default {
             slideoverOpen: false, //Slideover 1 (Profile)
             profileSlideoverOpen: false, //Slideover 2 (Profile Image Upload)
             adjustProfileSlideoverOpen: false, //Slideover 3 (Profile Image Setup)
+            paraIcon:'USER', //Icon Parameter
         }
     },
     methods: {
+
         slideOverToggle() {
             this.slideoverOpen = false;
         },
@@ -295,7 +300,7 @@ export default {
                                 <router-link
                                     @click="reroute(subItem)"
                                     :class="{'active text-[#F1721A]': $route.path === subItem.to}"
-                                    class="px-14 text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300 hover:text-white my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider font-rubik-light" :to="subItem.to">
+                                    class="px-14 text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300  my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider font-rubik-light" :to="subItem.to">
                                     <SelectedRadioButton
                                         v-if="$route.path === subItem.to"
                                         class="h-3"/>
@@ -407,7 +412,7 @@ export default {
     </div>
 
     <!-- SLIDEOVER PROFILE DETAILS-->
-    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'">
+    <Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'PROFILE'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="input-area mx-10">
                 <div class="profile-upload flex justify-evenly items-center">
@@ -452,7 +457,7 @@ export default {
     </Slideover>
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 1-->
-    <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'">
+    <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
@@ -496,14 +501,14 @@ export default {
                 </div>
             </div>
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton> 
+                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton>
                 <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
             </div>
         </div>
     </Slideover>
 
     <!-- SLIDEOVER CHANGE PHOTO - Step 2-->
-    <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'">
+    <Slideover :show="adjustProfileSlideoverOpen" @close="adjustProfileSlideoverToggle" :title="'CHANGE PHOTO'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between items-center py-5 h-full">
             <div class="flex flex-col items-center">
                 <div class="flex justify-center items-center w-auto h-auto p-7 bg-#F9951E rounded-md relative">
@@ -520,7 +525,7 @@ export default {
             </div>
 
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton> 
+                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton>
                 <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</buttton>
             </div>
         </div>
