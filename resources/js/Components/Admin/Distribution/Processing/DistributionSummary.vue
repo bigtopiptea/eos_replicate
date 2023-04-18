@@ -173,10 +173,10 @@
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getDistributionCancellation()"  :pagination="pagination"
-                    :offset="1" class="mt-8" />
-
             </div>
+            <Pagination @paginate="getDistributionCancellation()"  :pagination="pagination"
+                :offset="1" class="mt-8" />
+
     </template>
     <style>
     .slide-fade-enter-active {

@@ -20,7 +20,16 @@
                                     <div
                                         class="relative py-5 mt-[41px] mb-2 flex justify-center items-center w-full h-[50px] bg-gradient-to-r from-[#FB9E30] via-[#F98B38] to-[#EE3E2C]">
                                         <div class="absolute left-5 text-white">
-                                            <UserIcon></UserIcon>
+                                            <!-- {{ iconShow }} -->
+                                            <div v-if=" iconShow  === 'USER'">
+                                                <UserIcon/>
+                                            </div>
+                                            <div v-else-if="iconShow === 'FIND'">
+                                                <FindIcon/>
+                                            </div>
+                                            <div v-else>
+
+                                            </div>
                                         </div>
                                         <h2
                                             class="text-[14px] font-bold text-white font-rubik-light uppercase tracking-wider">
@@ -44,6 +53,8 @@
 <script>
 import SwitchToggle from '../Switch(Toggle)/SwitchToggle.vue';
 import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
+import FindIcon from "@/Components/Misc/Icons/FindIcon.vue";
+import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
 export default {
     name: "Slideover",
     props: {
@@ -55,9 +66,13 @@ export default {
             type: String,
             default: 'MODAL TITLE HERE',
         },
+        iconShow: {
+            type: String,
+            default:'',
+        }
     },
     components: {
-        SwitchToggle, UserIcon
+        SwitchToggle, UserIcon, FindIcon , PaperClipIcon
     },
     data() {
         return {

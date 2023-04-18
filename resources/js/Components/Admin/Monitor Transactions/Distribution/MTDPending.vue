@@ -41,11 +41,7 @@ export default{
         }
     },
     methods: {
-        // Modal
-        viewModalToggle() {
-            this.viewModalOpen = false;
-        },
-        async getDistributionSummary() {
+        async getMTDPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
