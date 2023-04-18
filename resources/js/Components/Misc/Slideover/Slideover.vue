@@ -54,7 +54,7 @@
 import SwitchToggle from '../Switch(Toggle)/SwitchToggle.vue';
 import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
 import FindIcon from "@/Components/Misc/Icons/FindIcon.vue";
-import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
+
 export default {
     name: "Slideover",
     props: {
@@ -72,7 +72,7 @@ export default {
         }
     },
     components: {
-        SwitchToggle, UserIcon, FindIcon , PaperClipIcon
+        SwitchToggle, UserIcon, FindIcon
     },
     data() {
         return {

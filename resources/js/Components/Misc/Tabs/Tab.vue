@@ -9,7 +9,7 @@ export default {
     props: {
         isSelected: {
             type: Boolean,
-            default: true
+            default: false
         },
     }
 }

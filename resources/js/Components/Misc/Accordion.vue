@@ -8,6 +8,7 @@
                 data-accordion-target="#accordion-collapse-body-1"
                 aria-expanded="true"
                 aria-controls="accordion-collapse-body-1"
+
             >
                 <span>{{ sectiontitle }}</span>
                 <svg
@@ -60,10 +61,14 @@ export default {
             value: "",
             type: String,
         },
+        setOpen:{
+            type: Boolean,
+            default: true
+        }
     },
     data() {
         return {
-            open: false,
+            open: this.setOpen
         };
     },
 };

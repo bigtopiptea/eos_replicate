@@ -41,7 +41,7 @@ export default{
             viewDetailsOpen: false,  //Slideover
             viewDocumentsOpen: false,  //Slideover
             viewVerifyFundingOpen: false,  //Slideover
-            test: '',
+            paraIcon: '',
 
         }
     },
@@ -49,13 +49,13 @@ export default{
 
         //Slideover
         setIconDetailsOpen(){
-            this.viewDetailsOpen === true ? this.test = 'USER' : '';
+            this.viewDetailsOpen === true ? this.paraIcon = 'FIND' : '';
         },
         setIconDocumentsOpen(){
-            this.viewDocumentsOpen === true ? this.test = 'FIND' : '';
+            this.viewDocumentsOpen === true ? this.paraIcon = 'FIND' : '';
         },
         setIconVerifyFundingOpen(){
-            this.viewVerifyFundingOpen === true ? this.test = '' : '' ;
+            this.viewVerifyFundingOpen === true ? this.paraIcon = '' : '' ;
         },
         viewDetailsToggle() {
             this.viewDetailsOpen = false;
@@ -245,7 +245,7 @@ export default{
     </div>
 
     <!-- Slideover (View Details) -->
-    <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'" :iconShow="test">
+    <Slideover :show="viewDetailsOpen" @close="viewDetailsToggle" :title="'VIEW DETAILS'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
@@ -282,7 +282,7 @@ export default{
     </Slideover>
 
     <!-- Slideover (View Documents) -->
-    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="test">
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="flex gap-3 mt-10">
