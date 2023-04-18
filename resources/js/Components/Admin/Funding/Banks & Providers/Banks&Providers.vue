@@ -83,13 +83,11 @@ export default{
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-full mb-3 overflow-x-hidden">
-               <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
-                    <div class="flex items-end justify-between h-auto min-w-full -mx-6">
-                        <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
-                        </div>
-                        <div class="right-side flex h-20 ">
-                            <form class="flex items-start">
+            <div class=" h-full  overflow-x-hidden">
+               <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
+                    <div class="h-auto min-w-full -mx-6 mt-4">
+                        <div class="flex">
+                            <form class="flex items-end">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                         <SearchIcon />
@@ -100,7 +98,6 @@ export default{
                                 </div>
                                 <NormalButton label="Go"
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
-
                             </form>
                         </div>
                     </div>
@@ -113,51 +110,35 @@ export default{
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            ID
+                                            pv no.
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            DATE
+                                            date
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            TIE UP
+                                            invoice no.
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            REFERENCE NO.
+                                            supplier
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            CMT REFERENCE NO.
+                                            apv amount
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            CURRENCY
+                                            amount paid
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            AMOUNT
+                                            balance
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            PROCESS RATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            CURRENT RATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            REFUND AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            AP RATE
+                                            due date
                                         </th>
                                         <th scope="col"
                                             class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
@@ -169,6 +150,9 @@ export default{
                                     <tr class="divide-x divide-gray-200">
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            <a href="">
+
+                                            </a>
                                             01
                                         </td>
                                         <td
@@ -177,49 +161,32 @@ export default{
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
-                                            REDHA AL ANSARI EXCHANGE
-                                    </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
-                                            REDHA-09282022-0006
+                                            INV000000001
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
-                                            CMT-09282022-0009
+                                            INKLINE OFFICE SOLUTIONS INC.
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
-                                            PHP
+                                            10,000.00
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                            -
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                            10,000.00
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            24,900.13
+                                            10/01/2022 12:00:00 AM
                                         </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            28.25
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                        48.30
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            USD
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            515.53
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            38.28
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider">
-                                            <button>
-                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                            </button>
+                                        <td class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider">
+                                            <router-link to="/app/funding/payment-voucher" class="flex justify-center">
+                                                <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
+                                            </router-link>
                                         </td>
                                     </tr>
                                 </tbody>
