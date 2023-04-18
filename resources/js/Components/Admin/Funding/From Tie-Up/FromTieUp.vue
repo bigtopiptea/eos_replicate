@@ -10,7 +10,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 
 <script>
 
-
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
@@ -28,6 +28,7 @@ export default{
     InputLabel,
     ListIcon,
     Pagination,
+    InputGroup,
 
 
 },
@@ -85,12 +86,21 @@ export default{
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full p-3">
                 <div class="flex justify-between border border-red-500">
-                    <div>
-                        Hello
+                    <div class="flex border border-blue-500 p-3 w-8/12">
+                        <div class="flex justify-between gap-[60px] w-full">
+                            <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
+                            <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
+                        </div>
                     </div>
-                    <div class="flex flex-col ">
-                        <p>Hello</p>
-                        <p>Hello</p>
+                    <div class=" border border-red-500 p-3 uppercase w-4/12">
+                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'" />
+                        <div class="flex justify-start items-center">
+                            <input type="checkbox">
+                            <span class="font-light text-[10px] ml-3">Advanced Funding</span>
+                        </div>
                     </div>
                 </div>
             </div>
