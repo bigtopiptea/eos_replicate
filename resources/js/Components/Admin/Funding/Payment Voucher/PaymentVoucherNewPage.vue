@@ -169,13 +169,13 @@ export default{
         </div>
         <!-- Accordion -->
         <div>
-            <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=true>
+            <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=false>
                 <CreatePaymentVoucher/>
             </Accordion>
         </div>
         <!-- Accordion -->
         <div>
-            <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
+            <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=false>
                 <JournalEntry/>
             </Accordion>
         </div>

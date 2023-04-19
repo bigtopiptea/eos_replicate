@@ -28,7 +28,7 @@ import Home from "@/Components/Admin/Home/Home.vue";
 import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 import MonitorTransactions from "@/Components/Admin/Monitor Transactions/MonitorTransactions.vue"
 import Funding from "@/Components/Admin/Funding/Funding.vue"
-import PaymentVoucher from "@/Components/Admin/Funding/Banks & Providers/PaymentVoucher.vue"
+import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucherNewPage.vue"
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
