@@ -90,7 +90,7 @@ export default{
                             <form class="flex items-end">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                        <SearchIcon />
+                                        <SearchIcon/>
                                     </div>
                                     <input type="text" id="simple-search"
                                         class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 p-2.5"
