@@ -53,7 +53,100 @@ export default{
                 </div>
             </div>
         </div>
-        <!-- <InputGroup :inputLabel="'Name'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
-        <InputGroup :inputLabel="'Age'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/> -->
+        <!-- TABLE -->
+        <div class="overflow-hidden">
+            <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
+                    <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
+                        <thead class="bg-[#3E3E3E] font-medium text-[11px] whitespace-nowrap text-white">
+                            <tr class="divide-x divide-gray-200">
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    acc title
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    cost center
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    service
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    item
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    quantity
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    unit
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center">
+                                    amount
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center   ">
+                                    w/tax code
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center   ">
+                                    w/tax
+                                </th>
+                                <th scope="col"
+                                    class="py-2 px-1 uppercase tracking-wider  text-center   ">
+                                    vat
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    PREPAID - STATIONARIES & OFFICE SUPPLIES
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    -
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    -
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    toner
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    1
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    1
+                                </td>
+                                <td lass="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    8,928.57
+                                </td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    WC120
+                                </td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    178.57
+                                </td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    1,071.43
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <h1>Hello World</h1>
+            </div>
+        </div>
     </div>
 </template>
