@@ -67,18 +67,8 @@ export default{
         setSelected(tab) {
         this.selected = tab;
         },
-        openHeading(){
-            this.isOpen = !this.isOpen;
-        },
 
-        async getRate(){
-            await axios.get('/api/rates/cmt/list')
-                .then((response) => {
-                    this.rates = response.data;
-                })
-                .catch((errors) => [
-                ])
-        },
+
         },
     }
 </script>
@@ -117,7 +107,7 @@ export default{
                     </div>
 
                 <!-- Accordion Content -->
-                <div class="p-1 min-h-full w-fit overflow-auto">
+                <div class="p-1 min-h-full w-full overflow-auto">
                     <Accordion sectiontitle="Unallocated Transactions" :setOpen=false>
                         <UnallocatedTransactions/>
                     </Accordion>
