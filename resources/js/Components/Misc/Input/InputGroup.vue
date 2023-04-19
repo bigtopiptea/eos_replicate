@@ -1,5 +1,6 @@
 <template>
-    <div class="flex items-center font-light text-[10px] w-full h-7 mb-4">
+    <!-- OJT -->
+    <div class="flex items-center font-light text-[10px] w-full h-7 mb-4 whitespace-nowrap">
         <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="labelWidth">
             {{ inputLabel }}
         </label>
