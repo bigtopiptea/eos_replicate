@@ -17,7 +17,7 @@ import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTDPending',
 
     components:{
         DropDown,

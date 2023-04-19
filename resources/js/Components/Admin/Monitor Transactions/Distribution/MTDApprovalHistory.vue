@@ -16,7 +16,7 @@ import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTDApprovalHistory',
 
     components:{
         DropDown,
@@ -200,7 +200,7 @@ export default{
             </div>
         </div>
     </div>
-        <Pagination @paginate="MTDApprovalHistory()"  :pagination="pagination"
+        <Pagination @paginate="getMTDApprovalHistory()"  :pagination="pagination"
             :offset="1" class = "mb-6 mt-6"/>
     </div>
 </template>

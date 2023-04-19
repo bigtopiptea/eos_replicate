@@ -18,7 +18,7 @@ import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTFApprovalHistory',
 
     components:{
         DropDown,

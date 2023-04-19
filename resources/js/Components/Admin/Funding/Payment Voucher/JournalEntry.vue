@@ -90,7 +90,7 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
-                <button class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-[17px]">CANCEL</button>
+                <router-link to="/app/funding" class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-[17px]">CANCEL</router-link>
                 <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
             </div>
         </div>

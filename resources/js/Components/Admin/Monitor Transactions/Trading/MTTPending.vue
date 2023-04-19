@@ -18,7 +18,7 @@ import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTTPending',
 
     components:{
         DropDown,
@@ -35,7 +35,7 @@ export default{
 
     data() {
         return {
-            distributionSummary: [],
+            MTTPending: [],
             pagination: {
                 current_page: 1,
             },
@@ -51,11 +51,11 @@ export default{
         viewDocumentsToggle() {
             this.viewDocumentsOpen = false;
         },
-        async getDistributionSummary() {
+        async getMTTPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.distributionSummary = response.data.data;
+                    this.MTTPending = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -218,7 +218,7 @@ export default{
                 </div>
             </div>
          </div>
-        <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
+        <Pagination @paginate="getMTTPending()" :pagination="pagination"
             :offset="1" class="my-6"/>
     </div>
 

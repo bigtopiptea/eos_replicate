@@ -19,7 +19,7 @@ import axios from "axios";
 
 export default{
 
-    name:'Banks & Providers',
+    name:'Payment Voucher',
 
     components:{
     Tab, TabNav,
@@ -33,7 +33,7 @@ export default{
 
     data() {
         return {
-            distributionRefund: [],
+            PaymentVoucher: [],
             pagination: {
                 current_page: 1,
             },
@@ -46,11 +46,11 @@ export default{
         }
     },
     methods: {
-        async getDistributionRefund() {
+        async getPaymentVoucher() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.distributionRefund = response.data.data;
+                    this.PaymentVoucher = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -189,7 +189,7 @@ export default{
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getDistributionRefund()"  :pagination="pagination"
+                <Pagination @paginate="getPaymentVoucher()"  :pagination="pagination"
                         :offset="1" class="mt-8" />
 
             </div>

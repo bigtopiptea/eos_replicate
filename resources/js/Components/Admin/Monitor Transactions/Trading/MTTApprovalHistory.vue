@@ -16,7 +16,7 @@ import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 
 export default{
 
-    name:'DistributionSummary',
+    name:'MTTApprovalHistory',
 
     components:{
         DropDown,
@@ -31,7 +31,7 @@ export default{
 
     data() {
         return {
-            distributionSummary: [],
+            MTTApprovalHistory: [],
             pagination: {
                 current_page: 1,
             }
@@ -39,11 +39,11 @@ export default{
         }
     },
     methods: {
-        async getDistributionSummary() {
+        async getMTTApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.distributionSummary = response.data.data;
+                    this.MTTApprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -196,7 +196,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getDistributionSummary()" :pagination="pagination"
+        <Pagination @paginate="getMTTApprovalHistory()" :pagination="pagination"
             :offset="1" class="my-6"/>
     </div>
 </template>
