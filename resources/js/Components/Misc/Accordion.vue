@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full">
+    <div class="w-full py-4">
         <h2>
             <button
                 @click="open = !open"
@@ -29,7 +29,7 @@
         </h2>
         <Transition>
             <div v-if="open">
-                <div class="py-5 font-light border border-gray-200">
+                <div class="py-5 font-light">
                     <!-- <div
                     class="p-5 font-light border border-gray-200 dark:border-gray-700 dark:bg-gray-900"
                 > -->

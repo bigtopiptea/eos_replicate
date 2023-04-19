@@ -22,14 +22,13 @@ export default{
     name:'Banks & Providers',
 
     components:{
+    Tab, TabNav,
     EditIcon,
     NormalButton,
     SearchIcon,
     InputLabel,
     ListIcon,
     Pagination,
-
-
 },
 
     data() {

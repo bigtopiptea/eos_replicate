@@ -5,6 +5,7 @@ import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import BanksProviders from "@/Components/Admin/Funding/Banks & Providers/Banks&Providers.vue";
 import FromTieUp from "@/Components/Admin/Funding/From Tie-Up/FromTieUp.vue";
+import OeriToOeri from "@/Components/Admin/Funding/Oeri to Oeri/OeriToOeri.vue";
 
 
 
@@ -14,10 +15,7 @@ export default defineComponent({
         TabNav,
         BanksProviders,
         FromTieUp,
-
-
-
-
+        OeriToOeri
     },
     data(){
         return {
@@ -42,7 +40,7 @@ export default defineComponent({
             <FromTieUp/>
         </Tab>
         <Tab :isSelected="selected === 'Oeri to Oeri'">
-            <h1>Oeri to Oeri</h1>
+            <OeriToOeri/>
         </Tab>
         <Tab :isSelected="selected === 'Banks/Providers'">
             <h1>Banks/Providers</h1>
