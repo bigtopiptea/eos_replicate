@@ -57,9 +57,9 @@ export default{
         <div class="overflow-hidden">
             <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
-                    <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
+                    <table class="min-w-full divide-y divide-gray-300 overflow-visible">
                         <thead class="bg-[#3E3E3E] font-medium text-[11px] whitespace-nowrap text-white">
-                            <tr class="divide-x divide-gray-200">
+                            <tr class="divide divide-gray-300">
                                 <th scope="col"
                                     class="py-2 px-1 uppercase tracking-wider  text-center">
                                     acc title
