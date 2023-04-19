@@ -62,9 +62,6 @@ export default{
         setSelected(tab) {
         this.selected = tab;
         },
-        openHeading(){
-            this.isOpen = !this.isOpen;
-        },
 
         async getRate(){
             await axios.get('/api/rates/cmt/list')
@@ -150,10 +147,9 @@ export default{
                                     <tr class="divide-x divide-gray-200">
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            <a href="">
-
+                                            <a  class="underline text-cyan-500" href="#">
+                                                01
                                             </a>
-                                            01
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
