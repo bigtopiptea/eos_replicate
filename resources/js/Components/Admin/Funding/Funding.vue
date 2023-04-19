@@ -3,7 +3,7 @@
 import {defineComponent} from "vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
-import BanksProviders from "@/Components/Admin/Funding/Banks & Providers/Banks&Providers.vue";
+import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucher.vue";
 import FromTieUp from "@/Components/Admin/Funding/From Tie-Up/FromTieUp.vue";
 import OeriToOeri from "@/Components/Admin/Funding/Oeri to Oeri/OeriToOeri.vue";
 
@@ -13,7 +13,7 @@ export default defineComponent({
     components: {
         Tab,
         TabNav,
-        BanksProviders,
+        PaymentVoucher,
         FromTieUp,
         OeriToOeri
     },
@@ -34,7 +34,7 @@ export default defineComponent({
     <div class="w-full min-h-full bg-white ">
     <TabNav :selected="selected" :tabs="['Payment Voucher', 'From Tie-Up', 'Oeri to Oeri', 'Banks/Providers', 'Tie-Up to Oeri' ]" @selected="setSelected" >
         <Tab :isSelected="selected === 'Payment Voucher'">
-            <BanksProviders/>
+            <PaymentVoucher/>
         </Tab>
         <Tab :isSelected="selected === 'From Tie-Up'">
             <FromTieUp/>
