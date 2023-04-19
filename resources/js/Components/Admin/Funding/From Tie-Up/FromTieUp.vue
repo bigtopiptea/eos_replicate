@@ -9,10 +9,12 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
+import JournalEntry from "./JournalEntry.vue";
 import UnallocatedTransactions from "@/Components/Admin/Funding/From Tie-Up/UnallocatedTransactions.vue";
 import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
+import InputDropdown from "@/Components/Misc/Input/InputDropdown.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
@@ -34,7 +36,8 @@ export default{
     FloatingTextArea,
     Accordion,
     UnallocatedTransactions,
-
+    JournalEntry,
+    InputDropdown,
 },
 
     data() {
@@ -80,15 +83,23 @@ export default{
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full">
 
-                    <div class="flex justify-between p-3">
-                        <div class="flex flex-col  pt-3 w-8/12 mr-10 h-2">
-                            <div class="flex justify-between gap-[60px] w-full mt-[44px]">
-                                <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
-                                <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Bank total Fund'" />
+                    <div class="flex justify-between p-3 mb-3">
+                        <div class="flex flex-col  pt-3 w-8/12 mr-3 h-2">
+                            <div class="flex justify-between gap-[10px] w-full mt-[44px]">
+                                <div class="w-[60%]">
+                                    <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />
+                                </div>
+                                <div class="w-[40%]">
+                                    <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Currency'" />
+                                </div>
                             </div>
-                            <div class="flex justify-between gap-[60px] w-full ">
-                                <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
-                                <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Bank total Fund'" />
+                            <div class="flex justify-between gap-[10px] w-full ">
+                                <div class="w-[60%]">
+                                    <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Bank'" />
+                                </div>
+                                <div class="w-[40%]">
+                                    <InputGroup :inputWidth="'w-7/12 bg-white'" :labelWidth="'w-5/12'" :inputLabel="'Amount'" inputColor="'bg-white'" />
+                                </div>
                             </div>
                             <div class="h-auto">
                                 <FloatingTextArea :label="'Remarks'" :inputHeight="'h-16 overflow-y-hidden'"/>
@@ -112,7 +123,7 @@ export default{
                         <UnallocatedTransactions/>
                     </Accordion>
                     <Accordion sectiontitle="Journal Entry" :setOpen=false>
-                        <h1>Table Content Journal Entry</h1>
+                        <JournalEntry/>
                     </Accordion>
                 </div>
             </div>

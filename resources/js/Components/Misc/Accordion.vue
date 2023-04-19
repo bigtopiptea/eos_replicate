@@ -29,7 +29,11 @@
         </h2>
         <Transition>
             <div v-if="open">
+<<<<<<< HEAD
                 <div class="py-5 font-light">
+=======
+                <div class="py-5 font-light ">
+>>>>>>> da0803ce11aa60254903b8ad1a846ad6b32fc8cd
                     <!-- <div
                     class="p-5 font-light border border-gray-200 dark:border-gray-700 dark:bg-gray-900"
                 > -->
