@@ -9,8 +9,8 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
-
-
+import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
@@ -28,7 +28,8 @@ export default{
     InputLabel,
     ListIcon,
     Pagination,
-
+    InputGroup,
+    FloatingTextArea,
 
 },
 
@@ -84,13 +85,29 @@ export default{
     <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full p-3">
-                <div class="flex justify-between border border-red-500">
-                    <div>
-                        Hello
-                    </div>
-                    <div class="flex flex-col ">
-                        <p>Hello</p>
-                        <p>Hello</p>
+                <div class="flex justify-between ">
+                    <div class="flex flex-col  pt-3 w-8/12 mr-10 h-2">
+                        <div class="flex justify-between gap-[60px] w-full mt-[44px]">
+                            <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
+                            <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Bank total Fund'" />
+                        </div>
+                        <div class="flex justify-between gap-[60px] w-full ">
+                            <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
+                            <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Bank total Fund'" />
+                        </div>
+                        <div class="h-auto">
+                            <FloatingTextArea :label="'Remarks'" :inputHeight="'h-16 overflow-y-hidden'"/>
+                        </div>
+                    </div >
+                    <div class="  p-3 uppercase w-4/12">
+                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'" />
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'" />
+                        <div class="flex justify-start items-center">
+                            <input type="checkbox">
+                            <span class="font-light text-[10px] ml-3">Advanced Funding</span>
+                        </div>
                     </div>
                 </div>
             </div>
