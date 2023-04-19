@@ -9,6 +9,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
+import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
@@ -30,7 +31,7 @@ export default{
     Pagination,
     InputGroup,
     FloatingTextArea,
-
+    Accordion,
 },
 
     data() {
@@ -109,6 +110,15 @@ export default{
                             <span class="font-light text-[10px] ml-3">Advanced Funding</span>
                         </div>
                     </div>
+                </div>
+                <!-- Accordion Content -->
+                <div>
+                    <Accordion sectiontitle="Unallocated Transactions" :setOpen=false>
+                        <h1>Table Content Unallocated</h1>
+                    </Accordion>
+                    <Accordion sectiontitle="Journal Entry" :setOpen=false>
+                        <h1>Table Content Journal Entry</h1>
+                    </Accordion>
                 </div>
             </div>
         </Tab>
