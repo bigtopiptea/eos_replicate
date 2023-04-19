@@ -4,9 +4,10 @@ import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue"
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import Accordion from "@/Components/Misc/Accordion.vue"
 import CreatePaymentVoucher from "./CreatePaymentVoucher.vue"
+import JournalEntry from "./JournalEntry.vue"
 export default{
     components:{
-        InputGroup, InputTextarea, Accordion, CreatePaymentVoucher, BorderButton
+        InputGroup, InputTextarea, Accordion, BorderButton, CreatePaymentVoucher, JournalEntry
     }
 }
 </script>
@@ -19,7 +20,7 @@ export default{
                     <div>
                         <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     </div>
-                    <div class="flex gap-2">
+                    <div class="flex items-center gap-2">
                         <div class="flex items-center gap-2">
                             <input type="checkbox" checked>
                             <span class="text-[10px] whitespace-nowrap">LOAD FROM PURCHASE ORDER </span>
@@ -166,10 +167,16 @@ export default{
                 </div>
             </div>
         </div>
+        <!-- Accordion -->
         <div>
-            <!-- Accordion -->
             <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=true>
                 <CreatePaymentVoucher/>
+            </Accordion>
+        </div>
+        <!-- Accordion -->
+        <div>
+            <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
+                <JournalEntry/>
             </Accordion>
         </div>
     </div>

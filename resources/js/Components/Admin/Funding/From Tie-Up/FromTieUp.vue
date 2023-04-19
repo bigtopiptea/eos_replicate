@@ -117,7 +117,7 @@ export default{
                     </div>
 
                 <!-- Accordion Content -->
-                <div class="p-1 min-h-full w-fit overflow-auto">
+                <div class="p-1 min-h-full w-full overflow-auto">
                     <Accordion sectiontitle="Unallocated Transactions" :setOpen=false>
                         <UnallocatedTransactions/>
                     </Accordion>

@@ -1,10 +1,11 @@
 <script>
 import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
 import InputDropdown from '@/Components/Misc/Input/InputDropdown.vue'
+import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 
 export default {
     components:{
-        InputGroup, InputDropdown,
+        InputGroup, InputDropdown, BorderButton
     }
 }
 </script>
@@ -83,6 +84,16 @@ export default {
                     </table>
                 </div>
             </div>
+        </div>
+        <!-- Remarks -->
+        <div class="flex items-center w-full text-[10px] my-5 px-5">
+            <label for="remarks" class="font-bold uppercase w-[10%]">REMARKS</label>
+            <input type="text" name="remarks" class="w-[90%] p-1 focus:z-10  border border-#D7D7D7 focus:border-collapse">
+        </div>
+        <!-- Buttons -->
+        <div class="flex justify-center gap-x-[15px]">
+            <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E'"/>
+            <BorderButton :buttonLabel="'PASS ENTRY'"/>
         </div>
     </div>
 </template>
