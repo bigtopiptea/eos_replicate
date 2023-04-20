@@ -6,18 +6,20 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucher.vue";
 import FromTieUp from "@/Components/Admin/Funding/From Tie-Up/FromTieUp.vue";
 import OeriToOeri from "@/Components/Admin/Funding/Oeri to Oeri/OeriToOeri.vue";
-import TieUpToOeri from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeri.vue";
+import BanksProviders from "./Banks & Providers/Banks&Providers.vue";
 
 
 
 export default defineComponent({
+  watch: {
+  },
     components: {
         Tab,
         TabNav,
         PaymentVoucher,
         FromTieUp,
         OeriToOeri,
-        TieUpToOeri
+        BanksProviders
     },
     data(){
         return {
@@ -45,7 +47,7 @@ export default defineComponent({
             <OeriToOeri/>
         </Tab>
         <Tab :isSelected="selected === 'Banks/Providers'">
-            <h1>Banks/Providers</h1>
+            <BanksProviders/>
         </Tab>
         <Tab :isSelected="selected === 'Tie-Up to Oeri'">
             <TieUpToOeri/>

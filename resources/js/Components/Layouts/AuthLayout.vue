@@ -24,16 +24,16 @@ import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
-import FundIcon from "@/Components/Misc/Icons/FundIcon.vue";
-import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
+import FundIcon from "../Misc/Icons/FundIcon.vue";
+import DistributionIcon from "../Misc/Icons/DistributionIcon.vue";
 
 export default {
     components: {
         CircleCheckIcon, ChevLeftIcon, RadioIcon,
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
-        XMarkIcon, ProgressIcon,RangeSlider,
-        FundIcon, InputGroup
+        XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
+        DistributionIcon,
 
     },
     data(){
@@ -64,7 +64,7 @@ export default {
                     to: "/app/distribution",
                     label: "Distribution",
                     children: [],
-                    icon: ProcessIcon,
+                    icon: AmendmentIcon,
                 },
                 {
                     to: "/app/monitor-transaction",
@@ -268,7 +268,7 @@ export default {
 
 <template>
     <!-- Sidebar -->
-    <div class="border-gradient-top border-t-[3px] z-10 fixed inset-x-0 w-full"></div>
+    <div class="border-gradient-top border-t-[3px] z-10 fixed inset-x-0 w-full  "></div>
     <div class="flex bg-gray-100 ">
         <div class="flex flex-col inset-y-0 fixed z-10 flex-shrink-0 border-r-[2px] my-[0.15rem] nav w-64 bg-white" :class="!isToggled ? 'w-32': '64'">
             <ChevronLeftIcon @click="isToggled = !isToggled" class="h-6 absolute cursor-pointer -right-[0.80rem] top-[140px]"/>
@@ -357,7 +357,8 @@ export default {
         </div>
 
         <!-- Main content -->
-        <div class="flex flex-col flex-grow ml-64" :class="!isToggled ? 'ml-32' : ''">
+        <!-- Swap to ml-64 if you dont want a sticky sidebar -->
+        <div class="flex flex-col flex-grow ml-32" :class="!isToggled ? 'ml-32' : ''">
             <!-- Navbar -->
             <div class="fixed bg-white mt-[0.15rem] right-0 left-64 z-10 px-4 py-2 " :class="!isToggled ? 'left-32' : ''">
                 <div class="min-w-0 flex-1 flex justify-between ">
@@ -554,4 +555,27 @@ export default {
     #fbac4f 89.37%,
     #ffffff 115.09%) 1 stretch;
 }
+ /* CARL MENDIZA 4-20 */
+/* width */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 </style>

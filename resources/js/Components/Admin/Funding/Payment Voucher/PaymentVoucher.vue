@@ -76,7 +76,7 @@ export default{
 <template>
 
 <div class="border m-3 bg-white border-white shadow-md ">
-    <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
+    <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C] '">
         <Tab :isSelected="selected === 'Pending'" >
             <div :show="mainContentShow" class=" h-full  overflow-x-hidden">
                <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">

@@ -119,7 +119,6 @@ export default {
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             11-12-13
-
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
