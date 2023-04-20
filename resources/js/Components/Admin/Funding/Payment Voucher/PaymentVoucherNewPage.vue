@@ -12,11 +12,11 @@ export default{
 }
 </script>
 <template>
-    <div class="3xl:container w-full h-auto bg-white py-4 ">
+    <div class="3xl:container flex flex-col w-full h-auto bg-white py-4 ">
         <div class="px-4">
             <div class="w-[90%]">
                 <!-- Row 1 -->
-                <div class="flex justify-start gap-[195px]">
+                <div class="flex justify-between items-center w-[74.7%]">
                     <div>
                         <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     </div>
@@ -25,7 +25,7 @@ export default{
                             <input type="checkbox" checked>
                             <span class="text-[10px] whitespace-nowrap">LOAD FROM PURCHASE ORDER </span>
                         </div>
-                        <input type="text" class="h-7 w-40 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                        <input type="text" class="h-7 w-40 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center border border-gray-300">
                     </div>
                 </div>
                 <!-- Row 2 -->
@@ -34,18 +34,19 @@ export default{
                         <div class="w-[50.5%]">
                             <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                         </div>
+                        
                         <div  class="w-[25%]">
-                            <InputGroup :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                            <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
                         </div>
                         <div  class="w-[25%]">
-                            <InputGroup :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                            <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
                         </div>
                     </div>
                     <div class="flex gap-2">
                         <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                         <InputGroup :inputLabel="'invoice amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                        <InputGroup :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
-                        <InputGroup :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
+                        <InputGroup :inputType="'date'" :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
+                        <InputGroup :inputType="'date'" :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
                     </div>
                 </div>
                 <!-- Row 3 -->
@@ -169,13 +170,13 @@ export default{
         </div>
         <!-- Accordion -->
         <div>
-            <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=false>
+            <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=true>
                 <CreatePaymentVoucher/>
             </Accordion>
         </div>
         <!-- Accordion -->
         <div>
-            <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=false>
+            <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
                 <JournalEntry/>
             </Accordion>
         </div>

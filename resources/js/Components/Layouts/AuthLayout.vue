@@ -24,14 +24,16 @@ import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
-import FundIcon from "../Misc/Icons/FundIcon.vue";
+import FundIcon from "@/Components/Misc/Icons/FundIcon.vue";
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 
 export default {
     components: {
         CircleCheckIcon, ChevLeftIcon, RadioIcon,
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
-        XMarkIcon, ProgressIcon,RangeSlider,FundIcon
+        XMarkIcon, ProgressIcon,RangeSlider,
+        FundIcon, InputGroup
 
     },
     data(){
@@ -428,34 +430,13 @@ export default {
                     <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold" @click="(profileSlideoverOpen = !profileSlideoverOpen)" @click.prevent="slideOverToggle()">UPLOAD</button>
                 </div>
                 <div class="mt-5">
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">COMPLETE NAME</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">USER ROLE</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">COMPANY</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DEPARTMENT</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">EMAIL ADDRESS</label>
-                        <input type="email" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">CONTACT NUMBER</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DATE CREATED</label>
-                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
+                    <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'user role'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'company'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'department'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'email'" :inputLabel="'email address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'contact'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'date'" :inputLabel="'date'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
                 </div>
             </div>
             <div class="flex justify-center">
@@ -473,7 +454,7 @@ export default {
                         <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
                         <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
                     </div>
-                    <div class="text-center text-xs">
+                    <div class="text-center text-[10px]">
                         <p>MAX FILE SIZE: <span class="font-bold">1MB</span><br>
                         SUPPORTED FILE TYPES: <span class="font-bold">JPEG, JPG, PNG</span>
                         </p>
@@ -492,7 +473,7 @@ export default {
                     <div class="mb-3">
                         <ProgressIcon :progressWidth="'w-96'"></ProgressIcon>
                     </div>
-                    <div class="flex justify-between text-xs mb-3">
+                    <div class="flex justify-between text-[10px] mb-3">
                         <div>
                             <p>
                                 <span>0.5 MB</span>
@@ -502,7 +483,7 @@ export default {
                         </div>
                         <div class="text-#194E72">
                             <p>UPLOADING...
-                            <span>50%</span>
+                                <span>50%</span>
                             </p>
                         </div>
                     </div>

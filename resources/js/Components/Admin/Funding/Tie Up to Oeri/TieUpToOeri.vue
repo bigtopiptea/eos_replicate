@@ -56,6 +56,12 @@ export default{
 
             })
         },
+        switchContentToggle(){
+            this.mainContentShow = !this.mainContentShow;
+        },
+        updateMainValue(newValue){
+            this.mainContentShow = newValue;
+        }
     },
 }
 </script>
@@ -63,9 +69,9 @@ export default{
 <template>
     <div class="border m-3 bg-white border-white shadow-md ">
         <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
-            <Tab :isSelected="selected === 'Pending'" >
+            <Tab :isSelected="selected === 'Pending'" >              
                 <div v-show="mainContentShow">
-                    <div class=" flex flex-col justify-between h-full w-auto m-3">
+                    <div class="flex flex-col justify-between h-full w-auto m-3">
                         <div>
                             <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
                                 <div class="flex items-start justify-between h-auto min-w-full -mx-10">
@@ -223,7 +229,10 @@ export default{
                                                     <td
                                                         class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                                         <div class="flex justify-center">
-                                                            <button @click="mainContentShow = !mainContentShow" >
+                                                            <!-- <router-link :to="{path: '/app/funding/edit'}">
+                                                                Go
+                                                            </router-link> -->
+                                                            <button @click="switchContentToggle()" >
                                                                 <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
                                                             </button>
                                                         </div>
@@ -239,8 +248,9 @@ export default{
                     :offset="1" class = "mb-6 mt-6"/>
                     </div>
                 </div>
+
                 <div v-show="!mainContentShow">
-                    <TieUpToOeriEdit :isOpen="mainContentShow"/>  
+                    <TieUpToOeriEdit :isOpen="mainContentShow" @updateMainValue="updateMainValue"/>  
                 </div>
             </Tab>
         </TabNav>

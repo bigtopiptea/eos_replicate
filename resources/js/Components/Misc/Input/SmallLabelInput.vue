@@ -1,10 +1,10 @@
 <template>
     <!-- OJT -->
-    <div class="flex items-center font-light text-[10px] w-full h-7 mb-4 whitespace-nowrap">
-        <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="labelWidth">
+    <div class="flex flex-col font-light text-[10px] w-full h-auto mb-4 whitespace-nowrap">
+        <label for="name" class="uppercase inline-flex items-center h-full px-2"  :class="labelWidth">
             {{ inputLabel }}
         </label>
-        <input :type="inputType" class="uppercase h-full p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left  focus:border-collapse" :class="[inputColor,inputWidth]">
+        <input :type="inputType" class="uppercase h-7 p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left  focus:border-collapse" :class="[inputColor,inputWidth]">
     </div>
 </template>
 

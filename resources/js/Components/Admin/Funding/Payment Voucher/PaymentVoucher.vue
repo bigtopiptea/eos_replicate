@@ -42,7 +42,6 @@ export default{
             isOpen: true,
             // rates: [],
             // selected: '',
-
         }
     },
     methods: {
@@ -70,8 +69,8 @@ export default{
                 .catch((errors) => [
                 ])
         },
-        },
-    }
+    },
+}
 </script>
 
 <template>
@@ -79,7 +78,7 @@ export default{
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-full  overflow-x-hidden">
+            <div :show="mainContentShow" class=" h-full  overflow-x-hidden">
                <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
                     <div class="h-auto min-w-full -mx-6 mt-4">
                         <div class="flex">
@@ -101,7 +100,7 @@ export default{
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
                         <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                            <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
+                            <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
@@ -180,6 +179,7 @@ export default{
                                         </td>
                                         <td class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider">
                                             <router-link to="/app/funding/payment-voucher" class="flex justify-center">
+
                                                 <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
                                             </router-link>
                                         </td>
@@ -193,6 +193,7 @@ export default{
                         :offset="1" class="mt-8" />
 
             </div>
+            <router-view></router-view>
         </Tab>
     </TabNav>
 </div>

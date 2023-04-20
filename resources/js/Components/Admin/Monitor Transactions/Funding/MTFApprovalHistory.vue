@@ -15,6 +15,9 @@ import PaperClipIcon from "@/Components/Misc/Icons/PaperClipIcon.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
+import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
+import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
 
 export default{
 
@@ -30,7 +33,10 @@ export default{
         DateInput,
         Pagination,
         Slideover,
-        PaperClipIcon
+        PaperClipIcon,
+        InputGroup,
+        SmallLabelInput,
+        InputTextarea
     },
 
     data() {
@@ -213,29 +219,15 @@ export default{
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="name" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">INVOICE NO.</label>
-                        <input type="invoice-no" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
+                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <div class="-mt-3">
+                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'"/>
                     </div>
-                    <div class="flex flex-col text-xs w-full h-7 mb-5">
-                        <label for="supplier-name" class="h-full w-5/12 px-2 text-left text-[10px]">SUPPLIER NAME</label>
-                        <input type="text" class="w-full h-8 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="due-date" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">DUE DATE</label>
-                        <input type="date" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="remarks" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">REMARKS</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex items-center text-xs w-full h-7 mb-2">
-                        <label for="amount" class="inline-flex items-center h-full w-5/12 px-2 text-left border-2 border-[#EAEAEA]">AMOUNT</label>
-                        <input type="text" class="w-7/12 h-full bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center">
-                    </div>
-                    <div class="flex flex-col text-xs w-full  mb-5">
-                        <label for="desription" class="w-5/12 px-2 text-left text-[10px]">DESCRIPTION</label>
-                        <textarea rows="4" class="resize-none block p-2.5 h-24 w-full text-[10px] text-gray-900 bg-#ECECEC border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <div class="-mt-3">
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]"  :inputHeight="'h-[107px]'"/>
                     </div>
                 </div>
             </div>

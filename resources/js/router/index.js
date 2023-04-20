@@ -29,6 +29,7 @@ import Distribution from "@/Components/Admin/Distribution/Distribution.vue";
 import MonitorTransactions from "@/Components/Admin/Monitor Transactions/MonitorTransactions.vue"
 import Funding from "@/Components/Admin/Funding/Funding.vue"
 import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucherNewPage.vue"
+import TieUpFundingEdit from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeriEdit.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -238,15 +239,6 @@ const routes = [
                 },
             },
             //Carl Mendoza Edited [4-18]
-            {
-                path: "/app/funding",
-                name: "Funding",
-                component: Funding,
-                meta: {
-                    title: `Funding`,
-                    ability: "Funding",
-                },
-            },
             //Vedasto Quintans Edited [4-18 - 3:26pm]
             {
                 path: "/app/funding",
@@ -256,6 +248,17 @@ const routes = [
                     title: `Funding`,
                     ability: "Funding",
                 },
+                children:[
+                    {
+                        path: '/app/funding/edit',
+                        component: TieUpFundingEdit,
+                        name:'TieUpEdit',
+                        meta: {
+                            title: `Tie Up Edit`,
+                            ability: "Tie Up Edit",
+                        },
+                    },
+                ]
             },
             {
                 path: "/app/funding/payment-voucher",

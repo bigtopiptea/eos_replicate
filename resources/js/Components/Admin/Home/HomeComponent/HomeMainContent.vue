@@ -1,11 +1,11 @@
 <template>
-    <div class="3xl:container h-screen p-3 bg-white">
-        <div class="font-rubik-light">
+    <div class="3xl:container h-auto p-3 bg-white">
+        <div>
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
                <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
             </p>
         </div>
-        <div class="flex justify-between mt-3 pb-5 font-rubik-light border-b-2 border-solid border-#EAEAEA">
+        <div class="flex justify-between mt-3 pb-5  border-b-2 border-solid border-#EAEAEA">
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.00</h3>
                 <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
@@ -37,59 +37,59 @@
             </div>
         </div>
         <div class="flex justify-between w-full h-4/6 my-5">
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center">
-                    <thead class="sticky top-0">
+            <div class="h-[400px] overflow-y-auto">
+                <table class="h-full w-[350px] text-center">
+                    <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">BANK BALANCES</th>
+                            <th class="bg-#3E3E3E text-white" colspan="2">BANK BALANCES</th>
                         </tr>
                         <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">BANKS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
+                            <th class="bg-#D9D9D9">BANKS</th>
+                            <th class="bg-#D9D9D9">AMOUNT</th>
                         </tr>
                     </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
+                    <tbody class="border-2 border-#EAEAEA divide-y divide-gray-200">
+                        <tr class="divide-x divide-gray-200">
                             <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
+                            <td> - </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center overflow-auto">
-                    <thead class="sticky top-0">
+            <div class="h-[400px] overflow-y-auto">
+                <table class="h-full w-[350px] text-center">
+                    <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">TIE-UPS FUNDS</th>
+                            <th class="bg-#3E3E3E text-white" colspan="2">TIE-UPS FUNDS</th>
                         </tr>
                         <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">TIE-UPS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
+                            <th class="bg-#D9D9D9">TIE-UPS</th>
+                            <th class="bg-#D9D9D9">AMOUNT</th>
                         </tr>
                     </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
+                    <tbody class="border-2 border-#EAEAEA divide-y divide-gray-200">
+                        <tr class="divide-x divide-gray-200">
                             <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
+                            <td> - </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="h-full overflow-y-auto">
-                <table class="h-full border-collapse border-2 border-#EAEAEA w-80 text-center">
-                    <thead class="sticky top-0">
+            <div class="h-[400px]  overflow-y-auto">
+                <table class="h-full w-[350px] text-center">
+                    <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
-                            <th class="bg-#3E3E3E text-white text-sm text-bold" colspan="2">BANK & PROVIDERS FUNDS</th>
+                            <th class="bg-#3E3E3E text-white" colspan="2">BANK & PROVIDERS FUNDS</th>
                         </tr>
                         <tr>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">BANKS & PROVIDERS</th>
-                            <th class="bg-#D9D9D9 font-extralight text-sm">AMOUNT</th>
+                            <th class="bg-#D9D9D9">BANKS & PROVIDERS</th>
+                            <th class="bg-#D9D9D9">AMOUNT</th>
                         </tr>
                     </thead>
-                    <tbody class="overflow-y-auto">
-                        <tr class="border-b border-#EAEAEA">
+                    <tbody class="border-2 border-#EAEAEA divide-y divide-gray-200">
+                        <tr class="divide-x divide-gray-200">
                             <td> - </td>
-                            <td class="border-solid border-l-2 border-#EAEAEA"> - </td>
+                            <td> - </td>
                         </tr>
                     </tbody>
                 </table>
@@ -97,3 +97,26 @@
         </div>
     </div>
 </template>
+<style>
+/* width */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
