@@ -17,6 +17,8 @@ export default{
 
             selected: "Pending",
             isOpen: true,
+            checkedAll: false,
+            checkedOnce: false,
             // rates: [],
             // selected: '',
 
@@ -37,6 +39,9 @@ export default{
 
         setSelected(tab) {
         this.selected = tab;
+    },
+        isCheckedAll(){
+            this.method.checkedAll ? 'checked' : ''
         },
 
     },
@@ -44,14 +49,17 @@ export default{
 
 </script>
 <template>
-    <div class="inline-block min-w-full align-middle px-1">
-        <div class=" shadow ring-1 ring-black ring-opacity-5">
-            <table class="min-w-full divide-y gray-red-300 border border-gray-300">
-                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap ">
+    <div class="inline-block items-center w-auto  align-middle px-1 ">
+        <div class="2xl:w-auto w-[1070px]  overflow-x-auto  shadow ring-1 ring-black ring-opacity-5 ">
+            <table class=" divide-y gray-red-300 border border-gray-300 ">
+                <thead class="bg-[#D7D7D7]  font-medium text-[11px] whitespace-nowrap " >
                     <tr class="divide-x gray-red-300">
                         <th scope="col"
                             class="py-2 px-1 uppercase tracking-wider  text-center">
+                            <div class="flex justify-center gap-x-1">
+                            <input type="checkbox" @click="checkedAll = !checkedAll" >
                             ID
+                            </div>
                         </th>
                         <th scope="col"
                             class="py-2 px-1 uppercase tracking-wider  text-center">
@@ -103,10 +111,13 @@ export default{
                         </th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                    <tr class="divide-x divide-gray-200">
+                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]" :class="checkedAll ? 'bg-blue-200' : ''">
+                    <tr class="divide-x divide-gray-200"  >
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                            <div class="flex justify-center gap-x-1">
+                            <input type="checkbox" [isCheckedAll]>
                             01
+                            </div>
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
@@ -153,7 +164,11 @@ export default{
                     </tr>
                     <tr class="divide-x divide-gray-200">
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                            <div class="flex justify-center gap-x-1">
+                            <input type="checkbox" @click="checkedOnce = !checkedOnce" >
+
                             01
+                            </div>
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
@@ -200,7 +215,10 @@ export default{
                     </tr>
                     <tr class="divide-x divide-gray-200">
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                            01
+                            <div class="flex justify-center gap-x-1">
+                                <input type="checkbox">
+                                01
+                            </div>
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
@@ -247,7 +265,10 @@ export default{
                     </tr>
                     <tr class="divide-x divide-gray-200">
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                            01
+                            <div class="flex justify-center gap-x-1">
+                                <input type="checkbox">
+                                01
+                            </div>
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
@@ -293,9 +314,52 @@ export default{
                         </td>
                     </tr>
                 </tbody>
+                <tfoot class="bg-[#EAEAEA] font-normal text-[11px] whitespace-nowrap">
+                    <tr class="">
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-right uppercase py-2 px-1  tracking-wider">
+                        Total
+                        </td>
+                        <td class="whitespace-nowrap text-left uppercase py-2 px-1  tracking-wider">
+                        449
+                        </td>
+                        <td class="whitespace-nowrap text-left uppercase py-2 px-1  tracking-wider">
+                        2,705,576.00
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-left uppercase py-2 px-1  tracking-wider">
+                        131,575,913.68
+                        </td>
+                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+
+                        </td>
+                        <td class="whitespace-nowrap text-left uppercase py-2 px-1  tracking-wider">
+                        131,575,913.68
+                        </td>
+                        <td class="whitespace-nowrap text-left pl-4 uppercase py-2 px-1  tracking-wider">
+                        -
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
         </div>
-        <div class="self-center">
+        <div class="self-center  w-full">
         <Pagination @paginate="getDistributionRefund()"  :pagination="pagination"
                         :offset="1" class="mt-8" />
         </div>
@@ -306,3 +370,4 @@ export default{
             </div>
     </div>
 </template>
+
