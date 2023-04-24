@@ -111,11 +111,11 @@ export default{
                         </th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]" :class="checkedAll ? 'bg-blue-200' : ''">
+                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]" :class="checkedAll ? 'bg-blue-200' : ''" >
                     <tr class="divide-x divide-gray-200"  >
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                             <div class="flex justify-center gap-x-1">
-                            <input type="checkbox" [isCheckedAll]>
+                            <input type="checkbox" >
                             01
                             </div>
                         </td>
@@ -370,4 +370,9 @@ export default{
             </div>
     </div>
 </template>
+<!-- <style>
+input:checked {
+  height: 50px;
+}
+</style> -->
 
