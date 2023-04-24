@@ -1,13 +1,11 @@
-<template>
+    <template>
     <!-- OJT -->
     <div class="flex items-center font-light text-[10px] w-full h-7 mb-4 whitespace-nowrap">
         <label for="name" class="uppercase inline-flex items-center h-full px-2 text-left border border-[#EAEAEA]"  :class="labelWidth">
             {{ inputLabel }}
         </label>
-        <select name="payment-type" class="uppercase h-full bg-#ECECEC p-1 focus:z-10  text-[#3E3E3E] text-left border-none focus:border-collapse" :class="inputWidth" >
-            <option value="1">CASH TO BANK ACCOUNT</option>
-            <option value="2">CASH TO BANK ACCOUNT</option>
-            <option value="3">CASH TO BANK ACCOUNT</option>
+        <select name="payment-type"  class="uppercase h-full p-1 focus:z-10  text-[#3E3E3E] text-left border border-grey-200 focus:border-collapse" :class=[inputWidth,inputColor] >
+                <option v-for="(choice,index) in choices" :key="index" value=index >{{choice}}</option>
         </select>
     </div>
 </template>
@@ -19,6 +17,10 @@ export default{
         type: String,
         default: 'Label'
     },
+    inputColor:{
+        type: String,
+        default: 'bg-white'
+    },
     inputWidth:{
         type: String,
         default: '5/12',
@@ -28,7 +30,11 @@ export default{
         type: String,
         default: '7/12',
         required: true
-    }
+    },
+    choices:{
+        type: Array,
+        required: true
+    },
   },
 }
 </script>

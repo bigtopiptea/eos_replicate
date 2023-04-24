@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="text-[11px] font-medium uppercase" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
+        <button class="text-[11px] p-2 font-medium uppercase whitespace-nowrap" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
     </div>
 </template>
 
@@ -17,7 +17,7 @@ export default{
         },
         buttonSize:{
             type: String,
-            default: 'h-[34px] w-[120px]'
+            default: 'h-auto w-[120px]'
         }
     }
 }
