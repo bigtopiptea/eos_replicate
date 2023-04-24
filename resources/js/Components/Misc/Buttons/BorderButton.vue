@@ -1,6 +1,7 @@
+<!-- OJT -->
 <template>
     <div>
-        <button class="font-medium uppercase" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
+        <button class="font-medium uppercase whitespace-nowrap p-2" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
     </div>
 </template>
 
@@ -21,7 +22,7 @@ export default{
         },
         buttonSize:{
             type: String,
-            default: 'h-[34px] w-[120px]'
+            default: 'h-auto w-[120px]'
         }
     }
 }
