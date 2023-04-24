@@ -33,6 +33,8 @@ import TieUpFundingEdit from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToO
 import PDF from "@/Components/Admin/Monitor Transactions/Distribution/PDF.vue";
 import Buying from "@/Components/Admin/Trading/Buying/Buying.vue";
 import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
+import CustomerRecord from "@/Components/Admin/Trading/Customer Record/CustomerRecord.vue";
+import CustomerRecordIndividual from "@/Components/Admin/Trading/Customer Record/Individual/CustomerRecordIndividual.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -81,15 +83,15 @@ const routes = [
         component: NotFound,
     },
     
-    {
-        path: "/app/monitor-transactions/pdf",
-        name: "pdf",
-        component: PDF,
-        meta: {
-            title: `PDF`,
-            ability: "PDF",
-        },
-    },
+    // {
+    //     path: "/app/monitor-transactions/pdf",
+    //     name: "pdf",
+    //     component: PDF,
+    //     meta: {
+    //         title: `PDF`,
+    //         ability: "PDF",
+    //     },
+    // },
     {
         path: "/app/monitoring/outfile/:id",
         name: "monitoringOutfile",
@@ -300,6 +302,26 @@ const routes = [
                 meta: {
                     title: `Trading - Selling`,
                     ability: "Trading - Selling",
+                },
+
+            },
+            {
+                path: "app/trading/customer-record",
+                name: "Customer Record",
+                component: CustomerRecord,
+                meta: {
+                    title: `Customer Record`,
+                    ability: "Customer Record",
+                },
+            },
+
+            {
+                path: "app/trading/customer-record/individual",
+                name: "Customer Record - Individual",
+                component: CustomerRecordIndividual,
+                meta: {
+                    title: `Customer Record - Individual`,
+                    ability: "Customer Record - Individual",
                 },
 
             },

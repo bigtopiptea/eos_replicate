@@ -6,6 +6,10 @@ const props = defineProps({
         type: String,
         default: ''
     },
+    options: {
+        type: Array,
+        required: true
+    }
 });
 
 const isShow = ref(false);
@@ -30,18 +34,10 @@ const isShow = ref(false);
         <div v-if="isShow"
             class="absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div class="py-1" role="none">
+            <div v-for="(option, index) in options" :key="index" class="py-1" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                    id="menu-item-0">Account settings</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                    id="menu-item-1">Support</a>
-                <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
-                    id="menu-item-2">License</a>
-                <form method="POST" action="#" role="none">
-                    <button type="submit" class="text-gray-700 block w-full px-4 py-2 text-left text-sm" role="menuitem"
-                        tabindex="-1" id="menu-item-3">Sign out</button>
-                </form>
+                <a  href="#" class="uppercase text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                    id="menu-item-0">{{option}}</a>
             </div>
         </div>
     </div>

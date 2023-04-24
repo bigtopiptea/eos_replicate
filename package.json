@@ -26,6 +26,7 @@
         "@ckeditor/ckeditor5-build-classic": "^36.0.1",
         "@ckeditor/ckeditor5-image": "^36.0.1",
         "@ckeditor/ckeditor5-vue": "^4.0.1",
+        "@fortawesome/vue-fontawesome": "^3.0.3",
         "@headlessui/vue": "^1.7.6",
         "@sipec/vue3-tags-input": "^3.0.4",
         "@tiptap/extension-bullet-list": "^2.0.0-beta.213",

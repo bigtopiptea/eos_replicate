@@ -96,6 +96,12 @@ export default {
                             children: [],
                             icon: MonitoringIcon,
                         },
+                        {
+                            to: "/app/trading/customer-record",
+                            label: "Customer Record",
+                            children: [],
+                            icon: MonitoringIcon,
+                        },
                     ]
                 },
                 // CM
