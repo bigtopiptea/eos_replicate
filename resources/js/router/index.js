@@ -30,6 +30,9 @@ import MonitorTransactions from "@/Components/Admin/Monitor Transactions/Monitor
 import Funding from "@/Components/Admin/Funding/Funding.vue"
 import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucherNewPage.vue"
 import TieUpFundingEdit from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeriEdit.vue";
+import Buying from "@/Components/Admin/Trading/Buying/Buying.vue";
+import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
+
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -268,6 +271,27 @@ const routes = [
                     title: `Payment Voucher`,
                     ability: "Payment Voucher",
                 },
+            },
+
+            {
+                path: "app/trading/buying",
+                name: "Buying",
+                component: Buying,
+                meta: {
+                    title: `Trading - Buying`,
+                    ability: "Trading - Buying",
+                },
+
+            },
+            {
+                path: "app/trading/selling",
+                name: "Selling",
+                component: Selling,
+                meta: {
+                    title: `Trading - Selling`,
+                    ability: "Trading - Selling",
+                },
+
             },
             {
                 path: "/app/reports",

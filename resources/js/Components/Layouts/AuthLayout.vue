@@ -85,6 +85,19 @@ export default {
                     children: [],
                     icon: FundIcon,
                 },
+                {
+                    to: "/app/trading/buying",
+                    label: "Trading",
+                    icon: MonitoringIcon,
+                    children: [
+                        {
+                            to: "/app/trading/selling",
+                            label: "Selling",
+                            children: [],
+                            icon: MonitoringIcon,
+                        },
+                    ]
+                },
                 // CM
                 {
                     to: "/app/inquiry",
