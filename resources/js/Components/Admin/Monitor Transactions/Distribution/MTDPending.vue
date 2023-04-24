@@ -45,6 +45,7 @@ export default{
         viewModalToggle() {
             this.viewModalOpen = false;
         },
+        
         async getMTDPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -153,6 +154,7 @@ export default{
                             <tr class="divide-x divide-gray-200">
                                 <td
                                     class="whitespace-nowrap  uppercase py-2 px-2   tracking-wider">
+                                    <!-- <router-link :to="{name: 'pdf'}" target="_blank">Go</router-link> -->
                                     <a class="underline text-cyan-500" href="#" @click="(viewModalOpen = !viewModalOpen)">
                                         01
                                     </a>

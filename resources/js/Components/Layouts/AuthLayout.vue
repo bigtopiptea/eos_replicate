@@ -201,7 +201,7 @@ export default {
             ],
             isOpen: false,
             isLogout: false,
-            isToggled: true,
+            isToggled: false,     // set to true
             openDropdown: false,
             activeItem: null,
             slideoverOpen: false, //Slideover 1 (Profile)
@@ -358,7 +358,7 @@ export default {
 
         <!-- Main content -->
         <!-- Swap to ml-64 if you dont want a sticky sidebar -->
-        <div class="flex flex-col flex-grow ml-32" :class="!isToggled ? 'ml-32' : ''">
+        <div class="flex flex-col flex-grow ml-64" :class="!isToggled ? 'ml-32' : ''">
             <!-- Navbar -->
             <div class="fixed bg-white mt-[0.15rem] right-0 left-64 z-10 px-4 py-2 " :class="!isToggled ? 'left-32' : ''">
                 <div class="min-w-0 flex-1 flex justify-between ">

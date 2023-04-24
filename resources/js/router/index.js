@@ -30,6 +30,7 @@ import MonitorTransactions from "@/Components/Admin/Monitor Transactions/Monitor
 import Funding from "@/Components/Admin/Funding/Funding.vue"
 import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucherNewPage.vue"
 import TieUpFundingEdit from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeriEdit.vue";
+import PDF from "@/Components/Admin/Monitor Transactions/Distribution/PDF.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -76,6 +77,16 @@ const routes = [
         path: "/:catchAll(.*)*",
         name: "not-found",
         component: NotFound,
+    },
+    
+    {
+        path: "/app/monitor-transactions/pdf",
+        name: "pdf",
+        component: PDF,
+        meta: {
+            title: `PDF`,
+            ability: "PDF",
+        },
     },
     {
         path: "/app/monitoring/outfile/:id",

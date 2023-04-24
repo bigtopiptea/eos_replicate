@@ -13,6 +13,8 @@ import "mosha-vue-toastify/dist/style.css";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 
+import VueHtml2pdf from 'vue-html2pdf'
+
 import VueProgressBar from "@aacassandra/vue3-progressbar";
 const options = {
     color: "#50d38a",
@@ -42,7 +44,8 @@ app.use(
     OtpInput,
     Swal,
     TailwindPagination,
-    moshaToast
+    moshaToast,
+    VueHtml2pdf
 );
 app.use(CKEditor);
 app.use(VueProgressBar, options);
