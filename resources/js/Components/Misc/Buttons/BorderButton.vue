@@ -1,3 +1,4 @@
+<!-- OJT -->
 <template>
     <div>
         <button class="text-[11px] p-2 font-medium uppercase whitespace-nowrap" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>

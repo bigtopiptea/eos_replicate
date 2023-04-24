@@ -90,7 +90,7 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center gap-5 items-center w-full h-auto mt-5">
-                <!-- default isDisabled set to false -->
+                <!-- default isDisabled set to falsex -->
                 <SolidButton :buttonLabel="'Compute'" :buttonStyle="'bg-[#FB9E30]'" :isDisabled=true />
                 <SolidButton :buttonLabel="'Cancel'"  />
                 <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#FB9E30]'" :isDisabled=true />
