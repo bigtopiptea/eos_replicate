@@ -21,7 +21,7 @@ const props = defineProps({
 <template>
     <div>
         <input @input="$emit('update:modelValue', $event.target.value.toUpperCase())" v-bind="$attrs" :value="props.modelValue"
-            :placeholder="props.placeholder"
-            class="block border font-rubik-normal border-gray-300 tracking-[1.5px] h-[28px] placeholder:text-[10px] placeholder:text-gray-500 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-[10px]" />
+            :placeholder="props.placeholder" :type="props.type"
+            class=" block border border-gray-300 tracking-[1.5px] h-[28px] placeholder:text-[10px] placeholder:text-gray-500 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-[10px]" />
     </div>
 </template>

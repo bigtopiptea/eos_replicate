@@ -27,7 +27,7 @@ export default{
     },
     inputColor:{
         type: String,
-        default: 'bg-[#ECECEC]'
+        default: 'bg-white'
     },
     inputType:{
         type: String,

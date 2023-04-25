@@ -102,8 +102,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black'" />
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C]'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" />
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'"/>
         </div>
         <!-- Break -->
         <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-5"/>
@@ -129,8 +129,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black'" />
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C]'" />
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" />
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" />
         </div>
 
         <Accordion sectiontitle="Journal Entry" :setOpen=false>
