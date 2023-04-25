@@ -104,8 +104,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black'" />
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C]'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" />
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'"/>
         </div>
         <Accordion sectiontitle="Available Inventory" :setOpen=true>
             <AvailableInventory/>

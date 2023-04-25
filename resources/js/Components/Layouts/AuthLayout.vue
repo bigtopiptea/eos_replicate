@@ -102,6 +102,12 @@ export default {
                             children: [],
                             icon: MonitoringIcon,
                         },
+                        {
+                            to: "/app/trading/inventory",
+                            label: "Available Inventory",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 // CM
@@ -595,6 +601,11 @@ export default {
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 </style>

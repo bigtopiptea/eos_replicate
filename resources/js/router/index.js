@@ -35,6 +35,7 @@ import Buying from "@/Components/Admin/Trading/Buying/Buying.vue";
 import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
 import CustomerRecord from "@/Components/Admin/Trading/Customer Record/CustomerRecord.vue";
 import CustomerRecordIndividual from "@/Components/Admin/Trading/Customer Record/Individual/CustomerRecordIndividual.vue";
+import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableInventory.vue';
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -82,7 +83,7 @@ const routes = [
         name: "not-found",
         component: NotFound,
     },
-    
+
     // {
     //     path: "/app/monitor-transactions/pdf",
     //     name: "pdf",
@@ -302,6 +303,16 @@ const routes = [
                 meta: {
                     title: `Trading - Selling`,
                     ability: "Trading - Selling",
+                },
+
+            },
+            {
+                path: "app/trading/inventory",
+                name: "Available Inventory",
+                component: AvailableInventory,
+                meta: {
+                    title: `Available Inventory`,
+                    ability: "Trading - Inventory",
                 },
 
             },
