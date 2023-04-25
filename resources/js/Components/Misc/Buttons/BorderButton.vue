@@ -1,7 +1,7 @@
 <!-- OJT -->
 <template>
     <div>
-        <button class="font-medium uppercase whitespace-nowrap p-2" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
+        <button class="font-medium uppercase whitespace-normal p-2" :class="[buttonStyle, buttonSize]">{{ buttonLabel}}</button>
     </div>
 </template>
 

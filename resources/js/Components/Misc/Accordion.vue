@@ -4,13 +4,14 @@
             <button
                 @click="open = !open"
                 type="button"
-                class="flex items-center bg-dark-orange text-white uppercase justify-between w-full font-rubik-light font-bold pl-6 tracking-wider text-left text-[12px] border border-b-0 border-gray-200 hover:bg-[]"
+                :class="accordionColor"
+                class="flex items-center text-white uppercase justify-between w-full font-rubik-light font-bold pl-6 tracking-wider text-left text-[12px] border border-b-0 border-gray-200 hover:bg-[]"
                 data-accordion-target="#accordion-collapse-body-1"
                 aria-expanded="true"
                 aria-controls="accordion-collapse-body-1"
 
             >
-                <span>{{ sectiontitle }}</span>
+                <span class="w-full" :class="textAlign">{{ sectiontitle }}</span>
                 <svg
                     :class="{ '-rotate-90': !open }"
                     data-accordion-icon
@@ -60,6 +61,14 @@ export default {
         sectiontitle: {
             value: "",
             type: String,
+        },
+        titleAlign:{
+            type: String,
+            default: 'text-left'
+        },
+        accordionColor:{
+            type: String,
+            default: 'bg-dark-orange'
         },
         setOpen:{
             type: Boolean,

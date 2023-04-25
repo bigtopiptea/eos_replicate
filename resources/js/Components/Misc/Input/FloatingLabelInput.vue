@@ -1,11 +1,11 @@
 <template>
     <!-- OJT -->
-    <div class="flex flex-col font-light w-full h-auto mb-4 whitespace-nowrap text-[10px]">
-        <label for="name" class="uppercase inline-flex items-center h-auto px-2"  :class="[labelWidth,labelTextSize]">
+    <div class="relative flex flex-col font-light w-full h-auto whitespace-nowrap text-[10px]">
+        <label for="name" class="absolute -top-[8px] left-[10px] uppercase inline-flex items-center h-auto  bg-white z-9"  :class="[labelWidth, labelTextSize]">
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="uppercase h-7 p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left  focus:border-collapse" :class="[inputColor,inputWidth]">
+        <input :type="inputType" class="uppercase h-7 p-1 z-8 border border-gray-300 text-[#3E3E3E] text-left " :class="[inputColor,inputWidth]">
     </div>
 </template>
 

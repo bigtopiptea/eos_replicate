@@ -15,6 +15,10 @@ export default{
         isDisabled:{
             type: Boolean,
             default: false,
+        },
+        buttonSize:{
+            type: String,
+            default: 'h-auto w-[120px]'
         }
 
     },
@@ -24,5 +28,5 @@ export default{
 }
 </script>
 <template>
-    <button class=" uppercase h-auto py-3 disabled:bg-[#D7D7D7] px-10 text-white font-sans font-normal text-[11px]" :class="buttonStyle" :disabled="isDisabled">{{ buttonLabel }}</button>
+    <button class=" uppercase py-3 disabled:bg-[#D7D7D7] px-10 text-white font-sans font-normal text-[11px]" :class="[buttonStyle, buttonSize]" :disabled="isDisabled">{{ buttonLabel }}</button>
 </template>
