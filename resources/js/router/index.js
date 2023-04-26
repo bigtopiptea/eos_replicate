@@ -36,6 +36,7 @@ import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
 import CustomerRecord from "@/Components/Admin/Trading/Customer Record/CustomerRecord.vue";
 import CustomerRecordIndividual from "@/Components/Admin/Trading/Customer Record/Individual/CustomerRecordIndividual.vue";
 import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableInventory.vue';
+import STR from '@/Components/Admin/Trading/STR/STR.vue';
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -313,6 +314,16 @@ const routes = [
                 meta: {
                     title: `Available Inventory`,
                     ability: "Trading - Inventory",
+                },
+
+            },
+            {
+                path: "app/trading/str",
+                name: "STR",
+                component: STR,
+                meta: {
+                    title: `STR`,
+                    ability: "Trading - STR",
                 },
 
             },

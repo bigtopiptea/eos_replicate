@@ -33,7 +33,7 @@ export default {
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
-        DistributionIcon,
+        DistributionIcon, ChevRightIcon
 
     },
     data(){
@@ -94,17 +94,23 @@ export default {
                             to: "/app/trading/selling",
                             label: "Selling",
                             children: [],
-                            icon: MonitoringIcon,
+                            icon: CircleCheckIcon,
                         },
                         {
                             to: "/app/trading/customer-record",
                             label: "Customer Record",
                             children: [],
-                            icon: MonitoringIcon,
+                            icon: CircleCheckIcon,
                         },
                         {
                             to: "/app/trading/inventory",
-                            label: "Available Inventory",
+                            label: "Inventory",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/trading/str",
+                            label: "STR",
                             children: [],
                             icon: CircleCheckIcon,
                         },
