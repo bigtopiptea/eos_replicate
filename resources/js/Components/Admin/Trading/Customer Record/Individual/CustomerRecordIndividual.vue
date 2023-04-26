@@ -9,12 +9,14 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 
 import IndividualBasicInfo from "./IndividualBasicInfo.vue";
 import IndividualDocsSubmitted from "./IndividualDocsSubmitted.vue";
+import IndividualEDD from "./IndividualEDD.vue";
+import IndividualRemarks from "./IndividualRemarks.vue";
 
 
 export default {
     components: {
         Tab, TabNav, InputLabel, IndividualBasicInfo,
-        IndividualDocsSubmitted
+        IndividualDocsSubmitted, IndividualEDD, IndividualRemarks
     },
     data(){
         return {
@@ -50,12 +52,12 @@ export default {
             </Tab>
             <Tab :isSelected="selected === 'EDD'" >
                 <div class="w-full h-auto ">
-                    <h1>Hello</h1>
+                    <IndividualEDD/>
                 </div>
             </Tab>
             <Tab :isSelected="selected === 'Remarks'" >
                 <div class="w-full h-auto ">
-                    <h1>Hello</h1>
+                    <IndividualRemarks/>
                 </div>
             </Tab>
         </TabNav>

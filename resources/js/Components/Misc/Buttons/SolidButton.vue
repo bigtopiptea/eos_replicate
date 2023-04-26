@@ -14,7 +14,7 @@ export default{
         },
         isDisabled:{
             type: Boolean,
-            default: false,
+            default: false
         },
         buttonSize:{
             type: String,

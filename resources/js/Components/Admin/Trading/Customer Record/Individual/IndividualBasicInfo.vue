@@ -7,6 +7,7 @@ import SmallHeading from '../../../../Misc/Heading/SmallHeading.vue';
 import CountryCodeDropdown from '../../../../Misc/Dropdown/CountryCodeDropdown.vue';
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
+
 export default{
     components:{
         FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup, 
@@ -31,7 +32,7 @@ export default{
                 <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
             </div>
         </div>
-        <SmallHeading label="Biller Details" class="pl-6 w-[30%]" />
+        <SmallHeading label="Biller Details" class="pl-6 w-[20%]" />
         <!-- FORM Row 2 -->
         <div class="flex gap-x-[10px] px-5 pt-[30px] pb-3 w-full">
             <!-- Col 1 -->

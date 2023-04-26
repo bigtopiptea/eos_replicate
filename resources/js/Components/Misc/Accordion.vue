@@ -11,7 +11,7 @@
                 aria-controls="accordion-collapse-body-1"
 
             >
-                <span class="w-full" :class="textAlign">{{ sectiontitle }}</span>
+                <span class="w-full pr-3" :class="titleAlign">{{ sectiontitle }}</span>
                 <svg
                     :class="{ '-rotate-90': !open }"
                     data-accordion-icon

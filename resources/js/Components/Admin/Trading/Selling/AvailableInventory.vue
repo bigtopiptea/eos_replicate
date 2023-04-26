@@ -40,7 +40,7 @@ export default{
             <div class="flex justify-center gap-3 mt-3 overflow-y-auto border border-#EAEAEA">
                 <div class="w-[40%]  h-[170px]">
                     <table class="divide-y divide-[#EAEAEA] w-full h-auto">
-                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2  whitespace-nowrap">
+                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2  whitespace-nowrap sticky top-[0px]">
                             <tr class="divide-x divide-[#EAEAEA]">
                                 <th>
                                     USD RATE
@@ -122,7 +122,7 @@ export default{
                 </div>
                 <div class="w-[60%] h-[170px]">
                     <table class="divide-y divide-[#EAEAEA] w-full h-auto">
-                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2 whitespace-nowrap">
+                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2 whitespace-nowrap sticky top-[0px]">
                             <tr class="divide-x divide-[#EAEAEA]">
                                 <th>
                                     USD RATE

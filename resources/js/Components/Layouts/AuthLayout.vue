@@ -319,7 +319,7 @@ export default {
                         <router-link @click="menuItem.label === 'Logout' ? logout() : toggleMenu(menuItem)"
                          :active-class="menuItem.label === 'Logout' ? '' : 'bg-[#3E3E3E] text-white'"
                           class="uppercase text-gray-900 group flex items-center justify-between pl-5 py-2 text-[11px]
-                          tracking-widest font-rubik-light font-medium hover:bg-[#3e3e3e] hover:text-white duration-300"
+                          tracking-widest  font-medium hover:bg-[#3e3e3e] hover:text-white duration-300"
                          :to="menuItem.to">
                             <div class="flex">
                                <component :is="menuItem.icon" class="h-5 w-6 mr-3"></component>
@@ -335,7 +335,7 @@ export default {
                                 <router-link
                                     @click="reroute(subItem)"
                                     :class="{'active text-[#F1721A]': $route.path === subItem.to}"
-                                    class="px-14 text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300  my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider font-rubik-light" :to="subItem.to">
+                                    class="px-14 text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300  my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider " :to="subItem.to">
                                     <SelectedRadioButton
                                         v-if="$route.path === subItem.to"
                                         class="h-3"/>
@@ -476,7 +476,7 @@ export default {
         <div class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
-                    <div class="font-rubik-light text-center mb-5">
+                    <div class=" text-center mb-5">
                         <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
                         <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
                     </div>
@@ -486,7 +486,7 @@ export default {
                         </p>
                     </div>
                 </div>
-                <div class="pt-5 font-rubik-light">
+                <div class="pt-5 ">
                     <div class="flex justify-between mb-3">
                         <div class="flex items-center text-sm">
                             <LoadingIcon></LoadingIcon>
