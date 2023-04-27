@@ -12,8 +12,7 @@ import TieUpToOeri from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeri.v
 
 
 export default defineComponent({
-  watch: {
-  },
+
     components: {
         Tab,
         TabNav,
@@ -38,7 +37,7 @@ export default defineComponent({
 </script>
 <template>
     <div class="w-full min-h-full bg-white ">
-    <TabNav :selected="selected" :tabs="['Payment Voucher', 'From Tie-Up', 'Oeri to Oeri', 'Banks/Providers', 'Tie-Up to Oeri']" @selected="setSelected" >
+    <TabNav :selected="selected" :tabs="['Payment Voucher','From Tie-Up','Oeri to Oeri','Banks/Providers','Tie-Up to Oeri']" @selected="setSelected">
         <Tab :isSelected="selected === 'Payment Voucher'">
             <PaymentVoucher/>
         </Tab>

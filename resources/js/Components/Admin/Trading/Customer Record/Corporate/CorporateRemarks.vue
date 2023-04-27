@@ -21,7 +21,7 @@ export default{
     methods:{
         // Modal
         viewModalToggle() {
-            this.viewModalOpen = false;
+          this.viewModalOpen = false;
         },
     }
 }
@@ -36,33 +36,33 @@ export default{
                     <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                         <tr class="divide-x divide-gray-200">
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 remarks
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 date added
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 date updated
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 added/updated by
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900 w-[80px]">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900 w-[80px]">
                                 actions
                             </th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                         <tr class="divide-x divide-gray-200">
-                            <td class="flex items-center gap-[10px] whitespace-normal text-justify  uppercase py-2 pl-3 pr-1 tracking-wider">
+                            <td class="flex items-center gap-[10px] whitespace-normal text-justify uppercase py-2 pl-3 pr-1 tracking-wider">
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat, inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, quos!
                             </td>
-                            <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                            <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                 09/28/2022 08:30:29 AM
                             </td>
                             <td class="whitespace-nowrap text-center uppercase py-2 pl-1 pr-3 tracking-wider">

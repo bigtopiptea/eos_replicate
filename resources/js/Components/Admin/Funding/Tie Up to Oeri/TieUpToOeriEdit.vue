@@ -63,7 +63,7 @@ export default{
         <div>
             <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
                 <JournalEntry>
-                  <button @click="updateMainValue(!isOpen)" class="uppercase py-2 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-[17px]">CANCEL</button>
+                  <button @click="updateMainValue(!isOpen)" class="uppercase py-2 px-10 m-2 bg-#3E3E3E text-white font-sans font-normal text-[17px]">CANCEL</button>
                   <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
                 </JournalEntry>
             </Accordion>
