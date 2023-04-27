@@ -1,8 +1,3 @@
-<script setup>
-import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
-import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
-</script>
-
 <script>
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
@@ -15,17 +10,12 @@ import IndividualRemarks from "./IndividualRemarks.vue";
 
 export default {
     components: {
-        Tab, TabNav, InputLabel, IndividualBasicInfo,
+        Tab, TabNav, IndividualBasicInfo,
         IndividualDocsSubmitted, IndividualEDD, IndividualRemarks
     },
     data(){
         return {
-
             selected: "Basic Info",
-            // isOpen: true,
-            // rates: [],
-            // selected: '',
-
         }
     },
     methods: {

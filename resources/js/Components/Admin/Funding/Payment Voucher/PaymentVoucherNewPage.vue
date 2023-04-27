@@ -14,49 +14,63 @@ export default{
 <template>
     <div class="3xl:container flex flex-col w-full h-auto bg-white py-4 ">
         <div class="px-4">
-            <div class="w-[90%]">
+            <div class=" w-[90%]">
                 <!-- Row 1 -->
-                <div class="flex justify-between items-center w-[74.7%]">
-                    <div>
-                        <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                <div class="flex justify-between items-center w-[74.7%] mb-3">
+                    <div class="-mb-[15px]">
+                        <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="flex items-center gap-2">
-                            <input type="checkbox" checked>
+                            <input type="checkbox" disabled>
                             <span class="text-[10px] whitespace-nowrap">LOAD FROM PURCHASE ORDER </span>
                         </div>
-                        <input type="text" class="h-7 w-40 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center border border-gray-300">
+                        <input type="text" class="h-7 w-40 bg-#ECECEC p-1 focus:z-10 focus:border-gray-500 focus:ring-gray-500 text-[#3E3E3E] text-center border border-gray-300" disabled>
                     </div>
                 </div>
                 <!-- Row 2 -->
-                <div class="">
-                    <div class="flex gap-2">
-                        <div class="w-[50.5%]">
-                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
+                <div class="flex gap-x-[5px] w-full">
+                    <div class="flex flex-col w-[50%]">
+                        <div class="w-full">
+                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
                         </div>
-                        
-                        <div  class="w-[25%]">
-                            <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                        </div>
-                        <div  class="w-[25%]">
-                            <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                        <div class="flex gap-x-[5px] w-full">  
+                            <div  class="w-[50%]">
+                                <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                            </div>
+                            <div  class="w-[50%]">
+                                <InputGroup :inputLabel="'invoice amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex gap-2">
-                        <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
-                        <InputGroup :inputLabel="'invoice amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                        <InputGroup :inputType="'date'" :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
-                        <InputGroup :inputType="'date'" :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"/>
+                    <div class="flex flex-col w-[50%]">
+                        <div class="w-full">
+                            <div class="flex gap-x-[5px]">   
+                                <div class="w-[50%]">
+                                    <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                </div>
+                                <div  class="w-[50%]">
+                                    <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                </div>
+                            </div>
+                            <div class="flex gap-x-[5px]">
+                                <div class="w-[50%]">
+                                    <InputGroup :inputType="'date'" :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                </div>
+                                <div class="w-[50%]">
+                                    <InputGroup :inputType="'date'" :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Row 3 -->
-                <div class="flex items-center gap-[20px]">
+                <div class="flex items-center gap-x-[15px]">
                     <div class="w-[50%]">
-                        <InputTextarea :label="'PARTICULARS'" inputWidth="w-[99%]"  :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'PARTICULARS'" inputWidth="w-[99%]"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
                     </div>
                     <div>
-                        <BorderButton :buttonLabel="'ATTACHMENTS'"/>
-                        <!-- <button class="px-8 py-2 text-[11px] border-2 border-#F9951E text-#F9951E font-bold">ATTACHMENTS</button> -->
+                        <BorderButton :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
                 </div>
             </div>

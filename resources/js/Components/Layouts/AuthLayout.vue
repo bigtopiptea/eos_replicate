@@ -23,6 +23,7 @@ import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
 import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import RangeSlider from "@/Components/Misc/Range Slider/RangeSlider.vue";
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import FundIcon from "../Misc/Icons/FundIcon.vue";
 import DistributionIcon from "../Misc/Icons/DistributionIcon.vue";
@@ -33,7 +34,7 @@ export default {
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
-        DistributionIcon, ChevRightIcon
+        DistributionIcon, ChevRightIcon, InputGroup
 
     },
     data(){

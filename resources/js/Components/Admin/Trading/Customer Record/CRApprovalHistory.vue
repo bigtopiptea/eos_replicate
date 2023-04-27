@@ -113,11 +113,13 @@ export default{
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="flex  justify-center items-center gap-2 whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            <input type="checkbox" name="" id="">
-                                            <a class="underline text-cyan-500" href="#">
-                                                0007
-                                            </a>
+                                        <td class=" whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            <div class="flex justify-center items-center gap-2">
+                                                <input type="checkbox" name="" id="">
+                                                <a class="underline text-cyan-500" href="#">
+                                                    0007
+                                                </a>
+                                            </div>
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
@@ -145,7 +147,7 @@ export default{
                                         <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                             <div class="flex justify-center">
                                                 <button>
-                                                    <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-6 w-7">
+                                                    <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                                 </button>
                                                 <SwitchToggle
                                                     :status="true"

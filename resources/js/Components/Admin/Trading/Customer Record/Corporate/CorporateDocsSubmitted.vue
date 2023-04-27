@@ -19,7 +19,7 @@ export default{
 <template>
     <div class="my-[30px]">
         <div>
-            <SmallHeading label="SUBMITTED IDS/DOCUMENTS" class="pl-6 w-[20%]" />
+            <SmallHeading label="SUBMITTED IDS/DOCUMENTS" class="pl-6 w-[25%]" />
             <!-- TABLE -->
             <div class="overflow-hidden -mx-3">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
@@ -132,6 +132,9 @@ export default{
                                         <div class="flex justify-end gap-[3px] text-[10px]">
                                             <input type="checkbox" name="date-issued">
                                             <label for="">NO ISSUE DATE</label>
+                                        </div>
+                                        <div>
+                                            hello
                                         </div>
                                     </div>
                                     <div class="flex flex-col gap-[3px] w-[50%]">

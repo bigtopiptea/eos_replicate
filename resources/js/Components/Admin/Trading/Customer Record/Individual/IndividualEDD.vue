@@ -19,12 +19,12 @@ export default{
     <div class="my-[30px]">
         <div class="mb-5">
             <SmallHeading label="RISK PROFILE" class="pl-6 w-[20%]" />
-            <div class="flex justify-start w-auto gap-[135px] mx-10 mt-5">
-                <div class="flex items-center gap-[3px] text-[10px]">
+            <div class="flex justify-between mx-10 mt-5 w-[60%]">
+                <div class="flex items-center gap-[8px] text-[10px]">
                     <input type="checkbox" name="high-risk">
                     <label for="high-risk">HIGH RISK</label>
                 </div>
-                <div class="flex items-center gap-[3px] text-[10px]">
+                <div class="flex items-center gap-[8px] text-[10px]">
                     <input type="checkbox" name="normal-risk">
                     <label for="normal-risk">NORMAL RISK</label>
                 </div>
@@ -35,8 +35,8 @@ export default{
         </div>
         <div class="mb-5">
             <SmallHeading label="watchlist screening" class="pl-6 w-[20%]" />
-            <div class="flex justify-start gap-[170px] w-auto mx-10 mt-5">
-                <div class="flex items-center gap-[3px] text-[10px] ">
+            <div class="flex justify-between mx-10 mt-5 w-[60%]">
+                <div class="flex items-center gap-[8px] text-[10px] ">
                     <input type="checkbox" name="un">
                     <label for="un">UN</label>
                 </div>

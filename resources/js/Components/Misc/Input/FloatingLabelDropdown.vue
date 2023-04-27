@@ -5,8 +5,8 @@
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
-        <select class="uppercase h-7 p-1 focus:z-9  text-[#3E3E3E] text-left border border-grey-200 focus:border-collapse" :class=[inputWidth,inputColor] >
-            <option v-for="(choice,index) in choices" :key="index" value=index class="z-10 bg-white">{{choice}}</option>
+        <select class="uppercase h-7 p-1 focus:z-9  text-[#3E3E3E] text-left text-[10px] border border-grey-200 focus:border-collapse" :class=[inputWidth,inputColor] >
+            <option v-for="(option,index) in options" :key="index" value=index class="z-10 bg-white">{{option}}</option>
         </select>
     </div>
 </template>
@@ -39,6 +39,14 @@ export default{
     isRequired:{
         type: Boolean,
         default: false
+    }, 
+    isRequired:{
+        type: Boolean,
+        default: false
+    }, 
+    options: {
+        type: Array,
+        required: true
     }
   },
 }

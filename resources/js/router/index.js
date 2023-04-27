@@ -35,6 +35,7 @@ import Buying from "@/Components/Admin/Trading/Buying/Buying.vue";
 import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
 import CustomerRecord from "@/Components/Admin/Trading/Customer Record/CustomerRecord.vue";
 import CustomerRecordIndividual from "@/Components/Admin/Trading/Customer Record/Individual/CustomerRecordIndividual.vue";
+import CustomerRecordCorporate from "@/Components/Admin/Trading/Customer Record/Corporate/CustomerRecordCorporate.vue";
 import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableInventory.vue';
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
 
@@ -336,7 +337,7 @@ const routes = [
                     ability: "Customer Record",
                 },
             },
-
+            // VDQ 4/24
             {
                 path: "app/trading/customer-record/individual",
                 name: "Customer Record - Individual",
@@ -344,6 +345,17 @@ const routes = [
                 meta: {
                     title: `Customer Record - Individual`,
                     ability: "Customer Record - Individual",
+                },
+
+            },
+            // VDQ 4/26
+            {
+                path: "app/trading/customer-record/corporate",
+                name: "Customer Record - Corporate",
+                component: CustomerRecordCorporate,
+                meta: {
+                    title: `Customer Record - Corporate`,
+                    ability: "Customer Record - Corporate",
                 },
 
             },

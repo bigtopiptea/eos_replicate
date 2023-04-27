@@ -92,7 +92,7 @@ export default {
         </div>
         <!-- Buttons -->
         <div class="flex justify-center gap-x-[15px]">
-            <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E'"/>
+            <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonPadding="'px-[5px] py-3'"/>
             <BorderButton :buttonLabel="'PASS ENTRY'"/>
         </div>
     </div>

@@ -102,20 +102,7 @@ export default{
         <div class="flex justify-center gap-x-[30px] mt-[30px]">
             <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'"/>
             <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'"/>
-            <SolidButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'SUBMIT'" :isDisabled="false" :buttonStyle="'bg-[#F9951E]'"/>
+            <SolidButton :buttonLabel="'NEXT'" :isDisabled="true"/>
         </div>
     </div>
-    <!-- Modal -->
-    <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'CUSTOMER RECORD'" :modalTitlePosition="'text-center'">
-        <div class="flex flex-col justify-around items-center h-full">
-            <div class="w-[300px] text-center">
-                <h5 class="text-[20px]">Are you sure you want to save this record?</h5>
-            </div>
-            <!-- Button -->
-            <div class="flex gap-[15px]">
-                <SolidButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'" />
-                <SolidButton :buttonLabel="'SUBMIT'" :buttonStyle="'bg-[#F9951E]'"/>
-            </div>
-        </div>
-    </ModalTwo>
 </template>

@@ -12,6 +12,11 @@ export default{
     components:{
         FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup, 
         SmallHeading, CountryCodeDropdown, BorderButton, SolidButton
+    },
+    data(){
+        return{
+            categoryTypes: ['Provider', 'Tie-Up Partner', 'Trading'],
+        }
     }
 }
 </script>
@@ -21,18 +26,18 @@ export default{
         <div class="flex justify-between items-center px-5 pb-3 w-full">
             <div class="flex items-center gap-[10px] w-[55%]">
                 <div class="w-[50%]">
-                    <SmallLabelInput :inputLabel="'customer type'" :inputColor="'bg-#EAEAEA'" :isRequired="true"/>
+                    <SmallLabelInput :inputLabel="'customer type'" :inputColor="'bg-#EAEAEA'" :isRequired="true" :isDisabled="true"/>
                 </div>
                 <div class="w-[50%]">
-                    <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :options="categoryTypes"/>
                 </div>
             </div>
             <div class="flex flex-col items-center w-[25%]">
-                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
             </div>
         </div>
-        <SmallHeading label="Biller Details" class="pl-6 w-[20%]" />
+        <SmallHeading label="Customer Details" class="pl-6 w-[20%]" />
         <!-- FORM Row 2 -->
         <div class="flex gap-x-[10px] px-5 pt-[30px] pb-3 w-full">
             <!-- Col 1 -->
@@ -64,7 +69,7 @@ export default{
                         <FloatingLabelInput :inputLabel="'date of birth'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'date'" isRequired="true"/>
                     </div>
                     <div class="w-[60%]">
-                        <FloatingLabelInput :inputLabel="'date of birth'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelInput :inputLabel="'place of birth'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                     </div>
                     <div class="w-[20%]">
                         <FloatingLabelDropdown :inputLabel="'gender'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
@@ -90,40 +95,28 @@ export default{
 
             <!-- Col 2 -->
             <div class="flex flex-col gap-y-[15px] w-[18%]">
-                <div class="gap-[5px]">
-                    <div class="w-full flex">
-                        <CountryCodeDropdown/>
-                        <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full flex">
+                    <CountryCodeDropdown/>
+                    <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-5px">
-                    <div class="w-full">
-                        <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
             </div>
 
             <!-- Col 3 -->
             <div class="flex flex-col gap-y-[15px] w-[22%]">
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelInput :inputLabel="'email address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="email"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelInput :inputLabel="'email address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'email'"/>
                 </div>
                 <div class="flex gap-[5px]">
                     <div class="w-2/3">
@@ -133,20 +126,14 @@ export default{
                         <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                     </div>
                 </div>
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelDropdown :inputLabel="'nationality/citizenship'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-[5px]">
-                    <div class="w-full">
-                        <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
-                <div class="gap-5px">
-                    <div class="w-full">
-                        <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
-                    </div>
+                <div class="w-full">
+                    <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
             </div>
         </div>
