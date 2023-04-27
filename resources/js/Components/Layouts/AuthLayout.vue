@@ -92,6 +92,12 @@ export default {
                     icon: MonitoringIcon,
                     children: [
                         {
+                            to: "/app/trading/buying",
+                            label: "Buying",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
                             to: "/app/trading/selling",
                             label: "Selling",
                             children: [],
@@ -132,7 +138,7 @@ export default {
                 },
                 {
                     to: "/app/status-reversal/adjustment-entry",
-                    label: "status Wreversal",
+                    label: "Adjustment",
                     children: [],
                     icon: StatusReversalIcon,
                 },
