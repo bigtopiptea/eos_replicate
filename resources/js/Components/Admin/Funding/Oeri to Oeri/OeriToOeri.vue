@@ -9,7 +9,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
-import JournalEntry from "./JournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue";
 import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
@@ -43,8 +43,6 @@ export default{
         return {
             selected: "Pending",
             isOpen: true,
-            // rates: [],
-            // selected: '',
 
         }
     },
@@ -60,11 +58,11 @@ export default{
 <template>
 
 <div class="border m-3 bg-white border-white shadow-md ">
-    <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
+    <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full">
                 <div class="flex justify-between p-3 mb-3">
-                    <div class="flex flex-col  pt-3 w-8/12 mr-3 h-auto">
+                    <div class="flex flex-col pt-3 w-8/12 mr-3 h-auto">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
                                 <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />

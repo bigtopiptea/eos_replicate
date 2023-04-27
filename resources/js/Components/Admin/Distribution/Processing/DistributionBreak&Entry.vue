@@ -20,7 +20,7 @@ export default {
     methods: {
         // Modal
         viewModalToggle() {
-            this.viewModalOpen = false;
+           this.viewModalOpen = false;
         },
         async getBreakEntry() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
@@ -34,16 +34,16 @@ export default {
                 })
         },
         createBreakEntry() {
-            this.$router.push("");
+           this.$router.push("");
         },
     },
     created() {
-        this.getBreakEntry();
+       this.getBreakEntry();
     }
 }
 </script>
 <template>
-    <div class="w-full  h-auto  bg-white">
+    <div class="w-full h-auto bg-white">
         <div class=" sm:px-4 lg:px-0">
             <div class="flex flex-col">
                 <div class="flex justify-end mb-8">
@@ -55,11 +55,11 @@ export default {
                                         <SearchIcon />
                                     </div>
                                     <input type="text" id="simple-search"
-                                        class="bg-gray-50 h-[34px] border  border-[#EAEAEA] text-gray-900 text-[10px] font-l block w-full pl-10 p-2.5"
+                                        class="bg-gray-50 h-[34px] border border-[#EAEAEA] text-gray-900 text-[10px] font-l block w-full pl-10 p-2.5"
                                         placeholder="Search" required />
                                 </div>
                                 <NormalButton label="Go"
-                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                 <NormalButton label="Export"
                                     class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                             </form>
@@ -73,35 +73,35 @@ export default {
                                 <thead class="bg-[#D7D7D7] text-[10px] font-bold">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             REFERENCE NO.
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             PROCESSED DATE
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             VALUE DATE
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             BANK
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center   text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             CURRENCY
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             ITEMS
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             AMOUNT
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             Action
                                         </th>
                                     </tr>
@@ -158,7 +158,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getBreakEntry()"  :pagination="pagination"
+                <Pagination @paginate="getBreakEntry()" :pagination="pagination"
                     :offset="5" />
             </div>
         </div>
@@ -167,7 +167,7 @@ export default {
     <!-- Modal -->
     <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :title="'OTC API'" :description = "'NOT ALLOWED FOR ADVANCE FUNDING'">
         <div class="flex justify-center gap-7 mt-14">
-            <button @click="(viewModalOpen = !viewModalOpen)"  type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CANCEL</button>
+            <button @click="(viewModalOpen = !viewModalOpen)" type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CANCEL</button>
             <button type="submit" class="py-1 px-5 text-[17px] font-medium bg-#F9951E text-white">CONFIRM</button>
         </div>
     </ModalTwo>

@@ -56,7 +56,7 @@
 
     <template>
      <div class="w-full h-auto">
-        <div class="inline-block min-w-full  align-middle md:px-6 lg:px-8  ">
+        <div class="inline-block min-w-full align-middle md:px-6 lg:px-8 ">
             <div class="flex items-end justify-between h-auto min-w-full -mx-6">
             <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
                 <div class="flex items-end left-side-col-1 -ml-3">
@@ -68,12 +68,12 @@
                     </div>
                     <div>
                         <NormalButton label="Filter"
-                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px] font-medium text-white" />
+                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
                     </div>
                 </div>
                 <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
                     <DropDown label="bulk action" class="-m-3" />
-                    <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
+                    <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                 </div>
             </div>
                 <div class="right-side flex h-20 ">
@@ -87,7 +87,7 @@
                             placeholder="Search" required />
                         </div>
                     <NormalButton label="Go"
-                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                     <NormalButton label="Export"
                     class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
                 </form>
@@ -101,70 +101,70 @@
                         <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     <div class="flex items-center ">
                                     <input type="checkbox" class="h-3 w-3 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-1" />
                                     Batch ID
                                     </div>
                                 </th >
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Filename
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Item Count
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Total Amount
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center    text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Exchange Rate
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Processed Rate
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Value Date
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     Action
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] ">
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex items-center ">
                                         <input type="checkbox" class="h-3 w-3 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 lg:mr-5 md:mr-2" />
                                         01
                                     </div>
 
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 12:00:05 PM
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     REDHA AL ANSARI exchange
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     REDHA-09282022-0001
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     CMT-09282022-0009
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     PHP
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     25,000.13
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     BDO
                                 </td>
                             </tr>
@@ -174,7 +174,7 @@
             </div>
         </div>
     </div>
-    <Pagination @paginate="getDistributionCancellation()"  :pagination="pagination"
+    <Pagination @paginate="getDistributionCancellation()" :pagination="pagination"
         :offset="1" class="mt-8" />
 
     </template>

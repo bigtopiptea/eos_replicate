@@ -4,7 +4,7 @@ import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue"
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import Accordion from "@/Components/Misc/Accordion.vue"
 import CreatePaymentVoucher from "./CreatePaymentVoucher.vue"
-import JournalEntry from "./JournalEntry.vue"
+import JournalEntry from "@/Components/Admin/Funding/Payment Voucher/JournalEntry.vue"
 export default{
     components:{
         InputGroup, InputTextarea, Accordion, BorderButton, CreatePaymentVoucher, JournalEntry
@@ -34,7 +34,7 @@ export default{
                         <div class="w-[50.5%]">
                             <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                         </div>
-                        
+
                         <div  class="w-[25%]">
                             <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
                         </div>

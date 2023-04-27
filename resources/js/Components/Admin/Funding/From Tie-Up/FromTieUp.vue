@@ -9,7 +9,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
-import JournalEntry from "./JournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue";
 import UnallocatedTransactions from "@/Components/Admin/Funding/From Tie-Up/UnallocatedTransactions.vue";
 import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
@@ -79,11 +79,11 @@ export default{
 <template>
 
 <div class="border m-3 bg-white border-white shadow-md ">
-    <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
+    <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full ">
                 <div class="flex justify-between p-3 ">
-                    <div class="flex flex-col  w-8/12 mr-3 h-auto  pt-3">
+                    <div class="flex flex-col w-8/12 mr-3 h-auto pt-3">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
                                 <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />
@@ -104,7 +104,7 @@ export default{
                             <FloatingTextArea :label="'Remarks'" :inputHeight="'h-16 overflow-y-hidden'"/>
                         </div>
                     </div >
-                    <div class="  px-3 uppercase w-4/12">
+                    <div class="px-3 uppercase w-4/12">
                         <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'" />

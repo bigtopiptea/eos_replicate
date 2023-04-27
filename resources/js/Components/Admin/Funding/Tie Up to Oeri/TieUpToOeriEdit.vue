@@ -2,8 +2,8 @@
 import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
 import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 import Accordion from "@/Components/Misc/Accordion.vue"
-import JournalEntry from "./JournalEntry.vue"
-export default{    
+import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue"
+export default{
   components:{
     InputGroup, BorderButton, Accordion, JournalEntry
   },
