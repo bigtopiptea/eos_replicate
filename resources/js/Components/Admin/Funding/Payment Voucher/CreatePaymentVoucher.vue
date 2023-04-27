@@ -5,8 +5,23 @@ import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 
 export default {
     components:{
-        InputGroup, InputDropdown, BorderButton
-    }
+        InputGroup,
+        InputDropdown,
+        BorderButton,
+    },
+    data() {
+        return {
+            labels:[
+                {label:'DATE'},
+                {label:'DUE DATE'},
+                {label:'INVOICE NO.'},
+                {label:'SUPPLIER NAME'},
+                {label:'APV AMOUNT'},
+                {label:'AMOUNT DUE.'},
+                {label:'TO BE PAID'},
+            ]
+        }
+    },
 }
 </script>
 <template>
@@ -26,33 +41,9 @@ export default {
                     <table class="min-w-full divide-y divide-gray-300 overflow-visible">
                         <thead class="bg-[#3E3E3E] font-medium text-[11px] whitespace-nowrap text-white">
                             <tr class="divide-x divide-gray-200">
-                                <th scope="col"
+                                <th v-for="label in labels" :key="label.label" scope="col"
                                     class="py-2 px-1 uppercase tracking-wider text-center">
-                                    date
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                    due date
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                    invoice no.
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                    supplier name
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                    apv amount
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                    amount due.
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center">
-                                   to be paid
+                                    {{ label.label }}
                                 </th>
                             </tr>
                         </thead>

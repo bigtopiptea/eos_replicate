@@ -41,8 +41,17 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            // rates: [],
-            // selected: '',
+            labels:[
+                {label:'PV NO'},
+                {label:'DATE'},
+                {label:'INVOICE NO.'},
+                {label:'SUPPLIER'},
+                {label:'APV AMOUNT'},
+                {label:'AMOUNT PAID'},
+                {label:'BALANCE'},
+                {label:'DUE DATE'},
+                {label:'ACTION'},
+            ]
         }
     },
     methods: {
@@ -104,41 +113,9 @@ export default{
                             <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            pv no.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            date
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            invoice no.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            supplier
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            apv amount
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            amount paid
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            balance
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            due date
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            ACTION
+                                            {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>

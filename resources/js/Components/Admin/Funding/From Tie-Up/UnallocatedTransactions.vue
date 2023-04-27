@@ -18,6 +18,21 @@ export default{
             selected:"Pending",
             isOpen: true,
 
+            labels:[
+                {label:'DATE'},
+                {label:'TIE-UP'},
+                {label:'BATCH'},
+                {label:'BATCH'},
+                {label:'CURRENCY'},
+                {label:'ITEMS'},
+                {label:'TOTAL TAX AMT.'},
+                {label:'COMMITED RATE'},
+                {label:'CONVERTED AMT'},
+                {label:'FUNDED AMT'},
+                {label:'OUTSTANDING'},
+                {label:'FOR ALLOCATION'},
+            ]
+
         }
     },
     methods: {
@@ -55,54 +70,11 @@ export default{
                             ID
                             </div>
                         </th>
-                        <th scope="col"
+                        <th v-for="label in labels" :key="label.label" scope="col"
                             class="py-2 px-1 uppercase tracking-wider text-center">
-                            Date
+                            {{ label.label }}
                         </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                           tie-Up
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Batch
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Batch
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Currency
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Items
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Total Tax Amt.
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Commited Rate
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Converted AMT
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Funded AMT
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            Outstanding
-                        </th>
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            For Allocation
-                        </th>
+
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]" :class="checkedAll ? 'bg-blue-200' : ''" >

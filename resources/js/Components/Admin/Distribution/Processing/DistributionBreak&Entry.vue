@@ -13,7 +13,18 @@ export default {
             pagination: {
                 current_page: 1,
             },
-            viewModalOpen: false, //Modal
+            viewModalOpen: false,
+
+            labels:[
+                {label:'REFERENCE NO.'},
+                {label:'PROCESSED DATE'},
+                {label:'VALUE DATE'},
+                {label:'BANK'},
+                {label:'CURRENCY'},
+                {label:'ITEMS'},
+                {label:'AMOUNT'},
+                {label:'ACTION'},
+            ]
         }
     },
 
@@ -72,37 +83,9 @@ export default {
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead class="bg-[#D7D7D7] text-[10px] font-bold">
                                     <tr class="divide-x divide-gray-200">
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            PROCESSED DATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            VALUE DATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            BANK
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            ITEMS
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            Action
+                                            {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>

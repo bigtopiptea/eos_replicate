@@ -48,7 +48,19 @@ export default{
             viewDocumentsOpen: false,  //Slideover
             viewVerifyFundingOpen: false,  //Slideover
             paraIcon: '',
-
+            labels:[
+                {label:'ID'},
+                {label:'DATE'},
+                {label:'TYPE'},
+                {label:'NAME'},
+                {label:'BANK'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'RATE'},
+                {label:'NET AMOUNT'},
+                {label:'WORKFLOW STATUS'},
+                {label:'ACTION'},
+            ]
         }
     },
     methods: {
@@ -135,51 +147,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px]">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
+                                    <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        <span>
-                                        ID
-                                        </span>
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        DATE
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                       tYPE
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        NAME
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        BANK
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        CURRENCY
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        AMOUNT
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        RATE
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        NET AMOUNT
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        WORKFLOW STATUS
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-7 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
-                                        ACTION
+                                    {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>
@@ -228,7 +198,7 @@ export default{
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider flex justify-between">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider flex justify-between gap-1">
                                         <button @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>

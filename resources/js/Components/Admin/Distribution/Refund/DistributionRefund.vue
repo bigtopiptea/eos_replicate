@@ -46,8 +46,21 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            // rates: [],
-            // selected: '',
+            labels:[
+                {label: 'ID'},
+                {label: 'DATE'},
+                {label: 'TIE UP'},
+                {label: 'REFERENCE NO.'},
+                {label: 'CMT REFERENCE NO.'},
+                {label: 'CURRENCY'},
+                {label: 'AMOUNT'},
+                {label: 'PROCESS RATE'},
+                {label: 'CURRENT RATE'},
+                {label: 'CURRENCY'},
+                {label: 'REFUND AMOUNT'},
+                {label: 'AP RATE'},
+                {label: 'ACTION'},
+            ]
 
         }
     },
@@ -133,57 +146,9 @@ export default{
                             <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            ID
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            DATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                          tIE UP
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CMT REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            PROCESS RATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CURRENT RATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            REFUND AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            AP RATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            ACTION
+                                            {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>

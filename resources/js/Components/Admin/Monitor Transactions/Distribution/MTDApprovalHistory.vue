@@ -34,7 +34,21 @@ export default{
             MTDApprovalHistory: [],
             pagination: {
                 current_page: 1,
-            }
+            },
+
+            labels:[
+                {label:'ID'},
+                {label:'DATE'},
+                {label:'TYPE'},
+                {label:'REFERENCE NO.'},
+                {label:'BANK'},
+                {label:'CURRENCY'},
+                {label:'ITEMS'},
+                {label:'NET AMOUNT'},
+                {label:'WORKFLOW STATUS'},
+                {label:'REMARKS	'},
+                {label:'APPROVED / DECLINED BY'},
+            ]
 
         }
     },
@@ -72,10 +86,6 @@ export default{
                                 class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
-                        <!-- <div class="left-side-col-2 space-y-3">
-                            <DropDown label="bulk action" />
-                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
-                        </div> -->
                     </div>
                         <div class="right-side flex h-20 ">
                         <form class="flex items-start">
@@ -101,49 +111,9 @@ export default{
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                             <tr class="divide-x divide-gray-200">
-                                <th scope="col"
+                                <th v-for="label in labels" :key="label.label" scope="col"
                                     class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    ID
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    DATE
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                   tYPE
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    REFERENCE NO.
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    BANK
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    CURRENCY
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    ITEMS
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    NET AMOUNT
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    WORKFLOW STATUS
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                    REMARKS
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                    APPROVED / DECLINED BY
+                                    {{ label.label }}
                                 </th>
                             </tr>
                         </thead>

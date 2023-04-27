@@ -34,7 +34,17 @@
                 distributionSummary: [],
                 pagination: {
                     current_page: 1,
-                }
+                },
+
+                labels: [
+                { label: 'FILENAME' },
+                { label: 'Item Count'},
+                { label: 'Total Amount' },
+                { label: 'Exchange Rate'},
+                { label: 'PROCESSED date' },
+                { label: 'VALUE date' },
+                { label: 'Action' },
+                ],
 
             }
         },
@@ -107,33 +117,9 @@
                                     Batch ID
                                     </div>
                                 </th >
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Filename
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Item Count
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Total Amount
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Exchange Rate
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Processed Rate
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Value Date
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                    Action
+                                <th v-for="label in labels" :key="label.label" scope="col"
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                {{ label.label }}
                                 </th>
                             </tr>
                         </thead>

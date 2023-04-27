@@ -46,8 +46,18 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            // rates: [],
-            // selected: '',
+            labels: [
+                { label: 'ID'},
+                { label: 'DATE'},
+                { label: 'TIE UP' },
+                { label: 'REFERENCE NO.'},
+                { label: 'CMT REFERENCE NO.' },
+                { label: 'CURRENCY' },
+                { label: 'AMOUNT' },
+                { label: 'FROM' },
+                { label: 'TO' },
+                { label: 'ACTION' },
+                ],
 
         }
     },
@@ -130,56 +140,20 @@ export default{
                 </div>
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5  m-2">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2">
                             <table class="min-w-full divide-y divide-gray-300 ">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px]">
                                     <tr class="divide-x divide-gray-200 ">
-                                        <th scope="col"
-                                            class="py-2 px-1 space-x-3 uppercase tracking-wider  text-center   text-gray-900">
-                                            ID
-                                        </th>
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            DATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            TIE UP
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CMT REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            FROM
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            TO
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            ACTION
+                                            {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap space-x-2 uppercase py-2 px-1 tracking-wider">
-                                                1
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
                                         </td>
                                         <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             09/28/2022 12:00:05 PM

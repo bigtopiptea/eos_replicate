@@ -46,8 +46,18 @@ export default{
 
             selected: "Pending",
             isOpen: true,
-            // rates: [],
-            // selected: '',
+            labels: [
+                { label: 'ID'},
+                { label: 'DATE'},
+                { label: 'TIE UP' },
+                { label: 'REFERENCE NO.'},
+                { label: 'CMT REFERENCE NO.' },
+                { label: 'CURRENCY' },
+                { label: 'AMOUNT' },
+                { label: 'FROM' },
+                { label: 'TO' },
+                { label: 'ACTION' },
+                ],
 
         }
     },
@@ -56,8 +66,8 @@ export default{
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.distributionCancellation = response.data.data;
-                    this.pagination = response.data;
+                   this.distributionCancellation = response.data.data;
+                   this.pagination = response.data;
                 })
                 .catch((errors) => {
 
@@ -65,16 +75,16 @@ export default{
             },
 
         setSelected(tab) {
-        this.selected = tab;
+       this.selected = tab;
         },
         openHeading(){
-            this.isOpen = !this.isOpen;
+           this.isOpen = !this.isOpen;
         },
 
         async getRate(){
             await axios.get('/api/rates/cmt/list')
                 .then((response) => {
-                    this.rates = response.data;
+                   this.rates = response.data;
                 })
                 .catch((errors) => [
                 ])
@@ -89,7 +99,7 @@ export default{
     <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'" >
         <Tab :isSelected="selected === 'Pending'" >
             <div class=" h-auto mb-3">
-               <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8  ">
+               <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
                   <div class="flex items-end justify-between h-auto min-w-full -mx-6 ">
                     <div class="flex justify-start flex-col space-x-3 ">
                         <div class="flex items-end left-side-col-1 -ml-3">
@@ -102,12 +112,12 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-4 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px] text-white" />
+                                class="p-1.5 px-4 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
                             <DropDown label="bulk action" class="-m-3" />
-                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
+                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
                         <div class="right-side flex h-20 ">
@@ -121,91 +131,54 @@ export default{
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white"/>
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white"/>
                         </form>
                     </div>
                   </div>
                 </div>
                 <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5  m-2">
+                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2">
                             <table class="min-w-full divide-y divide-gray-300 ">
-                                <thead class="bg-[#D7D7D7] font-medium text-[11px]">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px]  ">
                                     <tr class="divide-x divide-gray-200 ">
-                                        <th scope="col"
-                                            class="py-2 px-1 space-x-3 uppercase tracking-wider  text-center   text-gray-900">
-                                            ID
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            DATE
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            TIE UP
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center    text-gray-900">
-                                            CMT REFERENCE NO.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            CURRENCY
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            AMOUNT
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            FROM
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            TO
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                            ACTION
+                                        <th v-for="label in labels" :key="label.label" scope="col" class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                            {{  label.label }}
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap space-x-2 uppercase py-2 px-1  tracking-wider">
-                                                1
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             09/28/2022 12:00:05 PM
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             REDHA AL ANSARI exchange
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider  text-cyan-500">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider text-cyan-500">
                                             REDHA-09282022-0001
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             CMT-09282022-0009
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             PHP
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             25,000.13
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             BDO
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             OUT
                                         </td>
-                                        <td class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
                                             <button>
                                                 <img src="../../../../../assets/images/ExitIcon.png" alt="Exit Icon" class="h-5 w-5">
                                             </button>
@@ -217,7 +190,7 @@ export default{
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getDistributionCancellation()"  :pagination="pagination"
+            <Pagination @paginate="getDistributionCancellation()" :pagination="pagination"
                 :offset="1" class="mt-8" />
 
             <Accordion sectiontitle="Journal Entry" :setOpen=false>
@@ -230,16 +203,16 @@ export default{
 </template>
 <style>
 .slide-fade-enter-active {
-    transition: all 0.3s ease-out;
+   transition: all 0.3s ease-out;
 }
 
 .slide-fade-leave-active {
-    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+   transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-    transform: translateY(20px);
+   transform: translateY(20px);
     opacity: 0;
 }
 </style>
