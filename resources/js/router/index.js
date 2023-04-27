@@ -273,8 +273,8 @@ const routes = [
                 name: "monitoringtransactions",
                 component: MonitorTransactions,
                 meta: {
-                    title: `Monitorings`,
-                    ability: "Monitorings",
+                    title: `Monitoring`,
+                    ability: "Monitoring",
                 },
             },
             //Carl Mendoza Edited [4-18]
