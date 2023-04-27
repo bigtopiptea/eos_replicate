@@ -26,15 +26,15 @@ export default{
         <div class="flex justify-between items-center px-5 pb-3 w-full">
             <div class="flex items-center gap-[10px] w-[55%]">
                 <div class="w-[50%]">
-                    <SmallLabelInput :inputLabel="'customer type'" :inputColor="'bg-#EAEAEA'" :isRequired="true" :isDisabled="true"/>
+                    <SmallLabelInput :inputLabel="'customer type'" :isRequired="true" :isDisabled="true"/>
                 </div>
                 <div class="w-[50%]">
                     <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :options="categoryTypes"/>
                 </div>
             </div>
             <div class="flex flex-col items-center w-[25%]">
-                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
-                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
             </div>
         </div>
         <SmallHeading label="Customer Details" class="pl-6 w-[20%]" />

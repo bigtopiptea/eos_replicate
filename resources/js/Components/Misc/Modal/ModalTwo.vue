@@ -13,7 +13,7 @@
                     <h5 :class="modalTitlePosition" class="w-full text-[17px] text-white px-5">{{ modalTitle }}</h5>
                 </div>
                 <div class="flex justify-start flex-col mt-20" :class="[heightModal, titlePosition]">
-                    <div>
+                    <div class="text-center">
                         <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
                             {{ title }}
                         </DialogTitle>

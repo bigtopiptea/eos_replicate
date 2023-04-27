@@ -4,9 +4,13 @@ import EditIcon from '@/Components/Misc/Icons/EditIcon.vue';
 import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
 import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
 import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
+import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
 export default {
     name: 'Break&Entry',
-    components: { SearchIcon, NormalButton, EditIcon, Pagination, ModalTwo },
+    components: { 
+        SearchIcon, NormalButton, EditIcon, Pagination, ModalTwo,
+        SolidButton
+    },
     data() {
         return {
             BreakEntry: [],
@@ -150,8 +154,8 @@ export default {
     <!-- Modal -->
     <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :title="'OTC API'" :description = "'NOT ALLOWED FOR ADVANCE FUNDING'">
         <div class="flex justify-center gap-7 mt-14">
-            <button @click="(viewModalOpen = !viewModalOpen)" type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CANCEL</button>
-            <button type="submit" class="py-1 px-5 text-[17px] font-medium bg-#F9951E text-white">CONFIRM</button>
+            <SolidButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'"/>
+            <SolidButton :buttonLabel="'CONFIRM'" :buttonStyle="'bg-#F9951E'"/>
         </div>
     </ModalTwo>
 </template>

@@ -469,13 +469,13 @@ export default {
                     <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold" @click="(profileSlideoverOpen = !profileSlideoverOpen)" @click.prevent="slideOverToggle()">UPLOAD</button>
                 </div>
                 <div class="mt-5">
-                    <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'user role'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'company'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'department'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'email'" :inputLabel="'email address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'contact'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                    <InputGroup :inputType="'date'" :inputLabel="'date'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'user role'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'company'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'department'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'email'" :inputLabel="'email address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'contact number'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'date'" :inputLabel="'date created'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                 </div>
             </div>
             <div class="flex justify-center">

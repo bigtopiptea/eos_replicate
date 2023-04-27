@@ -41,7 +41,7 @@ export default{
                 <!-- Row 1 -->
                 <div class="flex justify-between items-center w-[74.7%] mb-3">
                     <div class="-mb-[15px]">
-                        <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                        <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>
                     <div class="flex items-center gap-2">
                         <div class="flex items-center gap-2">
@@ -55,14 +55,14 @@ export default{
                 <div class="flex gap-x-[5px] w-full">
                     <div class="flex flex-col w-[50%]">
                         <div class="w-full">
-                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
                         </div>
                         <div class="flex gap-x-[5px] w-full">
                             <div  class="w-[50%]">
-                                <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
                             </div>
                             <div  class="w-[50%]">
-                                <InputGroup :inputLabel="'invoice amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                <InputGroup :inputLabel="'invoice amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                             </div>
                         </div>
                     </div>
@@ -70,18 +70,18 @@ export default{
                         <div class="w-full">
                             <div class="flex gap-x-[5px]">
                                 <div class="w-[50%]">
-                                    <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                    <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                                 </div>
                                 <div  class="w-[50%]">
-                                    <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                    <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                                 </div>
                             </div>
                             <div class="flex gap-x-[5px]">
                                 <div class="w-[50%]">
-                                    <InputGroup :inputType="'date'" :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                    <InputGroup :inputType="'date'" :inputLabel="'covered period fr.'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"  :isDisabled="true"/>
                                 </div>
                                 <div class="w-[50%]">
-                                    <InputGroup :inputType="'date'" :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'" :inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                                    <InputGroup :inputType="'date'" :inputLabel="'covered period to'" :labelWidth="'w-7/12'" :inputWidth="'w-5/12'"  :isDisabled="true"/>
                                 </div>
                             </div>
                         </div>

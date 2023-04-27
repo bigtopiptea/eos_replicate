@@ -5,7 +5,7 @@
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="uppercase h-7 p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left  focus:border-collapse" :class="[inputColor,inputWidth]" :disabled="isDisabled">
+        <input :type="inputType" class="uppercase h-7 p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA]  focus:border-collapse" :class="inputWidth" :disabled="isDisabled">
     </div>
 </template>
 
@@ -30,10 +30,10 @@ export default{
         default: '5/12',
         required: true
     },
-    inputColor:{
-        type: String,
-        default: 'bg-[#ECECEC]'
-    },
+    // inputColor:{
+    //     type: String,
+    //     default: 'bg-[#ECECEC]'
+    // },
     inputType:{
         type: String,
         default: 'text',

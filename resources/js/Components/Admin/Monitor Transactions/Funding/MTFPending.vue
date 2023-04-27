@@ -17,6 +17,7 @@ import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
 import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
+import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 
 export default{
 
@@ -35,7 +36,8 @@ export default{
         PaperClipIcon,
         InputGroup,
         SmallLabelInput,
-        InputTextarea
+        InputTextarea,
+        SolidButton
     },
 
     data() {
@@ -225,20 +227,20 @@ export default{
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
-                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
-                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'"/>
+                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'" :isDisabled="true"/>
                     </div>
-                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true"/>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <SolidButton @click="(viewDetailsOpen = !viewDetailsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -293,7 +295,7 @@ export default{
 
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <SolidButton @click="(viewDocumentsOpen = !viewDocumentsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -302,24 +304,24 @@ export default{
     <Slideover :show="viewVerifyFundingOpen" @close="viewVerifyFundingToggle" :title="'VERIFY FUNDING'">
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
-                <div class="mt-14">
-                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                <div class="mt-[30px]">
+                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
-                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'"/>
+                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'" :isDisabled="true"/>
                     </div>
-                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col justify-between text-center mx-10">
                 <h5 class="uppercase text-[15px] px-10">Are you sure you want to verify this transaction?</h5>
                 <div class="flex justify-between mt-7">
-                    <button @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">DECLINE</button>
-                    <button type="submit" class="py-1 px-5 text-[17px] font-medium bg-#F9951E text-white">VERIFY</button>
+                    <SolidButton @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" :buttonLabel="'DECLINE'" :buttonTextSize="'text-[15px]'"/>
+                    <SolidButton :buttonLabel="'VERIFY'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>
         </div>
