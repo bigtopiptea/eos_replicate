@@ -34,7 +34,7 @@ export default{
         <div class="flex justify-between w-full p-5 px-8">
             <div class="flex flex-col w-[75%]">
                 <div class="flex gap-5 w-[35%]">
-                    <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
                 </div>
                 <div class="flex gap-5 w-full ">
                     <div class="w-[35%]">
@@ -52,13 +52,13 @@ export default{
                         <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'"/>
                     </div>
                     <div>
-                        <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                        <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>
                 </div>
             </div>
             <div class="flex w-[25%] justify-end">
                 <div class="flex gap-5 w-full">
-                    <InputGroup :inputLabel="'Reference Number'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'Reference Number'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@ export default{
             </div>
             <div class="flex flex-col w-full ">
                 <div>
-                    <InputGroup :inputLabel="'Committed Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'Committed Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
 
                 </div>
             </div>

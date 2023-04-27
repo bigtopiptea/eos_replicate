@@ -34,8 +34,8 @@ export default{
                 </div>
             </div>
             <div class="flex flex-col items-center w-[25%]">
-                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
-                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
+                <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
             </div>
         </div>
         <SmallHeading label="Business Details" class="pl-6 w-[20%]" />
