@@ -9,7 +9,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
-import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Funding/Oeri to Oeri/JournalEntry.vue";
 import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
@@ -17,6 +17,7 @@ import InputDropdown from "@/Components/Misc/Input/InputDropdown.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
+import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 // import axios from "axios";
 
 
@@ -25,19 +26,21 @@ export default{
     name:'Oeri To Oeri',
 
     components:{
-    EditIcon,
-    NormalButton,
-    SearchIcon,
-    InputLabel,
-    ListIcon,
-    Pagination,
-    InputGroup,
-    FloatingTextArea,
-    Accordion,
-    JournalEntry,
-    InputDropdown,
+        Tab, TabNav,
+        EditIcon,
+        NormalButton,
+        SearchIcon,
+        InputLabel,
+        ListIcon,
+        Pagination,
+        InputGroup,
+        FloatingTextArea,
+        Accordion,
+        JournalEntry,
+        InputDropdown,
+        BorderButton
     // UnallocatedTransactions,
-},
+    },
 
     data() {
         return {
@@ -79,20 +82,14 @@ export default{
                                 <InputGroup :inputWidth="'w-7/12 bg-white'" :labelWidth="'w-5/12'" :inputLabel="'Amount'" inputColor="'bg-white'" />
                             </div>
                         </div>
-                        <!-- <div class="h-auto">
-                            <FloatingTextArea :label="'Remarks'" :inputHeight="'h-16 overflow-y-hidden'"/>
-                        </div> -->
-                    </div >
-                    <div class=" px-3 uppercase w-4/12">
-                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
-                        <!-- <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
-                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'" />
-                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'" />
-                        <div class="flex justify-start items-center">
-                            <input type="checkbox">
-                            <span class="font-light text-[10px] ml-3">Advanced Funding</span>
-                        </div> -->
                     </div>
+                    <div class=" px-3 uppercase w-4/12">
+                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" :isDisabled="true"/>
+                    </div>
+                </div>
+                <div class="flex gap-[15px] justify-center mt-3">
+                    <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'"/>
+                    <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-red-500 text-red-500 text-[11px]'" :buttonPadding="'px-2 py-2'"/>
                 </div>
 
                 <!-- Accordion Content -->

@@ -9,7 +9,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 </script>
 
 <script>
-import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue";
+import JournalEntry from "./JournalEntry.vue";
 import UnallocatedTransactions from "@/Components/Admin/Funding/From Tie-Up/UnallocatedTransactions.vue";
 import Accordion from "../../../Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
@@ -26,6 +26,7 @@ export default{
     name:'Banks & Providers',
 
     components:{
+    Tab, TabNav,
     EditIcon,
     NormalButton,
     SearchIcon,
@@ -105,12 +106,12 @@ export default{
                         </div>
                     </div >
                     <div class="px-3 uppercase w-4/12">
-                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" />
-                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'" />
-                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'" />
-                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'" />
+                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '"  :isDisabled="true"/>
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'"  :isDisabled="true"/>
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'"  :isDisabled="true"/>
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'"  :isDisabled="true"/>
                         <div class="flex justify-start items-center">
-                            <input type="checkbox">
+                            <input type="checkbox" class="bg-[#EAEAEA]" disabled>
                             <span class="font-light text-[10px] ml-3">Advanced Funding</span>
                         </div>
                     </div>

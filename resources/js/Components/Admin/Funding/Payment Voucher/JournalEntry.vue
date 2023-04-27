@@ -1,9 +1,10 @@
 <script>
 import SettingsInput from '@/Components/Misc/Input/SettingsInput.vue';
+import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
 
 export default{
     components:{
-        SettingsInput,
+        SettingsInput, SolidButton
 
     }
 }
@@ -37,38 +38,30 @@ export default{
                     <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                         <tr class="divide-x divide-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput placeholder="Enter Entries"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Debit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Credit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Remarks"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                         </tr>
                         <tr class="divide-x divide-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput placeholder="Enter Entries"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Debit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Credit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Remarks"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase" :isDisabled="true" />
                             </td>
                         </tr>
                     </tbody>
@@ -90,8 +83,10 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
-                <router-link to="/app/funding" class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white  font-sans font-normal text-[17px]">CANCEL</router-link>
-                <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
+                <router-link to="/app/funding" >
+                    <SolidButton :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                </router-link>
+                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#F9951E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </div>

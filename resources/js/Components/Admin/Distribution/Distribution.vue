@@ -21,8 +21,6 @@ export default defineComponent({
         DistributionCancellation,
         DistributionAdditional,
         DistributionAdjustment,
-
-
     },
     data(){
         return {

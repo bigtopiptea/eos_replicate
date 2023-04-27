@@ -19,6 +19,10 @@ export default{
         buttonSize:{
             type: String,
             default: 'h-auto w-[120px]'
+        },
+        buttonTextSize:{
+            type: String,
+            default: 'text-[11px]'
         }
 
     },
@@ -28,5 +32,5 @@ export default{
 }
 </script>
 <template>
-    <button class=" uppercase py-3 disabled:bg-[#D7D7D7] px-10 text-white font-sans font-normal text-[11px]" :class="[buttonStyle, buttonSize]" :disabled="isDisabled">{{ buttonLabel }}</button>
+    <button class="text-center uppercase py-3 disabled:bg-[#D7D7D7] text-white font-sans font-normal text-[11px]" :class="[buttonStyle, buttonSize, buttonTextSize]" :disabled="isDisabled">{{ buttonLabel }}</button>
 </template>

@@ -34,14 +34,14 @@ export default{
         <div class="flex justify-between w-full p-5 px-8">
             <div class="flex flex-col w-[75%]">
                 <div class="flex gap-5 w-[35%]">
-                    <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                    <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
                 </div>
                 <div class="flex gap-5 w-full ">
                     <div class="w-[35%]">
                         <InputDropDown :inputLabel="'USD From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                     </div>
                     <div class="flex ">
-                    <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'"/>
+                        <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'" :buttonPadding="'px-2 py-1'"/>
                     </div>
                 </div>
                 <div class="flex gap-5 w-full">
@@ -52,13 +52,13 @@ export default{
                         <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'"/>
                     </div>
                     <div>
-                        <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                        <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
                     </div>
                 </div>
             </div>
             <div class="flex w-[25%] justify-end">
                 <div class="flex gap-5 w-full">
-                    <InputGroup :inputLabel="'Reference Number'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                    <InputGroup :inputLabel="'Reference Number'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
                 </div>
             </div>
         </div>
@@ -102,8 +102,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" />
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'"/>
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'"/>
         </div>
         <!-- Break -->
         <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-5"/>
@@ -123,14 +123,14 @@ export default{
             </div>
             <div class="flex flex-col w-full ">
                 <div>
-                    <InputGroup :inputLabel="'Committed Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" inputColor="'bg-white'"/>
+                    <InputGroup :inputLabel="'Committed Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-[#EAEAEA]'" :isDisabled="true"/>
 
                 </div>
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" />
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" />
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'"/>
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'"/>
         </div>
 
         <Accordion sectiontitle="Journal Entry" :setOpen=false>

@@ -14,7 +14,7 @@ export default {
         <!-- FORM -->
         <div class="w-full">
             <div class="w-[400px]">
-                <InputGroup :inputLabel="'VOUCHER DATE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
+                <InputGroup :inputLabel="'VOUCHER DATE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :isDisabled="true"/>
                 <InputDropdown :inputLabel="'PAYMENT TYPE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                 <InputDropdown :inputLabel="'BANK ACCOUNT'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
             </div>
@@ -92,8 +92,8 @@ export default {
         </div>
         <!-- Buttons -->
         <div class="flex justify-center gap-x-[15px]">
-            <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonPadding="'px-[5px] py-3'"/>
-            <BorderButton :buttonLabel="'PASS ENTRY'"/>
+            <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonPadding="'px-[5px] py-2'"/>
+            <BorderButton :buttonLabel="'PASS ENTRY'" :buttonPadding="'px-[5px] py-2'"/>
         </div>
     </div>
 </template>
