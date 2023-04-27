@@ -9,7 +9,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue"
 </script>
 
 <script>
-import DistributionCancellationJournalEntry from "./DistributionCancellationJournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Distribution/JournalEntry.vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import Accordion from "@/Components/Misc/Accordion.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
@@ -24,7 +24,7 @@ export default{
     name:'DistributionCancellation',
 
     components:{
-    DistributionCancellationJournalEntry,
+    JournalEntry,
     DropDown,
     EditIcon,
     NormalButton,
@@ -221,7 +221,7 @@ export default{
                 :offset="1" class="mt-8" />
 
             <Accordion sectiontitle="Journal Entry" :setOpen=false>
-                <DistributionCancellationJournalEntry/>
+                <JournalEntry/>
             </Accordion>
         </Tab>
     </TabNav>

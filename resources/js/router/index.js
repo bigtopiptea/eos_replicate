@@ -17,7 +17,7 @@ import GuestLayout from "@/Components/Layouts/GuestLayout.vue";
 
 /* Authenticated Component */
 import Dashboard from "../Components/Admin/Dashboard/Dashboard.vue";
-import StatusReversal from "@/Components/Admin/Status & Reversal/StatusReversal.vue";
+// import StatusReversal from "@/Components/Admin/Status & Reversal/StatusReversal.vue";
 import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
@@ -38,6 +38,9 @@ import CustomerRecordIndividual from "@/Components/Admin/Trading/Customer Record
 import CustomerRecordCorporate from "@/Components/Admin/Trading/Customer Record/Corporate/CustomerRecordCorporate.vue";
 import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableInventory.vue';
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
+import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
+import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
+
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -207,13 +210,31 @@ const routes = [
             },
 
 
+            // {
+            //     path: "/app/status-reversal",
+            //     name: "status-reversal",
+            //     component: StatusReversal,
+            //     meta: {
+            //         title: `Status & Reversal`,
+            //         ability: "Status & Reversal",
+            //     },
+            // },
             {
-                path: "/app/status-reversal",
-                name: "status-reversal",
-                component: StatusReversal,
+                path: "/app/status-reversal/adjustment-entry",
+                name: "Adjustment Entry",
+                component: AdjustmentEntry,
                 meta: {
-                    title: `Status & Reversal`,
-                    ability: "Status & Reversal",
+                    title: `Adjustment Entry`,
+                    ability: "Adjustment Entry",
+                },
+            },
+            {
+                path: "/app/status-reversal/adjustment-entry/all-entries",
+                name: "All Entries",
+                component: AllEntries,
+                meta: {
+                    title: `All Entries`,
+                    ability: "View All Entries",
                 },
             },
 

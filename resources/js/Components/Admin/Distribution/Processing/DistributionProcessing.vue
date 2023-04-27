@@ -6,7 +6,7 @@ import Accordion from "@/Components/Misc/Accordion.vue"
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import DistributionSummary from "@/Components/Admin/Distribution/Processing/DistributionSummary.vue";
 import DistributionBreakEntry from "@/Components/Admin/Distribution/Processing/DistributionBreak&Entry.vue";
-import DistributionJournalEntry from "@/Components/Admin/Distribution/Processing/DistributionJournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Distribution/JournalEntry.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
@@ -16,7 +16,7 @@ import axios from "axios";
 
 
 export default {
-    components: {SmallHeading, DistributionSummary, DistributionBreakEntry, DistributionJournalEntry},
+    components: {SmallHeading, DistributionSummary, DistributionBreakEntry, JournalEntry},
     data(){
         return {
 
@@ -60,7 +60,7 @@ export default {
                             <DistributionBreakEntry/>
                         </Accordion>
                         <Accordion sectiontitle="JOURNAL ENTRY " :setOpen=false>
-                            <DistributionJournalEntry/>
+                            <JournalEntry/>
                         </Accordion>
                 </div>
             </Tab>

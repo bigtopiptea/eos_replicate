@@ -9,7 +9,7 @@ export default{
 }
 </script>
 <template>
-    <div class="sm:px-6">
+    <div class="sm:px-6 lg:px-8">
         <div class="inline-block min-w-full py-4 align-middle ">
             <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 ">
                 <table class="min-w-full divide-y divide-gray-300">

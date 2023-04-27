@@ -1,4 +1,3 @@
-
 <script>
 import STRFileNew from "./STRFileNew.vue";
 import STRHistory from '@/Components/Admin/Trading/STR/STRHistory.vue';

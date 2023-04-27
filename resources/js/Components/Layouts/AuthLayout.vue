@@ -131,8 +131,8 @@ export default {
                     icon: AmendmentIcon,
                 },
                 {
-                    to: "/app/status-reversal",
-                    label: "Status & Reversal",
+                    to: "/app/status-reversal/adjustment-entry",
+                    label: "status Wreversal",
                     children: [],
                     icon: StatusReversalIcon,
                 },

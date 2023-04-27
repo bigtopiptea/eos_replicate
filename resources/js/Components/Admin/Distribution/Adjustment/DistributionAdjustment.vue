@@ -48,8 +48,8 @@ export default {
     <div class="border m-3 bg-white border-white shadow-md">
         <TabNav :tabs="['Pending', 'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
             <Tab :isSelected="selected === 'Pending'" >
-                <div class="w-full h-full mt-10  ">
-
+                <div class="w-full h-full mt-10 ">
+                    <h1>Adjustment</h1>
                 </div>
             </Tab>
         </TabNav>
