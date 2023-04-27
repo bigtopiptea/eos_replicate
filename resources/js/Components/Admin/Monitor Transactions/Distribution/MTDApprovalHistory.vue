@@ -69,7 +69,7 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3  tracking-wider text-[10px]  text-white" />
+                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <!-- <div class="left-side-col-2 space-y-3">
@@ -88,9 +88,9 @@ export default{
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white mr-3" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white mr-3" />
                         </form>
                     </div>
                  </div>
@@ -102,47 +102,47 @@ export default{
                         <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     ID
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                    TYPE
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                   tYPE
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     REFERENCE NO.
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     BANK
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     CURRENCY
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     ITEMS
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     NET AMOUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     WORKFLOW STATUS
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                     REMARKS
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                     APPROVED / DECLINED BY
                                 </th>
                             </tr>
@@ -150,47 +150,47 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider   ">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     01
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 11:00:09 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     PROCESSING
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     CMT0-09282022-0006
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     BDO OUT
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     PHP
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     524
                                 </td>
                                 <td
-                                    class=" whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     9,240,003.25
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     FOR VERIFICATION
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     REJECTED
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     BANARIA, JEFFREY CLIDORIO
                                 </td>
                             </tr>
@@ -200,7 +200,7 @@ export default{
             </div>
         </div>
     </div>
-        <Pagination @paginate="getMTDApprovalHistory()"  :pagination="pagination"
+        <Pagination @paginate="getMTDApprovalHistory()" :pagination="pagination"
             :offset="1" class = "mb-6 mt-6"/>
     </div>
 </template>

@@ -28,39 +28,39 @@ export default{
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         id
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         company name
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         country
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         account name
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         bank
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         account no.
-                                    </th>                               
+                                    </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         date added
-                                    </th>                               
+                                    </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         added by
-                                    </th>                               
+                                    </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         ACTIONS
                                     </th>
                                 </tr>
@@ -68,40 +68,40 @@ export default{
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         <a  class="underline text-cyan-500" href="#">
                                             cmpny-01
                                         </a>
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         JDEE REMIT
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         SINGAPORE
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         JDEE REMIT SG
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         CHINABANK
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         09218407
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         10/28/2022 08:24:45 AM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         LASCONIA, ELIOMAR DE ASIS
                                     </td>
-                                    <td class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider flex justify-center items-center gap-1">
+                                    <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider flex justify-center items-center gap-1">
                                         <button>
                                             <img src="../../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
                                         </button>
@@ -128,10 +128,10 @@ export default{
                                         </div>
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[55%]">
-                                                <FloatingLabelInput :inputLabel="'account name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"   isRequired="true"/>
+                                                <FloatingLabelInput :inputLabel="'account name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                             </div>
                                             <div class="w-[45%]">
-                                                <FloatingLabelInput :inputLabel="'branch account'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"   isRequired="true"/>
+                                                <FloatingLabelInput :inputLabel="'branch account'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@ export default{
                                     </div>
                                     <div>
                                         <BorderButton :buttonLabel="'ADD/UPDATE BENEFICIARY'" :buttonSize="'h-auto w-[210px]'" :buttonPadding="'px-[5px] py-1'"/>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div>

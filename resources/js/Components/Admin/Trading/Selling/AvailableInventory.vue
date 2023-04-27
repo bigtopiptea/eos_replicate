@@ -33,14 +33,14 @@ export default{
         <!-- 1st Content -->
         <div class="flex justify-end h-auto w-full">
             <DropDown label="Currency" :options="myOptions"/>
-            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
+            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
         </div>
         <!-- 2nd Content -->
         <div>
             <div class="flex justify-center gap-3 mt-3 overflow-y-auto border border-#EAEAEA">
                 <div class="w-[40%]  h-[170px]">
                     <table class="divide-y divide-[#EAEAEA] w-full h-auto">
-                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2  whitespace-nowrap sticky top-[0px]">
+                        <thead class=" bg-[#D7D7D7] font-medium text-[11px] text-center px-3 py-2 whitespace-nowrap sticky top-[0px]">
                             <tr class="divide-x divide-[#EAEAEA]">
                                 <th>
                                     USD RATE
@@ -50,7 +50,7 @@ export default{
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="divide-x divide-[#EAEAEA] font-light text-[10px] text-center  whitespace-nowrap border border-gray-200">
+                        <tbody class="divide-x divide-[#EAEAEA] font-light text-[10px] text-center whitespace-nowrap border border-gray-200">
                             <tr class="divide-x divide-[#EAEAEA] ">
                                 <td class="py-2">
                                     200,000
@@ -135,13 +135,91 @@ export default{
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class=" font-light text-[10px] text-center  px-3 py-2  whitespace-nowrap border border-gray-200 tracking-wider ">
+                        <tbody class=" font-light text-[10px] text-center px-3 py-2 whitespace-nowrap border border-gray-200 tracking-wider ">
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"/>
+                                </td>
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number" />
+                                </td>
+                                <td class="w-[30%] ">
+                                    <div class="flex items-center justify-center gap-3 ">
+                                        <div>
+                                            <button class="flex items-center">
+                                                <AddIcon/>
+                                                <Span class="uppercase">Add</Span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="flex items-center">
+                                                <ResetIcon class="mr-1"/>
+                                                <Span class="uppercase">Reset</Span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase" type="number" />
+                                </td>
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase" type="number"/>
+                                </td>
+                                <td class="w-[30%] ">
+                                    <div class="flex items-center justify-center gap-3 ">
+                                        <div>
+                                            <button class="flex items-center">
+                                                <AddIcon/>
+                                                <Span class="uppercase">Add</Span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="flex items-center">
+                                                <ResetIcon class="mr-1"/>
+                                                <Span class="uppercase">Reset</Span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"/>
+                                </td>
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"/>
+                                </td>
+                                <td class="w-[30%] ">
+                                    <div class="flex items-center justify-center gap-3 ">
+                                        <div>
+                                            <button class="flex items-center">
+                                                <AddIcon/>
+                                                <Span class="uppercase">Add</Span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="flex items-center">
+                                                <ResetIcon class="mr-1"/>
+                                                <Span class="uppercase">Reset</Span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -163,37 +241,11 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="w-[30%] ">
-                                    <div class="flex items-center justify-center gap-3 ">
-                                        <div>
-                                            <button class="flex items-center">
-                                                <AddIcon/>
-                                                <Span class="uppercase">Add</Span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button class="flex items-center">
-                                                <ResetIcon class="mr-1"/>
-                                                <Span class="uppercase">Reset</Span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -215,37 +267,11 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="w-[30%] ">
-                                    <div class="flex items-center justify-center gap-3 ">
-                                        <div>
-                                            <button class="flex items-center">
-                                                <AddIcon/>
-                                                <Span class="uppercase">Add</Span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button class="flex items-center">
-                                                <ResetIcon class="mr-1"/>
-                                                <Span class="uppercase">Reset</Span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -267,37 +293,11 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="w-[30%] ">
-                                    <div class="flex items-center justify-center gap-3 ">
-                                        <div>
-                                            <button class="flex items-center">
-                                                <AddIcon/>
-                                                <Span class="uppercase">Add</Span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button class="flex items-center">
-                                                <ResetIcon class="mr-1"/>
-                                                <Span class="uppercase">Reset</Span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -319,37 +319,11 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="w-[30%] ">
-                                    <div class="flex items-center justify-center gap-3 ">
-                                        <div>
-                                            <button class="flex items-center">
-                                                <AddIcon/>
-                                                <Span class="uppercase">Add</Span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button class="flex items-center">
-                                                <ResetIcon class="mr-1"/>
-                                                <Span class="uppercase">Reset</Span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -371,37 +345,11 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="w-[30%] ">
-                                    <div class="flex items-center justify-center gap-3 ">
-                                        <div>
-                                            <button class="flex items-center">
-                                                <AddIcon/>
-                                                <Span class="uppercase">Add</Span>
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button class="flex items-center">
-                                                <ResetIcon class="mr-1"/>
-                                                <Span class="uppercase">Reset</Span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
-                                    <SettingsInput placeholder="-"
-                                        class="w-full uppercase " type="number"  />
-                                </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
@@ -423,11 +371,63 @@ export default{
                                 </td>
                             </tr>
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider ">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>
-                                <td class="whitespace-nowrap uppercase  px-2   tracking-wider">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"  />
+                                </td>
+                                <td class="w-[30%] ">
+                                    <div class="flex items-center justify-center gap-3 ">
+                                        <div>
+                                            <button class="flex items-center">
+                                                <AddIcon/>
+                                                <Span class="uppercase">Add</Span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="flex items-center">
+                                                <ResetIcon class="mr-1"/>
+                                                <Span class="uppercase">Reset</Span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"  />
+                                </td>
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"  />
+                                </td>
+                                <td class="w-[30%] ">
+                                    <div class="flex items-center justify-center gap-3 ">
+                                        <div>
+                                            <button class="flex items-center">
+                                                <AddIcon/>
+                                                <Span class="uppercase">Add</Span>
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button class="flex items-center">
+                                                <ResetIcon class="mr-1"/>
+                                                <Span class="uppercase">Reset</Span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200">
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider ">
+                                    <SettingsInput placeholder="-"
+                                        class="w-full uppercase " type="number"  />
+                                </td>
+                                <td class="whitespace-nowrap uppercase px-2 tracking-wider">
                                     <SettingsInput placeholder="-"
                                         class="w-full uppercase " type="number"  />
                                 </td>

@@ -45,7 +45,7 @@ export default{
         viewModalToggle() {
             this.viewModalOpen = false;
         },
-        
+
         async getMTDPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -76,7 +76,7 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3  tracking-wider text-[10px]  text-white" />
+                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
@@ -95,9 +95,9 @@ export default{
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white mr-3" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white mr-3" />
                         </form>
                     </div>
                  </div>
@@ -109,43 +109,43 @@ export default{
                         <thead class="bg-[#D7D7D7] text-[11px] font-medium">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     ID
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     DATE
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
-                                    TYPE
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                   tYPE
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     REFERENCE NO.
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     BANK
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     CURRENCY
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     ITEMS
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     NET AMOUNT
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     WORKFLOW STATUS
                                 </th>
                                 <th scope="col"
-                                    class="py-2 px-4 whitespace-nowrap uppercase tracking-wider  text-center  text-gray-900">
+                                    class="py-2 px-4 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                     ACTION
                                 </th>
                             </tr>
@@ -153,46 +153,46 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                             <tr class="divide-x divide-gray-200">
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-2   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                     <!-- <router-link :to="{name: 'pdf'}" target="_blank">Go</router-link> -->
                                     <a class="underline text-cyan-500" href="#" @click="(viewModalOpen = !viewModalOpen)">
                                         01
                                     </a>
                                 </td>
                                 <td
-                                    class="whitespace-nowrap uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 11:00:09 PM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     PROCESSING
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     CMT0-09282022-0006
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     BDO OUT
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     PHP
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     524
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     9,240,003.25
                                 </td>
                                 <td
-                                    class="whitespace-nowrap  uppercase py-2 px-1   tracking-wider">
+                                    class="whitespace-nowrap uppercase py-2 px-1 tracking-wider">
                                     FOR VERIFICATION
                                 </td>
                                 <td
-                                    class="flex whitespace-nowrap uppercase justify-evenly py-2 px-1    tracking-wider">
+                                    class="flex whitespace-nowrap uppercase justify-evenly py-2 px-1  tracking-wider">
                                     <button>
                                        <img src="../../../../../assets/images/PrintIcon.png" alt="Lists Icon" class="h-5 w-5">
                                     </button>
@@ -213,7 +213,7 @@ export default{
             </div>
         </div>
     </div>
-        <Pagination @paginate="MTDPending()"  :pagination="pagination"
+        <Pagination @paginate="MTDPending()" :pagination="pagination"
             :offset="1" class = "mb-6 mt-6"/>
     </div>
 
@@ -224,23 +224,23 @@ export default{
                 <thead class="bg-[#D7D7D7] text-[11px] font-medium ">
                     <tr class="divide-x divide-gray-200">
                         <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                             REFERENCE NO.
                         </th>
                         <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                             BENEFICIARY
                         </th>
                         <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                             BANK
                         </th>
                         <th scope="col"
-                            class="py-3.5 px-1 uppercase tracking-wider text-center  text-gray-900">
+                            class="py-3.5 px-1 uppercase tracking-wider text-center text-gray-900">
                             AMOUNT
                         </th>
                         <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center   text-gray-900">
+                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                             COST
                         </th>
                     </tr>
@@ -268,7 +268,7 @@ export default{
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                             50.00
-                        </td>                                              
+                        </td>
                     </tr>
                     <tr class="divide-x divide-gray-200">
                         <td
@@ -292,22 +292,19 @@ export default{
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                             50.00
-                        </td>                                              
+                        </td>
                     </tr>
                 </tbody>
                 <tfoot class="divide-y divide-gray-200 bg-white text-[11px] font-bold">
                     <tr>
                         <td class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
-                            <span>
-                                
-                            </span>
                         </td>
                         <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            
+
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            TOTAL
+                           tOTAL
                         </td>
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -316,12 +313,12 @@ export default{
                         <td
                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                             26.00
-                        </td>                                              
+                        </td>
                     </tr>
                 </tfoot>
             </table>
             <div class="flex justify-center gap-7">
-                <button @click="(viewModalOpen = !viewModalOpen)"  type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <button @click="(viewModalOpen = !viewModalOpen)" type="submit" class="py-1 px-5 text-[17px]font-medium bg-#3E3E3E text-white">CLOSE</button>
             </div>
         </div>
     </ModalTwo>

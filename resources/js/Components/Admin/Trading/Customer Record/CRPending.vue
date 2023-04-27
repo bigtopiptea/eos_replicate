@@ -21,7 +21,8 @@ export default{
     name:'Customer Record - Pending',
 
     components:{
-        Tab, TabNav,
+        Tab,
+        TabNav,
         DropDown,
         ListIcon,
         UserIcon,
@@ -78,9 +79,9 @@ export default{
                                         placeholder="Search" required />
                                 </div>
                                 <NormalButton label="Go"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                 <NormalButton label="Export"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white mr-3" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white mr-3" />
                             </form>
                         </div>
                         <div>
@@ -95,45 +96,45 @@ export default{
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="flex justify-between items-center py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="flex justify-between items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             <input type="checkbox" name="" id="">
                                             <span>
                                                 cust. id.
                                             </span>
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             customer type
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             name
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             address
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             date added
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             date registered
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                             status
                                         </th>
                                         <th scope="col"
-                                            class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                            class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                             ACTION
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             <div class="flex justify-center items-center gap-2">
                                                 <input type="checkbox" name="" id="">
                                                 <a class="underline text-cyan-500" href="#">
@@ -142,29 +143,30 @@ export default{
                                             </div>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             CORPORATION
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             Flatley LLC.
                                         </td>
                                         <td
-                                            class="whitespace-normal text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-normal text-center uppercase py-2 px-1 tracking-wider">
                                             KM. 18 South Superhighway West Service Road, Brgy. Marcelo Barangay Marcelo
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             09/28/2022 10:38:20 AM
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             09/28/2022 10:38:20 AM
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                            for review                                               </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            for review
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             <div class="flex justify-center">
                                                 <!-- <router-link :to="{path: '/app/funding/edit'}">
                                                     Go
@@ -181,7 +183,7 @@ export default{
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getCRPending()"  :pagination="pagination"
+            <Pagination @paginate="getCRPending()" :pagination="pagination"
         :offset="1" class = "mb-6 mt-6"/>
         </div>
     </div>

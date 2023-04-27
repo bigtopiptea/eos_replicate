@@ -22,7 +22,8 @@ export default{
     name:'Tie Up To Oeri',
 
     components:{
-        Tab, TabNav,
+        Tab,
+        TabNav,
         DropDown,
         EditIcon,
         NormalButton,
@@ -67,9 +68,9 @@ export default{
 </script>
 
 <template>
-    <div class="border m-3 bg-white border-white shadow-md ">
-        <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
-            <Tab :isSelected="selected === 'Pending'" >              
+    <div class="border m-3 bg-white border-white shadow-md">
+        <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white'">
+            <Tab :isSelected="selected === 'Pending'" >
                 <div v-show="mainContentShow">
                     <div class="flex flex-col justify-between h-full w-auto m-3">
                         <div>
@@ -85,7 +86,7 @@ export default{
                                             </div>
                                             <div>
                                                 <NormalButton label="Filter"
-                                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3  tracking-wider text-[10px]  text-white" />
+                                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
                                             </div>
                                         </div>
                                     </div>
@@ -100,9 +101,9 @@ export default{
                                                     placeholder="Search" required />
                                             </div>
                                             <NormalButton label="Go"
-                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                             <NormalButton label="Export"
-                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white mr-3" />
+                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white mr-3" />
                                         </form>
                                     </div>
                                 </div>
@@ -114,59 +115,59 @@ export default{
                                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                                 <tr class="divide-x divide-gray-200">
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         ID
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         DATE
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                                        TIE UP
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                                       tIE UP
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         BATCH
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         FILENAME
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         CURRENCY
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         ITEMS
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                                        TOTAL TXN. AMT
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                                       tOTAL TXN. AMT
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                                         FUNDED AMT
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                                         OUTSTANDING AMT.
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                                         OUTSTANDING AMT.
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                                         COMMITED RATE
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                                         CONVERTED AMOUNT
                                                     </th>
                                                     <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
+                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
                                                         ACTION
                                                     </th>
                                                 </tr>
@@ -174,60 +175,61 @@ export default{
                                             <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                                 <tr class="divide-x divide-gray-200">
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         <a class="underline text-cyan-500" href="#">
                                                             01
                                                         </a>
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         09/28/2022 11:00:09 PM
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         redha al ansari
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         01
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         usd
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         redha batch 01
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                                        usd                                                </td>
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                                        usd
+                                                    </td>
                                                     <td
-                                                        class=" whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         547
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         113,784.25
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         0.00
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         113,784.25
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         48.25
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         5,490,090.06
                                                     </td>
                                                     <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         <div class="flex justify-center">
                                                             <!-- <router-link :to="{path: '/app/funding/edit'}">
                                                                 Go
@@ -244,13 +246,13 @@ export default{
                                 </div>
                             </div>
                         </div>
-                        <Pagination @paginate="getTieUpToOeri()"  :pagination="pagination"
+                        <Pagination @paginate="getTieUpToOeri()" :pagination="pagination"
                     :offset="1" class = "mb-6 mt-6"/>
                     </div>
                 </div>
 
                 <div v-show="!mainContentShow">
-                    <TieUpToOeriEdit :isOpen="mainContentShow" @updateMainValue="updateMainValue"/>  
+                    <TieUpToOeriEdit :isOpen="mainContentShow" @updateMainValue="updateMainValue"/>
                 </div>
             </Tab>
         </TabNav>

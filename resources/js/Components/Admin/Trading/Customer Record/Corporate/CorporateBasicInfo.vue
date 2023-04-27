@@ -10,7 +10,7 @@ import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 
 export default{
     components:{
-        FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup, 
+        FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup,
         SmallHeading, CountryCodeDropdown, BorderButton, SolidButton
     },
     data(){
@@ -27,7 +27,7 @@ export default{
         <div class="flex justify-between items-center px-5 pb-3 w-full">
             <div class="flex items-center gap-[10px] w-[55%]">
                 <div class="w-[50%]">
-                    <FloatingLabelDropdown :inputLabel="'customer-type'"  :inputWidth="'w-12/12'"  :inputColor="'bg-white'" :isRequired="true" :options="customerTypes"/>
+                    <FloatingLabelDropdown :inputLabel="'customer-type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" :options="customerTypes"/>
                 </div>
                 <div class="w-[50%]">
                     <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="categoryTypes"/>

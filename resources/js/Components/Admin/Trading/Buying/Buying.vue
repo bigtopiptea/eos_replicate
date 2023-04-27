@@ -41,7 +41,7 @@ export default{
                         <InputDropDown :inputLabel="'USD From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                     </div>
                     <div class="flex ">
-                    <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'" />
+                    <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'"/>
                     </div>
                 </div>
                 <div class="flex gap-5 w-full">

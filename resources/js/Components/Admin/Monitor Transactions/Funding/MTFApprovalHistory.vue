@@ -83,7 +83,7 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <!-- <div class="left-side-col-2 space-y-3">
@@ -102,9 +102,9 @@ export default{
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-[10px] text-white" />
                         </form>
                     </div>
                 </div>
@@ -116,45 +116,45 @@ export default{
                             <thead class="bg-[#D7D7D7] font-medium text-[11px]">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1  uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         <span>
                                         ID
                                         </span>
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         DATE
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        TYPE
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                       tYPE
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         NAME
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         BANK
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         CURRENCY
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         RATE
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         NET AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
+                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         STATUS
                                     </th>
                                 </tr>
@@ -162,45 +162,45 @@ export default{
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] ">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider ">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider ">
                                         <a href="#" class="text-cyan-500 underline" @click="(viewDetailsOpen = !viewDetailsOpen), setIconDetailsOpen()" >
                                         01
                                         </a>
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         09/28/2022 10:55:09 AM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         ACCOUNTING
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         CMT-09282022-0021
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         We Have Everything Distributor
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         php
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         1.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         APPROVED
                                     </td>
                                 </tr>
@@ -227,7 +227,7 @@ export default{
                     <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]"  :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
                     </div>
                 </div>
             </div>

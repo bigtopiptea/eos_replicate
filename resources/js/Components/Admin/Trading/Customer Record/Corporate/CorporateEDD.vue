@@ -99,18 +99,18 @@ export default{
                     <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                         <tr class="divide-x divide-gray-200">
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 bank name <br>
                                 <span class="text-[8px]">
                                     WHERE ACCOUNT IS MAINTAINED
                                 </span>
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 account name
                             </th>
                             <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
+                                class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                 account no.
                             </th>
                         </tr>
@@ -121,10 +121,10 @@ export default{
                                 <span class="text-[12px] font-bold">1</span>
                                 <SettingsInput class="w-full"/>
                             </td>
-                            <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                            <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                 <SettingsInput class="w-full"/>
                             </td>
-                            <td class="flex items-center gap-[10px]  whitespace-nowrap text-center uppercase py-2 pl-1 pr-3 tracking-wider">
+                            <td class="flex items-center gap-[10px] whitespace-nowrap text-center uppercase py-2 pl-1 pr-3 tracking-wider">
                                 <SettingsInput class="w-full"/>
                                 <button class="flex items-center">
                                     <span class="text-[30px]"> + </span>

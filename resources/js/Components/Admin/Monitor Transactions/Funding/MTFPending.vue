@@ -103,12 +103,12 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
                             </div>
                         </div>
                         <div class="left-side-col-2 space-y-3">
                             <DropDown label="bulk action"/>
-                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px]  p-1.5 text-[10px] text-white px-3 uppercase" />
+                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
                         <div class="right-side flex h-20 ">
@@ -136,49 +136,49 @@ export default{
                             <thead class="bg-[#D7D7D7] font-medium text-[11px]">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         <span>
                                         ID
                                         </span>
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         DATE
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
-                                        TYPE
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
+                                       tYPE
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         NAME
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         BANK
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         CURRENCY
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         RATE
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         NET AMOUNT
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         WORKFLOW STATUS
                                     </th>
                                     <th scope="col"
-                                        class="py-2 px-7 uppercase tracking-wider  text-center whitespace-nowrap text-gray-900">
+                                        class="py-2 px-7 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
                                         ACTION
                                     </th>
                                 </tr>
@@ -192,43 +192,43 @@ export default{
                                         </a>
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         09/28/2022 10:55:09 AM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         ACCOUNTING
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         CMT-09282022-0021
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         We Have Everything Distributor
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         php
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         1.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         10,000.00
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase  py-2 px-1  tracking-wider flex justify-between">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider flex justify-between">
                                         <button @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
@@ -263,7 +263,7 @@ export default{
                     <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]"  :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
                     </div>
                 </div>
             </div>
@@ -341,7 +341,7 @@ export default{
                     <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]"  :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
                     </div>
                 </div>
             </div>
