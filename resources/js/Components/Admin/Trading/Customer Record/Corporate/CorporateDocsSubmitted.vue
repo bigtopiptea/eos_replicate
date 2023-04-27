@@ -1,5 +1,6 @@
 <script setup>
 import RefreshIcon from '@/Components/Misc/Icons/RefreshIcon.vue';
+import CircleCheckIcon from '../../../../Misc/Icons/CircleCheckIcon.vue';
 </script>
 <script>
 import FloatingLabelDropdown from '../../../../Misc/Input/FloatingLabelDropdown.vue';
@@ -133,9 +134,6 @@ export default{
                                             <input type="checkbox" name="date-issued">
                                             <label for="">NO ISSUE DATE</label>
                                         </div>
-                                        <div>
-                                            hello
-                                        </div>
                                     </div>
                                     <div class="flex flex-col gap-[3px] w-[50%]">
                                         <FloatingLabelInput :inputLabel="'expiry date'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'date'" isRequired="true"/>
@@ -144,6 +142,16 @@ export default{
                                             <label for="date-issued">NO EXPIRY DATE</label>
                                         </div>
                                     </div>
+                                </div>
+                                <!-- Filename -->
+                                <div class="flex justify-start gap-[3px] -mb-[90px]">
+                                    <svg class="h-4 w-4 rounded-full px-1 bg-[#194E72]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="white">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    </svg>
+                                    <p class="underline text-[#194E72] text-[10px]">SEC Registration / DTI Registration_2223</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" class="h-4 w-4 cursor-pointer" >
+                                        <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                                    </svg>
                                 </div>
                                 <div class="flex justify-end w-full">
                                     <BorderButton :buttonLabel="'UPLOAD ID/DOCUMENT'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'"/>

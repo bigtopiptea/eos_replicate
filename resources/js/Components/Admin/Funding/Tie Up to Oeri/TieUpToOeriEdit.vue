@@ -2,7 +2,7 @@
 import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
 import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 import Accordion from "@/Components/Misc/Accordion.vue"
-import JournalEntry from "@/Components/Admin/Funding/JournalEntry.vue"
+import JournalEntry from "@/Components/Admin/Funding/Tie Up to Oeri/JournalEntry.vue"
 export default{
   components:{
     InputGroup, BorderButton, Accordion, JournalEntry
