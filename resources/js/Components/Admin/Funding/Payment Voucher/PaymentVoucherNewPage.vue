@@ -7,8 +7,31 @@ import CreatePaymentVoucher from "./CreatePaymentVoucher.vue"
 import JournalEntry from "@/Components/Admin/Funding/Payment Voucher/JournalEntry.vue"
 export default{
     components:{
-        InputGroup, InputTextarea, Accordion, BorderButton, CreatePaymentVoucher, JournalEntry
-    }
+        InputGroup,
+        InputTextarea,
+        Accordion,
+        BorderButton,
+        CreatePaymentVoucher,
+        JournalEntry,
+    },
+
+    data() {
+        return {
+            labels:[
+                {label:'ACC TITLE'},
+                {label:'COST CENTER'},
+                {label:'SERVICE'},
+                {label:'ITEM'},
+                {label:'QUANTITY'},
+                {label:'UNIT'},
+                {label:'AMOUNT'},
+                {label:'W/TAX CODE'},
+                {label:'W/TAX'},
+                {label:'VAT'},
+
+            ]
+        }
+    },
 }
 </script>
 <template>
@@ -34,7 +57,7 @@ export default{
                         <div class="w-full">
                             <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
                         </div>
-                        <div class="flex gap-x-[5px] w-full">  
+                        <div class="flex gap-x-[5px] w-full">
                             <div  class="w-[50%]">
                                 <InputGroup :inputLabel="'invoice no.'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
                             </div>
@@ -45,7 +68,7 @@ export default{
                     </div>
                     <div class="flex flex-col w-[50%]">
                         <div class="w-full">
-                            <div class="flex gap-x-[5px]">   
+                            <div class="flex gap-x-[5px]">
                                 <div class="w-[50%]">
                                     <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                                 </div>
@@ -81,46 +104,11 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300 overflow-visible">
                             <thead class="bg-[#3E3E3E] font-medium text-[11px] whitespace-nowrap text-white">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
+                                    <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        acc title
+                                        {{ label.label }}
                                     </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        cost center
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        service
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        item
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        quantity
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        unit
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center">
-                                        amount
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   ">
-                                        w/tax code
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   ">
-                                        w/tax
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   ">
-                                        vat
-                                    </th>
+
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">

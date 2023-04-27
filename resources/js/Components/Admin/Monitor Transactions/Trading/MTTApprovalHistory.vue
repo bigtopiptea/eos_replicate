@@ -34,7 +34,19 @@ export default{
             MTTApprovalHistory: [],
             pagination: {
                 current_page: 1,
-            }
+            },
+            labels:[
+                {label:'ID'},
+                {label:'DATE'},
+                {label:'TYPE'},
+                {label:'NAME'},
+                {label:'BANK'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'RATE'},
+                {label:'NET AMOUNT'},
+                {label:'STATUS'},
+            ]
 
         }
     },
@@ -101,47 +113,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[10px]">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        <span>
-                                        ID
-                                        </span>
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        DATE
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                       tYPE
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        NAME
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        BANK
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        CURRENCY
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        AMOUNT
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        RATE
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        NET AMOUNT
-                                    </th>
-                                    <th scope="col"
-                                        class="whitespace-nowrap py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        STATUS
+                                    <th v-for="label in labels" :key="label.label" scope="col"
+                                        class="py-2 px-1 uppercase tracking-wider text-center whitespace-nowrap text-gray-900">
+                                    {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>

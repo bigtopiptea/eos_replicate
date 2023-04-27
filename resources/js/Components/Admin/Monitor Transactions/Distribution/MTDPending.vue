@@ -38,6 +38,18 @@ export default{
                 current_page: 1,
             },
             viewModalOpen: false,
+            labels:[
+                {label:'ID'},
+                {label:'DATE'},
+                {label:'TYPE'},
+                {label:'REFERENCE NO.'},
+                {label:'BANK'},
+                {label:'CURRENCY'},
+                {label:'ITEMS'},
+                {label:'NET AMOUNT'},
+                {label:'WORKFLOW STATUS'},
+                {label:'ACTION'},
+            ]
         }
     },
     methods: {
@@ -108,45 +120,9 @@ export default{
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-[#D7D7D7] text-[11px] font-medium">
                             <tr class="divide-x divide-gray-200">
-                                <th scope="col"
+                                <th v-for="label in labels" :key="label.label" scope="col"
                                     class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    ID
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    DATE
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                   tYPE
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    REFERENCE NO.
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    BANK
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    CURRENCY
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    ITEMS
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    NET AMOUNT
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-1 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    WORKFLOW STATUS
-                                </th>
-                                <th scope="col"
-                                    class="py-2 px-4 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                    ACTION
+                                    {{ label.label }}
                                 </th>
                             </tr>
                         </thead>

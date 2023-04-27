@@ -58,15 +58,15 @@ export default{
                                     class="w-full uppercase "/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput  placeholder="Enter Debit"
+                                <SettingsInput placeholder="Enter Debit"
                                     class="w-full uppercase "/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput  placeholder="Enter Credit"
+                                <SettingsInput placeholder="Enter Credit"
                                     class="w-full uppercase "/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput  placeholder="Enter Remarks"
+                                <SettingsInput placeholder="Enter Remarks"
                                     class="w-full uppercase "/>
                             </td>
                         </tr>
@@ -74,7 +74,6 @@ export default{
                     <div class="flex gap-3 w-full mb-2 mt-1 mx-2">
                         <BorderButton :buttonLabel="'Add New Line'" :buttonPadding="'p-0'" />
                         <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonStyle="'border-2 border-#EE3E2C text-[#EE3E2C] text-[11px]'"/>
-
                     </div>
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
                         <tr class=" text-left">
@@ -100,9 +99,6 @@ export default{
             </div>
         </div>
     </div>
-    <Toast :show="viewToastOpen" @close="viewToastToggle()" :toastBody="'Adjusment Entry Successfully'"/>
-
-
-
+    <Toast :show="viewToastOpen" @close="viewToastToggle()" :toastBody="''"/>
 
 </template>
