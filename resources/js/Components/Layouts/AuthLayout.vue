@@ -143,10 +143,41 @@ export default {
                     icon: StatusReversalIcon,
                 },
                 {
-                    to: "/app/reports",
+                    to: "/app/reports/cash-position-report",
                     label: "Reports",
-                    children: [],
                     icon: ReportIcon,
+                    children: [
+                        {
+                            to: "/app/reports/cash-position-report",
+                            label: "Cash Position",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/payment-to-suppliers",
+                            label: "Payment to Suppliers",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/ctr-str-report",
+                            label: "CTR & STR",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/daily-inventory-report",
+                            label: "Daily Inventory",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/revenue-report",
+                            label: "Revenue",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    ]
                 },
                 {
                     to: '/app/other-services',

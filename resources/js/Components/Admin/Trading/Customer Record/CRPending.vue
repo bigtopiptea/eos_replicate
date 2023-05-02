@@ -16,7 +16,7 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 
-export default{
+export default {
 
     name:'Customer Record - Pending',
 

@@ -21,7 +21,7 @@ import Dashboard from "../Components/Admin/Dashboard/Dashboard.vue";
 import Inquiry from "@/Components/Admin/Inquiry/Inquiry.vue";
 import Amendments from "@/Components/Admin/Amendments/Amendments.vue";
 import MonitorTransaction from "@/Components/Admin/Monitor & Transactions/Monitor&Transactions.vue";
-import Reports from "@/Components/Admin/Reports/Reports.vue";
+
 
 //OJT EDITED//
 import Home from "@/Components/Admin/Home/Home.vue";
@@ -30,7 +30,6 @@ import MonitorTransactions from "@/Components/Admin/Monitor Transactions/Monitor
 import Funding from "@/Components/Admin/Funding/Funding.vue"
 import PaymentVoucher from "@/Components/Admin/Funding/Payment Voucher/PaymentVoucherNewPage.vue"
 import TieUpFundingEdit from "@/Components/Admin/Funding/Tie Up to Oeri/TieUpToOeriEdit.vue";
-import PDF from "@/Components/Admin/Monitor Transactions/Distribution/PDF.vue";
 import Buying from "@/Components/Admin/Trading/Buying/Buying.vue";
 import Selling from "@/Components/Admin/Trading/Selling/Selling.vue";
 import CustomerRecord from "@/Components/Admin/Trading/Customer Record/CustomerRecord.vue";
@@ -40,7 +39,12 @@ import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableIn
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
 import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
 import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
-
+import Reports from "@/Components/Admin/Reports/Reports.vue";
+import CashPositionReport from "@/Components/Admin/Reports/Cash Position Report/CashPositionReport.vue";
+import PaymentToSuppliers from "@/Components/Admin/Reports/Payment to Suppliers/PaymentToSuppliers.vue";
+import CTR_STRReport from "@/Components/Admin/Reports/CTR & STR Report/CTR_STRReport.vue";
+import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Report/DailyInventoryReport.vue";
+import RevenueReport from "@/Components/Admin/Reports/Revenue Report/RevenueReport.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -89,15 +93,6 @@ const routes = [
         component: NotFound,
     },
 
-    // {
-    //     path: "/app/monitor-transactions/pdf",
-    //     name: "pdf",
-    //     component: PDF,
-    //     meta: {
-    //         title: `PDF`,
-    //         ability: "PDF",
-    //     },
-    // },
     {
         path: "/app/monitoring/outfile/:id",
         name: "monitoringOutfile",
@@ -387,6 +382,51 @@ const routes = [
                 meta: {
                     title: `Reports`,
                     ability: `Reports`,
+                },
+            },
+            {
+                path: "/app/reports/cash-position-report",
+                name: "cash position report",
+                component: CashPositionReport,
+                meta: {
+                    title: `Cash Position Report`,
+                    ability: `Cash Position Report`,
+                },
+            },
+            {
+                path: "/app/reports/payment-to-suppliers",
+                name: "payment to suppliers",
+                component: PaymentToSuppliers,
+                meta: {
+                    title: `Payment to Suppliers`,
+                    ability: `Payment to Suppliers`,
+                },
+            },
+            {
+                path: "/app/reports/ctr-str-report",
+                name: "ctr and str report",
+                component: CTR_STRReport,
+                meta: {
+                    title: `CTR and STR Report`,
+                    ability: `CTR and STR Report`,
+                },
+            },
+            {
+                path: "/app/reports/daily-inventory-report",
+                name: "daily inventory report",
+                component: DailyInventoryReport,
+                meta: {
+                    title: `Daily Inventory Report`,
+                    ability: `Daily Inventory Report`,
+                },
+            },
+            {
+                path: "/app/reports/revenue-report",
+                name: "revenue report",
+                component: RevenueReport,
+                meta: {
+                    title: `Revenue Report`,
+                    ability: `Revenue Report`,
                 },
             },
             {

@@ -17,7 +17,7 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
 
 
-export default{
+export default {
 
     name:'Payment Voucher',
 

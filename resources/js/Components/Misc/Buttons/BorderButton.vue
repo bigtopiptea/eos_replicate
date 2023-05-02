@@ -1,7 +1,7 @@
 <!-- OJT -->
 <template>
     <div>
-        <button class="font-medium uppercase whitespace-nowrap tracking-wide hover:text-white" :class="[buttonStyle, buttonSize, buttonPadding, buttonHover]">{{ buttonLabel}}</button>
+        <button class="font-medium uppercase whitespace-nowrap tracking-wide hover:text-white shadow-md" :class="[buttonStyle, buttonSize, buttonPadding, buttonHover]">{{ buttonLabel}}</button>
     </div>
 </template>
 

@@ -15,7 +15,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 
-export default{
+export default {
 
     name:'MTDPending',
 
@@ -68,9 +68,9 @@ export default{
                 .catch((errors) => {
 
                 })
-            },
         },
-    }
+    },
+}
 </script>
 
 <template>
