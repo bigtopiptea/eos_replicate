@@ -73,7 +73,7 @@ export default{
                     </tbody>
                     <div class="flex gap-3 w-full mb-2 mt-1 mx-2">
                         <BorderButton :buttonLabel="'Add New Line'" :buttonPadding="'p-0'" />
-                        <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonStyle="'border-2 border-#EE3E2C text-[#EE3E2C] text-[11px]'"/>
+                        <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonStyle="'border-2 border-#EE3E2C text-[#EE3E2C] text-[11px]'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
                     </div>
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
                         <tr class=" text-left">

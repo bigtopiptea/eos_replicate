@@ -37,38 +37,30 @@ export default{
                     <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                         <tr class="divide-x divide-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput placeholder="Enter Entries"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Debit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Credit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Remarks"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                         </tr>
                         <tr class="divide-x divide-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput placeholder="Enter Entries"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Debit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Credit"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2   tracking-wider">
-                                <SettingsInput  placeholder="Enter Remarks"
-                                    class="w-full uppercase " />
+                                <SettingsInput class="w-full uppercase " :isDisabled="true"/>
                             </td>
                         </tr>
                     </tbody>

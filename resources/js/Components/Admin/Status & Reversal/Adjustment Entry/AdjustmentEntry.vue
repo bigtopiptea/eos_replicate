@@ -55,14 +55,14 @@ export default{
                 </div>
             </div>
             <!-- Break -->
-            <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-3 my-3"/>
+            <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] my-3"/>
             <!-- 2nd Content -->
             <div class="flex justify-between">
                 <div class="w-1/3 ">
-                    <InputGroup :inputLabel="'Reference No.'" :labelWidth="'w-1/2'"  :inputWidth="'w-1/2'" />
+                    <InputGroup :inputLabel="'Reference No.'" :labelWidth="'w-1/2'"  :inputWidth="'w-1/2'" :isDisabled="true"/>
                 </div>
                 <div class="w-1/3 ">
-                    <InputGroup :inputLabel="'Adjustment Reference No.'" :labelWidth="'w-1/2'"  :inputWidth="'w-1/2'"  />
+                    <InputGroup :inputLabel="'Adjustment Reference No.'" :labelWidth="'w-1/2'"  :inputWidth="'w-1/2'" :isDisabled="true"/>
                 </div>
             </div>
         </div>

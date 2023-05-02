@@ -2,7 +2,7 @@
 const props = defineProps({
     placeholder: {
         type: String,
-        default: "",
+        default: "-",
     },
     modelValue: {
         type: [String, Number],

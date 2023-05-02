@@ -1,6 +1,6 @@
 <script setup>
 import RefreshIcon from '@/Components/Misc/Icons/RefreshIcon.vue';
-import CircleCheckIcon from '../../../../Misc/Icons/CircleCheckIcon.vue';
+import PaperClipIcon from '@/Components/Misc/Icons/PaperClipIcon.vue';
 </script>
 <script>
 import FloatingLabelDropdown from '../../../../Misc/Input/FloatingLabelDropdown.vue';
@@ -9,11 +9,30 @@ import SmallHeading from '../../../../Misc/Heading/SmallHeading.vue';
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
+import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue';
+import Slideover from '../../../../Misc/Slideover/Slideover.vue';
 
 export default{
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
-        FloatingLabelInput, FloatingLabelDropdown, SolidButton
+        FloatingLabelInput, FloatingLabelDropdown, SolidButton,
+        ModalTwo, Slideover, PaperClipIcon
+    },
+    data(){
+        return{
+            viewModalOpen: false, //Modal
+            viewDocumentsOpen: false,  //Slideover
+        }
+    },
+    methods:{
+        // Modal
+        viewModalToggle() {
+            this.viewModalOpen = false;
+        },
+        //Slidover
+        viewDocumentsToggle() {
+            this.viewDocumentsOpen = false;
+        },
     }
 }
 </script>
@@ -102,7 +121,7 @@ export default{
             </div>
             <!-- Button -->
             <div class="flex justify-end mx-[28px]">
-                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'"/>
+                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'" :buttonHover="'hover:bg-#3E3E3E'" @click="(viewModalOpen = !viewModalOpen), (viewDocumentsOpen = !viewDocumentsOpen)"/>
             </div>
             <!-- Accordion -->
             <div class="mx-5 shadow-md">
@@ -114,7 +133,7 @@ export default{
                                 <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
                                     <div class="text-center text-[12px] mb-5">
                                         <p>DRAG IMAGE HERE<br>OR</p>
-                                        <button type="button" class="text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
+                                        <button type="button" class="text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C hover:bg-[#EE3E2C] hover:text-white">BROWSE</button>
                                     </div>
                                     <div class="text-center text-[10px]">
                                         <p>
@@ -163,10 +182,51 @@ export default{
             </div>
             <!-- Buttons -->
             <div class="flex justify-center gap-x-[30px] mt-[30px]">
-                <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'"/>
-                <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'"/>
+                <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'" :buttonHover="'hover:bg-#EE3E2C'"/>
+                <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonHover="'hover:bg-#3E3E3E'"/>
                 <SolidButton :buttonLabel="'NEXT'" :isDisabled="true"/>
             </div>
         </div>
     </div>
+
+    <!-- Modal (IF NO RECORDS FOUND) -->
+    <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'VIEW ARCHIVED IDS/DOCS.'" :modalTitlePosition="'text-center'">
+        <div class="flex flex-col justify-around items-center h-full">
+            <div class="w-[300px] text-center">
+                <h5 class="text-[26px]">NO RECORDS FOUND!</h5>
+            </div>
+            <!-- Button -->
+            <div class="flex jusify-center">
+                <SolidButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'OKAY'" :buttonStyle="'bg-[#F9951E]'"/>
+            </div>
+        </div>
+    </ModalTwo>
+
+    <!-- Slideover (IF RECORDS FOUND) -->
+    <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="paraIcon">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="mx-10 h-auto">
+                <div class="flex gap-3 mt-10">
+                    <PaperClipIcon/>
+                    <div class="text-[13px]">
+                        <ul class="uppercase font-semibold">
+                            <li class="list-none text-[#1F4583] underline cursor-pointer">dcmnt_01</li>
+                            <li class="list-none">sec registration / dti registration</li>
+                            <li class="list-none">
+                                Date issued:
+                                <span class="font-normal">09/28/2022</span>
+                            </li>
+                            <li class="list-none">
+                                Date expired:
+                                <span class="font-normal">10/28/2022</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <SolidButton @click="(viewDocumentsOpen = !viewDocumentsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
 </template>

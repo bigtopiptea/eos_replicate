@@ -1,7 +1,7 @@
 <!-- OJT -->
 <template>
     <div>
-        <button class="font-medium uppercase whitespace-nowrap tracking-wide" :class="[buttonStyle, buttonSize, buttonPadding]">{{ buttonLabel}}</button>
+        <button class="font-medium uppercase whitespace-nowrap tracking-wide hover:text-white" :class="[buttonStyle, buttonSize, buttonPadding, buttonHover]">{{ buttonLabel}}</button>
     </div>
 </template>
 
@@ -19,6 +19,10 @@ export default{
         buttonStyle:{
             type: String,
             default: 'border-2 border-#F9951E text-#F9951E text-[11px]'
+        },
+        buttonHover:{
+            type: String,
+            default: 'hover:bg-[#F9951E]'
         },
         buttonPadding:{
             type: String,

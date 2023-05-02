@@ -9,7 +9,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue"
 </script>
 
 <script>
-import JournalEntry from "@/Components/Admin/Distribution/JournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Distribution/Cancellation/JournalEntry.vue";
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import Accordion from "@/Components/Misc/Accordion.vue"
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";

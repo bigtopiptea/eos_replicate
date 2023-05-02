@@ -6,7 +6,7 @@ import Accordion from "@/Components/Misc/Accordion.vue"
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import DistributionSummary from "@/Components/Admin/Distribution/Processing/DistributionSummary.vue";
 import DistributionBreakEntry from "@/Components/Admin/Distribution/Processing/DistributionBreak&Entry.vue";
-import JournalEntry from "@/Components/Admin/Distribution/JournalEntry.vue";
+import JournalEntry from "@/Components/Admin/Distribution/Processing/JournalEntry.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";

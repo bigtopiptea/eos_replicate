@@ -4,7 +4,7 @@ import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import InputDropDown from "@/Components/Misc/Input/InputDropdown.vue"
 import Accordion from "../../../Misc/Accordion.vue"
-import JournalEntry from "../JournalEntry.vue"
+import JournalEntry from "./JournalEntry.vue"
 export default{
 
     components:{
@@ -102,8 +102,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'"/>
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
         </div>
         <!-- Break -->
         <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-5"/>
@@ -129,8 +129,8 @@ export default{
             </div>
         </div>
         <div class="flex justify-center gap-5 mb-3">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'"/>
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
         </div>
 
         <Accordion sectiontitle="Journal Entry" :setOpen=false>

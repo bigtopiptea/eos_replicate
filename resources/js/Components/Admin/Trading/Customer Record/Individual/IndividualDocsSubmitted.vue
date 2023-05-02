@@ -101,7 +101,7 @@ export default{
             </div>
             <!-- Button -->
             <div class="flex justify-end mx-[28px]">
-                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'"/>
+                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'" :buttonHover="'hover:bg-#3E3E3E'"/>
             </div>
             <!-- Accordion -->
             <div class="mx-5 shadow-md">
@@ -113,7 +113,7 @@ export default{
                                 <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
                                     <div class="text-center text-[12px] mb-5">
                                         <p>DRAG IMAGE HERE<br>OR</p>
-                                        <button type="button" class="text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
+                                        <button type="button" class="text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C hover:bg-#EE3E2C hover:text-white">BROWSE</button>
                                     </div>
                                     <div class="text-center text-[10px]">
                                         <p>
@@ -152,8 +152,8 @@ export default{
             </div>
             <!-- Buttons -->
             <div class="flex justify-center gap-x-[30px] mt-[30px]">
-                <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'"/>
-                <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'"/>
+                <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'" :buttonHover="'hover:bg-#EE3E2C'"/>
+                <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonHover="'hover:bg-#3E3E3E'"/>
                 <SolidButton :buttonLabel="'NEXT'" :isDisabled="true"/>
             </div>
         </div>

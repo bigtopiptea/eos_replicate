@@ -1,11 +1,10 @@
 <script>
 import SettingsInput from '@/Components/Misc/Input/SettingsInput.vue';
-import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
 
 export default{
     components:{
-        SettingsInput, 
-        SolidButton
+        SettingsInput,
+
     }
 }
 </script>
@@ -68,7 +67,7 @@ export default{
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
                         <tr class=" text-left">
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider font-bold text-right text-#3E3E3E">
-                               total
+                              total
                             </td>
                             <td type="number" class="whitespace-nowrap uppercase py-2 px-2 font-bold tracking-wider text-#3E3E3E">
                                 100
@@ -82,9 +81,9 @@ export default{
                     </tfoot>
                 </table>
             </div>
-            <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
-                <SolidButton :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                <SolidButton :buttonLabel="'SUBMIT'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'" :isDisabled="true"/>
+            <div class="flex justify-center space-x-4 items-center w-full h-auto my-5">
+                <button class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white font-sans font-normal text-[17px]">CANCEL</button>
+                <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
             </div>
         </div>
     </div>
