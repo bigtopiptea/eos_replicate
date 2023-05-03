@@ -13,7 +13,23 @@ export default{
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton
-    }
+    },
+
+    data() {
+        return {
+            labels:[
+                {label:'ID'},
+                {label:'COMPANY NAME'},
+                {label:'COUNTRY'},
+                {label:'ACCOUNT NAME'},
+                {label:'BANK'},
+                {label:'ACCOUNT NO.'},
+                {label:'DATE ADDED'},
+                {label:'ADDED BY'},
+                {label:'ACTIONS'},
+            ]
+        }
+    },
 }
 </script>
 <template>
@@ -27,41 +43,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
+                                    <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        id
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        company name
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        country
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        account name
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        bank
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        account no.
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        date added
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        added by
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        ACTIONS
+                                        {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>

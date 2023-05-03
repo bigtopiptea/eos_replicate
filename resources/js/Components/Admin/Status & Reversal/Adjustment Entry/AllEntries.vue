@@ -11,9 +11,20 @@ export default{
         SearchIcon,
         SolidButton,
 
+    },
 
-
-    }
+    data() {
+        return {
+            labels:[
+                {label:'TRANSACTION DATE'},
+                {label:'ADJUSTMENT REFERENCE NO.'},
+                {label:'ENTRY'},
+                {label:'DESCRIPTION'},
+                {label:'DEBIT'},
+                {label:'CREDIT'},
+            ]
+        }
+    },
 
 }
 
@@ -61,24 +72,9 @@ export default{
                     <table class="w-full">
                         <thead class="divide-y divide-gray-200 bg-[#3E3E3E] text-[11px] font-normal text-white text-center uppercase whitespace-nowrap">
                             <tr class="divide-x divide-gray-200 ">
-                                <td class="w-2/12 py-1">
-                                    TRANSACTION DATE
-                                </td>
-                                <td class="w-2/12">
-                                    ADJUSTMENT REFERENCE NO.
-                                </td>
-                                <td class="w-2/12">
-                                    ENTRY
-                                </td>
-                                <td class="w-4/12">
-                                    DESCRIPTION
-                                </td >
-                                <td class="w-1/12">
-                                    DEBIT
-                                </td >
-                                <td class="w-1/12">
-                                    CREDIT
-                                </td>
+                                <th v-for="label in labels" :key="label.label" scope="col" class="px-3 py-1">
+                                    {{label.label}}
+                                </th>
                             </tr>
                         </thead>
                         <tbody class=" text-[10px] font-light text-center text-#3E3E3E whitespace-nowrap">

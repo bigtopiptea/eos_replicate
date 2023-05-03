@@ -72,7 +72,7 @@ export default{
                     </div>
                     <div class="flex gap-[5px] w-full">
                         <div class="w-[30%]">
-                            <FloatingLabelInput :inputLabel="'telephone no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                            <FloatingLabelInput :inputLabel="'telephone no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'"/>
                         </div>
                         <div class="w-[30%]">
                             <FloatingLabelInput :inputLabel="'fax no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>

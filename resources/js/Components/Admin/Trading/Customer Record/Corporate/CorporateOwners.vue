@@ -13,7 +13,23 @@ export default{
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton
-    }
+    },
+
+    data() {
+        return {
+
+            labels:[
+                {label:'ID'},
+                {label:'FULL NAME'},
+                {label:'PHILSYS NO.'},
+                {label:'MOBILE NO.'},
+                {label:'EMAIL ADDRESS'},
+                {label:'OWNWERSHIP PERCENTAGE'},
+                {label:'DATE ADDED'},
+                {label:'ACTIONS'},
+            ],
+        }
+    },
 }
 </script>
 <template>
@@ -27,37 +43,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        id
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        full name
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        philsys no.
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        mobile no.
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        email address
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        ownwership percentage
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        date added
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        ACTIONS
+                                    <th v-for="label in labels" :key="label.label" scope="col"
+                                        class="py-2 px-3 uppercase tracking-wider text-center text-gray-900">
+                                        {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>
