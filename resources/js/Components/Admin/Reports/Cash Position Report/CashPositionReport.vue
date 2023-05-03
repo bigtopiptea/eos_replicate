@@ -56,7 +56,7 @@ export default {
 }
 </script>
 <template>
-    <div class="container h-screen bg-white">
+    <div class="container h-auto bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
@@ -104,7 +104,7 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
+        <div class="flex flex-col h-screen pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">

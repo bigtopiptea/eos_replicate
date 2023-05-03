@@ -97,7 +97,7 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
+        <div class="flex flex-col h-auto pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">

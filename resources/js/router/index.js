@@ -39,12 +39,13 @@ import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableIn
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
 import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
 import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
-import Reports from "@/Components/Admin/Reports/Reports.vue";
 import CashPositionReport from "@/Components/Admin/Reports/Cash Position Report/CashPositionReport.vue";
 import PaymentToSuppliers from "@/Components/Admin/Reports/Payment to Suppliers/PaymentToSuppliers.vue";
 import CTR_STRReport from "@/Components/Admin/Reports/CTR & STR Report/CTR_STRReport.vue";
 import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Report/DailyInventoryReport.vue";
 import RevenueReport from "@/Components/Admin/Reports/Revenue Report/RevenueReport.vue";
+import OutwardRemittanceReport from "@/Components/Admin/Reports/Outward Remittance Report/OutwardRemittanceReport.vue";
+import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDayReport.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -375,15 +376,7 @@ const routes = [
                 },
 
             },
-            {
-                path: "/app/reports",
-                name: "reports",
-                component: Reports,
-                meta: {
-                    title: `Reports`,
-                    ability: `Reports`,
-                },
-            },
+            // VDQ - OJT (5/2)
             {
                 path: "/app/reports/cash-position-report",
                 name: "cash position report",
@@ -427,6 +420,25 @@ const routes = [
                 meta: {
                     title: `Revenue Report`,
                     ability: `Revenue Report`,
+                },
+            },
+            // VDQ OJT - (5/3)
+            {
+                path: "/app/reports/outward-remittance-report",
+                name: "outward remittance report",
+                component: OutwardRemittanceReport,
+                meta: {
+                    title: `Outward Remittance Report`,
+                    ability: `Outward Remittance  Report`,
+                },
+            },
+            {
+                path: "/app/reports/end-day-report",
+                name: "end day report",
+                component: EndDayReport,
+                meta: {
+                    title: `End Day Report`,
+                    ability: `End Day Report`,
                 },
             },
             {

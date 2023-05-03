@@ -12,7 +12,7 @@ import Accordion from '../../../../Misc/Accordion.vue';
 import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue';
 import Slideover from '../../../../Misc/Slideover/Slideover.vue';
 
-export default{
+export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton,

@@ -177,6 +177,18 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/outward-remittance-report",
+                            label: "Outward Remittance",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/end-day-report",
+                            label: "End Day",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 {
@@ -522,7 +534,7 @@ export default {
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
                     <div class=" text-center mb-5">
                         <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
-                        <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C">BROWSE</button>
+                        <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C hover:text-white hover:bg-#EE3E2C">BROWSE</button>
                     </div>
                     <div class="text-center text-[10px]">
                         <p>MAX FILE SIZE: <span class="font-bold">1MB</span><br>
@@ -575,7 +587,7 @@ export default {
                         <XMarkIcon></XMarkIcon>
                     </div>
                     <div class="flex justify-center items-center w-72 h-52 bg-#EAEAEA">
-                        <img src="../../../assets/images/user-logo.png" alt="user-logo" class=" w-48 h-48 rounded-full border-2 border-[#c6c3bd]">
+                        <img src="https://pbs.twimg.com/profile_images/1564398871996174336/M-hffw5a_400x400.jpg" alt="user-logo" class=" w-48 h-48 rounded-full border-2 border-[#c6c3bd]">
                     </div>
                 </div>
                 <div class="mt-2">

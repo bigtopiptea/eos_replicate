@@ -191,18 +191,14 @@ export default {
         <div class="flex flex-col justify-between mx-5 mb-5 h-full">
             <div class="flex justify-between">
                 <router-link to="/app/trading/customer-record/individual">
-                    <div class="flex flex-col justify-center items-center h-[176px] w-[196px] border-[3px] border-[#F9951E]">
-                        <div class="h-[92px] w-[90px] border-[5px] border-[#F9951E] rounded-lg">
-                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F9951E">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-[#F9951E] text-center text-[14px] font-bold">
-                                INDIVIDUAL<br>CLIENT
-                            </p>
-                        </div>
+                    <div class="indiv-client flex flex-col justify-center items-center ">
+                        <svg class="h-[176px] w-[196px] border-[3px] border-[#F9951E] hover:bg-[#F9951E]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#F9951E">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        </svg>
+                        <p class="text-[#F9951E] text-center text-[14px] font-bold">
+                            INDIVIDUAL<br>CLIENT
+                        </p>
                     </div>
                 </router-link>
                 <router-link to="/app/trading/customer-record/corporate">
@@ -221,8 +217,13 @@ export default {
                 </router-link>
             </div>
             <div class="flex justify-center">
-                <BorderButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'" :buttonSize="'h-[40px] w-[120px]'" :buttonStyle="'border-2 border-black text-black'" :buttonPadding="'p-2'"/>
+                <BorderButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-black text-black'" :buttonPadding="'p-2'" :buttonHover="'hover:bg-black'"/>
             </div>
         </div>
     </ModalTwo>
 </template>
+<style scoped>
+.indiv-client :hover{
+    stroke: white;
+}
+</style>

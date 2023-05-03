@@ -109,11 +109,11 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
+        <div class="flex flex-col h-auto pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">DAILY INVENTORY Report: buy</h3>
+                    <h3 class="text-[13px] font-semibold">DAILY INVENTORY Report: buy/sell</h3>
                     <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
                 </div>
             </div>

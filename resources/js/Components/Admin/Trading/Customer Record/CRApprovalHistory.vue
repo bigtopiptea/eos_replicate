@@ -1,6 +1,5 @@
 <script setup>
 import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
-import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
@@ -8,13 +7,14 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 
-export default{
+export default {
 
     name:'Customer Record - Pending',
 
@@ -28,6 +28,7 @@ export default{
         SwitchToggle,
         BorderButton,
         Pagination,
+        NormalButton
     },
 
     data() {

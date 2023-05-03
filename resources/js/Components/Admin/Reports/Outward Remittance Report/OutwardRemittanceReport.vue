@@ -7,49 +7,53 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
-import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 export default {
-    name: 'Payment to Suppliers',
+    name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        BorderButton, Pagination
+        Pagination
     },
     data() {
         return {
-            PaymentToSuppliers: [],
+            OutwardRemittance: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'DATE'},
-                {label:'REPORT TYPE'},
+                {label:'TRANSACTION DATE'},
                 {label:'REFERENCE NO.'},
-                {label:'TRANSACTION'},
-                {label:'VOLUME'},
+                {label:'REMITTER BANK'},
+                {label:'ACCOUNT NO.'},
+                {label:'REMITTER NAME'},
+                {label:'ACCOUNT'},
                 {label:'RATE'},
                 {label:'PHP'},
-                {label:'TYPE'},
-                {label:'SETTLEMENT'},
-                {label:'ACCOUNT NO.'},
-                {label:'ADDRESS'},
-                {label:'MODE'},
-                {label:'REG. DATE'},
-                {label:'DEAL SLIP NO.'},
+                {label:'BENEFICIARY BANK'},
+                {label:'BENEFICIARY NAME'},
+                {label:'ACCOUNT NAME'},
+                {label:'COUNTRY'},
+                {label:'PURPOSE'},
+                {label:'NATURE OF BUSINESS/WORK'},
+                {label:'DATE OF INCORPORATION'},
             ],
-            reportTypeOption:[
-                'ALL (CTR & STR REPORT)',
-                'CTR - COVERED TRANSACTIONS REPORT',
-                'STR - SUSPICIOUS TRANSACTIONS REPORT'
+            remitterOptions:[
+                'SELECT ALL',
+                'Dusit Hospitality Education Phils In',
+                'Multi - Line Building SystemALLBANK INC',
+                'Prime Asset Ventures INC',
+                'TKH Marketing',
+                'The Lift Company Phils',
+                'vertex entertainment and resorts corp',
             ]
         }
     },
     methods: {
-        async getPaymentToSuppliers() {
+        async getOutwardRemittance() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.PaymentToSuppliers = response.data.data;
+                  this.OutwardRemittance = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -69,14 +73,14 @@ export default {
 }
 </script>
 <template>
-    <div class="w-auto  h-screen bg-white">
+    <div class="3xl:container h-screen bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
-            <div class="flex justify-between items-center w-[98%] mx-[12px]">
-                <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="reportTypeOption"/>
+            <div class="flex gap-[10px] w-[85%] mx-[12px]">
+                <div class="w-[23.5%]">
+                    <FloatingLabelDropdown :inputLabel="'remitter'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="remitterOptions"/>
                 </div>
-                <div>
-                    <BorderButton :buttonLabel="'FILE NEW STR'" :buttonPadding="'p-2'" :buttonSize="'h-[40px] w-[170px]'"/>
+                <div class="w-[23.5%]">
+                    <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -114,11 +118,14 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto pb-10">
+        <div class="flex flex-col h-auto">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">CTR & STR REPORT</h3>
+                <div class="flex flex-col gap-[15px] text-center mt-[20px]">
+                    <h3 class="text-[13px] font-semibold">
+                        OUTWARD REMITTANCE REPORT: <br>
+                        <span class="font-normal uppercase"> vertex entertainment and resorts corp.</span>
+                    </h3>
                     <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
                 </div>
             </div>
@@ -139,35 +146,11 @@ export default {
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
+                                        09/28/2022 10:55:09 aM
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        CTR
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        TRD-042222-2
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        Petnet 
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        90,000.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        52.38
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        4,715,100.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        sell
+                                        TRD-050622-5
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -175,23 +158,51 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ft
+                                        002860255555
                                     </td>
                                     <td
                                         class="whitespace-normal text-center uppercase py-2 px-1 tracking-wider">
-                                        East office building 114 Aguirre St. Legaspi Village Makati City
+                                        vertex entertainment and resorts corp.
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ft
+                                        114,583.34
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        01/01/2001
+                                        52.58
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0001-002950
+                                        6,024,792.017
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        CHINABANKING CORP.
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        PRIME ASSET VENTURES INC.
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        104052000157
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        philippines
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        Payment for loan amortization
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        General Services
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        06/26/2018
                                     </td>
                                 </tr>
                             </tbody>
@@ -199,7 +210,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getPaymentToSuppliers()" :pagination="pagination"
+            <Pagination @paginate="getOutwardRemittance()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
     </div>

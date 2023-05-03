@@ -27,6 +27,11 @@
                                             <div v-else-if="iconShow === 'FIND'">
                                                 <FindIcon/>
                                             </div>
+                                            <div v-else-if="iconShow === 'CHECK'">
+                                                <div class="w-[30px] h-[30px]">
+                                                    <CircleCheckIcon/>
+                                                </div>
+                                            </div>
                                             <div v-else>
 
                                             </div>
@@ -54,7 +59,7 @@
 import SwitchToggle from '../Switch(Toggle)/SwitchToggle.vue';
 import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
 import FindIcon from "@/Components/Misc/Icons/FindIcon.vue";
-
+import CircleCheckIcon from "@/Components/Misc/Icons/CircleCheckIcon.vue";
 export default {
     name: "Slideover",
     props: {
@@ -72,7 +77,7 @@ export default {
         }
     },
     components: {
-        SwitchToggle, UserIcon, FindIcon
+        SwitchToggle, UserIcon, FindIcon, CircleCheckIcon
     },
     data() {
         return {
@@ -85,6 +90,7 @@ export default {
 <script setup>
 import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import CircleCheckIconVue from '../Icons/CircleCheckIcon.vue';
 
 const open = ref(true)
 
