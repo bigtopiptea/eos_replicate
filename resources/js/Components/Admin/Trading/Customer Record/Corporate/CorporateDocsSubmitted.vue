@@ -22,6 +22,15 @@ export default {
         return{
             viewModalOpen: false, //Modal
             viewDocumentsOpen: false,  //Slideover
+            labels:[
+                {label:'ID'},
+                {label:'TYPE OF ID/DOCUMENT'},
+                {label:'DATE ISSUED'},
+                {label:'EXPIRY DATE'},
+                {label:'DATE UPLOADED'},
+                {label:'UPLOADED BY'},
+                {label:'ACTIONS'},
+            ]
         }
     },
     methods:{
@@ -47,33 +56,9 @@ export default {
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        id
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        type of id/document
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        date issued
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        expiry date
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        date uploaded
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        uploaded by
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        ACTIONS
+                                    <th v-for="label in labels" :key="label.label" scope="col"
+                                        class="py-2 px-2 uppercase tracking-wider text-center text-gray-900">
+                                        {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>

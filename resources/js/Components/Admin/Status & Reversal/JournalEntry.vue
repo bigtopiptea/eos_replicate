@@ -54,21 +54,22 @@ export default{
                     <tbody class=" bg-white text-[10px]">
                         <tr class="divide-x divide-gray-200 border-b border-b-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput placeholder="Enter Entries"
-                                    class="w-full uppercase "/>
+                                <SettingsInput placeholder="-"
+                                    class="w-full uppercase" :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput placeholder="Enter Debit"
-                                    class="w-full uppercase "/>
+                                <SettingsInput placeholder="-"
+                                    class="w-full uppercase" :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput placeholder="Enter Credit"
-                                    class="w-full uppercase "/>
+                                <SettingsInput placeholder="-"
+                                    class="w-full uppercase" :isDisabled="true"/>
                             </td>
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                <SettingsInput placeholder="Enter Remarks"
-                                    class="w-full uppercase "/>
+                                <SettingsInput placeholder="-"
+                                    class="w-full uppercase" :isDisabled="true"/>
                             </td>
+
                         </tr>
                     </tbody>
                     <div class="flex gap-3 w-full mb-2 mt-1 mx-2">
