@@ -37,7 +37,17 @@ export default {
             pagination: {
                 current_page: 1,
             },
-            myOptions:['activate', 'inactivate']
+            myOptions:['activate', 'inactivate'],
+            labels:[
+                {label:'CUSTOMER TYPE'},
+                {label:'NAME'},
+                {label:'ADDRESS'},
+                {label:'DATE ADDED'},
+                {label:'DATE REGISTERED'},
+                {label:'STATUS'},
+                {label:'ACTION'},
+            ],
+
         }
     },
     methods: {
@@ -88,39 +98,15 @@ export default {
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="flex justify-between items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                            class="flex justify-between items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900 gap-2">
                                             <input type="checkbox" name="" id="">
                                             <span>
                                                 cust. id.
                                             </span>
                                         </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            customer type
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            name
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            address
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            date added
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            date registered
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            status
-                                        </th>
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                            ACTION
+                                            {{label.label}}
                                         </th>
                                     </tr>
                                 </thead>
@@ -143,7 +129,7 @@ export default {
                                             Flatley LLC.
                                         </td>
                                         <td
-                                            class="whitespace-normal text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-normal text-left uppercase py-2 px-1 tracking-wider">
                                             KM. 18 South Superhighway West Service Road, Brgy. Marcelo Barangay Marcelo
                                         </td>
                                         <td
@@ -156,7 +142,8 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            for review                                               </td>
+                                            for review
+                                        </td>
                                         <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             <div class="flex justify-center">
                                                 <button>

@@ -2,7 +2,7 @@
 <template>
     <div class="flex flex-col text-xs w-full  mb-5">
         <label for="desription" class="w-5/12 px-2 uppercase text-left text-[10px]">{{ label }}</label>
-        <textarea rows="4" class="resize-none block p-2.5 text-[10px] text-gray-900 bg-#ECECEC border border-gray-300" :class="[inputWidth, inputHeight, inputColor]" :disabled="isDisabled"></textarea>
+        <textarea rows="4" class="resize-none block p-2.5 text-[10px] text-gray-900 border border-gray-300" :class="[inputWidth, inputHeight, inputColor]" :disabled="isDisabled"></textarea>
     </div>
 </template>
 <script>

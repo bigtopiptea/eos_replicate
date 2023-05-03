@@ -46,6 +46,17 @@ import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Rep
 import RevenueReport from "@/Components/Admin/Reports/Revenue Report/RevenueReport.vue";
 import OutwardRemittanceReport from "@/Components/Admin/Reports/Outward Remittance Report/OutwardRemittanceReport.vue";
 import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDayReport.vue";
+import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
+import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
+
+//Setting Sub Components
+import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
+import ChartOfAccounts from "@/Components/Admin/New Settings/Chart of Accounts/ChartOfAccounts.vue";
+import DistributionSetup from "@/Components/Admin/New Settings/Distribution Setup/DistributionSetup.vue";
+import FundingSetup from "@/Components/Admin/New Settings/Funding Setup/FundingSetup.vue";
+import Maintenance from "@/Components/Admin/New Settings/Maintenance/Maintenance.vue";
+import RateManagement from "@/Components/Admin/New Settings/Rate Management/RateManagement.vue";
+import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories.vue";
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
@@ -55,7 +66,7 @@ import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
 
 //Settings Sub Components
 import FeesManagement from "@/Components/Admin/Settings/Fees Management/Fees.vue";
-import RateManagement from "@/Components/Admin/Settings/Rate Management/Rate.vue";
+// import RateManagement from "@/Components/Admin/Settings/Rate Management/Rate.vue";
 import HandlingFee from "@/Components/Admin/Settings/Handling Fee/HandlingFee.vue";
 import WaiveCharges from "@/Components/Admin/Settings/Waive Charges/WaiveCharges.vue";
 
@@ -81,7 +92,6 @@ import IndexCMT from "@/Components/Admin/Settings/Rate/Index.vue";
 
 /* Authenticated Component */
 import NotFound from "@/Components/404/NotFound.vue";
-import OtherServices from "@/Components/Admin/Other Services/OtherServices.vue";
 import CompanyCode from "@/Components/Guest/Auth/CompanyCode.vue";
 import CompanyIndex from "@/Components/Admin/Settings/Branches/CompanyIndex.vue";
 import Layout from "@/Components/Admin/Settings/Branches/Layout.vue";
@@ -441,15 +451,90 @@ const routes = [
                     ability: `End Day Report`,
                 },
             },
+            //Carl Mendoza 5-3
             {
-                path: "/app/other-services",
-                name: "other services",
-                component: OtherServices,
+                path: "/app/other-services/pushback",
+                name: "Pushback",
+                component: Pushback,
                 meta: {
-                    title: `Other Services`,
-                    ability: `Other Services`,
+                    title: `Pushback`,
+                    ability: `Pushback`,
                 },
             },
+            {
+                path: "/app/other-services/upload-usf",
+                name: "Upload USF",
+                component: UploadUSF,
+                meta: {
+                    title: `Upload USF`,
+                    ability: `Upload USF`,
+                },
+            },
+            {
+                path: "/app/new-settings/change-password",
+                name: "Change Password",
+                component: ChangePassword,
+                meta: {
+                    title: `Change Password`,
+                    ability: `Change Password`,
+                },
+            },
+            {
+                path: "/app/new-settings/chart-of-accounts",
+                name: "Chart of Accounts",
+                component: ChartOfAccounts,
+                meta: {
+                    title: `Chart of Accounts`,
+                    ability: `Chart of Accounts`,
+                },
+            },
+            {
+                path: "/app/new-settings/distribution-setup",
+                name: "Distribution Setup",
+                component: DistributionSetup,
+                meta: {
+                    title: `Distribution Setup`,
+                    ability: `Distribution Setup`,
+                },
+            },
+            {
+                path: "/app/new-settings/funding-setup",
+                name: "Funding Setup",
+                component: FundingSetup,
+                meta: {
+                    title: `Funding Setup`,
+                    ability: `Funding Setup`,
+                },
+            },
+            {
+                path: "/app/new-settings/maintenance",
+                name: "Maintenance",
+                component: Maintenance,
+                meta: {
+                    title: `Maintenance`,
+                    ability: `Maintenance`,
+                },
+            },
+            {
+                path: "/app/new-settings/rate-management",
+                name: "Rate Management",
+                component: RateManagement,
+                meta: {
+                    title: `Rate Management`,
+                    ability: `Rate Management`,
+                },
+            },
+            {
+                path: "/app/new-settings/signatories",
+                name: "Signatories",
+                component: Signatories,
+                meta: {
+                    title: `Signatories`,
+                    ability: `Signatories`,
+                },
+            },
+            //OJT SETTINGS END
+
             {
                 path: "/app/settings/fees-management",
                 name: "fees-management",

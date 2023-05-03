@@ -47,9 +47,10 @@ export default{
             </form>
         </div>
         <!-- 2nd Content -->
-        <div class="w-full flex gap-5 mt-5">
-            <div class="w-1/2 ">
-                <div>
+        <form>
+            <div class="w-full flex gap-5 mt-5">
+                <div class="w-1/2 ">
+                    <div>
                     <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
                 </div>
                 <div>
@@ -58,41 +59,43 @@ export default{
                 <div>
                     <InputDropdown :inputLabel="'CUSTOMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
                 </div>
-            </div>
+                </div>
 
-            <div class="w-1/2 ">
-                <div>
-                    <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
+                <div class="w-1/2 ">
+                    <div>
+                        <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'ACCOUNT NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
+                    </div>
+                    <div class="flex gap-3">
+                        <InputGroup :inputLabel="'Volume'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                        <InputGroup :inputLabel="'Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                        <InputGroup :inputLabel="'Mode'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                    </div>
+                </div>
+            </div>
+            <!-- 3rd Content -->
+            <div class="flex flex-col">
+                <div class="w-full flex gap-3 ">
+                    <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                    <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+
+                    <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
+                    <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                </div>
+                <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
+                <div class="w-full my-3">
+                    <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-full'" />
                 </div>
                 <div>
-                    <InputGroup :inputLabel="'ACCOUNT NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
+                    <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'"/>
                 </div>
-                <div class="flex gap-3">
-                    <InputGroup :inputLabel="'Volume'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
-                    <InputGroup :inputLabel="'Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
-                    <InputGroup :inputLabel="'Mode'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                <div class="flex justify-center gap-5">
+                    <SolidButton :buttonLabel="'Cancel'"/>
+                    <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-#F9951E'"/>
                 </div>
             </div>
-        </div>
-        <!-- 3rd Content -->
-        <div class="flex flex-col">
-            <div class="w-full flex gap-3 ">
-                <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
-                <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
-                <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
-                <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
-            </div>
-            <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
-            <div class="w-full my-3">
-                <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-full'" />
-            </div>
-            <div>
-                <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'"/>
-            </div>
-            <div class="flex justify-center gap-5">
-                <SolidButton :buttonLabel="'Cancel'"/>
-                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-#F9951E'"/>
-            </div>
-        </div>
+        </form>
     </div>
 </template>

@@ -15,7 +15,7 @@ import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 
 export default{
 
-    name:'Customer Record - Pending',
+    name:'Customer Record - Documents Tracker',
 
     components:{
         Tab,
@@ -34,6 +34,16 @@ export default{
             pagination: {
                 current_page: 1,
             },
+            labels:[
+                {label:'ID'},
+                {label:'CUSTOMER/BUSINESS NAME'},
+                {label:'TYPE OF ID/DOCUMENT'},
+                {label:'CONTACT PERSON'},
+                {label:'EMAIL ADDRESS'},
+                {label:'EXPIRATION DATE'},
+                {label:'DATE EXPIRED'},
+                {label:'STATUS'},
+            ]
         }
     },
     methods: {
@@ -81,39 +91,9 @@ export default{
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
-                                        <th scope="col"
-                                            class="flex justify-between items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            <span>
-                                                id
-                                            </span>
-                                        </th>
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            customer/business name
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                           type of id/document
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            contact person
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            email address
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            expiration date
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            date expired
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            status
+                                            {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>

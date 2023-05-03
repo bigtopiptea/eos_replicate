@@ -90,6 +90,7 @@ export default {
                     to: "/app/trading/buying",
                     label: "Trading",
                     icon: MonitoringIcon,
+                    toggleOffIcon: ChevLeftIcon,
                     children: [
                         {
                             to: "/app/trading/buying",
@@ -146,6 +147,7 @@ export default {
                     to: "/app/reports/cash-position-report",
                     label: "Reports",
                     icon: ReportIcon,
+                    toggleOffIcon: ChevLeftIcon,
                     children: [
                         {
                             to: "/app/reports/cash-position-report",
@@ -191,11 +193,77 @@ export default {
                         },
                     ]
                 },
+                //CM 5-3
                 {
-                    to: '/app/other-services',
+                    to: '/app/other-services/pushback',
                     label: 'Other Services',
-                    children: [],
+                    children: [
+                    {
+                            to: "/app/other-services/pushback",
+                            label: "Pushback",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/other-services/upload-usf",
+                            label: "Upload USF",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+
+                    ],
                     icon: ReportIcon,
+                    toggleOffIcon: ChevLeftIcon,
+                },
+                {
+                    to: '/app/new-settings/change-password',
+                    label: 'New Settings',
+                    children: [
+                    {
+                            to: "/app/new-settings/change-password",
+                            label: "Change Password",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/chart-of-accounts",
+                            label: "Chart of Accounts",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/distribution-setup",
+                            label: "Distribution Setup",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/funding-setup",
+                            label: "Funding Setup",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/maintenance",
+                            label: "Maintenance",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/rate-management",
+                            label: "Rate Management",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
+                            to: "/app/new-settings/signatories",
+                            label: "Signatories",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    ],
+                    icon: SettingsIcon,
+                    toggleOffIcon: ChevLeftIcon,
                 },
                 {
                     to: "/app/settings/data-entry",
@@ -407,10 +475,11 @@ export default {
                 <div id="dropdown" class="ml-[8.5rem]">
                     <ul class="bg-white shadow-xl border border-gray-200 absolute text-gray-700"
                         aria-labelledby="dropdownDefaultButton">
-                        <li v-for="links in navItems">
+                        <li v-for="links in navItems" :key="links">
+                             <!-- remove key for default -->
                             <div v-if="links.children && links === activeItem">
                                 <router-link
-                                    v-for="link in links.children"
+                                    v-for="link in links.children" :key="link.children"
                                     :to="link.to"
                                     active-class="bg-[#f9951e] text-white"
                                     class="px-6 py-[0.5rem] tracking-widest text-[10px] border-b whitespace-nowrap w-full gap-2
