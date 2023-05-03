@@ -106,7 +106,7 @@ export default{
                         </div>
                     </div >
                     <div class="px-3 uppercase w-4/12">
-                        <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '"  :isDisabled="true"/>
+                        <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Reference Number '"  :isDisabled="true"/>
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'"  :isDisabled="true"/>
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'"  :isDisabled="true"/>
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Running Balance'"  :isDisabled="true"/>

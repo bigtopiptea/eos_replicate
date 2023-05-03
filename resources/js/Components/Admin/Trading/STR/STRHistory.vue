@@ -41,6 +41,22 @@ export default{
             },
             selected: "Pending",
             mainContentShow: true,
+            labels:[
+                {label:'DATE'},
+                {label:'REFERENCE NO.'},
+                {label:'TRANSACTION'},
+                {label:'VOLUME'},
+                {label:'RATE'},
+                {label:'PHP'},
+                {label:'TYPE'},
+                {label:'SETTLEMENT'},
+                {label:'ACCOUNT NO.'},
+                {label:'ADDRESS'},
+                {label:'MODE'},
+                {label:'REG. DATE'},
+                {label:'DEAL SLIP NO.'},
+            ]
+
         }
     },
     methods: {
@@ -108,61 +124,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
+                                    <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        ID
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        DATE
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        TIE UP
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        BATCH
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        FILENAME
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        CURRENCY
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        ITEMS
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        TOTAL TXN. AMT
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                        FUNDED AMT
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
-                                        OUTSTANDING AMT.
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
-                                        OUTSTANDING AMT.
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
-                                        COMMITED RATE
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
-                                        CONVERTED AMOUNT
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-4 uppercase tracking-wider  text-center  text-gray-900">
-                                        ACTION
+                                        {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>

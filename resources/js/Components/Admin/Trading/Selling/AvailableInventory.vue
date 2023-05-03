@@ -67,56 +67,6 @@ export default{
                                     200,000
                                 </td>
                             </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-[#EAEAEA] ">
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                                <td class="py-2">
-                                    200,000
-                                </td>
-                            </tr>
-
-
                         </tbody>
                     </table>
                 </div>

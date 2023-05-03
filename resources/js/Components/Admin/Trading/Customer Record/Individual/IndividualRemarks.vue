@@ -16,6 +16,13 @@ export default{
     data(){
         return{
             viewModalOpen: false,
+            labels:[
+                {label:'REMARKS'},
+                {label:'DATE ADDED'},
+                {label:'DATE UPDATED'},
+                {label:'ADDED/UPDATED BY'},
+                {label:'ACTIONS'},
+            ]
         }
     },
     methods:{
@@ -35,25 +42,9 @@ export default{
                 <table class="min-w-full text-xs overflow-x-scroll border border-[#D7D7D7]">
                     <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                         <tr class="divide-x divide-gray-200">
-                            <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
-                                remarks
-                            </th>
-                            <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                date added
-                            </th>
-                            <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                date updated
-                            </th>
-                            <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                added/updated by
-                            </th>
-                            <th scope="col"
-                                class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900 w-[80px]">
-                                actions
+                            <th v-for="label in labels" :key="label.label" scope="col"
+                                class="py-2 px-3 uppercase tracking-wider  text-center  text-gray-900">
+                                {{ label.label }}
                             </th>
                         </tr>
                     </thead>

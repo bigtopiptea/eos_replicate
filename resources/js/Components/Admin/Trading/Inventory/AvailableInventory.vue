@@ -34,6 +34,20 @@ export default{
             pagination: {
                 current_page: 1,
             },
+
+            labels:[
+                {label:'ID'},
+                {label:'TRANSACTION DATE'},
+                {label:'MAKER'},
+                {label:'CLIENT NAME'},
+                {label:'REFERENCE NAME'},
+                {label:'EXPIRATION DATE'},
+                {label:'REFERENCE NO.'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'EXCHANGE RATE'},
+                {label:'PHP AMOUNT'},
+            ]
         }
     },
     methods: {
@@ -85,49 +99,9 @@ export default{
                             <table class=" divide-y divide-gray-300">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
-                                        <th scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                id
-                                        </th>
-                                        <th scope="col"
+                                        <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                           transaction date
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            Maker
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            client name
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            reference name
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            expiration date
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 w-1/3 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            reference no.
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 w-1/3 uppercase tracking-wider text-center text-gray-900">
-                                            currency
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 w-1/3 uppercase tracking-wider text-center text-gray-900">
-                                            amount
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 w-1/3 uppercase tracking-wider text-center text-gray-900">
-                                            exchange rate
-                                        </th>
-                                        <th scope="col"
-                                            class="py-2 px-1 w-1/3 uppercase tracking-wider text-center text-gray-900">
-                                            php amount
+                                                {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>

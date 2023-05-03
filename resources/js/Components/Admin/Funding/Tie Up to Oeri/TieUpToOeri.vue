@@ -43,6 +43,25 @@ export default{
             },
             selected: "Pending",
             mainContentShow: true,
+
+            labels:[
+                {label:'ID'},
+                {label:'DATE'},
+                {label:'TIE UP'},
+                {label:'BATCH'},
+                {label:'FILENAME'},
+                {label:'CURRENCY'},
+                {label:'ITEMS'},
+                {label:'TOTAL TXN. AMT'},
+                {label:'FUNDED AMT'},
+                {label:'OUTSTANDING AMT.'},
+                {label:'COMMITED RATE'},
+                {label:'CONVERTED AMOUNT'},
+                {label:'ACTION'},
+
+
+            ],
+
         }
     },
     methods: {
@@ -114,61 +133,9 @@ export default{
                                         <table class="min-w-full divide-y divide-gray-300">
                                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                                 <tr class="divide-x divide-gray-200">
-                                                    <th scope="col"
+                                                    <th v-for="label in labels" :key="label.label" scope="col"
                                                         class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        ID
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        DATE
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                       tIE UP
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        BATCH
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        FILENAME
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        CURRENCY
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        ITEMS
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                       tOTAL TXN. AMT
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                                        FUNDED AMT
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                                        OUTSTANDING AMT.
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                                        OUTSTANDING AMT.
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                                        COMMITED RATE
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                                        CONVERTED AMOUNT
-                                                    </th>
-                                                    <th scope="col"
-                                                        class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
-                                                        ACTION
+                                                        {{ label.label }}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -196,10 +163,7 @@ export default{
                                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         usd
                                                     </td>
-                                                    <td
-                                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                                        redha batch 01
-                                                    </td>
+
                                                     <td
                                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                                         usd

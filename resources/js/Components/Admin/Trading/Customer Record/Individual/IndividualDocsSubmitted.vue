@@ -13,7 +13,21 @@ export default{
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton
-    }
+    },
+
+    data() {
+        return {
+            labels:[
+                {label:'ID'},
+                {label:'TYPE OF ID/DOCUMENT'},
+                {label:'DATE ISSUED'},
+                {label:'EXPIRY DATE'},
+                {label:'DATE UPLOADED'},
+                {label:'UPLOADED BY'},
+                {label:'ACTIONS'},
+            ]
+        }
+    },
 }
 </script>
 <template>
@@ -27,33 +41,9 @@ export default{
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
-                                    <th scope="col"
+                                    <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        id
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        type of id/document
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        date issued
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        expiry date
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        date uploaded
-                                    </th>
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        uploaded by
-                                    </th>                               
-                                    <th scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider  text-center   text-gray-900">
-                                        ACTIONS
+                                        {{ label.label }}
                                     </th>
                                 </tr>
                             </thead>
@@ -117,9 +107,9 @@ export default{
                                     </div>
                                     <div class="text-center text-[10px]">
                                         <p>
-                                            MAX FILE SIZE: 
+                                            MAX FILE SIZE:
                                             <span class="font-bold">10MB</span><br>
-                                            SUPPORTED FILE TYPES: 
+                                            SUPPORTED FILE TYPES:
                                             <span class="font-bold">JPEG, JPG, PNG</span>
                                         </p>
                                     </div>
