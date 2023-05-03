@@ -156,6 +156,12 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
+                            to: "/app/reports/trading-summary-report",
+                            label: "Trading Summary",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
                             to: "/app/reports/payment-to-suppliers",
                             label: "Payment to Suppliers",
                             children: [],
