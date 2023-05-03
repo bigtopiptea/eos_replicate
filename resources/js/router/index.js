@@ -40,6 +40,7 @@ import STR from '@/Components/Admin/Trading/STR/STR.vue';
 import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
 import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
 import CashPositionReport from "@/Components/Admin/Reports/Cash Position Report/CashPositionReport.vue";
+import TradingSummaryReport from "@/Components/Admin/Reports/Trading Summary Report/TradingSummaryReport.vue";
 import PaymentToSuppliers from "@/Components/Admin/Reports/Payment to Suppliers/PaymentToSuppliers.vue";
 import CTR_STRReport from "@/Components/Admin/Reports/CTR & STR Report/CTR_STRReport.vue";
 import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Report/DailyInventoryReport.vue";
@@ -394,6 +395,15 @@ const routes = [
                 meta: {
                     title: `Cash Position Report`,
                     ability: `Cash Position Report`,
+                },
+            },
+            {
+                path: "/app/reports/trading-summary-report",
+                name: "trading summary report",
+                component: TradingSummaryReport,
+                meta: {
+                    title: `Trading Summary Report`,
+                    ability: `Trading Summary Report`,
                 },
             },
             {
