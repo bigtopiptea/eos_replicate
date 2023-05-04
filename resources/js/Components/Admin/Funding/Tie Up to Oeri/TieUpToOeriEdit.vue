@@ -26,7 +26,7 @@ export default{
         <!-- Main Content -->
         <div>
           <!-- Form -->
-          <div class="flex justify-between items-end h-[225px]">
+          <form class="flex justify-between items-end h-[225px]">
             <div class="w-[35%]">
                 <InputGroup :inputLabel="'total txn. amt'" :labelWidth="'w-4/12'" :inputWidth="'w-4/12'" :isDisabled="true"/>
                 <InputGroup :inputLabel="'outstanding amt.'" :labelWidth="'w-4/12'" :inputWidth="'w-4/12'" :isDisabled="true"/>
@@ -53,7 +53,7 @@ export default{
                 <InputGroup :inputLabel="'peso value'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
               </div>
             </div>
-          </div>
+          </form>
           <!-- Buttons -->
           <div class="flex gap-[15px] justify-center mt-3">
               <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>

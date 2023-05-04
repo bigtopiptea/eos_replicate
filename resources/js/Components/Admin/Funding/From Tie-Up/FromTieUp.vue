@@ -21,7 +21,7 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import axios from "axios";
 
 
-export default{
+export default {
 
     name:'Banks & Providers',
 
@@ -83,7 +83,7 @@ export default{
     <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full ">
-                <div class="flex justify-between p-3 ">
+                <form class="flex justify-between p-3 ">
                     <div class="flex flex-col w-8/12 mr-3 h-auto pt-3">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
@@ -115,7 +115,7 @@ export default{
                             <span class="font-light text-[10px] ml-3">Advanced Funding</span>
                         </div>
                     </div>
-                </div>
+                </form>
                 <!-- Accordion Content -->
                 <div class=" p-1 min-h-full w-full overflow-auto">
                     <Accordion sectiontitle="Unallocated Transactions" :setOpen=false>

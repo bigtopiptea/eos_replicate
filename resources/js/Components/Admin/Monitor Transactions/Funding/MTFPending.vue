@@ -19,7 +19,7 @@ import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
 import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 
-export default{
+export default {
 
     name:'MTFPending',
 
@@ -235,7 +235,7 @@ export default{
                     <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true" :inputColor="'bg-[#EAEAEA]'"/>
                     </div>
                 </div>
             </div>
