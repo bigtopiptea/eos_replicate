@@ -49,6 +49,7 @@ import OutwardRemittanceReport from "@/Components/Admin/Reports/Outward Remittan
 import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDayReport.vue";
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
+import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
 
 //Setting Sub Components
 import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
@@ -478,6 +479,15 @@ const routes = [
                 meta: {
                     title: `Upload USF`,
                     ability: `Upload USF`,
+                },
+            },
+            {
+                path: "/app/other-services/consolidated-proofsheet",
+                name: "Consolidated Proofsheet",
+                component: ConsolidatedProofsheet,
+                meta: {
+                    title: `Consolidated Proofsheet`,
+                    ability: `Consolidated Proofsheet`,
                 },
             },
             {

@@ -1,5 +1,47 @@
+<script>
+import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
+import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
+import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
+
+export default{
+    components:{
+        BorderButton,
+        FloatingLabelDropdown,
+        SolidButton,
+
+    },
+    data() {
+        return {
+            myOptions:[ 'Select Report Type','Report 1','Report 2','Report 3']
+        }
+    },
+}
+</script>
 <template>
-    <div class="bg-white h-auto w-full">
-        UploadUSF
+    <div class="bg-white h-screen w-full py-3">
+        <div class="flex flex-col justify-center items-center w-full py-10 gap-y-3">
+            <img src="../../../../../assets/images/UploadIcon.png" alt="Upload Icon" class="h-[100px] w-[100px]">
+            <div class="flex flex-col justify-center items-center">
+                <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Drag and Drop file</h1>
+                <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">or</h1>
+            </div>
+            <BorderButton :buttonLabel="'Browse'" :buttonStyle="'border-[3px] border-[#F9951E] text-[#F9951E] font-[700] text-[14px]'" :buttonPadding="'py-1 px-5'" class="mb-10" >
+            </BorderButton>
+            <div class="flex flex-col justify-center items-center">
+                <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Max File Size:<span class="font-[700] "> 10mb</span></h1>
+                <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Supported File type:<span class="font-[700] "> XLS,XLSX</span></h1>
+            </div>
+            <div class="flex justify-center w-full ">
+                <div class="w-1/4">
+                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="myOptions"/>
+                </div>
+            </div>
+            <div class="flex gap-5">
+                <SolidButton :buttonLabel="'Cancel'" :buttonSize="'h-auto w-[140px]'" :buttonFont="'font-[700]'"/>
+                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#F9951E]'"  :buttonSize="'h-auto w-[140px]'"  :buttonFont="'font-[700]'" :buttonPadding="'py-2'"/>
+
+            </div>
+        </div>
+
     </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
-    <div class="flex items-center justify-between w-full px-4 bg-[#3E3E3E] py-1.5">
-        <h1 class="text-white font-rubik font-bold uppercase text-[11px] tracking-widest ">
+    <div class="flex items-center w-full px-4 bg-[#3E3E3E] py-1.5" :class="justify">
+        <h1 class="text-white font-bold uppercase text-[11px] tracking-widest ">
             {{ props.label }}
         </h1>
 <!--        {{props.isOpen}}-->
@@ -28,6 +28,10 @@ const props = defineProps({
     },
     isOpen: {
         type: Boolean,
+    },
+    justify: {
+        type: String,
+        default: 'justify-between'
     }
 });
 </script>

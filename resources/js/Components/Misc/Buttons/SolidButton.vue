@@ -23,7 +23,15 @@ export default{
         buttonTextSize:{
             type: String,
             default: 'text-[11px]'
-        }
+        },
+        buttonPadding:{
+            type: String,
+            default: 'py-3'
+        },
+        buttonFont:{
+            type: String,
+            default: 'font-normal'
+        },
 
     },
 
@@ -32,5 +40,5 @@ export default{
 }
 </script>
 <template>
-    <button class="text-center uppercase py-3 disabled:bg-[#D7D7D7] text-white font-sans font-normal text-[11px]" :class="[buttonStyle, buttonSize, buttonTextSize]" :disabled="isDisabled">{{ buttonLabel }}</button>
+    <button class="tracking-widest text-center uppercase disabled:bg-[#D7D7D7] text-white text-[11px]" :class="[buttonStyle, buttonSize, buttonTextSize,buttonPadding,buttonFont]" :disabled="isDisabled">{{ buttonLabel }}</button>
 </template>
