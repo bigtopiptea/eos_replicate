@@ -142,14 +142,14 @@ export default{
                     </table>
                 </div>
             </div>
-            <div class="flex justify-start mt-3  gap-3">
+            <form class="flex justify-start mt-3  gap-3">
                 <div class="w-[39.4%]">
                     <InputGroup :inputLabel="'Committed Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
                 </div>
                 <div class="w-[39.4%]">
                     <InputGroup :inputLabel="'Committed Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
                 </div>
-            </div>
+            </form>
         </div>
         <!-- 3rd Content -->
         <div class="flex justify-center gap-5">

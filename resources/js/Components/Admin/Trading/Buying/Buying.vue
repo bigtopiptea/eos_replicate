@@ -31,7 +31,7 @@ export default{
 <template>
     <div class="h-auto w-full bg-white">
         <!-- 1st Content -->
-        <div class="flex justify-between w-full p-5 px-8">
+        <form class="flex justify-between w-full p-5 px-8">
             <div class="flex flex-col w-[75%]">
                 <div class="flex gap-5 w-[35%]">
                     <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
@@ -46,10 +46,10 @@ export default{
                 </div>
                 <div class="flex gap-5 w-full">
                     <div class="w-[35%]">
-                        <InputGroup :inputLabel="'Traded AMT (USD)'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'"/>
+                        <InputGroup :inputLabel="'Traded AMT (USD)'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'" :inputType="'number'"/>
                     </div>
                     <div>
-                        <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'"/>
+                        <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'" :inputType="'number'"/>
                     </div>
                     <div>
                         <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
@@ -61,12 +61,12 @@ export default{
                     <InputGroup :inputLabel="'Reference Number'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
                 </div>
             </div>
-        </div>
+        </form>
         <!-- Break -->
         <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-5"/>
 
         <!-- 2n Content -->
-        <div class="flex justify-between items-center w-full p-5 px-8 gap-3">
+        <form class="flex justify-between items-center w-full p-5 px-8 gap-3">
             <div class="flex flex-col w-full">
                 <div>
                     <InputDropDown :inputLabel="'Type of Transaction'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
@@ -100,7 +100,7 @@ export default{
                     <InputDropDown :inputLabel="'Peso To'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="flex justify-center gap-5 mb-3">
             <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
             <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
@@ -108,7 +108,7 @@ export default{
         <!-- Break -->
         <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mx-5"/>
         <!-- 3rd Content -->
-        <div class="flex justify-between items-center w-full p-5 px-8 gap-3">
+        <form class="flex justify-between items-center w-full p-5 px-8 gap-3">
             <div class="flex flex-col w-full">
                 <div>
                     <InputGroup :inputLabel="'Committed Amount'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" inputColor="'bg-white'"/>
@@ -127,7 +127,7 @@ export default{
 
                 </div>
             </div>
-        </div>
+        </form>
         <div class="flex justify-center gap-5 mb-3">
             <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
             <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#EE3E2C]'"/>

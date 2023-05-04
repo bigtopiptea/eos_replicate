@@ -19,7 +19,7 @@ import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
 import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
 
-export default{
+export default {
 
     name:'MTFApprovalHistory',
 
@@ -193,15 +193,15 @@ export default{
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
-                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
                     <div class="-mt-3">
-                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'"/>
+                        <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'" :isDisabled="true"/>
                     </div>
-                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
+                    <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
                     <div class="-mt-3">
-                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'"/>
+                        <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true"/>
                     </div>
                 </div>
             </div>

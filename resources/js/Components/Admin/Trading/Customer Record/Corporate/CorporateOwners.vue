@@ -9,7 +9,7 @@ import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
 
-export default{
+export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton

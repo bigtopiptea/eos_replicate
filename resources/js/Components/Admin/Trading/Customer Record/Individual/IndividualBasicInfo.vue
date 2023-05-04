@@ -58,7 +58,7 @@ export default{
                 </div>
                 <div class="flex gap-[5px]">
                     <div class="w-[68%]">
-                        <FloatingLabelInput :inputLabel="'Present/Permanent Address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelInput :inputLabel="'Present/Permanent Address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'No., Street, Phase/Village/Subdivision'"/>
                     </div>
                     <div class="w-[32%]">
                         <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
@@ -80,15 +80,15 @@ export default{
                         <FloatingLabelDropdown :inputLabel="'id type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                     </div>
                     <div class="w-1/3">
-                        <FloatingLabelInput :inputLabel="'id no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelInput :inputLabel="'id no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                     </div>
                     <div class="w-1/3">
-                        <FloatingLabelInput :inputLabel="'philsys no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelInput :inputLabel="'philsys no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                     </div>
                 </div>
                 <div class="flex gap-[5px]">
                     <div class="w-full">
-                        <FloatingLabelInput :inputLabel="'NAME OF COMPANY (IF EMPLOYED/SELF-EMPLOYED)'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                        <FloatingLabelInput :inputLabel="'NAME OF COMPANY (IF EMPLOYED/SELF-EMPLOYED)'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'ENTER NAME OF COMPANY'"/>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ export default{
             <div class="flex flex-col gap-y-[15px] w-[18%]">
                 <div class="w-full flex">
                     <CountryCodeDropdown/>
-                    <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                 </div>
                 <div class="w-full">
                     <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
@@ -123,7 +123,7 @@ export default{
                         <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                     </div>
                     <div class="w-1/3">
-                        <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                     </div>
                 </div>
                 <div class="w-full">
@@ -133,7 +133,7 @@ export default{
                     <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                 </div>
             </div>
         </div>

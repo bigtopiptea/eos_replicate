@@ -28,11 +28,11 @@ export default {
     <div class="px-5">
         <!-- FORM -->
         <div class="w-full">
-            <div class="w-[400px]">
+            <form class="w-[400px]">
                 <InputGroup :inputLabel="'VOUCHER DATE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :isDisabled="true"/>
                 <InputDropdown :inputLabel="'PAYMENT TYPE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                 <InputDropdown :inputLabel="'BANK ACCOUNT'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
-            </div>
+            </form>
         </div>
         <!-- TABLE -->
         <div class="flex flex-col overflow-hidden mt-[50px]">
@@ -77,10 +77,10 @@ export default {
             </div>
         </div>
         <!-- Remarks -->
-        <div class="flex items-center w-full text-[10px] my-5 px-5">
+        <form class="flex items-center w-full text-[10px] my-5 px-5">
             <label for="remarks" class="font-bold uppercase w-[10%]">REMARKS</label>
             <input type="text" name="remarks" class="w-[90%] p-1 focus:z-10 border border-#D7D7D7 focus:border-collapse">
-        </div>
+        </form>
         <!-- Buttons -->
         <div class="flex justify-center gap-x-[15px]">
             <BorderButton :buttonLabel="'RESET'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonPadding="'px-[5px] py-2'" :buttonHover="'hover:bg-[#3E3E3E]'"/>

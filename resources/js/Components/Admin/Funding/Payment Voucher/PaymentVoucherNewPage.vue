@@ -37,7 +37,7 @@ export default{
 <template>
     <div class="3xl:container flex flex-col w-full h-auto bg-white py-4 ">
         <div class="px-4">
-            <div class=" w-[90%]">
+            <form class="w-[90%]">
                 <!-- Row 1 -->
                 <div class="flex justify-between items-center w-[74.7%] mb-3">
                     <div class="-mb-[15px]">
@@ -96,7 +96,7 @@ export default{
                         <BorderButton :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
                 </div>
-            </div>
+            </form>
             <!-- TABLE -->
             <div class="flex flex-col overflow-hidden">
                 <div class="inline-block min-w-full align-middle">

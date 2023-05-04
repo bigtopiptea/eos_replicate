@@ -21,7 +21,7 @@ import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 // import axios from "axios";
 
 
-export default{
+export default {
   created () {
   },
 
@@ -68,7 +68,7 @@ export default{
     <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full">
-                <div class="flex justify-between p-3 mb-3">
+                <form class="flex justify-between p-3 mb-3">
                     <div class="flex flex-col pt-3 w-8/12 mr-3 h-auto">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
@@ -90,7 +90,7 @@ export default{
                     <div class="  px-3 uppercase w-4/12">
                         <InputGroup :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputLabel="'Reference Number '" :isDisabled="true"/>
                     </div>
-                </div>
+                </form>
                 <div class="flex gap-[15px] justify-center mt-3">
                     <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
                     <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-red-500 text-red-500 hover:bg-red-500 text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-red-500'"/>
