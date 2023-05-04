@@ -9,7 +9,7 @@ import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
 
-export default{
+export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton
@@ -100,7 +100,7 @@ export default{
             <div class="mx-5 mt-10 shadow-md">
                 <Accordion :sectiontitle="'ADD/UPDATE TRADER'" :accordionColor="'bg-#3E3E3E'" :titleAlign="'text-right'" :setOpen="true">
                     <div class="mx-5">
-                        <div class="flex flex-col w-full">
+                        <form class="flex flex-col w-full">
                             <div class="flex flex-col gap-y-[15px]">
                                 <div class="flex gap-x-[5px]">
                                     <div class="flex flex-col gap-y-[15px] w-[40%]">
@@ -160,7 +160,7 @@ export default{
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
 
                     </div>
                 </Accordion>

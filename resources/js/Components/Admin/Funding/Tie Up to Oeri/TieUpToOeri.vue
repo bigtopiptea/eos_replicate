@@ -17,7 +17,7 @@ import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 
-export default{
+export default {
 
     name:'Tie Up To Oeri',
 
@@ -93,10 +93,10 @@ export default{
                 <div v-show="mainContentShow">
                     <div class="flex flex-col justify-between h-full w-auto m-3">
                         <div>
-                            <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
-                                <div class="flex items-start justify-between h-auto min-w-full -mx-10">
-                                    <div class="flex justify-end flex-col space-x-3">
-                                        <div class="flex items-end left-side-col-1 ">
+                            <div class="inline-block min-w-full align-middle px-7 mb-3 mt-3">
+                                <div class="flex justify-between h-full min-w-full -mx-6">
+                                    <div class="flex justify-start flex-col space-x-3">
+                                        <div class="flex items-end gap-3 left-side-col-1">
                                             <div>
                                                 <DateInput label="Start Date" />
                                             </div>
@@ -105,24 +105,24 @@ export default{
                                             </div>
                                             <div>
                                                 <NormalButton label="Filter"
-                                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
+                                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="right-side flex">
+                                    <div class="right-side mt-[5px]">
                                         <form class="flex items-start">
                                             <div class="relative w-full">
                                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                     <SearchIcon />
                                                 </div>
                                                 <input type="text" id="simple-search"
-                                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 font-light text-[10px] block w-full pl-10 p-2.5"
+                                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
                                                     placeholder="Search" required />
                                             </div>
                                             <NormalButton label="Go"
                                             class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                             <NormalButton label="Export"
-                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white mr-3" />
+                                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
                                         </form>
                                     </div>
                                 </div>

@@ -27,6 +27,7 @@ import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import FundIcon from "../Misc/Icons/FundIcon.vue";
 import DistributionIcon from "../Misc/Icons/DistributionIcon.vue";
+import BorderButton from "../Misc/Buttons/BorderButton.vue";
 
 export default {
     components: {
@@ -34,8 +35,9 @@ export default {
         SelectedRadioButton, ChevronLeftIcon,
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
-        DistributionIcon, ChevRightIcon, InputGroup
-
+        DistributionIcon, ChevRightIcon, InputGroup,
+        BorderButton
+        
     },
     data(){
         return {
@@ -590,7 +592,7 @@ export default {
             <div class="input-area mx-10">
                 <div class="profile-upload flex justify-evenly items-center">
                     <img src="../../../assets/images/user-logo.png" alt="user-logo" class="w-36 h-36 rounded-full">
-                    <button type="button" class=" text-sm py-1 px-3 h-7 border border-#F9951E text-#F9951E font-bold" @click="(profileSlideoverOpen = !profileSlideoverOpen)" @click.prevent="slideOverToggle()">UPLOAD</button>
+                    <BorderButton @click="(profileSlideoverOpen = !profileSlideoverOpen)"  @click.prevent="slideOverToggle()" :buttonLabel="'UPLOAD'" :buttonSize="'h-auto w-[100px]'" :buttonPadding="'px-3 py-1'"/>
                 </div>
                 <div class="mt-5">
                     <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
@@ -603,7 +605,7 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center">
-                <button @click.prevent="slideOverToggle()" type="submit" class="py-1 px-5 text-[17px] font-medium border-2 border-black">CLOSE</button>
+                <BorderButton @click.prevent="slideOverToggle()" :buttonLabel="'CLOSE'" :buttonSize="'h-auto w-[120px]'" :buttonPadding="'p-2'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[15px]'" :buttonHover="'hover:bg-[#3E3E3E]'"/>
             </div>
         </div>
     </Slideover>
@@ -677,12 +679,11 @@ export default {
             </div>
 
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton>
-                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</buttton>
+                <button @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</button>
+                <button type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</button>
             </div>
         </div>
     </Slideover>
-
 </template>
 <style>
 .main {

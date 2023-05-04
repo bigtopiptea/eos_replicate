@@ -112,7 +112,7 @@ export default {
             <div class="mx-5 shadow-md">
                 <Accordion :sectiontitle="'upload id/document'" :accordionColor="'bg-#3E3E3E'" :titleAlign="'text-right'" :setOpen="true">
                     <div class="mx-5">
-                        <div class="flex gap-[5px]">
+                        <form class="flex gap-[5px]">
                             <div class="flex flex-col gap-[10px] w-[60%]">
                                 <FloatingLabelDropdown :inputLabel="'type of id/document'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                 <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
@@ -161,7 +161,7 @@ export default {
                                     <BorderButton :buttonLabel="'UPLOAD ID/DOCUMENT'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'"/>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </Accordion>
             </div>

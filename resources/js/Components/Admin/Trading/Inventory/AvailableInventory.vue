@@ -13,7 +13,7 @@ import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 
-export default{
+export default {
 
     name:'Inventory - Available Inventory',
 
@@ -184,10 +184,10 @@ export default{
                                     </tr>
                                 </tfoot>
                             </table>
+                            </div>
                         </div>
-                    </div>
-                    <Pagination @paginate="getIAvailableInventory()" :pagination="pagination"
-                :offset="1" class = ""/>
+                        <Pagination @paginate="getIAvailableInventory()" :pagination="pagination"
+                    :offset="1" class = ""/>
                     </div>
                 </div>
             </div>

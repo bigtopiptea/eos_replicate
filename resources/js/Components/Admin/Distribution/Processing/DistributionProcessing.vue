@@ -16,7 +16,7 @@ import axios from "axios";
 
 
 export default {
-    components: {SmallHeading, DistributionSummary, DistributionBreakEntry, JournalEntry},
+    components: {Tab, TabNav, SmallHeading, DistributionSummary, DistributionBreakEntry, JournalEntry},
     data(){
         return {
 

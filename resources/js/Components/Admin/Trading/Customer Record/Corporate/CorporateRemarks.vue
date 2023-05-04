@@ -81,12 +81,12 @@ export default{
         <!-- Accordion -->
         <div class="mx-5 shadow-md">
             <Accordion :sectiontitle="'add/update remarks'" :accordionColor="'bg-#3E3E3E'" :titleAlign="'text-right'" :setOpen="true">
-                <div class="mx-5">
+                <form class="mx-5">
                     <FloatingTextArea :label="'remarks'" :inputHeight="'h-[135px]'"/>
                     <div class="flex justify-end">
                         <BorderButton :buttonLabel="'ADD/UPDATE REMARKS'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
-                </div>
+                </form>
             </Accordion>
         </div>
         <!-- Buttons -->
