@@ -14,7 +14,7 @@
     import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
     import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 
-    export default{
+    export default {
 
         name:'DistributionSummary',
 
@@ -66,42 +66,42 @@
 
     <template>
      <div class="w-full h-auto">
-        <div class="inline-block min-w-full align-middle md:px-6 lg:px-8 ">
-            <div class="flex items-end justify-between h-auto min-w-full -mx-6">
-            <div class="flex justify-start flex-col space-x-3 border-border-blue-5">
-                <div class="flex items-end left-side-col-1 -ml-3">
-                    <div>
-                        <DateInput label="Start Date" />
+        <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
+            <div class="flex justify-between h-full min-w-full -mx-6 ">
+                <div class="flex justify-start flex-col space-x-3">
+                    <div class="flex items-end gap-3 left-side-col-1">
+                        <div>
+                            <DateInput label="Start Date" />
+                        </div>
+                        <div>
+                            <DateInput label="End Date" />
+                        </div>
+                        <div>
+                            <NormalButton label="Filter"
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
+                        </div>
                     </div>
-                    <div>
-                        <DateInput label="End Date" />
+                    <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
+                        <DropDown label="bulk action" class="-m-3" />
+                        <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                     </div>
-                    <div>
-                        <NormalButton label="Filter"
+                </div>
+                <div class="right-side mt-[5px]">
+                    <form class="flex items-start">
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <SearchIcon />
+                            </div>
+                            <input type="text" id="simple-search"
+                                class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
+                                placeholder="Search" required />
+                        </div>
+                        <NormalButton label="Go"
+                        class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
+                        <NormalButton label="Export"
                         class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
-                    </div>
+                    </form>
                 </div>
-                <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
-                    <DropDown label="bulk action" class="-m-3" />
-                    <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
-                </div>
-            </div>
-                <div class="right-side flex h-20 ">
-                <form class="flex items-start">
-                    <div class="relative w-full">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <SearchIcon />
-                        </div>
-                        <input type="text" id="simple-search"
-                            class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
-                            placeholder="Search" required />
-                        </div>
-                    <NormalButton label="Go"
-                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
-                    <NormalButton label="Export"
-                    class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
-                </form>
-            </div>
             </div>
         </div>
         <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">

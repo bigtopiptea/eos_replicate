@@ -105,10 +105,10 @@ export default {
     <!-- Main Content -->
     <div class="flex flex-col justify-between h-full w-auto mx-3 my-6 mb-3">
         <div>
-            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="flex items-end justify-between h-auto min-w-full -mx-10">
+            <div class="inline-block min-w-full align-middle px-6">
+                <div class="flex justify-between h-full min-w-full -mx-6">
                     <div class="flex justify-start flex-col space-x-3">
-                        <div class="flex items-end left-side-col-1">
+                        <div class="flex items-end gap-3 left-side-col-1">
                             <div>
                                 <DateInput label="Start Date" />
                             </div>
@@ -117,28 +117,28 @@ export default {
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
                             </div>
                         </div>
-                        <div class="left-side-col-2 space-y-3">
-                            <DropDown label="bulk action"/>
+                        <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
+                            <DropDown label="bulk action" class="-m-3" />
                             <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
-                        <div class="right-side flex h-20 ">
+                    <div class="right-side mt-[5px]">
                         <form class="flex items-start">
                             <div class="relative w-full">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <SearchIcon />
                                 </div>
                                 <input type="text" id="simple-search"
-                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 font-light text-[10px] block w-full pl-10 p-2.5"
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
                                     placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] font-medium text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="py-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-[10px] font-medium text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
                         </form>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ export default {
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider flex justify-between gap-1">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider flex justify-between gap-1 w-[75px]">
                                         <button @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
@@ -227,13 +227,13 @@ export default {
         <div class="flex flex-col justify-between h-full pb-3">
             <div class="mx-10 h-auto">
                 <div class="mt-14">
-                    <InputGroup :inputType="'text'" :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup  :inputLabel="'invoice no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     <div class="-mt-3">
                         <SmallLabelInput :inputType="'text'" :inputLabel="'supplier name'" :labelWidth="'w-full'" :inputWidth="'w-full'" :isDisabled="true"/>
                     </div>
                     <InputGroup :inputType="'date'" :inputLabel="'due date'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
-                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup  :inputLabel="'remarks'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <InputGroup :inputType="'text'" :inputLabel="'amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
                     <div class="-mt-3">
                         <InputTextarea :label="'description'" inputWidth="w-[100%]" :inputHeight="'h-[107px]'" :isDisabled="true" :inputColor="'bg-[#EAEAEA]'"/>
                     </div>

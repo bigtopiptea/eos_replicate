@@ -72,8 +72,8 @@ export default {
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
-                    <div class="flex items-end">
-                        <div class="-ml-3">
+                    <div class="flex gap-3 items-end">
+                        <div>
                             <DateInput label="Start Date" />
                         </div>
                         <div>
@@ -81,7 +81,7 @@ export default {
                         </div>
                         <div>
                             <NormalButton label="Filter"
-                            class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] text-white" />
+                            class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
                     </div>
                 </div>

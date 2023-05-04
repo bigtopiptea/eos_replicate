@@ -16,7 +16,7 @@ export default{
 }
 </script>
 <template>
-    <div class="my-[30px]">
+    <form class="my-[30px]">
         <div class="mb-5">
             <SmallHeading label="RISK PROFILE" class="pl-6 w-[20%]" />
             <div class="flex mt-5 w-full">
@@ -141,5 +141,5 @@ export default{
             <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonHover="'hover:bg-#3E3E3E'"/>
             <SolidButton :buttonLabel="'SUBMIT'" :isDisabled="true"/>
         </div>
-    </div>
+    </form>
 </template>

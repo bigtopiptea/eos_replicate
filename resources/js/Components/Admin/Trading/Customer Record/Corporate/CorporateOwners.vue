@@ -96,7 +96,7 @@ export default {
             <div class="mx-5 mt-10 shadow-md">
                 <Accordion :sectiontitle="'ADD/UPDATE ULTIMATE BENEFICIAL OWNER'" :accordionColor="'bg-#3E3E3E'" :titleAlign="'text-right'" :setOpen="true">
                     <div class="mx-5">
-                        <div class="flex flex-col gap-y-[15px] w-full">
+                        <form class="flex flex-col gap-y-[15px] w-full">
                             <div class="flex gap-x-[5px]">
                                 <!-- Col 1 -->
                                 <div class="flex flex-col gap-y-[15px] w-[60%]">
@@ -190,7 +190,7 @@ export default {
                                     <BorderButton :buttonLabel="'ADD/UPDATE BENEFICIAL OWNER'" :buttonSize="'h-auto w-[210px]'" :buttonPadding="'px-[5px] py-1'"/>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </Accordion>
             </div>

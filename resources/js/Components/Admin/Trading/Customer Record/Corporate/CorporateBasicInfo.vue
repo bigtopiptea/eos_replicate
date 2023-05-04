@@ -184,7 +184,7 @@ export default{
                                     <FloatingLabelDropdown :inputLabel="'contact person id type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" />
                                 </div>
                                 <div class="w-[50%]">
-                                    <FloatingLabelInput :inputLabel="'contact person id no'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" :inputType="'number'"/>
+                                    <FloatingLabelInput :inputLabel="'contact person id no'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" />
                                 </div>
                             </div>
                         </div>
