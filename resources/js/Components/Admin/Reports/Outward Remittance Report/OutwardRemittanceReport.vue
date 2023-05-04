@@ -45,7 +45,7 @@ export default {
                 'TKH Marketing',
                 'The Lift Company Phils',
                 'vertex entertainment and resorts corp',
-            ]
+            ],
         }
     },
     methods: {

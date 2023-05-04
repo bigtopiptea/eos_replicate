@@ -102,7 +102,7 @@ export default {
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-full mb-3 overflow-x-hidden">
+            <div class=" h-full mb-3 border w-full border-red-500 ">
                 <div class="inline-block min-w-full align-middle md:px-6 lg:px-8 mt-[10px]">
                     <div class="flex justify-between h-full min-w-full -mx-6">
                         <div class="flex justify-start flex-col space-x-3">
@@ -141,10 +141,10 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                            <table class="min-w-full divide-y divide-gray-300 text-xs overflow-visible">
+                <div class="min-w-full py-2 align-middle">
+                    <div class=" relative h-96 py-2 px-10 border border-blue-500  ">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 ">
+                            <table class="min-w-full divide-y divide-gray-300 text-xs">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
                                         <th v-for="label in labels" :key="label.label" scope="col"
@@ -210,13 +210,293 @@ export default {
                                             </button>
                                         </td>
                                     </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/28/2022 12:00:05 PM
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA AL ANSARI EXCHANGE
+                                    </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA-09282022-0006
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            CMT-09282022-0009
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            PHP
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            24,900.13
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            28.25
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        48.30
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            USD
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            515.53
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            38.28
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            <button>
+                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/28/2022 12:00:05 PM
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA AL ANSARI EXCHANGE
+                                    </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA-09282022-0006
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            CMT-09282022-0009
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            PHP
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            24,900.13
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            28.25
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        48.30
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            USD
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            515.53
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            38.28
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            <button>
+                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/28/2022 12:00:05 PM
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA AL ANSARI EXCHANGE
+                                    </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA-09282022-0006
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            CMT-09282022-0009
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            PHP
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            24,900.13
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            28.25
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        48.30
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            USD
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            515.53
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            38.28
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            <button>
+                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/28/2022 12:00:05 PM
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA AL ANSARI EXCHANGE
+                                    </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA-09282022-0006
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            CMT-09282022-0009
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            PHP
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            24,900.13
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            28.25
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        48.30
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            USD
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            515.53
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            38.28
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            <button>
+                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            01
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/28/2022 12:00:05 PM
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA AL ANSARI EXCHANGE
+                                    </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            REDHA-09282022-0006
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            CMT-09282022-0009
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            PHP
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            24,900.13
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            28.25
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        48.30
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            USD
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            515.53
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            38.28
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            <button>
+                                            <img src="../../../../../assets/images/ExitIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    <Pagination @paginate="getDistributionRefund()" :pagination="pagination"
+                            :offset="1" class="" />
                 </div>
-                <Pagination @paginate="getDistributionRefund()" :pagination="pagination"
-                        :offset="1" class="mt-8" />
                 <Accordion sectiontitle="Journal Entry" :setOpen=false>
                     <JournalEntry/>
                 </Accordion>
