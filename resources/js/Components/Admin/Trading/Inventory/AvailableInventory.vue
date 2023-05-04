@@ -93,7 +93,7 @@ export default{
                 </div>
                 <div>
                     <div class="min-w-full py-2 align-middle ">
-                        <div class="relative h-screen ">
+                        <div class="relative h-auto ">
                             <!-- overflow-x-auto -->
                             <div class=" shadow ring-1 ring-black ring-opacity-5 mx-1 overflow-auto absolute inset-x-0">
                             <table class=" divide-y divide-gray-300">
