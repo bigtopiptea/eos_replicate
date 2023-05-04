@@ -101,5 +101,4 @@ export default{
         </div>
     </div>
     <Toast :show="viewToastOpen" @close="viewToastToggle()" :toastBody="''"/>
-
 </template>

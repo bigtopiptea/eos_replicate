@@ -216,6 +216,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                    {
+                            to: "/app/other-services/consolidated-proofsheet",
+                            label: "Proofsheet",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
 
                     ],
                     icon: ReportIcon,
