@@ -26,12 +26,12 @@ export default{
     },
     labelWidth:{
         type: String,
-        default: '7/12',
+        default: 'w-0/12',
         required: true
     },
     inputWidth:{
         type: String,
-        default: '5/12',
+        default: 'w-full',
         required: true
     },
     inputColor:{
@@ -41,11 +41,11 @@ export default{
     isRequired:{
         type: Boolean,
         default: false
-    }, 
+    },
     isRequired:{
         type: Boolean,
         default: false
-    }, 
+    },
     options: {
         type: Array,
         required: true
