@@ -4,7 +4,7 @@
         <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="labelWidth">
             {{ inputLabel }}
         </label>
-        <input :type="inputType" class="uppercase bg-white h-full p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA] focus:border-collapse" :class="inputWidth" :disabled="isDisabled">
+        <input :type="inputType" class="uppercase bg-white h-full p-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA] focus:border-collapse" :class="inputWidth" :disabled="isDisabled" :maxlength="setMax">
     </div>
 </template>
 
@@ -17,18 +17,17 @@ export default{
     },
     inputWidth:{
         type: String,
-        default: '5/12',
-        required: true
+        default: 'w-5/12',
+
     },
     labelWidth:{
         type: String,
-        default: '7/12',
-        required: true
+        default: 'w-7/12',
     },
-    // inputColor:{
-    //     type: String,
-    //     default: 'bg-white'
-    // },
+    setMax:{
+        type: Number,
+        required: false,
+    },
     inputType:{
         type: String,
         default: 'text',

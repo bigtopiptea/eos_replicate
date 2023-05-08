@@ -57,7 +57,7 @@ export default{
                     <InputGroup :inputLabel="'CUSTOMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
                 </div>
                 <div>
-                    <InputDropdown :inputLabel="'CUSTOMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
+                    <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
                 </div>
                 </div>
 
@@ -69,8 +69,8 @@ export default{
                         <InputGroup :inputLabel="'ACCOUNT NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
                     </div>
                     <div class="flex gap-3">
-                        <InputGroup :inputLabel="'Volume'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
-                        <InputGroup :inputLabel="'Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                        <InputGroup :inputLabel="'Volume'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'number'"/>
+                        <InputGroup :inputLabel="'Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'number'" />
                         <InputGroup :inputLabel="'Mode'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export default{
                     <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
 
                     <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
-                    <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
+                    <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'number'"/>
                 </div>
                 <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
                 <div class="w-full my-3">

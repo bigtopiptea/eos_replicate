@@ -71,7 +71,7 @@ export default{
                             </div>
                         </th>
                         <th v-for="label in labels" :key="label.label" scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
+                            class="py-2 px-1 uppercase tracking-wider text-center w-1/3">
                             {{ label.label }}
                         </th>
 

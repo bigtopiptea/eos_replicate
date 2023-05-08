@@ -132,7 +132,7 @@ export default {
                                                     <FloatingLabelDropdown :inputLabel="'city'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                                 </div>
                                                 <div class="w-[20%]">
-                                                    <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                    <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -149,7 +149,7 @@ export default {
                                 <div class="flex justify-between w-full">
                                     <div class="flex gap-x-[5px] w-[43.7%]">
                                         <div class="w-[50%]">
-                                            <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                            <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                         </div>
                                         <div class="w-[50%]">
                                             <FloatingLabelDropdown :inputLabel="'DESTINATION COUNTRY'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>

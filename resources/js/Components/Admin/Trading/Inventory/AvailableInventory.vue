@@ -93,7 +93,7 @@ export default {
                 </div>
                 <div>
                     <div class="min-w-full py-2 align-middle ">
-                        <div class="relative h-screen ">
+                        <div class="relative h-auto ">
                             <!-- overflow-x-auto -->
                             <div class=" shadow ring-1 ring-black ring-opacity-5 mx-1 overflow-auto absolute inset-x-0">
                             <table class=" divide-y divide-gray-300">
@@ -106,6 +106,47 @@ export default {
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
                                     <tr class="divide-x divide-gray-200">
                                         <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             <a class="underline text-cyan-500" href="#">

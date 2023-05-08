@@ -125,7 +125,7 @@ export default{
                                 <SettingsInput class="w-full"/>
                             </td>
                             <td class="flex items-center gap-[10px] whitespace-nowrap text-center uppercase py-2 pl-1 pr-3 tracking-wider">
-                                <SettingsInput class="w-full"/>
+                                <SettingsInput class="w-full" :type="'number'"/>
                                 <button class="flex items-center">
                                     <span class="text-[30px]"> + </span>
                                 </button>

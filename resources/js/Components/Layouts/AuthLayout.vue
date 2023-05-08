@@ -37,7 +37,7 @@ export default {
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
         DistributionIcon, ChevRightIcon, InputGroup,
         BorderButton
-        
+
     },
     data(){
         return {

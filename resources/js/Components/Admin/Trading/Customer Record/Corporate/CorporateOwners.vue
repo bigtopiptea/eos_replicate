@@ -139,7 +139,7 @@ export default {
                                 <div class="flex flex-col gap-y-[15px] w-[18%]">
                                     <div class="w-full flex">
                                         <CountryCodeDropdown/>
-                                        <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                        <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                     </div>
                                     <div class="w-full">
                                         <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
@@ -159,7 +159,7 @@ export default {
                                             <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                         </div>
                                         <div class="w-1/3">
-                                            <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                            <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                         </div>
                                     </div>
                                     <div class="w-full">
