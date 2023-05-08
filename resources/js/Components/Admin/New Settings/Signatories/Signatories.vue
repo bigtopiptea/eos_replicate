@@ -1,23 +1,26 @@
 <script setup>
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
-import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
+import CirclePlusIcon from "@/Components/Misc/Icons/CirclePlusIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
+import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
+import SmallLabelInput from '../../../Misc/Input/SmallLabelInput.vue';
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import Slideover from '../../../Misc/Slideover/Slideover.vue';
-import InputGroup from "../../../Misc/Input/InputGroup.vue";
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
+
 export default {
     name: 'Signatories',
     components: {
-        NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        BorderButton, DropDown, Slideover, InputGroup, SolidButton, SwitchToggle
+        NormalButton, SearchIcon, CirclePlusIcon, DateInput, 
+        FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput,
+        BorderButton, DropDown, Slideover, SolidButton, SwitchToggle
     },
     data() {
         return {
@@ -29,14 +32,25 @@ export default {
                 {label:'ADDED BY'},
                 {label:'ACTIONS'},
             ],
-            endDayReportOpen: false,
-            paraIcon:'CHECK', //Icon Parameter
+            designOptions: [
+                'BUSINESS DEVELOPMENT HEAD',
+                'ACCOUNTING HEAD',
+                'COO',
+            ],
+            signatoryType: [
+                'SET A',
+                'SET B',
+                'SET C',
+            ],
+            addNewSignatoryOpen: false,
+            paraIcon:'PLUS', //Icon Parameter
+
         }
     },
     methods: {
         // Slider
-        endDayReportToggle(){
-            this.endDayReportOpen = false;
+        addNewSignatoryToggle(){
+            this.addNewSignatoryOpen = false;
         },
     },
 }
@@ -64,7 +78,7 @@ export default {
                     </div>
                 </div>
                 <div>
-                    <BorderButton :buttonLabel="'ADD NEW'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(endDayReportOpen = !endDayReportOpen)"/>
+                    <BorderButton :buttonLabel="'ADD NEW'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(addNewSignatoryOpen = !addNewSignatoryOpen)"/>
                 </div>
             </div>
         </div>
@@ -179,27 +193,38 @@ export default {
         </div>
     </div>
 
-    <Slideover :show="endDayReportOpen" @close="endDayReportToggle" :title="'CONFIRM END OF THE DAY'" :iconShow="paraIcon">
+    <Slideover :show="addNewSignatoryOpen" @close="addNewSignatoryToggle" :title="'ADD NEW SIGNATORY'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-[20px]">
-            <div class="mx-10 h-auto">
-                <div class="mt-[30px]">
-                    <div>
-                        <InputGroup :inputType="'text'" :inputLabel="'total count'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+            <div class="flex flex-col gap-[15px] m-10">
+                <div class="flex flex-col gap-[15px]">
+                    <div class="flex gap-[10px] w-full">
+                        <div class="w-[70%]">
+                            <FloatingLabelInput :inputLabel="'last name'"  :inputWidth="'w-12/12'"/>
+                        </div>
+                        <div class="w-[30%]">
+                            <FloatingLabelInput :inputLabel="'suffix'"  :inputWidth="'w-12/12'" :placeholder="'-'"/>
+                        </div>
                     </div>
-                    <div>
-                        <InputGroup :inputType="'text'" :inputLabel="'total amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <div class="w-full"> 
+                        <FloatingLabelInput :inputLabel="'first name'"  :inputWidth="'w-12/12'"/>
                     </div>
+                    <div class="w-full"> 
+                        <FloatingLabelInput :inputLabel="'middle name'"  :inputWidth="'w-12/12'"/>
+                    </div>
+                </div>
+                <div class="-mb-4"> 
+                    <SmallLabelInput :inputLabel="'signatory name'"  :inputWidth="'w-12/12'" :isDisabled="true"/>
+                </div>
+                <div> 
+                    <FloatingLabelDropdown :inputLabel="'designation'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="designOptions"/>
+                </div>
+                <div> 
+                    <FloatingLabelDropdown :inputLabel="'signatory type'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="signatoryType"/>
                 </div>
             </div>
-            <div class="flex flex-col gap-[100px]">
-                <div class="flex flex-col gap-[25px] text-center text-[14px] uppercase whitespace-normal leading-3">
-                    <p>CLICK <span class="font-bold">‘CONFIRM’</span>  TO PROCEED</p>
-                    <p>AND <span class="font-bold">'CANCEL'</span> TO REVERT.</p>
-                </div>
-                <div class="flex justify-center gap-[100px] border-black">
-                    <SolidButton @click="(endDayReportOpen = !endDayReportOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
-                </div>
+            <div class="flex justify-center gap-[100px] border-black">
+                <SolidButton @click="(addNewSignatoryOpen = !addNewSignatoryOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
             </div>
         </div>
     </Slideover>
