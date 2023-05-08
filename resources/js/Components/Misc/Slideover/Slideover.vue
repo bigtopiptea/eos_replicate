@@ -32,6 +32,11 @@
                                                     <CircleCheckIcon/>
                                                 </div>
                                             </div>
+                                            <div v-else-if="iconShow === 'PLUS'">
+                                                <div class="w-[30px] h-[30px]">
+                                                    <CirclePlusIcon/>
+                                                </div>
+                                            </div>
                                             <div v-else>
 
                                             </div>
@@ -60,6 +65,7 @@ import SwitchToggle from '../Switch(Toggle)/SwitchToggle.vue';
 import UserIcon from "@/Components/Misc/Icons/UserIcon.vue";
 import FindIcon from "@/Components/Misc/Icons/FindIcon.vue";
 import CircleCheckIcon from "@/Components/Misc/Icons/CircleCheckIcon.vue";
+import CirclePlusIcon from '../Icons/CirclePlusIcon.vue';
 export default {
     name: "Slideover",
     props: {
@@ -77,7 +83,7 @@ export default {
         }
     },
     components: {
-        SwitchToggle, UserIcon, FindIcon, CircleCheckIcon
+        SwitchToggle, UserIcon, FindIcon, CircleCheckIcon, CirclePlusIcon
     },
     data() {
         return {
