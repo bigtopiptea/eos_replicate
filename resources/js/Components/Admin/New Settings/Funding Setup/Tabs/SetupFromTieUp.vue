@@ -12,6 +12,9 @@ import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
+
 
 
 export default {
@@ -25,6 +28,11 @@ export default {
         DropdownNoLabel,
         Pagination,
         FloatingLabelDropdown,
+        InputGroup,
+        FloatingLabelInput,
+        SolidButton,
+
+
     },
 
     data() {
@@ -34,15 +42,11 @@ export default {
                 current_page: 1,
             },
             labels:[
-                {label:'ID'},
-                {label:'transaction option'},
-                {label:'BANK NAME/BILLER NAME'},
-                {label:'BANK ENROLLED'},
-                {label:'DA'},
-                {label:'WDRWL'},
-                {label:'DATE updated'},
-                {label:'updated BY'},
-                {label:'ACTIONS'},
+                {label:'tie-up bank'},
+                {label:'tie-up partner'},
+                {label:'date added'},
+                {label:'ADDED BY'},
+                {label:'Actions'},
             ],
 
             allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
@@ -107,6 +111,13 @@ export default {
                     <table class="min-w-full divide-y divide-gray-300">
                         <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                             <tr class="divide-x divide-gray-200">
+                                <th scope="col"
+                                    class="flex justify-center items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900 gap-2">
+                                    <input type="checkbox" name="" id="">
+                                    <span>
+                                        ID
+                                    </span>
+                                </th>
                                 <th v-for="label in labels" :key="label.label" scope="col"
                                     class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                     {{label.label}}
@@ -116,36 +127,30 @@ export default {
                         <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                             <tr class="divide-x divide-gray-200">
                                 <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
+                                    <div class="flex justify-center items-center gap-2">
+                                        <input type="checkbox" name="" id="">
+                                        <a class="underline text-cyan-500" href="#">
+                                            01
+                                        </a>
+                                    </div>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
+                                    BANCO DE ORO OERI TIEUP1 USD
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
+                                    Redha Al Ansari Exchange
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
+                                    09/28/2022 11:00:05 AM
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
+                                    banaria, jeffrey clidorio
                                 </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
+
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center">
                                         <button>
@@ -157,271 +162,7 @@ export default {
                                         />
                                     </div>
                                 </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    01
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    CBA - CREDIT TO BANK ACCOUNT
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <DropdownNoLabel/>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" value="">
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 09:17:18 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    LASCONIA, ELIOMAR DE ASIS
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
-                                    </div>
-                                </td>
-                            </tr>
+                                </tr>
 
                         </tbody>
                     </table>
@@ -438,23 +179,20 @@ export default {
 
     <Slideover :show="AddNewOpen" @close="AddNewToggle" :title="'Add New'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
-            <div class="mx-10 h-auto">
+            <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
-                    <div>
-                        <InputGroup :inputType="'text'" :inputLabel="'total count'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                    <div class="mb-5">
+                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
                     </div>
                     <div>
-                        <InputGroup :inputType="'text'" :inputLabel="'total amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                        <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputColor="'bg-white'"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[100px]">
-                <div class="flex flex-col gap-[25px] text-center text-[14px] uppercase whitespace-normal leading-3">
-                    <p>CLICK <span class="font-bold">‘CONFIRM’</span>  TO PROCEED</p>
-                    <p>AND <span class="font-bold">'CANCEL'</span> TO REVERT.</p>
-                </div>
+
                 <div class="flex justify-center gap-[100px] border-black">
-                    <SolidButton @click="(endDayReportOpen = !endDayReportOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                    <SolidButton @click="(AddNewOpen = !AddNewOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
                     <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>

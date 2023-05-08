@@ -5,7 +5,7 @@
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="disabled:bg-gray-300 bg-white uppercase h-7 p-1 z-8 border border-gray-300 text-[#3E3E3E] text-left " :class="inputWidth" :value="inputValue" :disabled="isDisabled" :required="isRequired" :placeholder="placeholder">
+        <input :type="inputType" class="disabled:bg-gray-300 bg-white uppercase h-7 p-1 z-8 border border-gray-300 text-[#3E3E3E] pl-2 text-left " :class="inputWidth" :value="inputValue" :disabled="isDisabled" :required="isRequired" :placeholder="placeholder">
     </div>
 </template>
 
@@ -22,13 +22,13 @@ export default{
     },
     labelWidth:{
         type: String,
-        default: '7/12',
-        required: true
+        default: 'w-0/12',
+
     },
     inputWidth:{
         type: String,
-        default: '5/12',
-        required: true
+        default: 'w-full',
+
     },
     inputColor:{
         type: String,

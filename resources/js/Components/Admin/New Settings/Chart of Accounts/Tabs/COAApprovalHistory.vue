@@ -37,32 +37,35 @@ export default {
 
     data() {
         return {
-            SetUpOeriToOeri: [],
+            COAAprovalHistory: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'OPTIMUM EXCHANGE REMIT INC BANKS'},
-                {label:'date added'},
-                {label:'ADDED BY'},
-                {label:'Actions'},
+                {label:'ACCOUNT DESCRIPTION'},
+                {label:'fs category'},
+                {label:'fs type'},
+                {label:'account no.'},
+                {label:'account type'},
+                {label:'date approved'},
+                {label:'approved BY'},
+                {label:'Status'},
             ],
 
-            allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
-            AddNewOpen: false,
+            RequestChartOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
     },
     methods: {
         // Slider
-        AddNewToggle(){
-            this.AddNewOpen = false;
+        RequestChartoggle(){
+            this.RequestChartOpen = false;
         },
-        async getSetUpOeriToOeri() {
+        async getCOAAprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.SetUpOeriToOeri = response.data.data;
+                    this.COAAprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -95,7 +98,7 @@ export default {
                     </div>
                 </div>
                 <div>
-                    <BorderButton :buttonLabel="'ADD NEW'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(AddNewOpen = !AddNewOpen)"/>
+                    <BorderButton :buttonLabel="'REQUEST'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(RequestChartOpen = !RequestChartOpen)"/>
                 </div>
             </div>
         </div>
@@ -132,8 +135,25 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    BANCO DE ORO paseo sf oneri PHP
+                                    AR - CANCELLED TRXN PLUS ONE DIRECT PHP
                                 </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    TRADE AND OTHER RECEIVABLES
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    BALANCE SHEET
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    110-102-077
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    accounts receivable
+                                </td>
+
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 11:00:05 AM
@@ -144,17 +164,54 @@ export default {
                                 </td>
 
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <SwitchToggle
-                                            :status="true"
-                                            :isChecked="true"
-                                        />
+                                    Approved
+                                </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-200">
+                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    <div class="flex justify-center items-center gap-2">
+                                        <input type="checkbox" name="" id="">
+                                        <a class="underline text-cyan-500" href="#">
+                                            01
+                                        </a>
                                     </div>
                                 </td>
-                                </tr>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    AR - CANCELLED TRXN PLUS ONE DIRECT PHP
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    TRADE AND OTHER RECEIVABLES
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    BALANCE SHEET
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    110-102-077
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    accounts receivable
+                                </td>
+
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    09/28/2022 11:00:05 AM
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    banaria, jeffrey clidorio
+                                </td>
+
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    Approved
+                                </td>
+                            </tr>
+
 
                         </tbody>
                     </table>
@@ -163,24 +220,36 @@ export default {
         </div>
 
         <div class="py-6">
-            <Pagination @paginate="getSetUpOeriToOeri()" :pagination="pagination"
+            <Pagination @paginate="getCOAAprovalHistory()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
 
     </div>
 
-    <Slideover :show="AddNewOpen" @close="AddNewToggle" :title="'Add New'">
+    <Slideover :show="RequestChartOpen" @close="RequestChartoggle" :title="'Request Chart Of Accounts'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'OERI Bank Name'" :placeholder="'Bank Name'"/>
+                        <FloatingLabelInput :inputLabel="'Account Description'" :placeholder="'Description'"/>
+                    </div>
+                    <div class="mb-5">
+                        <FloatingLabelDropdown :inputLabel="'FS Category'" :inputColor="'bg-white'" :placeholder="'Select FS Category'"/>
+                    </div>
+                    <div class="mb-5">
+                        <FloatingLabelDropdown :inputLabel="'FS Type'"  :inputColor="'bg-white'" :placeholder="'Select FS Type'"/>
+                    </div>
+                    <div class="mb-5">
+                        <InputGroup :inputLabel="'Account Number'" :placeholder="'Bank Name'" :isDisabled="true" :inputWidth="'w-1/2'" :labelWidth="'w-1/2'"/>
+                    </div>
+                    <div class="mb-5">
+                        <FloatingLabelDropdown :inputLabel="'Account Type'"  :inputColor="'bg-white'" :placeholder="'Select Account Type'"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[100px]">
                 <div class="flex justify-center gap-[100px] border-black">
-                    <SolidButton @click="(AddNewOpen = !AddNewOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                    <SolidButton @click="(RequestChartOpen = !RequestChartOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
                     <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>
