@@ -1,3 +1,4 @@
+
 <script>
 import PHP from '@/Components/Admin/New Settings/Distribution Setup/Tabs/PHP.vue';
 import USD from '@/Components/Admin/New Settings/Distribution Setup/Tabs/USD.vue';
@@ -8,7 +9,8 @@ export default {
         TabNav,
         Tab,
         PHP,
-        USD
+        USD,
+
 
     },
     
@@ -36,7 +38,7 @@ export default {
     <div class="h-auto w-full bg-white pt-3">
         <TabNav :tabs="['PHP' , 'USD']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C]'" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
             <Tab :isSelected="selected === 'PHP'" >
-                <div class="w-full h-full ">
+                <div class="w-full h-auto ">
                     <PHP/>
                 </div>
             </Tab>
