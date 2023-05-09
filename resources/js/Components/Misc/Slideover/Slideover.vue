@@ -42,6 +42,11 @@
                                                     <HoldIcon/>
                                                 </div>
                                             </div>
+                                            <div v-else-if="iconShow === 'LIFT'">
+                                                <div class="w-[30px] h-[30px]">
+                                                    <LiftHoldIcon/>
+                                                </div>
+                                            </div>
                                             <div v-else>
 
                                             </div>
@@ -72,6 +77,7 @@ import FindIcon from "@/Components/Misc/Icons/FindIcon.vue";
 import CircleCheckIcon from "@/Components/Misc/Icons/CircleCheckIcon.vue";
 import CirclePlusIcon from '../Icons/CirclePlusIcon.vue';
 import HoldIcon from '../Icons/HoldIcon.vue';
+import LiftHoldIcon from '../Icons/LiftHoldIcon.vue';
 export default {
     name: "Slideover",
     props: {
@@ -90,7 +96,7 @@ export default {
     },
     components: {
         SwitchToggle, UserIcon, FindIcon, CircleCheckIcon, CirclePlusIcon,
-        HoldIcon
+        HoldIcon, LiftHoldIcon
     },
     data() {
         return {

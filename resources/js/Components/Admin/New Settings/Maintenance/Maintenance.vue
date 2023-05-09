@@ -3,12 +3,15 @@
 import TabNav from '@/Components/Misc/Tabs/Tabnav.vue';
 import Tab from '@/Components/Misc/Tabs/Tab.vue';
 import TieUps from './Tabs/TieUps.vue';
+import BanksProviders from './Tabs/BanksProviders.vue';
+import TieUpPlus from './Tabs/TieUpPlus.vue';
 export default {
     components:{
         TabNav,
         Tab,
-        TieUps
-
+        TieUps,
+        BanksProviders,
+        TieUpPlus
     },
     
     data(){
