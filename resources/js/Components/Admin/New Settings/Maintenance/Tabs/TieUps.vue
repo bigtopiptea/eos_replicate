@@ -30,8 +30,6 @@ export default {
                 {label:'ACTIONS'},
             ],
             holdOpen: false,
-            paraIcon:'HOLD', //Icon Parameter
-
         }
     },
     methods: {
@@ -115,11 +113,11 @@ export default {
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center gap-[5px]">
-                                        <button @click="(holdOpen = !holdOpen)">
+                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
                                             <img src="../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
-                                        <button @click="(holdOpen = !holdOpen)">
-                                            <img src="../../../../../../assets/images/LiftHoldIcon.png" alt="Lift Hold Icon" class="h-5 w-5">
+                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
+                                            <img src="../../../../../../assets/images/LiftHoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
                                         <SwitchToggle
                                             :status="true"
@@ -136,7 +134,7 @@ export default {
     </div>
     <DropdownCheckbox/>
 
-    <Slideover :show="holdOpen" @close="holdToggle" :title="'HOLD'" :iconShow="paraIcon">
+    <Slideover :show="holdOpen" @close="holdToggle" :title="isHold ? 'HOLD' : 'LIFT HOLD'" :iconShow="isHold ? 'HOLD' : 'LIFT'" >
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div> 
@@ -150,7 +148,7 @@ export default {
                 </div>
             </div>
             <div class="flex flex-col gap-[80px]">
-                <div class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
+                <div v-if="isHold === true" class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
                     <p>
                         ARE YOU SURE YOU WANT TO PROCEED? <br>
                         DISTRIBUTION OF TRANSACTION <br>
@@ -158,8 +156,16 @@ export default {
                         CLICK ‘CONFIRM’ TO PROCEED.
                     </p>
                 </div>
+                <div v-else class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[50px]">
+                    <p>
+                        ARE YOU SURE YOU WANT TO PROCEED?<br>
+                        ONCE <span class="font-semibold">HOLD HAS BEEN LIFTED,</span><br> 
+                        PENDING TRANSACTIONS WILL BE DISTRIBUTED.<br>
+                        CLICK ‘CONFIRM’ TO PROCEED.
+                    </p>
+                </div>
                 <div class="flex justify-center gap-[100px] pb-[20px">
-                    <SolidButton @click="(addNewSignatoryOpen = !addNewSignatoryOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                    <SolidButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
                     <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>

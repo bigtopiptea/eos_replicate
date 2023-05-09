@@ -30,9 +30,7 @@ export default {
                 {label:'ACTIONS'},
             ],
             holdOpen: false,
-            paraIcon:'HOLD', //Icon Parameter
             isHold: false,
-            isLiftHold: false,
 
         }
     },
@@ -125,7 +123,7 @@ export default {
                                         <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
                                             <img src="../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
-                                        <button @click="(holdOpen = !holdOpen), (isLiftHold = !isLiftHold)">
+                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
                                             <img src="../../../../../../assets/images/LiftHoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
                                         <SwitchToggle
@@ -172,7 +170,7 @@ export default {
                     </p>
                 </div>
                 <div class="flex justify-center gap-[100px] pb-[20px">
-                    <SolidButton @click="(addNewSignatoryOpen = !addNewSignatoryOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                    <SolidButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
                     <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>

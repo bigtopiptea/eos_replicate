@@ -6,22 +6,27 @@
         </TransitionChild>
   
         <div class="fixed inset-0 z-10 overflow-y-auto">
-          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 border">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leave-from="opacity-100 translate-y-0 sm:scale-100" leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
               <DialogPanel class="relative transform overflow-y-auto bg-white text-left shadow-xl transition-all sm:my-8" :class="widthModal">
-                <div class="absolute top-0 h-8 w-full bg-gradient-to-r from-[#FB9E30] via-[#F98B38] to-[#EE3E2C] flex items-end justify-end ">
+                <div class="absolute top-0 h-8 w-full bg-gradient-to-r from-[#FB9E30] via-[#F98B38] to-[#EE3E2C] flex items-end justify-end">
                     <h5 :class="modalTitlePosition" class="w-full text-[17px] text-white px-5">{{ modalTitle }}</h5>
+                    <div class="absolute left-[15px] top-[5px]">
+                      <div v-if="iconShow === 'LOCK'" class="w-[30px] h-[30px]">
+                          <LockPinIcon/>
+                      </div>
+                    </div>
                 </div>
-                <div class="flex justify-start flex-col mt-20" :class="[heightModal, titlePosition]">
-                    <div class="text-center">
+                <div class="flex justify-start flex-col mt-[30px]" :class="[heightModal, titlePosition]">
+                    <!-- <div class="text-center">
                         <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
                             {{ title }}
                         </DialogTitle>
                         <div class="mt-2">
                             <p class="text-sm text-gray-500">{{ description }}</p>
                         </div>
-                    </div>
-                    <slot/>
+                    </div> -->
+                      <slot/>
                 </div>
               </DialogPanel>
             </TransitionChild>
@@ -32,8 +37,12 @@
 </template>
 
 <script>
+import LockPinIcon from '../Icons/LockPinIcon.vue';
 export default {
     name: "ModalTwo",
+    components:{
+      LockPinIcon
+    },
     props: {
         widthModal: {
             type: String,
@@ -59,6 +68,10 @@ export default {
             type: String,
             default: '',
         },
+        iconShow: {
+            type: String,
+            default:'',
+        }
     },
 }
 </script>

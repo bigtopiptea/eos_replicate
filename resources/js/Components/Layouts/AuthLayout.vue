@@ -29,6 +29,7 @@ import FundIcon from "../Misc/Icons/FundIcon.vue";
 import DistributionIcon from "../Misc/Icons/DistributionIcon.vue";
 import BorderButton from "../Misc/Buttons/BorderButton.vue";
 import HelpIcon from '../Misc/Icons/HelpIcon.vue';
+import LogsIcon  from "../Misc/Icons/LogsIcon.vue";
 
 export default {
     components: {
@@ -37,7 +38,7 @@ export default {
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
         DistributionIcon, ChevRightIcon, InputGroup,
-        BorderButton,HelpIcon
+        BorderButton, HelpIcon, LogsIcon
 
     },
     data(){
@@ -360,6 +361,12 @@ export default {
                     label: "Help",
                     children: [],
                     icon: HelpIcon,
+                },
+                {
+                    to: "/app/logs",
+                    label: "logs",
+                    children: [],
+                    icon: LogsIcon,
                 },
                 {
                     to: "#",

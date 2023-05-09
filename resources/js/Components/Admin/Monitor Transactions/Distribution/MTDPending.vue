@@ -195,7 +195,7 @@ export default {
 
     <!-- Modal -->
     <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'VIEW DETAILS'" :heightModal="'h-[500px]'" :widthModal="'w-[1000px]'">
-        <div class="flex flex-col justify-between mx-5 mb-5 h-full">
+        <div class="flex flex-col justify-between mx-5 mb-5 mt-5 h-full">
             <table class="min-w-full max-h-[450px] divide-y divide-gray-300 overflow-y-auto">
                 <thead class="bg-[#D7D7D7] text-[11px] font-medium ">
                     <tr class="divide-x divide-gray-200">

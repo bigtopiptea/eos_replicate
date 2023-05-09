@@ -51,6 +51,7 @@ import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
 import Help from "@/Components/Admin/Help/Help.vue"
+import Logs from "@/Components/Admin/Logs/Logs.vue"
 
 //New Setting Sub Components -OJT-
 import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
@@ -560,6 +561,15 @@ const routes = [
                 meta: {
                     title: `Help`,
                     ability: `Help`,
+                },
+            },
+            {
+                path: "/app/logs",
+                name: "Logs",
+                component: Logs,
+                meta: {
+                    title: `Logs`,
+                    ability: `Logs`,
                 },
             },
             //OJT SETTINGS END

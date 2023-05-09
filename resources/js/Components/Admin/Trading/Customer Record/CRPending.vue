@@ -175,7 +175,7 @@ export default {
         </div>
     </div>
     <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :modalTitle="'NEW CUSTOMER'" :heightModal="'h-[300px]'" :modalTitlePosition="'text-center'">
-        <div class="flex flex-col justify-between mx-5 mb-5 h-full">
+        <div class="flex flex-col justify-between mx-5 mb-5 mt-[20px] h-full">
             <div class="flex justify-between">
                 <router-link to="/app/trading/customer-record/individual">
                     <div class="indiv-client flex flex-col justify-center items-center ">

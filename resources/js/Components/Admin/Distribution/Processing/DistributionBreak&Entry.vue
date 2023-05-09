@@ -152,10 +152,16 @@ export default {
     </div>
 
     <!-- Modal -->
-    <ModalTwo :show="viewModalOpen" @close="viewModalToggle" :title="'OTC API'" :description = "'NOT ALLOWED FOR ADVANCE FUNDING'">
-        <div class="flex justify-center gap-7 mt-14">
-            <SolidButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'"/>
-            <SolidButton :buttonLabel="'CONFIRM'" :buttonStyle="'bg-#F9951E'"/>
+    <ModalTwo :show="viewModalOpen" @close="viewModalToggle">
+        <div class="flex flex-col items-center justify-center h-full">
+            <div class="text-center">
+                <h1 class="text-[20px]">OTC API</h1>
+                <p class="text-[15px]">NOT ALLOWED FOR ADVANCE FUNDING</p>
+            </div>
+            <div class="flex justify-center gap-7 mt-14">
+                <SolidButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'"/>
+                <SolidButton :buttonLabel="'CONFIRM'" :buttonStyle="'bg-#F9951E'"/>
+            </div>
         </div>
     </ModalTwo>
 </template>
