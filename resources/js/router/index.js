@@ -50,8 +50,9 @@ import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDa
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
+import Help from "@/Components/Admin/Help/Help.vue"
 
-//Setting Sub Components
+//New Setting Sub Components -OJT-
 import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
 import ChartOfAccounts from "@/Components/Admin/New Settings/Chart of Accounts/ChartOfAccounts.vue";
 import DistributionSetup from "@/Components/Admin/New Settings/Distribution Setup/DistributionSetup.vue";
@@ -62,7 +63,6 @@ import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories
 
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
-import Help from "@/Components/Admin/Help/Help.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
 
@@ -551,6 +551,15 @@ const routes = [
                 meta: {
                     title: `Signatories`,
                     ability: `Signatories`,
+                },
+            },
+            {
+                path: "/app/help",
+                name: "Help",
+                component: Help,
+                meta: {
+                    title: `Help`,
+                    ability: `Help`,
                 },
             },
             //OJT SETTINGS END

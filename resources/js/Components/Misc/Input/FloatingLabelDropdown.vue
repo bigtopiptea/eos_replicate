@@ -6,6 +6,7 @@
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
         <select class="d uppercase h-7 p-1 focus:z-9  text-[#3E3E3E] text-left text-[10px] border border-grey-200 focus:border-collapse" :class=[inputWidth,inputColor]>
+            <option value="" hidden >{{ placeholder }}</option>
             <option v-for="(option,index) in options" :key="index" value=index class="z-10 bg-white">
                 {{option}}</option>
         </select>
@@ -25,12 +26,12 @@ export default{
     },
     labelWidth:{
         type: String,
-        default: '7/12',
+        default: 'w-0/12',
         required: true
     },
     inputWidth:{
         type: String,
-        default: '5/12',
+        default: 'w-full',
         required: true
     },
     inputColor:{
@@ -40,14 +41,18 @@ export default{
     isRequired:{
         type: Boolean,
         default: false
-    }, 
+    },
     isRequired:{
         type: Boolean,
         default: false
-    }, 
+    },
     options: {
         type: Array,
         required: true
+    },
+    placeholder:{
+        type:String,
+        required:false
     }
   },
 }
