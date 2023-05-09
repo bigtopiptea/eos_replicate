@@ -28,6 +28,7 @@ import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import FundIcon from "../Misc/Icons/FundIcon.vue";
 import DistributionIcon from "../Misc/Icons/DistributionIcon.vue";
 import BorderButton from "../Misc/Buttons/BorderButton.vue";
+import HelpIcon from '../Misc/Icons/HelpIcon.vue';
 
 export default {
     components: {
@@ -36,7 +37,7 @@ export default {
         Footer, Title, Slideover, LoadingIcon,
         XMarkIcon, ProgressIcon,RangeSlider,FundIcon,
         DistributionIcon, ChevRightIcon, InputGroup,
-        BorderButton
+        BorderButton,HelpIcon
 
     },
     data(){
@@ -353,6 +354,12 @@ export default {
                     ],
                     icon: SettingsIcon,
                     toggleOffIcon: ChevLeftIcon,
+                },
+                {
+                    to: "/app/help",
+                    label: "Help",
+                    children: [],
+                    icon: HelpIcon,
                 },
                 {
                     to: "#",
