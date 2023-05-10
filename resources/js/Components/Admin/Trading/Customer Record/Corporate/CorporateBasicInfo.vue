@@ -36,10 +36,10 @@ export default{
         <div class="flex justify-between items-center px-5 pb-3 w-full">
             <div class="flex items-center gap-[10px] w-[55%]">
                 <div class="w-[50%]">
-                    <FloatingLabelDropdown :inputLabel="'customer-type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" :options="customerTypes"/>
+                    <FloatingLabelDropdown :inputLabel="'customer-type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" :options="customerTypes" :placeholder="'Select Customer Type'"/>
                 </div>
                 <div class="w-[50%]">
-                    <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="categoryTypes"/>
+                    <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="categoryTypes" :placeholder="'Select Category'"/>
                 </div>
             </div>
             <div class="flex flex-col items-center w-[25%]">
@@ -76,7 +76,7 @@ export default{
                             <FloatingLabelInput :inputLabel="'Present/Permanent Address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'No., Street, Phase/Village/Subdivision'"/>
                         </div>
                         <div class="w-[32%]">
-                            <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                            <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'Select Country'"/>
                         </div>
                     </div>
                     <div class="flex gap-[5px] w-full">
@@ -95,10 +95,10 @@ export default{
                 <div class="flex flex-col gap-y-[15px] w-[50%]">
                     <div class="flex gap-[5px] w-full">
                         <div class="w-[45%]">
-                            <FloatingLabelDropdown :inputLabel="'province state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                            <FloatingLabelDropdown :inputLabel="'province state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'Select Province/State'"/>
                         </div>
                         <div class="w-[35%]">
-                            <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                            <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'Select City/Municipality'"/>
                         </div>
                         <div class="w-[20%]">
                             <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
@@ -130,23 +130,23 @@ export default{
                             <tr class="divide-x divide-gray-200">
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider flex justify-center items-center gap-1">
                                     <!-- <button>

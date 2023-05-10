@@ -50,23 +50,31 @@ export default{
         <form>
             <div class="w-full flex gap-5 mt-5">
                 <div class="w-1/2 ">
-                    <div>
-                    <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
+                    <div class="relative">
+                        <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT REFERENCE NO.'"/>
+                        <div class="absolute top-[3px] right-[3px] z-30">
+                            <SearchIcon/>
+                        </div>
+                    </div>
+                <div>
+                    <div class="relative">
+                        <InputGroup :inputLabel="'COSTUMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT CUSTOMER NAME'"/>
+                        <div class="absolute top-[3px] right-[3px] z-30">
+                            <SearchIcon/>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <InputGroup :inputLabel="'CUSTOMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
-                </div>
-                <div>
-                    <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
+                    <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT BANK'"/>
                 </div>
                 </div>
 
                 <div class="w-1/2 ">
                     <div>
-                        <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions"/>
+                        <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT TRANSACTION TYPE'"/>
                     </div>
                     <div>
-                        <InputGroup :inputLabel="'ACCOUNT NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'"/>
+                        <InputGroup :inputLabel="'ACCOUNT NO'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER ACCOUNT NO.'"/>
                     </div>
                     <div class="flex gap-3">
                         <InputGroup :inputLabel="'Volume'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'number'"/>
@@ -78,8 +86,8 @@ export default{
             <!-- 3rd Content -->
             <div class="flex flex-col">
                 <div class="w-full flex gap-3 ">
-                    <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"/>
-                    <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :placeholder="'ENTER AMOUNT'"/>
+                    <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions" :placeholder="'SELECT TYPE'"/>
 
                     <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
                     <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'number'"/>
@@ -89,7 +97,7 @@ export default{
                     <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-full'" />
                 </div>
                 <div>
-                    <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'"/>
+                    <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'" :placeholder="'DESCRIBE WHY THIS ACTIVITY IS SUSPICIOUS.'"/>
                 </div>
                 <div class="flex justify-center gap-5">
                     <SolidButton :buttonLabel="'Cancel'"/>

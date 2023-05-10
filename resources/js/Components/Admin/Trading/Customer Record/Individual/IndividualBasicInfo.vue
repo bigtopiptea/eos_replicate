@@ -10,7 +10,7 @@ import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 
 export default{
     components:{
-        FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup, 
+        FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput, InputGroup,
         SmallHeading, CountryCodeDropdown, BorderButton, SolidButton
     },
     data(){
@@ -61,7 +61,7 @@ export default{
                         <FloatingLabelInput :inputLabel="'Present/Permanent Address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'No., Street, Phase/Village/Subdivision'"/>
                     </div>
                     <div class="w-[32%]">
-                        <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'SELECT COUNTRY'"/>
                     </div>
                 </div>
                 <div class="flex gap-[5px]">
@@ -72,12 +72,12 @@ export default{
                         <FloatingLabelInput :inputLabel="'place of birth'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                     </div>
                     <div class="w-[20%]">
-                        <FloatingLabelDropdown :inputLabel="'gender'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelDropdown :inputLabel="'gender'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'SELECT GENDER'"/>
                     </div>
                 </div>
                 <div class="flex gap-[5px]">
                     <div class="w-1/3">
-                        <FloatingLabelDropdown :inputLabel="'id type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelDropdown :inputLabel="'id type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Type of ID'"/>
                     </div>
                     <div class="w-1/3">
                         <FloatingLabelInput :inputLabel="'id no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
@@ -100,16 +100,16 @@ export default{
                     <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Province/State'"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Civil Status'"/>
                 </div>
                 <div class="w-full">
                     <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Bank'"/>
                 </div>
             </div>
 
@@ -120,20 +120,20 @@ export default{
                 </div>
                 <div class="flex gap-[5px]">
                     <div class="w-2/3">
-                        <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                        <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select City/Municipality'"/>
                     </div>
                     <div class="w-1/3">
                         <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
                     </div>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelDropdown :inputLabel="'nationality/citizenship'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'nationality/citizenship'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Nationality'"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelInput :inputLabel="'nature of work'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                    <FloatingLabelDropdown :inputLabel="'Source of funds'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select source of funds'"/>
                 </div>
                 <div class="w-full">
-                    <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'"/>
+                    <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :inputType="'number'" :placeholder="'ENTER ACCOUNT NO.'"/>
                 </div>
             </div>
         </div>

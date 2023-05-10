@@ -5,6 +5,7 @@
             {{ inputLabel }}
         </label>
         <select name="payment-type"  class="uppercase h-full p-1 focus:z-10  text-[#3E3E3E] text-left border border-grey-200 focus:border-collapse" :class=[inputWidth,inputColor] >
+                <option value="" class="hidden">{{ placeholder }}</option>
                 <option v-for="(choice,index) in choices" :key="index" value=index >{{choice}}</option>
         </select>
     </div>
@@ -23,10 +24,15 @@ export default{
     },
     inputWidth:{
         type: String,
-        default: '5/12',
+        default: 'w-5/12',
         required: true
     },
     labelWidth:{
+        type: String,
+        default: 'w-7/12',
+        required: true
+    },
+    placeholder:{
         type: String,
         default: '7/12',
         required: true
