@@ -1,7 +1,7 @@
 <!-- OJT -->
 <template>
     <div>
-        <button class="font-medium uppercase whitespace-nowrap tracking-wide hover:text-white shadow-md" :class="[buttonStyle, buttonSize, buttonPadding, buttonHover]">{{ buttonLabel}}</button>
+        <button class="disabled:border-#D9D9D9 disabled:text-#D9D9D9  disabled:hover:bg-transparent font-medium uppercase whitespace-nowrap tracking-wide hover:text-white border-2" :disabled="isDisabled" :class="[buttonBorderColor,buttonTextColor,buttonTextSize, buttonSize, buttonPadding, buttonHover]">{{ buttonLabel}}</button>
     </div>
 </template>
 
@@ -16,9 +16,17 @@ export default{
             type: String,
             default: 'Button'
         },
-        buttonStyle:{
+        buttonBorderColor:{
             type: String,
-            default: 'border-2 border-#F9951E text-#F9951E text-[11px]'
+            default: 'border-#F9951E'
+        },
+        buttonTextColor:{
+            type: String,
+            default: 'text-#F9951E '
+        },
+        buttonTextSize:{
+            type: String,
+            default: 'text-[11px]'
         },
         buttonHover:{
             type: String,
@@ -31,6 +39,10 @@ export default{
         buttonSize:{
             type: String,
             default: 'h-auto w-[120px]'
+        },
+        isDisabled:{
+            type: Boolean,
+            default:false
         }
     }
 }

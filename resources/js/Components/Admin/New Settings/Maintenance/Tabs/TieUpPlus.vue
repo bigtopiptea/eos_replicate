@@ -16,8 +16,8 @@ import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 export default {
     name: 'Maintenance - Banks/Providers',
     components: {
-        NormalButton, SearchIcon, DateInput, FloatingLabelDropdown, 
-        FloatingTextArea, SmallLabelInput, DropDown, Slideover, 
+        NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
+        FloatingTextArea, SmallLabelInput, DropDown, Slideover,
         SolidButton, SwitchToggle
     },
     data() {
@@ -108,15 +108,15 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center gap-[5px]">
@@ -142,14 +142,14 @@ export default {
     <Slideover :show="holdOpen" @close="holdToggle" :title="isHold ? 'HOLD' : 'LIFT HOLD'" :iconShow="isHold ? 'HOLD' : 'LIFT'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
-                <div> 
+                <div>
                     <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
-                <div> 
+                <div>
                     <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
-                <div> 
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                <div>
+                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>
@@ -167,7 +167,7 @@ export default {
                 <div v-else class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[50px]">
                     <p>
                         ARE YOU SURE YOU WANT TO PROCEED?<br>
-                        ONCE <span class="font-semibold">HOLD HAS BEEN LIFTED,</span><br> 
+                        ONCE <span class="font-semibold">HOLD HAS BEEN LIFTED,</span><br>
                         PENDING TRANSACTIONS WILL BE DISTRIBUTED.<br>
                         CLICK ‘CONFIRM’ TO PROCEED.
                     </p>

@@ -17,7 +17,7 @@ export default {
     },
     data() {
         return {
-            PaymentToSuppliers: [],
+            CtrStrReport: [],
             pagination: {
                 current_page: 1,
             },
@@ -45,11 +45,11 @@ export default {
         }
     },
     methods: {
-        async getPaymentToSuppliers() {
+        async getCtrStrReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.PaymentToSuppliers = response.data.data;
+                  this.CtrStrReport = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -73,7 +73,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex justify-between items-center w-[98%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="reportTypeOption"/>
+                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="reportTypeOption" :placeholder="'Select Report type'"/>
                 </div>
                 <div>
                     <BorderButton :buttonLabel="'FILE NEW STR'" :buttonPadding="'p-2'" :buttonSize="'h-[40px] w-[170px]'"/>
@@ -151,7 +151,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        Petnet 
+                                        Petnet
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -199,7 +199,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getPaymentToSuppliers()" :pagination="pagination"
+            <Pagination @paginate="getCtrStrReport()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
     </div>

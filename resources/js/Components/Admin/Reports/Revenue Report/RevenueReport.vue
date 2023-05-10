@@ -67,7 +67,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <FloatingLabelDropdown :inputLabel="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions"/>
+                    <FloatingLabelDropdown :inputLabel="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

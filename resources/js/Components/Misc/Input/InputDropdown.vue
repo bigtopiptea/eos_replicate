@@ -34,8 +34,7 @@ export default{
     },
     placeholder:{
         type: String,
-        default: '',
-        required: true
+        required: false
     },
     choices:{
         type: Array,

@@ -33,7 +33,7 @@ export default{
             </div>
             <div class="flex justify-center w-full ">
                 <div class="w-1/4">
-                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="myOptions"/>
+                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="myOptions" :placeholder="'SELECT REPORT TYPE'"/>
                 </div>
             </div>
             <div class="flex gap-5">
