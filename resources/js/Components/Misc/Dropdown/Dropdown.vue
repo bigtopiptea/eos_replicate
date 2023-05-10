@@ -32,11 +32,11 @@ const isShow = ref(false);
         </div>
 
         <div v-if="isShow"
-            class="absolute z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            class="absolute z-10 mt-2 w-full origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div v-for="(option, index) in options" :key="index" class="py-1" role="none">
+            <div v-for="(option, index) in options" :key="index" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a  href="#" class="uppercase text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1"
+                <a  href="#" class="uppercase text-gray-700 block px-2 py-2 text-[11px] border-b border-gray-300" role="menuitem" tabindex="-1"
                     id="menu-item-0">{{option}}</a>
             </div>
         </div>

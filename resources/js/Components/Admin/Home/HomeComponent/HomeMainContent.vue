@@ -1,5 +1,5 @@
 <template>
-    <div class="3xl:container h-auto p-3 bg-white">
+    <div class="3xl:container h-screen p-3 bg-white">
         <div>
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
                <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
@@ -36,8 +36,8 @@
                 <p class="text-xs text-left font-medium">USD to PHP</p>
             </div>
         </div>
-        <div class="flex justify-between w-full h-4/6 my-5">
-            <div class="h-[400px] overflow-y-auto">
+        <div class="flex justify-between gap-[15px] w-full h-auto my-5">
+            <div class="h-auto overflow-y-auto">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
@@ -56,7 +56,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="h-[400px] overflow-y-auto">
+            <div class="h-auto overflow-y-auto">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
@@ -75,7 +75,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="h-[400px]  overflow-y-auto">
+            <div class="h-auto  overflow-y-auto">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>

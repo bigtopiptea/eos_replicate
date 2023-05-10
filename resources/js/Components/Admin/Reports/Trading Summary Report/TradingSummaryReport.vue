@@ -59,7 +59,7 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col gap-[20px] h-screen pb-10 px-5">
+        <div class="flex flex-col gap-[20px] h-auto pb-10 px-5">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">

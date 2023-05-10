@@ -112,7 +112,7 @@ export default{
                                         class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
                                         1
                                     </td>
-                                    <td lass="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1   tracking-wider">
                                         8,928.57
                                     </td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">

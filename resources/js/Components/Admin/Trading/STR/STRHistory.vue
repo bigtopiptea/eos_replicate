@@ -17,7 +17,7 @@ import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 
-export default{
+export default {
 
     name:'Tie Up To Oeri',
 
@@ -84,10 +84,10 @@ export default{
 <template>
     <div class="flex flex-col justify-between h-full w-auto m-3">
         <div>
-            <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
-                <div class="flex items-start justify-between h-auto min-w-full -mx-10">
+            <div class="inline-block min-w-full align-middle">
+                <div class="flex items-end justify-between h-auto min-w-full px-[5px]">
                     <div class="flex justify-end flex-col space-x-3">
-                        <div class="flex items-end left-side-col-1 ">
+                        <div class="flex items-end gap-[10px] left-side-col-1 ">
                             <div>
                                 <DateInput label="Start Date" />
                             </div>
@@ -96,7 +96,7 @@ export default{
                             </div>
                             <div>
                                 <NormalButton label="Filter"
-                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] ml-3  tracking-wider text-[10px]  text-white" />
+                                class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px]  text-white" />
                             </div>
                         </div>
                     </div>
@@ -113,12 +113,12 @@ export default{
                             <NormalButton label="Go"
                             class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px]  text-white mr-3" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px]  text-white" />
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="overflow-hidden sm:-mx-6 lg:-mx-8">
+            <div class="overflow-hidden sm:-mx-6 lg:-mx-8 mt-3">
                 <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1">
                         <table class="min-w-full divide-y divide-gray-300">
@@ -184,12 +184,6 @@ export default{
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
                                         5,490,090.06
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1  tracking-wider">
-                                        <div class="flex justify-center">
-
-                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

@@ -28,7 +28,7 @@ export default {
                 'SOPHIA',
             ],
             userType:[
-                'ALL1 USERS',
+                'ALL USERS',
                 'ALFARO, LECEL PEREZ',
                 'ASIS, GINALYN IBARRA',
                 'BANARIA, JEFFRET CLEDORIO',
@@ -37,6 +37,17 @@ export default {
                 'DUPAYA, JOEREN TITO VIERNES',
                 'LEMITA, ANGELOU CRUZ',
                 'RANOLA, SHEILA MARIE'                    
+            ],
+            logType:[
+                'ALL LOG TYPES',
+                'LOGIN',
+                'PROCESS',
+                'VERIFY',
+                'APPROVE',
+                'AMMENDMENT',
+                'CHANGE / UPDATE',
+                'TRADING: BUY',
+                'TRADING: SELL',                  
             ],
         }
     },
@@ -77,7 +88,7 @@ export default {
                         <DropdownCheckbox :label="'USER'" :placeholder="'SELECT USER(S)'" :options="userType"/>
                     </div>
                     <div class="w-[35%]">
-                        <DropdownCheckbox :label="'LOG TYPE'" :placeholder="'SELECT TYPE OF LOGS'" :options="userType"/>
+                        <DropdownCheckbox :label="'LOG TYPE'" :placeholder="'SELECT TYPE OF LOGS'" :options="logType"/>
                     </div>
                 </div>
                 <div>

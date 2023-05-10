@@ -12,13 +12,12 @@ import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
-import DropdownCheckbox from "../../../../Misc/Dropdown/DropdownCheckbox.vue";
 export default {
     name: 'Maintenance - Tie Ups',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown, 
         FloatingTextArea, SmallLabelInput, DropDown, Slideover, 
-        SolidButton, SwitchToggle, DropdownCheckbox
+        SolidButton, SwitchToggle
     },
     data() {
         return {
@@ -113,11 +112,8 @@ export default {
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center gap-[5px]">
-                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
+                                        <button @click="(holdOpen = !holdOpen)">
                                             <img src="../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
-                                        </button>
-                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
-                                            <img src="../../../../../../assets/images/LiftHoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
                                         <SwitchToggle
                                             :status="true"
@@ -132,23 +128,22 @@ export default {
             </div>
         </div>
     </div>
-    <DropdownCheckbox/>
 
-    <Slideover :show="holdOpen" @close="holdToggle" :title="isHold ? 'HOLD' : 'LIFT HOLD'" :iconShow="isHold ? 'HOLD' : 'LIFT'" >
+    <Slideover :show="holdOpen" @close="holdToggle" :title="'HOLD'" :iconShow="'HOLD'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div> 
                     <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
                 <div> 
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASOn'"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>
                 </div>
             </div>
             <div class="flex flex-col gap-[80px]">
-                <div v-if="isHold === true" class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
+                <div class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
                     <p>
                         ARE YOU SURE YOU WANT TO PROCEED? <br>
                         DISTRIBUTION OF TRANSACTION <br>
@@ -156,17 +151,9 @@ export default {
                         CLICK ‘CONFIRM’ TO PROCEED.
                     </p>
                 </div>
-                <div v-else class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[50px]">
-                    <p>
-                        ARE YOU SURE YOU WANT TO PROCEED?<br>
-                        ONCE <span class="font-semibold">HOLD HAS BEEN LIFTED,</span><br> 
-                        PENDING TRANSACTIONS WILL BE DISTRIBUTED.<br>
-                        CLICK ‘CONFIRM’ TO PROCEED.
-                    </p>
-                </div>
                 <div class="flex justify-center gap-[100px] pb-[20px">
                     <SolidButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>
         </div>
