@@ -18,6 +18,7 @@ import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
 import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
+import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 
 export default {
 
@@ -37,7 +38,8 @@ export default {
         InputGroup,
         SmallLabelInput,
         InputTextarea,
-        SolidButton
+        SolidButton,
+        BorderButton
     },
 
     data() {
@@ -236,7 +238,7 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center">
-                <SolidButton @click="(viewDetailsOpen = !viewDetailsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="(viewDetailsOpen = !viewDetailsOpen)" :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -291,7 +293,7 @@ export default {
 
             </div>
             <div class="flex justify-center">
-                <SolidButton @click="(viewDocumentsOpen = !viewDocumentsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="(viewDocumentsOpen = !viewDocumentsOpen)"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -312,8 +314,8 @@ export default {
             <div class="flex flex-col justify-between text-center mx-10">
                 <h5 class="uppercase text-[15px] px-10">Are you sure you want to verify this transaction?</h5>
                 <div class="flex justify-between mt-7">
-                    <SolidButton @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" :buttonLabel="'DECLINE'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'VERIFY'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <BorderButton @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)"  :buttonLabel="'DECLINE'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                    <BorderButton :buttonLabel="'VERIFY'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
                 </div>
             </div>
         </div>

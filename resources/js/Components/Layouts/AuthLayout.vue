@@ -148,7 +148,7 @@ export default {
                     icon: StatusReversalIcon,
                 },
                 {
-                    to: "/app/reports/cash-position-report",
+                    to: "/app/reports/transaction-report",
                     label: "Reports",
                     icon: ReportIcon,
                     toggleOffIcon: ChevLeftIcon,
@@ -156,6 +156,12 @@ export default {
                         {
                             to: "/app/reports/transaction-report",
                             label: "Transaction",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/cash-positon-report",
+                            label: "Cash Position",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -606,7 +612,7 @@ export default {
             <div class="input-area mx-10">
                 <div class="profile-upload flex justify-evenly items-center">
                     <img src="../../../assets/images/user-logo.png" alt="user-logo" class="w-36 h-36 rounded-full">
-                    <BorderButton @click="(profileSlideoverOpen = !profileSlideoverOpen)"  @click.prevent="slideOverToggle()" :buttonLabel="'UPLOAD'" :buttonSize="'h-auto w-[100px]'" :buttonPadding="'px-3 py-1'"/>
+                    <BorderButton @click="(profileSlideoverOpen = !profileSlideoverOpen)"  @click.prevent="slideOverToggle()"  :buttonLabel="'UPLOAD'" :buttonSize="'h-auto w-[100px]'" :buttonPadding="'px-3 py-1'"/>
                 </div>
                 <div class="flex flex-col gap-3 mt-5">
                     <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
@@ -619,7 +625,7 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center">
-                <BorderButton @click.prevent="slideOverToggle()" :buttonLabel="'CLOSE'" :buttonSize="'h-auto w-[120px]'" :buttonPadding="'p-2'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[15px]'" :buttonHover="'hover:bg-[#3E3E3E]'"/>
+                <BorderButton @click.prevent="slideOverToggle()" :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -631,7 +637,7 @@ export default {
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
                     <div class=" text-center mb-5">
                         <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
-                        <button type="button" class="text-sm text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C hover:text-white hover:bg-#EE3E2C">BROWSE</button>
+                        <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
                     </div>
                     <div class="text-center text-[10px]">
                         <p>MAX FILE SIZE: <span class="font-bold">1MB</span><br>
@@ -669,8 +675,8 @@ export default {
                 </div>
             </div>
             <div class="flex justify-between w-4/5">
-                <buttton @click.prevent="profileSlideOverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</buttton>
-                <buttton type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer" @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()">SAVE</buttton>
+                <BorderButton @click.prevent="profileSlideOverToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="(adjustProfileSlideoverOpen = !adjustProfileSlideoverOpen)" @click.prevent="profileSlideOverToggle()" :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
@@ -693,8 +699,8 @@ export default {
             </div>
 
             <div class="flex justify-between w-4/5">
-                <button @click.prevent="adjustProfileSlideoverToggle()" type="submit" class="px-8 py-2 bg-#3E3E3E text-white text-[17px] cursor-pointer">CANCEL</button>
-                <button type="submit" class="px-11 py-2 bg-#F9951E text-white text-[17px] cursor-pointer">SAVE</button>
+                <BorderButton @click.prevent="adjustProfileSlideoverToggle()"  :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

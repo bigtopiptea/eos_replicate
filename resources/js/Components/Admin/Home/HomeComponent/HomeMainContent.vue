@@ -1,35 +1,35 @@
 <template>
-    <div class="3xl:container h-screen p-3 bg-white">
+    <div class="3xl:container h-screen p-3 bg-white w-full">
         <div>
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
                <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
             </p>
         </div>
-        <div class="flex justify-between mt-3 pb-5  border-b-2 border-solid border-#EAEAEA">
+        <div class="flex justify-between mt-3 pb-5  border-b-2 border-[#EAEAEA]">
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.01</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">49.99</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">50.02</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
                 <h3 class="text-xl font-bold">49.98</h3>
-                <p class="text-5xs text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-6xs font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
+                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
             </div>
             <div class="h-24 w-40 px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
                 <img src="../../../../../assets/images/usd_to_php_graph.png" alt="graph-image"/>
