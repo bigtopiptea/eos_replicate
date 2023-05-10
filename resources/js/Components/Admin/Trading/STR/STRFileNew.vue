@@ -50,9 +50,9 @@ export default{
             </form>
         </div>
         <!-- 2nd Content -->
-        <form>
+        <form class="flex flex-col gap-3">
             <div class="w-full flex gap-5 mt-5">
-                <div class="w-1/2 ">
+                <div class="flex flex-col gap-3 w-1/2 ">
                     <div class="relative">
                         <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT REFERENCE NO.'"/>
                         <div class="absolute top-[3px] right-[3px] z-30">
