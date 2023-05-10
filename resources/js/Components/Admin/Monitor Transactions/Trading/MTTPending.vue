@@ -247,7 +247,7 @@ export default {
                 <BorderButton :buttonLabel="'ATTACH DOCUMENTS'" :buttonSize="'h-auto w-auto'" :buttonPadding="'px-3 py-1'"/>
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDocumentsOpen = !viewDocumentsOpen)" type="submit" class="py-1 px-5 text-[17px]  bg-#3E3E3E text-white">CLOSE</button>
+                <BorderButton @click="(viewDocumentsOpen = !viewDocumentsOpen)"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

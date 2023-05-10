@@ -18,6 +18,7 @@ import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import SmallLabelInput from "@/Components/Misc/Input/SmallLabelInput.vue";
 import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue";
+import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 
 export default {
 
@@ -36,7 +37,8 @@ export default {
         PaperClipIcon,
         InputGroup,
         SmallLabelInput,
-        InputTextarea
+        InputTextarea,
+        BorderButton
     },
 
     data() {
@@ -201,7 +203,7 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center">
-                <button @click="(viewDetailsOpen = !viewDetailsOpen)" type="submit" class="py-1 px-5 text-[17px] font-medium bg-#3E3E3E text-white">CLOSE</button>
+                <BorderButton @click="(viewDetailsOpen = !viewDetailsOpen)"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

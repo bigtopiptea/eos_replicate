@@ -84,9 +84,9 @@ export default{
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
                 <router-link to="/app/funding" >
-                    <SolidButton :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
+                    <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
                 </router-link>
-                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#F9951E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </div>

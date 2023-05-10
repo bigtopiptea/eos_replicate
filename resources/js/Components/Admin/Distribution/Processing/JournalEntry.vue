@@ -1,9 +1,9 @@
 <script>
 import SettingsInput from '@/Components/Misc/Input/SettingsInput.vue';
-
+import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 export default{
     components:{
-        SettingsInput,
+        SettingsInput, BorderButton
 
     }
 }
@@ -82,8 +82,8 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto my-5">
-                <button class=" uppercase py-2 px-10 m-2 bg-#3E3E3E text-white font-sans font-normal text-[17px]">CANCEL</button>
-                <button class=" uppercase py-2 px-10 m-2 bg-dark-orange text-white font-sans font-normal text-[17px]">SUBMIT</button>
+                <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </div>

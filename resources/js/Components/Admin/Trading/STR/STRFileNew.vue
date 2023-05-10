@@ -47,29 +47,29 @@ export default{
             </form>
         </div>
         <!-- 2nd Content -->
-        <form>
+        <form class="flex flex-col gap-3">
             <div class="w-full flex gap-5 mt-5">
-                <div class="w-1/2 ">
+                <div class="flex flex-col gap-3 w-1/2 ">
                     <div class="relative">
                         <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT REFERENCE NO.'"/>
                         <div class="absolute top-[3px] right-[3px] z-30">
                             <SearchIcon/>
                         </div>
                     </div>
-                <div>
-                    <div class="relative">
-                        <InputGroup :inputLabel="'COSTUMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT CUSTOMER NAME'"/>
-                        <div class="absolute top-[3px] right-[3px] z-30">
-                            <SearchIcon/>
+                    <div>
+                        <div class="relative">
+                            <InputGroup :inputLabel="'COSTUMER NAME'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT CUSTOMER NAME'"/>
+                            <div class="absolute top-[3px] right-[3px] z-30">
+                                <SearchIcon/>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT BANK'"/>
-                </div>
+                    <div>
+                        <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT BANK'"/>
+                    </div>
                 </div>
 
-                <div class="w-1/2 ">
+                <div class="flex flex-col gap-3 w-1/2 ">
                     <div>
                         <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT TRANSACTION TYPE'"/>
                     </div>
@@ -84,7 +84,7 @@ export default{
                 </div>
             </div>
             <!-- 3rd Content -->
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-3">
                 <div class="w-full flex gap-3 ">
                     <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :placeholder="'ENTER AMOUNT'"/>
                     <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions" :placeholder="'SELECT TYPE'"/>
@@ -92,8 +92,10 @@ export default{
                     <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
                     <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'number'"/>
                 </div>
-                <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
-                <div class="w-full my-3">
+                <div> 
+                    <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
+                </div>
+                <div class="w-full">
                     <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-full'" />
                 </div>
                 <div>
