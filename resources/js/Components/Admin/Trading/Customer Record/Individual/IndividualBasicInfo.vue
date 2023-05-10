@@ -143,10 +143,10 @@ export default{
             <InputGroup :inputLabel="'EXPECTED VOLUME/AMOUNT'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
         </div>
         <!-- Buttons -->
-        <div class="flex justify-center gap-x-[30px]">
-            <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'" :buttonHover="'hover:bg-#EE3E2C'"/>
-            <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonHover="'hover:bg-#3E3E3E'"/>
-            <SolidButton :buttonLabel="'NEXT'" :isDisabled="true"/>
+        <div class="flex justify-center align-center gap-x-[30px]">
+            <BorderButton :buttonLabel="'save as draft'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'"  :buttonHover="'hover:bg-#EE3E2C'"/>
+            <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
+            <BorderButton :buttonLabel="'Next'" :isDisabled="true"/>
         </div>
     </div>
 </template>

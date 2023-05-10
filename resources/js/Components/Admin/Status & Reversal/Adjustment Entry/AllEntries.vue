@@ -3,6 +3,8 @@ import DateInput from '@/Components/Misc/Input/DateInput.vue';
 import NormalButton from '@/Components/Misc/Buttons/NormalButton.vue';
 import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
+
 
 export default{
     components:{
@@ -10,7 +12,7 @@ export default{
         NormalButton,
         SearchIcon,
         SolidButton,
-
+        BorderButton,
     },
 
     data() {
@@ -34,7 +36,7 @@ export default{
         <div class=" border border-red-500 px-8 pt-5">
             <div class="flex justify-between">
                 <div class="flex justify-start flex-col ">
-                    <div class="flex items-end left-side-col-1">
+                    <div class="flex items-end gap-3">
                         <div>
                             <DateInput label="Start Date" />
                         </div>
@@ -43,12 +45,12 @@ export default{
                         </div>
                         <div>
                             <NormalButton label="Filter"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4  tracking-wider text-[10px]  text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px]  text-white" />
                         </div>
                     </div>
                 </div>
                 <div class="right-side flex ">
-                    <form class="flex items-start">
+                    <form class="flex items-start gap-3">
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <SearchIcon />
@@ -60,7 +62,7 @@ export default{
                         <NormalButton label="Go"
                         class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px]  text-white" />
                         <NormalButton label="Export"
-                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-2 mr-3 tracking-wider text-[10px]  text-white" />
+                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px]  text-white" />
                     </form>
                 </div>
             </div>
@@ -186,7 +188,7 @@ export default{
             </div>
             <div class="flex justify-center my-10">
                 <router-link to="/app/status-reversal/adjustment-entry">
-                    <SolidButton :buttonLabel="'Back'" />
+                    <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
                 </router-link>
             </div>
         </div>

@@ -153,8 +153,8 @@ export default{
         </div>
         <!-- 3rd Content -->
         <div class="flex justify-center gap-5">
-            <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
-            <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-[#EE3E2C] text-[#EE3E2C] text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
+            <BorderButton :buttonLabel="'Reset'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
+            <BorderButton :buttonLabel="'Pass Entry'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-#EE3E2C'"/>
         </div>
     </div>
 </template>

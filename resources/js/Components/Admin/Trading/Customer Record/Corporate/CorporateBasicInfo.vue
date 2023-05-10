@@ -213,16 +213,16 @@ export default{
         </div>
 
         <!-- Form row 3 -->
-        <form class="flex flex-col gap-3 my-[30px] px-5 w-[35%]">
+        <form class="flex flex-col gap-3 my-[30px] px-5 w-[40%]">
             <InputGroup :inputLabel="'EXPECTED FREQUENCY'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
             <InputGroup :inputLabel="'EXPECTED VOLUME/AMOUNT'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
         </form>
 
         <!-- Buttons -->
         <div class="flex justify-center gap-x-[30px]">
-            <BorderButton :buttonLabel="'save as draft'" :buttonStyle="'border-2 border-#EE3E2C text-#EE3E2C text-[11px]'" :buttonHover="'hover:bg-#EE3E2C'"/>
-            <BorderButton :buttonLabel="'cancel'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonHover="'hover:bg-#3E3E3E'"/>
-            <SolidButton :buttonLabel="'NEXT'" :isDisabled="true"/>
+            <BorderButton :buttonLabel="'save as draft'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'"  :buttonHover="'hover:bg-#EE3E2C'"/>
+            <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
+            <BorderButton :buttonLabel="'Next'" :isDisabled="true"/>
         </div>
     </div>
 </template>

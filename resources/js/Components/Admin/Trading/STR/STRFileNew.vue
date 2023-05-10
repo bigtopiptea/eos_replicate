@@ -6,6 +6,8 @@ import InputDropdown from '../../../Misc/Input/InputDropdown.vue';
 import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
 import FloatingTextArea from '../../../Misc/Input/FloatingTextArea.vue';
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
+
 export default{
 
     components:{
@@ -16,6 +18,7 @@ export default{
         FloatingLabelInput,
         FloatingTextArea,
         SolidButton,
+        BorderButton,
 
 
 
@@ -48,7 +51,7 @@ export default{
         </div>
         <!-- 2nd Content -->
         <form>
-            <div class="w-full flex gap-5 mt-5">
+            <div class="w-full flex gap-y-3 gap-x-5 mt-5">
                 <div class="w-1/2 ">
                     <div class="relative">
                         <InputGroup :inputLabel="'REFERENCE NO.'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER/SELECT REFERENCE NO.'"/>
@@ -100,8 +103,8 @@ export default{
                     <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'" :placeholder="'DESCRIBE WHY THIS ACTIVITY IS SUSPICIOUS.'"/>
                 </div>
                 <div class="flex justify-center gap-5">
-                    <SolidButton :buttonLabel="'Cancel'"/>
-                    <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-#F9951E'"/>
+                    <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
+                    <BorderButton :buttonLabel="'Submit'" :isDisabled="true"/>
                 </div>
             </div>
         </form>

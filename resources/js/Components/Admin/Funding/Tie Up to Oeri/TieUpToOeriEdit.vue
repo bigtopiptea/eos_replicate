@@ -56,8 +56,8 @@ export default{
           </form>
           <!-- Buttons -->
           <div class="flex gap-[15px] justify-center mt-3">
-              <BorderButton :buttonLabel="'Reset'" :buttonStyle="'border-2 border-black text-black text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
-              <BorderButton :buttonLabel="'Pass Entry'" :buttonStyle="'border-2 border-red-500 text-red-500 text-[11px]'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-red-500'"/>
+                <BorderButton :buttonLabel="'Reset'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
+                <BorderButton :buttonLabel="'Pass Entry'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-#EE3E2C'"/>
           </div>
         </div>
         <!-- Accordion -->
