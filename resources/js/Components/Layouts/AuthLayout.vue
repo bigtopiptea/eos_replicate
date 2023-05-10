@@ -154,8 +154,8 @@ export default {
                     toggleOffIcon: ChevLeftIcon,
                     children: [
                         {
-                            to: "/app/reports/cash-position-report",
-                            label: "Cash Position",
+                            to: "/app/reports/transaction-report",
+                            label: "Transaction",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -608,7 +608,7 @@ export default {
                     <img src="../../../assets/images/user-logo.png" alt="user-logo" class="w-36 h-36 rounded-full">
                     <BorderButton @click="(profileSlideoverOpen = !profileSlideoverOpen)"  @click.prevent="slideOverToggle()" :buttonLabel="'UPLOAD'" :buttonSize="'h-auto w-[100px]'" :buttonPadding="'px-3 py-1'"/>
                 </div>
-                <div class="mt-5">
+                <div class="flex flex-col gap-3 mt-5">
                     <InputGroup :inputType="'text'" :inputLabel="'complete name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputType="'text'" :inputLabel="'user role'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputType="'text'" :inputLabel="'company'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>

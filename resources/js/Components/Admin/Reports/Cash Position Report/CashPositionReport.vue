@@ -57,7 +57,7 @@ export default {
 </script>
 <template>
     <div class="container h-auto bg-white">
-        <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
+        <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
                     <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
@@ -113,7 +113,7 @@ export default {
                 </div>
             </div>
             <!-- TABLE -->
-            <div class="overflow-hidden w-full">
+            <div class="overflow-hidden w-full px-3">
                 <div class="inline-block min-w-full  align-middle ">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">

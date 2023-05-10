@@ -84,7 +84,7 @@ export default {
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full ">
                 <form class="flex justify-between p-3 ">
-                    <div class="flex flex-col w-8/12 mr-3 h-auto pt-3">
+                    <div class="flex flex-col gap-3 w-8/12 mr-3 h-auto pt-3">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
                                 <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />
@@ -105,7 +105,7 @@ export default {
                             <FloatingTextArea :label="'Remarks'" :inputHeight="'h-16 overflow-y-hidden'"/>
                         </div>
                     </div >
-                    <div class="px-3 uppercase w-4/12">
+                    <div class="flex flex-col gap-3 px-3 uppercase w-4/12">
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Reference Number '"  :isDisabled="true"/>
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Bank total Fund'"  :isDisabled="true"/>
                         <InputGroup :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputLabel="'Tie-Up Total Unallocated'"  :isDisabled="true"/>

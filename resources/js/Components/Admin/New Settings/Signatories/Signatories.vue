@@ -212,7 +212,7 @@ export default {
                         <FloatingLabelInput :inputLabel="'middle name'"  :inputWidth="'w-12/12'"/>
                     </div>
                 </div>
-                <div class="-mb-4"> 
+                <div> 
                     <SmallLabelInput :inputLabel="'signatory name'"  :inputWidth="'w-12/12'" :isDisabled="true"/>
                 </div>
                 <div> 

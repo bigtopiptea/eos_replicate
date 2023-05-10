@@ -27,7 +27,7 @@ export default{
         <div>
           <!-- Form -->
           <form class="flex justify-between items-end h-[225px]">
-            <div class="w-[35%]">
+            <div class="flex flex-col gap-3 w-[35%]">
                 <InputGroup :inputLabel="'total txn. amt'" :labelWidth="'w-4/12'" :inputWidth="'w-4/12'" :isDisabled="true"/>
                 <InputGroup :inputLabel="'outstanding amt.'" :labelWidth="'w-4/12'" :inputWidth="'w-4/12'" :isDisabled="true"/>
               <div>
@@ -37,7 +37,7 @@ export default{
                 <InputGroup :inputLabel="'filename'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :isDisabled="true"/>
               </div>
             </div>
-            <div class="w-[28%]">
+            <div class="flex flex-col gap-3 w-[28%]">
               <InputGroup :inputLabel="'commited rate'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
               <InputGroup :inputLabel="'amount to debit'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
               <InputGroup :inputLabel="'peso transactions'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12 '" :isDisabled="true"/>
@@ -47,7 +47,7 @@ export default{
               <div>
                 <InputGroup :inputLabel="'reference number'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
               </div>
-              <div>
+              <div class="flex flex-col gap-3">
                 <InputGroup :inputLabel="'peso value'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
                 <InputGroup :inputLabel="'peso value'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>
                 <InputGroup :inputLabel="'peso value'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :isDisabled="true"/>

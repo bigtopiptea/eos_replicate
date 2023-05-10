@@ -13,9 +13,6 @@ export default{
         InputDropDown,
         Accordion,
         JournalEntry,
-
-
-
     },
     data(){
         return{
@@ -31,29 +28,29 @@ export default{
 <template>
     <div class="h-auto w-full bg-white">
         <!-- 1st Content -->
-        <form class="flex justify-between w-full p-5 px-8">
-            <div class="flex flex-col w-[75%]">
-                <div class="flex gap-5 w-[35%]">
-                    <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
-                </div>
-                <div class="flex gap-5 w-full ">
-                    <div class="w-[35%]">
+        <form class="flex justify-between gap-5 w-full p-5 px-8">
+            <div class="flex items-end gap-3 w-[75%]">
+                <div class="flex flex-col gap-3 w-[40%]">
+                    <div class="w-full">
+                        <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
+                    </div>
+                    <div class="w-full">
                         <InputDropDown :inputLabel="'USD From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                     </div>
-                    <div class="flex ">
-                        <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'" :buttonPadding="'px-2 py-1'"/>
-                    </div>
-                </div>
-                <div class="flex gap-5 w-full">
-                    <div class="w-[35%]">
+                    <div class="w-full">
                         <InputGroup :inputLabel="'Traded AMT (USD)'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'" :inputType="'number'"/>
                     </div>
+                </div>
+                <div class="flex flex-col gap-3 w-[25%]">
                     <div>
-                        <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'" :inputType="'number'"/>
+                        <BorderButton :buttonLabel="'Attach Documents'" :buttonSize="'w-[140px] h-auto p-1'" :buttonPadding="'px-2 py-1'"/>
                     </div>
                     <div>
-                        <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
+                        <InputGroup :inputLabel="'Traded Rate'" :inputWidth="'w-5/12'" :labelWidth="'w-7/12'" :inputColor="'bg-white'" :inputType="'number'"/>
                     </div>
+                </div>
+                <div class="w-[35%]">
+                    <InputGroup :inputLabel="'Traded Peso Value'" :inputWidth="'w-5/12'" :labelWidth="'w-7/12'"  :isDisabled="true"/>
                 </div>
             </div>
             <div class="flex w-[25%] justify-end">
@@ -67,7 +64,7 @@ export default{
 
         <!-- 2n Content -->
         <form class="flex justify-between items-center w-full p-5 px-8 gap-3">
-            <div class="flex flex-col w-full">
+            <div class="flex flex-col gap-3 w-full">
                 <div>
                     <InputDropDown :inputLabel="'Type of Transaction'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>
@@ -78,7 +75,7 @@ export default{
                     <InputDropDown :inputLabel="'Client/Company'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>
             </div>
-            <div class="flex flex-col w-full">
+            <div class="flex flex-col gap-3 w-full">
                 <div>
                     <InputDropDown :inputLabel="'Account Name'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>
@@ -89,7 +86,7 @@ export default{
                     <InputDropDown :inputLabel="'Source of Funds'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>
             </div>
-            <div class="flex flex-col w-full ">
+            <div class="flex flex-col gap-3 w-full ">
                 <div>
                     <InputDropDown :inputLabel="'Purpose/Reason'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
                 </div>

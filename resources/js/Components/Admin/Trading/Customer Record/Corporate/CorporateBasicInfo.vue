@@ -42,7 +42,7 @@ export default{
                     <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="categoryTypes" :placeholder="'Select Category'"/>
                 </div>
             </div>
-            <div class="flex flex-col items-center w-[25%]">
+            <div class="flex flex-col gap-3 w-[25%]">
                 <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                 <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
             </div>
@@ -213,7 +213,7 @@ export default{
         </div>
 
         <!-- Form row 3 -->
-        <form class="my-[30px] px-5 w-[35%]">
+        <form class="flex flex-col gap-3 my-[30px] px-5 w-[35%]">
             <InputGroup :inputLabel="'EXPECTED FREQUENCY'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
             <InputGroup :inputLabel="'EXPECTED VOLUME/AMOUNT'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
         </form>

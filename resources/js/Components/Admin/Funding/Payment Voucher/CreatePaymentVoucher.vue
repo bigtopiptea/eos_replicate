@@ -28,7 +28,7 @@ export default {
     <div class="px-5">
         <!-- FORM -->
         <div class="w-full">
-            <form class="w-[400px]">
+            <form class="flex flex-col gap-3 w-[400px]">
                 <InputGroup :inputLabel="'VOUCHER DATE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :isDisabled="true"/>
                 <InputDropdown :inputLabel="'PAYMENT TYPE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
                 <InputDropdown :inputLabel="'BANK ACCOUNT'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>

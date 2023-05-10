@@ -1,6 +1,6 @@
 <template>
     <!-- OJT -->
-    <div class="flex flex-col font-light w-full h-auto mb-4 whitespace-nowrap text-[10px]">
+    <div class="flex flex-col font-light w-full h-auto whitespace-nowrap text-[10px]">
         <label for="name" class="uppercase inline-flex items-center h-auto px-2"  :class="[labelWidth,labelTextSize]">
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>

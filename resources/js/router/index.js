@@ -39,6 +39,7 @@ import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableIn
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
 import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
 import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
+import TransactionReport from "@/Components/Admin/Reports/Transaction Report/TransactionReport.vue";
 import CashPositionReport from "@/Components/Admin/Reports/Cash Position Report/CashPositionReport.vue";
 import TradingSummaryReport from "@/Components/Admin/Reports/Trading Summary Report/TradingSummaryReport.vue";
 import PaymentToSuppliers from "@/Components/Admin/Reports/Payment to Suppliers/PaymentToSuppliers.vue";
@@ -390,6 +391,15 @@ const routes = [
 
             },
             // VDQ - OJT (5/2)
+            {
+                path: "/app/reports/transaction-report",
+                name: "transaction report",
+                component: TransactionReport,
+                meta: {
+                    title: `Transaction Report`,
+                    ability: `Transaction Report`,
+                },
+            },
             {
                 path: "/app/reports/cash-position-report",
                 name: "cash position report",

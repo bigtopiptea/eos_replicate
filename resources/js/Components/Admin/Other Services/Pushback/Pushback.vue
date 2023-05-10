@@ -56,7 +56,7 @@ export default{
             <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] my-5"/>
 
             <div class=" h-auto w-full px-5 pt-8">
-                <form class="w-4/12">
+                <form class="flex flex-col gap-3 w-4/12">
                     <div v-for="label in labels" :key="label.label">
                         <InputGroup :inputLabel="label.label" :inputWidth="'w-1/2'" :labelWidth="'w-1/2'" :isDisabled="true"/>
                     </div>

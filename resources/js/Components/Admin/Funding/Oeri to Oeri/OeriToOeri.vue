@@ -65,7 +65,7 @@ export default {
         <Tab :isSelected="selected === 'Pending'" >
             <div class="h-auto w-full">
                 <form class="flex justify-between p-3 mb-3">
-                    <div class="flex flex-col pt-3 w-8/12 mr-3 h-auto">
+                    <div class="flex flex-col gap-3 pt-3 w-8/12 mr-3 h-auto">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
                                 <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />

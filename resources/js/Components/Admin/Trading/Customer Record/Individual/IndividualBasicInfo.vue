@@ -24,7 +24,7 @@ export default{
     <div class="my-5">
         <!-- Form Row 1 -->
         <div class="flex justify-between items-center px-5 pb-3 w-full">
-            <div class="flex items-center gap-[10px] w-[55%]">
+            <div class="flex items-end gap-[10px] w-[55%]">
                 <div class="w-[50%]">
                     <SmallLabelInput :inputLabel="'customer type'" :isRequired="true" :isDisabled="true"/>
                 </div>
@@ -32,7 +32,7 @@ export default{
                     <FloatingLabelDropdown :inputLabel="'category'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :options="categoryTypes"/>
                 </div>
             </div>
-            <div class="flex flex-col items-center w-[25%]">
+            <div class="flex flex-col gap-3 items-center w-[25%]">
                 <InputGroup :inputLabel="'customer id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                 <InputGroup :inputLabel="'status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
             </div>
@@ -138,7 +138,7 @@ export default{
             </div>
         </div>
         <!-- Form row 3 -->
-        <div class="mt-[60px] mb-[30px] px-5 w-[35%]">
+        <div class="flex flex-col gap-3 mt-[60px] mb-[30px] px-5 w-[35%]">
             <InputGroup :inputLabel="'EXPECTED FREQUENCY'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
             <InputGroup :inputLabel="'EXPECTED VOLUME/AMOUNT'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :inputColor="'bg-white'"/>
         </div>

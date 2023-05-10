@@ -142,7 +142,7 @@ export default{
                     </table>
                 </div>
             </div>
-            <form class="flex justify-start mt-3  gap-3">
+            <form class="flex justify-start my-3 gap-3">
                 <div class="w-[39.4%]">
                     <InputGroup :inputLabel="'Committed Rate'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
                 </div>

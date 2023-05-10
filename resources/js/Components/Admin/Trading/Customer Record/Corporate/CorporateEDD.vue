@@ -33,7 +33,7 @@ export default{
                             <input type="checkbox" name="normal-risk">
                             <label for="normal-risk">NORMAL RISK</label>
                         </div>
-                        <div class="flex items-center -mb-[15px] w-[25%]">
+                        <div class="flex items-center hover:opacity-80 w-[25%]">
                             <InputGroup :inputLabel="'risk rating'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" />
                         </div>
                     </div>
@@ -49,7 +49,7 @@ export default{
                             <input type="checkbox" name="normal-risk">
                             <label for="normal-risk">NORMAL RISK</label>
                         </div>
-                        <div class="flex items-center -mb-[15px] w-[25%]">
+                        <div class="flex items-center hover:opacity-80 w-[25%]">
                             <InputGroup :inputLabel="'risk rating'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" />
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default{
                             <input type="checkbox" name="normal-risk">
                             <label for="normal-risk">NORMAL RISK</label>
                         </div>
-                        <div class="flex items-center -mb-[15px] w-[25%]">
+                        <div class="flex items-center hover:opacity-80 w-[25%]">
                             <InputGroup :inputLabel="'risk rating'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" />
                         </div>
                     </div>

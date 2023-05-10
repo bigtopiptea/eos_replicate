@@ -39,21 +39,21 @@ export default{
         <div class="px-4">
             <form class="flex w-[90%] gap-5  gap-y-3">
                 <!-- Row 1 -->
-                <div class="w-[40%] mb-3 ">
+                <div class="w-[40%] mb-3 flex flex-col gap-3">
                     <div class="w-[66%]">
                         <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>
                     <div class="w-full">
                         <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
                     </div>
-                    <div class="">
+                    <div>
                         <InputTextarea :label="'PARTICULARS'" inputWidth="w-full"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
                     </div>
-                    <div class="-mt-2">
+                    <div>
                         <BorderButton :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
                 </div>
-                <div class="w-[30%]">
+                <div class="flex flex-col gap-3 w-[30%]">
                     <div class="w-full">
                         <InputGroup inputLabel="invoice no." :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     </div>
@@ -64,7 +64,7 @@ export default{
                         <InputGroup inputLabel="invoice amount" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     </div>
                 </div>
-                <div class="w-[30%]">
+                <div class="flex flex-col gap-3 w-[30%]">
                     <div>
                         <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     </div>

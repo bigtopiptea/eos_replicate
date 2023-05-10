@@ -85,7 +85,7 @@ export default {
     <div class="flex flex-col justify-between h-full w-auto m-3">
         <div>
             <div class="inline-block min-w-full align-middle">
-                <div class="flex items-end justify-between h-auto min-w-full px-[5px]">
+                <div class="flex items-end justify-between h-auto min-w-full px-[3px]">
                     <div class="flex justify-end flex-col space-x-3">
                         <div class="flex items-end gap-[10px] left-side-col-1 ">
                             <div>
