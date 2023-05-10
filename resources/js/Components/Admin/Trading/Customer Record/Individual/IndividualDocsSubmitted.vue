@@ -9,7 +9,7 @@ import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
 
-export default{
+export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton
@@ -99,7 +99,7 @@ export default{
                     <div class="mx-5">
                         <div class="flex gap-[5px]">
                             <div class="flex flex-col gap-[10px] w-[60%]">
-                                <FloatingLabelDropdown :inputLabel="'type of id/document'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                <FloatingLabelDropdown :inputLabel="'type of id/document'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'select type of id/document'"/>
                                 <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
                                     <div class="text-center text-[12px] mb-5">
                                         <p>DRAG IMAGE HERE<br>OR</p>

@@ -105,31 +105,31 @@ export default {
                                 <div class="flex gap-x-[5px]">
                                     <div class="flex flex-col gap-y-[15px] w-[40%]">
                                         <div class="w-[90%]">
-                                            <FloatingLabelInput :inputLabel="'company name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                            <FloatingLabelInput :inputLabel="'company name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER COMPANY NAME'"/>
                                         </div>
                                         <div class="w-full">
-                                            <FloatingLabelInput :inputLabel="'company address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                            <FloatingLabelInput :inputLabel="'company address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER COMPANY ADDRESS'"/>
                                         </div>
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[55%]">
-                                                <FloatingLabelInput :inputLabel="'account name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                <FloatingLabelInput :inputLabel="'account name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER ACCOUNT NAME'"/>
                                             </div>
                                             <div class="w-[45%]">
-                                                <FloatingLabelInput :inputLabel="'branch account'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                <FloatingLabelInput :inputLabel="'branch account'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER BRANCH OF ACCOUNT'"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="flex flex-col justify-end gap-y-[15px] w-[60%]">
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[30%]">
-                                                <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Country'"/>
                                             </div>
                                             <div class="flex gap-x-[5px] w-[70%]">
                                                 <div class="w-[45%]">
-                                                    <FloatingLabelDropdown :inputLabel="'state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                    <FloatingLabelDropdown :inputLabel="'state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'SELECT STATE'"/>
                                                 </div>
                                                 <div class="w-[35%]">
-                                                    <FloatingLabelDropdown :inputLabel="'city'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                    <FloatingLabelDropdown :inputLabel="'city'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select City'"/>
                                                 </div>
                                                 <div class="w-[20%]">
                                                     <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
@@ -138,10 +138,10 @@ export default {
                                         </div>
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[30%]">
-                                                <FloatingLabelDropdown :inputLabel="'bank'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select BANK'"/>
                                             </div>
                                             <div class="w-[70%]">
-                                                <FloatingLabelInput :inputLabel="'bank address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                                <FloatingLabelInput :inputLabel="'bank address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER BANK ADDRESS'"/>
                                             </div>
                                         </div>
                                     </div>
@@ -149,10 +149,10 @@ export default {
                                 <div class="flex justify-between w-full">
                                     <div class="flex gap-x-[5px] w-[43.7%]">
                                         <div class="w-[50%]">
-                                            <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
+                                            <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true" :placeholder="'ENTER ACCOUNT NO.'"/>
                                         </div>
                                         <div class="w-[50%]">
-                                            <FloatingLabelDropdown :inputLabel="'DESTINATION COUNTRY'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
+                                            <FloatingLabelDropdown :inputLabel="'DESTINATION COUNTRY'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select DESTINATION Country'"/>
                                         </div>
                                     </div>
                                     <div>
