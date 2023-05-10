@@ -15,8 +15,8 @@ import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 export default {
     name: 'Maintenance - Tie Ups',
     components: {
-        NormalButton, SearchIcon, DateInput, FloatingLabelDropdown, 
-        FloatingTextArea, SmallLabelInput, DropDown, Slideover, 
+        NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
+        FloatingTextArea, SmallLabelInput, DropDown, Slideover,
         SolidButton, SwitchToggle
     },
     data() {
@@ -100,15 +100,15 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    
+
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center gap-[5px]">
@@ -132,11 +132,11 @@ export default {
     <Slideover :show="holdOpen" @close="holdToggle" :title="'HOLD'" :iconShow="'HOLD'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
-                <div> 
+                <div>
                     <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
-                <div> 
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASOn'"/>
+                <div>
+                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>

@@ -77,7 +77,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[23.5%]">
-                    <FloatingLabelDropdown :inputLabel="'remitter'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="remitterOptions"/>
+                    <FloatingLabelDropdown :inputLabel="'remitter'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
                 </div>
                 <div class="w-[23.5%]">
                     <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>

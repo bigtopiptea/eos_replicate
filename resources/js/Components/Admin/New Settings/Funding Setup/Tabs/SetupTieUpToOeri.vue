@@ -190,10 +190,10 @@ export default {
                         <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'OERI-BANk'" :inputColor="'bg-white'"/>
+                        <FloatingLabelDropdown :inputLabel="'OERI-BANk'" :inputColor="'bg-white'" :placeholder="'SELECT OERI BANK'"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'Tie-up Partner'" :inputColor="'bg-white'"/>
+                        <FloatingLabelDropdown :inputLabel="'Tie-up Partner'" :inputColor="'bg-white'" :placeholder="'SELECT TIE UP PARTNER'" />
                     </div>
                 </div>
             </div>

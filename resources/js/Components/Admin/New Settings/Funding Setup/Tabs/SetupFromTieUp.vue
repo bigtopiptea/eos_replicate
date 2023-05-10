@@ -77,7 +77,7 @@ export default {
     <div class="h-auto w-full bg-white">
         <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
             <div class="w-[35%] pb-3">
-                <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="allTieUpPartners" />
+                <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="allTieUpPartners" :placeholder="'SELECT TIE-UP'"/>
             </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
@@ -185,7 +185,7 @@ export default {
                         <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
                     </div>
                     <div>
-                        <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputColor="'bg-white'"/>
+                        <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputColor="'bg-white'" :placeholder="'SELECT TIE-UP'"/>
                     </div>
                 </div>
             </div>

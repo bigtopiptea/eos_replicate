@@ -34,8 +34,7 @@ export default{
     },
     placeholder:{
         type: String,
-        default: '7/12',
-        required: true
+        required: false
     },
     choices:{
         type: Array,

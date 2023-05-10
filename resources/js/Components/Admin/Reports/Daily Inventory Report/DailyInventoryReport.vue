@@ -63,11 +63,11 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex justify-between items-center mx-[12px]">
                 <div class="flex gap-[10px] w-[48%]">
-                    <div class="w-[75%]">
-                        <FloatingLabelDropdown :inputLabel="'Tie-up/Banks'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <div class="w-[70%]">
+                        <FloatingLabelDropdown :inputLabel="'Tie-up/Banks'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT TIE-UP PARTNER/BANKS'"/>
                     </div>
-                    <div class="w-[25%]">
-                        <FloatingLabelDropdown :inputLabel="'Trading Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <div class="w-[30%]">
+                        <FloatingLabelDropdown :inputLabel="'Trading Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT TRADING TYPE'"/>
                     </div>
                 </div>
                 <div>
@@ -144,7 +144,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        LASCONIA, ELIOMAR DE ASIS 
+                                        LASCONIA, ELIOMAR DE ASIS
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -177,7 +177,7 @@ export default {
                                     <td colspan="6" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">TOTAL BUY</td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">1,025,000.00</td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">47.95</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">49,149,000.00</td>                                   
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">49,149,000.00</td>
                                 </tr>
                             </tfoot>
                         </table>

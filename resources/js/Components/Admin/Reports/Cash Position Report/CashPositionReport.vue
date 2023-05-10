@@ -60,13 +60,13 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'Select type of report '"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'currency'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <FloatingLabelDropdown :inputLabel="'currency'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT CURRENCY'"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT BANK/PROVIDER'"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
