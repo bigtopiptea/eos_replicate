@@ -58,8 +58,12 @@ export default {
                 { label: 'FROM' },
                 { label: 'TO' },
                 { label: 'ACTION' },
-                ],
-
+            ],
+            bulkOption:[
+                'Option 1',
+                'Option 2',
+                'Option 3',
+            ]
         }
     },
     methods: {
@@ -116,7 +120,7 @@ export default {
                                 </div>
                             </div>
                             <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
-                                <DropDown label="bulk action" class="-m-3" />
+                                <DropDown label="bulk action" :options="bulkOption" class="-m-3" />
                                 <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                             </div>
                         </div>

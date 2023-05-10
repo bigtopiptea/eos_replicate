@@ -143,16 +143,19 @@ export default {
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div> 
-                    <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="designOptions"/>
+                    <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
                 <div> 
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="signatoryType"/>
+                    <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                </div>
+                <div> 
+                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>
                 </div>
             </div>
-            <div class="flex flex-col gap-[80px]">
+            <div class="flex flex-col gap-[40px]">
                 <div v-if="isHold === true" class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
                     <p>
                         ARE YOU SURE YOU WANT TO PROCEED? <br>
@@ -171,7 +174,7 @@ export default {
                 </div>
                 <div class="flex justify-center gap-[100px] pb-[20px">
                     <SolidButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
                 </div>
             </div>
         </div>

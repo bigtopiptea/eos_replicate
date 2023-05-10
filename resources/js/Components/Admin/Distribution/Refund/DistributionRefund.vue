@@ -99,10 +99,10 @@ export default {
 
 <template>
 
-<div class="border m-3 bg-white border-white shadow-md ">
+<div class="m-3 bg-white shadow-md ">
     <TabNav :tabs="['Pending',  'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-full mb-3 border w-full border-red-500 ">
+            <div class=" h-full mb-3 border w-full">
                 <div class="inline-block min-w-full align-middle md:px-6 lg:px-8 mt-[10px]">
                     <div class="flex justify-between h-full min-w-full -mx-6">
                         <div class="flex justify-start flex-col space-x-3">
@@ -141,8 +141,8 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="min-w-full py-2 align-middle">
-                    <div class=" relative h-96 py-2 px-10 border border-blue-500  ">
+                <div class="min-w-full py-2 align-middle px-2">
+                    <div class="relative h-96 py-2 px-10">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 ">
                             <table class="min-w-full divide-y divide-gray-300 text-xs">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">

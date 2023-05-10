@@ -114,9 +114,9 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="overflow-hidden sm:-mx-6 lg:-mx-8">
-                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1">
+            <div class="overflow-hidden">
+                <div class="inline-block min-w-full py-2 align-middle">
+                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] text-[11px] font-medium">
                                 <tr class="divide-x divide-gray-200">

@@ -59,7 +59,7 @@ export default{
 </script>
 <template>
     <div class="inline-block items-center w-auto  align-middle px-1">
-        <div class="2xl:w-auto w-[1070px]  overflow-x-auto  shadow ring-1 ring-black ring-opacity-5">
+        <div class="2xl:w-auto sm:w-[1070px] md:w-[1200px]  overflow-x-auto  shadow ring-1 ring-black ring-opacity-5 mx-3">
             <table class=" divide-y gray-red-300 border border-gray-300">
                 <thead class="bg-[#D7D7D7]  font-medium text-[11px] whitespace-nowrap" >
                     <tr class="divide-x gray-red-300">

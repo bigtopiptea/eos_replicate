@@ -10,7 +10,9 @@ export default {
     },
     data(){
         return{
-            changePasswordOpen: false,
+            changePasswordOpen: false, // Modal
+            password: '',
+            types: false,
         }
     },
     methods:{
@@ -18,6 +20,9 @@ export default {
         changePasswordToggle() {
             this.changePasswordOpen = false;
         },
+        toggleShowPassword() {
+            this.types = !this.types;
+        }
     }
 }
 </script>
@@ -27,10 +32,11 @@ export default {
             <div class="flex flex-col gap-[30px] items-center w-full text-[#3E3E3E]">
                 <img class="w-[80px] h-[80px]" src="../../../../../assets/images/change-password-logo.png" alt="lock with pin">
                 <p class="font-semibold">To update password, you must provide current password.</p>
-                <div class="relative w-[20%]">
-                    <FloatingLabelInput :inputLabel="'current password'"  :inputWidth="'w-12/12'" :inputType="'password'" :placeholder="'********'"/>
+                <div class="relative w-[25%]">
+                    <!-- :placeholder="'•••••••••••••'" -->
+                    <FloatingLabelInput :inputLabel="'current password'"  :inputWidth="'w-12/12'" :inputType="[types ? 'text' : 'password']"  v-model="password" />
                     <div class="w-6 h-5 absolute top-[3px] right-[5px] cursor-pointer hover:opacity-80">
-                        <EyeIcon/>
+                        <EyeIcon @click="toggleShowPassword"/>
                     </div>
                 </div>
             </div>
@@ -73,13 +79,13 @@ export default {
             </div>
             <div class="flex flex-col items-center gap-[20px] text-[#3E3E3E] w-full">
                 <h5 class="italic font-semibold">Just type it twice and try not to forget it</h5>
-                <div class="relative w-[20%]">
+                <div class="relative w-[25%]">
                     <FloatingLabelInput :inputLabel="'new password'"  :inputWidth="'w-12/12'" :inputType="'password'"/>
                     <div class="w-6 h-5 absolute top-[3px] right-[5px] cursor-pointer hover:opacity-80">
                         <EyeIcon/>
                     </div>
                 </div>
-                <div class="relative w-[20%]">
+                <div class="relative w-[25%]">
                     <FloatingLabelInput :inputLabel="'confirm password'"  :inputWidth="'w-12/12'" :inputType="'password'"/>
                     <div class="w-6 h-5 absolute top-[3px] right-[5px] cursor-pointer hover:opacity-80">
                         <EyeIcon/>

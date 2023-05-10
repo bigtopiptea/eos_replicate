@@ -36,15 +36,20 @@
                     current_page: 1,
                 },
 
-                labels: [
-                { label: 'FILENAME' },
-                { label: 'Item Count'},
-                { label: 'Total Amount' },
-                { label: 'Exchange Rate'},
-                { label: 'PROCESSED date' },
-                { label: 'VALUE date' },
-                { label: 'Action' },
+                    labels: [
+                    { label: 'FILENAME' },
+                    { label: 'Item Count'},
+                    { label: 'Total Amount' },
+                    { label: 'Exchange Rate'},
+                    { label: 'PROCESSED date' },
+                    { label: 'VALUE date' },
+                    { label: 'Action' },
                 ],
+                bulkOption:[
+                    'Option 1',
+                    'Option 2',
+                    'Option 3',
+                ]
 
             }
         },
@@ -82,7 +87,7 @@
                         </div>
                     </div>
                     <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
-                        <DropDown label="bulk action" class="-m-3" />
+                        <DropDown label="bulk action" :options="bulkOption" class="-m-3" />
                         <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                     </div>
                 </div>
@@ -162,7 +167,7 @@
     </div>
     <Pagination @paginate="getDistributionCancellation()" :pagination="pagination"
         :offset="1" class="mt-8" />
-
+    
     </template>
     <style>
     .slide-fade-enter-active {
