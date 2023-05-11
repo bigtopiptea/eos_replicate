@@ -2,12 +2,13 @@
 import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
 import InputDropdown from '@/Components/Misc/Input/InputDropdown.vue'
 import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
-
+import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue';
 export default {
     components:{
         InputGroup,
         InputDropdown,
         BorderButton,
+        InputGroupSelectMenu
     },
     data() {
         return {
@@ -19,7 +20,19 @@ export default {
                 {label:'APV AMOUNT'},
                 {label:'AMOUNT DUE.'},
                 {label:'TO BE PAID'},
-            ]
+            ],
+            paymentType:[
+                {name: 'payment 1'},
+                {name: 'payment 2'},
+                {name: 'payment 3'},
+            ],
+            bankAccount:[
+                {name: 'bank account 1'},
+                {name: 'bank account 2'},
+                {name: 'bank account 3'},
+                {name: 'bank account 4'},
+                {name: 'bank account 5'},
+            ],
         }
     },
 }
@@ -30,8 +43,12 @@ export default {
         <div class="w-full">
             <form class="flex flex-col gap-3 w-[400px]">
                 <InputGroup :inputLabel="'VOUCHER DATE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'" :isDisabled="true"/>
-                <InputDropdown :inputLabel="'PAYMENT TYPE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
-                <InputDropdown :inputLabel="'BANK ACCOUNT'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"/>
+                <div class="w-full">
+                    <InputGroupSelectMenu :label="'PAYMENT TYPE'" :placeholder="'SELECT PAYMENT TYPE'"  :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :options="paymentType"/>
+                </div>
+                <div class="w-full">
+                    <InputGroupSelectMenu  :labelWidth="'w-4/12'" :placeholder="'SELECT BANK ACCOUNT'"  :inputWidth="'w-8/12'" :label="'BANK ACCOUNT'" :options="bankAccount"/>
+                </div>
             </form>
         </div>
         <!-- TABLE -->

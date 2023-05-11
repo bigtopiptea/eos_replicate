@@ -2,17 +2,22 @@
 import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
-
+import CheckboxSelectMenuVue from '../../../Misc/Select Menu/CheckboxSelectMenu.vue';
 export default{
     components:{
         BorderButton,
         FloatingLabelDropdown,
         SolidButton,
+        CheckboxSelectMenuVue
 
     },
     data() {
         return {
-            myOptions:[ 'Select Report Type','Report 1','Report 2','Report 3']
+            reportType:[ 
+                {name: 'Report 1'},
+                {name: 'Report 2'},
+                {name: 'Report 3'},
+            ]
         }
     },
 }
@@ -33,13 +38,12 @@ export default{
             </div>
             <div class="flex justify-center w-full ">
                 <div class="w-1/4">
-                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="myOptions" :placeholder="'SELECT REPORT TYPE'"/>
+                    <CheckboxSelectMenuVue :label="'Report Type'" :inputWidth="'w-full'"  :options="reportType" :placeholder="'SELECT REPORT TYPE'"/>
                 </div>
             </div>
             <div class="flex gap-5">
                 <BorderButton :buttonLabel="'CANCEL'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" />
-                <BorderButton :buttonLabel="'SUBMIT'"  />
-
+                <BorderButton :buttonLabel="'SUBMIT'"/>
             </div>
         </div>
 

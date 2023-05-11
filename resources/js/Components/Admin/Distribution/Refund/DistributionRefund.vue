@@ -520,4 +520,5 @@ export default {
   transform: translateY(20px);
     opacity: 0;
 }
+
 </style>

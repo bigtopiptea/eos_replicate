@@ -51,14 +51,6 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -185,8 +177,8 @@ export default {
                     <p>AND <span class="font-bold">'CANCEL'</span> TO REVERT.</p>
                 </div>
                 <div class="flex justify-center gap-[100px] border-black">
-                    <SolidButton @click="(endDayReportOpen = !endDayReportOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <BorderButton @click="(endDayReportOpen = !endDayReportOpen)"  :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                    <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
                 </div>
             </div>
         </div>

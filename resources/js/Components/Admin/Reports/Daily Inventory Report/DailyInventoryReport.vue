@@ -9,11 +9,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Daily Inventory Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination, BorderButton
+        Pagination, BorderButton, CheckboxSelectMenu
     },
     data() {
         return {
@@ -31,7 +32,17 @@ export default {
                 {label:'AMOUNT'},
                 {label:'EXCHANGE RATE'},
                 {label:'PHP AMOUNT'},
-            ]
+            ],
+            tieUpPartner:[
+                {name: 'ALL'},
+                {name: 'CTR - COVERED TRANSACTIONS REPORT'},
+                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT'}
+            ],
+            tradingType:[
+                {name: 'SELL'},
+                {name: 'BUY'},
+                {name: 'BUY/SELL'}
+            ],
         }
     },
     methods: {
@@ -46,15 +57,6 @@ export default {
 
                 })
         },
-
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -64,10 +66,10 @@ export default {
             <div class="flex justify-between items-center mx-[12px]">
                 <div class="flex gap-[10px] w-[48%]">
                     <div class="w-[70%]">
-                        <FloatingLabelDropdown :inputLabel="'Tie-up/Banks'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT TIE-UP PARTNER/BANKS'"/>
+                        <CheckboxSelectMenu :label="'Tie-up/Banks'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNER/BANKS'" :options="tieUpPartner"/>
                     </div>
                     <div class="w-[30%]">
-                        <FloatingLabelDropdown :inputLabel="'Trading Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT TRADING TYPE'"/>
+                        <CheckboxSelectMenu :label="'Trading Type'" :inputWidth="'w-12/12'" :placeholder="'SELECT TRADING TYPE'" :options="tradingType"/>
                     </div>
                 </div>
                 <div>

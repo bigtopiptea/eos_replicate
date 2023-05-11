@@ -8,11 +8,12 @@ import SmallHeading from '../../../../Misc/Heading/SmallHeading.vue';
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
-
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
-        FloatingLabelInput, FloatingLabelDropdown, SolidButton
+        FloatingLabelInput, FloatingLabelDropdown, SolidButton,
+        CheckboxSelectMenu
     },
 
     data() {
@@ -27,7 +28,36 @@ export default {
                 {label:'DATE ADDED'},
                 {label:'ADDED BY'},
                 {label:'ACTIONS'},
-            ]
+            ],
+            country:[
+                {name: 'Philippines'},
+                {name: 'Japan'},
+                {name: 'Korea'},
+            ],
+            destinationCountry:[
+                {name: 'Philippines'},
+                {name: 'Japan'},
+                {name: 'Korea'},
+            ],
+            gender:[
+                {name: 'Male'},
+                {name: 'Female'},
+            ],
+            state:[
+                {name: 'State 1'},
+                {name: 'State 2'},
+                {name: 'State 3'},
+            ],
+            bank:[
+                {name: 'BANK 1'},
+                {name: 'BANK 2'},
+                {name: 'BANK 3'},
+            ],
+            city:[
+                {name: 'Manila'},
+                {name: 'Cavite'},
+                {name: 'Bulacan'},
+            ],
         }
     },
 }
@@ -122,14 +152,14 @@ export default {
                                     <div class="flex flex-col justify-end gap-y-[15px] w-[60%]">
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[30%]">
-                                                <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Country'"/>
+                                               <CheckboxSelectMenu :label="'country'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Country'" :options="country"/>
                                             </div>
                                             <div class="flex gap-x-[5px] w-[70%]">
                                                 <div class="w-[45%]">
-                                                    <FloatingLabelDropdown :inputLabel="'state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'SELECT STATE'"/>
+                                                   <CheckboxSelectMenu :label="'state'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'SELECT STATE'" :options="state"/>
                                                 </div>
                                                 <div class="w-[35%]">
-                                                    <FloatingLabelDropdown :inputLabel="'city'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select City'"/>
+                                                   <CheckboxSelectMenu :label="'city'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select City'" :options="city"/>
                                                 </div>
                                                 <div class="w-[20%]">
                                                     <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
@@ -138,7 +168,7 @@ export default {
                                         </div>
                                         <div class="flex gap-x-[5px] w-full">
                                             <div class="w-[30%]">
-                                                <FloatingLabelDropdown :inputLabel="'bank name'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select BANK'"/>
+                                               <CheckboxSelectMenu :label="'bank name'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select BANK'" :options="bank"/>
                                             </div>
                                             <div class="w-[70%]">
                                                 <FloatingLabelInput :inputLabel="'bank address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'ENTER BANK ADDRESS'"/>
@@ -152,7 +182,7 @@ export default {
                                             <FloatingLabelInput :inputLabel="'account no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true" :placeholder="'ENTER ACCOUNT NO.'"/>
                                         </div>
                                         <div class="w-[50%]">
-                                            <FloatingLabelDropdown :inputLabel="'DESTINATION COUNTRY'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select DESTINATION Country'"/>
+                                           <CheckboxSelectMenu :label="'DESTINATION COUNTRY'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select DESTINATION Country'" :options="destinationCountry"/>
                                         </div>
                                     </div>
                                     <div>

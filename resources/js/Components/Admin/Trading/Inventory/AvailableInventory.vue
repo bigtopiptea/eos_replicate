@@ -517,47 +517,6 @@ export default {
                                             expired
                                         </td>
                                     </tr>
-                                    <tr class="divide-x divide-gray-200">
-                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            <a class="underline text-cyan-500" href="#">
-                                                01
-                                            </a>
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            Kozey-Batz
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            SEC Registration / DTI Registration
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            ALEZANDRA KOZEY-BATZ
-                                        </td>
-                                        <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            alezandra@kozeybatz.com
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            09/01/2022
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            59 day(s)
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            expired
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            expired
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            expired
-                                        </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                            expired
-                                        </td>
-                                    </tr>
                                 </tbody>
                                 <tfoot class="bg-white font-normal text-[11px] whitespace-nowrap">
                                     <tr class="border ">

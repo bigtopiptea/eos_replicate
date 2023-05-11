@@ -7,7 +7,7 @@ import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
 import FloatingTextArea from '../../../Misc/Input/FloatingTextArea.vue';
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
 import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
-
+import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue';
 export default{
 
     components:{
@@ -19,15 +19,22 @@ export default{
         FloatingTextArea,
         SolidButton,
         BorderButton,
-
-
-
+        InputGroupSelectMenu
     },
 
     data(){
         return{
 
-            myOptions:['1','2','3']
+            bank:[
+                {name: 'BANK 1'},
+                {name: 'BANK 2'},
+                {name: 'BANK 3'},
+            ],
+            type:[
+                {name: 'TYPE 1'},
+                {name: 'TYPE 2'},
+                {name: 'TYPE 3'},
+            ],
         }
     }
 }
@@ -68,13 +75,13 @@ export default{
                         </div>
                     </div>
                     <div>
-                        <InputDropdown :inputLabel="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT BANK'"/>
+                        <InputGroupSelectMenu :label="'SETTLEMENT'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :options="bank" :placeholder="'SELECT BANK'"/>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3 w-1/2 ">
                     <div>
-                        <InputDropdown :inputLabel="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :choices="myOptions" :placeholder="'SELECT TRANSACTION TYPE'"/>
+                        <InputGroupSelectMenu :label="'TRANSACTION TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :options="type" :placeholder="'SELECT TRANSACTION TYPE'"/>
                     </div>
                     <div>
                         <InputGroup :inputLabel="'ACCOUNT NO'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :placeholder="'ENTER ACCOUNT NO.'"/>
@@ -90,7 +97,7 @@ export default{
             <div class="flex flex-col gap-3">
                 <div class="w-full flex gap-3 ">
                     <InputGroup :inputLabel="'AMOUNT'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :placeholder="'ENTER AMOUNT'"/>
-                    <InputDropdown :inputLabel="'TYPE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions" :placeholder="'SELECT TYPE'"/>
+                    <InputGroupSelectMenu :label="'TYPE'" :inputWidth="'w-8/12'" :labelWidth="'w-4/12'" :options="type" :placeholder="'SELECT TYPE'"/>
 
                     <InputGroup :inputLabel="'REGISTRATION DATE'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'date'"/>
                     <InputGroup :inputLabel="'DEAL SLIP NO.'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputType="'number'"/>
@@ -99,7 +106,7 @@ export default{
                     <FloatingLabelInput :inputLabel="'ADDRESS'" :inputWidth="'w-full'" :inputColor="'bg-white'" />
                 </div>
                 <div class="w-full">
-                    <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-full'" />
+                    <InputGroup :inputLabel="'TYPE OF SUSPICIOUS ACTIVITY'" :inputWidth="'w-9/12'" :labelWidth="'w-3/12'" />
                 </div>
                 <div>
                     <FloatingTextArea :label="'DESCRIPTION'" :inputHeight="'h-[100px]'" :placeholder="'DESCRIBE WHY THIS ACTIVITY IS SUSPICIOUS.'"/>

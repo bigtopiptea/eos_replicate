@@ -9,11 +9,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Payment to Suppliers',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        BorderButton, Pagination
+        BorderButton, Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -37,10 +38,10 @@ export default {
                 {label:'REG. DATE'},
                 {label:'DEAL SLIP NO.'},
             ],
-            reportTypeOption:[
-                'ALL (CTR & STR REPORT)',
-                'CTR - COVERED TRANSACTIONS REPORT',
-                'STR - SUSPICIOUS TRANSACTIONS REPORT'
+            reportType:[
+                {name: 'ALL (CTR & STR REPORT)'},
+                {name: 'CTR - COVERED TRANSACTIONS REPORT'},
+                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT'}
             ]
         }
     },
@@ -57,14 +58,7 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
+
     },
 }
 </script>
@@ -73,7 +67,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex justify-between items-center w-[98%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'Report Type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="reportTypeOption" :placeholder="'Select Report type'"/>
+                    <CheckboxSelectMenu :label="'Report Type'" :inputWidth="'w-12/12'" :options="reportType" :placeholder="'Select Report type'"/>
                 </div>
                 <div>
                     <BorderButton :buttonLabel="'FILE NEW STR'" :buttonPadding="'p-2'" :buttonSize="'h-[40px] w-[170px]'"/>
@@ -178,7 +172,7 @@ export default {
                                         ft
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         East office building 114 Aguirre St. Legaspi Village Makati City
                                     </td>
                                     <td

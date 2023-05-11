@@ -4,7 +4,7 @@ import SmallHeading from "../../../Misc/Heading/SmallHeading.vue";
 import DateInput from "../../../Misc/Input/DateInput.vue";
 import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 import DropdownNoLabel from '../../../Misc/Input/DropdownNoLabel.vue';
-
+import CheckboxSelectMenu from '../../../Misc/Select Menu/CheckboxSelectMenu.vue';
 export default {
     components: {
         SmallHeading,
@@ -12,25 +12,23 @@ export default {
         Dropdown,
         DropdownNoLabel,
         BorderButton,
+        CheckboxSelectMenu
 
     },
 
     data() {
         return {
             AccNames:[
-                'ALL BANK IMUS USD',
-                'ALL BANK SF PAYROLL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
-                'ALL',
+                {name: 'ALL BANK IMUS USD'},
+                {name: 'ALL BANK SF PAYROLL'},
+                {name: 'ALLIED SHAW SF PHP'},
+                {name: 'ALLIED SHAW SF usd'},
+                {name: 'ASIA UNITED BANK (AUB) SHAW PHP'},
+                {name: 'ASIA UNITED BANK (AUB) SHAW USD'},
+                {name: 'ASIA UNITED BANK PAG-IBIG PHP'},
+                {name: 'ASIA UNITED BANK SSS PHP'},
+                {name: 'AUB SHAW BILLS PAY PHP'},
+                {name: 'BDO - MONEYMARKET PHP'},
             ]
         }
     },
@@ -46,8 +44,11 @@ export default {
                 <DateInput label="Start Date" class="w-auto"/>
                 <DateInput label="End Date" class="w-auto"/>
             </div>
-            <div class=" w-full px-[75px] flex justify-center">
-                <DropdownNoLabel :choices="AccNames" :placeholder="'Select Account Name'"/>
+            <div class="w-full flex justify-center">
+                <div class="w-[65%]">
+
+                    <CheckboxSelectMenu :options="AccNames" :placeholder="'Select Account Name'"/>
+                </div>
             </div>
             <div class="flex gap-3">
                 <BorderButton :buttonLabel="'View ProofSheet'" :buttonSize="'h-auto w-[150px]'" :buttonPadding="'px-2 py-1'"/>

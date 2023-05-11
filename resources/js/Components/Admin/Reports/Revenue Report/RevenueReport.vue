@@ -8,11 +8,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination
+        Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -28,13 +29,13 @@ export default {
                 {label:'FX/USD'},
             ],
             companyOptions:[
-                'ALL',
-                'ALL HOME',
-                'ALLBANK INC',
-                'ALLEASY INC',
-                'BEVTECH',
-                'BRITTANY',
-                'Camotes Island Power Generation Corp',
+                {name: 'ALL'},
+                {name: 'ALL HOME'},
+                {name: 'ALLBANK INC'},
+                {name: 'ALLEASY INC'},
+                {name: 'BEVTECH'},
+                {name: 'BRITTANY'},
+                {name: 'Camotes Island Power Generation Corp'},
             ]
         }
     },
@@ -51,14 +52,6 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -67,7 +60,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <FloatingLabelDropdown :inputLabel="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'"/>
+                    <CheckboxSelectMenu :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

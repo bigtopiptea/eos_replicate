@@ -8,11 +8,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Payment to Suppliers',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination
+        Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -27,6 +28,11 @@ export default {
                 {label:'BANK'},
                 {label:'AMOUNT'},
                 {label:'REMARKS'},
+            ],
+            supplier:[
+                {name: 'Supplier 1'},
+                {name: 'Supplier 2'},
+                {name: 'Supplier 3'},
             ]
         }
     },
@@ -43,14 +49,6 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -59,7 +57,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <FloatingLabelDropdown :inputLabel="'supplier'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT SUPPLIER'"/>
+                    <CheckboxSelectMenu :inputLabel="'supplier'" :inputWidth="'w-12/12'"  :placeholder="'SELECT SUPPLIER'" :options="supplier"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

@@ -70,8 +70,8 @@ export default {
             <!-- TABLE 1 -->
             <div class="w-[60%] self-end ">
                 <div class="2xl:container w-full border">
-                    <table class="w-full">
-                        <thead class="divide-y divide-gray-200 bg-[#3E3E3E] text-[11px] font-normal text-white text-center uppercase whitespace-nowrap">
+                    <table class="w-full ">
+                        <thead class="divide-y divide-gray-200 text-[11px] font-normal text-white text-center uppercase whitespace-nowrap">
                             <tr class="divide-x divide-gray-200 ">
                                 <th v-for="label in tableOneLabels" :key="label.label" scope="col" class="px-1 py-2">
                                     {{label.label}}

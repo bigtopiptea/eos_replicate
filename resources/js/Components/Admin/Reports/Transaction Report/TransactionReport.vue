@@ -44,17 +44,17 @@ export default {
                 {name: 'Cummerata Group'},
             ],
             reportType:[
-                'DISTRIBUTION',
-                'FUNDING',
-                'TRADING',
-                'OTHER SERVICES',
+                {name: 'DISTRIBUTION'},
+                {name: 'FUNDING'},
+                {name: 'TRADING'},
+                {name: 'OTHER SERVICES'},
             ],
             transactionType:[
-                'Processing',
-                'Cancellation',
-                'Additional',
-                'Adjustment',
-                'Refund',
+                {name: 'Processing'},
+                {name: 'Cancellation'},
+                {name: 'Additional'},
+                {name: 'Adjustment'},
+                {name: 'AdjustmRefundent'},
             ]
         }
     },
@@ -79,14 +79,13 @@ export default {
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[65%] mx-[12px]">
                 <div class="w-[50%]">
-                    <!-- <DropdownCheckbox :label="'partner/client'" :options="partnerClient" :placeholder="'select partner/client'"/> -->
-                    <CheckboxSelectMenu :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient"/>
+                    <CheckboxSelectMenu :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" :withCheckbox="true"/>
                 </div>
                 <div class="w-[25%]">
-                    <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'select report type'"  :options="reportType"/>
+                    <CheckboxSelectMenu :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
                 </div>
                 <div class="w-[25%]">
-                    <FloatingLabelDropdown :inputLabel="'transaction type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'select transaction type'" :options="transactionType"/>
+                    <CheckboxSelectMenu :label="'transaction type'" :inputWidth="'w-12/12'" :placeholder="'select transaction type'" :options="transactionType"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

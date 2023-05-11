@@ -5,6 +5,7 @@ import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import InputDropDown from "@/Components/Misc/Input/InputDropdown.vue"
 import Accordion from "../../../Misc/Accordion.vue"
 import JournalEntry from "./JournalEntry.vue"
+import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue'
 export default{
 
     components:{
@@ -13,11 +14,15 @@ export default{
         InputDropDown,
         Accordion,
         JournalEntry,
+        InputGroupSelectMenu
     },
     data(){
         return{
-            myOptions:['PHP', 'ABC', 'PLAY MONEY']
-
+            sampleOption:[
+                {name: 'option 1'},
+                {name: 'option 2'},
+                {name: 'option 3'},
+            ],
         }
     }
 
@@ -35,7 +40,7 @@ export default{
                         <InputGroup :inputLabel="'Trade Slip'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>
                     <div class="w-full">
-                        <InputDropDown :inputLabel="'USD From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                        <InputGroupSelectMenu :label="'USD From'"  :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                     </div>
                     <div class="w-full">
                         <InputGroup :inputLabel="'Traded AMT (USD)'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :inputColor="'bg-white'" :inputType="'number'"/>
@@ -66,35 +71,35 @@ export default{
         <form class="flex justify-between items-center w-full p-5 px-8 gap-3">
             <div class="flex flex-col gap-3 w-full">
                 <div>
-                    <InputDropDown :inputLabel="'Type of Transaction'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Type of Transaction'" :placeholder="'Select Transaction Type'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Mode of Payment'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Mode of Payment'" :placeholder="'Select Mode of Payment'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Client/Company'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Client/Company'" :placeholder="'Select Client'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
             </div>
             <div class="flex flex-col gap-3 w-full">
                 <div>
-                    <InputDropDown :inputLabel="'Account Name'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Account Name'" :placeholder="'Select Acc. Name'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Traded To'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Traded To'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Source of Funds'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Source of Funds'" :placeholder="'Select Source'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
             </div>
             <div class="flex flex-col gap-3 w-full ">
                 <div>
-                    <InputDropDown :inputLabel="'Purpose/Reason'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Purpose/Reason'" :placeholder="'Select Purpose'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Dollar From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Dollar From'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
                 <div>
-                    <InputDropDown :inputLabel="'Peso To'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :choices="myOptions"/>
+                    <InputGroupSelectMenu :label="'Peso To'" :inputWidth="'w-6/12'" :labelWidth="'w-6/12'" :options="sampleOption"/>
                 </div>
             </div>
         </form>

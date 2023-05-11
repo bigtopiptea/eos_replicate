@@ -8,11 +8,12 @@ import SmallHeading from '../../../../Misc/Heading/SmallHeading.vue';
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
-
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
-        FloatingLabelInput, FloatingLabelDropdown, SolidButton
+        FloatingLabelInput, FloatingLabelDropdown, SolidButton,
+        CheckboxSelectMenu
     },
 
     data() {
@@ -26,7 +27,47 @@ export default {
                 {label:'POSITION'},
                 {label:'DATE ADDED'},
                 {label:'ACTIONS'},
-            ]
+            ],
+            country:[
+                {name: 'Philippines'},
+                {name: 'Japan'},
+                {name: 'Korea'},
+            ],
+            gender:[
+                {name: 'Male'},
+                {name: 'Female'},
+            ],
+            idType:[
+                {name: 'SSS'},
+                {name: 'PhilHealth'},
+                {name: 'Drivers License'},
+            ],
+            province:[
+                {name: 'Province 1'},
+                {name: 'Province 2'},
+                {name: 'Province 3'},
+            ],
+            civilStatus:[
+                {name: 'Single'},
+                {name: 'Married'},
+                {name: 'widowed'},
+                {name: 'Separated/Divorced'},
+            ],
+            bank:[
+                {name: 'BANK 1'},
+                {name: 'BANK 2'},
+                {name: 'BANK 3'},
+            ],
+            cityMunicipality:[
+                {name: 'Manila'},
+                {name: 'Cavite'},
+                {name: 'Bulacan'},
+            ],
+            nationality:[
+                {name: 'Filipino'},
+                {name: 'Korean'},
+                {name: 'Chinese'},
+            ],
         }
     },
 }
@@ -118,7 +159,7 @@ export default {
                                             <FloatingLabelInput :inputLabel="'Present/Permanent Address'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                         </div>
                                         <div class="w-[32%]">
-                                            <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Country'"/>
+                                           <CheckboxSelectMenu :label="'country'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Country'" :options="country"/>
                                         </div>
                                     </div>
                                     <div class="flex gap-[5px]">
@@ -129,7 +170,7 @@ export default {
                                             <FloatingLabelInput :inputLabel="'place of birth'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true"/>
                                         </div>
                                         <div class="w-[20%]">
-                                            <FloatingLabelDropdown :inputLabel="'gender'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Gender'"/>
+                                            <CheckboxSelectMenu :label="'gender'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Gender'" :options="gender"/>
                                         </div>
                                     </div>
                                 </div>
@@ -141,10 +182,10 @@ export default {
                                         <FloatingLabelInput :inputLabel="'mobile no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                     </div>
                                     <div class="w-full">
-                                        <FloatingLabelDropdown :inputLabel="'province/state'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Province/State'"/>
+                                       <CheckboxSelectMenu :label="'province/state'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Province/State'" :options="province"/>
                                     </div>
                                     <div class="w-full">
-                                        <FloatingLabelDropdown :inputLabel="'civil status'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Civil Status'"/>
+                                       <CheckboxSelectMenu :label="'civil status'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Civil Status'" :options="civilStatus"/>
                                     </div>
                                 </div>
 
@@ -155,21 +196,21 @@ export default {
                                     </div>
                                     <div class="flex gap-[5px]">
                                         <div class="w-2/3">
-                                            <FloatingLabelDropdown :inputLabel="'city/municipality'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select City/Municipality'"/>
+                                           <CheckboxSelectMenu :label="'city/municipality'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select City/Municipality'" :options="cityMunicipality"/>
                                         </div>
                                         <div class="w-1/3">
                                             <FloatingLabelInput :inputLabel="'zip code'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :inputType="'number'" isRequired="true"/>
                                         </div>
                                     </div>
                                     <div class="w-full">
-                                        <FloatingLabelDropdown :inputLabel="'nationality/citizenship'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select Nationality'"/>
+                                       <CheckboxSelectMenu :label="'nationality/citizenship'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Nationality'" :options="nationality"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="flex justify-between w-full gap-x-[5px]">
                                 <div class="flex gap-x-[5px] w-[77.7%]">
                                     <div class="w-[25%]">
-                                        <FloatingLabelDropdown :inputLabel="'id type'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true" :placeholder="'Select Type of ID'"/>
+                                       <CheckboxSelectMenu :label="'id type'" :inputWidth="'w-12/12'" :isRequired="true" :placeholder="'Select Type of ID'" :options="idType"/>
                                     </div>
                                     <div class="w-[24%]">
                                         <FloatingLabelInput :inputLabel="'id no.'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :isRequired="true"/>

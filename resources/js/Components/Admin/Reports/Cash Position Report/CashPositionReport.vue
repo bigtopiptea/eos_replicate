@@ -30,6 +30,26 @@ export default {
                 {label:'TOTAL_CR'},
                 {label:'NET AMOUNT'},
             ],
+            reportType:[
+                {name: 'DISTRIBUTION'},
+                {name: 'FUNDING'},
+                {name: 'TRADING'},
+                {name: 'OTHER SERVICES'},
+            ],
+            banksProviders:[
+                {name: 'Select All'},
+                {name: 'BDO PASEO SF PHP'},
+                {name: 'BOC BANAUE OF PHP'},
+                {name: 'BOC SHAW SF PHP'},
+                {name: 'BPI H.O. SF PHP'},
+                {name: 'BPI INSTAPAY PHP'},
+                {name: 'CHINABANK DEL MONTE-MATUTUM SF PHP'},
+            ],
+            currency:[
+                {name: 'SELECT ALL'},
+                {name: 'USD'},
+                {name: 'PHP'},
+            ]
         }
     },
     methods: {
@@ -45,14 +65,6 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -61,13 +73,13 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'Select type of report '"/>
+                    <CheckboxSelectMenu :label="'type of report'" :inputWidth="'w-12/12'" :placeholder="'Select type of report'" :options="reportType"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'currency'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT CURRENCY'"/>
+                    <CheckboxSelectMenu :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'SELECT BANK/PROVIDER'"/>
+                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

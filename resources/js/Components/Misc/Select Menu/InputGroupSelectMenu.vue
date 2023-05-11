@@ -1,11 +1,8 @@
 <template>
     <Listbox as="div" v-model="selected">
-      <div class="relative">
-        <ListboxLabel class="absolute -top-[8px] left-[10px] block text-[11px] uppercase bg-white z-[6]">
-          {{ label }}
-          <span :hidden="isRequired ? false : true" class="ml-1 text-red-500 text-[10px]">*</span>
-        </ListboxLabel>
-        <ListboxButton class="relative w-full h-7 cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]">
+      <div class="relative flex items-center h-7 w-full">
+        <ListboxLabel class="inline-flex items-center text-[11px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">{{ label }}</ListboxLabel>
+        <ListboxButton class="relative h-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]" :class="inputWidth">
           <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.name }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -14,7 +11,7 @@
         </ListboxButton>
   
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
-          <ListboxOptions class="absolute z-10 max-h-[150px] w-full overflow-auto bg-white p-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]">
+          <ListboxOptions class="absolute -bottom-[100px] right-0 z-10 h-[100px]  overflow-auto bg-white p-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]" :class="inputWidth">
             <ListboxOption hidden>
                 <li class="text-gray-900 relative cursor-default select-none py-1 pl-3 pr-9">
                     <span class="font-normal block truncate uppercase">
@@ -23,9 +20,7 @@
                 </li>
             </ListboxOption>
             <ListboxOption as="template" v-for="option in options" :key="option" :value="option" v-slot="{ active, selected }">
-              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3 pr-9']" class="flex gap-[10px] uppercase border-b">
-                <!-- Conditional Statement to include checkbox or not -->
-                <input v-if="withCheckbox === true" type="checkbox" name="" id="" :checked="selected ? true : false">
+              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3 pr-9']" class="flex gap-[10px] uppercase border-b h-auto">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']">
                     {{ option.name }}
                 </span>
@@ -53,23 +48,23 @@
     props:{
         label:{
             type: String,
-            default: ''
+            default: 'Label'
+        },
+        inputWidth:{
+            type: String,
+            default: 'w-5/12',
+        },
+        labelWidth:{
+            type: String,
+            default: 'w-7/12',
         },
         options:{
             type: Array,
-            required: true
         },
         placeholder:{
             type:String,
             default:''
         },
-        withCheckbox:{
-            type: Boolean,
-        },
-        isRequired:{
-          type: Boolean,
-          required: false
-        }
     },
 
     data(){

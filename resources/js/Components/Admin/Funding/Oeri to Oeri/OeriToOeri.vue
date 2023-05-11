@@ -18,7 +18,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
-// import axios from "axios";
+import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue';
 
 
 export default {
@@ -38,15 +38,29 @@ export default {
         Accordion,
         JournalEntry,
         InputDropdown,
-        BorderButton
-    // UnallocatedTransactions,
+        BorderButton,
+        InputGroupSelectMenu
     },
 
     data() {
         return {
             selected: "Pending",
             isOpen: true,
-
+            tieUpPartner:[
+                {name: 'partner 1'},
+                {name: 'partner 2'},
+                {name: 'partner 3'},
+            ],
+            currency:[
+                {name: 'PHP'},
+                {name: 'USD'},
+                {name: 'EURO'},
+            ],
+            bank:[
+                {name: 'BANK 1'},
+                {name: 'BANK 2'},
+                {name: 'BANK 3'},
+            ],
         }
     },
     methods: {
@@ -68,18 +82,18 @@ export default {
                     <div class="flex flex-col gap-3 pt-3 w-8/12 mr-3 h-auto">
                         <div class="flex justify-between gap-[10px] w-full mt-[32px]">
                             <div class="w-[60%]">
-                                <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Tie-Up Partner'" />
+                                <InputGroupSelectMenu :label="'Tie-Up Partner'" :placeholder="'SELECT TIE-UP PARTNER'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"   :options="tieUpPartner"/>
                             </div>
                             <div class="w-[40%]">
-                                <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Currency'" />
+                                <InputGroupSelectMenu :label="'Currency'" :placeholder="'SELECT CURRENCY'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :options="currency"/>
                             </div>
                         </div>
                         <div class="flex justify-between gap-[10px] w-full ">
                             <div class="w-[60%]">
-                                <InputDropdown :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputLabel="'Bank'" />
+                                <InputGroupSelectMenu :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :label="'Bank'" :placeholder="'SELECT BANK'" :options="bank"/>
                             </div>
                             <div class="w-[40%]">
-                                <InputGroup :inputWidth="'w-7/12 bg-white'" :labelWidth="'w-5/12'" :inputLabel="'Amount'" inputColor="'bg-white'" />
+                                <InputGroup :inputWidth="'w-7/12 bg-white'" :labelWidth="'w-5/12'" :inputLabel="'Amount'" inputColor="'bg-white'"/>
                             </div>
                         </div>
                     </div>

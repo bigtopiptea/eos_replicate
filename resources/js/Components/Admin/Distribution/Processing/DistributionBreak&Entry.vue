@@ -5,11 +5,12 @@ import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
 import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
 import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
 export default {
     name: 'Break&Entry',
     components: { 
         SearchIcon, NormalButton, EditIcon, Pagination, ModalTwo,
-        SolidButton
+        SolidButton, BorderButton
     },
     data() {
         return {
@@ -159,8 +160,8 @@ export default {
                 <p class="text-[15px]">NOT ALLOWED FOR ADVANCE FUNDING</p>
             </div>
             <div class="flex justify-center gap-7 mt-14">
-                <SolidButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'"/>
-                <SolidButton :buttonLabel="'CONFIRM'" :buttonStyle="'bg-#F9951E'"/>
+                <BorderButton @click="(viewModalOpen = !viewModalOpen)"  :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </ModalTwo>

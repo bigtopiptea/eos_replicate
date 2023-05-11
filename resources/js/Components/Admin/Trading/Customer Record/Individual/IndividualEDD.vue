@@ -28,7 +28,7 @@ export default{
                     <input type="checkbox" name="normal-risk">
                     <label for="normal-risk">NORMAL RISK</label>
                 </div>
-                <div class="flex items-center -mb-[15px]">
+                <div class="flex items-center">
                     <InputGroup :inputLabel="'risk rating'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" />
                 </div>
             </div>

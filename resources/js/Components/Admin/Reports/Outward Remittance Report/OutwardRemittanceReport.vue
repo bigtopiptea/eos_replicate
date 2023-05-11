@@ -8,11 +8,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination
+        Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -38,13 +39,18 @@ export default {
                 {label:'DATE OF INCORPORATION'},
             ],
             remitterOptions:[
-                'SELECT ALL',
-                'Dusit Hospitality Education Phils In',
-                'Multi - Line Building SystemALLBANK INC',
-                'Prime Asset Ventures INC',
-                'TKH Marketing',
-                'The Lift Company Phils',
-                'vertex entertainment and resorts corp',
+                {name: 'SELECT ALL'},
+                {name: 'Dusit Hospitality Education Phils In'},
+                {name: 'Multi - Line Building SystemALLBANK INC'},
+                {name: 'Prime Asset Ventures INC'},
+                {name: 'TKH Marketing'},
+                {name: 'The Lift Company Phils'},
+                {name: 'vertex entertainment and resorts corp'},
+            ],
+            country:[
+                {name: 'Philippines'},
+                {name: 'Japan'},
+                {name: 'Korea'},
             ],
         }
     },
@@ -61,14 +67,6 @@ export default {
                 })
         },
 
-        // async getRate(){
-        //     await axios.get('/api/rates/cmt/list')
-        //         .then((response) => {
-        //           this.rates = response.data;
-        //         })
-        //         .catch((errors) => [
-        //         ])
-        // },
     },
 }
 </script>
@@ -77,10 +75,10 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[23.5%]">
-                    <FloatingLabelDropdown :inputLabel="'remitter'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
+                    <CheckboxSelectMenu :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
                 </div>
                 <div class="w-[23.5%]">
-                    <FloatingLabelDropdown :inputLabel="'country'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <CheckboxSelectMenu :label="'country'" :placeholder="'SELECT COUNTRY'" :inputWidth="'w-12/12'" :options="country"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -161,7 +159,7 @@ export default {
                                         002860255555
                                     </td>
                                     <td
-                                        class="whitespace-normal text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         vertex entertainment and resorts corp.
                                     </td>
                                     <td
