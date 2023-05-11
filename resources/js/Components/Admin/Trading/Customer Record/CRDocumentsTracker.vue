@@ -63,70 +63,72 @@ export default{
 </script>
 <template>
     <div>
-        <div class="flex flex-col justify-between h-full w-auto m-3">
+        <div class="flex flex-col justify-between h-full w-auto px-3 py-5">
             <div>
-                <div class="inline-block min-w-full align-middle md:px-6 lg:px-[45px]">
-                    <div class="flex justify-end h-auto min-w-full -mx-10 my-3">
+                <div class="inline-block min-w-full align-middle ">
+                    <div class="flex justify-end h-auto min-w-full ">
                         <div class="right-side">
-                            <form class="flex items-start">
-                                <div class="relative w-full">
-                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                        <SearchIcon />
-                                    </div>
-                                    <input type="text" id="simple-search"
+                            <form class="flex items-start gap-3">
+                                <div class="flex">
+                                    <div class="relative w-full">
+                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <SearchIcon />
+                                        </div>
+                                        <input type="text" id="simple-search"
                                         class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 font-light text-[10px] block w-full pl-10 p-2.5"
                                         placeholder="Search" required />
+                                    </div>
+                                    <NormalButton label="Go"
+                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                 </div>
-                                <NormalButton label="Go"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                                 <NormalButton label="Export"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E]  tracking-wider text-[10px] text-white" />
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="overflow-hidden sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1">
+                <div class="min-w-full py-5 align-middle ">
+                    <div class="relative h-[360px]">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                             <table class="min-w-full divide-y divide-gray-300">
-                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200">
                                         <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                            class="py-1 px-2 uppercase tracking-wider text-center text-gray-900 ">
                                             {{ label.label }}
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <a class="underline text-cyan-500" href="#">
                                                 DCMNT-01
                                             </a>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             Kozey-Batz
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             SEC Registration / DTI Registration
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             ALEZANDRA KOZEY-BATZ
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             alezandra@kozeybatz.com
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             09/01/2022
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             59 day(s)
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             expired
                                         </td>
                                     </tr>
@@ -137,7 +139,7 @@ export default{
                 </div>
             </div>
             <Pagination @paginate="getCRDocumentsTracker()" :pagination="pagination"
-        :offset="1" class = "mb-6 mt-6"/>
+        :offset="1" class = "my-10"/>
         </div>
     </div>
 </template>

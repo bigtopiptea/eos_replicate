@@ -7,7 +7,7 @@ import ModalTwo from "@/Components/Misc/Modal/ModalTwo.vue";
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
 export default {
     name: 'Break&Entry',
-    components: { 
+    components: {
         SearchIcon, NormalButton, EditIcon, Pagination, ModalTwo,
         SolidButton
     },
@@ -58,37 +58,39 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full h-auto bg-white">
-        <div class=" sm:px-4 lg:px-0">
+    <div class="w-full h-auto bg-white px-3">
+        <div class=" ">
             <div class="flex flex-col">
-                <div class="flex justify-end mb-8">
-                    <div class="mt-4 sm:mt-0 sm:flex-none">
+                <div class="flex justify-end mb-3">
+                    <div class="mt-3">
                         <div class="relative w-full">
-                            <form class="flex items-center mr-2">
-                                <div class="relative w-full">
-                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                        <SearchIcon />
-                                    </div>
-                                    <input type="text" id="simple-search"
+                            <form class="flex items-center gap-3">
+                                <div class="flex">
+                                    <div class="relative w-full">
+                                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <SearchIcon />
+                                        </div>
+                                        <input type="text" id="simple-search"
                                         class="bg-gray-50 h-[34px] border border-[#EAEAEA] text-gray-900 text-[10px] font-l block w-full pl-10 p-2.5"
                                         placeholder="Search" required />
-                                </div>
-                                <NormalButton label="Go"
+                                    </div>
+                                    <NormalButton label="Go"
                                     class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
-                                <NormalButton label="Export"
-                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                                </div>
+                                    <NormalButton label="Export"
+                                    class="p-1.5 px-3 font-rubik-light uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="mb-8  overflow-x-auto sm:-mx-4 lg:-mx-6">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1 ">
+                <div class="min-w-full py-2 align-middle ">
+                    <div class="relative h-[360px]">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                             <table class="min-w-full divide-y divide-gray-300">
-                                <thead class="bg-[#D7D7D7] text-[10px] font-bold">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200">
                                         <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                            class="py-1 px-2 uppercase tracking-wider text-center text-gray-900 w-full">
                                             {{ label.label }}
                                         </th>
                                     </tr>
@@ -97,44 +99,44 @@ export default {
                                     <!-- v-for="biller in billers" :key="biller.id" -->
                                     <tr class="divide-x divide-gray-200">
                                         <td
-                                            class="whitespace-nowrap space-x-3 uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap space-x-3 uppercase py-1 px-2 tracking-wider">
                                             <input type="checkbox" />
                                             <span>
                                                 CMTO-092822-0002
                                             </span>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             11-12-13
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <!-- {{ biller.name }} -->
                                             CMTO-092822-0002
                                         </td>
 
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <!-- {{ biller.created_at }} -->
                                             OTC-API
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <!-- {{ biller.created_at }} -->
                                             OTC-API
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <!-- {{ biller.created_at }} -->
                                             OTC-API
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <!-- {{ biller.created_at }} -->
                                             OTC-API
                                         </td>
                                         <td
-                                            class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
                                             <button @click="(viewModalOpen = !viewModalOpen)">
                                                 <EditIcon class="text-[#F9951E] w-full" />
                                             </button>
@@ -145,8 +147,10 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getBreakEntry()" :pagination="pagination"
-                    :offset="5" />
+                <div class="my-10">
+                    <Pagination @paginate="getBreakEntry()" :pagination="pagination"
+                    :offset="1" />
+                </div>
             </div>
         </div>
     </div>

@@ -43,10 +43,6 @@ export default {
 
     data() {
         return {
-            distributionRefund: [],
-            pagination: {
-                current_page: 1,
-            },
 
             selected: "Pending",
             isOpen: true,
@@ -56,17 +52,6 @@ export default {
         }
     },
     methods: {
-        async getDistributionRefund() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                    this.distributionRefund = response.data.data;
-                    this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-            },
 
         setSelected(tab) {
         this.selected = tab;

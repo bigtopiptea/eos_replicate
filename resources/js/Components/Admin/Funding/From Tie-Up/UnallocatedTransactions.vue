@@ -58,223 +58,172 @@ export default{
 
 </script>
 <template>
-    <div class="inline-block items-center w-auto  align-middle px-1">
-        <div class="2xl:w-auto sm:w-[1070px] md:w-[1200px]  overflow-x-auto  shadow ring-1 ring-black ring-opacity-5 mx-3">
-            <table class=" divide-y gray-red-300 border border-gray-300">
-                <thead class="bg-[#D7D7D7]  font-medium text-[11px] whitespace-nowrap" >
-                    <tr class="divide-x gray-red-300">
-                        <th scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center">
-                            <div class="flex justify-center gap-x-1">
-                            <input type="checkbox" @click="checkedAll = !checkedAll" >
-                            ID
-                            </div>
-                        </th>
-                        <th v-for="label in labels" :key="label.label" scope="col"
-                            class="py-2 px-1 uppercase tracking-wider text-center w-1/3">
-                            {{ label.label }}
-                        </th>
-
-                    </tr>
-                </thead>
+    <div class="min-w-full py-2 px-2 align-middle ">
+        <div class="relative h-[360px]">
+            <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                <table class="min-w-full divide-y divide-gray-300">
+                    <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
+                        <tr class="divide-x gray-red-300">
+                            <th scope="col"
+                                class="py-1 px-2 uppercase tracking-wider text-center w-1/3">
+                                <div class="flex justify-center gap-x-1">
+                                <input type="checkbox" @click="checkedAll = !checkedAll" >
+                                ID
+                                </div>
+                            </th>
+                            <th v-for="label in labels" :key="label.label" scope="col"
+                                class="py-1 px-2 uppercase tracking-wider text-center w-1/3">
+                                {{ label.label }}
+                            </th>
+                        </tr>
+                    </thead>
                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]" :class="checkedAll ? 'bg-blue-200' : ''" >
                     <tr class="divide-x divide-gray-200" >
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <div class="flex justify-center gap-x-1">
                             <input type="checkbox" >
                             01
                             </div>
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             09/28/2022 12:00:05 PM
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             USD
                         </td>
-                        <td lass="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             242
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1,849,394.00
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             48.57
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             -
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <SettingsInput placeholder="-"
                             class="w-full uppercase"/>
                         </td>
                     </tr>
-                    <tr class="divide-x divide-gray-200">
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                    <tr class="divide-x divide-gray-200" >
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <div class="flex justify-center gap-x-1">
-                            <input type="checkbox" @click="checkedOnce = !checkedOnce" >
-
+                            <input type="checkbox" >
                             01
                             </div>
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             09/28/2022 12:00:05 PM
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             USD
                         </td>
-                        <td lass="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             242
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1,849,394.00
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             48.57
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             -
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <SettingsInput placeholder="-"
                             class="w-full uppercase"/>
                         </td>
                     </tr>
-                    <tr class="divide-x divide-gray-200">
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                    <tr class="divide-x divide-gray-200" >
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <div class="flex justify-center gap-x-1">
-                                <input type="checkbox">
-                                01
+                            <input type="checkbox" >
+                            01
                             </div>
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             09/28/2022 12:00:05 PM
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             REDHA AL ANSARI
                         </td>
                         <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             USD
                         </td>
-                        <td lass="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             242
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             1,849,394.00
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             48.57
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             -
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             89,825,066.58
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            <SettingsInput placeholder="-"
-                            class="w-full uppercase"/>
-                        </td>
-                    </tr>
-                    <tr class="divide-x divide-gray-200">
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            <div class="flex justify-center gap-x-1">
-                                <input type="checkbox">
-                                01
-                            </div>
-                        </td>
-                        <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            09/28/2022 12:00:05 PM
-                        </td>
-                        <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            REDHA AL ANSARI
-                        </td>
-                        <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            1
-                        </td>
-                        <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            REDHA AL ANSARI
-                        </td>
-                        <td
-                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            USD
-                        </td>
-                        <td lass="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            242
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            1,849,394.00
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            48.57
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            89,825,066.58
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            -
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                            89,825,066.58
-                        </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                             <SettingsInput placeholder="-"
                             class="w-full uppercase"/>
                         </td>
@@ -282,48 +231,49 @@ export default{
                 </tbody>
                 <tfoot class="bg-[#EAEAEA] font-normal text-[11px] whitespace-nowrap">
                     <tr class="">
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-right uppercase py-1 px-2 tracking-wider">
                         Total
                         </td>
-                        <td class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-left uppercase py-1 px-2 tracking-wider">
                         449
                         </td>
-                        <td class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-left uppercase py-1 px-2 tracking-wider">
                         2,705,576.00
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-left uppercase py-1 px-2 tracking-wider">
                         131,575,913.68
                         </td>
-                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
 
                         </td>
-                        <td class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-left uppercase py-1 px-2 tracking-wider">
                         131,575,913.68
                         </td>
-                        <td class="whitespace-nowrap text-left pl-4 uppercase py-2 px-1 tracking-wider">
+                        <td class="whitespace-nowrap text-left pl-4 uppercase py-1 px-2 tracking-wider">
                         -
                         </td>
                     </tr>
                 </tfoot>
             </table>
+            </div>
         </div>
         <div class="self-center w-full">
         <Pagination @paginate="getFTPUnallocatedTransactions()" :pagination="pagination"
