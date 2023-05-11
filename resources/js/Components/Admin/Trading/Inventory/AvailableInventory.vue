@@ -1,4 +1,4 @@
-<script setup>
+    <script setup>
 import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
@@ -66,11 +66,11 @@ export default {
 }
 </script>
 <template>
-    <div class="h-auto w-full bg-white">
-        <div class="flex flex-col justify-between h-full w-full p-3 ">
+    <div class="w-full bg-white">
+        <div class="flex flex-col justify-between w-full p-3 ">
             <div class="main-content">
                 <div class="inline-block min-w-full align-middle md:px-6 lg:px-[45px]">
-                    <div class="flex justify-between h-auto min-w-full -mx-10 my-3">
+                    <div class="flex justify-between min-w-full -mx-10 my-3">
                         <div class="right-side">
                             <form class="flex items-start">
                                 <div class="relative w-full">
@@ -92,11 +92,11 @@ export default {
                     </div>
                 </div>
                 <div>
-                    <div class="min-w-full py-2 align-middle ">
-                        <div class="relative h-auto ">
+                    <div class="min-w-full py-2 align-middle">
+                        <div class="relative h-[390px]">
                             <!-- overflow-x-auto -->
-                            <div class=" shadow ring-1 ring-black ring-opacity-5 mx-1 overflow-auto absolute inset-x-0">
-                            <table class=" divide-y divide-gray-300">
+                            <div class="shadow ring-1 ring-black ring-opacity-5 mx-1 overflow-auto absolute inset-x-0 h-full ">
+                            <table class=" divide-y divide-gray-300 table-fixed">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                     <tr class="divide-x divide-gray-200">
                                         <th v-for="label in labels" :key="label.label" scope="col"
@@ -106,6 +106,376 @@ export default {
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
+
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
+                                    <tr class="divide-x divide-gray-200">
+                                        <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            <a class="underline text-cyan-500" href="#">
+                                                01
+                                            </a>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            Kozey-Batz
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            SEC Registration / DTI Registration
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            ALEZANDRA KOZEY-BATZ
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            alezandra@kozeybatz.com
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            09/01/2022
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            59 day(s)
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            expired
+                                        </td>
+                                    </tr>
                                     <tr class="divide-x divide-gray-200">
                                         <td class="flex gap-2 items-center whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                             <a class="underline text-cyan-500" href="#">
@@ -190,7 +560,7 @@ export default {
                                     </tr>
                                 </tbody>
                                 <tfoot class="bg-white font-normal text-[11px] whitespace-nowrap">
-                                    <tr class="">
+                                    <tr class="border ">
                                         <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
 
                                         </td>
@@ -221,18 +591,28 @@ export default {
                                         <td class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
                                         131,575,913.68
                                         </td>
-
                                     </tr>
                                 </tfoot>
                             </table>
                             </div>
                         </div>
+
+                    </div>
+                    <div class = "my-10">
                         <Pagination @paginate="getIAvailableInventory()" :pagination="pagination"
-                    :offset="1" class = ""/>
+                    :offset="1" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+<style>
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #d7d7d7
+}
+
+</style>
 
