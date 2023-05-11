@@ -51,7 +51,7 @@ export default {
             </div>
             <div class="flex gap-3">
                 <BorderButton :buttonLabel="'View ProofSheet'" :buttonSize="'h-auto w-[150px]'" :buttonPadding="'px-2 py-1'"/>
-                <BorderButton :buttonLabel="'Export ProofSheet'" :buttonSize="'h-auto w-[150px]'" :buttonPadding="'px-2 py-1'" :buttonStyle="'border-2 border-black text-[11px] text-black'" :buttonHover="'hover:bg-black'" />
+                <BorderButton :buttonLabel="'Export ProofSheet'" :buttonSize="'h-auto w-[150px]'" :buttonPadding="'px-2 py-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'"  />
             </div>
         </div>
     </div>

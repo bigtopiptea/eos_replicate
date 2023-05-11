@@ -90,7 +90,7 @@ export default {
                     </div>
                 </div>
                 <div class="right-side">
-                    <form class="flex items-start">
+                    <form class="flex items-start gap-3">
                         <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <SearchIcon />
@@ -102,7 +102,7 @@ export default {
                         <NormalButton label="Go"
                         class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                         <NormalButton label="Export"
-                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                     </form>
                 </div>
             </div>

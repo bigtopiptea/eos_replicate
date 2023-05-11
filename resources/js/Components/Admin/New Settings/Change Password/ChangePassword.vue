@@ -4,9 +4,10 @@ import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
 import ModalTwo from '../../../Misc/Modal/ModalTwo.vue';
 import EyeIcon from '@/Components/Misc/Icons/EyeIcon.vue'
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
 export default {
     components:{
-        FloatingLabelInput, SolidButton, ModalTwo, EyeIcon
+        FloatingLabelInput, SolidButton, ModalTwo, EyeIcon, BorderButton
     },
     data(){
         return{
@@ -92,9 +93,9 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="flex gap-[50px]">
-                <SolidButton :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                <SolidButton @click="(changePasswordOpen = !changePasswordOpen)" :buttonLabel="'PROCEED'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+            <div class="flex gap-10">
+                <BorderButton :buttonLabel="'CANCEL'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" />
+                <BorderButton @click="(changePasswordOpen = !changePasswordOpen)" :buttonLabel="'PROcEED'"  />
             </div>
        </div>
     </div>
@@ -108,9 +109,7 @@ export default {
                    Please use your new password to login!
                 </p>
             </div>
-            <router-link to="/login">
-                <SolidButton :buttonLabel="'LOGIN'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
-            </router-link>
+            <BorderButton @click="(changePasswordOpen = !changePasswordOpen)" :buttonLabel="'Login'"  />
         </div>
     </ModalTwo>
 </template>

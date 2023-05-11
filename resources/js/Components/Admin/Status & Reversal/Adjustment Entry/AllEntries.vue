@@ -188,7 +188,7 @@ export default{
             </div>
             <div class="flex justify-center my-10">
                 <router-link to="/app/status-reversal/adjustment-entry">
-                    <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
+                    <BorderButton :buttonLabel="'back'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
                 </router-link>
             </div>
         </div>

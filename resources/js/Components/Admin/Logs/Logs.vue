@@ -36,7 +36,7 @@ export default {
                 'DIAZ, NELLA MARIE TINIO',
                 'DUPAYA, JOEREN TITO VIERNES',
                 'LEMITA, ANGELOU CRUZ',
-                'RANOLA, SHEILA MARIE'                    
+                'RANOLA, SHEILA MARIE'
             ],
             logType:[
                 'ALL LOG TYPES',
@@ -47,11 +47,11 @@ export default {
                 'AMMENDMENT',
                 'CHANGE / UPDATE',
                 'TRADING: BUY',
-                'TRADING: SELL',                  
+                'TRADING: SELL',
             ],
         }
     },
-    
+
     methods: {
         async getLogs() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
@@ -78,7 +78,7 @@ export default {
 </script>
 <template>
     <div class="h-screen bg-white w-full px-[30px] py-[20px]">
-        <div class="flex flex-col gap-[15px] "> 
+        <div class="flex flex-col gap-[15px] ">
             <div class="flex justify-between w-full">
                 <div class="flex items-end gap-[10px] w-[60%]">
                     <div class="w-[25%]">
@@ -92,7 +92,7 @@ export default {
                     </div>
                 </div>
                 <div>
-                    <BorderButton :buttonLabel="'EXPORT'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[13px]'" :buttonHover="'hover:bg-[#3E3E3E]'"/>
+                    <BorderButton :buttonLabel="'EXPORT'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextSize="'text-[13px]'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-[#3E3E3E]'"/>
                 </div>
             </div>
             <div class="flex gap-3 items-end">
@@ -125,7 +125,7 @@ export default {
                             <tr class="divide-x divide-gray-200">
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 
+                                    09/28/2022
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">

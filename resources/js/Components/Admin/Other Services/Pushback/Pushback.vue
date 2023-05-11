@@ -4,6 +4,7 @@ import NormalButton from '../../../Misc/Buttons/NormalButton.vue'
 import InputGroup from '../../../Misc/Input/InputGroup.vue'
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue'
 import InputTextarea from '../../../Misc/Input/InputTextarea.vue'
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue'
 export default{
     components:{
         SearchIcon,
@@ -11,6 +12,7 @@ export default{
         InputGroup,
         SolidButton,
         InputTextarea,
+        BorderButton,
 
     },
     props:{
@@ -53,10 +55,10 @@ export default{
                 <h1 class=" uppercase text-[#FF0000] font-bold text-[10px] tracking-wider whitespace-nowrap">Note: <span class=" text-[#FF0000] font-light text-[10px] ">SAME DAY PUSHBACK ONLY.</span></h1>
             </div>
             <!-- Break -->
-            <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] my-5"/>
+            <div class="border-3 border-[#EAEAEA] h-[3px] bg-[#EAEAEA] mt-5"/>
 
             <div class=" h-auto w-full px-5 pt-8">
-                <form class="flex flex-col gap-3 w-4/12">
+                <form class="flex flex-col gap-3 mb-3 w-4/12">
                     <div v-for="label in labels" :key="label.label">
                         <InputGroup :inputLabel="label.label" :inputWidth="'w-1/2'" :labelWidth="'w-1/2'" :isDisabled="true"/>
                     </div>
@@ -65,8 +67,8 @@ export default{
             </div>
 
             <div class="flex justify-center gap-3 ">
-               <SolidButton :buttonLabel="'Cancel'" :buttonSize="'h-auto w-[140px]'" :buttonTextSize="'text-[14px]'" />
-               <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#F9951E]'" :buttonSize="'h-auto w-[140px]'" :buttonTextSize="'text-[14px]'"/>
+                <BorderButton :buttonLabel="'CANCEL'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" />
+                <BorderButton :buttonLabel="'SUBMIT'"  />
             </div>
         </div>
     </div>
