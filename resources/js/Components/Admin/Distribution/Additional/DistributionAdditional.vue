@@ -103,11 +103,11 @@ export default {
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'" >
         <Tab :isSelected="selected === 'Pending'" >
-            <div class=" h-auto mb-3">
-                <div class="inline-block min-w-full align-middle md:px-6 lg:px-8 mt-[10px]">
-                    <div class="flex justify-between h-full min-w-full -mx-6">
-                        <div class="flex justify-start flex-col space-x-3">
-                            <div class="flex items-end gap-3 left-side-col-1">
+            <div class=" h-auto mb-3 px-3">
+                <div class="inline-block min-w-full align-middle mt-[10px]">
+                    <div class="flex justify-between h-full min-w-full">
+                        <div class="flex justify-start flex-col">
+                            <div class="flex items-end gap-3">
                                 <div>
                                     <DateInput label="Start Date" />
                                 </div>
@@ -120,7 +120,7 @@ export default {
                                 </div>
                             </div>
                             <div class="left-side-col-2 space-y-3 text-[10px] mb-4">
-                                <DropDown label="bulk action" :options="bulkOption" class="-m-3" />
+                                <DropDown label="bulk action" :options="bulkOption" class="" />
                                 <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                             </div>
                         </div>
@@ -134,56 +134,55 @@ export default {
                                         class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
                                         placeholder="Search" required />
                                 </div>
-                                <NormalButton label="Go"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
-                                <NormalButton label="Export"
-                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] font-medium text-white" />
+                                    <NormalButton label="Go"
+                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
+                                    <NormalButton label="Export"
+                                    class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-3 tracking-wider text-[10px] font-medium text-white" />
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2">
-                            <table class="min-w-full divide-y divide-gray-300 ">
-                                <thead class="bg-[#D7D7D7] font-medium text-[11px]">
+                 <div class="min-w-full py-2 align-middle">
+                    <div class="relative h-[360px]">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200 ">
-                                        <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                            {{ label.label }}
+                                        <th v-for="label in labels" :key="label.label" scope="col" class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                            {{  label.label }}
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             01
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             09/28/2022 12:00:05 PM
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             REDHA AL ANSARI exchange
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider text-cyan-500">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider text-cyan-500">
                                             REDHA-09282022-0001
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             CMT-09282022-0009
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             PHP
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             25,000.13
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             BDO
                                         </td>
-                                        <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             OUT
                                         </td>
-                                        <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
                                             <button>
                                                 <img src="../../../../../assets/images/ExitIcon.png" alt="Exit Icon" class="h-5 w-5">
                                             </button>
@@ -196,7 +195,7 @@ export default {
                 </div>
             </div>
             <Pagination @paginate="getDistributionAdditional()" :pagination="pagination"
-                :offset="1" class="mt-8 " />
+                :offset="1" class="py-10 " />
 
             <Accordion sectiontitle="Journal Entry" :setOpen=false>
                 <JournalEntry/>

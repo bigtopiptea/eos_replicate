@@ -19,7 +19,7 @@ import Tab from "@/Components/Misc/Tabs/Tab.vue";
 
 export default {
 
-    name:'Tie Up To Oeri',
+    name:'STR History',
 
     components:{
         Tab, TabNav,
@@ -35,7 +35,7 @@ export default {
 
     data() {
         return {
-            TieUpToOeri: [],
+            StrHistory: [],
             pagination: {
                 current_page: 1,
             },
@@ -60,11 +60,11 @@ export default {
         }
     },
     methods: {
-        async getTieUpToOeri() {
+        async getStrHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.TieUpToOeri = response.data.data;
+                    this.StrHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -82,10 +82,10 @@ export default {
 </script>
 
 <template>
-    <div class="flex flex-col justify-between h-full w-auto m-3">
+    <div class="flex flex-col justify-between h-auto w-full px-3 py-5">
         <div>
             <div class="inline-block min-w-full align-middle">
-                <div class="flex items-end justify-between h-auto min-w-full px-[3px]">
+                <div class="flex items-end justify-between h-auto min-w-full">
                     <div class="flex justify-end flex-col space-x-3">
                         <div class="flex items-end gap-[10px] left-side-col-1 ">
                             <div>
@@ -118,11 +118,11 @@ export default {
                     </div>
                 </div>
             </div>
-            <div class="overflow-hidden sm:-mx-6 lg:-mx-8 mt-3">
-                <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 mx-1">
+            <div class="min-w-full pt-5 align-middle ">
+                <div class="relative h-[360px]">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider  text-center  text-gray-900">
@@ -192,8 +192,8 @@ export default {
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getTieUpToOeri()"  :pagination="pagination"
-    :offset="1" class = "mb-6 mt-6"/>
+        <Pagination @paginate="getStrHistory()"  :pagination="pagination"
+    :offset="1" class = "my-10"/>
     </div>
 </template>
 <style>

@@ -88,9 +88,9 @@ export default {
 <div class="border m-3 bg-white border-white shadow-md ">
     <TabNav :tabs="['Pending','Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C] '">
         <Tab :isSelected="selected === 'Pending'" >
-            <div :show="mainContentShow" class=" h-full overflow-x-hidden pb-[20px]">
-               <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
-                    <div class="h-auto min-w-full -mx-6 mt-4">
+            <div :show="mainContentShow" class=" h-auto w-full px-3 py-5">
+               <div class="inline-block min-w-full align-middle ">
+                    <div class="h-auto min-w-full">
                         <div class="flex">
                             <form class="flex items-end">
                                 <div class="relative w-full">
@@ -107,14 +107,14 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="overflow-hidden -mx-3 sm:-mx-6 lg:-mx-8">
-                    <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 ">
-                        <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                            <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
-                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+                <div class="min-w-full my-5 align-middle ">
+                    <div class="relative h-[360px]">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200">
                                         <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                            class="py-1 px-2 uppercase tracking-wider text-center text-gray-900 w-1/4 ">
                                             {{ label.label }}
                                         </th>
                                     </tr>
@@ -122,40 +122,40 @@ export default {
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                     <tr class="divide-x divide-gray-200">
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             <a  class="underline text-cyan-500" href="#">
                                                 01
                                             </a>
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             09/28/2022 12:00:05 PM
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             INV000000001
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             INKLINE OFFICE SOLUTIONS INC.
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             10,000.00
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             -
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             10,000.00
                                         </td>
                                         <td
-                                            class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                            class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                             10/01/2022 12:00:00 AM
                                         </td>
-                                        <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider">
+                                        <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
                                             <router-link to="/app/funding/payment-voucher" class="flex justify-center">
                                                 <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
                                             </router-link>
@@ -167,7 +167,7 @@ export default {
                     </div>
                 </div>
                 <Pagination @paginate="getPaymentVoucher()" :pagination="pagination"
-                        :offset="1" class="mt-8" />
+                        :offset="1" class="my-10" />
             </div>
             <router-view></router-view>
         </Tab>
