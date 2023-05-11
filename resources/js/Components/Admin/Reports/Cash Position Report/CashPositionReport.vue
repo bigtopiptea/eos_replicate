@@ -8,11 +8,12 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Cash Position Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination
+        Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -28,6 +29,11 @@ export default {
                 {label:'TOTAL_DR'},
                 {label:'TOTAL_CR'},
                 {label:'NET AMOUNT'},
+            ],
+            sampleOptions:[
+                {label:'DATE'},
+                {label:'REFERENCE NO.'},
+                {label:'ACCOUNT NAME'},
             ]
         }
     },
@@ -224,5 +230,6 @@ export default {
             <Pagination @paginate="getCashPositionReport()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
+        <CheckboxSelectMenu :options="sampleOptions"/> 
     </div>
 </template>

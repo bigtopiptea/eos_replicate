@@ -106,7 +106,7 @@ export default {
             </div>
             <!-- Button -->
             <div class="flex justify-end mx-[28px]">
-                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonStyle="'border-2 border-#3E3E3E text-#3E3E3E text-[11px]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'" :buttonHover="'hover:bg-#3E3E3E'" @click="(viewModalOpen = !viewModalOpen), (viewDocumentsOpen = !viewDocumentsOpen)"/>
+                <BorderButton :buttonLabel="'VIEW ARCHIVED IDS/DOCS.'" :buttonBorderColor="'border-[#3E3E3E]'" :buttonTextColor="'text-[#3E3E3E]'" :buttonSize="'h-auto w-[180px]'" :buttonPadding="'px-[5px] py-1'" :buttonHover="'hover:bg-#3E3E3E'" @click="(viewModalOpen = !viewModalOpen), (viewDocumentsOpen = !viewDocumentsOpen)"/>
             </div>
             <!-- Accordion -->
             <div class="mx-5 shadow-md">
@@ -182,7 +182,7 @@ export default {
             </div>
             <!-- Button -->
             <div class="flex jusify-center">
-                <SolidButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'OKAY'" :buttonStyle="'bg-[#F9951E]'"/>
+                <BorderButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'OKAY'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </ModalTwo>
@@ -210,7 +210,7 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center">
-                <SolidButton @click="(viewDocumentsOpen = !viewDocumentsOpen)" :buttonLabel="'CLOSE'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="(viewDocumentsOpen = !viewDocumentsOpen)" :buttonLabel="'CLOSE'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

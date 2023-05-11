@@ -223,8 +223,8 @@ export default {
                 </div>
             </div>
             <div class="flex justify-center gap-[100px] border-black">
-                <SolidButton @click="(addNewSignatoryOpen = !addNewSignatoryOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                <SolidButton :buttonLabel="'SAVE'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                <BorderButton @click="(addNewSignatoryOpen = !addNewSignatoryOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

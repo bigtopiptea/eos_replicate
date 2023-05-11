@@ -12,13 +12,13 @@ import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
-
+import BorderButtton from "@/Components/Misc/Buttons/BorderButton.vue";
 export default {
     name: 'Maintenance - Banks/Providers',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
         FloatingTextArea, SmallLabelInput, DropDown, Slideover,
-        SolidButton, SwitchToggle
+        SolidButton, SwitchToggle, BorderButtton
     },
     data() {
         return {
@@ -173,8 +173,8 @@ export default {
                     </p>
                 </div>
                 <div class="flex justify-center gap-[100px] pb-[20px">
-                    <SolidButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <BorderButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                     <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
                 </div>
             </div>
         </div>
