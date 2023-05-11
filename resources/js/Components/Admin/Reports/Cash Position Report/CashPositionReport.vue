@@ -91,8 +91,8 @@ export default {
                     </div>
                 </div>
                 <div class="right-side">
-                    <form class="flex items-start">
-                        <div class="relative w-full gap-3">
+                    <form class="flex items-start gap-3">
+                        <div class="relative w-full">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                 <SearchIcon />
                             </div>

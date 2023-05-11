@@ -116,7 +116,7 @@ export default {
                         },
                         {
                             to: "/app/trading/inventory",
-                            label: "Inventory",
+                            label: "Available Inventory",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -155,7 +155,7 @@ export default {
                     children: [
                         {
                             to: "/app/reports/transaction-report",
-                            label: "Transaction",
+                            label: "Transaction Report",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -249,7 +249,7 @@ export default {
                         },
                     {
                             to: "/app/new-settings/chart-of-accounts",
-                            label: "Chart of Accounts",
+                            label: "Account Charts",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -473,14 +473,14 @@ export default {
             </div>
             <nav v-if="isToggled" class="flex-grow border-r border-gray-200 py-2 overflow-y-scroll">
                 <ul class="space-y-1">
-                    <li v-for="menuItem in navItems" :key="menuItem.name" >
+                    <li v-for="menuItem in navItems" :key="menuItem.name" class="w-full" >
                         <router-link @click="menuItem.label === 'Logout' ? logout() : toggleMenu(menuItem)"
                          :active-class="menuItem.label === 'Logout' ? '' : 'bg-[#3E3E3E] text-white'"
                           class="uppercase text-gray-900 group flex items-center justify-between pl-5 py-2 text-[11px]
                           tracking-widest  font-medium hover:bg-[#3e3e3e] hover:text-white duration-300"
                          :to="menuItem.to">
                             <div class="flex">
-                               <component :is="menuItem.icon" class="h-5 w-6 mr-3"></component>
+                               <component :is="menuItem.icon" class="h-5 w-5 mr-3"></component>
                                <span>{{ menuItem.label }}</span>
                             </div>
 <!--                            :class=" ? '-rotate-90' : '-rotate-180'"-->
@@ -490,10 +490,11 @@ export default {
                         </router-link>
                         <ul v-if="menuItem.children && menuItem === activeItem">
                             <li v-for="subItem in menuItem.children" :key="subItem.label">
+                                <!-- ojt px-14 to px-10 -->
                                 <router-link
                                     @click="reroute(subItem)"
                                     :class="{'active text-[#F1721A]': $route.path === subItem.to}"
-                                    class="px-14 text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300  my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider " :to="subItem.to">
+                                    class="px-[35px] text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300 my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider " :to="subItem.to">
                                     <SelectedRadioButton
                                         v-if="$route.path === subItem.to"
                                         class="h-3"/>

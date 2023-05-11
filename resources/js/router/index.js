@@ -240,10 +240,10 @@ const routes = [
             },
             {
                 path: "/app/status-reversal/adjustment-entry/all-entries",
-                name: "All Entries",
+                name: "View All Entries",
                 component: AllEntries,
                 meta: {
-                    title: `All Entries`,
+                    title: `View All Entries`,
                     ability: "View All Entries",
                 },
             },
@@ -324,8 +324,8 @@ const routes = [
                 name: "Buying",
                 component: Buying,
                 meta: {
-                    title: `Trading - Buying`,
-                    ability: "Trading - Buying",
+                    title: `Buying`,
+                    ability: "Buying",
                 },
 
             },
@@ -334,8 +334,8 @@ const routes = [
                 name: "Selling",
                 component: Selling,
                 meta: {
-                    title: `Trading - Selling`,
-                    ability: "Trading - Selling",
+                    title: `Selling`,
+                    ability: "Selling",
                 },
 
             },
@@ -345,7 +345,7 @@ const routes = [
                 component: AvailableInventory,
                 meta: {
                     title: `Available Inventory`,
-                    ability: "Trading - Inventory",
+                    ability: "Inventory",
                 },
 
             },
@@ -355,7 +355,7 @@ const routes = [
                 component: STR,
                 meta: {
                     title: `STR`,
-                    ability: "Trading - STR",
+                    ability: "STR",
                 },
 
             },
@@ -429,11 +429,11 @@ const routes = [
             },
             {
                 path: "/app/reports/ctr-str-report",
-                name: "ctr and str report",
+                name: "ctr & str report",
                 component: CTR_STRReport,
                 meta: {
-                    title: `CTR and STR Report`,
-                    ability: `CTR and STR Report`,
+                    title: `CTR & STR Report`,
+                    ability: `CTR & STR Report`,
                 },
             },
             {

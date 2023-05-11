@@ -37,8 +37,8 @@ export default{
                 </div>
             </div>
             <div class="flex gap-5">
-                <SolidButton :buttonLabel="'Cancel'" :buttonSize="'h-auto w-[140px]'" :buttonFont="'font-[700]'"/>
-                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#F9951E]'"  :buttonSize="'h-auto w-[140px]'"  :buttonFont="'font-[700]'" :buttonPadding="'py-2'"/>
+                <BorderButton :buttonLabel="'CANCEL'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" />
+                <BorderButton :buttonLabel="'SUBMIT'"  />
 
             </div>
         </div>

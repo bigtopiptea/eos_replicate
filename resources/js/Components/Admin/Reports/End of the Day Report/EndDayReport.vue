@@ -68,7 +68,7 @@ export default {
             <div class="flex justify-between items-center mx-[12px]">
                 <div class="flex gap-[10px] w-[48%]">
                     <div class="w-[75%]">
-                        <form class="flex items-start">
+                        <form class="flex items-start gap-3">
                             <div class="relative w-full">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <SearchIcon />
@@ -80,7 +80,7 @@ export default {
                             <NormalButton label="Go"
                             class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </form>
                     </div>
                 </div>
@@ -89,10 +89,10 @@ export default {
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
-                <div class="flex justify-end flex-col">
-                    <div class="flex items-end">
-                        <DropDown label="bulk action"/>
-                        <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] t-1.5 text-[10px] text-white px-3 uppercase" />
+                <div class="flex justify-end ">
+                    <div class="flex items-end ">
+                            <DropDown label="bulk action"/>
+                        <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] text-[10px] text-white px-3 uppercase" />
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@ export default {
                                     <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider"></td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">XX,XXX.XX</td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">XX,XXX.XX</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider"></td>                                   
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider"></td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -169,8 +169,8 @@ export default {
 
     <Slideover :show="endDayReportOpen" @close="endDayReportToggle" :title="'CONFIRM END OF THE DAY'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-[20px]">
-            <div class="mx-10 h-auto">
-                <div class="mt-[30px]">
+            <div class="mx-10 h-auto ">
+                <div class="mt-[30px] flex flex-col gap-3">
                     <div>
                         <InputGroup :inputType="'text'" :inputLabel="'total count'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>
