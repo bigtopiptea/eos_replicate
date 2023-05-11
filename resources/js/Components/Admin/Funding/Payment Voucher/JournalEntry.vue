@@ -1,10 +1,11 @@
 <script>
 import SettingsInput from '@/Components/Misc/Input/SettingsInput.vue';
 import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
 
 export default{
     components:{
-        SettingsInput, SolidButton
+        SettingsInput, SolidButton, BorderButton
 
     }
 }

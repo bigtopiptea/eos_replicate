@@ -160,7 +160,7 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
-                            to: "/app/reports/cash-positon-report",
+                            to: "/app/reports/cash-position-report",
                             label: "Cash Position",
                             children: [],
                             icon: CircleCheckIcon,

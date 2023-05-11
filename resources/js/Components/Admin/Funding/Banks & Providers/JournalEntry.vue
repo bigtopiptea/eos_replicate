@@ -1,11 +1,12 @@
 <script>
 import SettingsInput from '@/Components/Misc/Input/SettingsInput.vue';
 import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
-
+import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
 export default{
     components:{
         SettingsInput, 
-        SolidButton
+        SolidButton,
+        BorderButton
     }
 }
 </script>
@@ -83,8 +84,8 @@ export default{
                 </table>
             </div>
             <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
-                <SolidButton :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                <SolidButton :buttonLabel="'SUBMIT'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'" :isDisabled="true"/>
+                <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'" />
             </div>
         </div>
     </div>

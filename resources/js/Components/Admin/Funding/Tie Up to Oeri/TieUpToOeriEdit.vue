@@ -65,8 +65,8 @@ export default{
             <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
                 <JournalEntry>
                   <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">
-                    <SolidButton  @click="updateMainValue(!isOpen)"  :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'SUBMIT'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <BorderButton @click="updateMainValue(!isOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                    <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'" />
                 </div>
                 </JournalEntry>
             </Accordion>

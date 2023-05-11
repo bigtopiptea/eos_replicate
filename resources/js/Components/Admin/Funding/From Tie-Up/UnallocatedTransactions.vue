@@ -330,7 +330,7 @@ export default{
                         :offset="1" class="mt-8"/>
         </div>
             <div class="flex gap-[15px] justify-center mt-3">
-                <BorderButton :buttonLabel="'Reset'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-black'"/>
+                <BorderButton :buttonLabel="'Reset'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-[#3e3e3e]'"/>
                 <BorderButton :buttonLabel="'Allocate Fund'" :buttonPadding="'px-2 py-2'"/>
                 <BorderButton :buttonLabel="'Pass Entry'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'" :buttonPadding="'px-2 py-2'" :buttonHover="'hover:bg-red-500'"/>
             </div>

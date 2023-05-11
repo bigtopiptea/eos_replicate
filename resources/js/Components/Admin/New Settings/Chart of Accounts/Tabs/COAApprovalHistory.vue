@@ -249,8 +249,8 @@ export default {
             </div>
             <div class="flex flex-col gap-[100px]">
                 <div class="flex justify-center gap-[100px] border-black">
-                    <SolidButton @click="(RequestChartOpen = !RequestChartOpen)" :buttonLabel="'CANCEL'" :buttonTextSize="'text-[15px]'"/>
-                    <SolidButton :buttonLabel="'CONFIRM'" :buttonTextSize="'text-[15px]'" :buttonStyle="'bg-[#F9951E]'"/>
+                    <BorderButton @click="(RequestChartOpen = !RequestChartOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                     <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
                 </div>
             </div>
         </div>
