@@ -30,11 +30,6 @@ export default {
                 {label:'TOTAL_CR'},
                 {label:'NET AMOUNT'},
             ],
-            sampleOptions:[
-                {label:'DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'ACCOUNT NAME'},
-            ]
         }
     },
     methods: {
@@ -62,7 +57,7 @@ export default {
 }
 </script>
 <template>
-    <div class="container h-auto bg-white">
+    <div class="h-auto w-full bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
@@ -230,6 +225,5 @@ export default {
             <Pagination @paginate="getCashPositionReport()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
-        <CheckboxSelectMenu :options="sampleOptions"/> 
     </div>
 </template>

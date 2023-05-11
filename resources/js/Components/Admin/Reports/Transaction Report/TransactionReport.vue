@@ -7,13 +7,14 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
-import DropdownCheckbox from "../../../Misc/Dropdown/DropdownCheckbox.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+
 export default {
     name: 'Cash Position Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination, DropdownCheckbox
+        Pagination, CheckboxSelectMenu
     },
     data() {
         return {
@@ -31,16 +32,16 @@ export default {
                 {label:'VALUE DATE'},
             ],
             partnerClient:[
-                'ALL PARTNERS/CLIENTS',
-                'Redha Al Ansari Exchange',
-                'RNV FOREX',
-                'Right Choice Payments',
-                'City Express Money Transfer',
-                'Al Ektasad Exchange',
-                'J-Dee Remittance Services Pte Ltd',
-                'Flatley LLC',
-                'Hodkiewicz Ltd',
-                'Cummerata Group',
+                {name: 'ALL PARTNERS/CLIENTS'},
+                {name: 'Redha Al Ansari Exchange'},
+                {name: 'RNV FOREX'},
+                {name: 'Right Choice Payments'},
+                {name: 'City Express Money Transfer'},
+                {name: 'Al Ektasad Exchange'},
+                {name: 'J-Dee Remittance Services Pte Ltd'},
+                {name: 'Flatley LLC'},
+                {name: 'Hodkiewicz Ltd'},
+                {name: 'Cummerata Group'},
             ],
             reportType:[
                 'DISTRIBUTION',
@@ -74,11 +75,12 @@ export default {
 }
 </script>
 <template>
-    <div class="container h-auto bg-white">
-        <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
+    <div class="h-auto w-full bg-white">
+        <div class="flex flex-col justify-end gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[65%] mx-[12px]">
                 <div class="w-[50%]">
-                    <DropdownCheckbox :label="'partner/client'" :options="partnerClient" :placeholder="'select partner/client'"/>
+                    <!-- <DropdownCheckbox :label="'partner/client'" :options="partnerClient" :placeholder="'select partner/client'"/> -->
+                    <CheckboxSelectMenu :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient"/>
                 </div>
                 <div class="w-[25%]">
                     <FloatingLabelDropdown :inputLabel="'type of report'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :placeholder="'select report type'"  :options="reportType"/>
