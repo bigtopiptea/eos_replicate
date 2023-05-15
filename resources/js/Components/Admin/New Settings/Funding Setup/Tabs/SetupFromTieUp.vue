@@ -14,7 +14,7 @@ import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
 import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 
 export default {
@@ -31,7 +31,7 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-
+        CheckboxSelectMenu
 
     },
 
@@ -48,8 +48,12 @@ export default {
                 {label:'ADDED BY'},
                 {label:'Actions'},
             ],
-
-            allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ],   
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -77,7 +81,7 @@ export default {
     <div class="h-auto w-full bg-white">
         <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
             <div class="w-[35%] pb-3">
-                <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="allTieUpPartners" :placeholder="'SELECT TIE-UP'"/>
+                <CheckboxSelectMenu :label="'Tie-up'" :inputWidth="'w-full'" :options="tieUpOptions" :placeholder="'SELECT TIE-UP'"/>
             </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
@@ -182,10 +186,10 @@ export default {
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
+                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'" />
                     </div>
                     <div>
-                        <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputColor="'bg-white'" :placeholder="'SELECT TIE-UP'"/>
+                        <CheckboxSelectMenu :label="'Tie-up'" :placeholder="'SELECT TIE-UP'" :options="tieUpOptions"/>
                     </div>
                 </div>
             </div>

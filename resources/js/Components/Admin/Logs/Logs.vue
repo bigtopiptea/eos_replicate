@@ -5,10 +5,11 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import DropdownCheckbox from '../../Misc/Dropdown/DropdownCheckbox.vue';
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 export default {
     components:{
         FloatingLabelDropdown, BorderButton, DateInput, NormalButton,
-        DropdownCheckbox, Pagination
+        DropdownCheckbox, Pagination, CheckboxSelectMenu
     },
     data(){
         return{
@@ -24,30 +25,30 @@ export default {
                 {label:'ACTIVITY'},
             ],
             application:[
-                'EOS',
-                'SOPHIA',
+                {name: 'EOS'},
+                {name: 'SOPHIA'},
             ],
             userType:[
-                'ALL USERS',
-                'ALFARO, LECEL PEREZ',
-                'ASIS, GINALYN IBARRA',
-                'BANARIA, JEFFRET CLEDORIO',
-                'CUENTA, ARNIE LAMBOJO',
-                'DIAZ, NELLA MARIE TINIO',
-                'DUPAYA, JOEREN TITO VIERNES',
-                'LEMITA, ANGELOU CRUZ',
-                'RANOLA, SHEILA MARIE'
+                {name: 'ALL USERS'},
+                {name: 'ALFARO, LECEL PEREZ'},
+                {name: 'ASIS, GINALYN IBARRA'},
+                {name: 'BANARIA, JEFFRET CLEDORIO'},
+                {name: 'CUENTA, ARNIE LAMBOJO'},
+                {name: 'DIAZ, NELLA MARIE TINIO'},
+                {name: 'DUPAYA, JOEREN TITO VIERNES'},
+                {name: 'LEMITA, ANGELOU CRUZ'},
+                {name: 'RANOLA, SHEILA MARIE'}
             ],
             logType:[
-                'ALL LOG TYPES',
-                'LOGIN',
-                'PROCESS',
-                'VERIFY',
-                'APPROVE',
-                'AMMENDMENT',
-                'CHANGE / UPDATE',
-                'TRADING: BUY',
-                'TRADING: SELL',
+                {name: 'ALL LOG TYPES'},
+                {name: 'LOGIN'},
+                {name: 'PROCESS'},
+                {name: 'VERIFY'},
+                {name: 'APPROVE'},
+                {name: 'AMMENDMENT'},
+                {name: 'CHANGE / UPDATE'},
+                {name: 'TRADING: BUY'},
+                {name: 'TRADING: SELL'}
             ],
         }
     },
@@ -82,13 +83,13 @@ export default {
             <div class="flex justify-between w-full">
                 <div class="flex items-end gap-[10px] w-[60%]">
                     <div class="w-[25%]">
-                        <FloatingLabelDropdown :inputLabel="'application'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="application" :placeholder="'SELECT APPLICATION'"/>
+                        <CheckboxSelectMenu :label="'application'" :inputWidth="'w-12/12'"  :options="application" :placeholder="'SELECT APPLICATION'"/>
                     </div>
                     <div class="w-[40%]">
-                        <DropdownCheckbox :label="'USER'" :placeholder="'SELECT USER(S)'" :options="userType"/>
+                        <CheckboxSelectMenu :label="'USER'" :placeholder="'SELECT USER(S)'" :options="userType"/>
                     </div>
                     <div class="w-[35%]">
-                        <DropdownCheckbox :label="'LOG TYPE'" :placeholder="'SELECT TYPE OF LOGS'" :options="logType"/>
+                        <CheckboxSelectMenu :label="'LOG TYPE'" :placeholder="'SELECT TYPE OF LOGS'" :options="logType"/>
                     </div>
                 </div>
                 <div>

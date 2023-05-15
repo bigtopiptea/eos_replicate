@@ -14,7 +14,7 @@ import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
 import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 
 export default {
@@ -31,7 +31,7 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-
+        CheckboxSelectMenu
 
     },
 
@@ -49,8 +49,23 @@ export default {
                 {label:'ADDED BY'},
                 {label:'Actions'},
             ],
-
-            allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ], 
+            oeriBankOptions:[
+                {name: 'Oeri Bank 1'},
+                {name: 'Oeri Bank 2'},
+                {name: 'Oeri Bank 3'},
+            ], 
+            tieUpPartnerOptions:[
+                {name: 'All Tie Up Partners'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ], 
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -78,7 +93,7 @@ export default {
     <div class="h-auto w-full bg-white">
         <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
             <div class="w-[35%] pb-3">
-                <FloatingLabelDropdown :inputLabel="'Tie-up'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="allTieUpPartners" />
+                <CheckboxSelectMenu :label="'Tie-up'" :placeholder="'SELECT TIE-UP'" :inputWidth="'w-full'" :options="tieUpOptions" />
             </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
@@ -190,10 +205,10 @@ export default {
                         <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'OERI-BANk'" :inputColor="'bg-white'" :placeholder="'SELECT OERI BANK'"/>
+                        <CheckboxSelectMenu :label="'OERI-BANk'" :placeholder="'SELECT OERI BANK'" :options="oeriBankOptions"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'Tie-up Partner'" :inputColor="'bg-white'" :placeholder="'SELECT TIE UP PARTNER'" />
+                        <CheckboxSelectMenu :label="'Tie-up Partner'" :placeholder="'SELECT TIE UP PARTNER'" :options="tieUpPartnerOptions"/>
                     </div>
                 </div>
             </div>

@@ -14,8 +14,7 @@ import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
 import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-
-
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 export default {
 
@@ -33,7 +32,7 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-
+        CheckboxSelectMenu
 
     },
 
@@ -50,7 +49,14 @@ export default {
                 {label:'Actions'},
             ],
 
-            BankProvider:['Cebuana Lhuillier','BPI','BDO','...'],
+            BankProvider:[
+               {name: 'BPI'},
+               {name: 'Eastwest'},
+               {name: 'Landbank'},
+               {name: 'Chinabank'},
+               {name: 'Banco De Oro'},
+               {name: 'Cebuana Lhuillier'},
+            ],
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -78,7 +84,7 @@ export default {
     <div class="h-auto w-full bg-white">
         <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
             <div class="w-[35%] pb-3">
-                <FloatingLabelDropdown :inputLabel="'Bank/Provider'" :inputWidth="'w-full'" :inputColor="'bg-white'" :options="BankProvider" />
+                <CheckboxSelectMenu :label="'Bank/Provider'" :inputWidth="'w-full'" :placeholder="'Select Banks/Providers'" :options="BankProvider" />
             </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">

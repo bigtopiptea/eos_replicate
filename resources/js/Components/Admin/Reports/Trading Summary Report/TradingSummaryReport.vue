@@ -71,7 +71,7 @@ export default {
             <div class="w-[60%] self-end ">
                 <div class="2xl:container w-full border">
                     <table class="w-full ">
-                        <thead class="divide-y divide-gray-200 text-[11px] font-normal text-white text-center uppercase whitespace-nowrap">
+                        <thead class="divide-y divide-gray-200 bg-[#3E3E3E] text-[11px] font-normal text-white text-center uppercase whitespace-nowrap">
                             <tr class="divide-x divide-gray-200 ">
                                 <th v-for="label in tableOneLabels" :key="label.label" scope="col" class="px-1 py-2">
                                     {{label.label}}
@@ -166,7 +166,7 @@ export default {
                 <div class="overflow-auto w-full">
                     <div class="2xl:container w-full border">
                         <table class="w-full">
-                            <thead class="divide-y divide-gray-200 bg-[#D7D7D7] text-[11px] font-normal  text-[#3E3E3E] uppercase whitespace-nowrap">
+                            <thead class="divide-y divide-gray-200 bg-[#3E3E3E] text-[11px] font-normal  text-[#3E3E3E] uppercase whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200 ">
                                     <th v-for="label in valueTodayLabels" :key="label.label" scope="col" class="px-1 py-2 uppercase tracking-wider text-center">
                                     {{label.label}}

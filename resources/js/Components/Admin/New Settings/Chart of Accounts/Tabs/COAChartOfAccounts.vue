@@ -14,8 +14,7 @@ import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
 import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-
-
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 export default {
     components:{
@@ -31,8 +30,7 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-
-
+        CheckboxSelectMenu
     },
 
     data() {
@@ -49,7 +47,21 @@ export default {
                 {label:'account type'},
                 {label:'Status'},
             ],
-
+            fsCategory:[
+                {name: 'Category 1'},
+                {name: 'Category 2'},
+                {name: 'Category 3'},
+            ],
+            fsType:[
+                {name: 'Type 1'},
+                {name: 'Type 2'},
+                {name: 'Type 3'},
+            ],
+            accType:[
+                {name: 'Account Type 1'},
+                {name: 'Account Type 2'},
+                {name: 'Account Type 3'},
+            ],
             RequestChartOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -178,16 +190,16 @@ export default {
                         <FloatingLabelInput :inputLabel="'Account Description'" :placeholder="'Description'"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'FS Category'" :inputColor="'bg-white'" :placeholder="'Select FS Category'"/>
+                        <CheckboxSelectMenu :label="'FS Category'" :placeholder="'Select FS Category'" :options="fsCategory"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'FS Type'"  :inputColor="'bg-white'" :placeholder="'Select FS Type'"/>
+                        <CheckboxSelectMenu :label="'FS Type'" :placeholder="'Select FS Type'" :options="fsType"/>
                     </div>
                     <div class="mb-5">
                         <InputGroup :inputLabel="'Account Number'" :placeholder="'Bank Name'" :isDisabled="true" :inputWidth="'w-1/2'" :labelWidth="'w-1/2'"/>
                     </div>
                     <div class="mb-5">
-                        <FloatingLabelDropdown :inputLabel="'Account Type'"  :inputColor="'bg-white'" :placeholder="'Select Account Type'"/>
+                        <CheckboxSelectMenu :label="'Account Type'" :placeholder="'Select Account Type'" :options="accType"/>
                     </div>
                 </div>
             </div>

@@ -2,13 +2,13 @@
 import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
-import CheckboxSelectMenuVue from '../../../Misc/Select Menu/CheckboxSelectMenu.vue';
+import CheckboxSelectMenu from '../../../Misc/Select Menu/CheckboxSelectMenu.vue';
 export default{
     components:{
         BorderButton,
         FloatingLabelDropdown,
         SolidButton,
-        CheckboxSelectMenuVue
+        CheckboxSelectMenu
 
     },
     data() {
@@ -38,7 +38,7 @@ export default{
             </div>
             <div class="flex justify-center w-full ">
                 <div class="w-1/4">
-                    <CheckboxSelectMenuVue :label="'Report Type'" :inputWidth="'w-full'"  :options="reportType" :placeholder="'SELECT REPORT TYPE'"/>
+                    <CheckboxSelectMenu :label="'Report Type'" :inputWidth="'w-full'"  :options="reportType" :placeholder="'SELECT REPORT TYPE'"/>
                 </div>
             </div>
             <div class="flex gap-5">

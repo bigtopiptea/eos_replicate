@@ -461,7 +461,7 @@ export default {
             </div>
             <div>
                 <img class="m-auto h-[100px] w-[100px] my-5 rounded-full"
-                     :src="user.avatar" alt="" @click="(slideoverOpen = !slideoverOpen)"/>
+                     :src="user.avatar" alt=""/>
                 <div v-if="isToggled" class="text-center">
                     <div class="text-[11px] font-rubik tracking-widest  uppercase mt-2 text-[#3E3E3E]">
                         {{ user.first_name + " "  + user.middle_name + " " + user.last_name }}

@@ -46,7 +46,6 @@ export default {
             </div>
             <div class="w-full flex justify-center">
                 <div class="w-[65%]">
-
                     <CheckboxSelectMenu :options="AccNames" :placeholder="'Select Account Name'"/>
                 </div>
             </div>

@@ -14,13 +14,15 @@ import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import Slideover from '../../../Misc/Slideover/Slideover.vue';
 import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 export default {
     name: 'Signatories',
     components: {
         NormalButton, SearchIcon, CirclePlusIcon, DateInput, 
         FloatingLabelDropdown, FloatingLabelInput, SmallLabelInput,
-        BorderButton, DropDown, Slideover, SolidButton, SwitchToggle
+        BorderButton, DropDown, Slideover, SolidButton, SwitchToggle,
+        CheckboxSelectMenu
     },
     data() {
         return {
@@ -33,14 +35,14 @@ export default {
                 {label:'ACTIONS'},
             ],
             designOptions: [
-                'BUSINESS DEVELOPMENT HEAD',
-                'ACCOUNTING HEAD',
-                'COO',
+                {name: 'BUSINESS DEVELOPMENT HEAD'},
+                {name: 'ACCOUNTING HEAD'},
+                {name: 'COO'},
             ],
             signatoryType: [
-                'SET A',
-                'SET B',
-                'SET C',
+                {name: 'SET A'},
+                {name: 'SET B'},
+                {name: 'SET C'},
             ],
             addNewSignatoryOpen: false,
             paraIcon:'PLUS', //Icon Parameter
@@ -216,10 +218,10 @@ export default {
                     <SmallLabelInput :inputLabel="'signatory name'"  :inputWidth="'w-12/12'" :isDisabled="true"/>
                 </div>
                 <div> 
-                    <FloatingLabelDropdown :inputLabel="'designation'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="designOptions"/>
+                    <CheckboxSelectMenu :label="'designation'" :placeholder="'select designation'"  :inputWidth="'w-12/12'" :options="designOptions"/>
                 </div>
                 <div> 
-                    <FloatingLabelDropdown :inputLabel="'signatory type'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="signatoryType"/>
+                    <CheckboxSelectMenu :label="'signatory type'" :placeholder="'Select Signatory type'" :inputWidth="'w-12/12'" :options="signatoryType"/>
                 </div>
             </div>
             <div class="flex justify-center gap-[100px] border-black">

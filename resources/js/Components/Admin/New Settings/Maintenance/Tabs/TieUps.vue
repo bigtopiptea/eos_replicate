@@ -13,12 +13,13 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 export default {
     name: 'Maintenance - Tie Ups',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
         FloatingTextArea, SmallLabelInput, DropDown, Slideover,
-        SolidButton, SwitchToggle, BorderButton
+        SolidButton, SwitchToggle, BorderButton, CheckboxSelectMenu
     },
     data() {
         return {
@@ -29,6 +30,17 @@ export default {
                 {label:'MODIFIED BY'},
                 {label:'ACTIONS'},
             ],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ], 
+            reasonOption:[
+                {name: 'Reason 1'},
+                {name: 'Reason 2'},
+                {name: 'Reason 3'},
+            ], 
             holdOpen: false,
         }
     },
@@ -134,10 +146,10 @@ export default {
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'" :placeholder="'SELECT TIE UP'" :options="tieUpOptions"/>
                 </div>
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"/>
+                    <CheckboxSelectMenu :label="'reason'" :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'" :options="reasonOption"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>

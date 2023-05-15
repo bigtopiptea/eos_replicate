@@ -13,12 +13,13 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 import BorderButtton from "@/Components/Misc/Buttons/BorderButton.vue";
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 export default {
     name: 'Maintenance - Banks/Providers',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
         FloatingTextArea, SmallLabelInput, DropDown, Slideover,
-        SolidButton, SwitchToggle, BorderButtton
+        SolidButton, SwitchToggle, BorderButtton, CheckboxSelectMenu
     },
     data() {
         return {
@@ -29,6 +30,23 @@ export default {
                 {label:'MODIFIED BY'},
                 {label:'ACTIONS'},
             ],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ], 
+            banksProviders:[
+                {name: 'All Banks/Providers'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ], 
+            reasonOption:[
+                {name: 'Reason 1'},
+                {name: 'Reason 2'},
+                {name: 'Reason 3'},
+            ], 
             holdOpen: false,
             isHold: false,
 
@@ -49,7 +67,7 @@ export default {
         <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
             <div class="flex justify-between items-center ">
                 <div class="w-[30%]">
-                    <FloatingLabelDropdown :inputLabel="'Tie-Up'" :inputWidth="'w-12/12'" :inputColor="'bg-white'"/>
+                    <CheckboxSelectMenu :label="'Tie-Up'" :inputWidth="'w-12/12'" :placeholder="'Select Tie-Up'" :options="tieUpOptions"/>
                 </div>
                 <div class="flex w-[35%]">
                     <div class="w-full">
@@ -143,13 +161,13 @@ export default {
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'tie-up'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'" :placeholder="'Select Tie-up'" :options="tieUpOptions"/>
                 </div>
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'banks/providers'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'"/>
+                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'Select Banks/provider'" :options="banksProviders"/>
                 </div>
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'reason'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"/>
+                    <CheckboxSelectMenu :label="'reason'" :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"  :options="reasonOption"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>
