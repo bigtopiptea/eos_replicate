@@ -71,8 +71,8 @@ export default {
 }
 </script>
 <template>
-    <div class="3xl:container h-screen bg-white">
-        <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
+    <div class="3xl:container h-screen bg-white px-3">
+        <div class="flex flex-col gap-[15px] min-w-full pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[23.5%]">
                     <CheckboxSelectMenu :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
@@ -103,7 +103,7 @@ export default {
                                 <SearchIcon />
                             </div>
                             <input type="text" id="simple-search"
-                                class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-2 px-1.5"
+                                class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-1 px-2.5"
                                 placeholder="Search" required />
                         </div>
                         <NormalButton label="Go"
@@ -128,14 +128,14 @@ export default {
                 </div>
             </div>
             <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+            <div class="min-w-full py-2 align-middle ">
+                <div class="relative h-[360px]">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                        <table class="min-w-full divide-y divide-gray-300">
+                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
                                     <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                        class="py-1 px-2 uppercase tracking-wider text-center text-gray-900">
                                         {{ label.label }}
                                     </th>
                                 </tr>
@@ -143,63 +143,63 @@ export default {
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         09/28/2022 10:55:09 aM
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         TRD-050622-5
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         banco de oro
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         002860255555
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         vertex entertainment and resorts corp.
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         114,583.34
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         52.58
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         6,024,792.017
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         CHINABANKING CORP.
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         PRIME ASSET VENTURES INC.
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         104052000157
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         philippines
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         Payment for loan amortization
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         General Services
                                     </td>
                                     <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         06/26/2018
                                     </td>
                                 </tr>

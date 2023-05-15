@@ -77,7 +77,7 @@ export default {
 }
 </script>
 <template>
-    <div class="h-screen bg-white w-full px-[30px] py-[20px]">
+    <div class="h-screen bg-white w-full px-3 py-5">
         <div class="flex flex-col gap-[15px] ">
             <div class="flex justify-between w-full">
                 <div class="flex items-end gap-[10px] w-[60%]">
@@ -109,11 +109,11 @@ export default {
             </div>
         </div>
         <!-- TABLE -->
-        <div class="overflow-hidden w-full mt-[50px]">
-            <div class="inline-block min-w-full align-middle ">
-                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
-                    <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
-                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+        <div class="min-w-full py-5 align-middle ">
+            <div class="relative h-[360px]">
+                <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                    <table class="min-w-full divide-y divide-gray-300">
+                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                             <tr class="divide-x divide-gray-200">
                                 <th v-for="label in labels" :key="label.label" scope="col"
                                     class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">

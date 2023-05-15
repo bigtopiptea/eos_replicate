@@ -63,8 +63,8 @@ export default {
 }
 </script>
 <template>
-    <div class="w-auto  h-screen bg-white">
-        <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
+    <div class="w-auto h-auto bg-white px-3 ">
+        <div class="flex flex-col gap-[15px] min-w-full  pt-10 pb-5">
             <div class="flex justify-between items-center w-[98%] mx-[12px]">
                 <div class="w-[33.33%]">
                     <CheckboxSelectMenu :label="'Report Type'" :inputWidth="'w-12/12'" :options="reportType" :placeholder="'Select Report type'"/>
@@ -117,11 +117,11 @@ export default {
                 </div>
             </div>
             <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+            <div class="min-w-full py-2 align-middle ">
+                <div class="relative h-[360px]">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                        <table class="min-w-full divide-y divide-gray-300">
+                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
