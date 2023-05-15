@@ -143,7 +143,7 @@ export default {
                                         <th scope="col" class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                             <div class="flex justify-center items-center gap-1">
                                                 <input type="checkbox">
-                                                01
+                                                ID
                                             </div>
                                         </th>
                                         <th v-for="label in labels" :key="label.label" scope="col" class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
@@ -183,14 +183,13 @@ export default {
                                         <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
                                             <div class="flex justify-center items-center gap-1">
                                                 <router-link class="relative justify-center items-center" to="/app/status-reversal/adjustment-entry">
-                                                    <NAIcon class="absolute h-3 w-3 top-1 left-1"/>
-                                                    <button class="border-2 h-[20px] z-30 w-[60px] bg-white border-#D7D7D7 text-center text-#000000 hover:text-white hover:bg-[#D7D7D7] pl-[15px]">     N/A</button>
+
+                                                    <button class="border h-[20px] z-30 w-[60px] bg-white border-#D7D7D7 text-center text-#000000 hover:text-white hover:bg-[#D7D7D7] pl-[15px]"><NAIcon class=" bg-inherit absolute h-3 w-3 top-1 left-1 uppercase whitespace-nowrap"/>N/A</button>
                                                 </router-link>
                                                 <router-link class="relative justify-center items-center" to="/app/status-reversal/adjustment-entry">
-                                                    <EditIcon class="absolute h-4 w-4 top-[1px] left-1"/>
-                                                    <button class="border-2 h-[20px] bg-white w-[60px] z-30 border-#FB9E30 text-center text-#FB9E30 hover:text-white hover:bg-[#FB9E30] pl-[15px]">     Submit</button>
-                                                </router-link>
 
+                                                    <button class="border h-[20px] bg-white w-[60px] z-30 border-#FB9E30 text-center text-#FB9E30 hover:text-white hover:bg-[#FB9E30] pl-[15px] uppercase whitespace-nowrap"><EditIcon class="-z-1 absolute h-4 w-4 top-[1px] left-1"/>Create</button>
+                                                </router-link>
                                             </div>
                                         </td>
                                     </tr>
