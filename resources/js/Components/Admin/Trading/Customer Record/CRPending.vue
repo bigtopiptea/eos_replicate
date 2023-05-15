@@ -290,7 +290,7 @@ export default {
                 </router-link>
             </div>
             <div class="flex justify-center">
-                <BorderButton @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-black text-black'" :buttonPadding="'p-2'" :buttonHover="'hover:bg-black'"/>
+                <BorderButton  @click="(viewModalOpen = !viewModalOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'"  />
             </div>
         </div>
     </ModalTwo>

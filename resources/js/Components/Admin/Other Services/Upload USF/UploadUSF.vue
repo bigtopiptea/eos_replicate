@@ -30,8 +30,11 @@ export default{
                 <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Drag and Drop file</h1>
                 <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">or</h1>
             </div>
-            <BorderButton :buttonLabel="'Browse'" :buttonStyle="'border-[3px] border-[#F9951E] text-[#F9951E] font-[700] text-[14px]'" :buttonPadding="'py-1 px-5'" class="mb-10" >
-            </BorderButton>
+            <div class="flex items-center justify-center cursor-pointer mb-10">
+                <BorderButton :buttonLabel="'Browse'" :buttonStyle="'border-[3px] border-[#F9951E] text-[#F9951E] font-[700] text-[14px]'" :buttonPadding="'py-1 px-5'">
+                </BorderButton>
+                <input class="absolute w-[120px] h-7 opacity-0" type="file">
+            </div>
             <div class="flex flex-col justify-center items-center">
                 <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Max File Size:<span class="font-[700] "> 10mb</span></h1>
                 <h1 class="uppercase text-[11px] font-normal text-[#3E3E3E]">Supported File type:<span class="font-[700] "> XLS,XLSX</span></h1>
