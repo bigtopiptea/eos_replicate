@@ -17,8 +17,7 @@
                             leave-from="translate-x-0" leave-to="translate-x-full">
                             <DialogPanel class="pointer-events-auto  w-screen" :class="widthModal">
                                 <div class="flex h-full flex-col bg-white shadow-xl">
-                                    <div
-                                        class="relative py-5 mt-[41px] mb-2 flex justify-center items-center w-full h-[50px] bg-gradient-to-r from-[#FB9E30] via-[#F98B38] to-[#EE3E2C]">
+                                    <div class="relative py-5 mt-[64px] mb-2 flex justify-center items-center w-full h-[40px] bg-gradient-to-r from-[#FB9E30] via-[#F98B38] to-[#EE3E2C]">
                                         <div class="absolute left-5 text-white">
                                             <!-- {{ iconShow }} -->
                                             <div v-if=" iconShow  === 'USER'">

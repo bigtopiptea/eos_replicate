@@ -11,12 +11,12 @@ import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
 import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue';
 import Slideover from '../../../../Misc/Slideover/Slideover.vue';
-
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     components:{
         RefreshIcon, SmallHeading, BorderButton, Accordion,
         FloatingLabelInput, FloatingLabelDropdown, SolidButton,
-        ModalTwo, Slideover, PaperClipIcon
+        ModalTwo, Slideover, PaperClipIcon, CheckboxSelectMenu
     },
     data(){
         return{
@@ -30,7 +30,12 @@ export default {
                 {label:'DATE UPLOADED'},
                 {label:'UPLOADED BY'},
                 {label:'ACTIONS'},
-            ]
+            ],
+            idType:[
+                {name: 'SSS'},
+                {name: 'PhilHealth'},
+                {name: 'Drivers License'},
+            ],
         }
     },
     methods:{
@@ -114,11 +119,14 @@ export default {
                     <div class="mx-5">
                         <form class="flex gap-[5px]">
                             <div class="flex flex-col gap-[10px] w-[60%]">
-                                <FloatingLabelDropdown :inputLabel="'type of id/document'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" isRequired="true" :placeholder="'Select type of ID/Document'"/>
+                                <CheckboxSelectMenu :label="'type of id/document'" :inputWidth="'w-12/12'"  isRequired="true" :placeholder="'Select type of ID/Document'" :options="idType"/>
                                 <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
                                     <div class="text-center text-[12px] mb-5">
                                         <p>DRAG IMAGE HERE<br>OR</p>
-                                        <button type="button" class="text-#EE3E2C font-medium py-1 px-4 border-2 border-#EE3E2C hover:bg-[#EE3E2C] hover:text-white">BROWSE</button>
+                                        <div class="flex items-center justify-center cursor-pointer">
+                                            <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
+                                            <input class="absolute w-[100px] opacity-0" type="file">
+                                        </div>
                                     </div>
                                     <div class="text-center text-[10px]">
                                         <p>

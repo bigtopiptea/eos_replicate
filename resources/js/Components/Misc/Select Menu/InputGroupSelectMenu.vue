@@ -11,7 +11,7 @@
         </ListboxButton>
   
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
-          <ListboxOptions class="absolute -bottom-[100px] right-0 z-10 h-[100px]  overflow-auto bg-white p-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]" :class="inputWidth">
+          <ListboxOptions class="absolute -bottom-[100px] right-0 z-10 h-[100px]  overflow-auto bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]" :class="inputWidth">
             <ListboxOption hidden>
                 <li class="text-gray-900 relative cursor-default select-none py-1 pl-3 pr-9">
                     <span class="font-normal block truncate uppercase">
