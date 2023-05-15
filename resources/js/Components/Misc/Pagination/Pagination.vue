@@ -38,6 +38,9 @@
                         totalResults(pagination)
                     }}</span>
                     {{ " " }}
+                    to
+                    <span class="font-medium">{{ this.perPageOptions.value }}</span>
+                    {{ " " }}
                     of
                     {{ " " }}
                     <span class="font-medium">{{ pagination.total }}</span>

@@ -148,7 +148,7 @@ export default {
                             <table class="min-w-full divide-y divide-gray-300">
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200 ">
-                                        <th v-for="label in labels" :key="label.label" scope="col" class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        <th v-for="label in labels" :key="label.label" scope="col" class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                             {{  label.label }}
                                         </th>
                                     </tr>
