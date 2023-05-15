@@ -74,7 +74,8 @@ export default{
                     </tbody>
                     <div class="flex gap-3 w-full mb-2 mt-1 mx-2">
                         <BorderButton :buttonLabel="'Add New Line'" :buttonPadding="'p-0'" />
-                        <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonStyle="'border-2 border-#EE3E2C text-[#EE3E2C] text-[11px]'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
+                        <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#EE3E2C]'"
+                        :buttonTextSize="'text-[11px]'" :buttonBorderColor="'border-#EE3E2C'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
                     </div>
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
                         <tr class=" text-left">
@@ -95,8 +96,8 @@ export default{
             </div>
             <div class="flex justify-center gap-5 items-center w-full h-auto mt-5">
                 <!-- default isDisabled set to false -->
-                <SolidButton :buttonLabel="'Cancel'"/>
-                <SolidButton :buttonLabel="'Submit'" :buttonStyle="'bg-[#FB9E30]'" @click="(viewToastOpen = !viewToastOpen)"/>
+                <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'" @click="(viewToastOpen = !viewToastOpen)"/>
             </div>
         </div>
     </div>

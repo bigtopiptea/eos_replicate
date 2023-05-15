@@ -73,24 +73,26 @@ export default {
 }
 </script>
 <template>
-    <div class="h-auto w-full bg-white">
-        <div class="flex flex-col min-w-full pt-7 pb-5 px-[25px]">
+    <div class="h-auto w-full bg-white px-3 py-5">
+        <div class="flex flex-col min-w-full">
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
                     <div class="w-full">
-                        <form class="flex items-start">
-                            <div class="relative w-full">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <SearchIcon />
-                                </div>
-                                <input type="text" id="simple-search"
-                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-2 px-1.5"
+                        <form class="flex items-start gap-3">
+                            <div class="flex">
+                                <div class="relative w-full">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <SearchIcon />
+                                    </div>
+                                    <input type="text" id="simple-search"
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-1 px-2.5"
                                     placeholder="Search" required />
+                                </div>
+                                <NormalButton label="Go"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             </div>
-                            <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] ml-4 tracking-wider text-[10px] text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </form>
                     </div>
                 </div>
@@ -101,28 +103,28 @@ export default {
         </div>
 
         <!-- TABLE-->
-        <div class="overflow-hidden px-[25px]">
-            <div class="inline-block min-w-full py-2 align-middle">
-                <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5">
+        <div class="min-w-full py-5 align-middle ">
+            <div class="relative h-[360px]">
+                <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                     <table class="min-w-full divide-y divide-gray-300">
-                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
+                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
-                                    class="flex justify-center items-center py-2 px-1 uppercase tracking-wider text-center text-gray-900 gap-2">
+                                    class="flex justify-center items-center py-1 px-2 uppercase tracking-wider text-center text-gray-900 gap-2">
                                     <input type="checkbox" name="" id="">
                                     <span>
                                         ID
                                     </span>
                                 </th>
                                 <th v-for="label in labels" :key="label.label" scope="col"
-                                    class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
+                                    class="py-1 px-2 uppercase tracking-wider text-center text-gray-900">
                                     {{label.label}}
                                 </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                             <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                <td class=" whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     <div class="flex justify-center items-center gap-2">
                                         <input type="checkbox" name="" id="">
                                         <a class="underline text-cyan-500" href="#">
@@ -131,19 +133,19 @@ export default {
                                     </div>
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     BANCO DE ORO paseo sf oneri PHP
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     09/28/2022 11:00:05 AM
                                 </td>
                                 <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     banaria, jeffrey clidorio
                                 </td>
 
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     <div class="flex justify-center">
                                         <button>
                                             <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
