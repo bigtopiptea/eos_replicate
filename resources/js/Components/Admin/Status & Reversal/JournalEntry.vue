@@ -20,6 +20,10 @@ export default{
     methods: {
         viewToastToggle(){
             this.viewToastOpen = false;
+        },
+
+        isShowToggle(){
+            isShow = false;
         }
     },
 
@@ -101,5 +105,5 @@ export default{
             </div>
         </div>
     </div>
-    <Toast :show="viewToastOpen" @close="viewToastToggle()" :toastBody="''"/>
+    <Toast :isShow="viewToastOpen" @close="viewToastToggle()" :toastBody="'Adjustment Entry Succeeded'"/>
 </template>
