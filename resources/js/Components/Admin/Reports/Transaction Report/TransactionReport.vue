@@ -55,7 +55,8 @@ export default {
                 {name: 'Additional'},
                 {name: 'Adjustment'},
                 {name: 'Refund'},
-            ]
+            ],
+            test: '',
         }
     },
     methods: {
@@ -82,7 +83,7 @@ export default {
                     <CheckboxSelectMenu :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" :withCheckbox="true"/>
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
+                    <CheckboxSelectMenu v-model="test" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
                 </div>
                 <div class="w-[25%]">
                     <CheckboxSelectMenu :label="'transaction type'" :inputWidth="'w-12/12'" :placeholder="'select transaction type'" :options="transactionType"/>
@@ -124,8 +125,9 @@ export default {
             </div>
         </div>
 
+
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-screen pb-10">
+        <div v-if="test.name === 'DISTRIBUTION'" class="flex flex-col h-screen pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center">DISTRIBUTION</h2>
                 <div class="text-center">
@@ -134,7 +136,7 @@ export default {
                 </div>
             </div>
             <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
+            <div  class="overflow-hidden w-full px-3">
                 <div class="inline-block min-w-full  align-middle ">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
                         <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
@@ -184,6 +186,12 @@ export default {
             </div>
             <Pagination @paginate="getTransactionReport()" :pagination="pagination"
                     :offset="1" class="mt-8" />
+        </div>
+
+        <div v-else class="">
+                <div class="w-full h-screen flex justify-center items-center">
+                    <span>---- Nothing To report ----</span>
+                </div>
         </div>
     </div>
 </template>
