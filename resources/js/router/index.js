@@ -48,6 +48,10 @@ import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Rep
 import RevenueReport from "@/Components/Admin/Reports/Revenue Report/RevenueReport.vue";
 import OutwardRemittanceReport from "@/Components/Admin/Reports/Outward Remittance Report/OutwardRemittanceReport.vue";
 import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDayReport.vue";
+// 5/16/2023 
+import StatusReport from "@/Components/Admin/Reports/OPS-Reports/Status Report/StatusReport.vue";
+
+
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
@@ -471,6 +475,16 @@ const routes = [
                 meta: {
                     title: `End Day Report`,
                     ability: `End Day Report`,
+                },
+            },
+            //5/16/2023 VDQ
+            {
+                path: "/app/reports/status-report",
+                name: "status report",
+                component: StatusReport,
+                meta: {
+                    title: `Status Report`,
+                    ability: `Status Report`,
                 },
             },
             //Carl Mendoza 5-3

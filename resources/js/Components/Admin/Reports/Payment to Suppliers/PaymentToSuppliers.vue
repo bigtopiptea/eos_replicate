@@ -53,7 +53,7 @@ export default {
 }
 </script>
 <template>
-    <div class="3xl:container h-screen bg-white">
+    <div class="w-full h-screen bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
