@@ -6,80 +6,74 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
+
+import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
-    name: 'Cash Position Report',
+    name: 'Daily Inventory Report',
     components: {
-        NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
-        Pagination, CheckboxSelectMenu
+        NormalButton, SearchIcon, ListIcon, DateInput,
+        Pagination, BorderButton, CheckboxSelectMenu
     },
     data() {
         return {
-            CashPositionReport: [],
+            DailyInventoryReport: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'DATE'},
+                {label:'ID'},
+                {label:'TRANSACTION DATE'},
+                {label:'MAKER'},
+                {label:'CLIENT NAME'},
                 {label:'REFERENCE NO.'},
-                {label:'ACCOUNT NAME'},
-                {label:'BEGINNING BALANCE'},
-                {label:'TOTAL_DR'},
-                {label:'TOTAL_CR'},
-                {label:'NET AMOUNT'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'EXCHANGE RATE'},
+                {label:'PHP AMOUNT'},
             ],
-            reportType:[
-                {name: 'DISTRIBUTION'},
-                {name: 'FUNDING'},
-                {name: 'TRADING'},
-                {name: 'OTHER SERVICES'},
+            tieUpPartner:[
+                {name: 'ALL'},
+                {name: 'CTR - COVERED TRANSACTIONS REPORT'},
+                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT'}
             ],
-            banksProviders:[
-                {name: 'Select All'},
-                {name: 'BDO PASEO SF PHP'},
-                {name: 'BOC BANAUE OF PHP'},
-                {name: 'BOC SHAW SF PHP'},
-                {name: 'BPI H.O. SF PHP'},
-                {name: 'BPI INSTAPAY PHP'},
-                {name: 'CHINABANK DEL MONTE-MATUTUM SF PHP'},
+            tradingType:[
+                {name: 'SELL'},
+                {name: 'BUY'},
+                {name: 'BUY/SELL'}
             ],
-            currency:[
-                {name: 'SELECT ALL'},
-                {name: 'USD'},
-                {name: 'PHP'},
-            ]
         }
     },
     methods: {
-        async getCashPositionReport() {
+        async getDailyInventoryReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.CashPositionReport = response.data.data;
+                  this.DailyInventoryReport = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
 
                 })
         },
-
     },
 }
 </script>
 <template>
-    <div class="h-auto w-full bg-white">
+    <div class="3xl:container h-screen bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
-            <div class="flex gap-[10px] w-[85%] mx-[12px]">
-                <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'type of report'" :inputWidth="'w-12/12'" :placeholder="'Select type of report'" :options="reportType"/>
+            <div class="flex justify-between items-center mx-[12px]">
+                <div class="flex gap-[10px] w-[48%]">
+                    <div class="w-[70%]">
+                        <CheckboxSelectMenu :label="'Tie-up/Banks'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNER/BANKS'" :options="tieUpPartner"/>
+                    </div>
+                    <div class="w-[30%]">
+                        <CheckboxSelectMenu :label="'Trading Type'" :inputWidth="'w-12/12'" :placeholder="'SELECT TRADING TYPE'" :options="tradingType"/>
+                    </div>
                 </div>
-                <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
-                </div>
-                <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
+                <div>
+                    <BorderButton :buttonLabel="'VIEW AVAILABLE INVENTORY'" :buttonPadding="'p-2'" :buttonSize="'h-[40px] w-auto'"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -104,14 +98,14 @@ export default {
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <SearchIcon />
                                 </div>
-                                <input type="text" id="simple-search"
+                            <input type="text" id="simple-search"
                                 class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-2 px-1.5"
                                 placeholder="Search" required />
                             </div>
                             <NormalButton label="Go"
                             class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                         </div>
-                        <NormalButton label="Export"
+                            <NormalButton label="Export"
                         class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                     </form>
                 </div>
@@ -119,11 +113,11 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-screen pb-10">
+        <div class="flex flex-col h-auto pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">CASH POSITION SUMMARY</h3>
+                    <h3 class="text-[13px] font-semibold">DAILY INVENTORY Report: buy/sell</h3>
                     <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
                 </div>
             </div>
@@ -131,7 +125,7 @@ export default {
             <div class="overflow-hidden w-full px-3">
                 <div class="inline-block min-w-full  align-middle ">
                     <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
+                        <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
                                 <tr class="divide-x divide-gray-200">
                                     <th v-for="label in labels" :key="label.label" scope="col"
@@ -144,99 +138,57 @@ export default {
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
+                                        <a class="underline text-cyan-500" href="#">
+                                            01
+                                        </a>
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
+                                        09/28/2022 10:55:09 aM
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
+                                        LASCONIA, ELIOMAR DE ASIS
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
+                                        redha al ansari exchange
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
+                                        1234
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
+                                        USD
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                </tr>
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
+                                        15,000.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
+                                        48.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                </tr>
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
+                                        720,000.00
                                     </td>
                                 </tr>
                             </tbody>
+                            <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
+                                <tr>
+                                    <td colspan="6" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">TOTAL BUY</td>
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">1,025,000.00</td>
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">47.95</td>
+                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">49,149,000.00</td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getCashPositionReport()" :pagination="pagination"
+            <Pagination @paginate="getDailyInventoryReport()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
     </div>

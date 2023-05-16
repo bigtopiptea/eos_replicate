@@ -6,45 +6,42 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
+
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
-    name: 'Revenue Report',
+    name: 'Payment to Suppliers',
     components: {
-        NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
+        NormalButton, SearchIcon, ListIcon, DateInput,
         Pagination, CheckboxSelectMenu
     },
     data() {
         return {
-            RevenueReport: [],
+            PaymentToSuppliers: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'TRANSACTION DATE'},
-                {label:'COMPANIES'},
-                {label:'VOLUME'},
-                {label:'FX'},
-                {label:'FX/USD'},
+                {label:'CMT REFERENCE NO.'},
+                {label:'DATE OF ENTRY'},
+                {label:'SUPPLIER'},
+                {label:'BANK'},
+                {label:'AMOUNT'},
+                {label:'REMARKS'},
             ],
-            companyOptions:[
-                {name: 'ALL'},
-                {name: 'ALL HOME'},
-                {name: 'ALLBANK INC'},
-                {name: 'ALLEASY INC'},
-                {name: 'BEVTECH'},
-                {name: 'BRITTANY'},
-                {name: 'Camotes Island Power Generation Corp'},
+            supplier:[
+                {name: 'Supplier 1'},
+                {name: 'Supplier 2'},
+                {name: 'Supplier 3'},
             ]
         }
     },
     methods: {
-        async getRevenueReport() {
+        async getPaymentToSuppliers() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.RevenueReport = response.data.data;
+                  this.PaymentToSuppliers = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -60,7 +57,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <CheckboxSelectMenu :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
+                    <CheckboxSelectMenu :label="'supplier'" :inputWidth="'w-12/12'"  :placeholder="'SELECT SUPPLIER'" :options="supplier"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -100,11 +97,11 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
+        <div class="flex flex-col h-auto pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
                 <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">REVENUE REPORT</h3>
+                    <h3 class="text-[13px] font-semibold">SUCCESSFUL PAYMENT TO SUPPLIERS</h3>
                     <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
                 </div>
             </div>
@@ -125,31 +122,43 @@ export default {
                                 <tr class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                        <a class="underline text-cyan-500" href="#">
+                                            CMT-000000003
+                                        </a>
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         09/28/2022 10:55:09 aM
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        All Home
+                                        WE HAVE EVERYTHING DISTRIBUTOR
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        7,436.00
+                                        BANCO DE ORO
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        2,751.22
+                                        25,500.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0.37
+                                        PAYMENT TO WE HAVE EVERYTHING SUPPLIER
                                     </td>
                                 </tr>
                             </tbody>
+                            <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
+                                <tr>
+                                    <td colspan="4" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">TOTAL PAYMENT</td>
+                                    <td colspan="2" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">91,450.00</td>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
             </div>
-            <Pagination @paginate="getRevenueReport()" :pagination="pagination"
+            <Pagination @paginate="getPaymentToSuppliers()" :pagination="pagination"
                     :offset="1" class="mt-8" />
         </div>
     </div>

@@ -5,18 +5,17 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
-import Slideover from '../../../Misc/Slideover/Slideover.vue';
-import InputGroup from "../../../Misc/Input/InputGroup.vue";
-import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
+import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
+import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 export default {
     name: 'Daily Inventory Report',
     components: {
-        NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
+        NormalButton, SearchIcon, ListIcon, DateInput,
         Pagination, BorderButton, DropDown, Slideover, InputGroup, SolidButton
     },
     data() {

@@ -39,15 +39,19 @@ import AvailableInventory from '@/Components/Admin/Trading/Inventory/AvailableIn
 import STR from '@/Components/Admin/Trading/STR/STR.vue';
 import AdjustmentEntry from '@/Components/Admin/Status & Reversal/Adjustment Entry/AdjustmentEntry.vue';
 import AllEntries from '@/Components/Admin/Status & Reversal/Adjustment Entry/AllEntries.vue';
-import TransactionReport from "@/Components/Admin/Reports/Transaction Report/TransactionReport.vue";
-import CashPositionReport from "@/Components/Admin/Reports/Cash Position Report/CashPositionReport.vue";
-import TradingSummaryReport from "@/Components/Admin/Reports/Trading Summary Report/TradingSummaryReport.vue";
-import PaymentToSuppliers from "@/Components/Admin/Reports/Payment to Suppliers/PaymentToSuppliers.vue";
-import CTR_STRReport from "@/Components/Admin/Reports/CTR & STR Report/CTR_STRReport.vue";
-import DailyInventoryReport from "@/Components/Admin/Reports/Daily Inventory Report/DailyInventoryReport.vue";
-import RevenueReport from "@/Components/Admin/Reports/Revenue Report/RevenueReport.vue";
-import OutwardRemittanceReport from "@/Components/Admin/Reports/Outward Remittance Report/OutwardRemittanceReport.vue";
-import EndDayReport from "@/Components/Admin/Reports/End of the Day Report/EndDayReport.vue";
+
+//CMT REPORTS/
+import TransactionReport from "@/Components/Admin/Reports/CMT-Reports/Transaction Report/TransactionReport.vue";
+import CashPositionReport from "@/Components/Admin/Reports/CMT-Reports/Cash Position Report/CashPositionReport.vue";
+import TradingSummaryReport from "@/Components/Admin/Reports/CMT-Reports/Trading Summary Report/TradingSummaryReport.vue";
+import PaymentToSuppliers from "@/Components/Admin/Reports/CMT-Reports/Payment to Suppliers/PaymentToSuppliers.vue";
+import CTR_STRReport from "@/Components/Admin/Reports/CMT-Reports/CTR & STR Report/CTR_STRReport.vue";
+import DailyInventoryReport from "@/Components/Admin/Reports/CMT-Reports/Daily Inventory Report/DailyInventoryReport.vue";
+import RevenueReport from "@/Components/Admin/Reports/CMT-Reports/Revenue Report/RevenueReport.vue";
+import OutwardRemittanceReport from "@/Components/Admin/Reports/CMT-Reports/Outward Remittance Report/OutwardRemittanceReport.vue";
+import EndDayReport from "@/Components/Admin/Reports/CMT-Reports/End of the Day Report/EndDayReport.vue";
+
+
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
