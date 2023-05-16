@@ -1,38 +1,230 @@
+<script>
+export default{
+    data(){
+        return{
+            activeTab: 1,
+            items: [
+                { id:1, href: '#item1'},
+                { id:2, href: '#item2'},
+                { id:3, href: '#item3'},
+            ]
+        }
+    },
+    methods: {
+        changeActiveTab(tabId) {
+            this.activeTab = tabId;
+        }
+    }
+}
+</script>
 <template>
-    <div class="3xl:container h-screen p-3 bg-white w-full">
+    <div class="w-full h-auto p-3 bg-white">
         <div>
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
                <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
             </p>
         </div>
-        <div class="flex justify-between mt-3 pb-5  border-b-2 border-[#EAEAEA]">
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.00</h3>
-                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
+        <div class="flex justify-center gap-2 mt-3 pb-5 border-b-2 border-[#EAEAEA] w-full">
+            <div class="flex flex-col gap-3 w-[80%]">
+                <div class="carousel w-full">
+                    <div id="item1" class="carousel-item flex justify-center gap-2 w-full">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">50.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">50.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">50.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">50.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">50.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                    <div id="item2" class="carousel-item flex justify-center gap-3 w-full">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">40.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">40.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">40.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">40.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">40.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                    <div id="item3" class="carousel-item flex justify-center gap-3 w-full">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">30.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">30.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">30.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">30.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                            <div class="text-xl">
+                                <h3 class="font-bold">30.00</h3>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[8px] uppercase">
+                                    <span class="font-semibold">Last update:</span> 
+                                    09/28/2022 8:00:00 AM
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="flex justify-center w-full gap-2">
+                    <a v-for="item in items" :key="item.id" :href="item.href" 
+                        :class="[
+                            'w-3 h-3 rounded-full',
+                            item.id === activeTab ? 'bg-[#F9951E]' : 'bg-[#D9D9D9]'
+                        ]"
+                    @click="changeActiveTab(item.id)"></a>
+                </div>
             </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.01</h3>
-                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">49.99</h3>
-                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">50.02</h3>
-                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 py-4 px-1 bg-#F9951E text-center text-white">
-                <h3 class="text-xl font-bold">49.98</h3>
-                <p class="text-[8px] text-center mt-2 font-medium">REDHA AL ANSARI EXCHANGE</p>
-                <p class="text-[7px] font-thin">Last update: 09/28/2022 8:00:00 AM</p>
-            </div>
-            <div class="h-24 w-40 px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
-                <img src="../../../../../assets/images/usd_to_php_graph.png" alt="graph-image"/>
+            <div class="relative h-[120px] w-[20%] px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
+                <img src="../../../../../assets/images/usd_to_php_graph.png" alt="graph-image" class="absolute bottom-0 h-[80px] w-full"/>
                 <p class="text-xs text-left font-medium">USD to PHP</p>
             </div>
         </div>
@@ -75,7 +267,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="h-auto  overflow-y-auto">
+            <div class="h-auto overflow-y-auto">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
@@ -96,27 +288,5 @@
             </div>
         </div>
     </div>
+
 </template>
-<style>
-/* width */
-*::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-/* Track */
-*::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-*::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-*::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-</style>
