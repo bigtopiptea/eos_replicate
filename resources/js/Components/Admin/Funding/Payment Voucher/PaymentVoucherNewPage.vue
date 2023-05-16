@@ -7,6 +7,8 @@ import CreatePaymentVoucher from "./CreatePaymentVoucher.vue"
 import DateInput from "@/Components/Misc/Input/DateInput.vue"
 import JournalEntry from "@/Components/Admin/Funding/Payment Voucher/JournalEntry.vue"
 import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue'
+import Slideover from "../../../Misc/Slideover/Slideover.vue"
+import PaperClipIcon from '../../../Misc/Icons/PaperClipIcon.vue'
 export default{
     components:{
         InputGroup,
@@ -17,6 +19,8 @@ export default{
         JournalEntry,
         DateInput,
         InputGroupSelectMenu,
+        Slideover,
+        PaperClipIcon
     },
 
     data() {
@@ -40,52 +44,61 @@ export default{
                 {name:'DELIVERED'},
                 {name:'PAID'},
                 {name:'PENDING'},
-            ]
+            ],
+            attachmentOpen: false,
+            paraIcon: 'FIND'
         }
     },
+    methods:{
+        attachmentToggle() {
+            this.attachmentOpen = false;
+        },
+    }
 }
 </script>
 <template>
     <div class="3xl:container flex flex-col w-full h-auto bg-white py-4 ">
         <div class="px-4">
-            <form>
-                <div class="flex w-[90%] gap-5  gap-y-3">
-                    <!-- Row 1 -->
-                    <div class="w-[40%] mb-3 flex flex-col gap-3">
-                        <div class="w-[66%]">
-                            <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+            <div>
+                <form>
+                    <div class="flex w-[90%] gap-5  gap-y-3">
+                        <!-- Row 1 -->
+                        <div class="w-[40%] mb-3 flex flex-col gap-3">
+                            <div class="w-[66%]">
+                                <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                            </div>
+                            <div class="w-full">
+                                <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
+                            </div>
+                            <div>
+                                <InputTextarea :label="'PARTICULARS'" inputWidth="w-full"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                            </div>
                         </div>
-                        <div class="w-full">
-                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
-                        </div>
-                        <div>
-                            <InputTextarea :label="'PARTICULARS'" inputWidth="w-full"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
-                        </div>
-                    </div>
 
-                    <div class="flex flex-col gap-3 w-[30%]">
-                        <div class="w-full">
-                            <InputGroup inputLabel="invoice no." :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        <div class="flex flex-col gap-3 w-[30%]">
+                            <div class="w-full">
+                                <InputGroup inputLabel="invoice no." :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                            </div>
+                            <div>
+                                <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                            </div>
+                            <div>
+                                <InputGroup inputLabel="invoice amount" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                            </div>
                         </div>
-                        <div>
-                            <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                        </div>
-                        <div>
-                            <InputGroup inputLabel="invoice amount" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        <div class="flex flex-col gap-3 w-[30%]">
+                            <div>
+                                <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                            </div>
+                            <div>
+                                <InputGroup :inputType="'date'" :inputLabel="'covered period'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-3 w-[30%]">
-                        <div>
-                            <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                        </div>
-                        <div>
-                            <InputGroup :inputType="'date'" :inputLabel="'covered period'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                        </div>
-                    </div>
-                </div>
+                </form>
                 <div class="flex justify-between gap-3 items-end mb-3 ">
                     <div>
-                        <BorderButton :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
+                        <BorderButton @click="(attachmentOpen = !attachmentOpen)"  :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
                     <div class="flex gap-3 items-end w-[45%] justify-end">
                         <div class="w-[50%]">
@@ -96,7 +109,7 @@ export default{
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
             <!-- TABLE -->
             <div class="flex flex-col overflow-hidden">
                 <div class="inline-block min-w-full align-middle">
@@ -183,4 +196,45 @@ export default{
             </Accordion>
         </div>
     </div>
+    <Slideover :show="attachmentOpen" @close="attachmentToggle" :title="'ATTACHMENTS'" :iconShow="paraIcon">
+        <div class="flex flex-col justify-between h-full pb-3">
+            <div class="flex flex-col gap-5 mx-10 h-auto mt-10">
+                <div class="flex justify-center gap-3">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="self-end mt-5">
+                    <BorderButton :buttonLabel="'ATTACH DOCUMENTS'" :buttonSize="'h-auto w-auto'" :buttonPadding="'px-3 py-1'"/>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click="(attachmentOpen = !attachmentOpen)"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
+
 </template>

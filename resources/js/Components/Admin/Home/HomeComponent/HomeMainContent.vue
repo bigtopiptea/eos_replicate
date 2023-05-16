@@ -26,6 +26,7 @@ export default{
         </div>
         <div class="flex justify-center gap-2 mt-3 pb-5 border-b-2 border-[#EAEAEA] w-full">
             <div class="flex flex-col gap-3 w-[80%]">
+                <!-- daisyUI - Carousel -->
                 <div class="carousel w-full">
                     <div id="item1" class="carousel-item flex justify-center gap-2 w-full">
                         <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
@@ -222,6 +223,7 @@ export default{
                         ]"
                     @click="changeActiveTab(item.id)"></a>
                 </div>
+                <!-- daisyUI - Carousel -->
             </div>
             <div class="relative h-[120px] w-[20%] px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
                 <img src="../../../../../assets/images/usd_to_php_graph.png" alt="graph-image" class="absolute bottom-0 h-[80px] w-full"/>

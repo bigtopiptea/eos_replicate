@@ -201,8 +201,8 @@ export default {
     <!-- Slideover (View Documents) -->
     <Slideover :show="viewDocumentsOpen" @close="viewDocumentsToggle" :title="'VIEW DOCUMENTS'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between h-full pb-3">
-            <div class="flex flex-col mx-10 h-auto">
-                <div class="flex gap-3 mt-10">
+            <div class="flex flex-col gap-5 mx-10 h-auto mt-10">
+                <div class="flex justify-center gap-3">
                     <PaperClipIcon/>
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
@@ -216,7 +216,7 @@ export default {
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-3 mt-10">
+                <div class="flex justify-center gap-3">
                     <PaperClipIcon/>
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
@@ -230,7 +230,7 @@ export default {
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-3 mt-10">
+                <div class="flex justify-center gap-3">
                     <PaperClipIcon/>
                     <div class="text-[14px]">
                         <p class="text-[#1F4583] underline"><a href="#">supporting_docs2.pdf</a></p>
@@ -244,9 +244,9 @@ export default {
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="self-end mx-10">
-                <BorderButton :buttonLabel="'ATTACH DOCUMENTS'" :buttonSize="'h-auto w-auto'" :buttonPadding="'px-3 py-1'"/>
+                <div class="self-end mt-5">
+                    <BorderButton :buttonLabel="'ATTACH DOCUMENTS'" :buttonSize="'h-auto w-auto'" :buttonPadding="'px-3 py-1'"/>
+                </div>
             </div>
             <div class="flex justify-center">
                 <BorderButton @click="(viewDocumentsOpen = !viewDocumentsOpen)"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
