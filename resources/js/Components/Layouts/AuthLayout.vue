@@ -213,6 +213,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/ops-transaction-report",
+                            label: "OPS - Transaction Report",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 //CM 5-3
