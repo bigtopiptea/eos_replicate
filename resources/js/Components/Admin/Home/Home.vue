@@ -55,7 +55,7 @@ export default defineComponent({
     <!-- FUNDING WORKSHEET (Currently Disabled - add '@click="openFundingWorksheet()"' to enable)-->
     <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" />
     <Transition name="slide-fade" >
-        <div class="3xl:container h-auto bg-white p-3" v-if="!isOpen">
+        <div class="w-full h-auto bg-white p-3" v-if="!isOpen">
             <FundingWorksheet/>
         </div>
     </Transition>
