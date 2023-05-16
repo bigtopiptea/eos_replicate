@@ -4,7 +4,9 @@ import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue"
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import Accordion from "@/Components/Misc/Accordion.vue"
 import CreatePaymentVoucher from "./CreatePaymentVoucher.vue"
+import DateInput from "@/Components/Misc/Input/DateInput.vue"
 import JournalEntry from "@/Components/Admin/Funding/Payment Voucher/JournalEntry.vue"
+import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue'
 export default{
     components:{
         InputGroup,
@@ -13,6 +15,8 @@ export default{
         BorderButton,
         CreatePaymentVoucher,
         JournalEntry,
+        DateInput,
+        InputGroupSelectMenu,
     },
 
     data() {
@@ -29,6 +33,13 @@ export default{
                 {label:'EWT RATE'},
                 {label:'W/TAX -EXPANDED (CR)'},
 
+            ],
+
+            options:[
+                {name:'SENT'},
+                {name:'DELIVERED'},
+                {name:'PAID'},
+                {name:'PENDING'},
             ]
         }
     },
@@ -37,39 +48,52 @@ export default{
 <template>
     <div class="3xl:container flex flex-col w-full h-auto bg-white py-4 ">
         <div class="px-4">
-            <form class="flex w-[90%] gap-5  gap-y-3">
-                <!-- Row 1 -->
-                <div class="w-[40%] mb-3 flex flex-col gap-3">
-                    <div class="w-[66%]">
-                        <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+            <form>
+                <div class="flex w-[90%] gap-5  gap-y-3">
+                    <!-- Row 1 -->
+                    <div class="w-[40%] mb-3 flex flex-col gap-3">
+                        <div class="w-[66%]">
+                            <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
+                        </div>
+                        <div class="w-full">
+                            <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
+                        </div>
+                        <div>
+                            <InputTextarea :label="'PARTICULARS'" inputWidth="w-full"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <InputGroup :inputLabel="'PAYEE'" :labelWidth="'w-4/12'" :inputWidth="'w-8/12'"  :isDisabled="true"/>
+
+                    <div class="flex flex-col gap-3 w-[30%]">
+                        <div class="w-full">
+                            <InputGroup inputLabel="invoice no." :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        </div>
+                        <div>
+                            <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        </div>
+                        <div>
+                            <InputGroup inputLabel="invoice amount" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        </div>
                     </div>
-                    <div>
-                        <InputTextarea :label="'PARTICULARS'" inputWidth="w-full"  :inputHeight="'h-[107px]'" inputColor="'bg-#EAEAEA'" :isDisabled="true"/>
+                    <div class="flex flex-col gap-3 w-[30%]">
+                        <div>
+                            <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        </div>
+                        <div>
+                            <InputGroup :inputType="'date'" :inputLabel="'covered period'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                        </div>
                     </div>
+                </div>
+                <div class="flex justify-between gap-3 items-end mb-3 ">
                     <div>
                         <BorderButton :buttonLabel="'ATTACHMENTS'" :buttonPadding="'px-[5px] py-1'"/>
                     </div>
-                </div>
-                <div class="flex flex-col gap-3 w-[30%]">
-                    <div class="w-full">
-                        <InputGroup inputLabel="invoice no." :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    </div>
-                    <div>
-                        <InputGroup :inputType="'date'" :inputLabel="'INVOICE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    </div>
-                    <div>
-                        <InputGroup inputLabel="invoice amount" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3 w-[30%]">
-                    <div>
-                        <InputGroup :inputType="'date'" :inputLabel="'DUE DATE'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    </div>
-                    <div>
-                        <InputGroup :inputType="'date'" :inputLabel="'covered period'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <div class="flex gap-3 items-end w-[45%] justify-end">
+                        <div class="w-[50%]">
+                            <InputGroup :inputType="'date'" :inputLabel="'Date credited'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" />
+                        </div>
+                        <div class="w-[50%]">
+                            <InputGroupSelectMenu :label="'Status'" :labelWidth="'w-1/3'" :inputWidth="'w-2/3'" :placeholder="'Select Status'" :options="options"/>
+                        </div>
                     </div>
                 </div>
             </form>
