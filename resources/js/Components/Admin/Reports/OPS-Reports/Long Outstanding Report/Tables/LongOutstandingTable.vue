@@ -18,17 +18,17 @@ export default{
                 {label:'REMITTER NAME'},
                 {label:'BENEFICIARY'},
                 {label:'PHP AMOUNT'},
-                {label:'STATUS'},
+                {label:'DISPOSITION REMARKS'},
             ],
 
         }
     },
     methods: {
-        async getStatusReport() {
+        async getDispositionReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.StatusReport = response.data.data;
+                  this.DispositionReport = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -43,7 +43,7 @@ export default{
         <div class="flex flex-col justify-between uppercase mb-[30px]">
             <h2 class="text-[16px] text-center font-semibold">Redha Al-Ansari Exchange</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">STATUS REPORT</h3>
+                <h3 class="text-[13px] font-semibold">LONG OUTSTANDING REPORT</h3>
                 <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
             </div>
         </div>
@@ -106,7 +106,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getStatusReport()" :pagination="pagination"
+        <Pagination @paginate="getDispositionReport()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 

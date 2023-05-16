@@ -4,12 +4,12 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import StatusReportTable from "./Tables/StatusReportTable.vue";
+import LongOutstandingTable from "./Tables/LongOutstandingTable.vue";
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,StatusReportTable
+        CheckboxSelectMenu,LongOutstandingTable
     },
     data(){
         return{
@@ -67,6 +67,6 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <StatusReportTable/>
+        <LongOutstandingTable/>
     </div>
 </template>

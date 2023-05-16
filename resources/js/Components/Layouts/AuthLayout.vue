@@ -208,8 +208,26 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
-                            to: "/app/reports/status-report",
-                            label: "OPS - Status Report",
+                            to: "/app/reports/ops-status-report",
+                            label: "OPS - Status",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/ops-disposition-report",
+                            label: "OPS - Disposition",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/ops-long-outstanding-report",
+                            label: "OPS - Long Outstanding",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/ops-amla-report",
+                            label: "OPS - AMLA",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -514,7 +532,7 @@ export default {
             </nav>
             <div v-else class="flex-grow border-r border-gray-200 overflow-y-scroll ">
                 <div id="dropdown" class="ml-[8.5rem]">
-                    <ul class="bg-white shadow-xl border border-gray-200 absolute text-gray-700"
+                    <ul class="bg-white shadow-xl border border-gray-200 absolute top-[170px] text-gray-700"
                         aria-labelledby="dropdownDefaultButton">
                         <li v-for="links in navItems" :key="links">
                              <!-- remove key for default -->

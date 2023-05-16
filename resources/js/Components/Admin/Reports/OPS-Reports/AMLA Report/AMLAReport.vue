@@ -4,12 +4,12 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import StatusReportTable from "./Tables/StatusReportTable.vue";
+import AMLAReportTable from "./Tables/AMLAReportTable.vue";
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,StatusReportTable
+        CheckboxSelectMenu,AMLAReportTable
     },
     data(){
         return{
@@ -17,7 +17,15 @@ export default {
                 {name: 'All Tie-Up', value:'All Tie-Up 1'},
                 {name: 'Option 2', value:'Option 2'},
                 {name: 'Option 3', value:'Option 3'},
-            ]
+            ],
+            reportType:[
+                {name: 'flagged transaction report', value:'flagged transaction report'},
+                {name: 'frequency report', value:'frequency report'},
+                {name: 'covered transaction report', value:'covered transaction report'},
+                {name: 'layered transaction report', value:'layered transaction report'},
+            ],
+            selectedTieUp: '',
+            selectedReportType: '',
         }
     }
 
@@ -26,10 +34,14 @@ export default {
 <template>
     <div class="w-full h-screen bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
-            <div class="flex gap-[10px] w-[85%] mx-[12px]">
-                <div class="w-[40%]">
-                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
+            <div class="flex gap-[10px] w-[55%] mx-[12px]">
+                <div class="w-[50%]">
+                    <CheckboxSelectMenu :model="selectedTieUp" :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
                 </div>
+                <div class="w-[50%]">
+                    <CheckboxSelectMenu :model="selectedReport" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
+                </div>
+                {{ selectedTieUp.name }}
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
@@ -67,6 +79,6 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <StatusReportTable/>
+        <AMLAReportTable :TieUp="selectedTieUp.name" :ReportType="selectedReportType.name"/>
     </div>
 </template>

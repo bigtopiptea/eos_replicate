@@ -18,17 +18,28 @@ export default{
                 {label:'REMITTER NAME'},
                 {label:'BENEFICIARY'},
                 {label:'PHP AMOUNT'},
-                {label:'STATUS'},
+                {label:'REMARKS'},
+                {label:'STATUS REMARKS'},
             ],
 
         }
     },
+    props:{
+        TieUp:{
+            type: String,
+            default: ''
+        },
+        ReportType:{
+            type: String,
+            default: ''
+        },
+    },
     methods: {
-        async getStatusReport() {
+        async getAMLAReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.StatusReport = response.data.data;
+                  this.AMLAReport = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -41,9 +52,9 @@ export default{
 <template>
     <div class="flex flex-col h-auto pb-10">
         <div class="flex flex-col justify-between uppercase mb-[30px]">
-            <h2 class="text-[16px] text-center font-semibold">Redha Al-Ansari Exchange</h2>
+            <h2 class="text-[16px] text-center font-semibold">{{ TieUp }}</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">STATUS REPORT</h3>
+                <h3 class="text-[13px] font-semibold">{{ ReportType }}</h3>
                 <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
             </div>
         </div>
@@ -88,13 +99,17 @@ export default{
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    claimed
+                                    REMITTER FOUND ON OFAC LIST
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    POSTED
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
-                                <td colspan="5" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
+                                <td colspan="6" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
                                 </td>
                                 <td colspan="2" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
                                     <span class="font-bold">total count: </span>6 <br>
@@ -106,7 +121,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getStatusReport()" :pagination="pagination"
+        <Pagination @paginate="getAMLAReport()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 

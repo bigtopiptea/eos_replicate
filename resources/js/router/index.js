@@ -53,6 +53,9 @@ import EndDayReport from "@/Components/Admin/Reports/CMT-Reports/End of the Day 
 
 //OPS REPORTS
 import StatusReport from "@/Components/Admin/Reports/OPS-Reports/Status Report/StatusReport.vue";
+import DispositionReport from "@/Components/Admin/Reports/OPS-Reports/Disposition Report/DispositionReport.vue";
+import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long Outstanding Report/LongOutstandingReport.vue"; 
+import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue"; 
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
@@ -481,12 +484,39 @@ const routes = [
             },
             //5/16/2023 VDQ
             {
-                path: "/app/reports/status-report",
+                path: "/app/reports/ops-status-report",
                 name: "status report",
                 component: StatusReport,
                 meta: {
                     title: `Status Report`,
                     ability: `Status Report`,
+                },
+            },
+            {
+                path: "/app/reports/ops-disposition-report",
+                name: "disposition report",
+                component: DispositionReport,
+                meta: {
+                    title: `Disposition Report`,
+                    ability: `Disposition Report`,
+                },
+            },
+            {
+                path: "/app/reports/ops-long-outstanding-report",
+                name: "long outstanding report",
+                component: LongOutstandingReport,
+                meta: {
+                    title: `Long Outstanding Report`,
+                    ability: `Long Outstanding Report`,
+                },
+            },
+            {
+                path: "/app/reports/ops-amla-report",
+                name: "amla report",
+                component: AMLAReport,
+                meta: {
+                    title: `AMLA Report`,
+                    ability: `AMLA Report`,
                 },
             },
             //Carl Mendoza 5-3
