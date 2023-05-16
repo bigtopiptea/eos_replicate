@@ -6,13 +6,13 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
+
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 export default {
     name: 'Payment to Suppliers',
     components: {
-        NormalButton, SearchIcon, ListIcon, DateInput, FloatingLabelDropdown,
+        NormalButton, SearchIcon, ListIcon, DateInput,
         Pagination, CheckboxSelectMenu
     },
     data() {
