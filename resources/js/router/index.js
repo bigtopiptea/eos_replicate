@@ -56,6 +56,7 @@ import StatusReport from "@/Components/Admin/Reports/OPS-Reports/Status Report/S
 import DispositionReport from "@/Components/Admin/Reports/OPS-Reports/Disposition Report/DispositionReport.vue";
 import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long Outstanding Report/LongOutstandingReport.vue"; 
 import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue"; 
+import OPSTransactionReport from "@/Components/Admin/Reports/OPS-Reports/Transaction Report/TransactionReport.vue";
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
@@ -519,6 +520,18 @@ const routes = [
                     ability: `AMLA Report`,
                 },
             },
+                //CM 5/16/23
+            {
+                path: "/app/reports/ops-transaction-report",
+                name: "Transaction Report",
+                component: OPSTransactionReport,
+                meta: {
+                    title: `Transaction Report`,
+                    ability: `OPS - Transaction Report`,
+                },
+            },
+
+
             //Carl Mendoza 5-3
             {
                 path: "/app/other-services/pushback",
