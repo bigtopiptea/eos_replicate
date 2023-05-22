@@ -56,6 +56,7 @@ import StatusReport from "@/Components/Admin/Reports/OPS-Reports/Status Report/S
 import DispositionReport from "@/Components/Admin/Reports/OPS-Reports/Disposition Report/DispositionReport.vue";
 import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long Outstanding Report/LongOutstandingReport.vue"; 
 import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue"; 
+import MasterlistReport from "@/Components/Admin/Reports/OPS-Reports/Masterlist Report/MasterlistReport.vue"; 
 import OPSTransactionReport from "@/Components/Admin/Reports/OPS-Reports/Transaction Report/TransactionReport.vue";
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
@@ -518,6 +519,15 @@ const routes = [
                 meta: {
                     title: `AMLA Report`,
                     ability: `AMLA Report`,
+                },
+            },
+            {
+                path: "/app/reports/ops-masterlist-report",
+                name: "masterlist report",
+                component: MasterlistReport,
+                meta: {
+                    title: `Masterlist Report`,
+                    ability: `Masterlist Report`,
                 },
             },
                 //CM 5/16/23

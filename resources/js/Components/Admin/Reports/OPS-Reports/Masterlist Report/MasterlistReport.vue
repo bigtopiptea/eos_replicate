@@ -4,28 +4,41 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import AMLAReportTable from "./Tables/AMLAReportTable.vue";
+import AdvanceSettingsSelectMenu from "@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue";
+import MasterlistReportTable from "./Tables/MasterlistReportTable.vue";
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,AMLAReportTable
+        CheckboxSelectMenu, AdvanceSettingsSelectMenu,
+        MasterlistReportTable
     },
     data(){
         return{
             tieUpOption:[
-                {name: 'Tie-Up 1', value:'Tie-Up 1'},
-                {name: 'Tie-Up 2', value:'Tie-Up 2'},
-                {name: 'Tie-Up 3', value:'Tie-Up 3'},
+                {name: 'Optimum Exchange Remit Inc.', value:'Optimum Exchange Remit Inc.'},
+                {name: 'REDHA', value:'REDHA'},
+                {name: 'Globalland', value:'Globalland'},
             ],
-            reportType:[
-                {name: 'flagged transaction report', value:'flagged transaction report'},
-                {name: 'frequency report', value:'frequency report'},
-                {name: 'covered transaction report', value:'covered transaction report'},
-                {name: 'layered transaction report', value:'layered transaction report'},
+            advanceSettings:[
+                {name:'ALL'},
+                {name:'TRANSACTION DATE'},
+                {name:'REFERENCE NO.'},
+                {name:'TRANSACTION TYPE'},
+                {name:'REMITTER LASTNAME'},
+                {name:'REMITTER FIRSTNAME'},
+                {name:'BENEFICIARY LASTNAME'},
+                {name:'BENEFICIARY FIRSTNAME'},
+                {name:'FROM_CCY'},
+                {name:'ORIGINAL AMOUNT'},
+                {name:'RATE'},
+                {name:'TO_CCY'},
+                {name:'NET AMOUNT'},
+                {name:'CONVERT_AMT'},
+                {name:'AGENT_NAME'},
+                {name:'BANK BILLER'},
             ],
             selectedTieUp: '',
-            selectedReportType: '',
         }
     },
 }
@@ -36,10 +49,7 @@ export default {
             <div class="flex gap-[10px] w-[55%] mx-[12px]">
                 <div class="w-[50%]">
                     <CheckboxSelectMenu :model="selectedTieUp" :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
-                </div>
-                <div class="w-[50%]">
-                    <CheckboxSelectMenu :model="selectedReportType" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
-                </div>  
+                </div>         
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
@@ -54,6 +64,9 @@ export default {
                             <NormalButton label="Filter"
                             class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
+                        <div class="w-[180px]">
+                            <AdvanceSettingsSelectMenu :inputWidth="'w-12/12'" :options="advanceSettings" :withCheckbox="true"/>
+                        </div>  
                     </div>
                 </div>
                 <div class="right-side">
@@ -77,6 +90,6 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <AMLAReportTable/>
+        <MasterlistReportTable/>
     </div>
 </template>

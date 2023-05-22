@@ -232,8 +232,14 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
+                            to: "/app/reports/ops-masterlist-report",
+                            label: "OPS - Masterlist",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
                             to: "/app/reports/ops-transaction-report",
-                            label: "OPS - Transaction Report",
+                            label: "OPS - Transaction",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -536,9 +542,9 @@ export default {
                     </li>
                 </ul>
             </nav>
-            <div v-else class="flex-grow border-r border-gray-200 overflow-y-scroll ">
+            <div v-else class="flex-grow border-r border-gray-200 overflow-y-scroll h-[300px]">
                 <div id="dropdown" class="ml-[8.5rem]">
-                    <ul class="bg-white shadow-xl border border-gray-200 absolute top-[170px] text-gray-700"
+                    <ul class="bg-white shadow-xl border border-gray-200 absolute text-gray-700 overflow-y-auto"
                         aria-labelledby="dropdownDefaultButton">
                         <li v-for="links in navItems" :key="links">
                              <!-- remove key for default -->

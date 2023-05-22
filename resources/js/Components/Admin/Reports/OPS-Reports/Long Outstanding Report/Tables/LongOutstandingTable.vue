@@ -94,11 +94,19 @@ export default{
                         </tbody>
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
-                                <td colspan="5" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                                </td>
-                                <td colspan="2" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                    <span class="font-bold">total count: </span>6 <br>
-                                    <span class="font-bold">total amount: </span>12,880.00 
+                                <td colspan="100%" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                                    <div class="flex flex-col items-end">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold">total count: </span>
+                                                6 
+                                            </p>
+                                            <p>
+                                                <span class="font-bold">total amount: </span>
+                                                12,880.00                                   
+                                            </p> 
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tfoot>

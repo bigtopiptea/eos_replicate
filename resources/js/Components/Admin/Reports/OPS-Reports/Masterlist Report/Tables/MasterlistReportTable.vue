@@ -12,14 +12,15 @@ export default{
                 current_page: 1,
             },
             labels:[
-                {label:'DATE'},
+                {label:'TRANSACTION DATE'},
                 {label:'REFERENCE NO.'},
                 {label:'TRANSACTION TYPE'},
-                {label:'REMITTER NAME'},
-                {label:'BENEFICIARY'},
-                {label:'PHP AMOUNT'},
-                {label:'REMARKS'},
-                {label:'STATUS REMARKS'},
+                {label:'REMITTER LASTNAME'},
+                {label:'REMITTER FIRSTNAME'},
+                {label:'BENEFICIARY LASTNAME'},
+                {label:'BENEFICIARY FIRSTNAME'},
+                {label:'BANK BILLER'},
+                {label:'NET AMOUNT'},
             ],
 
         }
@@ -35,11 +36,11 @@ export default{
         },
     },
     methods: {
-        async getAMLAReport() {
+        async getMasterlistReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.AMLAReport = response.data.data;
+                  this.Masterlist = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -52,9 +53,9 @@ export default{
 <template>
     <div class="flex flex-col h-auto pb-10">
         <div class="flex flex-col justify-between uppercase mb-[30px]">
-            <h2 class="text-[16px] text-center font-semibold">Redha Al-Ansari Exchange</h2>
+            <h2 class="text-[16px] text-center font-semibold">Optimum exchange remit inc.</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">FLAGGED TRANSACTIONS Report </h3>
+                <h3 class="text-[13px] font-semibold">Masterlist Report </h3>
                 <p class="text-[12px]">09/28/2022 - 09/28/2022</p>
             </div>
         </div>
@@ -74,36 +75,40 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                             <tr class="divide-x divide-gray-200">
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 10:55:09 aM
+                                    01/01/2022 12:00:05 PM
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">                            
                                     <a class="underline text-cyan-500" href="#">
-                                        OERI-0000
+                                        OERI-0001
                                     </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    OTC - CASH PICKUP ANYWHERE
+                                    BP - BILLS PAYMENT
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    DELA CRUZ, JUAN CRUZ
+                                    DELA CRUZ
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    DELA CRUZ, ANNIE PEREZ
+                                    JUAN 
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    1,500.00
+                                    DELA ROSA
+                                </td>
+                                <td 
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    PEDRO
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    REMITTER FOUND ON OFAC LIST
+                                    SOCIAL SECURITY SYSTEM (SSS)
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    POSTED
+                                    3,500.00
                                 </td>
                             </tr>
                         </tbody>
@@ -129,7 +134,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getAMLAReport()" :pagination="pagination"
+        <Pagination @paginate="getMasterlistReport()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 
