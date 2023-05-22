@@ -27,6 +27,11 @@ export default {
             selectedTieUp: '',
             selectedReportType: '',
         }
+    },
+    methods:{
+        getValue() {
+            console.log(this.selectedTieUp); // Output the selected value
+        }
     }
 
 }
@@ -39,10 +44,8 @@ export default {
                     <CheckboxSelectMenu :model="selectedTieUp" :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
                 </div>
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu :model="selectedReport" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
-                </div>
-                {{ selectedTieUp.name }}
-            </div>
+                    <CheckboxSelectMenu :model="selectedReportType" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
+                </div>            </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
