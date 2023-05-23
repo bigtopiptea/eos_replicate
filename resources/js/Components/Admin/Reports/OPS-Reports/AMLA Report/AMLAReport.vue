@@ -26,6 +26,8 @@ export default {
             ],
             selectedTieUp: '',
             selectedReportType: '',
+            selectedStartDate: '',
+            selectedEndDate: '',
         }
     },
 }
@@ -35,20 +37,20 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[55%] mx-[12px]">
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu :model="selectedTieUp" :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
+                    <CheckboxSelectMenu v-model=selectedTieUp :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
                 </div>
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu :model="selectedReportType" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
+                    <CheckboxSelectMenu v-model=selectedReportType :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
                 </div>  
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
                         <div>
-                            <DateInput label="Start Date" />
+                            <DateInput v-model=selectedStartDate label="Start Date" />
                         </div>
                         <div>
-                            <DateInput label="End Date" />
+                            <DateInput v-model=selectedEndDate label="End Date" />
                         </div>
                         <div>
                             <NormalButton label="Filter"
@@ -77,6 +79,13 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <AMLAReportTable/>
+        <div v-if="selectedTieUp.value && selectedReportType.value">
+            <AMLAReportTable :TieUp="selectedTieUp.value" :ReportType="selectedReportType.value"/>
+        </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto">
+                <h1 class="text-[20px] text-[#3E3E3E]" >-- NO RECORDS TO DISPLAY -- </h1>
+            </div>
+        </div>
     </div>
 </template>
