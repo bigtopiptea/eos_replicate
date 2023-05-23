@@ -5,12 +5,13 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import VolumeSummaryReport from './Tables/VolumeSummaryReport.vue';
+import BaseReportTable from './Tables/BaseReportTable.vue';
 
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, VolumeSummaryReport,
+        CheckboxSelectMenu, VolumeSummaryReport,BaseReportTable
 
     },
 
@@ -25,9 +26,11 @@ export default {
                 {value: 'VOLUME REPORT SUMMARY', name: 'VOLUME REPORT SUMMARY'},
                 {value: 'DETAILED VOLUME REPORT', name: 'DETAILED VOLUME REPORT'},
                 {value: 'PER SERVICE TRANSACTION REPORT', name: 'PER SERVICE TRANSACTION REPORT'},
-                {value: 'ADDITIONAL TRANSACTIONS', name: 'ADDITIONAL TRANSACTIONS'},
-                {value: 'WAIVED CHARGES', name: 'WAIVED CHARGES'},
-                {value: 'REVERSAL TRANSACTIONS', name: 'REVERSAL TRANSACTIONS'},
+                {value: 'ADDITIONAL TRANSACTION REPORT', name: 'ADDITIONAL TRANSACTION REPORT'},
+                {value: 'WAIVED CHARGES REPORT', name: 'WAIVED CHARGES REPORTT'},
+                {value: 'REVERSAL TRANSACTION REPORT', name: 'REVERSAL TRANSACTION REPORT'},
+                {value: 'CANCELLATION TRANSACTION REPORT', name: 'CANCELLATION TRANSACTION REPORT'},
+                {value: 'REFUND TRANSACTION REPORT', name: 'REFUND TRANSACTION REPORT'},
             ],
             TransactionTypes:[
                 {value: 'OTC/CASH PICKUP ANYWHERE', name: 'OTC/CASH PICKUP ANYWHERE'},
@@ -40,6 +43,7 @@ export default {
             TypeOfReportChoice:'',
             TransactionTypeChoice:'',
             tieupchoice:'',
+            selectedDate:'',
         }
     },
 
@@ -69,15 +73,17 @@ export default {
                 <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
                     <CheckboxSelectMenu v-model="TransactionTypeChoice" :label="'Transaction Type'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Transaction Type'" :options="TransactionTypes"/>
                 </div>
-                <div v-show="TransactionTypeChoice.value" class="w-[25%]">
+                <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
                     <CheckboxSelectMenu :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="supplier"/>
                 </div>
             </div>
+
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
                         <div>
-                            <DateInput label="Start Date" />
+                            <DateInput  label="Start Date" v-model="selectedDate" />
+
                         </div>
                         <div>
                             <DateInput label="End Date" />
@@ -113,10 +119,14 @@ export default {
         <div v-if="tieupchoice && TypeOfReportChoice.value === 'VOLUME REPORT SUMMARY'">
             <VolumeSummaryReport/>
         </div>
+        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT' || TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT' ||  TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT' || TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'" >
+            <BaseReportTable :ReportType="TypeOfReportChoice.value"/>
+        </div>
         <div v-else>
             <div class="flex justify-center h-screen mt-16">
                 <h1 class="whitespace-nowrap tracking-wider uppercase ">
                     --- No records to display ---
+
                 </h1>
             </div>
         </div>

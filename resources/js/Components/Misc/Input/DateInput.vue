@@ -6,7 +6,8 @@ const props = defineProps({
     },
     required: {
         type: String,
-    }
+    },
+
 });
 
 </script>
@@ -18,8 +19,8 @@ const props = defineProps({
             {{ props.label }}
             <span v-if="props.required == 'required'" class="text-red-500">*</span>
         </label>
-        <div class="border border-[#EAEAEA] h-[34px] mt-1 p-2.5 pl-4 text-[#3E3E3E] text-opacity-50 font-light text-[10px]">
-            <input type="date" class="focus:border-collapse"/>
+        <div class="border border-[#EAEAEA] h-[34px] mt-1 p-2.5 pl-4 text-[#3E3E3E]  font-light text-[10px]">
+            <input  type="date" class="focus:outline-none placeholder:text-opacity-50"/>
         </div>
     </div>
 </template>
