@@ -33,6 +33,14 @@ export default{
             type: String,
             default: ''
         },
+        StartDate:{
+            type: Date,
+            default: 'MM/DD/YYYY'
+        },
+        EndDate:{
+            type: Date,
+            default: 'MM/DD/YYYY'
+        },
     },
     methods: {
         async getAMLAReport() {
@@ -52,10 +60,10 @@ export default{
 <template>
     <div class="flex flex-col h-auto pb-10">
         <div class="flex flex-col justify-between uppercase mb-[30px]">
-            <h2 class="text-[16px] text-center font-semibold">Redha Al-Ansari Exchange</h2>
+            <h2 class="text-[16px] text-center font-semibold">{{ TieUp }}</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">FLAGGED TRANSACTIONS Report </h3>
-                <p class="text-[12px]">09/28/2022 - 09/28/2022</p>
+                <h3 class="text-[13px] font-semibold">{{ ReportType }}</h3>
+                <p class="text-[12px]">{{ StartDate }} - {{ EndDate }}</p>
             </div>
         </div>
         <!-- TABLE -->
