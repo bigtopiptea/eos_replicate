@@ -4,12 +4,14 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import VolumeSummaryReport from './Tables/VolumeSummaryReport.vue';
 
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,
+        CheckboxSelectMenu, VolumeSummaryReport,
+
     },
 
     data() {
@@ -37,6 +39,7 @@ export default {
             test:true,
             TypeOfReportChoice:'',
             TransactionTypeChoice:'',
+            tieupchoice:'',
         }
     },
 
@@ -54,11 +57,11 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full h-screen bg-white">
+    <div class="w-full h-auto bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] mx-[12px]">
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu :label="'Tie-Up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Tie-up Partner'" :options="supplier"/>
+                    <CheckboxSelectMenu v-model="tieupchoice" :label="'Tie-Up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Tie-up Partner'" :options="supplier"/>
                 </div>
                 <div  class="w-[25%]">
                     <CheckboxSelectMenu v-model="TypeOfReportChoice" :label="'Type of Report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of Report'" :options="TypeOfReports"/>
@@ -66,8 +69,8 @@ export default {
                 <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
                     <CheckboxSelectMenu v-model="TransactionTypeChoice" :label="'Transaction Type'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Transaction Type'" :options="TransactionTypes"/>
                 </div>
-                <div class="w-[25%]">
-                    <CheckboxSelectMenu :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="supplier"/>
+                <div v-show="TransactionTypeChoice.value" class="w-[25%]">
+                    <CheckboxSelectMenu :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="supplier"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -107,17 +110,16 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        {{ TransactionTypeChoice.value }}
-        <div class="flex flex-col h-auto pb-10">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">SUCCESSFUL PAYMENT TO SUPPLIERS</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
-            </div>
-            <!-- TABLE -->
-            <StatusReportTable/>
+        <div v-if="tieupchoice && TypeOfReportChoice.value === 'VOLUME REPORT SUMMARY'">
+            <VolumeSummaryReport/>
         </div>
+        <div v-else>
+            <div class="flex justify-center h-screen mt-16">
+                <h1 class="whitespace-nowrap tracking-wider uppercase ">
+                    --- No records to display ---
+                </h1>
+            </div>
+        </div>
+
     </div>
 </template>
