@@ -6,12 +6,15 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import VolumeSummaryReport from './Tables/VolumeSummaryReport.vue';
 import BaseReportTable from './Tables/BaseReportTable.vue';
+import WaivedReport from "./Tables/WaivedReport.vue";
+import DetailedVolumeReport from './Tables/DetailedVolumeReport.vue';
 
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
         CheckboxSelectMenu, VolumeSummaryReport,BaseReportTable
+        ,WaivedReport, DetailedVolumeReport
 
     },
 
@@ -27,7 +30,7 @@ export default {
                 {value: 'DETAILED VOLUME REPORT', name: 'DETAILED VOLUME REPORT'},
                 {value: 'PER SERVICE TRANSACTION REPORT', name: 'PER SERVICE TRANSACTION REPORT'},
                 {value: 'ADDITIONAL TRANSACTION REPORT', name: 'ADDITIONAL TRANSACTION REPORT'},
-                {value: 'WAIVED CHARGES REPORT', name: 'WAIVED CHARGES REPORTT'},
+                {value: 'WAIVED CHARGES REPORT', name: 'WAIVED CHARGES REPORT'},
                 {value: 'REVERSAL TRANSACTION REPORT', name: 'REVERSAL TRANSACTION REPORT'},
                 {value: 'CANCELLATION TRANSACTION REPORT', name: 'CANCELLATION TRANSACTION REPORT'},
                 {value: 'REFUND TRANSACTION REPORT', name: 'REFUND TRANSACTION REPORT'},
@@ -122,11 +125,16 @@ export default {
         <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT' || TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT' ||  TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT' || TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'" >
             <BaseReportTable :ReportType="TypeOfReportChoice.value"/>
         </div>
+        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'WAIVED CHARGES REPORT'" >
+            <WaivedReport :ReportType="TypeOfReportChoice.value"/>
+        </div>
+        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'DETAILED VOLUME REPORT'" >
+            <DetailedVolumeReport :TieUpPartners="supplier" :ReportType="TypeOfReportChoice.value"/>
+        </div>
         <div v-else>
             <div class="flex justify-center h-screen mt-16">
                 <h1 class="whitespace-nowrap tracking-wider uppercase ">
                     --- No records to display ---
-
                 </h1>
             </div>
         </div>
