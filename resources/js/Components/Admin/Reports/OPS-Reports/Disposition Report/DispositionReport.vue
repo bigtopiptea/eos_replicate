@@ -14,10 +14,11 @@ export default {
     data(){
         return{
             tieUpOption:[
-                {name: 'All Tie-Up', value:'All Tie-Up 1'},
-                {name: 'Option 2', value:'Option 2'},
-                {name: 'Option 3', value:'Option 3'},
-            ]
+                {name: 'Tie-Up 1', value:'Tie-Up 1'},
+                {name: 'Tie-Up 2', value:'Tie-Up 2'},
+                {name: 'Tie-Up 3', value:'Tie-Up 3'},
+            ],
+            selectedTieUp: ''
         }
     }
 
@@ -28,7 +29,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
+                    <CheckboxSelectMenu v-model=selectedTieUp :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -67,6 +68,13 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <DispositionReportTable/>
+        <div v-if="selectedTieUp.value">
+            <DispositionReportTable :TieUp="selectedTieUp.value"/>
+        </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
+            </div>
+        </div>
     </div>
 </template>

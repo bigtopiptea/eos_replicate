@@ -83,8 +83,8 @@ export default {
             <AMLAReportTable :TieUp="selectedTieUp.value" :ReportType="selectedReportType.value"/>
         </div>
         <div v-else>
-            <div class="flex items-center justify-center h-full w-auto">
-                <h1 class="text-[20px] text-[#3E3E3E]" >-- NO RECORDS TO DISPLAY -- </h1>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
             </div>
         </div>
     </div>

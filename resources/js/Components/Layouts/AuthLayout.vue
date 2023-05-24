@@ -155,7 +155,7 @@ export default {
                     children: [
                         {
                             to: "/app/reports/transaction-report",
-                            label: "CMT - Transaction Report",
+                            label: "CMT - Transaction",
                             children: [],
                             icon: CircleCheckIcon,
                         },
