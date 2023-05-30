@@ -29,7 +29,7 @@ export default{
                 <!-- daisyUI - Carousel -->
                 <div class="carousel w-full">
                     <div id="item1" class="carousel-item flex justify-center gap-2 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">50.00</h3>
                             </div>
@@ -41,7 +41,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">50.00</h3>
                             </div>
@@ -53,7 +53,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">50.00</h3>
                             </div>
@@ -65,7 +65,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">50.00</h3>
                             </div>
@@ -77,7 +77,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">50.00</h3>
                             </div>
@@ -91,7 +91,7 @@ export default{
                         </div>
                     </div> 
                     <div id="item2" class="carousel-item flex justify-center gap-3 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">40.00</h3>
                             </div>
@@ -103,7 +103,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">40.00</h3>
                             </div>
@@ -115,7 +115,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">40.00</h3>
                             </div>
@@ -127,7 +127,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">40.00</h3>
                             </div>
@@ -139,7 +139,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">40.00</h3>
                             </div>
@@ -153,7 +153,7 @@ export default{
                         </div>
                     </div> 
                     <div id="item3" class="carousel-item flex justify-center gap-3 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">30.00</h3>
                             </div>
@@ -165,7 +165,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">30.00</h3>
                             </div>
@@ -177,7 +177,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">30.00</h3>
                             </div>
@@ -189,7 +189,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">30.00</h3>
                             </div>
@@ -201,7 +201,7 @@ export default{
                                 </p>
                             </div>
                         </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white">
+                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
                                 <h3 class="font-bold">30.00</h3>
                             </div>
@@ -225,13 +225,13 @@ export default{
                 </div>
                 <!-- daisyUI - Carousel -->
             </div>
-            <div class="relative h-[120px] w-[20%] px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end">
+            <div class="relative h-[120px] w-[20%] px-1 border-l-2 border-b-2 border-#EAEAEA text-center text-black flex flex-col justify-end rounded-md">
                 <img src="../../../../../assets/images/usd_to_php_graph.png" alt="graph-image" class="absolute bottom-0 h-[80px] w-full"/>
                 <p class="text-xs text-left font-medium">USD to PHP</p>
             </div>
         </div>
         <div class="flex justify-between gap-[15px] w-full h-auto my-5">
-            <div class="h-auto overflow-y-auto">
+            <div class="h-auto overflow-y-auto rounded-md">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
@@ -250,7 +250,7 @@ export default{
                     </tbody>
                 </table>
             </div>
-            <div class="h-auto overflow-y-auto">
+            <div class="h-auto overflow-y-auto rounded-md">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>
@@ -269,7 +269,7 @@ export default{
                     </tbody>
                 </table>
             </div>
-            <div class="h-auto overflow-y-auto">
+            <div class="h-auto overflow-y-auto rounded-md">
                 <table class="h-full w-[350px] text-center">
                     <thead class="sticky top-0 font-medium text-[11px]">
                         <tr>

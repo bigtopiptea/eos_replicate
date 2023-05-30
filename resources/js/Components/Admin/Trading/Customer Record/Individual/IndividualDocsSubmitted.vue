@@ -82,10 +82,10 @@ export default {
                                         LASCONIA, ELIOMAR DE ASIS
                                     </td>
                                     <td class="whitespace-nowrap uppercase text-center py-2 px-1  tracking-wider flex justify-center items-center gap-1">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EyeIcon.png" alt="Edit Icon" class="h-5 w-5">
+                                        <button class="tooltip tooltip-left lowercase" data-tip="view">
+                                            <img src="../../../../../../assets/images/EyeIcon.png" alt="Eye Icon" class="h-5 w-5">
                                         </button>
-                                        <button>
+                                        <button class="tooltip tooltip-left lowercase" data-tip="update docs">
                                             <RefreshIcon/>
                                         </button>
                                     </td>

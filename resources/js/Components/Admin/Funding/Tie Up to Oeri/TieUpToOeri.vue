@@ -200,8 +200,8 @@ export default {
                                                             <!-- <router-link :to="{path: '/app/funding/edit'}">
                                                                 Go
                                                             </router-link> -->
-                                                            <button @click="switchContentToggle()" >
-                                                                <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
+                                                            <button class="tooltip tooltip-left lowercase" data-tip="view details" @click="switchContentToggle()" >
+                                                                <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                                             </button>
                                                         </div>
                                                     </td>

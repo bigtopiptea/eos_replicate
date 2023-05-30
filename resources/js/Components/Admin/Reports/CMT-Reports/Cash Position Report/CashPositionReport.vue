@@ -6,29 +6,16 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CashPositionReportTable from "./Tables/CashPositionReportTable.vue";
 export default {
     name: 'Cash Position Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        Pagination, CheckboxSelectMenu
+        CheckboxSelectMenu, CashPositionReportTable
     },
     data() {
         return {
-            CashPositionReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'ACCOUNT NAME'},
-                {label:'BEGINNING BALANCE'},
-                {label:'TOTAL_DR'},
-                {label:'TOTAL_CR'},
-                {label:'NET AMOUNT'},
-            ],
             reportType:[
                 {name: 'DISTRIBUTION'},
                 {name: 'FUNDING'},
@@ -36,7 +23,7 @@ export default {
                 {name: 'OTHER SERVICES'},
             ],
             banksProviders:[
-                {name: 'Select All'},
+                {name: 'All Banks/Providers'},
                 {name: 'BDO PASEO SF PHP'},
                 {name: 'BOC BANAUE OF PHP'},
                 {name: 'BOC SHAW SF PHP'},
@@ -48,7 +35,10 @@ export default {
                 {name: 'SELECT ALL'},
                 {name: 'USD'},
                 {name: 'PHP'},
-            ]
+            ],
+            selectedReport: '',
+            selectedCurrency: '',
+            selectedBanksProviders: ''
         }
     },
     methods: {
@@ -68,17 +58,17 @@ export default {
 }
 </script>
 <template>
-    <div class="h-auto w-full bg-white">
+    <div class="h-screen w-full bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'type of report'" :inputWidth="'w-12/12'" :placeholder="'Select type of report'" :options="reportType"/>
+                    <CheckboxSelectMenu v-model="selectedReport"  :label="'type of report'" :inputWidth="'w-12/12'" :placeholder="'Select type of report'" :options="reportType"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
+                    <CheckboxSelectMenu v-model="selectedCurrency" :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
+                    <CheckboxSelectMenu v-model="selectedBanksProviders" :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -118,125 +108,13 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-screen pb-10">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">CASH POSITION SUMMARY</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
+        <div v-if="this.selectedReport && this.selectedCurrency && this.selectedBanksProviders">
+            <CashPositionReportTable :ReportType="selectedReport.name" :CurrencyType="selectedCurrency.name" :BanksProviders="selectedBanksProviders.name"/>
+        </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
             </div>
-            <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                </tr>
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                </tr>
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        cmt-092822
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ALL BANK IMUS USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        202,458.72
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getCashPositionReport()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
         </div>
     </div>
 </template>

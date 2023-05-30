@@ -1,17 +1,26 @@
 <script>
-import FloatingLabelDropdown from '../../../../Misc/Input/FloatingLabelDropdown.vue';
 import InputGroup from '../../../../Misc/Input/InputGroup.vue';
 import SmallHeading from '../../../../Misc/Heading/SmallHeading.vue';
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
 import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
 import Accordion from '../../../../Misc/Accordion.vue';
 import SettingsInput from '../../../../Misc/Input/SettingsInput.vue';
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 
 export default{
     components:{
         SmallHeading, BorderButton, Accordion,
-        InputGroup, FloatingLabelDropdown, SolidButton,
-        SettingsInput
+        InputGroup, SolidButton, SettingsInput, 
+        CheckboxSelectMenu
+    },
+    data(){
+        return{
+            accountList:[
+                {name: 'Account Name 1', value: 'Account Name 1'},
+                {name: 'Account Name 2', value: 'Account Name 2'},
+                {name: 'Account Name 3', value: 'Account Name 3'},
+            ]
+        }
     }
 }
 </script>
@@ -94,11 +103,22 @@ export default{
                 </table>
             </div>
         </div>
+        <div class="mb-5">
+            <SmallHeading label="CHART OF ACCOUNT" class="pl-6 w-[20%]" />
+            <div class="flex gap-[5px] mx-10 mt-5 w-[25%]">
+                <div class="w-[77%]">
+                    <CheckboxSelectMenu :label="'ACCOUNT'" :inputWidth="'w-12/12'"  :placeholder="'SELECT ACCOUNT'" :options="accountList"/>
+                </div>
+                <div class="w-[23%]">
+                    <BorderButton :buttonLabel="'Request'" :buttonSize="'h-auto w-auto'" :buttonPadding="'p-1'"/>
+                </div>
+            </div>
+        </div>
         <!-- Buttons -->
         <div class="flex justify-center gap-x-[30px] mt-[30px]">
             <BorderButton :buttonLabel="'print'" :buttonBorderColor="'border-#EE3E2C'" :buttonTextColor="'text-#EE3E2C'"  :buttonHover="'hover:bg-#EE3E2C'"/>
             <BorderButton :buttonLabel="'cancel'" :buttonBorderColor="'border-#3E3E3E'" :buttonTextColor="'text-#3E3E3E'" :buttonHover="'hover:bg-#3E3E3E'"/>
-            <BorderButton :buttonLabel="'Next'" :isDisabled="true"/>
+            <BorderButton :buttonLabel="'Submit'" :isDisabled="true"/>
         </div>
     </div>
 </template>

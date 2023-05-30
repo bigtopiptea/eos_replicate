@@ -123,8 +123,8 @@ export default {
                                         10/28/2022 08:24:45 AM
                                     </td>
                                     <td class="whitespace-nowrap uppercase text-center py-2 px-1 tracking-wider flex justify-center items-center gap-1">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
+                                        <button class="tooltip tooltip-left lowercase" data-tip="edit">
+                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                         </button>
                                     </td>
                                 </tr>

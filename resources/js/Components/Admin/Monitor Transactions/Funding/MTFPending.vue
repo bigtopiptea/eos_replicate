@@ -205,13 +205,13 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1  tracking-wider flex justify-between gap-1">
-                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
+                                        <button class="tooltip tooltip-left" data-tip="view document" @click="(viewDocumentsOpen = !viewDocumentsOpen), setIconDocumentsOpen()" type="submit" >
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
-                                        <button>
+                                        <button class="tooltip tooltip-left" data-tip="decline">
                                             <img src="../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
                                         </button>
-                                        <button  @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit">
+                                        <button class="tooltip tooltip-left" data-tip="verify"  @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit">
                                             <img src="../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                         </button>
                                     </td>

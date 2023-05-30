@@ -6,37 +6,16 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import OutwardRemittanceTable from "./Tables/OutwardRemittanceTable.vue";
 export default {
     name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        Pagination, CheckboxSelectMenu
+        CheckboxSelectMenu, OutwardRemittanceTable
     },
     data() {
         return {
-            OutwardRemittance: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'TRANSACTION DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'REMITTER BANK'},
-                {label:'ACCOUNT NO.'},
-                {label:'REMITTER NAME'},
-                {label:'ACCOUNT'},
-                {label:'RATE'},
-                {label:'PHP'},
-                {label:'BENEFICIARY BANK'},
-                {label:'BENEFICIARY NAME'},
-                {label:'ACCOUNT NAME'},
-                {label:'COUNTRY'},
-                {label:'PURPOSE'},
-                {label:'NATURE OF BUSINESS/WORK'},
-                {label:'DATE OF INCORPORATION'},
-            ],
             remitterOptions:[
                 {name: 'SELECT ALL'},
                 {name: 'Dusit Hospitality Education Phils In'},
@@ -51,21 +30,9 @@ export default {
                 {name: 'Japan'},
                 {name: 'Korea'},
             ],
+            selectedRemitter: '',
+            selectedCountry: ''
         }
-    },
-    methods: {
-        async getOutwardRemittance() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                  this.OutwardRemittance = response.data.data;
-                  this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-        },
-
     },
 }
 </script>
@@ -74,10 +41,10 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[23.5%]">
-                    <CheckboxSelectMenu :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
+                    <CheckboxSelectMenu v-model="selectedRemitter" :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
                 </div>
                 <div class="w-[23.5%]">
-                    <CheckboxSelectMenu :label="'country'" :placeholder="'SELECT COUNTRY'" :inputWidth="'w-12/12'" :options="country"/>
+                    <CheckboxSelectMenu v-if="this.selectedRemitter.name" v-model="selectedCountry" :label="'country'" :placeholder="'SELECT COUNTRY'" :inputWidth="'w-12/12'" :options="country"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -117,100 +84,13 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="flex flex-col gap-[15px] text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">
-                        OUTWARD REMITTANCE REPORT: <br>
-                        <span class="font-normal uppercase"> vertex entertainment and resorts corp.</span>
-                    </h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
+        <div v-if="this.selectedRemitter && this.selectedCountry">
+            <OutwardRemittanceTable :Remitter="selectedRemitter.name"/>
+        </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
             </div>
-            <!-- TABLE -->
-            <div class="min-w-full py-2 align-middle ">
-                <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
-                        <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-1 px-2 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        09/28/2022 10:55:09 aM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        TRD-050622-5
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        banco de oro
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        002860255555
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        vertex entertainment and resorts corp.
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        114,583.34
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        52.58
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        6,024,792.017
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        CHINABANKING CORP.
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        PRIME ASSET VENTURES INC.
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        104052000157
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        philippines
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        Payment for loan amortization
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        General Services
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        06/26/2018
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getOutwardRemittance()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
         </div>
     </div>
 </template>

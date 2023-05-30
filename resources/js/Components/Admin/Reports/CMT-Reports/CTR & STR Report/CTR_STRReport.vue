@@ -10,64 +10,32 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CTR_STRReportTable from "./Tables/CTR_STRReportTable.vue";
 export default {
     name: 'Payment to Suppliers',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        BorderButton, Pagination, CheckboxSelectMenu
+        BorderButton, Pagination, CheckboxSelectMenu,
+        CTR_STRReportTable
     },
     data() {
         return {
-            CtrStrReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'DATE'},
-                {label:'REPORT TYPE'},
-                {label:'REFERENCE NO.'},
-                {label:'TRANSACTION'},
-                {label:'VOLUME'},
-                {label:'RATE'},
-                {label:'PHP'},
-                {label:'TYPE'},
-                {label:'SETTLEMENT'},
-                {label:'ACCOUNT NO.'},
-                {label:'ADDRESS'},
-                {label:'MODE'},
-                {label:'REG. DATE'},
-                {label:'DEAL SLIP NO.'},
-            ],
             reportType:[
-                {name: 'ALL (CTR & STR REPORT)'},
-                {name: 'CTR - COVERED TRANSACTIONS REPORT'},
-                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT'}
-            ]
+                {name: 'ALL (CTR & STR REPORT)', value: 'CTR & STR'},
+                {name: 'CTR - COVERED TRANSACTIONS REPORT', value: 'CTR'},
+                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT', value: 'STR'}
+            ],
+            selectedReport: ''
         }
-    },
-    methods: {
-        async getCtrStrReport() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                  this.CtrStrReport = response.data.data;
-                  this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-        },
-
-
     },
 }
 </script>
 <template>
-    <div class="w-auto h-auto bg-white px-3 ">
+    <div class="w-auto h-screen bg-white px-3 ">
         <div class="flex flex-col gap-[15px] min-w-full  pt-10 pb-5">
             <div class="flex justify-between items-center w-[98%] mx-[12px]">
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu :label="'Report Type'" :inputWidth="'w-12/12'" :options="reportType" :placeholder="'Select Report type'"/>
+                    <CheckboxSelectMenu v-model="selectedReport" :label="'Report Type'" :inputWidth="'w-12/12'" :options="reportType" :placeholder="'Select Report type'"/>
                 </div>
                 <div>
                     <BorderButton :buttonLabel="'FILE NEW STR'" :buttonPadding="'p-2'" :buttonSize="'h-[40px] w-[170px]'"/>
@@ -110,93 +78,14 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto pb-10">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">CTR & STR REPORT</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
-            </div>
-            <!-- TABLE -->
-            <div class="min-w-full py-2 align-middle ">
-                <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
-                        <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:54:26 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        CTR
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        TRD-042222-2
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        Petnet
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        90,000.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        52.38
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        4,715,100.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        sell
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        banco de oro
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ft
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        East office building 114 Aguirre St. Legaspi Village Makati City
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        ft
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        01/01/2001
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0001-002950
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getCtrStrReport()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
+        <div v-if="this.selectedReport">
+            <CTR_STRReportTable :ReportType="selectedReport.value"/>
         </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
+            </div>
+        </div>
+
     </div>
 </template>

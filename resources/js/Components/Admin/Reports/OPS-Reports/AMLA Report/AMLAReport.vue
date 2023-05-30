@@ -37,10 +37,10 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[55%] mx-[12px]">
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu v-model=selectedTieUp :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
+                    <CheckboxSelectMenu v-model="selectedTieUp" :label="'tie-up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNERS'" :options="tieUpOption"/>
                 </div>
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu v-model=selectedReportType :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
+                    <CheckboxSelectMenu v-model="selectedReportType" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of report'" :options="reportType"/>
                 </div>  
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">

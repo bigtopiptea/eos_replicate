@@ -183,7 +183,7 @@ export default {
                                             OUT
                                         </td>
                                         <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
-                                            <button>
+                                            <button class="tooltip tooltip-left" data-tip="entry">
                                                 <img src="../../../../../assets/images/ExitIcon.png" alt="Exit Icon" class="h-5 w-5">
                                             </button>
                                         </td>

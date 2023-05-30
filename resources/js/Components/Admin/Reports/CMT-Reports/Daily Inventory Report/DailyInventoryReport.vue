@@ -6,70 +6,43 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
-import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import DailyInventoryReportTable from "./Tables/DailyInventoryReportTable.vue";
 export default {
     name: 'Daily Inventory Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        Pagination, BorderButton, CheckboxSelectMenu
+        BorderButton, CheckboxSelectMenu, DailyInventoryReportTable
     },
     data() {
         return {
-            DailyInventoryReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'ID'},
-                {label:'TRANSACTION DATE'},
-                {label:'MAKER'},
-                {label:'CLIENT NAME'},
-                {label:'REFERENCE NO.'},
-                {label:'CURRENCY'},
-                {label:'AMOUNT'},
-                {label:'EXCHANGE RATE'},
-                {label:'PHP AMOUNT'},
-            ],
             tieUpPartner:[
-                {name: 'ALL'},
-                {name: 'CTR - COVERED TRANSACTIONS REPORT'},
-                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT'}
+                {name: 'Tie-Up 1'},
+                {name: 'Tie-Up 2'},
+                {name: 'Tie-Up 3'},
             ],
             tradingType:[
-                {name: 'SELL'},
                 {name: 'BUY'},
-                {name: 'BUY/SELL'}
+                {name: 'SELL'},
+                // {name: 'BUY/SELL'}
             ],
+            selectedTieUpBanks: '',
+            selectedTrading: ''
         }
-    },
-    methods: {
-        async getDailyInventoryReport() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                  this.DailyInventoryReport = response.data.data;
-                  this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-        },
     },
 }
 </script>
 <template>
-    <div class="3xl:container h-screen bg-white">
+    <div class="w-auto h-screen bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex justify-between items-center mx-[12px]">
                 <div class="flex gap-[10px] w-[48%]">
                     <div class="w-[70%]">
-                        <CheckboxSelectMenu :label="'Tie-up/Banks'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNER/BANKS'" :options="tieUpPartner"/>
+                        <CheckboxSelectMenu v-model="selectedTieUpBanks" :label="'Tie-up/Banks'" :inputWidth="'w-12/12'"  :placeholder="'SELECT TIE-UP PARTNER/BANKS'" :options="tieUpPartner"/>
                     </div>
                     <div class="w-[30%]">
-                        <CheckboxSelectMenu :label="'Trading Type'" :inputWidth="'w-12/12'" :placeholder="'SELECT TRADING TYPE'" :options="tradingType"/>
+                        <CheckboxSelectMenu v-model="selectedTrading" :label="'Trading Type'" :inputWidth="'w-12/12'" :placeholder="'SELECT TRADING TYPE'" :options="tradingType"/>
                     </div>
                 </div>
                 <div>
@@ -113,83 +86,14 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto pb-10">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">DAILY INVENTORY Report: buy/sell</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
-            </div>
-            <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        <a class="underline text-cyan-500" href="#">
-                                            01
-                                        </a>
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 10:55:09 aM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        LASCONIA, ELIOMAR DE ASIS
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        redha al ansari exchange
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        1234
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        USD
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        15,000.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        48.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        720,000.00
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
-                                <tr>
-                                    <td colspan="6" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">TOTAL BUY</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">1,025,000.00</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">47.95</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">49,149,000.00</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getDailyInventoryReport()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
+        <div v-if="this.selectedTieUpBanks && this.selectedTrading">
+            <DailyInventoryReportTable :TieUpBanks="selectedTieUpBanks.name" :TradingType="selectedTrading.name"/>
         </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
+            </div>
+        </div>
+
     </div>
 </template>

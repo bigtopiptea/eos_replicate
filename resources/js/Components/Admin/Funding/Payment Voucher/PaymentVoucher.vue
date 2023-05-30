@@ -169,8 +169,8 @@ export default {
                                             10/01/2022 12:00:00 AM
                                         </td>
                                         <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
-                                            <router-link to="/app/funding/payment-voucher" class="flex justify-center">
-                                                <img src="../../../../../assets/images/EditIcon.png" alt="Edit Icon" class="h-5 w-5">
+                                            <router-link to="/app/funding/payment-voucher" class="flex justify-center tooltip tooltip-left lowercase" data-tip="edit">
+                                                <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                             </router-link>
                                         </td>
                                     </tr>
@@ -254,7 +254,7 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                            10/01/2022 12:00:00 AM
+                                            CREDIT TO BANK
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -262,9 +262,8 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                            10/01/2022 12:00:00 AM
+                                            PAID
                                         </td>
-
                                     </tr>
                                 </tbody>
                             </table>

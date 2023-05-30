@@ -1,12 +1,12 @@
 <template>
-    <div class="relative">
+    <div class="relative pt-[20px]">
         <div class="flex whitespace-nowrap font-medium text-center text-gray-500 ">
             <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
                              :class="[tabLength,setHover, [selected === tab ? setSelectedBg : '']]"
                              class="inline-block py-2 border duration-300 my-1 uppercase
-                              hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light "
+                              hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light rounded-t-lg"
                              >
                             <!-- <div class=" text-lg">
                             {{tab.value}}

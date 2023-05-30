@@ -1,35 +1,16 @@
 <script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
-import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-export default{
-    components:{
-        Pagination, CheckboxSelectMenu
-    },
-    data() {
-        return {
-            WaivedReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'TIE-UP PARTNER'},
-                {label:'REMITTER'},
-                {label:'ID NO.'},
-                {label:'NET AMOUNT'},
-                {label:'GROSS AMT.'},
-                {label:'HANDLING FEE'},
-            ],
-
-        }
+export default {
+    name: 'Daily Inventory Report',
+    components: {
+        Pagination
     },
     props:{
-        TieUpPartners:{
+        TieUpBanks:{
             type: String,
             default: ''
         },
-        ReportType:{
+        TradingType:{
             type: String,
             default: ''
         },
@@ -42,12 +23,31 @@ export default{
             default: 'MM/DD/YYYY'
         },
     },
+    data() {
+        return {
+            DailyInventoryReport: [],
+            pagination: {
+                current_page: 1,
+            },
+            labels:[
+                {label:'ID'},
+                {label:'TRANSACTION DATE'},
+                {label:'MAKER'},
+                {label:'CLIENT NAME'},
+                {label:'REFERENCE NO.'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'EXCHANGE RATE'},
+                {label:'PHP AMOUNT'},
+            ],
+        }
+    },
     methods: {
-        async getWaivedReport() {
+        async getDailyInventoryReport() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.WaivedReport = response.data.data;
+                  this.DailyInventoryReport = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -60,10 +60,10 @@ export default{
 <template>
     <div class="flex flex-col h-auto pb-10">
         <div class="flex flex-col justify-between uppercase mb-[30px]">
-            <h2 class="text-[16px] text-center font-semibold">{{ TieUpPartners }}</h2>
+            <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">{{ ReportType }}</h3>
-                <p class="text-[12px]">{{ StartDate }} - {{ EndDate }}</p>
+                <h3 class="text-[13px] font-semibold">DAILY INVENTORY Report: {{ TradingType }}</h3>
+                <p class="text-[12px]">{{ StartDate }} -  {{ EndDate }}</p>
             </div>
         </div>
         <!-- TABLE -->
@@ -81,64 +81,59 @@ export default{
                         </thead>
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                             <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    09/28/2022 10:55:09 aM
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <a class="underline text-cyan-500" href="#">
-                                        ekte-0001
+                                        01
                                     </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    al ektasad united exchange
+                                    09/28/2022 10:55:09 aM
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    ALFARO, LECEL PEREZ
+                                    LASCONIA, ELIOMAR DE ASIS
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    1234567
+                                    redha al ansari exchange
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
+                                    1234
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
+                                    USD
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    100.00
+                                    15,000.00
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    48.00
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    720,000.00
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
-                                <td colspan="4" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    TOTAL
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    300.00
-                                </td>
+                                <td colspan="6" class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">TOTAL BUY</td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">1,025,000.00</td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">47.95</td>
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">49,149,000.00</td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getWaivedReport()" :pagination="pagination"
+        <Pagination @paginate="getDailyInventoryReport()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
-
 </template>

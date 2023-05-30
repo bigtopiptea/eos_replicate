@@ -183,7 +183,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider flex justify-center gap-2">
-                                        <button @click="(viewDocumentsOpen = !viewDocumentsOpen),setIconDocumentsOpen()" type="submit">
+                                        <button class="tooltip tooltip-left" data-tip="view document" @click="(viewDocumentsOpen = !viewDocumentsOpen),setIconDocumentsOpen()" type="submit">
                                             <img src="../../../../../assets/images/EyeIcon.png" alt="View Icon" class="h-5 w-5">
                                         </button>
                                     </td>

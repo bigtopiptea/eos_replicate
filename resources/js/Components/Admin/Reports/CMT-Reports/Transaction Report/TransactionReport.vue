@@ -6,31 +6,17 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-
-import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import TransactionReportTable from "./Tables/TransactionReportTable.vue";
 
 export default {
     name: 'Cash Position Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        Pagination, CheckboxSelectMenu
+        CheckboxSelectMenu, TransactionReportTable
     },
     data() {
         return {
-            TransactionReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'BATCH ID'},
-                {label:'FILE NAME'},
-                {label:'ITEM ACCOUNT'},
-                {label:'TOTAL AMOUNT'},
-                {label:'EXCHANGE RATE'},
-                {label:'PROCESSED DATE'},
-                {label:'VALUE DATE'},
-            ],
             partnerClient:[
                 {name: 'ALL PARTNERS/CLIENTS'},
                 {name: 'Redha Al Ansari Exchange'},
@@ -56,37 +42,25 @@ export default {
                 {name: 'Adjustment'},
                 {name: 'Refund'},
             ],
-            test: '',
+            selectedPartner: '',
+            selectedReport: '',
+            selectedTransaction: '',
         }
-    },
-    methods: {
-        async getTransactionReport() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                  this.TransactionReport = response.data.data;
-                  this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-        },
-
     },
 }
 </script>
 <template>
-    <div class="h-auto w-full bg-white">
+    <div class="h-screen w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[65%] mx-[12px]">
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" :withCheckbox="true"/>
+                    <CheckboxSelectMenu v-model="selectedPartner" :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" :withCheckbox="true"/>
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu v-model="test" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
+                    <CheckboxSelectMenu v-model="selectedReport" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu :label="'transaction type'" :inputWidth="'w-12/12'" :placeholder="'select transaction type'" :options="transactionType"/>
+                    <CheckboxSelectMenu v-model="selectedTransaction" :label="'transaction type'" :inputWidth="'w-12/12'" :placeholder="'select transaction type'" :options="transactionType"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -127,71 +101,13 @@ export default {
 
 
         <!-- MAIN CONTENT -->
-        <div v-if="test.name === 'DISTRIBUTION'" class="flex flex-col h-screen pb-10">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center">DISTRIBUTION</h2>
-                <div class="text-center">
-                    <h3 class="text-[13px]">PROCESSING TRANSACTION</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
-            </div>
-            <!-- TABLE -->
-            <div  class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 text-xs overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        02
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        REDHA_Batch2
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        103
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        649,394.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        48.57
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:00:05 PM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 12:00:05 PM
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getTransactionReport()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
+        <div v-if="this.selectedPartner && this.selectedPartner && this.selectedTransaction">
+            <TransactionReportTable :TieUpPartner="selectedPartner.name" :ReportType="selectedReport.name" :TransactionType="selectedTransaction.name"/>
         </div>
-
-        <div v-else class="">
-                <div class="w-full h-screen flex justify-center items-center">
-                    <span>---- Nothing To report ----</span>
-                </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
+            </div>
         </div>
     </div>
 </template>

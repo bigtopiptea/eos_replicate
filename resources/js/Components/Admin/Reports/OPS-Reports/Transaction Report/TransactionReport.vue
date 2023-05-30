@@ -20,10 +20,15 @@ export default {
 
     data() {
         return {
-            supplier:[
-                {name: 'Supplier 1'},
-                {name: 'Supplier 2'},
-                {name: 'Supplier 3'},
+            tieUp:[
+                {name: 'Tie-Up 1', value: 'Tie-Up 1'},
+                {name: 'Tie-Up 2', value: 'Tie-Up 2'},
+                {name: 'Tie-Up 3', value: 'Tie-Up 3'},
+            ],
+            billerName:[
+                {name: 'Housing', value: 'Housing'},
+                {name: 'Housing', value: 'Housing'},
+                {name: 'Housing', value: 'Housing'},
             ],
             TypeOfReports:[
                 {value: 'VOLUME REPORT SUMMARY', name: 'VOLUME REPORT SUMMARY'},
@@ -45,7 +50,7 @@ export default {
             test:true,
             TypeOfReportChoice:'',
             TransactionTypeChoice:'',
-            tieupchoice:'',
+            TieUpChoice:'',
             selectedDate:'',
         }
     },
@@ -68,7 +73,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] mx-[12px]">
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu v-model="tieupchoice" :label="'Tie-Up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Tie-up Partner'" :options="supplier"/>
+                    <CheckboxSelectMenu v-model="TieUpChoice" :label="'Tie-Up'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Tie-up Partner'" :options="tieUp"/>
                 </div>
                 <div  class="w-[25%]">
                     <CheckboxSelectMenu v-model="TypeOfReportChoice" :label="'Type of Report'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Type of Report'" :options="TypeOfReports"/>
@@ -77,10 +82,9 @@ export default {
                     <CheckboxSelectMenu v-model="TransactionTypeChoice" :label="'Transaction Type'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Transaction Type'" :options="TransactionTypes"/>
                 </div>
                 <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
-                    <CheckboxSelectMenu :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="supplier"/>
+                    <CheckboxSelectMenu :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="billerName"/>
                 </div>
             </div>
-
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
@@ -119,25 +123,22 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div v-if="tieupchoice && TypeOfReportChoice.value === 'VOLUME REPORT SUMMARY'">
-            <VolumeSummaryReport/>
+        <div v-if="TieUpChoice.value && TypeOfReportChoice.value === 'VOLUME REPORT SUMMARY'">
+            <VolumeSummaryReport :TieUpPartner="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
-        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT' || TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT' ||  TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT' || TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'" >
-            <BaseReportTable :ReportType="TypeOfReportChoice.value"/>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT' || TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT' ||  TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT' || TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'" >
+            <BaseReportTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
-        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'WAIVED CHARGES REPORT'" >
-            <WaivedReport :ReportType="TypeOfReportChoice.value"/>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'WAIVED CHARGES REPORT'" >
+            <WaivedReport :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
-        <div v-else-if="tieupchoice && TypeOfReportChoice.value === 'DETAILED VOLUME REPORT'" >
-            <DetailedVolumeReport :TieUpPartners="supplier" :ReportType="TypeOfReportChoice.value"/>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'DETAILED VOLUME REPORT'" >
+            <DetailedVolumeReport :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
         <div v-else>
-            <div class="flex justify-center h-screen mt-16">
-                <h1 class="whitespace-nowrap tracking-wider uppercase ">
-                    --- No records to display ---
-                </h1>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
             </div>
         </div>
-
     </div>
 </template>

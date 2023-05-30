@@ -138,9 +138,9 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
-                                            <button @click="(viewModalOpen = !viewModalOpen)">
+                                            <button class="tooltip tooltip-left lowercase" data-tip="edit" @click="(viewModalOpen = !viewModalOpen)">
                                                 <EditIcon class="text-[#F9951E] w-full" />
-                                            </button>
+                                            </button>                              
                                         </td>
                                     </tr>
                                 </tbody>

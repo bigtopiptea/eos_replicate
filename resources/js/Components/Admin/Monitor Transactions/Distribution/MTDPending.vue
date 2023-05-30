@@ -170,19 +170,21 @@ export default {
                                         FOR VERIFICATION
                                     </td>
                                     <td
-                                        class="flex whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
-                                        <button>
-                                        <img src="../../../../../assets/images/PrintIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                        </button>
-                                        <button>
-                                        <img src="../../../../../assets/images/EyeIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                        </button>
-                                        <button>
-                                        <img src="../../../../../assets/images/RejectIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                        </button>
-                                        <button>
-                                        <img src="../../../../../assets/images/VerifyIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                        </button>
+                                        class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
+                                        <div class="flex gap-[2px]">
+                                            <button class="tooltip tooltip-left" data-tip="print">
+                                                <img src="../../../../../assets/images/PrintIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                            <button class="tooltip tooltip-left" data-tip="view document">
+                                                <img src="../../../../../assets/images/EyeIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                            <button class="tooltip tooltip-left" data-tip="decline">
+                                                <img src="../../../../../assets/images/RejectIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                            <button class="tooltip tooltip-left" data-tip="verify">
+                                                <img src="../../../../../assets/images/VerifyIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>

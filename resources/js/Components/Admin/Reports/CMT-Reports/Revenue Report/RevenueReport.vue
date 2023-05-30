@@ -6,27 +6,16 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import RevenueReportTable from "./Tables/RevenueReportTable.vue";
 export default {
     name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        Pagination, CheckboxSelectMenu
+        CheckboxSelectMenu, RevenueReportTable
     },
     data() {
         return {
-            RevenueReport: [],
-            pagination: {
-                current_page: 1,
-            },
-            labels:[
-                {label:'TRANSACTION DATE'},
-                {label:'COMPANIES'},
-                {label:'VOLUME'},
-                {label:'FX'},
-                {label:'FX/USD'},
-            ],
             companyOptions:[
                 {name: 'ALL'},
                 {name: 'ALL HOME'},
@@ -35,22 +24,9 @@ export default {
                 {name: 'BEVTECH'},
                 {name: 'BRITTANY'},
                 {name: 'Camotes Island Power Generation Corp'},
-            ]
+            ],
+            selectedCompany: ''
         }
-    },
-    methods: {
-        async getRevenueReport() {
-            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                .then((response) => {
-                    console.log(response.data);
-                  this.RevenueReport = response.data.data;
-                  this.pagination = response.data;
-                })
-                .catch((errors) => {
-
-                })
-        },
-
     },
 }
 </script>
@@ -59,7 +35,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <CheckboxSelectMenu :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
+                    <CheckboxSelectMenu v-model="selectedCompany" :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -99,57 +75,14 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div class="flex flex-col h-auto">
-            <div class="flex flex-col justify-between uppercase mb-[30px]">
-                <h2 class="text-[16px] text-center font-semibold">OPTIMUM EXCHANGE REMIT INC.</h2>
-                <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">REVENUE REPORT</h3>
-                    <p class="text-[12px]">09/28/2022 -  09/28/2022</p>
-                </div>
+
+        <div v-if="this.selectedCompany">
+            <RevenueReportTable :Company="selectedCompany.name"/>
+        </div>
+        <div v-else>
+            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
+                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
             </div>
-            <!-- TABLE -->
-            <div class="overflow-hidden w-full px-3">
-                <div class="inline-block min-w-full  align-middle ">
-                    <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 m-2 ">
-                        <table class="min-w-full divide-y divide-gray-300 overflow-x-scroll">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap">
-                                <tr class="divide-x divide-gray-200">
-                                    <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr class="divide-x divide-gray-200">
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        09/28/2022 10:55:09 aM
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        All Home
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        7,436.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        2,751.22
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        0.37
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <Pagination @paginate="getRevenueReport()" :pagination="pagination"
-                    :offset="1" class="mt-8" />
         </div>
     </div>
 </template>
