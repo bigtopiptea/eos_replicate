@@ -58,6 +58,7 @@ import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long O
 import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue"; 
 import MasterlistReport from "@/Components/Admin/Reports/OPS-Reports/Masterlist Report/MasterlistReport.vue"; 
 import OPSTransactionReport from "@/Components/Admin/Reports/OPS-Reports/Transaction Report/TransactionReport.vue";
+import OPSEndDayReport from "@/Components/Admin/Reports/OPS-Reports/End Day Report/EndDayReport.vue";
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
@@ -538,6 +539,15 @@ const routes = [
                 meta: {
                     title: `Transaction Report`,
                     ability: `OPS - Transaction Report`,
+                },
+            },
+            {
+                path: "/app/reports/ops-end-day-report",
+                name: "End Day Report",
+                component: OPSEndDayReport,
+                meta: {
+                    title: `End Day Report`,
+                    ability: `OPS - End Day Report`,
                 },
             },
 

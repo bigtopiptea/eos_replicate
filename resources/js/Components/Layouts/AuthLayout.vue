@@ -243,6 +243,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/ops-end-day-report",
+                            label: "OPS - End Day",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 //CM 5-3
@@ -530,7 +536,7 @@ export default {
                                 <router-link
                                     @click="reroute(subItem)"
                                     :class="{'active text-[#F1721A]': $route.path === subItem.to}"
-                                    class="px-[35px] text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300 my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider " :to="subItem.to">
+                                    class="px-[25px] text-[11px] whitespace-nowrap gap-1 w-full flex items-center duration-300 my-1 hover:text-[#f1721a] py-2 uppercase tracking-wider " :to="subItem.to">
                                     <SelectedRadioButton
                                         v-if="$route.path === subItem.to"
                                         class="h-3"/>
@@ -544,7 +550,7 @@ export default {
             </nav>
             <div v-else class="flex-grow border-r border-gray-200 overflow-y-scroll h-[300px]">
                 <div id="dropdown" class="ml-[8.5rem]">
-                    <ul class="bg-white shadow-xl border border-gray-200 absolute text-gray-700 overflow-y-auto"
+                    <ul class="bg-white shadow-xl border border-gray-200 max-h-[300px]  overflow-y-auto  absolute text-gray-700"
                         aria-labelledby="dropdownDefaultButton">
                         <li v-for="links in navItems" :key="links">
                              <!-- remove key for default -->

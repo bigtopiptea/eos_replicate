@@ -7,19 +7,22 @@ export default{
     },
     data() {
         return {
-            BaseReportTable: [],
+            PerServiceReportTable: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
                 {label:'DATE'},
                 {label:'REFERENCE NO.'},
-                {label:'TRANSACTION TYPE'},
+                {label:'CURRENCY'},
+                {label:'AMOUNT'},
+                {label:'DATE OF CREDIT'},
+                {label:'BANK NAME'},
+                {label:'ACCOUNT NO.'},
                 {label:'REMITTER NAME'},
-                {label:'BENEFICIARY'},
-                {label:'PHP AMOUNT'},
-                {label:'REMARKS'},
-                {label:'STATUS REMARKS'},
+                {label:'BILLER NAME'},
+                {label:'PROPERTY DETAILS'},
+                {label:'DATE OF CREDIT'},
             ],
 
         }
@@ -33,6 +36,14 @@ export default{
             type: String,
             default: ''
         },
+        TransactionType:{
+            type: String,
+            default: ''
+        },
+        BillerName:{
+            type: String,
+            default: ''
+        },
         StartDate:{
             type: Date,
             default: 'MM/DD/YYYY'
@@ -43,11 +54,11 @@ export default{
         },
     },
     methods: {
-        async getBaseReportTable() {
+        async getPerServiceReportTable() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.BaseReportTable = response.data.data;
+                  this.PerServiceReportTable = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -60,9 +71,9 @@ export default{
 <template>
     <div class="flex flex-col h-auto pb-10">
         <div class="flex flex-col justify-between uppercase mb-[30px]">
-            <h2 class="text-[16px] text-center font-semibold">{{ TieUpPartners }}</h2>
+            <h2 v-if="TieUpPartners !== 'All Tie-Up Partners'" class="text-[16px] text-center font-semibold">{{ TieUpPartners }}</h2>
             <div class="text-center mt-[20px]">
-                <h3 class="text-[13px] font-semibold">{{ ReportType }}</h3>
+                <h3 class="text-[14px] font-semibold">{{ BillerName }} Transactions</h3>
                 <p class="text-[12px]">{{ StartDate }} - {{ EndDate }}</p>
             </div>
         </div>
@@ -86,16 +97,28 @@ export default{
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <a class="underline text-cyan-500" href="#">
-                                        OERI-0000
+                                        RDHA-0001
                                     </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    OTC - CASH PICKUP ANYWHERE
+                                    PHP
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    DELA CRUZ, JUAN CRUZ
+                                    3,600.00
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    09/28/2022 10:55:09 aM                                   
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    ALLBANK
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    00121000471
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -103,15 +126,15 @@ export default{
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    1,500.00
+                                    BRIA HOMES INC
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    REMITTER FOUND ON OFAC LIST
+                                    BLK 01 LOT 01 BRIA HOMES
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    POSTED
+                                    09/28/2022 10:55:09 aM  
                                 </td>
                             </tr>
                         </tbody>
@@ -137,7 +160,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getBaseReportTable()" :pagination="pagination"
+        <Pagination @paginate="getPerServiceReportTable()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 

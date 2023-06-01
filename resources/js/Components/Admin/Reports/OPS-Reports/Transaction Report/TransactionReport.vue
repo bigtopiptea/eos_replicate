@@ -4,34 +4,43 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+// TABLES
 import VolumeSummaryReport from './Tables/VolumeSummaryReport.vue';
-import BaseReportTable from './Tables/BaseReportTable.vue';
 import WaivedReport from "./Tables/WaivedReport.vue";
 import DetailedVolumeReport from './Tables/DetailedVolumeReport.vue';
-
+import PerServiceReportTable from './Tables/PerServiceReportTable.vue';
+import AdditionalTransactionTable from "./Tables/AdditionalTransactionTable.vue";
+import ReversalTransactionTable from './Tables/ReversalTransactionTable.vue';
+import CancellationTransactionTable from './Tables/CancellationTransactionTable.vue';
+import RefundTransactionTable from './Tables/RefundTransactionTable.vue';
 export default {
     name: 'Status Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, VolumeSummaryReport,BaseReportTable
-        ,WaivedReport, DetailedVolumeReport
+        CheckboxSelectMenu, VolumeSummaryReport,WaivedReport, 
+        DetailedVolumeReport, PerServiceReportTable,
+        AdditionalTransactionTable, ReversalTransactionTable,
+        CancellationTransactionTable, RefundTransactionTable
 
     },
 
     data() {
         return {
             tieUp:[
+                {name: 'All Tie-Up Partners', value: 'All Tie-Up Partners'},
                 {name: 'Tie-Up 1', value: 'Tie-Up 1'},
                 {name: 'Tie-Up 2', value: 'Tie-Up 2'},
                 {name: 'Tie-Up 3', value: 'Tie-Up 3'},
             ],
             billerName:[
                 {name: 'Housing', value: 'Housing'},
-                {name: 'Housing', value: 'Housing'},
-                {name: 'Housing', value: 'Housing'},
+                {name: 'BRIA HOMES INC', value: 'BRIA HOMES INC'},
+                {name: 'COMMUNITIES', value: 'COMMUNITIES'},
+                {name: 'HOUSEHOLD DEVELOPMENT CORP', value: 'HOUSEHOLD DEVELOPMENT CORP'},
+                {name: 'PRIMA CASA LAND/LUMINA', value: 'PRIMA CASA LAND/LUMINA'},
             ],
             TypeOfReports:[
-                {value: 'VOLUME REPORT SUMMARY', name: 'VOLUME REPORT SUMMARY'},
+                {value: 'VOLUME SUMMARY REPORT', name: 'VOLUME SUMMARY REPORT'},
                 {value: 'DETAILED VOLUME REPORT', name: 'DETAILED VOLUME REPORT'},
                 {value: 'PER SERVICE TRANSACTION REPORT', name: 'PER SERVICE TRANSACTION REPORT'},
                 {value: 'ADDITIONAL TRANSACTION REPORT', name: 'ADDITIONAL TRANSACTION REPORT'},
@@ -51,6 +60,7 @@ export default {
             TypeOfReportChoice:'',
             TransactionTypeChoice:'',
             TieUpChoice:'',
+            billerChoice:'',
             selectedDate:'',
         }
     },
@@ -69,7 +79,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full h-auto bg-white">
+    <div class="w-full h-screen bg-white" :class="TieUpChoice.value || TypeOfReportChoice.value || TransactionTypeChoice.value || billerChoice.value">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] mx-[12px]">
                 <div class="w-[25%]">
@@ -81,8 +91,8 @@ export default {
                 <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
                     <CheckboxSelectMenu v-model="TransactionTypeChoice" :label="'Transaction Type'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Transaction Type'" :options="TransactionTypes"/>
                 </div>
-                <div v-show="TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT'" class="w-[25%]">
-                    <CheckboxSelectMenu :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="billerName"/>
+                <div v-show="TransactionTypeChoice.value"  class="w-[25%]">
+                    <CheckboxSelectMenu v-model="billerChoice" :withCheckbox="true" :label="'Biller Name'" :inputWidth="'w-12/12'"  :placeholder="'SELECT Biller Name'" :options="billerName"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
@@ -123,11 +133,23 @@ export default {
         </div>
 
         <!-- MAIN CONTENT -->
-        <div v-if="TieUpChoice.value && TypeOfReportChoice.value === 'VOLUME REPORT SUMMARY'">
-            <VolumeSummaryReport :TieUpPartner="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
+        <div v-if="TieUpChoice.value && TypeOfReportChoice.value === 'VOLUME SUMMARY REPORT'">
+            <VolumeSummaryReport :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
-        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT' || TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT' ||  TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT' || TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'" >
-            <BaseReportTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'PER SERVICE TRANSACTION REPORT' && TransactionTypeChoice.value && billerChoice.value">
+            <PerServiceReportTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value" :BillerName="billerChoice.value"/>
+        </div>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'ADDITIONAL TRANSACTION REPORT'">
+            <AdditionalTransactionTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
+        </div>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'REVERSAL TRANSACTION REPORT'">
+            <ReversalTransactionTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
+        </div>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'CANCELLATION TRANSACTION REPORT'">
+            <CancellationTransactionTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
+        </div>
+        <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'REFUND TRANSACTION REPORT'">
+            <RefundTransactionTable :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>
         </div>
         <div v-else-if="TieUpChoice.value && TypeOfReportChoice.value === 'WAIVED CHARGES REPORT'" >
             <WaivedReport :TieUpPartners="TieUpChoice.value" :ReportType="TypeOfReportChoice.value"/>

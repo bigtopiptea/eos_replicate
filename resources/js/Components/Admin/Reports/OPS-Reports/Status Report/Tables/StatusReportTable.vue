@@ -109,7 +109,7 @@ export default{
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
                                 <td colspan="100%" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                    <div class="flex flex-col items-end">
+                                    <div class="flex flex-col items-end pr-[20px]">
                                         <div>
                                             <p>
                                                 <span class="font-bold">total count: </span>

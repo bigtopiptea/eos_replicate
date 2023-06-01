@@ -29,18 +29,22 @@ export default {
                 {label:'TOTAL AMOUNT'},
                 {label:'ACTION'},
             ],
-            processingType:[
-                {name: 'distribution'},
-                {name: 'funding'},
-                {name: 'trading'},
-                {name: 'other services'},
-                {name: 'adjustment'},
-            ],
             bulkOption:[
                 {value: 'view proofsheet'}
             ],
+            processingType:[
+                {name: 'processing'},
+                {name: 'cancellation'},
+                {name: 'additional'},
+                {name: 'refund'},
+                {name: 'reversal dtd'},
+                {name: 'reversal cpa'},
+                {name: 'other services'},
+                {name: 'adjustment'},
+            ],
             endDayReportOpen: false,
             paraIcon:'CHECK', //Icon Parameter
+
         }
     },
     methods: {
@@ -129,7 +133,7 @@ export default {
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr v-for="process in processingType" :key="process.name"  class="divide-x divide-gray-200">
+                                <tr v-for="process in processingType" :key="process.name" class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         <div class="relative flex justify-center">

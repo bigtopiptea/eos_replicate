@@ -7,7 +7,7 @@ export default{
     },
     data() {
         return {
-            WaivedReport: [],
+            ReversalTransaction: [],
             pagination: {
                 current_page: 1,
             },
@@ -15,11 +15,10 @@ export default{
                 {label:'DATE'},
                 {label:'REFERENCE NO.'},
                 {label:'TIE-UP PARTNER'},
-                {label:'REMITTER'},
-                {label:'ID NO.'},
-                {label:'NET AMOUNT'},
-                {label:'GROSS AMT.'},
-                {label:'HANDLING FEE'},
+                {label:'TRANSACTION TYPE'},
+                {label:'BENIFICIARY'},
+                {label:'PHP AMOUNT'},
+                {label:'AMOUNT'},
             ],
 
         }
@@ -43,11 +42,11 @@ export default{
         },
     },
     methods: {
-        async getWaivedReport() {
+        async getReversalTransaction() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.WaivedReport = response.data.data;
+                  this.ReversalTransaction = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -95,41 +94,37 @@ export default{
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    ALFARO, LECEL PEREZ
+                                    dtd - door to door delivery
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    1234567
+                                    DELA CRUZ, anna perez
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
+                                    12,000.00
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    100.00
+                                    mr. express
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
-                                <td colspan="4" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    TOTAL
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    300.00
+                                <td colspan="100%" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                                    <div class="flex flex-col items-end pr-[20px]">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold">total count: </span>
+                                                6 
+                                            </p>
+                                            <p>
+                                                <span class="font-bold">total amount: </span>
+                                                12,880.00                                  
+                                            </p> 
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tfoot>
@@ -137,7 +132,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getWaivedReport()" :pagination="pagination"
+        <Pagination @paginate="getReversalTransaction()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 

@@ -7,7 +7,7 @@ export default {
         CheckboxSelectMenu,
     },
     props:{
-        TieUpPartner:{
+        TieUpPartners:{
             type: String,
             default: ''
         },
@@ -60,10 +60,12 @@ export default {
         <div class="flex flex-col h-auto pb-10">
             <div class="flex flex-col justify-between uppercase mb-[30px]">
                 <h2 class="text-[16px] text-center font-semibold">
-                    {{ TieUpPartner }}
+                    Optimum Exchange Remit Inc.
                 </h2>
                 <div class="text-center mt-[20px]">
-                    <h3 class="text-[13px] font-semibold">{{ ReportType }}</h3>
+                    <h3 class="text-[13px] font-semibold">Volume Summary Report
+                        <span v-if="TieUpPartners !== 'All Tie-Up Partners'">: {{TieUpPartners }}</span>
+                    </h3>
                     <p class="text-[12px]">{{ StartDate }} - {{ EndDate }}</p>
                 </div>
             </div>

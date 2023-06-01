@@ -7,19 +7,20 @@ export default{
     },
     data() {
         return {
-            WaivedReport: [],
+            CancellationTransaction: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'DATE'},
+                {label:'AMENDMENT DATE'},
                 {label:'REFERENCE NO.'},
-                {label:'TIE-UP PARTNER'},
-                {label:'REMITTER'},
-                {label:'ID NO.'},
+                {label:'AMENDMENT REFERENCE NO.'},
+                {label:'BANK FROM'},
+                {label:'BANK TO'},
+                {label:'CURRENCY'},
+                {label:'GROSS AMOUNT'},
                 {label:'NET AMOUNT'},
-                {label:'GROSS AMT.'},
-                {label:'HANDLING FEE'},
+                {label:'REMARKS'},
             ],
 
         }
@@ -43,11 +44,11 @@ export default{
         },
     },
     methods: {
-        async getWaivedReport() {
+        async getCancellationTransaction() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.WaivedReport = response.data.data;
+                  this.CancellationTransaction = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -86,50 +87,54 @@ export default{
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <a class="underline text-cyan-500" href="#">
-                                        ekte-0001
+                                        RDHA-0001
                                     </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    al ektasad united exchange
+                                    06
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    ALFARO, LECEL PEREZ
+                                    OUT
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    1234567
+                                    BDO                                
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
+                                    USD
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    16,114.55
+                                    4,700.00
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    100.00
+                                    4,690.00
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
+                                    INVALID ACCOUNT NUMBER
                                 </td>
                             </tr>
                         </tbody>
                         <tfoot class="text-[11px] font-semibold bg-[#D7D7D7]">
                             <tr>
-                                <td colspan="4" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    TOTAL
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    50,368.98
-                                </td>
-                                <td scope="col" class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    300.00
+                                <td colspan="100%" class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
+                                    <div class="flex flex-col items-end pr-[20px]">
+                                        <div>
+                                            <p>
+                                                <span class="font-bold">total count: </span>
+                                                6
+                                            </p>
+                                            <p>
+                                                <span class="font-bold">total amount: </span>
+                                                12,880.00
+                                            </p>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tfoot>
@@ -137,7 +142,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getWaivedReport()" :pagination="pagination"
+        <Pagination @paginate="getCancellationTransaction()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 
