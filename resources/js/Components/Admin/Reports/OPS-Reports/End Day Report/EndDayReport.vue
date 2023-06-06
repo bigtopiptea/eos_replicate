@@ -70,10 +70,10 @@ export default {
 <template>
     <div class="w-full h-auto bg-white">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
-            <div class="flex justify-between items-center mx-[12px]">
+            <div class="flex justify-between items-center mx-[11px]">
                 <div class="flex gap-[10px] w-[48%]">
                     <div class="w-[75%]">
-                        <form class="flex items-start gap-3">
+                        <form class="flex items-start gap-3 ">
                             <div class="flex">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
