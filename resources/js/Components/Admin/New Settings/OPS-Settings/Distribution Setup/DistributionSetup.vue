@@ -57,45 +57,48 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        CBA - CREDIT TO BANK ACCOUNT
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         BANCO DE ORO
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        <DropdownNoLabel/>
+                                        PHP
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        <input type="checkbox" value="">
+                                        0.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        <input type="checkbox" value="">
+                                        50,000.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        09/28/2022 09:17:18 AM
+                                        BDO Unibank, Inc.
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        LASCONIA, ELIOMAR DE ASIS
+                                        INSTAPAY
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        LASCONIA, ELIOMAR DE ASIS
+                                        09/30/2022 09:17:08 AM
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                        seneta, gerahcel de castro
                                     </td>
                                     <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        <div class="flex justify-center">
-                                            <button>
-                                                <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                            </button>
+                                        <div class="flex justify-center gap-1">
                                             <SwitchToggle
                                                 :status="true"
                                                 :isChecked="true"
                                             />
+                                            <button class="tooltip tooltip-left" data-tip="Edit">
+                                                <ResetIcon/>
+                                            </button>
+                                            <button class="tooltip tooltip-left" data-tip="Verify">
+                                                <img src="../../../../../../assets/images/VerifyIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -116,6 +119,7 @@
 
 <script setup>
 import SearchIcon from '../../../../Misc/Icons/SearchIcon.vue';
+import ResetIcon from '../../../../Misc/Icons/ResetIcon.vue';
 </script>
 
 <script>
@@ -123,12 +127,17 @@ import SearchIcon from '../../../../Misc/Icons/SearchIcon.vue';
 import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
+import SwitchToggle from '../../../../Misc/Switch(Toggle)/SwitchToggle.vue';
+
 
 export default {
     components:{
         CheckboxSelectMenu,
         DropDown,
         NormalButton,
+        SwitchToggle,
+        ResetIcon,
+
     },
 
     data() {

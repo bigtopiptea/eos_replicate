@@ -30,7 +30,7 @@ export default {
                 {label:'ACTION'},
             ],
             bulkOption:[
-                {value: 'view proofsheet'}
+                {label: 'view proofsheet'}
             ],
             processingType:[
                 {name: 'processing'},
