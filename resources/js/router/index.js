@@ -76,8 +76,8 @@ import RateManagement from "@/Components/Admin/New Settings/Rate Management/Rate
 import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories.vue";
 
 //New Setting OPS Sub Components -OJT-
-
 import OPSDistributionSetup from "@/Components/Admin/New Settings/OPS-Settings/Distribution Setup/DistributionSetup.vue";
+import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost Management/CostManagement.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -644,6 +644,24 @@ const routes = [
                 meta: {
                     title: `Signatories`,
                     ability: `Signatories`,
+                },
+            },
+            {
+                path: "/app/new-settings/ops-distribution-setup",
+                name: "OPS Distribution Setup",
+                component: OPSDistributionSetup,
+                meta: {
+                    title: `OPS Distribution Setup`,
+                    ability: `OPS Distribution Setup`,
+                },
+            },
+            {
+                path: "/app/new-settings/ops-cost-management",
+                name: "OPS Cost Management",
+                component: OPSCostManagement,
+                meta: {
+                    title: `OPS Cost Management`,
+                    ability: `OPS Cost Management`,
                 },
             },
             {

@@ -14,7 +14,7 @@
         </ListboxButton>
 
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
-          <ListboxOptions class="absolute z-10 max-h-[150px] w-full overflow-auto bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]">
+          <ListboxOptions class="absolute z-10 max-h-[150px] w-full overflow-y-auto bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]" multiple>
             <ListboxOption hidden>
                 <li class="text-gray-900 relative cursor-default select-none py-1 pl-3 pr-9">
                     <span class="font-normal block truncate uppercase">
@@ -26,7 +26,7 @@
               <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3 pr-9']" class="flex gap-[10px] uppercase border-b">
                 <!-- Conditional Statement to include checkbox or not -->
                 <input v-if="withCheckbox === true" type="checkbox" name="" id="" :checked="selected ? true : false">
-                <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']">
+                <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']" >
                     {{ option.name }}
                 </span>
                 <!-- <span v-if="selected" :class="[active ? 'text-white' : 'text-indigo-600', 'absolute inset-y-0 right-0 flex items-center pr-4']">
