@@ -283,49 +283,55 @@ export default {
                     to: '/app/new-settings/change-password',
                     label: 'New Settings',
                     children: [
-                    {
+                        {
                             to: "/app/new-settings/change-password",
                             label: "Change Password",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/chart-of-accounts",
                             label: "Account Charts",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/distribution-setup",
                             label: "Distribution Setup",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/ops-distribution-setup",
                             label: "OPS Distribution Setup",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
+                            to: "/app/new-settings/ops-cost-management",
+                            label: "OPS Cost Management",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
                             to: "/app/new-settings/funding-setup",
                             label: "Funding Setup",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/maintenance",
                             label: "Maintenance",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/rate-management",
                             label: "Rate Management",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/new-settings/signatories",
                             label: "Signatories",
                             children: [],

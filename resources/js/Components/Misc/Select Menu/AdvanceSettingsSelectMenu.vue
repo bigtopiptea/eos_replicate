@@ -5,7 +5,7 @@
           {{ label }}
           <span :hidden="isRequired ? false : true" class="ml-1 text-red-500 text-[10px]">*</span>
         </ListboxLabel>
-        <ListboxButton class="relative flex justify-center items-center gap-[10px] w-full h-[35px] cursor-default bg-[#3E3E3E] px-3 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]">
+        <ListboxButton class="relative flex justify-center items-center gap-[10px] w-full h-7 cursor-default bg-[#3E3E3E] px-3 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]">
             <span class="pointer-events-none ">
               <FilterIcon class="h-5 w-5 text-white" aria-hidden="true" />
             </span>

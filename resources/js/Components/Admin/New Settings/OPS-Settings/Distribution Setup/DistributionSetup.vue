@@ -2,12 +2,24 @@
     <div class="bg-white w-full">
         <div class="px-3 py-5">
             <form class="flex justify-between items-top">
-                <div class="flex flex-col gap-3 w-auto">
-                    <div class="">
+                <div class="flex flex-col gap-3 w-[35%]">
+                    <div class="w-[50%]">
                         <CheckboxSelectMenu :label="'Currency'" :inputWidth="'w-full'" :placeholder="'PHP'" :options="currencyOption" />
                     </div>
-                    <div class="">
-                        <DropDown class="whitespace-nowrap w-full shadow-none" label="Bulk Action" :options="bulkOption"/>
+                    <div class="flex gap-[5px] w-full">
+                        <div class="w-[50%]">
+                            <CheckboxSelectMenu v-model="bulkSelected"  :inputWidth="'w-full'" :placeholder="'Bulk Action'" :options="bulkOption" />
+                        </div>
+                        <div v-if="this.bulkSelected" class="flex items-end gap-[5px] w-[50%] ">
+                            <div  class="w-[90%]">
+                                <CheckboxSelectMenu 
+                                :label="this.bulkSelected.value === 'Update Provider' ? 'Provider' : 'Channel'" :inputWidth="'w-full'" 
+                                :placeholder="this.bulkSelected.value  === 'Update Provider' ? 'Select Provider' : 'Select Channel'" 
+                                :options="this.bulkSelected.value  === 'Update Provider' ? providerOption : channelOption" />
+                            </div>
+                            <NormalButton label="Apply"
+                            class="py-1.5 px-3 uppercase h-7 bg-[#F9951E] text-[10px] text-white"/>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -30,7 +42,7 @@
             <!-- TABLE-->
             <div class="min-w-full py-5 align-middle ">
                 <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                    <div class="shadow ring-1 ring-black ring-opacity-5  min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
@@ -42,17 +54,21 @@
                                         </div>
                                     </th >
                                     <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-1 px-2 uppercase tracking-wider text-center text-gray-900">
+                                        class=" py-1 px-2 uppercase tracking-wider text-center text-gray-900">
                                         {{label.label}}
                                     </th>
+                                    <th scope="col"
+                                        class="py-1 px-5 uppercase tracking-wider text-center text-gray-900 w-full  ">                                  
+                                        Action
+                                    </th >
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
                                 <tr class="divide-x divide-gray-200">
                                     <td class=" whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         <div class="flex items-center ">
-                                        <input type="checkbox" class="h-3 w-3 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-1" />
-                                        CREDIT TO BANK ACCOUNT
+                                            <input type="checkbox" class="h-3 w-3 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 mr-1" />
+                                            CREDIT TO BANK ACCOUNT
                                         </div>
                                     </td>
                                     <td
@@ -73,11 +89,22 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        BDO Unibank, Inc.
+                                        <div v-show="!isUpdate">
+                                            BDO Unibank, Inc.
+                                        </div>
+                                        <div v-show="isUpdate">
+                                            <CheckboxSelectMenu :inputWidth="'w-full'" :placeholder="'Select Provider'" :options="providerOption" />
+                                        </div>                                      
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        INSTAPAY
+                                        <div v-show="!isUpdate">
+                                            INSTAPAY
+                                        </div>
+                                        <div v-show="isUpdate">
+                                            <CheckboxSelectMenu :inputWidth="'w-full'" :placeholder="'Channel'" :options="channelOption" />
+                                        </div>    
+                                        
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -93,24 +120,22 @@
                                                 :status="true"
                                                 :isChecked="true"
                                             />
-                                            <button class="tooltip tooltip-left" data-tip="Edit">
+                                            <button v-show="!isUpdate" @click="(isUpdate = true)" class="tooltip tooltip-left" data-tip="Edit">
                                                 <ResetIcon/>
                                             </button>
-                                            <button class="tooltip tooltip-left" data-tip="Verify">
-                                                <img src="../../../../../../assets/images/VerifyIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            <button v-show="isUpdate" @click="(isUpdate = false)" class="tooltip tooltip-left" data-tip="Verify">
+                                                <img src="../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                             </button>
                                         </div>
                                     </td>
                                 </tr>
-
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         <div class="py-6">
-            <Pagination @paginate="getPHP()" :pagination="pagination"
+            <Pagination @paginate="getOPSDistributionSetup()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
         </div>
@@ -128,7 +153,7 @@ import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SwitchToggle from '../../../../Misc/Switch(Toggle)/SwitchToggle.vue';
-
+import Pagination from '../../../../Misc/Pagination/Pagination.vue';
 
 export default {
     components:{
@@ -137,14 +162,18 @@ export default {
         NormalButton,
         SwitchToggle,
         ResetIcon,
-
+        Pagination
     },
 
     data() {
         return {
+            OPSDistributionSetup: [],
+            pagination: {
+                current_page: 1,
+            },
             bulkOption:[
-                {label:'Update Provider',value:'Update Provider'},
-                {label:'Update Channel',value:'Update Channel'},
+                {name:'Update Provider',value:'Update Provider'},
+                {name:'Update Channel',value:'Update Channel'},
             ],
             currencyOption:[
                 {name:'PHP',value:'PHP'},
@@ -160,12 +189,41 @@ export default {
                 {label:'CHANNEL'},
                 {label:'LAST DATE UPDATED'},
                 {label:'UPDATED BY'},
-                {label:'ACTIONS'},
-
             ],
-
+            providerOption:[
+                {name: 'AllBank (A Thrift Bank), Inc', value: 'AllBank (A Thrift Bank), Inc'},
+                {name: 'Asia United Bank Corporation', value: 'Asia United Bank Corporation'},
+                {name: 'Bank of Commerce', value: 'Bank of Commerce'},
+                {name: 'Bank of the Philippine Islands', value: 'Bank of the Philippine Islands'},
+                {name: 'BDO Unibank Inc.', value: 'BDO Unibank Inc.'},
+                {name: 'China Banking Corporation', value: 'China Banking Corporation'},
+                {name: 'Land Bank of the Philippines', value: 'Land Bank of the Philippines'},
+                {name: 'Philippine National Bank', value: 'Philippine National Bank'},
+                {name: 'Robinsons Bank Corporation', value: 'Robinsons Bank Corporation'},
+                {name: 'Security Bank Corporation', value: 'Security Bank Corporation'}, 
+            ],
+            channelOption:[
+                {name: 'Instapay', value: 'Instapay'},
+                {name: 'Pesonet', value: 'Pesonet'},
+                {name: 'Own Account', value: 'Own Account'},
+            ],
+            isUpdate: false,
+            bulkSelected: ''
 
         }
+    },
+    methods: {
+        async getOPSDistributionSetup() {
+            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
+                .then((response) => {
+                    console.log(response.data);
+                  this.OPSDistributionSetup = response.data.data;
+                  this.pagination = response.data;
+                })
+                .catch((errors) => {
+
+                })
+        },
     },
 }
 </script>
