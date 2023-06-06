@@ -302,6 +302,12 @@ export default {
                             icon: CircleCheckIcon,
                         },
                     {
+                            to: "/app/new-settings/ops-distribution-setup",
+                            label: "OPS Distribution Setup",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    {
                             to: "/app/new-settings/funding-setup",
                             label: "Funding Setup",
                             children: [],

@@ -12,7 +12,7 @@
             <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
-  
+
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
           <ListboxOptions class="absolute z-10 max-h-[150px] w-full overflow-auto bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]">
             <ListboxOption hidden>
@@ -39,7 +39,7 @@
       </div>
     </Listbox>
   </template>
-  
+
   <script>
 //   import { ref } from 'vue'
   import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'

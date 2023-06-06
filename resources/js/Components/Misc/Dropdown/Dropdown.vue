@@ -37,7 +37,7 @@ const isShow = ref(false);
             <div v-for="(option, index) in options" :key="index" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                 <a  href="#" class="uppercase text-gray-700 block px-2 py-2 text-[11px] border-b border-gray-300" role="menuitem" tabindex="-1"
-                    id="menu-item-0">{{option.value}}</a>
+                    id="menu-item-0">{{option.label}}</a>
             </div>
         </div>
     </div>
