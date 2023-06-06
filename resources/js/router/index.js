@@ -54,9 +54,9 @@ import EndDayReport from "@/Components/Admin/Reports/CMT-Reports/End of the Day 
 //OPS REPORTS
 import StatusReport from "@/Components/Admin/Reports/OPS-Reports/Status Report/StatusReport.vue";
 import DispositionReport from "@/Components/Admin/Reports/OPS-Reports/Disposition Report/DispositionReport.vue";
-import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long Outstanding Report/LongOutstandingReport.vue"; 
-import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue"; 
-import MasterlistReport from "@/Components/Admin/Reports/OPS-Reports/Masterlist Report/MasterlistReport.vue"; 
+import LongOutstandingReport from "@/Components/Admin/Reports/OPS-Reports/Long Outstanding Report/LongOutstandingReport.vue";
+import AMLAReport from "@/Components/Admin/Reports/OPS-Reports/AMLA Report/AMLAReport.vue";
+import MasterlistReport from "@/Components/Admin/Reports/OPS-Reports/Masterlist Report/MasterlistReport.vue";
 import OPSTransactionReport from "@/Components/Admin/Reports/OPS-Reports/Transaction Report/TransactionReport.vue";
 import OPSEndDayReport from "@/Components/Admin/Reports/OPS-Reports/End Day Report/EndDayReport.vue";
 
@@ -66,7 +66,7 @@ import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidat
 import Help from "@/Components/Admin/Help/Help.vue"
 import Logs from "@/Components/Admin/Logs/Logs.vue"
 
-//New Setting Sub Components -OJT-
+//New Setting CMT Sub Components -OJT-
 import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
 import ChartOfAccounts from "@/Components/Admin/New Settings/Chart of Accounts/ChartOfAccounts.vue";
 import DistributionSetup from "@/Components/Admin/New Settings/Distribution Setup/DistributionSetup.vue";
@@ -75,6 +75,9 @@ import Maintenance from "@/Components/Admin/New Settings/Maintenance/Maintenance
 import RateManagement from "@/Components/Admin/New Settings/Rate Management/RateManagement.vue";
 import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories.vue";
 
+//New Setting OPS Sub Components -OJT-
+
+import OPSDistributionSetup from "@/Components/Admin/New Settings/OPS-Settings/Distribution Setup/DistributionSetup.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -641,6 +644,15 @@ const routes = [
                 meta: {
                     title: `Signatories`,
                     ability: `Signatories`,
+                },
+            },
+            {
+                path: "/app/new-settings/ops-distribution-setup",
+                name: "OPS Distribution Setup",
+                component: OPSDistributionSetup,
+                meta: {
+                    title: `OPS Distribution Setup`,
+                    ability: `OPS Distribution Setup`,
                 },
             },
             {

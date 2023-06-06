@@ -5,14 +5,14 @@
           {{ label }}
           <span :hidden="isRequired ? false : true" class="ml-1 text-red-500 text-[10px]">*</span>
         </ListboxLabel>
-        <ListboxButton class="relative w-full h-7 cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]">
+        <ListboxButton class="relative w-full h-7 cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300 focus:outline-none text-[11px]">
           <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.name }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
-  
+
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
           <ListboxOptions class="absolute z-10 max-h-[150px] w-full overflow-auto bg-white  text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]">
             <ListboxOption hidden>
@@ -39,7 +39,7 @@
       </div>
     </Listbox>
   </template>
-  
+
   <script>
 //   import { ref } from 'vue'
   import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'

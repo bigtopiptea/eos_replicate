@@ -157,7 +157,7 @@
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-2 tracking-wider">
                                     25,000.13
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-2 tracking-wider">        
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-2 tracking-wider">
                                     <button class="tooltip tooltip-left lowercase" data-tip="view details" @click="(viewModalOpen = !viewModalOpen)">
                                         <img class="w-5 h-5" src="../../../../../assets/images/ListIcon.png" alt="">
                                     </button>

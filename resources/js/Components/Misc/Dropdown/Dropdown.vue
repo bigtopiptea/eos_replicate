@@ -19,7 +19,7 @@ const isShow = ref(false);
     <div class="relative inline-block text-left mr-3">
         <div>
             <button @click="isShow = !isShow" type="button"
-                class="inline-flex w-full uppercase text-[10px] justify-center h-[34px]  border border-[#EAEAEA] bg-white px-4 py-1.5 text-sm font-light text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                class="inline-flex w-full uppercase text-[10px] justify-between h-[34px]  border border-gray-300 bg-white px-4 py-1.5 text-sm font-light text-gray-700 hover:bg-gray-50 "
                 id="menu-button" aria-expanded="true" aria-haspopup="true">
                {{props.label}}
                 <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -37,7 +37,7 @@ const isShow = ref(false);
             <div v-for="(option, index) in options" :key="index" role="none">
                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                 <a  href="#" class="uppercase text-gray-700 block px-2 py-2 text-[11px] border-b border-gray-300" role="menuitem" tabindex="-1"
-                    id="menu-item-0">{{option.value}}</a>
+                    id="menu-item-0">{{option.label}}</a>
             </div>
         </div>
     </div>
