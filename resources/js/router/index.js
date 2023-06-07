@@ -80,8 +80,9 @@ import OPSDistributionSetup from "@/Components/Admin/New Settings/OPS-Settings/D
 import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost Management/CostManagement.vue";
 
 //Billing and Collection
-import BillingCollectionHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
-import BillingCollection from "@/Components/Admin/Billing & Collection/Billing Collection/BillingCollection.vue";
+import BCHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
+import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collection/Billing/Billing.vue";
+import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -680,19 +681,28 @@ const routes = [
             {
                 path: "/app/billing-collection/home",
                 name: "Home",
-                component: BillingCollectionHome,
+                component: BCHome,
                 meta: {
                     title: `Home`,
                     ability: `Home`,
                 },
             },
             {
-                path: "/app/billing-collection/home",
-                name: "Billing Collection",
-                component: BillingCollection,
+                path: "/app/billing-collection/billing",
+                name: "Billing",
+                component: BCBilling,
                 meta: {
-                    title: `Billin Collection`,
-                    ability: `Billing Collection`,
+                    title: `Billing`,
+                    ability: `Billing`,
+                },
+            },
+            {
+                path: "/app/billing-collection/collection",
+                name: "Collection",
+                component: BCCollection,
+                meta: {
+                    title: `Collection`,
+                    ability: `Collection`,
                 },
             },
             {

@@ -67,10 +67,31 @@ export default {
                 },
                 {
                     to: "/app/billing-collection/home",
-                    label: "B&CHome",
+                    label: "B&C Home",
                     children: [],
                     icon: HomeIcon,
                 },
+                {
+                    to: "/app/billing-collection/billing",
+                    label: "Billing & Collection",
+                    children: [
+                        {
+                            to: "/app/billing-collection/billing",
+                            label: "Billing",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/billing-collection/collection",
+                            label: "Collection",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    ],
+                    icon: AmendmentIcon,
+                },
+
+
                 {
                     to: "/app/distribution",
                     label: "Distribution",

@@ -1,5 +1,5 @@
 <template>
     <div>
-        hello
+        Collection
     </div>
 </template>
