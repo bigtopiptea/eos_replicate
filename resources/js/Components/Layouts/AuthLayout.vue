@@ -66,6 +66,12 @@ export default {
                     icon: HomeIcon,
                 },
                 {
+                    to: "/app/billing-collection/home",
+                    label: "B&CHome",
+                    children: [],
+                    icon: HomeIcon,
+                },
+                {
                     to: "/app/distribution",
                     label: "Distribution",
                     children: [],
