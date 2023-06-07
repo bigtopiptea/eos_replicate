@@ -79,6 +79,10 @@ import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories
 import OPSDistributionSetup from "@/Components/Admin/New Settings/OPS-Settings/Distribution Setup/DistributionSetup.vue";
 import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost Management/CostManagement.vue";
 
+//Billing and Collection
+import BillingCollectionHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
+import BillingCollection from "@/Components/Admin/Billing & Collection/Billing Collection/BillingCollection.vue";
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
@@ -671,6 +675,24 @@ const routes = [
                 meta: {
                     title: `OPS Distribution Setup`,
                     ability: `OPS Distribution Setup`,
+                },
+            },
+            {
+                path: "/app/billing-collection/home",
+                name: "Home",
+                component: BillingCollectionHome,
+                meta: {
+                    title: `Home`,
+                    ability: `Home`,
+                },
+            },
+            {
+                path: "/app/billing-collection/home",
+                name: "Billing Collection",
+                component: BillingCollection,
+                meta: {
+                    title: `Billin Collection`,
+                    ability: `Billing Collection`,
                 },
             },
             {
