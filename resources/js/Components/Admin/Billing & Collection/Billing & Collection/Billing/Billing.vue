@@ -27,12 +27,12 @@ export default {
             viewModalOpen: true,
             selected: "View Soa",
             TieUpPartner:[
-                {label:'REDHA AL ANSARI EXCHANGE'},
-                {label:'RIGHT CHOICE PAYMENTS'},
-                {label:'AL EKTESAD United Exchange Company WLL.'},
-                {label:'JDEE REMIT'},
-                {label:'CITI EXPRESS PAYMENT'},
-                {label:'RNV FOREX'},
+                {name:'REDHA AL ANSARI EXCHANGE'},
+                {name:'RIGHT CHOICE PAYMENTS'},
+                {name:'AL EKTESAD United Exchange Company WLL.'},
+                {name:'JDEE REMIT'},
+                {name:'CITI EXPRESS PAYMENT'},
+                {name:'RNV FOREX'},
             ],
 
         }
@@ -52,12 +52,11 @@ export default {
 
 <template>
     <div class="bg-white w-full h-auto">
-
         <div v-show="IsChosen != ''" class="px-3 py-5">
             <div v-show="IsChosen == 'TIE-UP-PARTNERS'">
                 <div class="w-[35%] flex flex-col gap-3">
                     <div>
-                        <CheckboxSelectMenu :label="'Tie-up Partner'" :placeholder="'Select Tie Up Partner'" />
+                        <CheckboxSelectMenu :label="'Tie-up Partner'" :placeholder="'Select Tie Up Partner'" :options="TieUpPartner" />
                     </div>
                     <div class="flex gap-3">
                         <CheckboxSelectMenu :label="'Month'" :placeholder="'Select Month'" />
@@ -68,12 +67,12 @@ export default {
                 <div class="w-full my-3">
                     <TabNav :tabs="['View Soa' , 'View Details']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
                         <Tab :isSelected="selected === 'View Soa'" >
-                            <div class="w-full h-full flex justify-center py-20 border border-red-500 ">
+                            <div class="w-full h-full flex justify-center py-20 ">
                                 <div v-if="IsView">
-                                    Result
+
                                 </div>
                                 <div v-else>
-                                    <div class="">
+                                    <div >
                                         <img src="../../../../../../assets/images/NoRecords.png" alt="" class="h-[200px] w-[200px]">
                                     </div>
                                 </div>
@@ -85,6 +84,11 @@ export default {
                             </div>
                         </Tab>
                     </TabNav>
+                </div>
+            </div>
+            <div v-show="IsChosen == 'OTHER SERVICES'">
+                <div>
+                    Other Services
                 </div>
             </div>
         </div>
