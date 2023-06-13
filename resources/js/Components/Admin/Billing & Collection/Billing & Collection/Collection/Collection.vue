@@ -6,7 +6,7 @@ import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue'
 import NormalButton from '@/Components/Misc/Buttons/NormalButton.vue'
 import TabNav from '../../../../Misc/Tabs/TabNav.vue'
 import Tab from '../../../../Misc/Tabs/Tab.vue'
-import CollectionAllTable from './Tabs/CollectionAllTable.vue';
+import CollectionAllTable from './Table/CollectionAllTable.vue';
 export default {
     name: "Billing",
 
