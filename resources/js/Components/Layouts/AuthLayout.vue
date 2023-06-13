@@ -72,7 +72,7 @@ export default {
                     icon: HomeIcon,
                 },
                 {
-                    to: "/app/billing-collection/collection",
+                    to: "/app/billing-collection/print",
                     label: "Billing & Collection",
                     children: [
                         {
@@ -84,6 +84,12 @@ export default {
                         {
                             to: "/app/billing-collection/collection",
                             label: "Collection",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/billing-collection/print",
+                            label: "Print",
                             children: [],
                             icon: CircleCheckIcon,
                         },
