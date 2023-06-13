@@ -72,7 +72,7 @@ export default {
                     icon: HomeIcon,
                 },
                 {
-                    to: "/app/billing-collection/billing",
+                    to: "/app/billing-collection/collection",
                     label: "Billing & Collection",
                     children: [
                         {

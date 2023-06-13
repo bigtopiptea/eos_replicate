@@ -83,6 +83,7 @@ import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost
 import BCHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
 import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collection/Billing/Billing.vue";
 import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
+import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -703,6 +704,16 @@ const routes = [
                 meta: {
                     title: `Collection`,
                     ability: `Collection`,
+                },
+            },
+            // 6/13/2023 VDQ
+            {
+                path: "/app/billing-collection/collection/payment",
+                name: "Collection Payment",
+                component: BCCollectionPayment,
+                meta: {
+                    title: `Collection`,
+                    ability: `Collection Payment`,
                 },
             },
             {

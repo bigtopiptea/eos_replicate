@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-        <div class=" bg-#194E72 h-2.5 rounded-full w-1/2"></div>
+    <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700 " :class="progressHeight">
+        <div class="bg-#194E72 h-full rounded-full w-1/4"></div>
     </div>
 </template>
 
@@ -11,6 +11,10 @@ export default{
         type: String,
         default: "w-1/3",
       },
+      progressHeight: {
+        type: String,
+        default: 'h-2.5'
+      }
     },
     
 }

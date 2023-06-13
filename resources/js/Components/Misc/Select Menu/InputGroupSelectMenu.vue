@@ -11,7 +11,7 @@
         </ListboxButton>
   
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
-          <ListboxOptions class="absolute -bottom-[100px] right-0 z-10 h-[100px]  overflow-auto bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px]" :class="inputWidth">
+          <ListboxOptions class="absolute -bottom-[67px] right-0 z-10 max-h-[100px]  overflow-auto bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px] border" :class="inputWidth">
             <ListboxOption hidden>
                 <li class="text-gray-900 relative cursor-default select-none py-1 pl-3 pr-9">
                     <span class="font-normal block truncate uppercase">
@@ -20,7 +20,7 @@
                 </li>
             </ListboxOption>
             <ListboxOption as="template" v-for="option in options" :key="option" :value="option" v-slot="{ active, selected }">
-              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3 pr-9']" class="flex gap-[10px] uppercase border-b h-auto">
+              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3']" class="flex gap-[10px] uppercase border-b h-auto">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']">
                     {{ option.name }}
                 </span>

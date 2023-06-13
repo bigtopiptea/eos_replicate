@@ -23,7 +23,7 @@
                 </li>
             </ListboxOption>
             <ListboxOption as="template" v-for="option in options" :key="option" :value="option" v-slot="{ active, selected }">
-              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3 pr-9']" class="flex gap-[10px] uppercase border-b">
+              <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3']" class="flex gap-[10px] uppercase border-b">
                 <!-- Conditional Statement to include checkbox or not -->
                 <input v-if="withCheckbox === true" type="checkbox" name="" id="" :checked="selected ? true : false">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']" >
