@@ -1,10 +1,15 @@
 <script>
+
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue'
 import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
 import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue'
 import NormalButton from '../../../../Misc/Buttons/NormalButton.vue'
 import TabNav from '../../../../Misc/Tabs/TabNav.vue'
 import Tab from '../../../../Misc/Tabs/Tab.vue'
+import DownloadIcon from '../../../../Misc/Icons/DownloadIcon.vue'
+import ChevRightIcon from '../../../../Misc/Icons/ChevRightIcon.vue'
+import BillingTable1 from './Tabs/BillingTable1.vue'
+
 export default {
     name: "Billing",
 
@@ -15,6 +20,9 @@ export default {
         NormalButton,
         TabNav,
         Tab,
+        DownloadIcon,
+        ChevRightIcon,
+        BillingTable1,
 
 
 
@@ -33,6 +41,15 @@ export default {
                 {name:'CITI EXPRESS PAYMENT'},
                 {name:'RNV FOREX'},
             ],
+            labels:[
+                {label:'SOA NO.'},
+                {label:'MONTH'},
+                {label:'YEAR'},
+                {label:'CLIENT NAME'},
+                {label:'PAPER BILLING'},
+                {label:'PAPERLESS BILLING'},
+
+            ]
 
         }
     },
@@ -69,11 +86,11 @@ export default {
                 <div class="w-full my-3">
                     <TabNav :tabs="['View Soa' , 'View Details']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
                         <Tab :isSelected="selected === 'View Soa'" >
-                            <div class="w-full h-full flex justify-center py-20 ">
-                                <div v-if="IsView">
-
+                            <div class="w-full min-h-screen max-h-full">
+                                <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
+                                    <BillingTable1 :labels="labels"/>
                                 </div>
-                                <div v-else>
+                                <div v-else class=" flex justify-center py-20 ">
                                     <div >
                                         <img src="../../../../../../assets/images/NoRecords.png" alt="" class="h-[200px] w-[200px]">
                                     </div>
@@ -82,15 +99,47 @@ export default {
                         </Tab>
                         <Tab :isSelected="selected === 'View Details'" >
                             <div class="w-full h-auto ">
-
                             </div>
                         </Tab>
                     </TabNav>
                 </div>
             </div>
             <div v-show="IsChosen == 'OTHER SERVICES'">
-                <div>
-                    Other Services
+                <div class="w-[35%] flex flex-col gap-3">
+                    <div>
+                        <CheckboxSelectMenu :label="'Clients'" :placeholder="'Select Clients'" :options="TieUpPartner" />
+                    </div>
+                    <div class="w-fit" >
+                        <CheckboxSelectMenu :label="'Service'" :placeholder="'Select Service'" :options="TieUpPartner" />
+                    </div>
+                    <div class="flex gap-3">
+                        <CheckboxSelectMenu :label="'Month'" :placeholder="'Select Month'" />
+                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" />
+                        <NormalButton @click="(IsView = !IsView)" class="bg-[#3E3E3E] h-auto w-[75px] text-white" :label="'View'"/>
+                    </div>
+                    <div>
+                        <CheckboxSelectMenu :label="'Service'" :placeholder="'Select Service'" :options="TieUpPartner" />
+                    </div>
+                </div>
+                <div class="w-full my-3">
+                    <TabNav :tabs="['View Soa' , 'View Details']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
+                        <Tab :isSelected="selected === 'View Soa'" >
+                            <div class="w-full min-h-screen max-h-full">
+                                <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
+                                    <BillingTable1 :labels="labels"/>
+                                </div>
+                                <div v-else class=" flex justify-center py-20 ">
+                                    <div >
+                                        <img src="../../../../../../assets/images/NoRecords.png" alt="" class="h-[200px] w-[200px]">
+                                    </div>
+                                </div>
+                            </div>
+                        </Tab>
+                        <Tab :isSelected="selected === 'View Details'" >
+                            <div class="w-full h-auto ">
+                            </div>
+                        </Tab>
+                    </TabNav>
                 </div>
             </div>
         </div>

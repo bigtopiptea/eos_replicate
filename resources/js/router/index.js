@@ -83,6 +83,7 @@ import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost
 import BCHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
 import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collection/Billing/Billing.vue";
 import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
+import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -703,6 +704,15 @@ const routes = [
                 meta: {
                     title: `Collection`,
                     ability: `Collection`,
+                },
+            },
+            {
+                path: "/app/billing-collection/print",
+                name: "Print",
+                component: BCPrint,
+                meta: {
+                    title: `Print`,
+                    ability: `Print`,
                 },
             },
             {
