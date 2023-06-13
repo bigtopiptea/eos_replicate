@@ -4,26 +4,30 @@ import InputTextarea from "@/Components/Misc/Input/InputTextarea.vue"
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue"
 import Accordion from "@/Components/Misc/Accordion.vue"
 import DateInput from "@/Components/Misc/Input/DateInput.vue"
-import JournalEntry from "@/Components/Admin/Funding/Payment Voucher/JournalEntry.vue"
 import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelectMenu.vue'
 import TabNav from '@/Components//Misc/Tabs/TabNav.vue'
 import Tab from '@/Components/Misc/Tabs/Tab.vue'
 import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
 import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
+import CollectionDetailedTable from "../Table/CollectionDetailedTable.vue"
+import JournalEntryTable from '../Table/JournalEntryTable.vue'
+import CollectionPaymentHistory from '../Table/CollectionPaymentHistory.vue'
 export default{
     components:{
         InputGroup,
         InputTextarea,
         Accordion,
         BorderButton,
-        JournalEntry,
         DateInput,
         InputGroupSelectMenu,
         Tab, TabNav,
         LoadingIcon,
         XMarkIcon,
-        ProgressIcon
+        ProgressIcon,
+        CollectionDetailedTable,
+        JournalEntryTable,
+        CollectionPaymentHistory
     },
 
     data() {
@@ -133,7 +137,7 @@ export default{
                                             <div class="text-center text-[10px] mb-[5px]">
                                                 <p>DRAG IMAGE HERE<br>OR</p>
                                                 <div class="flex items-center justify-center cursor-pointer">
-                                                    <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
+                                                    <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
                                                     <input class="absolute w-[100px] opacity-0" type="file">
                                                 </div>
                                             </div>
@@ -181,23 +185,18 @@ export default{
                     </div>
                   
                     <!-- Accordion -->
-                    <div>
-                        <Accordion sectiontitle="CREATE PAYMENT VOUCHER" :setOpen=true>
-                            <CreatePaymentVoucher/>
-                        </Accordion>
-                    </div>
+                    <Accordion sectiontitle="Detailed" :setOpen=true>
+                        <CollectionDetailedTable/>                   
+                    </Accordion>
+                    
                     <!-- Accordion -->
-                    <div>
-                        <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
-                            <JournalEntry/>
-                        </Accordion>
-                    </div>
+                    <Accordion sectiontitle="JOURNAL ENTRY" :setOpen=true>
+                        <JournalEntryTable/>
+                    </Accordion>
                 </div>
             </Tab>
             <Tab :isSelected="selected === 'Payment History'">
-                <div class="w-full h-auto ">
-                    
-                </div>
+                <CollectionPaymentHistory/>
             </Tab>
         </TabNav>
     </div>

@@ -83,6 +83,7 @@ import OPSCostManagement from "@/Components/Admin/New Settings/OPS-Settings/Cost
 import BCHome from "@/Components/Admin/Billing & Collection/Home/BillingCollectionHome.vue";
 import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collection/Billing/Billing.vue";
 import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
+import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
 import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
