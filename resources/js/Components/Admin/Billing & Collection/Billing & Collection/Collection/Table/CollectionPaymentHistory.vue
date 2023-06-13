@@ -9,38 +9,33 @@ export default{
     },
     data() {
         return {
-            CollectionAllTable: [],
+            CollectionPaymentHistory: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'COUNT'},
-                {label:'DATE'},
-                {label:'SOA NO.'},
-                {label:'REFERENCE NO.'},
-                {label:'SERVICES'},
-                {label:'DESCRIPTION'},
-                {label:'CCY'},
-                {label:'BENEFICIARY'},
-                {label:'PRINCIPAL AMT.'},
-                {label:'SERVICE FEE'},
-                {label:'COST'},
-                {label:'TAX'},
+                {label:'SETTLEMENT DATE'},
+                {label:'SOA NOUMBER'},
+                {label:'COMPANY'},
+                {label:'TOTAL ITEM COUNT'},
+                {label:'TOTAL AMOUNT'},
                 {label:'PENALTY'},
-                {label:'AMOUNT TO PAY'},
-                {label:'AMOUNT ALLOCATED'},
+                {label:'TOTAL PAYMENT'},
                 {label:'OUTSTANDING BALANCE'},
+                {label:'MODE OF PAYMENT'},
+                {label:'BANK NAME'},
+                {label:'REMARKS'},
                 {label:'STATUS'},
             ],
 
         }
     },
     methods: {
-        async getCollectionAllTable() {
+        async getCollectionPaymentHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                  this.CollectionAllTable = response.data.data;
+                  this.CollectionPaymentHistory = response.data.data;
                   this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -51,7 +46,7 @@ export default{
 }
 </script>
 <template>
-    <div class="flex flex-col h-auto pb-10">
+    <div class="flex flex-col h-auto p-5">
         <!-- TABLE -->
         <form class="flex self-end gap-3 mb-[30px]">
             <div class="flex">
@@ -84,75 +79,53 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                             <tr class="divide-x divide-gray-200">
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <router-link to="/app/billing-collection/collection/payment" class="underline text-cyan-500" href="#">
-                                        1
-                                    </router-link>
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">                            
-               
-                                    09/28/2022 10:55:09 aM
+                                    09/01/2022 04:21:21 pM
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <router-link to="/app/billing-collection/collection/payment" class="underline text-cyan-500" href="#">
+                                    <a class="underline text-cyan-500" href="#">
                                         SOAOOOOOOOO077
-                                    </router-link>
+                                    </a>
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    OPT-LBC-1201
+                                    AFFILIATE1
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                     LBC
+                                     7
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    COURIER CHARGES
+                                    PHP 1,058.4O
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    PHP
+                                    PHP 0.00
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    DELA CRUZ, JUAN CRUZ
+                                    PHP 1,058.40
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   135.50
+                                    PHP 0.00
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   67.20
+                                    CREDIT TO BANK
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   84.00
+                                    BANCO DE ORO
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   16.20
+                                   -
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   0.00
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   151.20
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   0.00
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   151.20
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                   OPEN
+                                    closed
                                 </td>
                             </tr>
                         </tbody>
@@ -160,7 +133,7 @@ export default{
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getCollectionAllTable()" :pagination="pagination"
+        <Pagination @paginate="getCollectionPaymentHistory()" :pagination="pagination"
                 :offset="1" class="mt-8" />
     </div>
 
