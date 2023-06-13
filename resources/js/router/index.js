@@ -680,11 +680,11 @@ const routes = [
             },
             {
                 path: "/app/billing-collection/home",
-                name: "Home",
+                name: "BCHome",
                 component: BCHome,
                 meta: {
-                    title: `Home`,
-                    ability: `Home`,
+                    title: `BCHome`,
+                    ability: `BCHome`,
                 },
             },
             {
