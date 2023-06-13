@@ -85,7 +85,7 @@ import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collect
 import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
 import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
-
+import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";

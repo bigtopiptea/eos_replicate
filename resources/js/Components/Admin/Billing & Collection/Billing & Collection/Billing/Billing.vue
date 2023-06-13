@@ -1,5 +1,5 @@
 <script>
-
+import BillingTable2 from './Tabs/BillingTable2.vue'
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue'
 import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
 import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue'
@@ -9,11 +9,13 @@ import Tab from '../../../../Misc/Tabs/Tab.vue'
 import DownloadIcon from '../../../../Misc/Icons/DownloadIcon.vue'
 import ChevRightIcon from '../../../../Misc/Icons/ChevRightIcon.vue'
 import BillingTable1 from './Tabs/BillingTable1.vue'
+import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue'
 
 export default {
     name: "Billing",
 
     components:{
+        FloatingLabelInput,
         ModalTwo,
         BorderButton,
         CheckboxSelectMenu,
@@ -23,6 +25,7 @@ export default {
         DownloadIcon,
         ChevRightIcon,
         BillingTable1,
+        BillingTable2,
 
 
 
@@ -49,7 +52,19 @@ export default {
                 {label:'PAPER BILLING'},
                 {label:'PAPERLESS BILLING'},
 
-            ]
+            ],
+            clientOptions:[
+                {name:'AFFILIATE 1'},
+                {name:'AFFILIATE 2'},
+                {name:'COMMUNITIES DAVAO'},
+                {name:'COMMUNITIES BATANGAS'},
+            ],
+            serviceOptions:[
+                {name:'LBC'},
+                {name:'LALAMOVE'},
+                {name:'JRS EXPRESS'},
+                {name:'J&T EXPRESS'},
+            ],
 
         }
     },
@@ -90,15 +105,15 @@ export default {
                                 <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
                                     <BillingTable1 :labels="labels"/>
                                 </div>
-                                <div v-else class=" flex justify-center py-20 ">
-                                    <div >
-                                        <img src="../../../../../../assets/images/NoRecords.png" alt="" class="h-[200px] w-[200px]">
-                                    </div>
+                                <div v-else class="flex flex-col items-center justify-center py-20">
+                                    <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+                                    <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
                                 </div>
                             </div>
                         </Tab>
                         <Tab :isSelected="selected === 'View Details'" >
-                            <div class="w-full h-auto ">
+                            <div class="w-full h-auto py-3 px-3 ">
+                                <BillingTable2/>
                             </div>
                         </Tab>
                     </TabNav>
@@ -107,18 +122,20 @@ export default {
             <div v-show="IsChosen == 'OTHER SERVICES'">
                 <div class="w-[35%] flex flex-col gap-3">
                     <div>
-                        <CheckboxSelectMenu :label="'Clients'" :placeholder="'Select Clients'" :options="TieUpPartner" />
+                        <CheckboxSelectMenu v-model="selectedClient" :label="'Clients'" :placeholder="'Select Client'" :options="clientOptions" />
                     </div>
-                    <div class="w-fit" >
-                        <CheckboxSelectMenu :label="'Service'" :placeholder="'Select Service'" :options="TieUpPartner" />
+                    <div class="w-[45%]">
+                        <CheckboxSelectMenu v-model="selectedService" :label="'Service'" :placeholder="'Select Service'" :options="serviceOptions"/>
                     </div>
-                    <div class="flex gap-3">
-                        <CheckboxSelectMenu :label="'Month'" :placeholder="'Select Month'" />
-                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" />
-                        <NormalButton @click="(IsView = !IsView)" class="bg-[#3E3E3E] h-auto w-[75px] text-white" :label="'View'"/>
+                    <div class="flex gap-[10px] w-[70%]">
+                        <FloatingLabelInput :inputLabel="'Start Date'" :inputType="'date'"/>
+                        <FloatingLabelInput :inputLabel="'End Date'" :inputType="'date'"/>
+                    </div>
+                    <div class="flex gap-3 w-[70%]">
+                        <FloatingLabelInput :inputLabel="'Reference No.'" :placeholder="'Input Reference No.'"/>
                     </div>
                     <div>
-                        <CheckboxSelectMenu :label="'Service'" :placeholder="'Select Service'" :options="TieUpPartner" />
+                        <NormalButton @click="applyFilter" class="bg-[#3E3E3E] h-auto w-[75px] text-white py-2 px-3 text-[13px]" :label="'FILTER'"/>
                     </div>
                 </div>
                 <div class="w-full my-3">
@@ -128,10 +145,9 @@ export default {
                                 <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
                                     <BillingTable1 :labels="labels"/>
                                 </div>
-                                <div v-else class=" flex justify-center py-20 ">
-                                    <div >
-                                        <img src="../../../../../../assets/images/NoRecords.png" alt="" class="h-[200px] w-[200px]">
-                                    </div>
+                                <div v-else class="flex flex-col items-center justify-center py-20">
+                                    <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+                                    <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
                                 </div>
                             </div>
                         </Tab>
