@@ -282,6 +282,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/b&c-collection-report",
+                            label: "B&C - Collection Report",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 //CM 5-3

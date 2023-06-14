@@ -85,7 +85,8 @@ import BCBilling from "@/Components/Admin/Billing & Collection/Billing & Collect
 import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Collection.vue";
 import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
 import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
-import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/Tabs/CollectionPayment.vue";
+import BCCollectionReport from "@/Components/Admin/Reports/B&C-Reports/Collection Report/CollectionReport.vue"
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
@@ -560,6 +561,18 @@ const routes = [
                     ability: `OPS - End Day Report`,
                 },
             },
+
+            //CM 6-14
+            {
+                path: "/app/reports/b&c-collection-report",
+                name: "Collection Report",
+                component: BCCollectionReport,
+                meta: {
+                    title: `Collection Report`,
+                    ability: `B&C - Collection Report`,
+                },
+            },
+
 
 
             //Carl Mendoza 5-3

@@ -30,6 +30,7 @@ export default {
 
     data() {
         return {
+            isSaved: false,
             isSelected:'',
             viewModalOpen: false,
             slideoverOpen: false,
@@ -155,7 +156,56 @@ export default {
         </div>
     </ModalTwo>
     <Slideover :show="slideoverOpen" @close="slideOverToggle()" :title="isSelected">
-        <div class="flex flex-col justify-between items-center h-full pb-5">
+        <div v-if="isSaved == true" class="flex flex-col justify-between h-full pb-3">
+            <div class="flex flex-col gap-5 mx-10 mt-10 h-auto">
+                <div class="flex justify-center gap-3">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs1.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-3">
+                    <PaperClipIcon/>
+                    <div class="text-[14px]">
+                        <p class="text-[#1F4583] underline"><a href="#">supporting_docs2.pdf</a></p>
+                        <p class="font-bold">
+                            Date uploaded:
+                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                        </p>
+                        <p class="font-bold">
+                            Uploaded by:
+                            <span class="font-normal">SOLTES, CAROL</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click.prevent="(slideoverOpen = !slideoverOpen),isSaved=false"  :buttonLabel="'CLOSE'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+        <div v-else class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
                 <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
                     <div class="text-center mb-5">
@@ -201,8 +251,8 @@ export default {
                 </div>
             </div>
             <div class="flex justify-between w-4/5">
-                <BorderButton @click.prevent="slideOverToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton @click.prevent="slideOverToggle()" :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click.prevent="(slideoverOpen = !slideoverOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click.prevent="isSaved=true" :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>
