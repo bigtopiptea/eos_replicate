@@ -3,31 +3,56 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
+
 </script>
 
 <script>
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-
+import AdvanceSettingsSelectMenu from '../../../../Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
+import FloatingLabelInput from "../../../../Misc/Input/FloatingLabelInput.vue";
 
 export default {
     name: 'Collection Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,
+        CheckboxSelectMenu,AdvanceSettingsSelectMenu,FloatingLabelInput
     },
     data() {
         return {
-            partnerClient:[
-                {name: 'ALL PARTNERS/CLIENTS'},
-                {name: 'Redha Al Ansari Exchange'},
+            Category:[
+                {name: 'ALL CATEGORIES'},
+                {name: 'SETTLED'},
+                {name: 'UNSETTLED'},
+                {name: 'ON DUE'},
+                {name: 'PAST DUE'},
+            ],
+
+            CDROSClient:[
+                {name: 'Affiliate 1'},
+                {name: 'Affiliate 2'},
+                {name: 'PAVI GROUP'},
+                {name: 'PRIMEWATER INC.'},
+                {name: 'STREAMTECH'},
+                {name: 'communities'},
+                {name: 'Community Davao'},
+                {name: 'Community Leyte'},
+                {name: 'Community Naga'},
+                {name: 'Community Philippines'},
+            ],
+
+            CSRTUPClient:[
+                {name: 'ALL TIE-UP PARTNERS'},
+                {name: 'Al EKTESAD'},
+                {name: 'CITI EXPRESS PAYMENT'},
+                {name: 'JDEE REMIT'},
+                {name: 'REDHA AL ANSARI'},
+                {name: 'RIGHT CHOICE PAYMENT'},
                 {name: 'RNV FOREX'},
-                {name: 'Right Choice Payments'},
-                {name: 'City Express Money Transfer'},
-                {name: 'Al Ektasad Exchange'},
-                {name: 'J-Dee Remittance Services Pte Ltd'},
-                {name: 'Flatley LLC'},
-                {name: 'Hodkiewicz Ltd'},
-                {name: 'Cummerata Group'},
+            ],
+            CSROSClient:[
+                {name: 'All Clients'},
+                {name: 'Affiliate 1'},
+                {name: 'Affiliate 2'},
             ],
             reportType:[
                 {name: 'COLLECTION SUMMARY REPORT'},
@@ -37,31 +62,53 @@ export default {
                 {name: 'TIE-UP PARTNERS'},
                 {name: 'OTHER SERVICES'},
             ],
-            selectedPartner: '',
+            selectedCategory: '',
             selectedReport: '',
+            selectedClient:'',
             selectedClientType: '',
+            startDate:'',
+            endDate:'',
+            result: [],
         }
     },
+    computed: {
+        result() {
+            if (this.selectedReport.name === 'COLLECTION SUMMARY REPORT' && this.selectedClientType.name === 'OTHER SERVICES') {
+            return this.CSROSClient;
+            }
+            else if((this.selectedReport.name === 'COLLECTION SUMMARY REPORT' || this.selectedReport.name === 'COLLECTION DETAILED REPORT') && this.selectedClientType.name === 'TIE-UP PARTNERS'){
+            return this.CSRTUPClient;
+            }
+            else if(this.selectedReport.name === 'COLLECTION DETAILED REPORT' && this.selectedClientType.name === 'OTHER SERVICES'){
+            return this.CDROSClient;
+            }
+            else {
+            return 0;
+            }
+        }
+    },
+
 }
+
 </script>
 <template>
     <div class="h-screen w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] ">
-
                 <div class="w-[25%]">
                     <CheckboxSelectMenu v-model="selectedReport" :placeholder="'select Type of Report'" :label="'Type of Report'" :options="reportType" />
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu v-model="selectedClientType" :label="'Client Type'"   :placeholder="'select Client Type'"  :options="clientType" :withCheckbox="true" />
+                    <CheckboxSelectMenu v-model="selectedClientType" :label="'Client Type'" :placeholder="'select Client Type'"  :options="clientType" :withCheckbox="true" />
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu v-model="selectedTransaction" :label="'Client'"  :placeholder="'select Client'" :options="transactionType"/>
+                    <CheckboxSelectMenu v-model="selectedClient" :label="'Client'"  :placeholder="'select Client'" :options="result" :withCheckbox="true"/>
                 </div>
                 <div v-show="selectedReport.name == 'COLLECTION DETAILED REPORT'" class="w-[25%]">
-                    <CheckboxSelectMenu v-model="selectedTransaction" :label="'Category'" :placeholder="'select Category'" :options="transactionType"/>
+                    <CheckboxSelectMenu v-model="selectedCategory" :label="'Category'" :placeholder="'select Category'" :options="Category" :withCheckbox="true"/>
                 </div>
             </div>
+
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA]  pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
@@ -103,10 +150,9 @@ export default {
         <div v-if="this.selectedPartner && this.selectedPartner && this.selectedTransaction">
 
         </div>
-        <div v-else>
-            <div class="flex items-center justify-center h-full w-auto mt-[200px]">
-                <h1 class="text-[15px] text-[#3E3E3E]">-- NO RECORDS TO DISPLAY --</h1>
-            </div>
+        <div v-else class="flex flex-col items-center justify-center py-20">
+            <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+            <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
         </div>
     </div>
 </template>
