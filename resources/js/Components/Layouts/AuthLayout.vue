@@ -67,14 +67,14 @@ export default {
                 },
                 {
                     to: "/app/billing-collection/home",
-                    label: "B&C Home",
-                    children: [],
-                    icon: HomeIcon,
-                },
-                {
-                    to: "/app/billing-collection/print",
                     label: "Billing & Collection",
                     children: [
+                        {
+                            to: "/app/billing-collection/home",
+                            label: "Home",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                         {
                             to: "/app/billing-collection/billing",
                             label: "Billing",

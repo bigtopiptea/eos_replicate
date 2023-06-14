@@ -6,7 +6,7 @@ import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue'
 import NormalButton from '@/Components/Misc/Buttons/NormalButton.vue'
 import TabNav from '../../../../Misc/Tabs/TabNav.vue'
 import Tab from '../../../../Misc/Tabs/Tab.vue'
-import CollectionAllTable from './Table/CollectionAllTable.vue';
+import CollectionMainTable from './Table/CollectionMainTable.vue';
 export default {
     name: "Billing",
 
@@ -18,7 +18,7 @@ export default {
         NormalButton,
         TabNav,
         Tab,
-        CollectionAllTable
+        CollectionMainTable
     },
     data() {
         return {
@@ -88,7 +88,7 @@ export default {
                         <FloatingLabelInput :inputLabel="'Reference No.'" :placeholder="'Input Reference No.'"/>
                     </div>
                     <div>
-                        <NormalButton @click="applyFilter" class="bg-[#3E3E3E] h-auto w-[75px] text-white py-2 px-3 text-[13px]" :label="'FILTER'"/>
+                        <NormalButton @click="applyFilter" class="bg-[#3E3E3E] h-auto w-[75px] text-white py-2 px-3 text-[10px]" :label="'FILTER'"/>
                     </div>
                 </div>
                 <div class="w-full my-3">
@@ -98,7 +98,7 @@ export default {
                                 <div v-if="showTable" class="w-full">                                                  
                                     <!-- TABLE -->
                                     <div class="w-full">
-                                        <CollectionAllTable/>
+                                        <CollectionMainTable/>
                                     </div>
                                 </div>
                                 <div v-else class="flex flex-col items-center justify-center py-20">
@@ -108,13 +108,31 @@ export default {
                             </div>
                         </Tab>
                         <Tab :isSelected="selected === 'Open'">
-                            <div class="w-full h-auto ">
-
+                            <div class="w-full h-full p-5">
+                                <div v-if="showTable" class="w-full">                                                  
+                                    <!-- TABLE -->
+                                    <div class="w-full">
+                                        <CollectionMainTable/>
+                                    </div>
+                                </div>
+                                <div v-else class="flex flex-col items-center justify-center py-20">
+                                    <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+                                    <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
+                                </div>
                             </div>
                         </Tab>
                         <Tab :isSelected="selected === 'Closed'">
-                            <div class="w-full h-auto ">
-
+                            <div class="w-full h-full p-5">
+                                <div v-if="showTable" class="w-full">                                                  
+                                    <!-- TABLE -->
+                                    <div class="w-full">
+                                        <CollectionMainTable/>
+                                    </div>
+                                </div>
+                                <div v-else class="flex flex-col items-center justify-center py-20">
+                                    <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+                                    <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
+                                </div>
                             </div>
                         </Tab>
                     </TabNav>
