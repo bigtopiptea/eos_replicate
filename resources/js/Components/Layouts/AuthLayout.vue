@@ -93,6 +93,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/billing-collection/monitoring",
+                            label: "Monitoring",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ],
                     icon: AmendmentIcon,
                 },

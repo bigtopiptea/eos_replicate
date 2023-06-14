@@ -86,6 +86,7 @@ import BCCollection from "@/Components/Admin/Billing & Collection/Billing & Coll
 import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing & Collection/Collection/CollectionPayment.vue";
 import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
 import BCCollectionReport from "@/Components/Admin/Reports/B&C-Reports/Collection Report/CollectionReport.vue"
+import BCMonitoring from "@/Components/Admin/Billing & Collection/Monitoring/Monitoring.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -737,6 +738,15 @@ const routes = [
                 meta: {
                     title: `Print`,
                     ability: `Print`,
+                },
+            },
+            {
+                path: "/app/billing-collection/monitoring",
+                name: "Monitoring",
+                component: BCMonitoring,
+                meta: {
+                    title: `Monitoring`,
+                    ability: `PriMonitoringnt`,
                 },
             },
             {

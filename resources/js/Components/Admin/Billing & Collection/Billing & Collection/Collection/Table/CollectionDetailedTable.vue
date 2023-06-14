@@ -88,7 +88,7 @@ export default{
                     </div>
                 </div>
                 <div class="relative cursor-pointer pl-[17px]">
-                    <BorderButton @click="(attachDocsOpen = !attachDocsOpen)" :buttonLabel="'attach 2307'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
+                    <BorderButton @click="(attachDocsOpen = !attachDocsOpen)" :buttonLabel="isSubmit == false ? 'attach 2307' : 'view 2307'" :buttonSize="'h-auto w-auto'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
                     <!-- <input class="absolute inset-0 w-[130px] pl-[17px] opacity-0" type="file">                 -->
                 </div>
             </div>
@@ -259,7 +259,7 @@ export default{
             </div>
             <div class="flex justify-between w-4/5">
                 <BorderButton @click.prevent="attachDocsOpenToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton @click="isSubmit = !isSubmit"  :buttonLabel="'SUBMIT'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="isSubmit = true"  :buttonLabel="'SUBMIT'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

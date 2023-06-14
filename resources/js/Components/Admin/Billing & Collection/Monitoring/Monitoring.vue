@@ -3,18 +3,12 @@
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";;
-import MTDPending from "./MTDPending.vue";
-import MTDApprovalHistory from "./MTDApprovalHistory.vue";
-
-
+import MonitoringPending from "./Tabs/MonitoringPending.vue";
+import MonitoringApprovalHistory from "./Tabs/MonitoringApprovalHistory.vue";
 export default {
     components: {
-        SmallHeading,
-        MTDPending,
-        MTDApprovalHistory,
-        TabNav,Tab
-
-
+        SmallHeading, TabNav, Tab, MonitoringPending,
+        MonitoringApprovalHistory
     },
     data(){
         return {
@@ -32,34 +26,18 @@ export default {
 
 </script>
 <template>
-    <div class="border m-3 bg-white border-white shadow-md">
+    <div class="border bg-white border-white shadow-md">
         <TabNav :tabs="['Pending' , 'Approval History' ]" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-auto">
-                    <MTDPending/>
+                    <MonitoringPending/>
                 </div>
             </Tab>
             <Tab :isSelected="selected === 'Approval History'" >
                 <div class="w-full h-auto">
-                    <MTDApprovalHistory/>
+                    <MonitoringApprovalHistory/>
                 </div>
             </Tab>
         </TabNav>
-
     </div>
 </template>
-<style>
-.slide-fade-enter-active {
-    transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-    transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-    transform: translateY(20px);
-    opacity: 0;
-}
-</style>

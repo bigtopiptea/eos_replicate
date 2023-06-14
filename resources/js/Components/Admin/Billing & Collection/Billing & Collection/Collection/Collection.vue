@@ -138,11 +138,6 @@ export default {
                     </TabNav>
                 </div>
             </div>
-            <div v-show="IsChosen == 'OTHER SERVICES'">
-                <div>
-                    Other Services
-                </div>
-            </div>
         </div>
     </div>
 </template>

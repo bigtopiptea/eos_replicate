@@ -1,0 +1,184 @@
+<script>
+import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
+import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
+import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
+import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
+import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
+import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+export default {
+
+    name:'B&C Monitoring',
+
+    components:{
+        DropDown,
+        EditIcon,
+        NormalButton,
+        SearchIcon,
+        InputLabel,
+        ListIcon,
+        DateInput,
+        Pagination,
+    },
+
+    data() {
+        return {
+            BCMonitoringApproval: [],
+            pagination: {
+                current_page: 1,
+            },
+            labels:[
+                {label:'SETTLEMENT DATE'},
+                {label:'SOA NUMBER'},
+                {label:'COMPANY'},
+                {label:'TOTAL ITEM COUNT'},
+                {label:'TOTAL AMOUNT'},
+                {label:'PENALTY'},
+                {label:'TOTAL PAYMENT'},
+                {label:'OUTSTANDING BALANCE'},
+                {label:'MODE OF PAYMENT'},
+                {label:'BANK NAME'},
+                {label:'REMARKS'},
+                {label:'STATUS'},
+            ]
+        }
+    },
+    methods: {
+        async getBCMonitoringApproval() {
+            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
+                .then((response) => {
+                    console.log(response.data);
+                    this.BCMonitoringApproval = response.data.data;
+                    this.pagination = response.data;
+                })
+                .catch((errors) => {
+
+                })
+        },
+    },
+}
+</script>
+
+<template>
+    <div class="flex flex-col justify-between h-full w-auto my-5 px-3 bg-white">
+        <div>
+            <div class="inline-block min-w-full align-middle ">
+                <div class="flex justify-between h-full min-w-full ">
+                    <div class="flex justify-start flex-col space-x-3 mb-3">
+                        <div class="flex items-end gap-3 left-side-col-1">
+                            <div>
+                                <DateInput label="Start Date" />
+                            </div>
+                            <div>
+                                <DateInput label="End Date" />
+                            </div>
+                            <div>
+                                <NormalButton label="Filter"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-side mt-[5px]">
+                        <form class="flex items-start gap-3">
+                            <div class="flex">
+                                <div class="relative w-full">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <SearchIcon />
+                                </div>
+                                <input type="text" id="simple-search"
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
+                                    placeholder="Search" required />
+                                </div>
+                                <NormalButton label="Go"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
+                            </div>
+                            <NormalButton label="Export"
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E]   tracking-wider text-[10px] font-medium text-white" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="min-w-full py-2 align-middle ">
+                <div class="relative h-[360px]">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                        <table class="min-w-full divide-y divide-gray-300">
+                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
+                                <tr class="divide-x divide-gray-200">                               
+                                    <th cope="col"
+                                        class="flex justify-center items-center gap-[5px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        <input type="checkbox" name="" id="">
+                                        id
+                                    </th>
+                                    <th v-for="label in labels" :key="label.label" scope="col"
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        {{ label.label }}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
+                                <tr class="divide-x divide-gray-200">
+                                    <td class="flex justify-center gap-[5px] items-center whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                        <input type="checkbox" name="" id="">
+                                        01                                    
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        09/28/2022 11:00:09 PM
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        <a href="" class="underline text-cyan-700">SOA000000003
+</a>
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        communities davao
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        7
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        PHP 9,566.64
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        PHP 0.00
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        PHP 9,566.64
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        PHP 0.00
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        credit to bank
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        banco de oro
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        -
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        for verification
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Pagination @paginate="getBCMonitoringApproval()" :pagination="pagination"
+            :offset="1" class = "py-10"/>
+    </div>
+</template>
