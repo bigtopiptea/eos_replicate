@@ -83,8 +83,10 @@ export default{
                     </tfoot>
                 </table>
             </div>
-            <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5">              
-                <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>               
+            <div class="flex justify-center space-x-4 items-center w-full h-auto mt-5"> 
+                <router-link to="/app/billing-collection/collection">
+                    <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>               
+                </router-link>             
                 <BorderButton :buttonLabel="'SUBMIT'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
