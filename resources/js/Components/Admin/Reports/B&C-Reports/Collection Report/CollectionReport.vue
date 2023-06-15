@@ -10,12 +10,17 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import AdvanceSettingsSelectMenu from '../../../../Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
 import FloatingLabelInput from "../../../../Misc/Input/FloatingLabelInput.vue";
-
+import CollectionReportCSRTable1 from './Tables/CollectionReportCSRTable1.vue';
+import CollectionReportCDRTable1 from './Tables/CollectionReportCDRTable1.vue';
+import CollectionReportCSRTable2 from './Tables/CollectionReportCSRTable2.vue';
+import CollectionReportCDRTable2 from './Tables/CollectionReportCDRTable2.vue';
 export default {
     name: 'Collection Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu,AdvanceSettingsSelectMenu,FloatingLabelInput
+        CheckboxSelectMenu,AdvanceSettingsSelectMenu,FloatingLabelInput,
+        CollectionReportCSRTable1,CollectionReportCDRTable1,CollectionReportCSRTable2
+        ,CollectionReportCDRTable2
     },
     data() {
         return {
@@ -68,34 +73,36 @@ export default {
             selectedClientType: '',
             startDate:'',
             endDate:'',
-            result: [],
+            isClicked: false,
         }
     },
     computed: {
         result() {
             if (this.selectedReport.name === 'COLLECTION SUMMARY REPORT' && this.selectedClientType.name === 'OTHER SERVICES') {
-            return this.CSROSClient;
+                return this.CSROSClient;
             }
-            else if((this.selectedReport.name === 'COLLECTION SUMMARY REPORT' || this.selectedReport.name === 'COLLECTION DETAILED REPORT') && this.selectedClientType.name === 'TIE-UP PARTNERS'){
-            return this.CSRTUPClient;
+                else if((this.selectedReport.name === 'COLLECTION SUMMARY REPORT' || this.selectedReport.name === 'COLLECTION DETAILED REPORT') && this.selectedClientType.name === 'TIE-UP PARTNERS'){
+                return this.CSRTUPClient;
             }
-            else if(this.selectedReport.name === 'COLLECTION DETAILED REPORT' && this.selectedClientType.name === 'OTHER SERVICES'){
-            return this.CDROSClient;
+                else if(this.selectedReport.name === 'COLLECTION DETAILED REPORT' && this.selectedClientType.name === 'OTHER SERVICES'){
+                return this.CDROSClient;
             }
             else {
-            return 0;
+                return 0;
             }
-        }
+        },
     },
 
 }
 
 </script>
 <template>
-    <div class="h-screen w-full bg-white">
+    <div class="min-h-screen max-h-auto w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] ">
+                {{ filterPara }}
                 <div class="w-[25%]">
+
                     <CheckboxSelectMenu v-model="selectedReport" :placeholder="'select Type of Report'" :label="'Type of Report'" :options="reportType" />
                 </div>
                 <div class="w-[25%]">
@@ -113,13 +120,13 @@ export default {
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
                         <div>
-                            <DateInput label="Start Date"/>
+                            <DateInput v-model="startDate" label="Start Date" format="MM/DD/YY"/>
                         </div>
                         <div>
-                            <DateInput label="End Date" />
+                            <DateInput v-model="endDate" label="End Date" format="MM/DD/YY" />
                         </div>
                         <div>
-                            <NormalButton label="Filter"
+                            <NormalButton @click="(isClicked = !isClicked)" label="Filter"
                             class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
                     </div>
@@ -147,8 +154,11 @@ export default {
 
 
         <!-- MAIN CONTENT -->
-        <div v-if="this.selectedPartner && this.selectedPartner && this.selectedTransaction">
-
+        <div v-if="this.isClicked" >
+            <!-- <CollectionReportCSRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
+            <CollectionReportCDRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
+            <CollectionReportCDRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" /> -->
+            <CollectionReportCSRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
         </div>
         <div v-else class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
