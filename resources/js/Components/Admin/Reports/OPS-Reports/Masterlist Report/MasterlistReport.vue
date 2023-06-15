@@ -7,7 +7,7 @@ import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu
 import AdvanceSettingsSelectMenu from "@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue";
 import MasterlistReportTable from "./Tables/MasterlistReportTable.vue";
 export default {
-    name: 'Status Report',
+    name: 'Masterlist Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
         CheckboxSelectMenu, AdvanceSettingsSelectMenu,
@@ -16,27 +16,27 @@ export default {
     data(){
         return{
             tieUpOption:[
-                {name: 'Optimum Exchange Remit Inc.', value:'Optimum Exchange Remit Inc.'},
-                {name: 'REDHA', value:'REDHA'},
-                {name: 'Globalland', value:'Globalland'},
+                {label: 'Optimum Exchange Remit Inc.', value:'Optimum Exchange Remit Inc.'},
+                {label: 'REDHA', value:'REDHA'},
+                {label: 'Globalland', value:'Globalland'},
             ],
             advanceSettings:[
-                {name:'ALL'},
-                {name:'TRANSACTION DATE'},
-                {name:'REFERENCE NO.'},
-                {name:'TRANSACTION TYPE'},
-                {name:'REMITTER LASTNAME'},
-                {name:'REMITTER FIRSTNAME'},
-                {name:'BENEFICIARY LASTNAME'},
-                {name:'BENEFICIARY FIRSTNAME'},
-                {name:'FROM_CCY'},
-                {name:'ORIGINAL AMOUNT'},
-                {name:'RATE'},
-                {name:'TO_CCY'},
-                {name:'NET AMOUNT'},
-                {name:'CONVERT_AMT'},
-                {name:'AGENT_NAME'},
-                {name:'BANK BILLER'},
+                {label:'ALL'},
+                {label:'TRANSACTION DATE'},
+                {label:'REFERENCE NO.'},
+                {label:'TRANSACTION TYPE'},
+                {label:'REMITTER LASTNAME'},
+                {label:'REMITTER FIRSTNAME'},
+                {label:'BENEFICIARY LASTNAME'},
+                {label:'BENEFICIARY FIRSTNAME'},
+                {label:'FROM_CCY'},
+                {label:'ORIGINAL AMOUNT'},
+                {label:'RATE'},
+                {label:'TO_CCY'},
+                {label:'NET AMOUNT'},
+                {label:'CONVERT_AMT'},
+                {label:'AGENT_NAME'},
+                {label:'BANK BILLER'},
             ],
             selectedTieUp: '',
         }

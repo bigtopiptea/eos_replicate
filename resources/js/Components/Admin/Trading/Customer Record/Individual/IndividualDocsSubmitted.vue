@@ -28,9 +28,9 @@ export default {
                 {label:'ACTIONS'},
             ],
             idType:[
-                {name: 'SSS'},
-                {name: 'PhilHealth'},
-                {name: 'Drivers License'},
+                {label: 'SSS'},
+                {label: 'PhilHealth'},
+                {label: 'Drivers License'},
             ],
         }
     },

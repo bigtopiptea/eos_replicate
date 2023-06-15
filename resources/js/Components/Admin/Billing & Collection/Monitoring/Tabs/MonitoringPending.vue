@@ -7,6 +7,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+
 export default {
 
     name:'B&C Monitoring',
@@ -42,7 +43,37 @@ export default {
                 {label:'REMARKS'},
                 {label:'STATUS'},
                 {label:'ACTION'},
-            ]
+            ],
+            sampleOption: [
+                {
+                    name: 'PARENT 1',
+
+                },
+                {
+                    name: 'PARENT 2',
+                    children: [
+                        { name: 'CHILD 1' },
+                        { name: 'CHILD 2' },
+                        { name: 'CHILD 3' }
+                    ]
+                },
+                {
+                    name: 'PARENT 2',
+                    children: [
+                        { name: 'CHILD 1' },
+                        { name: 'CHILD 2' },
+                        { name: 'CHILD 3' }
+                    ]
+                },
+                {
+                    name: 'PARENT 2',
+                    children: [
+                        { name: 'CHILD 1' },
+                        { name: 'CHILD 2' },
+                        { name: 'CHILD 3' }
+                    ]
+                },
+            ],
         }
     },
     methods: {

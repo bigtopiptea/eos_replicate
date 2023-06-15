@@ -1,12 +1,8 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
-
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
@@ -21,9 +17,9 @@ export default {
     data() {
         return {
             reportType:[
-                {name: 'ALL (CTR & STR REPORT)', value: 'CTR & STR'},
-                {name: 'CTR - COVERED TRANSACTIONS REPORT', value: 'CTR'},
-                {name: 'STR - SUSPICIOUS TRANSACTIONS REPORT', value: 'STR'}
+                {label: 'ALL (CTR & STR REPORT)', value: 'CTR & STR'},
+                {label: 'CTR - COVERED TRANSACTIONS REPORT', value: 'CTR'},
+                {label: 'STR - SUSPICIOUS TRANSACTIONS REPORT', value: 'STR'}
             ],
             selectedReport: ''
         }

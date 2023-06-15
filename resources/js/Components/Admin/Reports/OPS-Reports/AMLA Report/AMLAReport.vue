@@ -6,7 +6,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import AMLAReportTable from "./Tables/AMLAReportTable.vue";
 export default {
-    name: 'Status Report',
+    name: 'AMLA Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
         CheckboxSelectMenu,AMLAReportTable
@@ -14,15 +14,15 @@ export default {
     data(){
         return{
             tieUpOption:[
-                {name: 'Tie-Up 1', value:'Tie-Up 1'},
-                {name: 'Tie-Up 2', value:'Tie-Up 2'},
-                {name: 'Tie-Up 3', value:'Tie-Up 3'},
+                {label: 'Tie-Up 1', value:'Tie-Up 1'},
+                {label: 'Tie-Up 2', value:'Tie-Up 2'},
+                {label: 'Tie-Up 3', value:'Tie-Up 3'},
             ],
             reportType:[
-                {name: 'flagged transaction report', value:'flagged transaction report'},
-                {name: 'frequency report', value:'frequency report'},
-                {name: 'covered transaction report', value:'covered transaction report'},
-                {name: 'layered transaction report', value:'layered transaction report'},
+                {label: 'flagged transaction report', value:'flagged transaction report'},
+                {label: 'frequency report', value:'frequency report'},
+                {label: 'covered transaction report', value:'covered transaction report'},
+                {label: 'layered transaction report', value:'layered transaction report'},
             ],
             selectedTieUp: '',
             selectedReportType: '',

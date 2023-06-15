@@ -1,11 +1,8 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import DailyInventoryReportTable from "./Tables/DailyInventoryReportTable.vue";
@@ -18,14 +15,13 @@ export default {
     data() {
         return {
             tieUpPartner:[
-                {name: 'Tie-Up 1'},
-                {name: 'Tie-Up 2'},
-                {name: 'Tie-Up 3'},
+                {label: 'Tie-Up 1'},
+                {label: 'Tie-Up 2'},
+                {label: 'Tie-Up 3'},
             ],
             tradingType:[
-                {name: 'BUY'},
-                {name: 'SELL'},
-                // {name: 'BUY/SELL'}
+                {label: 'BUY'},
+                {label: 'SELL'},
             ],
             selectedTieUpBanks: '',
             selectedTrading: ''

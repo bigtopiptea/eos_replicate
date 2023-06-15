@@ -1,12 +1,8 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-
-</script>
-
-<script>
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import AdvanceSettingsSelectMenu from '../../../../Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
 import FloatingLabelInput from "../../../../Misc/Input/FloatingLabelInput.vue";
@@ -20,47 +16,47 @@ export default {
     data() {
         return {
             Category:[
-                {name: 'ALL CATEGORIES'},
-                {name: 'SETTLED'},
-                {name: 'UNSETTLED'},
-                {name: 'ON DUE'},
-                {name: 'PAST DUE'},
+                {label: 'ALL CATEGORIES'},
+                {label: 'SETTLED'},
+                {label: 'UNSETTLED'},
+                {label: 'ON DUE'},
+                {label: 'PAST DUE'},
             ],
 
             CDROSClient:[
-                {name: 'Affiliate 1'},
-                {name: 'Affiliate 2'},
-                {name: 'PAVI GROUP'},
-                {name: 'PRIMEWATER INC.'},
-                {name: 'STREAMTECH'},
-                {name: 'communities'},
-                {name: 'Community Davao'},
-                {name: 'Community Leyte'},
-                {name: 'Community Naga'},
-                {name: 'Community Philippines'},
+                {label: 'Affiliate 1'},
+                {label: 'Affiliate 2'},
+                {label: 'PAVI GROUP'},
+                {label: 'PRIMEWATER INC.'},
+                {label: 'STREAMTECH'},
+                {label: 'communities'},
+                {label: 'Community Davao'},
+                {label: 'Community Leyte'},
+                {label: 'Community Naga'},
+                {label: 'Community Philippines'},
             ],
 
             CSRTUPClient:[
-                {name: 'ALL TIE-UP PARTNERS'},
-                {name: 'Al EKTESAD'},
-                {name: 'CITI EXPRESS PAYMENT'},
-                {name: 'JDEE REMIT'},
-                {name: 'REDHA AL ANSARI'},
-                {name: 'RIGHT CHOICE PAYMENT'},
-                {name: 'RNV FOREX'},
+                {label: 'ALL TIE-UP PARTNERS'},
+                {label: 'Al EKTESAD'},
+                {label: 'CITI EXPRESS PAYMENT'},
+                {label: 'JDEE REMIT'},
+                {label: 'REDHA AL ANSARI'},
+                {label: 'RIGHT CHOICE PAYMENT'},
+                {label: 'RNV FOREX'},
             ],
             CSROSClient:[
-                {name: 'All Clients'},
-                {name: 'Affiliate 1'},
-                {name: 'Affiliate 2'},
+                {label: 'All Clients'},
+                {label: 'Affiliate 1'},
+                {label: 'Affiliate 2'},
             ],
             reportType:[
-                {name: 'COLLECTION SUMMARY REPORT'},
-                {name: 'COLLECTION DETAILED REPORT'},
+                {label: 'COLLECTION SUMMARY REPORT'},
+                {label: 'COLLECTION DETAILED REPORT'},
             ],
             clientType:[
-                {name: 'TIE-UP PARTNERS'},
-                {name: 'OTHER SERVICES'},
+                {label: 'TIE-UP PARTNERS'},
+                {label: 'OTHER SERVICES'},
             ],
             selectedCategory: '',
             selectedReport: '',

@@ -14,9 +14,9 @@ export default {
     data(){
         return{
             tieUpOption:[
-                {name: 'Tie-Up 1', value:'Tie-Up 1'},
-                {name: 'Tie-Up 2', value:'Tie-Up 2'},
-                {name: 'Tie-Up 3', value:'Tie-Up 3'},
+                {label: 'Tie-Up 1', value:'Tie-Up 1'},
+                {label: 'Tie-Up 2', value:'Tie-Up 2'},
+                {label: 'Tie-Up 3', value:'Tie-Up 3'},
             ],
             selectedTieUp: ''
         }

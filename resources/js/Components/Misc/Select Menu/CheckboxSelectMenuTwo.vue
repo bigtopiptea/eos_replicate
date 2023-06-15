@@ -7,7 +7,7 @@
     <button
       @click="isOpen = !isOpen"
       type="button"
-      class="relative w-full h-7 py-2 pl-3 pr-10 text-left bg-white border border-[#EAEAEA] shadow-sm cursor-default text-[10px]"
+      class="relative w-full h-7 py-2 pl-[5px] pr-[35px] text-left bg-white border border-[#EAEAEA] shadow-sm cursor-default text-[10px]"
     >
       <span class="flex items-center h-full">
         <span class="flex-grow uppercase whitespace-nowrap overflow-x-auto">
@@ -27,13 +27,13 @@
         <label v-for="option in options" :key="option.id" class="flex items-center px-4 py-2 border-b">
           <input
             type="checkbox"
-            :value="option.name"
+            :value="option.value"
             v-model="selectedOptions"
             :checked="isSelected(option)"
             @change="selectAllHandler(option)"
             class="mr-2 form-checkbox text-blue-500"
           />
-          <span class="text-[10px] uppercase">{{ option.name }}</span>
+          <span class="text-[10px] uppercase">{{ option.label }}</span>
         </label>
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
     },
     placeholder: {
       type: String,
-      default: 'Select options'
+      default: 'SELECT OPTIONS'
     },
     isRequired:{
         type: Boolean,
@@ -81,7 +81,7 @@ export default {
       if (this.selectedOptions.length === this.options.length - 1) {
         return 'All options';
       } else if (this.selectedOptions.length > 0) {
-        return this.selectedOptions.map(option => option.name).join(', ');
+        return this.selectedOptions.map(option => option.label).join(' | ');
       } else {
         return '';
       }

@@ -1,34 +1,40 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
-import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import OutwardRemittanceTable from "./Tables/OutwardRemittanceTable.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue";
 export default {
-    name: 'Revenue Report',
+  watch: {
+  },
+    name: 'Outward Remittance Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, OutwardRemittanceTable
+        CheckboxSelectMenu, OutwardRemittanceTable,
+        CheckboxSelectMenuThree
     },
     data() {
         return {
             remitterOptions:[
-                {name: 'SELECT ALL'},
-                {name: 'Dusit Hospitality Education Phils In'},
-                {name: 'Multi - Line Building SystemALLBANK INC'},
-                {name: 'Prime Asset Ventures INC'},
-                {name: 'TKH Marketing'},
-                {name: 'The Lift Company Phils'},
-                {name: 'vertex entertainment and resorts corp'},
+                {
+                    label: 'SELECT ALL',
+                    children:[
+                        {label: 'Dusit Hospitality Education Phils In'},
+                        {label: 'Multi - Line Building SystemALLBANK INC'},
+                        {label: 'Prime Asset Ventures INC'},
+                        {label: 'TKH Marketing'},
+                        {label: 'The Lift Company Phils'},
+                        {label: 'vertex entertainment and resorts corp'},
+                    ]
+                }
+
             ],
             country:[
-                {name: 'Philippines'},
-                {name: 'Japan'},
-                {name: 'Korea'},
+                {label: 'Philippines'},
+                {label: 'Japan'},
+                {label: 'Korea'},
             ],
             selectedRemitter: '',
             selectedCountry: ''
@@ -41,7 +47,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[23.5%]">
-                    <CheckboxSelectMenu v-model="selectedRemitter" :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
+                    <CheckboxSelectMenuThree v-model="selectedRemitter" :label="'remitter'" :inputWidth="'w-12/12'"  :options="remitterOptions" :placeholder="'SELECT REMITTER'"/>
                 </div>
                 <div class="w-[23.5%]">
                     <CheckboxSelectMenu v-if="this.selectedRemitter.name" v-model="selectedCountry" :label="'country'" :placeholder="'SELECT COUNTRY'" :inputWidth="'w-12/12'" :options="country"/>

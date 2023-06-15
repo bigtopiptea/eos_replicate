@@ -1,10 +1,7 @@
-<script setup>
+<script>
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
@@ -13,7 +10,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 export default {
-    name: 'Daily Inventory Report',
+    name: 'End Day Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
         Pagination, BorderButton, DropDown, Slideover, InputGroup, SolidButton

@@ -1,48 +1,51 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue";
 import TransactionReportTable from "./Tables/TransactionReportTable.vue";
 
 export default {
-    name: 'Cash Position Report',
+    name: 'CMT - Transaction Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, TransactionReportTable
+        CheckboxSelectMenu, TransactionReportTable,
+        CheckboxSelectMenuThree
     },
     data() {
         return {
-            partnerClient:[
-                {name: 'ALL PARTNERS/CLIENTS'},
-                {name: 'Redha Al Ansari Exchange'},
-                {name: 'RNV FOREX'},
-                {name: 'Right Choice Payments'},
-                {name: 'City Express Money Transfer'},
-                {name: 'Al Ektasad Exchange'},
-                {name: 'J-Dee Remittance Services Pte Ltd'},
-                {name: 'Flatley LLC'},
-                {name: 'Hodkiewicz Ltd'},
-                {name: 'Cummerata Group'},
+            partnerClient: [
+                {
+                    label: 'ALL PARTNERS/CLIENTS',
+                    children: [
+                        {label: 'Redha Al Ansari Exchange'},
+                        {label: 'RNV FOREX'},
+                        {label: 'Right Choice Payments'},
+                        {label: 'City Express Money Transfer'},
+                        {label: 'Al Ektasad Exchange'},
+                        {label: 'J-Dee Remittance Services Pte Ltd'},
+                        {label: 'Flatley LLC'},
+                        {label: 'Hodkiewicz Ltd'},
+                        {label: 'Cummerata Group'},
+                    ]
+                },
             ],
             reportType:[
-                {name: 'DISTRIBUTION'},
-                {name: 'FUNDING'},
-                {name: 'TRADING'},
-                {name: 'OTHER SERVICES'},
+                {label: 'DISTRIBUTION'},
+                {label: 'FUNDING'},
+                {label: 'TRADING'},
+                {label: 'OTHER SERVICES'},
             ],
             transactionType:[
-                {name: 'Processing'},
-                {name: 'Cancellation'},
-                {name: 'Additional'},
-                {name: 'Adjustment'},
-                {name: 'Refund'},
+                {label: 'Processing'},
+                {label: 'Cancellation'},
+                {label: 'Additional'},
+                {label: 'Adjustment'},
+                {label: 'Refund'},
             ],
-            selectedPartner: '',
+            selectedPartner: [],
             selectedReport: '',
             selectedTransaction: '',
         }
@@ -50,11 +53,11 @@ export default {
 }
 </script>
 <template>
-    <div class="h-screen w-full bg-white">
+    <div class="h-screen w-full bg-white px-[12px]">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-3 pt-10 pb-5">
-            <div class="flex gap-[10px] w-[65%] mx-[12px]">
+            <div class="flex gap-[10px] w-[65%]">
                 <div class="w-[50%]">
-                    <CheckboxSelectMenu v-model="selectedPartner" :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" :withCheckbox="true"/>
+                    <CheckboxSelectMenuThree v-model="selectedPartner" :placeholder="'select partner/client'" :label="'partner/client'" :options="partnerClient" />
                 </div>
                 <div class="w-[25%]">
                     <CheckboxSelectMenu v-model="selectedReport" :label="'type of report'" :inputWidth="'w-12/12'"  :placeholder="'select report type'"  :options="reportType"/>
@@ -63,7 +66,7 @@ export default {
                     <CheckboxSelectMenu v-model="selectedTransaction" :label="'transaction type'" :inputWidth="'w-12/12'" :placeholder="'select transaction type'" :options="transactionType"/>
                 </div>
             </div>
-            <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
+            <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
                         <div>

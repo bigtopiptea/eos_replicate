@@ -16,9 +16,9 @@ export default{
     data(){
         return{
             accountList:[
-                {name: 'Account Name 1', value: 'Account Name 1'},
-                {name: 'Account Name 2', value: 'Account Name 2'},
-                {name: 'Account Name 3', value: 'Account Name 3'},
+                {label: 'Account Name 1', value: 'Account Name 1'},
+                {label: 'Account Name 2', value: 'Account Name 2'},
+                {label: 'Account Name 3', value: 'Account Name 3'},
             ]
         }
     }

@@ -1,40 +1,47 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue";
 import CashPositionReportTable from "./Tables/CashPositionReportTable.vue";
 export default {
     name: 'Cash Position Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, CashPositionReportTable
+        CheckboxSelectMenu, CashPositionReportTable,
+        CheckboxSelectMenuThree
     },
     data() {
         return {
             reportType:[
-                {name: 'DISTRIBUTION'},
-                {name: 'FUNDING'},
-                {name: 'TRADING'},
-                {name: 'OTHER SERVICES'},
+                {label: 'DISTRIBUTION'},
+                {label: 'FUNDING'},
+                {label: 'TRADING'},
+                {label: 'OTHER SERVICES'},
             ],
-            banksProviders:[
-                {name: 'All Banks/Providers'},
-                {name: 'BDO PASEO SF PHP'},
-                {name: 'BOC BANAUE OF PHP'},
-                {name: 'BOC SHAW SF PHP'},
-                {name: 'BPI H.O. SF PHP'},
-                {name: 'BPI INSTAPAY PHP'},
-                {name: 'CHINABANK DEL MONTE-MATUTUM SF PHP'},
+            banksProviders: [
+                {
+                    label: 'All Banks/Providers',
+                    children: [
+                        {label: 'BDO PASEO SF PHP'},
+                        {label: 'BOC BANAUE OF PHP'},
+                        {label: 'BOC SHAW SF PHP'},
+                        {label: 'BPI H.O. SF PHP'},
+                        {label: 'BPI INSTAPAY PHP'},
+                        {label: 'CHINABANK DEL MONTE-MATUTUM SF PHP'},
+                    ]
+                },
             ],
             currency:[
-                {name: 'SELECT ALL'},
-                {name: 'USD'},
-                {name: 'PHP'},
+                { 
+                    label: 'SELECT ALL',
+                    children: [
+                        {label: 'USD'},
+                        {label: 'PHP'},
+                    ]
+                }
             ],
             selectedReport: '',
             selectedCurrency: '',
@@ -58,20 +65,20 @@ export default {
 }
 </script>
 <template>
-    <div class="h-screen w-full bg-white">
+    <div class="h-screen w-full bg-white px-[12px]">
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
-            <div class="flex gap-[10px] w-[85%] mx-[12px]">
+            <div class="flex gap-[10px] w-[85%]">
                 <div class="w-[33.33%]">
                     <CheckboxSelectMenu v-model="selectedReport"  :label="'type of report'" :inputWidth="'w-12/12'" :placeholder="'Select type of report'" :options="reportType"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu v-model="selectedCurrency" :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
+                    <CheckboxSelectMenuThree v-model="selectedCurrency" :label="'currency'" :inputWidth="'w-12/12'" :placeholder="'SELECT CURRENCY'" :options="currency" :withCheckbox="true"/>
                 </div>
                 <div class="w-[33.33%]">
-                    <CheckboxSelectMenu v-model="selectedBanksProviders" :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
+                    <CheckboxSelectMenuThree v-model="selectedBanksProviders" :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT BANK/PROVIDER'" :options="banksProviders" :withCheckbox="true"/>
                 </div>
             </div>
-            <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
+            <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] pb-[30px]">
                 <div class="flex justify-end flex-col">
                     <div class="flex gap-3 items-end">
                         <div>

@@ -88,7 +88,7 @@ export default{
                     </div>
                 </div>
                 <div class="relative cursor-pointer pl-[17px]">
-                    <BorderButton @click="(attachDocsOpen = !attachDocsOpen)" :buttonLabel="isSubmit == false ? 'attach 2307' : 'view 2307'" :buttonSize="'h-auto w-auto'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
+                    <BorderButton @click="(attachDocsOpen = !attachDocsOpen)" :buttonLabel="isSubmit == false ? 'attach 2307' : 'view 2307'" :buttonSize="'h-auto w-auto'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2C]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
                     <!-- <input class="absolute inset-0 w-[130px] pl-[17px] opacity-0" type="file">                 -->
                 </div>
             </div>

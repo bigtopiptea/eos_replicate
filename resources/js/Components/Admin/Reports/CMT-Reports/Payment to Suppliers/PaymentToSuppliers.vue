@@ -1,12 +1,8 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
-
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import PaymentToSuppliersTable from "./Tables/PaymentToSuppliersTable.vue";
 export default {
@@ -18,9 +14,9 @@ export default {
     data() {
         return {
             supplier:[
-                {name: 'Supplier 1'},
-                {name: 'Supplier 2'},
-                {name: 'Supplier 3'},
+                {label: 'Supplier 1'},
+                {label: 'Supplier 2'},
+                {label: 'Supplier 3'},
             ],
             selectedSupplier: '',
         }

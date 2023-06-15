@@ -26,34 +26,34 @@ export default{
                 {label:'ACTIONS'},
             ],
             customerTypes: [
-                {name: 'Sole Proprietorship'}, 
-                {name: 'Partneship'}, 
-                {name: 'Corporation'},
+                {label: 'Sole Proprietorship'}, 
+                {label: 'Partneship'}, 
+                {label: 'Corporation'},
             ],
             categoryTypes: [
-                {name: 'Provider'}, 
-                {name: 'Tie-Up Partner'}, 
-                {name: 'Trading'}
+                {label: 'Provider'}, 
+                {label: 'Tie-Up Partner'}, 
+                {label: 'Trading'}
             ],
             country:[
-                {name: 'Philippines'},
-                {name: 'Japan'},
-                {name: 'Korea'},
+                {label: 'Philippines'},
+                {label: 'Japan'},
+                {label: 'Korea'},
             ],
             province:[
-                {name: 'Province 1'},
-                {name: 'Province 2'},
-                {name: 'Province 3'},
+                {label: 'Province 1'},
+                {label: 'Province 2'},
+                {label: 'Province 3'},
             ],
             cityMunicipality:[
-                {name: 'Manila'},
-                {name: 'Cavite'},
-                {name: 'Bulacan'},
+                {label: 'Manila'},
+                {label: 'Cavite'},
+                {label: 'Bulacan'},
             ],
             idType:[
-                {name: 'SSS'},
-                {name: 'PhilHealth'},
-                {name: 'Drivers License'},
+                {label: 'SSS'},
+                {label: 'PhilHealth'},
+                {label: 'Drivers License'},
             ],
         }
     }

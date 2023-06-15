@@ -1,29 +1,32 @@
-<script setup>
+<script>
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
-import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
 import RevenueReportTable from "./Tables/RevenueReportTable.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue";
 export default {
     name: 'Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, RevenueReportTable
+        CheckboxSelectMenu, RevenueReportTable,
+        CheckboxSelectMenuThree
     },
     data() {
         return {
             companyOptions:[
-                {name: 'ALL'},
-                {name: 'ALL HOME'},
-                {name: 'ALLBANK INC'},
-                {name: 'ALLEASY INC'},
-                {name: 'BEVTECH'},
-                {name: 'BRITTANY'},
-                {name: 'Camotes Island Power Generation Corp'},
+                {
+                    label: 'SELECT ALL',
+                    children: [
+                        {label: 'ALL HOME'},
+                        {label: 'ALLBANK INC'},
+                        {label: 'ALLEASY INC'},
+                        {label: 'BEVTECH'},
+                        {label: 'BRITTANY'},
+                        {label: 'Camotes Island Power Generation Corp'},
+                    ]
+                }
             ],
             selectedCompany: ''
         }
@@ -35,7 +38,7 @@ export default {
         <div class="flex flex-col gap-[15px] min-w-full px-3 pt-10 pb-5">
             <div class="flex gap-[10px] w-[85%] mx-[12px]">
                 <div class="w-[40%]">
-                    <CheckboxSelectMenu v-model="selectedCompany" :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
+                    <CheckboxSelectMenuThree v-model="selectedCompany" :label="'company'" :inputWidth="'w-12/12'" :inputColor="'bg-white'" :options="companyOptions" :placeholder="'SELECT COMPANY'" :withCheckbox="true"/>
                 </div>
             </div>
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
