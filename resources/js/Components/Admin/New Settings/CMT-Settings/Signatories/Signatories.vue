@@ -5,14 +5,14 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 </script>
 
 <script>
-import FloatingLabelDropdown from '../../../Misc/Input/FloatingLabelDropdown.vue';
-import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
-import SmallLabelInput from '../../../Misc/Input/SmallLabelInput.vue';
+import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SmallLabelInput from '@/Components/Misc/Input/SmallLabelInput.vue';
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
-import Slideover from '../../../Misc/Slideover/Slideover.vue';
-import SolidButton from "../../../Misc/Buttons/SolidButton.vue";
+import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 

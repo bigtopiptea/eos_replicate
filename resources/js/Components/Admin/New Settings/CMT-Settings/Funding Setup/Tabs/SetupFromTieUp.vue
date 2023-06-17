@@ -11,10 +11,11 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue'
 import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import InputGroup from '../../../../Misc/Input/InputGroup.vue';
-import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
+
 
 export default {
     components:{
@@ -31,51 +32,42 @@ export default {
         FloatingLabelInput,
         SolidButton,
         CheckboxSelectMenu
+
     },
 
     data() {
         return {
-            COAChartOfAccounts: [],
+            SetUpFromTieUp: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'ACCOUNT DESCRIPTION'},
-                {label:'fs category'},
-                {label:'fs type'},
-                {label:'account no.'},
-                {label:'account type'},
-                {label:'Status'},
+                {label:'tie-up bank'},
+                {label:'tie-up partner'},
+                {label:'date added'},
+                {label:'ADDED BY'},
+                {label:'Actions'},
             ],
-            fsCategory:[
-                {name: 'Category 1'},
-                {name: 'Category 2'},
-                {name: 'Category 3'},
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
             ],
-            fsType:[
-                {name: 'Type 1'},
-                {name: 'Type 2'},
-                {name: 'Type 3'},
-            ],
-            accType:[
-                {name: 'Account Type 1'},
-                {name: 'Account Type 2'},
-                {name: 'Account Type 3'},
-            ],
-            RequestChartOpen: false,
+            AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
     },
     methods: {
         // Slider
-        RequestChartoggle(){
-            this.RequestChartOpen = false;
+        AddNewToggle(){
+            this.AddNewOpen = false;
         },
-        async getCOAChartOfAccounts() {
+        async getSetUpFromTieUp() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.COAChartOfAccounts = response.data.data;
+                    this.SetUpFromTieUp = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -87,7 +79,10 @@ export default {
 </script>
 <template>
     <div class="h-auto w-full bg-white px-3 py-5">
-        <div class="flex flex-col min-w-full ">
+        <div class="flex flex-col min-w-full">
+            <div class="w-[35%] pb-3">
+                <CheckboxSelectMenu :label="'Tie-up'" :inputWidth="'w-full'" :options="tieUpOptions" :placeholder="'SELECT TIE-UP'"/>
+            </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
                     <div class="w-full">
@@ -110,7 +105,7 @@ export default {
                     </div>
                 </div>
                 <div>
-                    <BorderButton :buttonLabel="'REQUEST'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(RequestChartOpen = !RequestChartOpen)"/>
+                    <BorderButton :buttonLabel="'ADD NEW'" :buttonPadding="'p-2'" :buttonSize="'h-auto w-[120px]'" :buttonStyle="'border-2 border-#F9951E text-#F9951E text-[13px]'" @click="(AddNewOpen = !AddNewOpen)"/>
                 </div>
             </div>
         </div>
@@ -147,29 +142,33 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    All BANK IMUS USD
+                                    BANCO DE ORO OERI TIEUP1 USD
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    CASH AND CASH EQUIVALENT
+                                    Redha Al Ansari Exchange
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    BALANCE SHEET
+                                    09/28/2022 11:00:05 AM
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    110-102-077
+                                    banaria, jeffrey clidorio
                                 </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    Cash In Bank
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    Active
-                                </td>
-                            </tr>
 
+                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    <div class="flex justify-center">
+                                        <button>
+                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                        </button>
+                                        <SwitchToggle
+                                            :status="true"
+                                            :isChecked="true"
+                                        />
+                                    </div>
+                                </td>
+                                </tr>
 
                         </tbody>
                     </table>
@@ -178,36 +177,28 @@ export default {
         </div>
 
         <div class="py-6">
-            <Pagination @paginate="getCOAChartOfAccounts()" :pagination="pagination"
+            <Pagination @paginate="getSetUpFromTieUp()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
 
     </div>
 
-    <Slideover :show="RequestChartOpen" @close="RequestChartoggle" :title="'Request Chart Of Accounts'">
+    <Slideover :show="AddNewOpen" @close="AddNewToggle" :title="'Add New'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'Account Description'" :placeholder="'Description'"/>
+                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'" />
                     </div>
-                    <div class="mb-5">
-                        <CheckboxSelectMenu :label="'FS Category'" :placeholder="'Select FS Category'" :options="fsCategory"/>
-                    </div>
-                    <div class="mb-5">
-                        <CheckboxSelectMenu :label="'FS Type'" :placeholder="'Select FS Type'" :options="fsType"/>
-                    </div>
-                    <div class="mb-5">
-                        <InputGroup :inputLabel="'Account Number'" :placeholder="'Bank Name'" :isDisabled="true" :inputWidth="'w-1/2'" :labelWidth="'w-1/2'"/>
-                    </div>
-                    <div class="mb-5">
-                        <CheckboxSelectMenu :label="'Account Type'" :placeholder="'Select Account Type'" :options="accType"/>
+                    <div>
+                        <CheckboxSelectMenu :label="'Tie-up'" :placeholder="'SELECT TIE-UP'" :options="tieUpOptions"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[100px]">
+
                 <div class="flex justify-center gap-[100px] border-black">
-                    <BorderButton @click="(RequestChartOpen = !RequestChartOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                    <BorderButton @click="(AddNewOpen = !AddNewOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
                      <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
                 </div>
             </div>

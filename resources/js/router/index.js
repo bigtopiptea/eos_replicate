@@ -67,13 +67,13 @@ import Help from "@/Components/Admin/Help/Help.vue"
 import Logs from "@/Components/Admin/Logs/Logs.vue"
 
 //New Setting CMT Sub Components -OJT-
-import ChangePassword from "@/Components/Admin/New Settings/Change Password/ChangePassword.vue";
-import ChartOfAccounts from "@/Components/Admin/New Settings/Chart of Accounts/ChartOfAccounts.vue";
-import DistributionSetup from "@/Components/Admin/New Settings/Distribution Setup/DistributionSetup.vue";
-import FundingSetup from "@/Components/Admin/New Settings/Funding Setup/FundingSetup.vue";
-import Maintenance from "@/Components/Admin/New Settings/Maintenance/Maintenance.vue";
-import RateManagement from "@/Components/Admin/New Settings/Rate Management/RateManagement.vue";
-import Signatories from "@/Components/Admin/New Settings/Signatories/Signatories.vue";
+import ChangePassword from "@/Components/Admin/New Settings/CMT-Settings/Change Password/ChangePassword.vue";
+import ChartOfAccounts from "@/Components/Admin/New Settings/CMT-Settings/Chart of Accounts/ChartOfAccounts.vue";
+import DistributionSetup from "@/Components/Admin/New Settings/CMT-Settings/Distribution Setup/DistributionSetup.vue";
+import FundingSetup from "@/Components/Admin/New Settings/CMT-Settings/Funding Setup/FundingSetup.vue";
+import Maintenance from "@/Components/Admin/New Settings/CMT-Settings/Maintenance/Maintenance.vue";
+import RateManagement from "@/Components/Admin/New Settings/CMT-Settings/Rate Management/RateManagement.vue";
+import Signatories from "@/Components/Admin/New Settings/CMT-Settings/Signatories/Signatories.vue";
 
 //New Setting OPS Sub Components -OJT-
 import OPSDistributionSetup from "@/Components/Admin/New Settings/OPS-Settings/Distribution Setup/DistributionSetup.vue";
@@ -87,6 +87,9 @@ import BCCollectionPayment from "@/Components/Admin/Billing & Collection/Billing
 import BCPrint from "@/Components/Admin/Billing & Collection/Billing & Collection/Print/Print.vue";
 import BCCollectionReport from "@/Components/Admin/Reports/B&C-Reports/Collection Report/CollectionReport.vue"
 import BCMonitoring from "@/Components/Admin/Billing & Collection/Monitoring/Monitoring.vue";
+import BCClientsGrouping from "@/Components/Admin/New Settings/B&C-Settings/Clients Grouping/ClientsGrouping.vue";
+import BCMaintanance from "@/Components/Admin/New Settings/B&C-Settings/Maintenance/Maintenance.vue";
+import BCCollectionTarget from "@/Components/Admin/New Settings/B&C-Settings/Collection Target/CollectionTarget.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -605,7 +608,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/change-password",
+                path: "/app/new-settings/cmt/change-password",
                 name: "Change Password",
                 component: ChangePassword,
                 meta: {
@@ -614,7 +617,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/chart-of-accounts",
+                path: "/app/new-settings/cmt/chart-of-accounts",
                 name: "Chart of Accounts",
                 component: ChartOfAccounts,
                 meta: {
@@ -623,7 +626,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/distribution-setup",
+                path: "/app/new-settings/cmt/distribution-setup",
                 name: "Distribution Setup",
                 component: DistributionSetup,
                 meta: {
@@ -632,7 +635,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/funding-setup",
+                path: "/app/new-settings/cmt/funding-setup",
                 name: "Funding Setup",
                 component: FundingSetup,
                 meta: {
@@ -641,7 +644,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/maintenance",
+                path: "/app/new-settings/cmt/maintenance",
                 name: "Maintenance",
                 component: Maintenance,
                 meta: {
@@ -650,7 +653,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/rate-management",
+                path: "/app/new-settings/cmt/rate-management",
                 name: "Rate Management",
                 component: RateManagement,
                 meta: {
@@ -659,7 +662,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/signatories",
+                path: "/app/new-settings/cmt/signatories",
                 name: "Signatories",
                 component: Signatories,
                 meta: {
@@ -668,7 +671,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/ops-distribution-setup",
+                path: "/app/new-settings/ops/distribution-setup",
                 name: "OPS Distribution Setup",
                 component: OPSDistributionSetup,
                 meta: {
@@ -677,7 +680,7 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/ops-cost-management",
+                path: "/app/new-settings/ops/cost-management",
                 name: "OPS Cost Management",
                 component: OPSCostManagement,
                 meta: {
@@ -686,12 +689,39 @@ const routes = [
                 },
             },
             {
-                path: "/app/new-settings/ops-distribution-setup",
+                path: "/app/new-settings/ops/distribution-setup",
                 name: "OPS Distribution Setup",
                 component: OPSDistributionSetup,
                 meta: {
                     title: `OPS Distribution Setup`,
                     ability: `OPS Distribution Setup`,
+                },
+            },
+            {
+                path: "/app/new-settings/b&c/clients-grouping",
+                name: "B&C Clients Grouping",
+                component: BCClientsGrouping,
+                meta: {
+                    title: `B&C Clients Grouping`,
+                    ability: `B&C Clients Grouping`,
+                },
+            },
+            {
+                path: "/app/new-settings/b&c/collection-target",
+                name: "B&C Collection Target",
+                component: BCCollectionTarget,
+                meta: {
+                    title: `B&C Collection Target`,
+                    ability: `B&C Collection Target`,
+                },
+            },
+            {
+                path: "/app/new-settings/b&c/maintenance",
+                name: "B&C Maintenance",
+                component: BCMaintanance,
+                meta: {
+                    title: `B&C Maintenance`,
+                    ability: `B&C Maintenance`,
                 },
             },
             {

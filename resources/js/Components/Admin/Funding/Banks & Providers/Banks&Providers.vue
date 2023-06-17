@@ -10,15 +10,15 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 
 <script>
 import JournalEntry from "./JournalEntry.vue";
-import Accordion from "../../../Misc/Accordion.vue";
+import Accordion from "@/Components/Misc/Accordion.vue";
 import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue"
 import InputDropdown from "@/Components/Misc/Input/InputDropdown.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
-import BorderButton from "../../../Misc/Buttons/BorderButton.vue";
-import InputGroupSelectMenu from '../../../Misc/Select Menu/InputGroupSelectMenu.vue';
+import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelectMenu.vue';
 
 
 export default {

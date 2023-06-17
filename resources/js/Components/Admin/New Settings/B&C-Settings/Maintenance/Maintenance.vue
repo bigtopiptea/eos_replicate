@@ -5,7 +5,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import FloatingTextArea from "../../../../Misc/Input/FloatingTextArea.vue";
+import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import SmallLabelInput from '@/Components/Misc/Input/SmallLabelInput.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
@@ -14,15 +14,39 @@ import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
+import CheckboxSelectMenuThree from '@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue';
+
 export default {
     name: 'Maintenance - Tie Ups',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
         FloatingTextArea, SmallLabelInput, DropDown, Slideover,
-        SolidButton, SwitchToggle, BorderButton, CheckboxSelectMenu
+        SolidButton, SwitchToggle, BorderButton, CheckboxSelectMenu,CheckboxSelectMenuThree
     },
     data() {
         return {
+
+            BulkAction:[
+                {label:'HOLD'},
+                {label:'LIFT HOLD'},
+                {label:'ACTIVATE'},
+                {label:'DEACTIVATE'},
+
+            ],
+            Affiliate: [
+                {
+                    label: 'SELECT ALL',
+                    children: [
+                    { label: 'AFFILIATE 1' },
+                    { label: 'AFFILIATE 2' },
+                    { label: 'AFFILIATE 3' },
+                    { label: 'AFFILIATE 4' },
+                    { label: 'AFFILIATE 5' },
+                    { label: 'AFFILIATE 6' },
+                    { label: 'AFFILIATE 7' }
+                    ]
+                },
+            ],
             labels:[
                 {label:'TIE UP'},
                 {label:'REASON'},
@@ -35,12 +59,12 @@ export default {
                 {name: 'Option 2'},
                 {name: 'Option 3'},
                 {name: 'Option 4'}
-            ], 
+            ],
             reasonOption:[
                 {name: 'Reason 1'},
                 {name: 'Reason 2'},
                 {name: 'Reason 3'},
-            ], 
+            ],
             holdOpen: false,
         }
     },
@@ -54,8 +78,16 @@ export default {
 </script>
 <template>
     <div class="h-screen w-full bg-white px-3 py-5">
-        <div class="flex justify-end min-w-full">
-            <div class="flex justify-end items-center ">
+        <div class="flex justify-between min-w-full">
+            <div class="flex flex-col w-[50%] gap-3">
+                <div class="w-[30%]">
+                    <CheckboxSelectMenuThree :label="'Accounts'" :placeholder="'Select Affiliate'" :options="Affiliate" />
+                </div>
+                <div class="w-[30%]">
+                    <DropDown :label="'Bulk Action'" :options="BulkAction" />
+                </div>
+            </div>
+            <div class="flex justify-start items-start ">
                 <div class="w-full">
                     <form class="flex items-start gap-3">
                         <div class="flex ">

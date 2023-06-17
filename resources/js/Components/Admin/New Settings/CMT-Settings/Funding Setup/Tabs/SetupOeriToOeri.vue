@@ -11,10 +11,10 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue'
 import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import InputGroup from '../../../../Misc/Input/InputGroup.vue';
-import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
+
 
 
 export default {
@@ -31,29 +31,24 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-        CheckboxSelectMenu
+
 
     },
 
     data() {
         return {
-            SetUpFromTieUp: [],
+            SetUpOeriToOeri: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'tie-up bank'},
-                {label:'tie-up partner'},
+                {label:'OPTIMUM EXCHANGE REMIT INC BANKS'},
                 {label:'date added'},
                 {label:'ADDED BY'},
                 {label:'Actions'},
             ],
-            tieUpOptions:[
-                {name: 'All Tie Up'},
-                {name: 'Option 2'},
-                {name: 'Option 3'},
-                {name: 'Option 4'}
-            ],   
+
+            allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -63,11 +58,11 @@ export default {
         AddNewToggle(){
             this.AddNewOpen = false;
         },
-        async getSetUpFromTieUp() {
+        async getSetUpOeriToOeri() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.SetUpFromTieUp = response.data.data;
+                    this.SetUpOeriToOeri = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -80,9 +75,6 @@ export default {
 <template>
     <div class="h-auto w-full bg-white px-3 py-5">
         <div class="flex flex-col min-w-full">
-            <div class="w-[35%] pb-3">
-                <CheckboxSelectMenu :label="'Tie-up'" :inputWidth="'w-full'" :options="tieUpOptions" :placeholder="'SELECT TIE-UP'"/>
-            </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
                     <div class="w-full">
@@ -142,11 +134,7 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    BANCO DE ORO OERI TIEUP1 USD
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    Redha Al Ansari Exchange
+                                    BANCO DE ORO paseo sf oneri PHP
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -177,7 +165,7 @@ export default {
         </div>
 
         <div class="py-6">
-            <Pagination @paginate="getSetUpFromTieUp()" :pagination="pagination"
+            <Pagination @paginate="getSetUpOeriToOeri()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
 
@@ -188,15 +176,11 @@ export default {
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'" />
-                    </div>
-                    <div>
-                        <CheckboxSelectMenu :label="'Tie-up'" :placeholder="'SELECT TIE-UP'" :options="tieUpOptions"/>
+                        <FloatingLabelInput :inputLabel="'OERI Bank Name'" :placeholder="'Bank Name'"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[100px]">
-
                 <div class="flex justify-center gap-[100px] border-black">
                     <BorderButton @click="(AddNewOpen = !AddNewOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
                      <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>

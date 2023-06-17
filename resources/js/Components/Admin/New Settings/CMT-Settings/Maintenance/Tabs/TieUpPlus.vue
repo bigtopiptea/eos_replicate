@@ -5,21 +5,21 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 
 <script>
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import FloatingTextArea from "../../../../Misc/Input/FloatingTextArea.vue";
+import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import SmallLabelInput from '@/Components/Misc/Input/SmallLabelInput.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
-import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import BorderButtton from "@/Components/Misc/Buttons/BorderButton.vue";
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 export default {
     name: 'Maintenance - Banks/Providers',
     components: {
         NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
         FloatingTextArea, SmallLabelInput, DropDown, Slideover,
-        SolidButton, SwitchToggle, BorderButton, CheckboxSelectMenu
+        SolidButton, SwitchToggle, BorderButtton, CheckboxSelectMenu
     },
     data() {
         return {
@@ -30,32 +30,40 @@ export default {
                 {label:'MODIFIED BY'},
                 {label:'ACTIONS'},
             ],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ],
             banksProviders:[
                 {name: 'All Banks/Providers'},
                 {name: 'Option 2'},
                 {name: 'Option 3'},
                 {name: 'Option 4'}
-            ], 
+            ],
             reasonOption:[
                 {name: 'Reason 1'},
                 {name: 'Reason 2'},
                 {name: 'Reason 3'},
-            ], 
+            ],
             holdOpen: false,
             isHold: false,
+
         }
     },
     methods: {
         // Slider
         holdToggle(){
             this.holdOpen = false;
+            isHold = false;
         },
 
     },
 }
 </script>
 <template>
-    <div class="h-screen w-full bg-white px-3 py-5">
+  <div class="h-screen w-full bg-white px-3 py-5">
         <div class="flex justify-end min-w-full">
             <div class="flex justify-end items-center ">
                 <div class="w-full">
@@ -146,20 +154,23 @@ export default {
             </div>
         </div>
     </div>
-    <Slideover :show="holdOpen" @close="holdToggle" :title="isHold ? 'HOLD' : 'LIFT HOLD'" :iconShow="isHold ? 'HOLD' : 'LIFT'" >
+    <Slideover :show="holdOpen" @close="holdToggle" :title="isHold ? 'HOLD' : 'LIFT HOLD'" :iconShow="isHold ? 'HOLD' : 'LIFT'">
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="flex flex-col gap-[15px] m-10">
                 <div>
-                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'SELECT Banks/Providers'" :options="banksProviders"/>
+                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'" :placeholder="'Select Tie-up'" :options="tieUpOptions"/>
                 </div>
                 <div>
-                    <CheckboxSelectMenu :label="'reason'" :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'" :options="reasonOption"/>
+                    <CheckboxSelectMenu :label="'banks/providers'" :inputWidth="'w-12/12'" :placeholder="'Select Banks/provider'" :options="banksProviders"/>
+                </div>
+                <div>
+                    <CheckboxSelectMenu :label="'reason'" :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'"  :options="reasonOption"/>
                 </div>
                 <div>
                     <FloatingTextArea :label="'REMARKS'"/>
                 </div>
             </div>
-            <div class="flex flex-col gap-[80px]">
+            <div class="flex flex-col gap-[40px]">
                 <div v-if="isHold === true" class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
                     <p>
                         ARE YOU SURE YOU WANT TO PROCEED? <br>

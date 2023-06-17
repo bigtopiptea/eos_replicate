@@ -19,7 +19,7 @@
           </span>
         </span>
       </button>
-      <div v-if="isOpen" class="absolute z-10 w-full bg-white border border-gray-300 shadow-lg max-h-56 overflow-y-auto">
+      <div v-show="isOpen" @click.stop class="absolute z-10 w-full bg-white border border-gray-300 shadow-lg max-h-56 overflow-y-auto">
         <div v-for="(parent, parentIndex) in options"  :key="parentIndex">
           <div class="pl-4 pr-2 py-2 border-b">
             <label class="flex items-center">
@@ -85,7 +85,28 @@ export default {
       selectedOptions: []
     };
   },
+  mounted() {
+    // Add event listener to the document
+    document.addEventListener('click', this.handleDocumentClick);
+  },
+  beforeUnmount() {
+    // Remove event listener when the component is unmounted
+    document.removeEventListener('click', this.handleDocumentClick);
+  },
+
+
   methods: {
+
+    handleDocumentClick(event) {
+      const clickedElement = event.target;
+
+      // Check if the clicked element is outside the component
+      const isClickedOutside = !this.$el.contains(clickedElement);
+
+      if (isClickedOutside) {
+        this.isOpen = false; // Close the component
+      }
+    },
     toggleParent(parent) {
       if (this.isParentChecked(parent)) {
         // Uncheck parent and all children
@@ -98,19 +119,25 @@ export default {
       }
     },
     toggleChild(child) {
-      if (this.selectedOptions.includes(child)) {
+    if (this.selectedOptions.includes(child)) {
         // Uncheck child
         this.selectedOptions = this.selectedOptions.filter(option => option !== child);
-      } else {
+
+        // Uncheck parent if not all children are selected
+        const parent = this.options.find(parent => parent.children.includes(child));
+        if (parent && !parent.children.every(child => this.selectedOptions.includes(child))) {
+        this.selectedOptions = this.selectedOptions.filter(option => option !== parent);
+        }
+    } else {
         // Check child
         this.selectedOptions.push(child);
 
         // Check parent if all children are selected
         const parent = this.options.find(parent => parent.children.includes(child));
         if (parent && parent.children.every(child => this.selectedOptions.includes(child))) {
-          this.selectedOptions.push(parent);
+        this.selectedOptions.push(parent);
         }
-      }
+    }
     },
     isParentChecked(parent) {
       return this.selectedOptions.includes(parent) && parent.children.every(child => this.selectedOptions.includes(child));

@@ -11,9 +11,9 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue'
 import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import InputGroup from '../../../../Misc/Input/InputGroup.vue';
-import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 export default {
