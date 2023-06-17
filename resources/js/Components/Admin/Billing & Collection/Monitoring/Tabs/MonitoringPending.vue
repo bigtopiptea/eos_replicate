@@ -7,7 +7,6 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
-
 export default {
 
     name:'B&C Monitoring',
@@ -21,6 +20,7 @@ export default {
         ListIcon,
         DateInput,
         Pagination,
+        
     },
 
     data() {

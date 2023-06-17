@@ -4,7 +4,8 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import AdvanceSettingsSelectMenu from '../../../../Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
+import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelectMenuThree.vue";
+import AdvanceSettingsSelectMenu from "@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue";
 import FloatingLabelInput from "../../../../Misc/Input/FloatingLabelInput.vue";
 import CollectionReportCSRTable1 from './Tables/CollectionReportCSRTable1.vue';
 import CollectionReportCDRTable1 from './Tables/CollectionReportCDRTable1.vue';
@@ -16,44 +17,87 @@ export default {
         NormalButton, SearchIcon, ListIcon, DateInput,
         CheckboxSelectMenu,AdvanceSettingsSelectMenu,FloatingLabelInput,
         CollectionReportCSRTable1,CollectionReportCDRTable1,CollectionReportCSRTable2
-        ,CollectionReportCDRTable2
+        ,CollectionReportCDRTable2, CheckboxSelectMenuThree, AdvanceSettingsSelectMenu
     },
     data() {
         return {
+            advanceSettings:[
+                {checked: false, label:'TRANSACTION DATE'},
+                {checked: false, label:'REFERENCE NO.'},
+                {checked: false, label:'TRANSACTION TYPE'},
+                {checked: false, label:'REMITTER LASTNAME'},
+                {checked: false, label:'REMITTER FIRSTNAME'},
+                {checked: false, label:'BENEFICIARY LASTNAME'},
+                {checked: false, label:'BENEFICIARY FIRSTNAME'},
+                {checked: false, label:'FROM_CCY'},
+                {checked: false, label:'ORIGINAL AMOUNT'},
+                {checked: false, label:'RATE'},
+                {checked: false, label:'TO_CCY'},
+                {checked: false, label:'NET AMOUNT'},
+                {checked: false, label:'CONVERT_AMT'},
+                {checked: false, label:'AGENT_NAME'},
+                {checked: false, label:'BANK BILLER'},
+            ],
             Category:[
-                {label: 'ALL CATEGORIES'},
-                {label: 'SETTLED'},
-                {label: 'UNSETTLED'},
-                {label: 'ON DUE'},
-                {label: 'PAST DUE'},
+                {
+                    label: 'ALL CATEGORIES',
+                    children: [
+                        {label: 'SETTLED'},
+                        {label: 'UNSETTLED'},
+                        {label: 'ON DUE'},
+                        {label: 'PAST DUE'},
+                    ]
+                }
             ],
 
             CDROSClient:[
-                {label: 'Affiliate 1'},
-                {label: 'Affiliate 2'},
-                {label: 'PAVI GROUP'},
-                {label: 'PRIMEWATER INC.'},
-                {label: 'STREAMTECH'},
-                {label: 'communities'},
-                {label: 'Community Davao'},
-                {label: 'Community Leyte'},
-                {label: 'Community Naga'},
-                {label: 'Community Philippines'},
+                {
+                    label: 'Affiliate 1',
+                    children:[]
+                },
+                {
+                    label: 'Affiliate 2',
+                    children:[]
+                },
+                {
+                    label: 'PAVI GROUP',
+                    children:[
+                        {label: 'PRIMEWATER INC.'},
+                        {label: 'STREAMTECH'},
+                    ]
+                },
+                {
+                    label: 'communities',
+                    children:[
+                        {label: 'Community Davao'},
+                        {label: 'Community Leyte'},
+                        {label: 'Community Naga'},
+                        {label: 'Community Philippines'},
+                    ]
+                },
             ],
 
             CSRTUPClient:[
-                {label: 'ALL TIE-UP PARTNERS'},
-                {label: 'Al EKTESAD'},
-                {label: 'CITI EXPRESS PAYMENT'},
-                {label: 'JDEE REMIT'},
-                {label: 'REDHA AL ANSARI'},
-                {label: 'RIGHT CHOICE PAYMENT'},
-                {label: 'RNV FOREX'},
+                {
+                    label: 'ALL TIE-UP PARTNERS',
+                    children: [
+                        {label: 'Al EKTESAD'},
+                        {label: 'CITI EXPRESS PAYMENT'},
+                        {label: 'JDEE REMIT'},
+                        {label: 'REDHA AL ANSARI'},
+                        {label: 'RIGHT CHOICE PAYMENT'},
+                        {label: 'RNV FOREX'},
+                    ]
+                }
             ],
             CSROSClient:[
-                {label: 'All Clients'},
-                {label: 'Affiliate 1'},
-                {label: 'Affiliate 2'},
+                {
+                    label: 'ALL Clients',
+                    children:[
+                        {label: 'Affiliate 1'},
+                        {label: 'Affiliate 2'},
+                    ]
+                }
             ],
             reportType:[
                 {label: 'COLLECTION SUMMARY REPORT'},
@@ -74,13 +118,13 @@ export default {
     },
     computed: {
         result() {
-            if (this.selectedReport.name === 'COLLECTION SUMMARY REPORT' && this.selectedClientType.name === 'OTHER SERVICES') {
+            if (this.selectedReport.label === 'COLLECTION SUMMARY REPORT' && this.selectedClientType.label === 'OTHER SERVICES') {
                 return this.CSROSClient;
             }
-                else if((this.selectedReport.name === 'COLLECTION SUMMARY REPORT' || this.selectedReport.name === 'COLLECTION DETAILED REPORT') && this.selectedClientType.name === 'TIE-UP PARTNERS'){
+                else if((this.selectedReport.label === 'COLLECTION SUMMARY REPORT' || this.selectedReport.label === 'COLLECTION DETAILED REPORT') && this.selectedClientType.label === 'TIE-UP PARTNERS'){
                 return this.CSRTUPClient;
             }
-                else if(this.selectedReport.name === 'COLLECTION DETAILED REPORT' && this.selectedClientType.name === 'OTHER SERVICES'){
+                else if(this.selectedReport.label === 'COLLECTION DETAILED REPORT' && this.selectedClientType.label === 'OTHER SERVICES'){
                 return this.CDROSClient;
             }
             else {
@@ -96,7 +140,6 @@ export default {
     <div class="min-h-screen max-h-auto w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-5 pt-10 pb-5">
             <div class="flex gap-[10px] w-[90%] ">
-                {{ filterPara }}
                 <div class="w-[25%]">
 
                     <CheckboxSelectMenu v-model="selectedReport" :placeholder="'select Type of Report'" :label="'Type of Report'" :options="reportType" />
@@ -105,10 +148,10 @@ export default {
                     <CheckboxSelectMenu v-model="selectedClientType" :label="'Client Type'" :placeholder="'select Client Type'"  :options="clientType" :withCheckbox="true" />
                 </div>
                 <div class="w-[25%]">
-                    <CheckboxSelectMenu v-model="selectedClient" :label="'Client'"  :placeholder="'select Client'" :options="result" :withCheckbox="true"/>
+                    <CheckboxSelectMenuThree v-model="selectedClient" :label="'Client'"  :placeholder="'select Client'" :options="result"/>
                 </div>
-                <div v-show="selectedReport.name == 'COLLECTION DETAILED REPORT'" class="w-[25%]">
-                    <CheckboxSelectMenu v-model="selectedCategory" :label="'Category'" :placeholder="'select Category'" :options="Category" :withCheckbox="true"/>
+                <div v-show="selectedReport.label == 'COLLECTION DETAILED REPORT'" class="w-[25%]">
+                    <CheckboxSelectMenuThree v-model="selectedCategory" :label="'Category'" :placeholder="'select Category'" :options="Category"/>
                 </div>
             </div>
 
@@ -125,6 +168,9 @@ export default {
                             <NormalButton @click="(isClicked = !isClicked)" label="Filter"
                             class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
+                        <div class="w-[200px]">
+                            <AdvanceSettingsSelectMenu :options="advanceSettings"/>
+                        </div> 
                     </div>
                 </div>
                 <div class="right-side">
@@ -151,10 +197,10 @@ export default {
 
         <!-- MAIN CONTENT -->
         <div v-if="this.isClicked" >
-            <!-- <CollectionReportCSRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
-            <CollectionReportCDRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
-            <CollectionReportCDRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" /> -->
-            <CollectionReportCSRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.name" />
+            <!-- <CollectionReportCSRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.label" />
+            <CollectionReportCDRTable1 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.label" />
+            <CollectionReportCDRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.label" /> -->
+            <CollectionReportCSRTable2 :StartDate="startDate" :EndDate="endDate" :TypeOfReport="selectedReport.label" />
         </div>
         <div v-else class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">

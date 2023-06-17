@@ -37,12 +37,12 @@ export default {
             viewModalOpen: true,
             selected: "View Soa",
             TieUpPartner:[
-                {name:'REDHA AL ANSARI EXCHANGE'},
-                {name:'RIGHT CHOICE PAYMENTS'},
-                {name:'AL EKTESAD United Exchange Company WLL.'},
-                {name:'JDEE REMIT'},
-                {name:'CITI EXPRESS PAYMENT'},
-                {name:'RNV FOREX'},
+                {label:'REDHA AL ANSARI EXCHANGE'},
+                {label:'RIGHT CHOICE PAYMENTS'},
+                {label:'AL EKTESAD United Exchange Company WLL.'},
+                {label:'JDEE REMIT'},
+                {label:'CITI EXPRESS PAYMENT'},
+                {label:'RNV FOREX'},
             ],
             labels:[
                 {label:'SOA NO.'},
@@ -54,16 +54,16 @@ export default {
 
             ],
             clientOptions:[
-                {name:'AFFILIATE 1'},
-                {name:'AFFILIATE 2'},
-                {name:'COMMUNITIES DAVAO'},
-                {name:'COMMUNITIES BATANGAS'},
+                {label:'AFFILIATE 1'},
+                {label:'AFFILIATE 2'},
+                {label:'COMMUNITIES DAVAO'},
+                {label:'COMMUNITIES BATANGAS'},
             ],
             serviceOptions:[
-                {name:'LBC'},
-                {name:'LALAMOVE'},
-                {name:'JRS EXPRESS'},
-                {name:'J&T EXPRESS'},
+                {label:'LBC'},
+                {label:'LALAMOVE'},
+                {label:'JRS EXPRESS'},
+                {label:'J&T EXPRESS'},
             ],
 
         }

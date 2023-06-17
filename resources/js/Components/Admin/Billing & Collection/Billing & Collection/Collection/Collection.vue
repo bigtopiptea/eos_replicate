@@ -23,16 +23,16 @@ export default {
     data() {
         return {
             clientOptions:[
-                {name:'AFFILIATE 1'},
-                {name:'AFFILIATE 2'},
-                {name:'COMMUNITIES DAVAO'},
-                {name:'COMMUNITIES BATANGAS'},
+                {label:'AFFILIATE 1'},
+                {label:'AFFILIATE 2'},
+                {label:'COMMUNITIES DAVAO'},
+                {label:'COMMUNITIES BATANGAS'},
             ],
             serviceOptions:[
-                {name:'LBC'},
-                {name:'LALAMOVE'},
-                {name:'JRS EXPRESS'},
-                {name:'J&T EXPRESS'},
+                {label:'LBC'},
+                {label:'LALAMOVE'},
+                {label:'JRS EXPRESS'},
+                {label:'J&T EXPRESS'},
             ],
             IsChosen:'',
             showTable:false,
@@ -55,8 +55,8 @@ export default {
             window.history.back();
         },
         applyFilter() {
-            const clientValue = this.selectedClient?.name || '';
-            const serviceValue = this.selectedService?.name || '';
+            const clientValue = this.selectedClient?.label || '';
+            const serviceValue = this.selectedService?.label || '';
             // Do something with the filter value
             console.log(clientValue + ' - ' + serviceValue);
 

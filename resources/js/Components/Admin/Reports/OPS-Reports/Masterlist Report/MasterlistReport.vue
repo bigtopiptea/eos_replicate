@@ -21,22 +21,21 @@ export default {
                 {label: 'Globalland', value:'Globalland'},
             ],
             advanceSettings:[
-                {label:'ALL'},
-                {label:'TRANSACTION DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'TRANSACTION TYPE'},
-                {label:'REMITTER LASTNAME'},
-                {label:'REMITTER FIRSTNAME'},
-                {label:'BENEFICIARY LASTNAME'},
-                {label:'BENEFICIARY FIRSTNAME'},
-                {label:'FROM_CCY'},
-                {label:'ORIGINAL AMOUNT'},
-                {label:'RATE'},
-                {label:'TO_CCY'},
-                {label:'NET AMOUNT'},
-                {label:'CONVERT_AMT'},
-                {label:'AGENT_NAME'},
-                {label:'BANK BILLER'},
+                {checked: false, label:'TRANSACTION DATE'},
+                {checked: false, label:'REFERENCE NO.'},
+                {checked: false, label:'TRANSACTION TYPE'},
+                {checked: false, label:'REMITTER LASTNAME'},
+                {checked: false, label:'REMITTER FIRSTNAME'},
+                {checked: false, label:'BENEFICIARY LASTNAME'},
+                {checked: false, label:'BENEFICIARY FIRSTNAME'},
+                {checked: false, label:'FROM_CCY'},
+                {checked: false, label:'ORIGINAL AMOUNT'},
+                {checked: false, label:'RATE'},
+                {checked: false, label:'TO_CCY'},
+                {checked: false, label:'NET AMOUNT'},
+                {checked: false, label:'CONVERT_AMT'},
+                {checked: false, label:'AGENT_NAME'},
+                {checked: false, label:'BANK BILLER'},
             ],
             selectedTieUp: '',
         }
@@ -64,8 +63,8 @@ export default {
                             <NormalButton label="Filter"
                             class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
-                        <div class="w-[180px]">
-                            <AdvanceSettingsSelectMenu :inputWidth="'w-12/12'" :options="advanceSettings" :withCheckbox="true"/>
+                        <div class="w-[200px]">
+                            <AdvanceSettingsSelectMenu :options="advanceSettings"/>
                         </div>  
                     </div>
                 </div>
