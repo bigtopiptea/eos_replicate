@@ -8,8 +8,8 @@ import CheckboxSelectMenuThree from "@/Components/Misc/Select Menu/CheckboxSelec
 import AdvanceSettingsSelectMenu from "@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue";
 import FloatingLabelInput from "../../../../Misc/Input/FloatingLabelInput.vue";
 import CollectionReportCSRTable1 from './Tables/CollectionReportCSRTable1.vue';
-import CollectionReportCDRTable1 from './Tables/CollectionReportCDRTable1.vue';
 import CollectionReportCSRTable2 from './Tables/CollectionReportCSRTable2.vue';
+import CollectionReportCDRTable1 from './Tables/CollectionReportCDRTable1.vue';
 import CollectionReportCDRTable2 from './Tables/CollectionReportCDRTable2.vue';
 export default {
     name: 'Collection Report',
@@ -21,22 +21,41 @@ export default {
     },
     data() {
         return {
-            advanceSettings:[
+            CDRAdvanceSettings1:[
                 {checked: false, label:'TRANSACTION DATE'},
+                {checked: false, label:'DUE DATE'},
+                {checked: false, label:'PAST DUE (DAYS)'},
+                {checked: false, label:'USER ID'},
+                {checked: false, label:'BRANCH'},
+                {checked: false, label:'SERVICES'},
+                {checked: false, label:'COMPANY'},
+                {checked: false, label:'CUSTOMER NAME'},
+                {checked: false, label:'BOOKING #/AIRWAY #'},
+                {checked: false, label:'DESCRIPTION'},
                 {checked: false, label:'REFERENCE NO.'},
-                {checked: false, label:'TRANSACTION TYPE'},
-                {checked: false, label:'REMITTER LASTNAME'},
-                {checked: false, label:'REMITTER FIRSTNAME'},
-                {checked: false, label:'BENEFICIARY LASTNAME'},
-                {checked: false, label:'BENEFICIARY FIRSTNAME'},
-                {checked: false, label:'FROM_CCY'},
-                {checked: false, label:'ORIGINAL AMOUNT'},
+                {checked: false, label:'PRINCIPAL AMOUNT'},
+                {checked: false, label:'CHARGES'},
+                {checked: false, label:'COST'},
+                {checked: false, label:'TAX'},
+                {checked: false, label:'AMOUNT TO PAY'},
+                {checked: false, label:'OUTSTANDING BALANCE'},
+                {checked: false, label:'NET OF EWT'},
+                {checked: false, label:'STATUS'},
+                {checked: false, label:'TOTAL AMOUNT PAID'},
+            ],
+            CDRAdvanceSettings2:[
+                {checked: false, label:'TRANSACTION DATE'},
+                {checked: false, label:'TIE-UP PARTNER'},
+                {checked: false, label:'REFERENCE NO.'},
+                {checked: false, label:'SERVICE'},
+                {checked: false, label:'SUB-TYPE'},
+                {checked: false, label:'CCY'},
+                {checked: false, label:'PRINCIPAL AMOUNT'},
                 {checked: false, label:'RATE'},
-                {checked: false, label:'TO_CCY'},
+                {checked: false, label:'GROSS AMOUNT'},
+                {checked: false, label:'FEE'},
                 {checked: false, label:'NET AMOUNT'},
-                {checked: false, label:'CONVERT_AMT'},
-                {checked: false, label:'AGENT_NAME'},
-                {checked: false, label:'BANK BILLER'},
+                {checked: false, label:'AMOUNT TO PAY'},
             ],
             Category:[
                 {
@@ -107,7 +126,7 @@ export default {
                 {label: 'TIE-UP PARTNERS'},
                 {label: 'OTHER SERVICES'},
             ],
-            selectedCategory: '',
+            selectedCategory: [],
             selectedReport: '',
             selectedClient:'',
             selectedClientType: '',
@@ -121,27 +140,39 @@ export default {
             if (this.selectedReport.label === 'COLLECTION SUMMARY REPORT' && this.selectedClientType.label === 'OTHER SERVICES') {
                 return this.CSROSClient;
             }
-                else if((this.selectedReport.label === 'COLLECTION SUMMARY REPORT' || this.selectedReport.label === 'COLLECTION DETAILED REPORT') && this.selectedClientType.label === 'TIE-UP PARTNERS'){
+            else if((this.selectedReport.label === 'COLLECTION SUMMARY REPORT' || this.selectedReport.label === 'COLLECTION DETAILED REPORT') && this.selectedClientType.label === 'TIE-UP PARTNERS'){
                 return this.CSRTUPClient;
             }
-                else if(this.selectedReport.label === 'COLLECTION DETAILED REPORT' && this.selectedClientType.label === 'OTHER SERVICES'){
+            else if(this.selectedReport.label === 'COLLECTION DETAILED REPORT' && this.selectedClientType.label === 'OTHER SERVICES'){
                 return this.CDROSClient;
             }
             else {
                 return 0;
             }
         },
+        advanceSettings(){
+            if (this.selectedReport.label === 'COLLECTION DETAILED REPORT' && this.selectedClientType.label === 'OTHER SERVICES') {
+                return this.CDRAdvanceSettings1;
+            }
+            else if(this.selectedReport.label === 'COLLECTION DETAILED REPORT' && this.selectedClientType.label === 'TIE-UP PARTNERS') {
+                return this.CDRAdvanceSettings2;
+            }   
+        }
     },
-
+    methods: {
+        updateSelectedCategory(value) {
+            this.selectedCategory = value;
+        },
+    },
 }
 
 </script>
 <template>
     <div class="min-h-screen max-h-auto w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-5 pt-10 pb-5">
+            {{ 'Category: ' + selectedCategory.map(option => option.label).join(' | ') }}
             <div class="flex gap-[10px] w-[90%] ">
                 <div class="w-[25%]">
-
                     <CheckboxSelectMenu v-model="selectedReport" :placeholder="'select Type of Report'" :label="'Type of Report'" :options="reportType" />
                 </div>
                 <div class="w-[25%]">
@@ -151,7 +182,7 @@ export default {
                     <CheckboxSelectMenuThree v-model="selectedClient" :label="'Client'"  :placeholder="'select Client'" :options="result"/>
                 </div>
                 <div v-show="selectedReport.label == 'COLLECTION DETAILED REPORT'" class="w-[25%]">
-                    <CheckboxSelectMenuThree v-model="selectedCategory" :label="'Category'" :placeholder="'select Category'" :options="Category"/>
+                    <CheckboxSelectMenuThree v-model="selectedCategory" :label="'Category'" :placeholder="'select Category'" :options="Category" @input="updateSelectedCategory"/>
                 </div>
             </div>
 
@@ -168,7 +199,7 @@ export default {
                             <NormalButton @click="(isClicked = !isClicked)" label="Filter"
                             class="p-1.5 px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                         </div>
-                        <div class="w-[200px]">
+                        <div v-if="this.selectedReport.label == 'COLLECTION DETAILED REPORT' && this.selectedClientType" class="w-[200px]">
                             <AdvanceSettingsSelectMenu :options="advanceSettings"/>
                         </div> 
                     </div>

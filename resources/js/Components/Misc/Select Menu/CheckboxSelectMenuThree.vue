@@ -19,7 +19,7 @@
           </span>
         </span>
       </button>
-      <div v-if="isOpen" class="absolute z-10 w-full bg-white border border-gray-300 shadow-lg max-h-56 overflow-y-auto">
+      <div v-if="isOpen" class="absolute z-10 w-full mt-0 bg-white border border-gray-300 shadow-lg max-h-56 overflow-y-auto">
         <div v-for="(parent, parentIndex) in options"  :key="parentIndex">
           <div class="pl-4 pr-2 py-2 border-b">
             <label class="flex items-center">
@@ -96,6 +96,7 @@ export default {
         this.selectedOptions.push(parent);
         this.selectedOptions = this.selectedOptions.concat(parent.children);
       }
+      this.emitSelectedValue();
     },
     toggleChild(child) {
       if (this.selectedOptions.includes(child)) {
@@ -111,6 +112,7 @@ export default {
           this.selectedOptions.push(parent);
         }
       }
+      this.emitSelectedValue();
     },
     isParentChecked(parent) {
       return this.selectedOptions.includes(parent) && parent.children.every(child => this.selectedOptions.includes(child));
@@ -118,12 +120,16 @@ export default {
     getSelectedOptionsText() {
       const parentSelected = this.selectedOptions.filter(option => !this.options.flatMap(parent => parent.children).includes(option));
       if (parentSelected.length > 0) {
+        console.log(parentSelected);
         return parentSelected.map(option => option.label).join(' | ');
       } else {
         return this.selectedOptions.map(option => option.label).join(' | ');
       }
     },
-  }
+    emitSelectedValue() {
+      this.$emit('input', this.selectedOptions);
+    },
+  },
 };
 </script>
 
