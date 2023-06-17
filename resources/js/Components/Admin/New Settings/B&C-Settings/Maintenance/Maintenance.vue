@@ -48,7 +48,7 @@ export default {
                 },
             ],
             labels:[
-                {label:'TIE UP'},
+                {label:'AFFILIATES'},
                 {label:'REASON'},
                 {label:'DATE MODIFIED'},
                 {label:'MODIFIED BY'},
@@ -83,8 +83,9 @@ export default {
                 <div class="w-[30%]">
                     <CheckboxSelectMenuThree :label="'Accounts'" :placeholder="'Select Affiliate'" :options="Affiliate" />
                 </div>
-                <div class="w-[30%]">
-                    <DropDown :label="'Bulk Action'" :options="BulkAction" />
+                <div class="left-side-col-2  text-[10px] ">
+                    <DropDown label="bulk action" :options="BulkAction" />
+                    <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                 </div>
             </div>
             <div class="flex justify-start items-start ">
@@ -118,7 +119,7 @@ export default {
                             <tr class="divide-x divide-gray-200">
                                 <th scope="col"
                                     class="flex justify-center items-center py-1 px-2 uppercase tracking-wider text-center text-gray-900 gap-2">
-                                    <input type="checkbox" name="" id="">
+                                    <input type="checkbox" >
                                     <span>
                                         ID
                                     </span>

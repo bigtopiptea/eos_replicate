@@ -1,44 +1,70 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const props = defineProps({
-    label: {
-        type: String,
-        default: ''
-    },
-    options: {
-        type: Array,
-        required: true
-    }
+  label: {
+    type: String,
+    default: ''
+  },
+  options: {
+    type: Array,
+    required: true
+  }
 });
 
 const isShow = ref(false);
 
-</script>
-<template>
-    <div class="relative inline-block text-left mr-3">
-        <div>
-            <button @click="isShow = !isShow" type="button"
-                class="inline-flex w-full uppercase text-[10px] justify-between h-[34px]  border border-gray-300 bg-white px-4 py-1.5 text-sm font-light text-gray-700 hover:bg-gray-50 "
-                id="menu-button" aria-expanded="true" aria-haspopup="true">
-               {{props.label}}
-                <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                    fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
-        </div>
+const handleDocumentClick = (event) => {
+  const clickedElement = event.target;
 
-        <div v-if="isShow"
-            class="absolute z-10 w-full origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-            role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-            <div v-for="(option, index) in options" :key="index" role="none">
-                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                <a  href="#" class="uppercase text-gray-700 block px-2 py-2 text-[11px] border-b border-gray-300" role="menuitem" tabindex="-1"
-                    id="menu-item-0">{{option.label}}</a>
-            </div>
-        </div>
+  // Check if the clicked element is outside the component
+  const isClickedOutside = !clickedElement.closest('.relative');
+
+  if (isClickedOutside) {
+    isShow.value = false; // Close the dropdown menu
+  }
+};
+
+onMounted(() => {
+  // Add event listener to the document when the component is mounted
+  document.addEventListener('click', handleDocumentClick);
+});
+
+onBeforeUnmount(() => {
+  // Remove event listener when the component is unmounted
+  document.removeEventListener('click', handleDocumentClick);
+});
+</script>
+
+<template>
+  <div class="relative inline-block text-left mr-3">
+    <div>
+      <button
+        @click="isShow = !isShow"
+        type="button"
+        class="inline-flex w-full uppercase text-[10px] justify-between h-[34px] border border-gray-300 bg-white px-4 py-1.5 text-sm font-light text-gray-700 hover:bg-gray-50"
+        id="menu-button"
+        aria-expanded="true"
+        aria-haspopup="true"
+      >
+        {{ props.label }}
+        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
     </div>
+
+    <div v-if="isShow" @click.stop class="absolute z-10 w-full origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+      <div v-for="(option, index) in options" :key="index" role="none">
+        <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+        <a href="#" class="uppercase text-gray-700 block px-2 py-2 text-[11px] border-b border-gray-300" role="menuitem" tabindex="-1" id="menu-item-0">
+          {{ option.label }}
+        </a>
+      </div>
+    </div>
+  </div>
 </template>
