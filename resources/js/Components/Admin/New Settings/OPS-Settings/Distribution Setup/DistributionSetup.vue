@@ -12,9 +12,9 @@
                         </div>
                         <div v-if="this.bulkSelected" class="flex items-end gap-[5px] w-[50%] ">
                             <div  class="w-[90%]">
-                                <CheckboxSelectMenu 
-                                :label="this.bulkSelected.value === 'Update Provider' ? 'Provider' : 'Channel'" :inputWidth="'w-full'" 
-                                :placeholder="this.bulkSelected.value  === 'Update Provider' ? 'Select Provider' : 'Select Channel'" 
+                                <CheckboxSelectMenu
+                                :label="this.bulkSelected.value === 'Update Provider' ? 'Provider' : 'Channel'" :inputWidth="'w-full'"
+                                :placeholder="this.bulkSelected.value  === 'Update Provider' ? 'Select Provider' : 'Select Channel'"
                                 :options="this.bulkSelected.value  === 'Update Provider' ? providerOption : channelOption" />
                             </div>
                             <NormalButton label="Apply"
@@ -58,7 +58,7 @@
                                         {{label.label}}
                                     </th>
                                     <th scope="col"
-                                        class="py-1 px-5 uppercase tracking-wider text-center text-gray-900 w-full  ">                                  
+                                        class="py-1 px-5 uppercase tracking-wider text-center text-gray-900 w-full  ">
                                         Action
                                     </th >
                                 </tr>
@@ -94,7 +94,7 @@
                                         </div>
                                         <div v-show="isUpdate">
                                             <CheckboxSelectMenu :inputWidth="'w-full'" :placeholder="'Select Provider'" :options="providerOption" />
-                                        </div>                                      
+                                        </div>
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -103,8 +103,8 @@
                                         </div>
                                         <div v-show="isUpdate">
                                             <CheckboxSelectMenu :inputWidth="'w-full'" :placeholder="'Channel'" :options="channelOption" />
-                                        </div>    
-                                        
+                                        </div>
+
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -143,17 +143,17 @@
 </template>
 
 <script setup>
-import SearchIcon from '../../../../Misc/Icons/SearchIcon.vue';
-import ResetIcon from '../../../../Misc/Icons/ResetIcon.vue';
+import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
+import ResetIcon from '@/Components/Misc/Icons/ResetIcon.vue';
 </script>
 
 <script>
 
-import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-import SwitchToggle from '../../../../Misc/Switch(Toggle)/SwitchToggle.vue';
-import Pagination from '../../../../Misc/Pagination/Pagination.vue';
+import SwitchToggle from '@/Components/Misc/Switch(Toggle)/SwitchToggle.vue';
+import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
 
 export default {
     components:{
@@ -200,7 +200,7 @@ export default {
                 {name: 'Land Bank of the Philippines', value: 'Land Bank of the Philippines'},
                 {name: 'Philippine National Bank', value: 'Philippine National Bank'},
                 {name: 'Robinsons Bank Corporation', value: 'Robinsons Bank Corporation'},
-                {name: 'Security Bank Corporation', value: 'Security Bank Corporation'}, 
+                {name: 'Security Bank Corporation', value: 'Security Bank Corporation'},
             ],
             channelOption:[
                 {name: 'Instapay', value: 'Instapay'},

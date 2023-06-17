@@ -1,10 +1,10 @@
 
 <script>
-import FloatingLabelInput from '../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../Misc/Buttons/SolidButton.vue';
-import ModalTwo from '../../../Misc/Modal/ModalTwo.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue';
 import EyeIcon from '@/Components/Misc/Icons/EyeIcon.vue'
-import BorderButton from '../../../Misc/Buttons/BorderButton.vue';
+import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 export default {
     components:{
         FloatingLabelInput, SolidButton, ModalTwo, EyeIcon, BorderButton
@@ -31,7 +31,7 @@ export default {
     <div class="h-auto w-full bg-white">
        <div class="flex flex-col gap-[50px] items-center w-full text-[13px] py-[80px]">
             <div class="flex flex-col gap-[30px] items-center w-full text-[#3E3E3E]">
-                <img class="w-[80px] h-[80px]" src="../../../../../assets/images/change-password-logo.png" alt="lock with pin">
+                <img class="w-[80px] h-[80px]" src="@/Components/../../assets/images/change-password-logo.png" alt="lock with pin">
                 <p class="font-semibold">To update password, you must provide current password.</p>
                 <div class="relative w-[25%]">
                     <!-- :placeholder="'•••••••••••••'" -->

@@ -11,14 +11,13 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue'
 import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import InputGroup from '../../../../Misc/Input/InputGroup.vue';
-import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
+
 export default {
-
-
     components:{
         SearchIcon,
         NormalButton,
@@ -38,24 +37,34 @@ export default {
 
     data() {
         return {
-            SetupBanksProvider: [],
+            SetUpTieUpToOeri: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'BANKS/providers'},
+                {label:'tie-up bank'},
+                {label:'oeri bank'},
+                {label:'tie-up partner'},
                 {label:'date added'},
                 {label:'ADDED BY'},
                 {label:'Actions'},
             ],
-
-            BankProvider:[
-               {name: 'BPI'},
-               {name: 'Eastwest'},
-               {name: 'Landbank'},
-               {name: 'Chinabank'},
-               {name: 'Banco De Oro'},
-               {name: 'Cebuana Lhuillier'},
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ],
+            oeriBankOptions:[
+                {name: 'Oeri Bank 1'},
+                {name: 'Oeri Bank 2'},
+                {name: 'Oeri Bank 3'},
+            ],
+            tieUpPartnerOptions:[
+                {name: 'All Tie Up Partners'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
             ],
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
@@ -66,11 +75,11 @@ export default {
         AddNewToggle(){
             this.AddNewOpen = false;
         },
-        async getSetupBanksProvider() {
+        async getSetUpTieUpToOeri() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.SetupBanksProvider = response.data.data;
+                    this.SetUpTieUpToOeri = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -82,9 +91,9 @@ export default {
 </script>
 <template>
     <div class="h-auto w-full bg-white px-3 py-5">
-        <div class="flex flex-col min-w-full">
+        <div class="flex flex-col min-w-full ">
             <div class="w-[35%] pb-3">
-                <CheckboxSelectMenu :label="'Bank/Provider'" :inputWidth="'w-full'" :placeholder="'Select Banks/Providers'" :options="BankProvider" />
+                <CheckboxSelectMenu :label="'Tie-up'" :placeholder="'SELECT TIE-UP'" :inputWidth="'w-full'" :options="tieUpOptions" />
             </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
@@ -103,7 +112,7 @@ export default {
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             </div>
                             <NormalButton label="Export"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E]  tracking-wider text-[10px] text-white" />
                         </form>
                     </div>
                 </div>
@@ -149,6 +158,14 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    BANCO DE ORO paseo sf oneri usd
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    Redha Al Ansari Exchange
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     09/28/2022 11:00:05 AM
                                 </td>
                                 <td
@@ -176,7 +193,7 @@ export default {
         </div>
 
         <div class="py-6">
-            <Pagination @paginate="getSetupBanksProvider()" :pagination="pagination"
+            <Pagination @paginate="getSetUpTieUpToOeri()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
 
@@ -187,7 +204,13 @@ export default {
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'Banks/Provider'" :placeholder="'Bank or Proviver Name'"/>
+                        <FloatingLabelInput :inputLabel="'Tie-up Bank'" :placeholder="'Bank Name'"/>
+                    </div>
+                    <div class="mb-5">
+                        <CheckboxSelectMenu :label="'OERI-BANk'" :placeholder="'SELECT OERI BANK'" :options="oeriBankOptions"/>
+                    </div>
+                    <div class="mb-5">
+                        <CheckboxSelectMenu :label="'Tie-up Partner'" :placeholder="'SELECT TIE UP PARTNER'" :options="tieUpPartnerOptions"/>
                     </div>
                 </div>
             </div>

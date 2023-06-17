@@ -11,13 +11,14 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue'
 import DropdownNoLabel from '@/Components/Misc/Input/DropdownNoLabel.vue'
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
-import InputGroup from '../../../../Misc/Input/InputGroup.vue';
-import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue';
-import SolidButton from '../../../../Misc/Buttons/SolidButton.vue';
-
-
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
+import SolidButton from '@/Components/Misc/Buttons/SolidButton.vue';
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 
 export default {
+
+
     components:{
         SearchIcon,
         NormalButton,
@@ -31,24 +32,31 @@ export default {
         InputGroup,
         FloatingLabelInput,
         SolidButton,
-
+        CheckboxSelectMenu
 
     },
 
     data() {
         return {
-            SetUpOeriToOeri: [],
+            SetupBanksProvider: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'OPTIMUM EXCHANGE REMIT INC BANKS'},
+                {label:'BANKS/providers'},
                 {label:'date added'},
                 {label:'ADDED BY'},
                 {label:'Actions'},
             ],
 
-            allTieUpPartners:['All Tie Up Partners','Option1','Option2','Option3'],
+            BankProvider:[
+               {name: 'BPI'},
+               {name: 'Eastwest'},
+               {name: 'Landbank'},
+               {name: 'Chinabank'},
+               {name: 'Banco De Oro'},
+               {name: 'Cebuana Lhuillier'},
+            ],
             AddNewOpen: false,
             paraIcon:'CHECK', //Icon Parameter
         }
@@ -58,11 +66,11 @@ export default {
         AddNewToggle(){
             this.AddNewOpen = false;
         },
-        async getSetUpOeriToOeri() {
+        async getSetupBanksProvider() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.SetUpOeriToOeri = response.data.data;
+                    this.SetupBanksProvider = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -75,6 +83,9 @@ export default {
 <template>
     <div class="h-auto w-full bg-white px-3 py-5">
         <div class="flex flex-col min-w-full">
+            <div class="w-[35%] pb-3">
+                <CheckboxSelectMenu :label="'Bank/Provider'" :inputWidth="'w-full'" :placeholder="'Select Banks/Providers'" :options="BankProvider" />
+            </div>
             <div class="flex justify-between items-center">
                 <div class="flex w-[40%]">
                     <div class="w-full">
@@ -134,7 +145,7 @@ export default {
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    BANCO DE ORO paseo sf oneri PHP
+                                    BANCO DE ORO OERI TIEUP1 USD
                                 </td>
                                 <td
                                     class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -165,7 +176,7 @@ export default {
         </div>
 
         <div class="py-6">
-            <Pagination @paginate="getSetUpOeriToOeri()" :pagination="pagination"
+            <Pagination @paginate="getSetupBanksProvider()" :pagination="pagination"
             :offset="1" class = ""/>
         </div>
 
@@ -176,11 +187,12 @@ export default {
             <div class="mx-20 h-auto">
                 <div class="mt-[30px]">
                     <div class="mb-5">
-                        <FloatingLabelInput :inputLabel="'OERI Bank Name'" :placeholder="'Bank Name'"/>
+                        <FloatingLabelInput :inputLabel="'Banks/Provider'" :placeholder="'Bank or Proviver Name'"/>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-[100px]">
+
                 <div class="flex justify-center gap-[100px] border-black">
                     <BorderButton @click="(AddNewOpen = !AddNewOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
                      <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>

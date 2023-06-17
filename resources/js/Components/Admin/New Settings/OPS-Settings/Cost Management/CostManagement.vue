@@ -55,7 +55,7 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        984082461 
+                                        984082461
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -63,16 +63,16 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        0.00                                    
+                                        0.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        1.00                                          
+                                        1.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         1,000,000.00
-                                        
+
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -99,18 +99,18 @@
 </template>
 
 <script setup>
-import SearchIcon from '../../../../Misc/Icons/SearchIcon.vue';
-import ResetIcon from '../../../../Misc/Icons/ResetIcon.vue';
+import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
+import ResetIcon from '@/Components/Misc/Icons/ResetIcon.vue';
 </script>
 
 <script>
 
-import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-import SwitchToggle from '../../../../Misc/Switch(Toggle)/SwitchToggle.vue';
-import Pagination from '../../../../Misc/Pagination/Pagination.vue';
-import AdvanceSettingsSelectMenu from '../../../../Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
+import SwitchToggle from '@/Components/Misc/Switch(Toggle)/SwitchToggle.vue';
+import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
+import AdvanceSettingsSelectMenu from '@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
 export default {
     components:{
         CheckboxSelectMenu,

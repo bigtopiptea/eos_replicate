@@ -1,0 +1,174 @@
+<script setup>
+import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
+import DateInput from "@/Components/Misc/Input/DateInput.vue";
+</script>
+
+<script>
+import FloatingLabelDropdown from '@/Components/Misc/Input/FloatingLabelDropdown.vue';
+import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
+import SmallLabelInput from '@/Components/Misc/Input/SmallLabelInput.vue';
+import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
+import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import SolidButton from "@/Components/Misc/Buttons/SolidButton.vue";
+import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
+import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
+export default {
+    name: 'Maintenance - Tie Ups',
+    components: {
+        NormalButton, SearchIcon, DateInput, FloatingLabelDropdown,
+        FloatingTextArea, SmallLabelInput, DropDown, Slideover,
+        SolidButton, SwitchToggle, BorderButton, CheckboxSelectMenu
+    },
+    data() {
+        return {
+            labels:[
+                {label:'TIE UP'},
+                {label:'REASON'},
+                {label:'DATE MODIFIED'},
+                {label:'MODIFIED BY'},
+                {label:'ACTIONS'},
+            ],
+            tieUpOptions:[
+                {name: 'All Tie Up'},
+                {name: 'Option 2'},
+                {name: 'Option 3'},
+                {name: 'Option 4'}
+            ],
+            reasonOption:[
+                {name: 'Reason 1'},
+                {name: 'Reason 2'},
+                {name: 'Reason 3'},
+            ],
+            holdOpen: false,
+        }
+    },
+    methods: {
+        // Slider
+        holdToggle(){
+            this.holdOpen = false;
+        },
+    },
+}
+</script>
+<template>
+    <div class="h-screen w-full bg-white px-3 py-5">
+        <div class="flex justify-end min-w-full">
+            <div class="flex justify-end items-center ">
+                <div class="w-full">
+                    <form class="flex items-start gap-3">
+                        <div class="flex ">
+                            <div class="relative w-full">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <SearchIcon />
+                                </div>
+                                <input type="text" id="simple-search"
+                                class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] block w-full pl-10 py-1 px-2.5"
+                                placeholder="Search" required />
+                            </div>
+                            <NormalButton label="Go"
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
+                        </div>
+                        <NormalButton label="Export"
+                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- TABLE-->
+        <div class="min-w-full py-5 align-middle ">
+            <div class="relative h-[360px]">
+                <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                    <table class="min-w-full divide-y divide-gray-300">
+                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
+                            <tr class="divide-x divide-gray-200">
+                                <th scope="col"
+                                    class="flex justify-center items-center py-1 px-2 uppercase tracking-wider text-center text-gray-900 gap-2">
+                                    <input type="checkbox" name="" id="">
+                                    <span>
+                                        ID
+                                    </span>
+                                </th>
+                                <th v-for="label in labels" :key="label.label" scope="col"
+                                    class="py-2 px-4 uppercase tracking-wider text-center text-gray-900">
+                                    {{label.label}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 bg-white text-[10px]">
+                            <tr class="divide-x divide-gray-200">
+                                <td class=" whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    <div class="flex justify-center items-center gap-2">
+                                        <input type="checkbox" name="" id="">
+                                        <a class="underline text-cyan-500" href="#">
+                                            01
+                                        </a>
+                                    </div>
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    Redha Al Ansari Exchange
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+
+                                </td>
+                                <td
+                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+
+                                </td>
+                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
+                                    <div class="flex justify-center gap-[5px]">
+                                        <button @click="(holdOpen = !holdOpen)">
+                                            <img src="../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
+                                        </button>
+                                        <SwitchToggle
+                                            :status="true"
+                                            :isChecked="true"
+                                        />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <Slideover :show="holdOpen" @close="holdToggle" :title="'HOLD'" :iconShow="'HOLD'">
+        <div class="flex flex-col justify-between h-full pb-[20px]">
+            <div class="flex flex-col gap-[15px] m-10">
+                <div>
+                    <CheckboxSelectMenu :label="'tie-up'" :inputWidth="'w-12/12'" :placeholder="'SELECT TIE UP'" :options="tieUpOptions"/>
+                </div>
+                <div>
+                    <CheckboxSelectMenu :label="'reason'" :inputWidth="'w-12/12'" :placeholder="'SELECT REASON'" :options="reasonOption"/>
+                </div>
+                <div>
+                    <FloatingTextArea :label="'REMARKS'"/>
+                </div>
+            </div>
+            <div class="flex flex-col gap-[80px]">
+                <div class="text-center text-[14px] uppercase whitespace-normal leading-[30px] mx-[80px]">
+                    <p>
+                        ARE YOU SURE YOU WANT TO PROCEED? <br>
+                        DISTRIBUTION OF TRANSACTION <br>
+                        WILL BE PUT <span class="font-semibold">ON-HOLD.</span><br>
+                        CLICK ‘CONFIRM’ TO PROCEED.
+                    </p>
+                </div>
+                <div class="flex justify-center gap-[100px] pb-[20px">
+                    <BorderButton @click="(holdOpen = !holdOpen)" :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+                     <BorderButton :buttonLabel="'CONFIRM'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
+                </div>
+            </div>
+        </div>
+    </Slideover>
+</template>

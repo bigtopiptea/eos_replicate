@@ -1,7 +1,7 @@
 
 <script>
-import PHP from '@/Components/Admin/New Settings/Distribution Setup/Tabs/PHP.vue';
-import USD from '@/Components/Admin/New Settings/Distribution Setup/Tabs/USD.vue';
+import PHP from '@/Components/Admin/New Settings/CMT-Settings/Distribution Setup/Tabs/PHP.vue';
+import USD from '@/Components/Admin/New Settings/CMT-Settings/Distribution Setup/Tabs/USD.vue';
 import TabNav from '@/Components/Misc/Tabs/Tabnav.vue';
 import Tab from '@/Components/Misc/Tabs/Tab.vue';
 export default {
@@ -13,7 +13,7 @@ export default {
 
 
     },
-    
+
     data(){
         return {
 
