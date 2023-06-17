@@ -119,6 +119,7 @@ export default {
       }
       this.emitSelectedValue();
     },
+
     toggleChild(child) {
     if (this.selectedOptions.includes(child)) {
         // Uncheck child
@@ -147,14 +148,13 @@ export default {
     getSelectedOptionsText() {
       const parentSelected = this.selectedOptions.filter(option => !this.options.flatMap(parent => parent.children).includes(option));
       if (parentSelected.length > 0) {
-        console.log(parentSelected);
         return parentSelected.map(option => option.label).join(' | ');
       } else {
         return this.selectedOptions.map(option => option.label).join(' | ');
       }
     },
     emitSelectedValue() {
-      this.$emit('input', this.selectedOptions);
+      this.$emit('input', [...this.selectedOptions]);
     },
   },
 };
