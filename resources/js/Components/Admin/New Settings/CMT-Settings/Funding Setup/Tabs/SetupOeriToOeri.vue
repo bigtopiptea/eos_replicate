@@ -147,8 +147,8 @@ export default {
 
                                 <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                        <button class="tooltip tooltip-left" data-tip="edit">
+                                            <img src="../../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                         </button>
                                         <SwitchToggle
                                             :status="true"

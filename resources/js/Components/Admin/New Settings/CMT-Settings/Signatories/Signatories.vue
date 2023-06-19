@@ -35,14 +35,14 @@ export default {
                 {label:'ACTIONS'},
             ],
             designOptions: [
-                {name: 'BUSINESS DEVELOPMENT HEAD'},
-                {name: 'ACCOUNTING HEAD'},
-                {name: 'COO'},
+                {label: 'BUSINESS DEVELOPMENT HEAD'},
+                {label: 'ACCOUNTING HEAD'},
+                {label: 'COO'},
             ],
             signatoryType: [
-                {name: 'SET A'},
-                {name: 'SET B'},
-                {name: 'SET C'},
+                {label: 'SET A'},
+                {label: 'SET B'},
+                {label: 'SET C'},
             ],
             addNewSignatoryOpen: false,
             paraIcon:'PLUS', //Icon Parameter
@@ -139,8 +139,8 @@ export default {
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                        <button class="tooltip tooltip-left" data-tip="edit">
+                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                         </button>
                                         <SwitchToggle
                                             :status="true"
@@ -180,8 +180,8 @@ export default {
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                        <button class="tooltip tooltip-left" data-tip="edit">
+                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                         </button>
                                         <SwitchToggle
                                             :status="true"
@@ -220,10 +220,10 @@ export default {
                     <SmallLabelInput :inputLabel="'signatory name'"  :inputWidth="'w-12/12'" :isDisabled="true"/>
                 </div>
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'designation'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="designOptions"/>
+                    <CheckboxSelectMenu :label="'designation'" :placeholder="'Select designation'" :inputWidth="'w-12/12'" :options="designOptions"/>
                 </div>
                 <div>
-                    <FloatingLabelDropdown :inputLabel="'signatory type'" :inputColor="'bg-white'"  :inputWidth="'w-12/12'" :options="signatoryType"/>
+                    <CheckboxSelectMenu :label="'signatory type'" :placeholder="'Select signatory type'" :inputWidth="'w-12/12'" :options="signatoryType"/>
                 </div>
             </div>
             <div class="flex justify-center gap-[100px] border-black">

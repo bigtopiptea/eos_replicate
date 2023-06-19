@@ -127,11 +127,11 @@ export default {
                                 </td>
                                 <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     <div class="flex justify-center gap-[5px]">
-                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
-                                            <img src="../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
+                                        <button class="tooltip tooltip-left" data-tip="hold" @click="(holdOpen = !holdOpen), (isHold = !isHold)">
+                                            <img src="../../../../../../../assets/images/HoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
-                                        <button @click="(holdOpen = !holdOpen), (isHold = !isHold)">
-                                            <img src="../../../../../../assets/images/LiftHoldIcon.png" alt="Hold Icon" class="h-5 w-5">
+                                        <button class="tooltip tooltip-left" data-tip="lift hold" @click="(holdOpen = !holdOpen), (isHold = !isHold)">
+                                            <img src="../../../../../../../assets/images/LiftHoldIcon.png" alt="Hold Icon" class="h-5 w-5">
                                         </button>
                                         <SwitchToggle
                                             :status="true"

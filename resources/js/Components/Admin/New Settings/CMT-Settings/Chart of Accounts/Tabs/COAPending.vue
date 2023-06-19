@@ -50,19 +50,19 @@ export default {
                 {label:'Actions'},
             ],
             fsCategory:[
-                {name: 'Category 1'},
-                {name: 'Category 2'},
-                {name: 'Category 3'},
+                {label: 'Category 1'},
+                {label: 'Category 2'},
+                {label: 'Category 3'},
             ],
             fsType:[
-                {name: 'Type 1'},
-                {name: 'Type 2'},
-                {name: 'Type 3'},
+                {label: 'Type 1'},
+                {label: 'Type 2'},
+                {label: 'Type 3'},
             ],
             accType:[
-                {name: 'Account Type 1'},
-                {name: 'Account Type 2'},
-                {name: 'Account Type 3'},
+                {label: 'Account Type 1'},
+                {label: 'Account Type 2'},
+                {label: 'Account Type 3'},
             ],
             RequestChartOpen: false,
             paraIcon:'CHECK', //Icon Parameter
@@ -179,62 +179,11 @@ export default {
 
                                 <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                     <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                        <button class="tooltip tooltip-left" data-tip="edit">
+                                            <img src="../../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
                                         </button>
-                                        <button>
-                                        <img src="../../../../../../assets/images/RejectIcon.png" alt="Lists Icon" class="h-5 w-5">
-                                        </button>
-
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="divide-x divide-gray-200">
-                                <td class=" whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    <div class="flex justify-center items-center gap-2">
-                                        <input type="checkbox" name="" id="">
-                                        <a class="underline text-cyan-500" href="#">
-                                            01
-                                        </a>
-                                    </div>
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    AR - CANCELLED TRXN PLUS ONE DIRECT PHP
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    TRADE AND OTHER RECEIVABLES
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    BALANCE SHEET
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    110-102-077
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    accounts receivable
-                                </td>
-
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    09/28/2022 11:00:05 AM
-                                </td>
-                                <td
-                                    class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    banaria, jeffrey clidorio
-                                </td>
-
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    <div class="flex justify-center">
-                                        <button>
-                                            <img src="../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
-                                        </button>
-                                        <button>
-                                        <img src="../../../../../../assets/images/RejectIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                        <button class="tooltip tooltip-left" data-tip="reject">
+                                            <img src="../../../../../../../assets/images/RejectIcon.png" alt="Lists Icon" class="h-5 w-5">
                                         </button>
 
                                     </div>

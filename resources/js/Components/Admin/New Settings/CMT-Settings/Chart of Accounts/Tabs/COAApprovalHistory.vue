@@ -50,19 +50,19 @@ export default {
                 {label:'Status'},
             ],
             fsCategory:[
-                {name: 'Category 1'},
-                {name: 'Category 2'},
-                {name: 'Category 3'},
+                {label: 'Category 1'},
+                {label: 'Category 2'},
+                {label: 'Category 3'},
             ],
             fsType:[
-                {name: 'Type 1'},
-                {name: 'Type 2'},
-                {name: 'Type 3'},
+                {label: 'Type 1'},
+                {label: 'Type 2'},
+                {label: 'Type 3'},
             ],
             accType:[
-                {name: 'Account Type 1'},
-                {name: 'Account Type 2'},
-                {name: 'Account Type 3'},
+                {label: 'Account Type 1'},
+                {label: 'Account Type 2'},
+                {label: 'Account Type 3'},
             ],
             RequestChartOpen: false,
             paraIcon:'CHECK', //Icon Parameter

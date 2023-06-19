@@ -7,7 +7,7 @@
       <FilterIcon class="h-5 w-5 text-white" />
       <span class="mr-2 text-[12px] uppercase">Advanced Settings</span>
     </button>
-    <div v-show="isOpen" class="absolute top-0 left-0 mt-[38px] w-full max-h-[200px] overflow-y-auto bg-white shadow-lg border">
+    <div v-show="isOpen" class="absolute top-0 left-0 mt-[38px] w-full max-h-[200px] overflow-y-auto bg-white shadow-lg border z-[50]">
       <div class="py-1">
         <label class="flex items-center p-2 text-[11px] uppercase border-b">
           <input

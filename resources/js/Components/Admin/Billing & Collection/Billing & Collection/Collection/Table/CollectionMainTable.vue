@@ -32,7 +32,6 @@ export default{
                 {label:'OUTSTANDING BALANCE'},
                 {label:'STATUS'},
             ],
-
         }
     },
     methods: {
@@ -88,8 +87,7 @@ export default{
                                         1
                                     </router-link>
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">                            
-               
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 10:55:09 aM
                                 </td>
                                 <td

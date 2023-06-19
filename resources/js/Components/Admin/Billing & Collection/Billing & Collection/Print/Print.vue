@@ -1,18 +1,13 @@
-<script setup>
-import SearchIcon from '../../../../Misc/Icons/SearchIcon.vue';
-import ProgressIcon from '../../../../Misc/Icons/ProgressIcon.vue';
-import LoadingIcon from '../../../../Misc/Icons/LoadingIcon.vue';
-import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
-</script>
-
 <script>
+import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
+import ProgressIcon from '@/Components/Misc/Icons/ProgressIcon.vue';
+import LoadingIcon from '@/Components/Misc/Icons/LoadingIcon.vue';
+import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-import NormalButton from "../../../../Misc/Buttons/NormalButton.vue";
-import BorderButton from '../../../../Misc/Buttons/BorderButton.vue';
-import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue';
-import Slideover from '../../../../Misc/Slideover/Slideover.vue';
-
-
+import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
+import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 
 
 export default {
@@ -23,9 +18,9 @@ export default {
         ModalTwo,
         Slideover,
         XMarkIcon,
-
-
-
+        SearchIcon,
+        ProgressIcon,
+        LoadingIcon
     },
 
     data() {
