@@ -26,7 +26,7 @@ export default{
 <template>
     <div class="bg-white">
         <TabNav :tabs="['Clients' , 'Groups']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
-            <Tab :isSelected="selected === 'Clients'" >
+            <Tab :isSelected="selected === 'Clients'">
                 <Clients/>
             </Tab>
             <Tab :isSelected="selected === 'Groups'">

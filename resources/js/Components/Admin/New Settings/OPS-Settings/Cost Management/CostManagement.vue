@@ -2,11 +2,11 @@
     <div class="bg-white w-full">
         <div class="px-3 py-5">
             <form class="flex justify-between items-top">
-                <div class="flex items-end gap-3 w-[35%]">
+                <div class="flex items-end gap-3 w-[40%]">
                     <div class="w-[50%]">
                         <CheckboxSelectMenu :label="'Currency'" :inputWidth="'w-full'" :placeholder="'PHP'" :options="currencyOption" />
                     </div>
-                    <div>
+                    <div class="w-[50%]">
                         <AdvanceSettingsSelectMenu :inputWidth="'w-12/12'" :options="advanceSettings" :withCheckbox="true"/>
                     </div>
                 </div>
@@ -28,9 +28,9 @@
                 </div>
             </form>
             <!-- TABLE-->
-            <div class="min-w-full py-5 align-middle ">
+            <div class="min-w-full py-2 align-middle ">
                 <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5  min-h-auto max-h-full">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
@@ -129,13 +129,13 @@ export default {
                 current_page: 1,
             },
             bulkOption:[
-                {name:'Update Provider',value:'Update Provider'},
-                {name:'Update Channel',value:'Update Channel'},
+                {label:'Update Provider',value:'Update Provider'},
+                {label:'Update Channel',value:'Update Channel'},
             ],
             currencyOption:[
-                {name:'PHP',value:'PHP'},
-                {name:'USD',value:'USD'},
-                {name:'EUR',value:'EUR'},
+                {label:'PHP',value:'PHP'},
+                {label:'USD',value:'USD'},
+                {label:'EUR',value:'EUR'},
             ],
             labels:[
                 {label:'ID'},

@@ -29,7 +29,7 @@ export default {
 </script>
 <template>
     <div class="h-auto w-full bg-white">
-        <div class="py-5 px-3 flex border border-red-500 w-full">
+        <div class="py-5 px-3 flex w-full">
             <div class="w-[30%] flex flex-col items-center gap-y-8">
                 <div class="flex flex-col items-center">
                     <label class="text-[20px] font-[500] tracking wide whitespace-nowrap">Search For A Question</label>

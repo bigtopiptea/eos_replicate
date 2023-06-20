@@ -22,7 +22,7 @@
             <ListboxOption as="template" v-for="option in options" :key="option" :value="option" v-slot="{ active, selected }">
               <li :class="[active ? 'bg-gray-200 text-black' : 'text-gray-900', 'relative cursor-default select-none py-1 pl-3']" class="flex gap-[10px] uppercase border-b h-auto">
                 <span :class="[selected ? 'font-semibold' : 'font-normal', 'block truncate']">
-                    {{ option.name }}
+                    {{ option.label }}
                 </span>
                 <!-- <span v-if="selected" :class="[active ? 'text-white' : 'text-indigo-600', 'absolute inset-y-0 right-0 flex items-center pr-4']">
                   <CheckIcon class="h-5 w-5" aria-hidden="true" />

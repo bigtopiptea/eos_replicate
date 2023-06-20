@@ -289,8 +289,14 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
-                            to: "/app/reports/b&c-collection-report",
+                            to: "/app/reports/b&c/collection-report",
                             label: "B&C - Collection Report",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/b&c/end-day-report",
+                            label: "B&C - End Day Report",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -501,7 +507,7 @@ export default {
             ],
             isOpen: false,
             isLogout: false,
-            isToggled: false,     // set to true
+            isToggled: true,     // set to true
             openDropdown: false,
             activeItem: null,
             slideoverOpen: false, //Slideover 1 (Profile)
@@ -561,8 +567,13 @@ export default {
     },
     mounted() {
         this.currentDate();
+        document.addEventListener('click', this.handleDocumentClick);
         // console.log(this.activeItem.children);
-    }
+    },
+    beforeUnmount() {
+        // Remove event listener when the component is unmounted
+        document.removeEventListener('click', this.handleDocumentClick);
+    },
 }
 </script>
 
@@ -571,7 +582,7 @@ export default {
     <div class="border-gradient-top border-t-[3px] z-10 fixed inset-x-0 w-full  "></div>
     <div class="flex bg-gray-100 ">
         <div class="flex flex-col inset-y-0 fixed z-10 flex-shrink-0 border-r-[2px] my-[0.15rem] nav w-64 bg-white" :class="!isToggled ? 'w-32': '64'">
-            <ChevronLeftIcon @click="isToggled = !isToggled" class="h-6 absolute cursor-pointer -right-[0.80rem] top-[140px]"/>
+            <ChevronLeftIcon @click="isToggled = !isToggled" class="h-6 absolute cursor-pointer -right-[0.80rem] top-[140px] transition-all" :class="isToggled ? 'rotate-0' : 'rotate-180'"/>
             <div class="flex items-center justify-center z-10 py-6 text-white">
                 <img src="../../../assets/images/EosMaker.png"
                      class="h-12  m-auto duration-300" alt="" />

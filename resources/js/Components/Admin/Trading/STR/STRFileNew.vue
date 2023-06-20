@@ -26,14 +26,14 @@ export default{
         return{
 
             bank:[
-                {name: 'BANK 1'},
-                {name: 'BANK 2'},
-                {name: 'BANK 3'},
+                {label: 'BANK 1'},
+                {label: 'BANK 2'},
+                {label: 'BANK 3'},
             ],
             type:[
-                {name: 'TYPE 1'},
-                {name: 'TYPE 2'},
-                {name: 'TYPE 3'},
+                {label: 'TYPE 1'},
+                {label: 'TYPE 2'},
+                {label: 'TYPE 3'},
             ],
         }
     }

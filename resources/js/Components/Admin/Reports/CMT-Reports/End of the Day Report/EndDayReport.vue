@@ -144,7 +144,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        <button  @click="(viewVerifyFundingOpen = !viewVerifyFundingOpen)" type="submit">
+                                        <button type="submit">
                                             <img src="../../../../../../assets/images/FindDocsIcon.png" alt="FindDocs Icon" class="h-5 w-5">
                                         </button>
                                     </td>

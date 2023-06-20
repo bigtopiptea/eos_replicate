@@ -14,9 +14,9 @@ export default{
     data() {
         return {
             reportType:[ 
-                {name: 'Report 1'},
-                {name: 'Report 2'},
-                {name: 'Report 3'},
+                {label: 'Report 1'},
+                {label: 'Report 2'},
+                {label: 'Report 3'},
             ]
         }
     },

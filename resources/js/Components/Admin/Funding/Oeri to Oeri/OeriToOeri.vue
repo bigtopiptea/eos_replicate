@@ -47,19 +47,19 @@ export default {
             selected: "Pending",
             isOpen: true,
             tieUpPartner:[
-                {name: 'partner 1'},
-                {name: 'partner 2'},
-                {name: 'partner 3'},
+                {label: 'partner 1'},
+                {label: 'partner 2'},
+                {label: 'partner 3'},
             ],
             currency:[
-                {name: 'PHP'},
-                {name: 'USD'},
-                {name: 'EURO'},
+                {label: 'PHP'},
+                {label: 'USD'},
+                {label: 'EURO'},
             ],
             bank:[
-                {name: 'BANK 1'},
-                {name: 'BANK 2'},
-                {name: 'BANK 3'},
+                {label: 'BANK 1'},
+                {label: 'BANK 2'},
+                {label: 'BANK 3'},
             ],
         }
     },

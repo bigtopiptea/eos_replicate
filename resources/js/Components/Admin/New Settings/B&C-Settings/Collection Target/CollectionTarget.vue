@@ -4,10 +4,10 @@
             <div class="flex justify-start flex-col">
                 <div class="flex items-end gap-3">
                     <div>
-                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" :options="yearsOption"/>
+                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" :options="yearsOption" :buttonHeight="'h-[34px]'"/>
                     </div>
                     <div>
-                        <NormalButton label="Filter" class="py-[3px] px-6 uppercase h-[28px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
+                        <NormalButton label="Filter" class="py-[3px] px-6 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                     </div>
                 </div>
             </div>

@@ -40,9 +40,9 @@
                 </div>
             </form>
             <!-- TABLE-->
-            <div class="min-w-full py-5 align-middle ">
+            <div class="min-w-full py-2 align-middle ">
                 <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5  min-h-auto max-h-full">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
@@ -172,13 +172,13 @@ export default {
                 current_page: 1,
             },
             bulkOption:[
-                {name:'Update Provider',value:'Update Provider'},
-                {name:'Update Channel',value:'Update Channel'},
+                {label:'Update Provider',value:'Update Provider'},
+                {label:'Update Channel',value:'Update Channel'},
             ],
             currencyOption:[
-                {name:'PHP',value:'PHP'},
-                {name:'USD',value:'USD'},
-                {name:'EUR',value:'EUR'},
+                {label:'PHP',value:'PHP'},
+                {label:'USD',value:'USD'},
+                {label:'EUR',value:'EUR'},
             ],
             labels:[
                 {label:'BANK/BILLER'},
@@ -191,21 +191,21 @@ export default {
                 {label:'UPDATED BY'},
             ],
             providerOption:[
-                {name: 'AllBank (A Thrift Bank), Inc', value: 'AllBank (A Thrift Bank), Inc'},
-                {name: 'Asia United Bank Corporation', value: 'Asia United Bank Corporation'},
-                {name: 'Bank of Commerce', value: 'Bank of Commerce'},
-                {name: 'Bank of the Philippine Islands', value: 'Bank of the Philippine Islands'},
-                {name: 'BDO Unibank Inc.', value: 'BDO Unibank Inc.'},
-                {name: 'China Banking Corporation', value: 'China Banking Corporation'},
-                {name: 'Land Bank of the Philippines', value: 'Land Bank of the Philippines'},
-                {name: 'Philippine National Bank', value: 'Philippine National Bank'},
-                {name: 'Robinsons Bank Corporation', value: 'Robinsons Bank Corporation'},
-                {name: 'Security Bank Corporation', value: 'Security Bank Corporation'},
+                {label: 'AllBank (A Thrift Bank), Inc', value: 'AllBank (A Thrift Bank), Inc'},
+                {label: 'Asia United Bank Corporation', value: 'Asia United Bank Corporation'},
+                {label: 'Bank of Commerce', value: 'Bank of Commerce'},
+                {label: 'Bank of the Philippine Islands', value: 'Bank of the Philippine Islands'},
+                {label: 'BDO Unibank Inc.', value: 'BDO Unibank Inc.'},
+                {label: 'China Banking Corporation', value: 'China Banking Corporation'},
+                {label: 'Land Bank of the Philippines', value: 'Land Bank of the Philippines'},
+                {label: 'Philippine National Bank', value: 'Philippine National Bank'},
+                {label: 'Robinsons Bank Corporation', value: 'Robinsons Bank Corporation'},
+                {label: 'Security Bank Corporation', value: 'Security Bank Corporation'},
             ],
             channelOption:[
-                {name: 'Instapay', value: 'Instapay'},
-                {name: 'Pesonet', value: 'Pesonet'},
-                {name: 'Own Account', value: 'Own Account'},
+                {label: 'Instapay', value: 'Instapay'},
+                {label: 'Pesonet', value: 'Pesonet'},
+                {label: 'Own Account', value: 'Own Account'},
             ],
             isUpdate: false,
             bulkSelected: ''

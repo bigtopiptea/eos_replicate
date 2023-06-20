@@ -60,6 +60,9 @@ import MasterlistReport from "@/Components/Admin/Reports/OPS-Reports/Masterlist 
 import OPSTransactionReport from "@/Components/Admin/Reports/OPS-Reports/Transaction Report/TransactionReport.vue";
 import OPSEndDayReport from "@/Components/Admin/Reports/OPS-Reports/End Day Report/EndDayReport.vue";
 
+// B&C REPORT
+import BCEndDayReport from "@/Components/Admin/Reports/B&C-Reports/End Day Report/EndDayReport.vue";
+
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
@@ -565,15 +568,26 @@ const routes = [
                     ability: `OPS - End Day Report`,
                 },
             },
-
+            //B&C Report 
+            
             //CM 6-14
             {
-                path: "/app/reports/b&c-collection-report",
+                path: "/app/reports/b&c/collection-report",
                 name: "Collection Report",
                 component: BCCollectionReport,
                 meta: {
                     title: `Collection Report`,
                     ability: `B&C - Collection Report`,
+                },
+            },
+            // 6/20
+            {
+                path: "/app/reports/b&c/end-day-report",
+                name: "End Day Report",
+                component: BCEndDayReport,
+                meta: {
+                    title: `End Day Report`,
+                    ability: `B&C - End Day Report`,
                 },
             },
 

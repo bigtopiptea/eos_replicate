@@ -31,15 +31,15 @@ export default {
                 {label:'ACTIONS'},
             ],
             banksProviders:[
-                {name: 'All Banks/Providers'},
-                {name: 'Option 2'},
-                {name: 'Option 3'},
-                {name: 'Option 4'}
+                {label: 'All Banks/Providers'},
+                {label: 'Option 2'},
+                {label: 'Option 3'},
+                {label: 'Option 4'}
             ],
             reasonOption:[
-                {name: 'Reason 1'},
-                {name: 'Reason 2'},
-                {name: 'Reason 3'},
+                {label: 'Reason 1'},
+                {label: 'Reason 2'},
+                {label: 'Reason 3'},
             ],
             holdOpen: false,
             isHold: false,

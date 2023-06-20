@@ -99,7 +99,7 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue';
 import SearchIcon from '@/Components/Misc/Icons/SearchIcon.vue';
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
-import InputGroup from '../../../../../Misc/Input/InputGroup.vue';
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue';
 import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelectMenu.vue'
 import SwitchToggle from "@/Components/Misc/Switch(Toggle)/SwitchToggle.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";

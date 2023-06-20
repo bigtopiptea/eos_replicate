@@ -55,7 +55,7 @@
                                             {{ title }}
                                         </h2>
                                     </div>
-                                    <div class="relative flex-1">
+                                    <div class="relative flex-1 overflow-y-auto">
                                         <!-- Replace with your content -->
                                         <slot></slot>
                                     </div>

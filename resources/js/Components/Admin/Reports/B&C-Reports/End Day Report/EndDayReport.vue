@@ -23,7 +23,6 @@ export default {
                 current_page: 1,
             },
             labels:[
-                {label:'TOTAL TRANSACTION COUNT'},
                 {label:'TOTAL AMOUNT'},
                 {label:'ACTION'},
             ],
@@ -31,14 +30,13 @@ export default {
                 {label: 'view proofsheet'}
             ],
             processingType:[
-                {name: 'processing'},
-                {name: 'cancellation'},
-                {name: 'additional'},
-                {name: 'refund'},
-                {name: 'reversal dtd'},
-                {name: 'reversal cpa'},
-                {name: 'other services'},
-                {name: 'adjustment'},
+                {label: 'affiliate 1'},
+                {label: 'affiliate 2'},
+                {label: 'affiliate 3'},
+                {label: 'affiliate 4'},
+                {label: 'affiliate 5'},
+                {label: 'affiliate 6'},
+                {label: 'affiliate 7'},
             ],
             endDayReportOpen: false,
             paraIcon:'CHECK', //Icon Parameter
@@ -121,7 +119,7 @@ export default {
                                     <th class="py-2 px-1 uppercase tracking-wider text-center text-gray-900">
                                         <div class="relative flex justify-center">
                                             <input class="absolute left-[15px]" type="checkbox" name="" id="">
-                                            <span>PROCESSING TYPE</span>
+                                            <span>company name</span>
                                         </div>
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
@@ -131,17 +129,13 @@ export default {
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                                <tr v-for="process in processingType" :key="process.name" class="divide-x divide-gray-200">
+                                <tr v-for="process in processingType" :key="process.label" class="divide-x divide-gray-200">
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                         <div class="relative flex justify-center">
                                             <input class="absolute left-[15px]" type="checkbox" name="" id="">
-                                            <span>{{ process.name }}</span>
+                                            <span>{{ process.label }}</span>
                                         </div>
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                        X,XXX
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
@@ -159,7 +153,6 @@ export default {
                                 <tr>
                                     <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider"></td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">XX,XXX.XX</td>
-                                    <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">XX,XXX.XX</td>
                                     <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider"></td>
                                 </tr>
                             </tfoot>
@@ -176,9 +169,6 @@ export default {
         <div class="flex flex-col justify-between h-full pb-[20px]">
             <div class="mx-10 h-auto ">
                 <div class="mt-[30px] flex flex-col gap-3">
-                    <div>
-                        <InputGroup :inputType="'text'" :inputLabel="'total count'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
-                    </div>
                     <div>
                         <InputGroup :inputType="'text'" :inputLabel="'total amount'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"  :isDisabled="true"/>
                     </div>

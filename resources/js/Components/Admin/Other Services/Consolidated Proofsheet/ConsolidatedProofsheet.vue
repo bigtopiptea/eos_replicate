@@ -19,16 +19,16 @@ export default {
     data() {
         return {
             AccNames:[
-                {name: 'ALL BANK IMUS USD'},
-                {name: 'ALL BANK SF PAYROLL'},
-                {name: 'ALLIED SHAW SF PHP'},
-                {name: 'ALLIED SHAW SF usd'},
-                {name: 'ASIA UNITED BANK (AUB) SHAW PHP'},
-                {name: 'ASIA UNITED BANK (AUB) SHAW USD'},
-                {name: 'ASIA UNITED BANK PAG-IBIG PHP'},
-                {name: 'ASIA UNITED BANK SSS PHP'},
-                {name: 'AUB SHAW BILLS PAY PHP'},
-                {name: 'BDO - MONEYMARKET PHP'},
+                {label: 'ALL BANK IMUS USD'},
+                {label: 'ALL BANK SF PAYROLL'},
+                {label: 'ALLIED SHAW SF PHP'},
+                {label: 'ALLIED SHAW SF usd'},
+                {label: 'ASIA UNITED BANK (AUB) SHAW PHP'},
+                {label: 'ASIA UNITED BANK (AUB) SHAW USD'},
+                {label: 'ASIA UNITED BANK PAG-IBIG PHP'},
+                {label: 'ASIA UNITED BANK SSS PHP'},
+                {label: 'AUB SHAW BILLS PAY PHP'},
+                {label: 'BDO - MONEYMARKET PHP'},
             ]
         }
     },

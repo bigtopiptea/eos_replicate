@@ -19,9 +19,9 @@ export default{
     data(){
         return{
             sampleOption:[
-                {name: 'option 1'},
-                {name: 'option 2'},
-                {name: 'option 3'},
+                {label: 'option 1'},
+                {label: 'option 2'},
+                {label: 'option 3'},
             ],
         }
     }

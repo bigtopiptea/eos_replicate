@@ -145,9 +145,9 @@ export default {
                 {label:'ACTION'},
             ],
             groupNameOptions:[
-                {name: 'communities'},
-                {name: 'pavi group'},
-                {name: 'vista group'},
+                {label: 'communities'},
+                {label: 'pavi group'},
+                {label: 'vista group'},
             ],
             bulkOptions:[
                 {label: 'add to communities'},
