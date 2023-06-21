@@ -561,15 +561,15 @@ const routes = [
             },
             {
                 path: "/app/reports/ops-end-day-report",
-                name: "End Day Report",
+                name: "OPS - End Day Report",
                 component: OPSEndDayReport,
                 meta: {
                     title: `End Day Report`,
                     ability: `OPS - End Day Report`,
                 },
             },
-            //B&C Report 
-            
+            //B&C Report
+
             //CM 6-14
             {
                 path: "/app/reports/b&c/collection-report",
