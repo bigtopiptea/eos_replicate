@@ -561,7 +561,7 @@ const routes = [
             },
             {
                 path: "/app/reports/ops-end-day-report",
-                name: "End Day Report",
+                name: "OPS - End Day Report",
                 component: OPSEndDayReport,
                 meta: {
                     title: `End Day Report`,

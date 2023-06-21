@@ -18,7 +18,7 @@
           />
           All
         </label>
-        <label v-for="(option, index) in options" :key="index" class="flex items-center p-2 uppercase text-[12px] border-b">
+        <label v-for="(option, index) in options" :key="index" class="flex items-center p-2 uppercase text-[11px] border-b">
           <input
             type="checkbox"
             v-model="option.checked"
