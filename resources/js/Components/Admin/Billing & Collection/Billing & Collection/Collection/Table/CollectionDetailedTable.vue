@@ -11,7 +11,7 @@ import PaperClipIcon from '../../../../../Misc/Icons/PaperClipIcon.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 export default{
     components:{
-        Pagination, CheckboxSelectMenu, NormalButton, SearchIcon, 
+        Pagination, CheckboxSelectMenu, NormalButton, SearchIcon,
         BorderButton, LoadingIcon, XMarkIcon, ProgressIcon, Slideover,
         PaperClipIcon
     },
@@ -37,7 +37,7 @@ export default{
                 {label:'NET OF EWT'},
                 {label:'STATUS'},
             ],
-            attachDocsOpen: false, 
+            attachDocsOpen: false,
             isSubmit: false,
         }
     },
@@ -128,10 +128,10 @@ export default{
                         <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
                             <tr class="divide-x divide-gray-200">
                                 <td class="flex justify-center gap-[5px] hitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
-                                    <input type="checkbox" name="" id=""> 
-                                    <a href="">1</a> 
+                                    <input type="checkbox" name="" id="">
+                                    <a href="">1</a>
                                 </td>
-                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">                            
+                                <td class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                     09/28/2022 10:55:09 aM
                                 </td>
                                 <td
@@ -255,7 +255,7 @@ export default{
                         </div>
                     </div>
                 </div>
-   
+
             </div>
             <div class="flex justify-between w-4/5">
                 <BorderButton @click.prevent="attachDocsOpenToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>

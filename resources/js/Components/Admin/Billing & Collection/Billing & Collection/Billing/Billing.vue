@@ -1,5 +1,5 @@
 <script>
-import BillingTable2 from './Tabs/BillingTable2.vue'
+import BillingPartner2 from './Tables/BillingPartner2.vue'
 import BorderButton from '../../../../Misc/Buttons/BorderButton.vue'
 import CheckboxSelectMenu from '../../../../Misc/Select Menu/CheckboxSelectMenu.vue'
 import ModalTwo from '../../../../Misc/Modal/ModalTwo.vue'
@@ -8,9 +8,10 @@ import TabNav from '../../../../Misc/Tabs/TabNav.vue'
 import Tab from '../../../../Misc/Tabs/Tab.vue'
 import DownloadIcon from '../../../../Misc/Icons/DownloadIcon.vue'
 import ChevRightIcon from '../../../../Misc/Icons/ChevRightIcon.vue'
-import BillingTable1 from './Tabs/BillingTable1.vue'
+import BillingPartner1 from './Tables/BillingPartner1.vue'
 import FloatingLabelInput from '../../../../Misc/Input/FloatingLabelInput.vue'
-
+import BillingOther1 from './Tables/BillingOther1.vue'
+import BillingOther2 from './Tables/BillingOther2.vue'
 export default {
     name: "Billing",
 
@@ -24,8 +25,10 @@ export default {
         Tab,
         DownloadIcon,
         ChevRightIcon,
-        BillingTable1,
-        BillingTable2,
+        BillingPartner1,
+        BillingPartner2,
+        BillingOther1,
+        BillingOther2
 
 
 
@@ -34,6 +37,7 @@ export default {
         return {
             IsChosen:'',
             IsView:false,
+            IsFilter:false,
             viewModalOpen: true,
             selected: "View Soa",
             TieUpPartner:[
@@ -44,15 +48,7 @@ export default {
                 {label:'CITI EXPRESS PAYMENT'},
                 {label:'RNV FOREX'},
             ],
-            labels:[
-                {label:'SOA NO.'},
-                {label:'MONTH'},
-                {label:'YEAR'},
-                {label:'CLIENT NAME'},
-                {label:'PAPER BILLING'},
-                {label:'PAPERLESS BILLING'},
 
-            ],
             clientOptions:[
                 {label:'AFFILIATE 1'},
                 {label:'AFFILIATE 2'},
@@ -65,6 +61,27 @@ export default {
                 {label:'JRS EXPRESS'},
                 {label:'J&T EXPRESS'},
             ],
+            yearsOption:[
+                {label: '2020', value: '2020'},
+                {label: '2021', value: '2021'},
+                {label: '2022', value: '2022'},
+                {label: '2023', value: '2023'},
+                {label: '2024', value: '2024'},
+            ],
+            monthsOption:[
+                {label: 'JANUARY', value: 'JANUARY'},
+                {label: 'FEBRUARY', value: 'FEBRUARY'},
+                {label: 'MARCH', value: 'MARCH'},
+                {label: 'APRIL', value: 'APRIL'},
+                {label: 'MAY', value: 'MAY'},
+                {label: 'JUNE', value: 'JUNE'},
+                {label: 'JULY', value: 'JULY'},
+                {label: 'AUGUST', value: 'AUGUST'},
+                {label: 'SEPTEMBER', value: 'SEPTEMBER'},
+                {label: 'OCTOBER', value: 'OCTOBER'},
+                {label: 'NOVEMBER', value: 'NOVEMBER'},
+                {label: 'DECEMBER', value: 'DECEMBER'},
+            ]
 
         }
     },
@@ -93,9 +110,9 @@ export default {
                         <CheckboxSelectMenu :label="'Tie-up Partner'" :placeholder="'Select Tie Up Partner'" :options="TieUpPartner" />
                     </div>
                     <div class="flex gap-3">
-                        <CheckboxSelectMenu :label="'Month'" :placeholder="'Select Month'" />
-                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" />
-                        <NormalButton @click="(IsView = !IsView)" class="bg-[#3E3E3E] h-auto w-[75px] text-white" :label="'View'"/>
+                        <CheckboxSelectMenu :label="'Month'" :placeholder="'Select Month'" :options="monthsOption" />
+                        <CheckboxSelectMenu :label="'Year'"  :placeholder="'Select Year'" :options="yearsOption"/>
+                        <NormalButton @click="(IsView = !IsView)" class="bg-[#3E3E3E] h-auto w-[75px] text-white text-[10px] uppercase" :label="'View'"/>
                     </div>
                 </div>
                 <div class="w-full my-3">
@@ -103,7 +120,7 @@ export default {
                         <Tab :isSelected="selected === 'View Soa'" >
                             <div class="w-full min-h-screen max-h-full">
                                 <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
-                                    <BillingTable1 :labels="labels"/>
+                                    <BillingPartner1 :labels="labels"/>
                                 </div>
                                 <div v-else class="flex flex-col items-center justify-center py-20">
                                     <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
@@ -113,7 +130,7 @@ export default {
                         </Tab>
                         <Tab :isSelected="selected === 'View Details'" >
                             <div class="w-full h-auto py-3 px-3 ">
-                                <BillingTable2/>
+                                <BillingPartner2/>
                             </div>
                         </Tab>
                     </TabNav>
@@ -135,15 +152,15 @@ export default {
                         <FloatingLabelInput :inputLabel="'Reference No.'" :placeholder="'Input Reference No.'"/>
                     </div>
                     <div>
-                        <NormalButton @click="applyFilter" class="bg-[#3E3E3E] h-auto w-[75px] text-white py-2 px-3 text-[13px]" :label="'FILTER'"/>
+                        <NormalButton @click="(IsFilter = !IsFilter)" class="bg-[#3E3E3E] h-auto w-[75px] text-white py-2 px-3 text-[10px]" :label="'FILTER'"/>
                     </div>
                 </div>
                 <div class="w-full my-3">
                     <TabNav :tabs="['View Soa' , 'View Details']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
                         <Tab :isSelected="selected === 'View Soa'" >
                             <div class="w-full min-h-screen max-h-full">
-                                <div v-if="IsView" class="w-full px-14 flex justify-center py-20">
-                                    <BillingTable1 :labels="labels"/>
+                                <div v-if="IsFilter" class="w-full px-14 flex justify-center py-20">
+                                    <BillingOther1 :labels="labels"/>
                                 </div>
                                 <div v-else class="flex flex-col items-center justify-center py-20">
                                     <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
@@ -152,7 +169,8 @@ export default {
                             </div>
                         </Tab>
                         <Tab :isSelected="selected === 'View Details'" >
-                            <div class="w-full h-auto ">
+                            <div class="w-full h-auto py-3 px-3 ">
+                                <BillingOther2/>
                             </div>
                         </Tab>
                     </TabNav>

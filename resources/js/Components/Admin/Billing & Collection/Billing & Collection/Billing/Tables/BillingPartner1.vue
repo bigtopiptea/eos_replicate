@@ -6,13 +6,20 @@ import ChevRightIcon from '../../../../../Misc/Icons/ChevRightIcon.vue';
 <script>
 
 export default {
-    props:{
-        labels:{
-            type:Array,
-            default:[],
-        }
+    data() {
+        return {
+            labels:[
+                {label:'SOA NO.'},
+                {label:'MONTH'},
+                {label:'YEAR'},
+                {label:'CLIENT NAME'},
+                {label:'PAPER BILLING'},
+                {label:'PAPERLESS BILLING'},
+            ],
 
-    }
+        }
+    },
+
 }
 </script>
 
