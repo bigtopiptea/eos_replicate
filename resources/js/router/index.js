@@ -568,8 +568,8 @@ const routes = [
                     ability: `OPS - End Day Report`,
                 },
             },
-            //B&C Report 
-            
+            //B&C Report
+
             //CM 6-14
             {
                 path: "/app/reports/b&c/collection-report",
