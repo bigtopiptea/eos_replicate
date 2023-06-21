@@ -1,11 +1,8 @@
-<script setup>
+<script>
 import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-</script>
-
-<script>
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
@@ -28,7 +25,8 @@ export default {
         SwitchToggle,
         BorderButton,
         Pagination,
-        NormalButton
+        NormalButton,
+        SearchIcon
     },
 
     data() {
@@ -37,7 +35,10 @@ export default {
             pagination: {
                 current_page: 1,
             },
-            myOptions:['activate', 'inactivate'],
+            bulkOptions:[
+                {label: 'activate'},
+                {label: 'inactivate'},
+            ],
             labels:[
                 {label:'CUSTOMER TYPE'},
                 {label:'NAME'},
@@ -72,7 +73,7 @@ export default {
                 <div class="inline-block min-w-full align-middle ">
                     <div class="flex items-center justify-between h-auto min-w-full ">
                         <div>
-                            <DropDown label="bulk action" :options="myOptions"/>
+                            <DropDown label="bulk action" :options="bulkOptions"/>
                             <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] t-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                         <form class="gap-3 flex items-start">
