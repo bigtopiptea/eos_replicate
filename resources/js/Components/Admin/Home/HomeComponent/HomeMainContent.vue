@@ -7,6 +7,38 @@ export default{
                 { id:1, href: '#item1'},
                 { id:2, href: '#item2'},
                 { id:3, href: '#item3'},
+            ],
+            statsTracker: [
+                {
+                    id: 1, 
+                    value: '49.00',
+                    tieUp: 'REDHA AL ANSARI EXCHANGE',
+                    latestUpdate: '09/28/2022 8:00:00 AM'
+                },
+                {
+                    id: 2, 
+                    value: '50.01',
+                    tieUp: 'REDHA AL ANSARI EXCHANGE',
+                    latestUpdate: '09/28/2022 8:00:00 AM'
+                },
+                {
+                    id: 3, 
+                    value: '50.03',
+                    tieUp: 'REDHA AL ANSARI EXCHANGE',
+                    latestUpdate: '09/28/2022 8:00:00 AM'
+                },
+                {
+                    id: 4, 
+                    value: '45.00',
+                    tieUp: 'REDHA AL ANSARI EXCHANGE',
+                    latestUpdate: '09/28/2022 8:00:00 AM'
+                },
+                {
+                    id: 5, 
+                    value: '49.99',
+                    tieUp: 'REDHA AL ANSARI EXCHANGE',
+                    latestUpdate: '09/28/2022 8:00:00 AM'
+                },
             ]
         }
     },
@@ -29,187 +61,43 @@ export default{
                 <!-- daisyUI - Carousel -->
                 <div class="carousel w-full">
                     <div id="item1" class="carousel-item flex justify-center gap-2 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
+                        <div v-for="(stat, id) in statsTracker" :key="id" class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
-                                <h3 class="font-bold">50.00</h3>
+                                <h3 class="font-bold">{{ stat.value }}</h3>
                             </div>
                             <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
                                     <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">50.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">50.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">50.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">50.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
+                                    {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
                     </div> 
                     <div id="item2" class="carousel-item flex justify-center gap-3 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
+                        <div v-for="(stat, id) in statsTracker" :key="id" class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
-                                <h3 class="font-bold">40.00</h3>
+                                <h3 class="font-bold">{{ stat.value }}</h3>
                             </div>
                             <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
                                     <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">40.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">40.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">40.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">40.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
+                                    {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
                     </div> 
                     <div id="item3" class="carousel-item flex justify-center gap-3 w-full">
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
+                        <div v-for="(stat, id) in statsTracker" :key="id" class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
-                                <h3 class="font-bold">30.00</h3>
+                                <h3 class="font-bold">{{ stat.value }}</h3>
                             </div>
                             <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
+                                <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
                                     <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">30.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">30.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">30.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
-                            <div class="text-xl">
-                                <h3 class="font-bold">30.00</h3>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-semibold">REDHA AL ANSARI EXCHANGE</p>
-                                <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
-                                    09/28/2022 8:00:00 AM
+                                    {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
@@ -290,5 +178,4 @@ export default{
             </div>
         </div>
     </div>
-
 </template>
