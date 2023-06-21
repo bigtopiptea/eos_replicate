@@ -36,15 +36,16 @@ export default{
                 {label:'W/TAX -EXPANDED (CR)'},
             ],
             paymentOptions:[
-                {name:'CREDIT TO BANK'},
-                {name:'CASH'},
+                {label:'CASH'},
+                {label:'CREDIT TO BANK'},
+                {label:'ONLINE BANK'},
             ],
             bankOptions:[
-                {name:'BDO'},
-                {name:'BPI'},
-                {name:'UNION BANK'},
-                {name:'CHINA BANK'},
-                {name:'LAND BANK'},
+                {label:'BDO'},
+                {label:'BPI'},
+                {label:'UNION BANK'},
+                {label:'CHINA BANK'},
+                {label:'LAND BANK'},
             ],
             attachmentOpen: false,
             paraIcon: 'FIND',
@@ -76,7 +77,7 @@ export default{
                                 <InputGroup :inputLabel="'amount to pay'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'"/>
                             </div>
                             <div>
-                                <InputGroupSelectMenu :label="'mode of payment'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :options="paymentOptions"/>
+                                <InputGroupSelectMenu :label="'mode of payment'" :labelWidth="'w-6/12'" :inputWidth="'w-6/12'" :placeholder="'select mop'" :options="paymentOptions"/>
                             </div>
                         </div>
                         <div class="flex flex-col gap-3 w-[30%]">
@@ -90,7 +91,7 @@ export default{
                                 <input type="text" class="uppercase bg-white h-full pl-[70px] py-1 pr-1 focus:z-10 border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA] focus:border-collapse w-full">
                             </div>                            
                             <div>
-                                <InputGroupSelectMenu :label="'bank name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :options="bankOptions"/>
+                                <InputGroupSelectMenu :label="'bank name'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :placeholder="'select bank'" :options="bankOptions"/>
                             </div>
                         </div>
                         <div class="flex flex-col gap-3 w-[23%]">
@@ -121,20 +122,20 @@ export default{
                             <div>
                                 <p class="uppercase text-gray-500 text-[12px]">proof of payment</p>
                             </div>
-                            <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md py-2 px-[20px]">
+                            <div class="flex flex-col items-center border-2 border-dashed border-[#7F7F7F] rounded-md py-2 px-[20px]">
                                 <div class="text-center text-[10px] mb-[5px]">
                                     <p>DRAG IMAGE HERE<br>OR</p>
                                     <div class="flex items-center justify-center cursor-pointer">
                                         <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[10px]'"/>
-                                        <input class="absolute w-[100px] opacity-0" type="file">
+                                        <input class="absolute w-[100px] opacity-0" type="file" accept=".jpg, .jpeg, .png, .pdf">
                                     </div>
                                 </div>
                                 <div class="text-center text-[10px]">
                                     <p>
                                         MAX FILE SIZE:
-                                        <span class="font-bold">10MB</span><br>
+                                        <span class="font-bold">5MB</span><br>
                                         SUPPORTED FILE TYPES:
-                                        <span class="font-bold">JPEG, JPG, PNG</span>
+                                        <span class="font-bold">JPEG, JPG, PNG, PDF</span>
                                     </p>
                                 </div>
                             </div>

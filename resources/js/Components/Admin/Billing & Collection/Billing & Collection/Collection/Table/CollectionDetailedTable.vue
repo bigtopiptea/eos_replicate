@@ -8,12 +8,13 @@ import LoadingIcon from "@/Components/Misc/Icons/LoadingIcon.vue";
 import XMarkIcon from "@/Components/Misc/Icons/XMarkIcon.vue";
 import ProgressIcon from "@/Components/Misc/Icons/ProgressIcon.vue";
 import PaperClipIcon from '../../../../../Misc/Icons/PaperClipIcon.vue';
+import ChevronDownIcon  from "@/Components/Misc/Icons/ChevronDownIcon.vue";
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 export default{
     components:{
         Pagination, CheckboxSelectMenu, NormalButton, SearchIcon,
         BorderButton, LoadingIcon, XMarkIcon, ProgressIcon, Slideover,
-        PaperClipIcon
+        PaperClipIcon, ChevronDownIcon
     },
     data() {
         return {
@@ -197,69 +198,88 @@ export default{
     </div>
 
     <Slideover :show="attachDocsOpen" @close="attachDocsOpenToggle" :title="'UPLOAD 2307'">
-        <div class="flex flex-col justify-between items-center h-full pb-5">
-            <div class="py-5 mx-5 w-4/5">
-                <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
-                    <div class="text-center mb-5">
-                        <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
-                        <div class="flex items-center justify-center cursor-pointer">
-                            <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
-                            <input class="absolute w-[100px] opacity-0" type="file">
+        <div class="flex flex-col  justify-between gap-[20px] h-full py-5 mx-10">
+            <div>
+                <div>
+                    <div class="flex flex-col items-center border-dashed border-2 border-[#7F7F7F] rounded-md p-5">
+                        <div class="text-center mb-5">
+                            <p class="text-sm">DRAG FILE HERE<br>OR</p>
+                            <div class="flex items-center justify-center cursor-pointer">
+                                <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
+                                <input class="absolute w-[100px] opacity-0" type="file">
+                            </div>
+                        </div>
+                        <div class="text-center text-[10px]">
+                            <p>MAX FILE SIZE: <span class="font-bold">10MB</span><br>
+                            SUPPORTED FILE TYPES: <span class="font-bold">JPEG, JPG, PNG, PDF</span>
+                            </p>
                         </div>
                     </div>
-                    <div class="text-center text-[10px]">
-                        <p>MAX FILE SIZE: <span class="font-bold">10MB</span><br>
-                        SUPPORTED FILE TYPES: <span class="font-bold">JPEG, JPG, PNG, PDF</span>
-                        </p>
+                    <div class="pt-5 ">
+                        <div class="flex justify-between mb-3">
+                            <div class="flex items-center text-sm">
+                                <LoadingIcon></LoadingIcon>
+                                <span>payment_request.pdf</span>
+                            </div>
+                            <div class="cursor-pointer">
+                                <XMarkIcon></XMarkIcon>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <ProgressIcon :progressWidth="'w-96'"></ProgressIcon>
+                        </div>
+                        <div class="flex justify-between text-[10px] mb-3">
+                            <div>
+                                <p>
+                                    <span>0.5 MB</span>
+                                    of
+                                    <span>10 MB</span>
+                                </p>
+                            </div>
+                            <div class="text-#194E72">
+                                <p>UPLOADING...
+                                    <span>50%</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div v-show="isSubmit == true" class="flex justify-center gap-3 pt-5">
-                    <PaperClipIcon/>
-                    <div class="text-[14px]">
-                        <p class="text-[#1F4583] underline"><a href="#">BIR_FORM_2307.jpg</a></p>
-                        <p class="font-bold">
-                            Date uploaded:
-                            <span class="font-normal">09/28/2022 10:55:09 AM</span>
-                        </p>
-                        <p class="font-bold">
-                            Uploaded by:
-                            <span class="font-normal">SOLTES, CAROL</span>
-                        </p>
-                    </div>
-                </div>
-                <div v-show="isSubmit == false" class="pt-5">
-                    <div class="flex justify-between mb-3">
-                        <div class="flex items-center text-sm">
-                            <LoadingIcon></LoadingIcon>
-                            <span>BIR_FORM_2307.jpg</span>
-                        </div>
-                        <div class="cursor-pointer">
-                            <XMarkIcon></XMarkIcon>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <ProgressIcon :progressWidth="'w-96'"></ProgressIcon>
-                    </div>
-                    <div class="flex justify-between text-[10px] mb-3">
+                <div class="relative flex flex-col gap-5 h-auto border-dashed border-2 border-[#7F7F7F] rounded-md p-5">
+                    <h1 class="absolute -top-[10px] px-[5px] text-[13px] font-semibold text-[#3E3E3E] bg-white">UPLOADED DOCUMENTS</h1>
+                    <div v-if="isSubmit" class="flex flex-col gap-[20px]">
                         <div>
-                            <p>
-                                <span>0.5 MB</span>
-                                of
-                                <span>1 MB</span>
-                            </p>
+                            <div class="flex gap-3">
+                                <PaperClipIcon/>
+                                <div class="text-[12px]">
+                                    <div class="flex items-center gap-3">
+                                        <p class="text-[#1F4583] underline"><a href="#">payment_request.pdf</a></p>
+                                        <XMarkIcon class="stroke-red-500 cursor-pointer"></XMarkIcon>
+                                    </div>
+                                    <p class="font-bold">
+                                        Date uploaded:
+                                        <span class="font-normal">09/28/2022 10:55:09 AM</span>
+                                    </p>
+                                    <p class="font-bold">
+                                        Uploaded by:
+                                        <span class="font-normal">SOLTES, CAROL</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-#194E72">
-                            <p>UPLOADING...
-                                <span>50%</span>
-                            </p>
+                        <div class="flex justify-center text-[#1F4583] text-[14px] hover:underline cursor-pointer">
+                            <p class="capitalize">See more</p>
+                            <ChevronDownIcon class="w-5 h-6"/>
                         </div>
                     </div>
+                    <div v-else class="flex flex-col items-center justify-center">
+                        <img src="../../../../../../../assets/images/no-records-img.png" alt="" class="h-[150px] w-[180px]">
+                        <p class="uppercase text-center text-[14px] font-semibold">no records to display</p>
+                    </div>
                 </div>
-
             </div>
-            <div class="flex justify-between w-4/5">
+            <div class="flex justify-between">
                 <BorderButton @click.prevent="attachDocsOpenToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton @click="isSubmit = true"  :buttonLabel="'SUBMIT'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
+                <BorderButton @click="isSubmit = !isSubmit"  :buttonLabel="'SUBMIT'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

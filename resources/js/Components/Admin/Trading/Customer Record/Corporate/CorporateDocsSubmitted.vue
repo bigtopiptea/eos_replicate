@@ -120,12 +120,12 @@ export default {
                         <form class="flex gap-[5px]">
                             <div class="flex flex-col gap-[10px] w-[60%]">
                                 <CheckboxSelectMenu :label="'type of id/document'" :inputWidth="'w-12/12'"  isRequired="true" :placeholder="'Select type of ID/Document'" :options="idType"/>
-                                <div class="flex flex-col items-center border-2 border-dotted border-[#7F7F7F] rounded-md p-5">
+                                <div class="flex flex-col items-center border-2 border-dashed border-[#7F7F7F] rounded-md p-5">
                                     <div class="text-center text-[12px] mb-5">
-                                        <p>DRAG IMAGE HERE<br>OR</p>
+                                        <p>DRAG FILE HERE<br>OR</p>
                                         <div class="flex items-center justify-center cursor-pointer">
                                             <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
-                                            <input class="absolute w-[100px] opacity-0" type="file">
+                                            <input class="absolute w-[100px] opacity-0" type="file" accept=".jpg, .jpeg, .png, .pdf">
                                         </div>
                                     </div>
                                     <div class="text-center text-[10px]">
@@ -133,7 +133,7 @@ export default {
                                             MAX FILE SIZE:
                                             <span class="font-bold">10MB</span><br>
                                             SUPPORTED FILE TYPES:
-                                            <span class="font-bold">JPEG, JPG, PNG</span>
+                                            <span class="font-bold">JPEG, JPG, PNG, PDF</span>
                                         </p>
                                     </div>
                                 </div>

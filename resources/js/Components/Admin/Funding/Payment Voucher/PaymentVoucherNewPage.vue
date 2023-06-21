@@ -204,7 +204,7 @@ export default{
                             <p class="text-sm">DRAG FILE HERE<br>OR</p>
                             <div class="flex items-center justify-center cursor-pointer">
                                 <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
-                                <input class="absolute w-[100px] opacity-0" type="file">
+                                <input class="absolute w-[100px] opacity-0" type="file" accept=".jpg, .jpeg, .png, .pdf">
                             </div>
                         </div>
                         <div class="text-center text-[10px]">

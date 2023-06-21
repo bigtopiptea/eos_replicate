@@ -763,12 +763,12 @@ export default {
     <Slideover :show="profileSlideoverOpen" @close="profileSlideOverToggle" :title="'CHANGE PHOTO'" :iconShow="paraIcon">
         <div class="flex flex-col justify-between items-center h-full pb-5">
             <div class="py-5 mx-5 w-4/5">
-                <div class="flex flex-col items-center border-dotted border-2 border-#7F7F7F rounded-md p-5">
+                <div class="flex flex-col items-center border-dashed border-2 border-#7F7F7F rounded-md p-5">
                     <div class="text-center mb-5">
                         <p class="text-sm">DRAG IMAGE HERE<br>OR</p>
                         <div class="flex items-center justify-center cursor-pointer">
                             <BorderButton :buttonLabel="'browse'" :buttonSize="'h-auto w-[100px]'" :buttonTextColor="'text-[#EE3E2C]'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2c]'" :buttonPadding="'px-4 py-1'" :buttonTextSize="'text-[12px]'"/>
-                            <input class="absolute w-[100px] opacity-0" type="file">
+                            <input class="absolute w-[100px] opacity-0" type="file" accept=".jpg, .jpeg, .png">
                         </div>
                     </div>
                     <div class="text-center text-[10px]">
