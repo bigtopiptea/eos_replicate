@@ -12,10 +12,9 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
-import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 export default {
 
-    name:'CC Reply',
+    name:'AP Pending',
 
     components:{
         ChevRightIcon,
@@ -29,46 +28,36 @@ export default {
         ListIcon,
         DateInput,
         Pagination,
-        Slideover,
         TextAreaGroup,
         InputGroupSelectMenu,
     },
 
     data() {
         return {
-            CCReply: [],
+            user: this.$store.state.auth.user,
+            APApprovalHistory: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
                 {label:'ID'},
                 {label:'DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'CANCELLATION REF. NO.'},
-                {label:'FROM'},
-                {label:'TO'},
-                {label:'CURRENCY'},
-                {label:'AMOUNT'},
-                {label:'REMARKS'},
-                {label:'ACTION'},
+                {label:'PAYEE'},
+                {label:'INVOICE NO.'},
+                {label:'INVOICE AMOUNT'},
+                {label:'STATUS'},
+                {label:'CREATED BY'},
+                {label:'WORKFLOW STATUS'},
+                {label:'APPROVED BY'},
             ],
-            statusOption:[
-                {label: 'no credit bank'},
-                {label: 'with credit bank'},
-                {label: 'no credit bank'},
-            ],
-            replyOpen: false,
         }
     },
     methods: {
-        replyToggle() {
-            this.replyOpen = false;
-        },
-        async getCCReply() {
+        async getAPApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.CCReply = response.data.data;
+                    this.APApprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -144,45 +133,45 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        REDHA-09282022-0001
+                                        INKLINE OFFICE SOLUTIONS INC.
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="">
-                                            amd-09282022-0001
+                                        INV00000001
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        10,000.00
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        <a class="underline text-cyan-500" href="#">
+                                            unpaid
                                         </a>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        BDO 
+                                        sabado, christian peralta
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        OUT
+                                        approved
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        PHP
+                                        asis, ginalyn ibarra
                                     </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        58,650.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INVALID ACCOUNT NO.
-                                    </td>
-                                    <td
+                                    <!-- <td
                                         class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
                                         <div class="flex justify-around">
                                             <button class="tooltip tooltip-left" data-tip="view">
-                                                <img src="../../../../../../assets/images/EyeIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                                <img src="../../../../../../assets/images/EyeIcon.png" alt="Eye Icon" class="h-5 w-5">
                                             </button>
-                                            <button @click="(replyOpen = !replyOpen)" class="tooltip tooltip-left" data-tip="reply">
+                                            <button class="tooltip tooltip-left" data-tip="reply">
                                                 <img src="../../../../../../assets/images/reply-icon.png" alt="Reply Icon" class="h-5 w-5">
                                             </button>
                                         </div>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>
@@ -190,41 +179,8 @@ export default {
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getCCReply()" :pagination="pagination"
+        <Pagination @paginate="getAPApprovalHistory()" :pagination="pagination"
             :offset="1" class = "py-10"/>
     </div>
 
-    <Slideover :show="replyOpen" @close="replyToggle" :title="'CANCELLATION'" :iconShow="''">
-        <div class="flex flex-col justify-between h-full pb-5 mx-10">
-            <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
-                    <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'cancellation ref. no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :isDisabled="true"/>
-                    <InputGroup :inputLabel="'beneficiary'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'account number'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup  :inputLabel="'bank'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'amount'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'remarks'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'operations maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'cmt maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                </div>
-                <div class="flex flex-col gap-2 pb-[50px]">
-                    <div class="flex flex-col gap-2">
-                        <InputGroupSelectMenu :label="'confirmation status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :options="statusOption"/>
-                        <div class="flex justify-end">
-                            <div class="flex items-center gap-[5px] w-[58%]">
-                                <input type="checkbox" name="confirm-status">
-                                <span class="uppercase text-[11px]">special handling</span>
-                            </div>
-                        </div>
-                    </div>
-                    <TextAreaGroup :inputLabel="'reply'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <BorderButton @click.prevent="replyToggle()" :buttonLabel="'cancel'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton :buttonLabel="'save'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
-            </div>
-        </div>
-    </Slideover>
 </template>

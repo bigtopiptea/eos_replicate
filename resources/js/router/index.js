@@ -818,7 +818,7 @@ const routes = [
             },
             {
                 path: "/app/accounting/monitoring",
-                name: "Accounting Monitoring",
+                name: "Monitoring",
                 component: AccountingMonitoring,
                 meta: {
                     title: `Accounting Monitoring`,
