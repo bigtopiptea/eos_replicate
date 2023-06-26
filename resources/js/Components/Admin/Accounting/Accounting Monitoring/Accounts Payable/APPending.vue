@@ -48,10 +48,14 @@ export default {
                 {label:'CREATED BY'},
                 {label:'STATUS'},
             ],
-            bulkOptions:[
+            bulkOptionsVerifier:[
                 {label: 'verify'},
                 {label: 'reject'},
-            ]
+            ],
+            bulkOptionsApprover:[
+                {label: 'approve'},
+                {label: 'reject'},
+            ],
         }
     },
     methods: {
@@ -88,8 +92,8 @@ export default {
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
                             </div>
                         </div>
-                        <div v-show="user.role == 'verifier'" class="left-side-col-2 text-[10px] mb-2">
-                            <DropDown label="bulk action" :options="bulkOptions"/>
+                        <div v-if="user.role == 'verifier' || user.role == 'approver'" class="left-side-col-2 text-[10px] mb-2">
+                            <DropDown label="bulk action" :options="user.role == 'verifier' ? bulkOptionsVerifier : bulkOptionsApprover"/>
                             <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
@@ -122,6 +126,10 @@ export default {
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         {{ label.label }}
+                                    </th>
+                                    <th v-if="user.role == 'verifier'" scope="col"
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        action
                                     </th>
                                 </tr>
                             </thead>
@@ -157,17 +165,17 @@ export default {
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
                                         for verification
                                     </td>
-                                    <!-- <td
+                                    <td v-if="user.role == 'verifier'"
                                         class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
                                         <div class="flex justify-around">
-                                            <button class="tooltip tooltip-left" data-tip="view">
-                                                <img src="../../../../../../assets/images/EyeIcon.png" alt="Eye Icon" class="h-5 w-5">
+                                            <button class="tooltip tooltip-left" data-tip="reject">
+                                                <img src="../../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
                                             </button>
-                                            <button class="tooltip tooltip-left" data-tip="reply">
-                                                <img src="../../../../../../assets/images/reply-icon.png" alt="Reply Icon" class="h-5 w-5">
+                                            <button class="tooltip tooltip-left" data-tip="verify">
+                                                <img src="../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                             </button>
                                         </div>
-                                    </td> -->
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

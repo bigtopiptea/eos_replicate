@@ -41,7 +41,6 @@ export default {
                 </div>
             </Tab>
         </TabNav>
-
     </div>
 </template>
 
