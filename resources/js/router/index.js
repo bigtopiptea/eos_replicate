@@ -6,6 +6,7 @@ import Login from "@/Components/Guest/Auth/Login.vue";
 import Register from "@/Components/Guest/Auth/Register.vue";
 import ForgotPassword from "@/Components/Guest/Auth/ForgotPassword.vue";
 import ResetPassword from "@/Components/Guest/Auth//PasswordReset.vue";
+import RemittanceInquiry from "@/Components/Guest/Auth/RemittanceInquiry.vue";
 
 import LandingPage from "@/Components/Guest/LandingPage/LandingPage.vue";
 /* Guest Component */
@@ -181,6 +182,14 @@ const routes = [
                 component: Login,
                 meta: {
                     title: `Login`,
+                },
+            },
+            {
+                name: "RemittanceInquiry",
+                path: "/remittance-inquiry",
+                component: RemittanceInquiry,
+                meta: {
+                    title: `Remittance Inquiry`,
                 },
             },
             {

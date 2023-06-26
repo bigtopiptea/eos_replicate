@@ -14,7 +14,7 @@ import EOSlogo from '../../../../assets/images/EOS.png';
 
         <div class="flex justify-between items-center w-full  fixed bottom-[50px] px-20">
             <router-link class="uppercase font-bold text-sm flex items-center hover:text-amber-500"
-                :to="{ path: '/user-manual' }">
+                :to="{ path: '/remittance-inquiry' }">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6 mr-2">
                     <path stroke-linecap="round" stroke-linejoin="round"
