@@ -3,11 +3,13 @@ import {defineComponent} from "vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import CreditConfirmation from "./Credit Confirmation/CreditConfirmation.vue";
+import AccountsPayable from "./Accounts Payable/AccountsPayable.vue";
 export default defineComponent({
     components: {
         Tab,
         TabNav,
-        CreditConfirmation
+        AccountsPayable,
+        CreditConfirmation,
     },
     data(){
         return {
@@ -28,7 +30,7 @@ export default defineComponent({
                    <CreditConfirmation/>
                </Tab>
                <Tab :isSelected="selected === 'Accounts Payable'">
-                   Accounts payable
+                   <AccountsPayable/>
                </Tab>
                <Tab :isSelected="selected === 'Purchase Order'">
                    Purchase order
