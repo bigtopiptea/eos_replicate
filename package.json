@@ -59,6 +59,7 @@
         "v-lazy-image": "^2.1.1",
         "v-select2-component": "^0.4.7",
         "vform": "^2.1.2",
+        "vue-captcha-code": "^1.0.2",
         "vue-chartjs": "^5.2.0",
         "vue-click-outside": "^1.1.0",
         "vue-click-outside-element": "^3.1.2",
