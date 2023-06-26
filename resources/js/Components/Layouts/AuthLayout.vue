@@ -68,6 +68,7 @@ export default {
                 {
                     to: "/app/billing-collection/home",
                     label: "Billing & Collection",
+                    icon: AmendmentIcon,
                     children: [
                         {
                             to: "/app/billing-collection/home",
@@ -99,10 +100,27 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    ],
-                    icon: AmendmentIcon,
+                    ],          
                 },
-
+                {
+                    to: "/app/accounting/home",
+                    label: "Accounting",
+                    icon: ReportIcon,
+                    children: [
+                        {
+                            to: "/app/accounting/home",
+                            label: "Home",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/monitoring",
+                            label: "Monitoring",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                    ],
+                },
 
                 {
                     to: "/app/distribution",

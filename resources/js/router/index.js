@@ -95,6 +95,10 @@ import BCClientsGrouping from "@/Components/Admin/New Settings/B&C-Settings/Clie
 import BCMaintanance from "@/Components/Admin/New Settings/B&C-Settings/Maintenance/Maintenance.vue";
 import BCCollectionTarget from "@/Components/Admin/New Settings/B&C-Settings/Collection Target/CollectionTarget.vue";
 
+//ACCOUNTING
+import AccountingHome from "@/Components/Admin/Accounting/Accounting Home/AccountingHome.vue";
+import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monitoring/AccountingMonitoring.vue";
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
@@ -800,6 +804,25 @@ const routes = [
                 meta: {
                     title: `Monitoring`,
                     ability: `PriMonitoringnt`,
+                },
+            },
+            // Accounting 6/26
+            {
+                path: "/app/accounting/home",
+                name: "Accounting Home",
+                component: AccountingHome,
+                meta: {
+                    title: `Accounting Home`,
+                    ability: `Accounting Home`,
+                },
+            },
+            {
+                path: "/app/accounting/monitoring",
+                name: "Accounting Monitoring",
+                component: AccountingMonitoring,
+                meta: {
+                    title: `Accounting Monitoring`,
+                    ability: `Accounting Monitoring`,
                 },
             },
             {
