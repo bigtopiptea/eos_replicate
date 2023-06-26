@@ -50,7 +50,9 @@ export default defineComponent({
 </script>
 <template>
     <!-- MAIN CONTENT -->
-    <HomeMainContent/>
+    <div>
+        <HomeMainContent/>
+    </div>
 
     <!-- FUNDING WORKSHEET (Currently Disabled - add '@click="openFundingWorksheet()"' to enable)-->
     <SmallHeading :isOpen="isOpen" label="FUNDING WORKSHEET" class="bg-#EE3E2C" :icon="ChevRightIcon" />

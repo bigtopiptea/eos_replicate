@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-[70px] justify-center w-full h-auto bg-white p-5">
     <div class="flex flex-col items-center justify-center h-[400px] w-full mt-[30px]">
       <h1 class="text-center font-semibold">BILLS PAYMENT</h1>
-      <Line :data="chartData" :options="chartOptions"/>
+      <Line :data="billsPayment" :options="chartOptions"/>
     </div>
     <div class="flex justify-center gap-[15px]">
       <div v-for="stat in statsTracker" :key="stat.id">
@@ -20,11 +20,11 @@
     <div class="flex justify-between w-full">
       <div class="h-[300px] w-[45%]">
         <h1 class="text-center font-semibold">COLLECTION EFFICIENCY</h1>
-        <Line :data="chartDataTwo" :options="chartOptions"/>
+        <Line :data="collectionEfficiency" :options="chartOptions"/>
       </div>
       <div class="h-[300px] w-[45%]">
         <h1 class="text-center font-semibold">BILLING SUMMARY</h1>
-        <Line :data="chartDataThree" :options="chartOptions"/>
+        <Line :data="billingSummary" :options="chartOptions"/>
       </div>
     </div>
   </div>
@@ -52,12 +52,11 @@
   Legend)
   
   export default {
-    name: 'LineChart',
     components: { Line },
     data() {
       return {
         // CHART 1
-        chartData: {
+        billsPayment: {
           labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
@@ -74,7 +73,7 @@
         },
 
         // Chart 2
-        chartDataTwo: {
+        collectionEfficiency: {
           labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
@@ -85,7 +84,7 @@
           ]
         },
         // Chart 3
-        chartDataThree: {
+        billingSummary: {
           labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
           datasets: [
             {
