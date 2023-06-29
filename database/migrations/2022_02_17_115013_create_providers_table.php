@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('fax_no');
             $table->string('account_no');
             $table->string('contact_no');
-            $table->string('account_officer');
+            // $table->string('account_officer');
             $table->double('transaction_cost', 8, 2)->default(0.00);
             $table->json('amount_range');
             $table->string('designation');
