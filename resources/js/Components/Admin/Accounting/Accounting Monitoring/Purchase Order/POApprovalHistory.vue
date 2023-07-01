@@ -14,7 +14,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 export default {
 
-    name:'AP Pending',
+    name:'PO Approval History',
 
     components:{
         ChevRightIcon,
@@ -35,18 +35,19 @@ export default {
     data() {
         return {
             user: this.$store.state.auth.user,
-            APPending: [],
+            POApprovalHistory: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'ID'},
                 {label:'DATE'},
                 {label:'PAYEE'},
                 {label:'INVOICE NO.'},
-                {label:'INVOICE AMOUNT'},
+                {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
+                {label:'APPROVED BY'},
+                {label:'DATE APPROVED'},
             ],
             bulkOptionsVerifier:[
                 {label: 'verify'},
@@ -59,11 +60,11 @@ export default {
         }
     },
     methods: {
-        async getAPPending() {
+        async getPOApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.APPending = response.data.data;
+                    this.POApprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -123,21 +124,23 @@ export default {
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
+                                    <th scope="col"
+                                        class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        <input type="checkbox">
+                                        apv no.
+                                    </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         {{ label.label }}
-                                    </th>
-                                    <th v-if="user.role == 'verifier' || user.role == 'approver'" scope="col"
-                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
-                                        action
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="#">
+                                        class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                        <input type="checkbox">
+                                        <a class="underline text-cyan-600" href="">    
                                             01
                                         </a>
                                     </td>
@@ -147,7 +150,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INKLINE OFFICE SOLUTIONS INC.
+                                        metrobank
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -163,9 +166,17 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        for verification
+                                        approved
                                     </td>
-                                    <td v-if="user.role == 'verifier'"
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        asis, ginalyn ibarra
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        09/28/2022 11:00:09 PM
+                                    </td>
+                                    <!-- <td v-if="user.role == 'verifier'"
                                         class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
                                         <div class="flex justify-around">
                                             <button class="tooltip tooltip-left" data-tip="reject">
@@ -175,7 +186,7 @@ export default {
                                                 <img src="../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                             </button>
                                         </div>
-                                    </td>
+                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>
@@ -183,7 +194,7 @@ export default {
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getAPPending()" :pagination="pagination"
+        <Pagination @paginate="getPOApprovalHistory()" :pagination="pagination"
             :offset="1" class = "py-10"/>
     </div>
 
