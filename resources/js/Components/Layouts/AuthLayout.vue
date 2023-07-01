@@ -119,6 +119,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/accounting/transactions/purchase-order",
+                            label: "Transaction",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ],
                 },
 
@@ -426,21 +432,6 @@ export default {
                         },
                     ],
                     icon: SettingsIcon,
-                    toggleOffIcon: ChevLeftIcon,
-                },
-                {
-                    to: "/app/accounting/transactions/purchase-order",
-                    label: "Accounting Transaction",
-                    children: [
-                        {
-                            to: "/app/accounting/transactions/purchase-order",
-                            label: "Accounting - Purchase Order",
-                            children: [],
-                            icon: CircleCheckIcon,
-                        },
-
-                    ],
-                    icon: ReportIcon,
                     toggleOffIcon: ChevLeftIcon,
                 },
                 {

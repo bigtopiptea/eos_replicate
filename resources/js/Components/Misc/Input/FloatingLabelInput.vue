@@ -14,7 +14,7 @@ export default{
   props: {
     inputLabel:{
         type: String,
-        default: 'Label'
+        default: ''
     },
     labelTextSize:{
         type: String,

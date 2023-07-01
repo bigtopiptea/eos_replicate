@@ -816,7 +816,7 @@ const routes = [
                 name: "Accounting Home",
                 component: AccountingHome,
                 meta: {
-                    title: `Accounting Home`,
+                    title: `Home`,
                     ability: `Accounting Home`,
                 },
             },
@@ -825,7 +825,7 @@ const routes = [
                 name: "Monitoring",
                 component: AccountingMonitoring,
                 meta: {
-                    title: `Accounting Monitoring`,
+                    title: `Monitoring`,
                     ability: `Accounting Monitoring`,
                 },
             },
@@ -834,7 +834,7 @@ const routes = [
                 name: "Accounting Purchase Order",
                 component: AccountingPurchaseOrder,
                 meta: {
-                    title: `Accounting Purchase Order`,
+                    title: `Purchase Order`,
                     ability: `Accounting Purchase Order`,
                 },
             },
