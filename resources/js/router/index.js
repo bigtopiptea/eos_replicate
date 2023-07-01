@@ -99,6 +99,10 @@ import BCCollectionTarget from "@/Components/Admin/New Settings/B&C-Settings/Col
 import AccountingHome from "@/Components/Admin/Accounting/Accounting Home/AccountingHome.vue";
 import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monitoring/AccountingMonitoring.vue";
 
+//ACCOUNTING TRANSACTIONS
+
+import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
@@ -823,6 +827,15 @@ const routes = [
                 meta: {
                     title: `Accounting Monitoring`,
                     ability: `Accounting Monitoring`,
+                },
+            },
+            {
+                path: "/app/accounting/transactions/purchase-order",
+                name: "Accounting Purchase Order",
+                component: AccountingPurchaseOrder,
+                meta: {
+                    title: `Accounting Purchase Order`,
+                    ability: `Accounting Purchase Order`,
                 },
             },
             {
