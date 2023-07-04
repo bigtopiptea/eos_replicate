@@ -1,8 +1,8 @@
 <template>
     <Listbox as="div" v-model="selected">
       <div class="relative flex items-center h-7 w-full">
-        <ListboxLabel class="inline-flex items-center text-[11px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">{{ label }}</ListboxLabel>
-        <ListboxButton class="relative h-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[11px]" :class="inputWidth">
+        <ListboxLabel class="inline-flex items-center text-[10px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">{{ label }}</ListboxLabel>
+        <ListboxButton class="relative h-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[10px]" :class="inputWidth">
           <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.name }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">

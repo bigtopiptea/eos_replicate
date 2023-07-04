@@ -119,15 +119,29 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                        {
-                            to: "/app/accounting/transactions/purchase-order",
-                            label: "Transaction",
-                            children: [],
-                            icon: CircleCheckIcon,
-                        },
                     ],
                 },
-
+                {
+                    to: "/app/accounting/transactions/purchase-order",
+                    label: "Accounting Transaction",
+                    toggleOffIcon: ChevLeftIcon,
+                    icon: ReportIcon,
+                    children: [
+                        {
+                            to: "/app/accounting/transactions/purchase-order",
+                            label: "Purchase Order",
+                            children: [
+                            ],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/transactions/accounts-payable-voucher",
+                            label: "Acc. Payable Voucher",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        }
+                    ],
+                },
                 {
                     to: "/app/distribution",
                     label: "Distribution",

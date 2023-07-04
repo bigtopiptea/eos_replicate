@@ -14,7 +14,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 export default {
 
-    name:'TPO Pending',
+    name:'AT Pending',
 
     components:{
         ChevRightIcon,
@@ -35,15 +35,15 @@ export default {
     data() {
         return {
             user: this.$store.state.auth.user,
-            TPOPending: [],
+            ATPending: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'TRANSACTION DATE'},
-                {label:'VALUE DATE'},
-                {label:'NAME'},
-                {label:'PARTICULARS'},
+                {label:'DATE'},
+                {label:'PAYEE'},
+                {label:'INVOICE NO.'},
+                {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
             ],
@@ -51,11 +51,11 @@ export default {
         }
     },
     methods: {
-        async getTPOPending() {
+        async getATPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.TPOPending = response.data.data;
+                    this.ATPending = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -81,7 +81,7 @@ export default {
                                 <DateInput label="End Date" />
                             </div>
                             <div>
-                                <NormalButton label="Filter"
+                                <NormalButton @click="isFiltered = !isFiltered" label="Filter"
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
                             </div>
                         </div>
@@ -106,7 +106,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered">
+            <div v-if="isFiltered" class="mt-[30px]">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
@@ -116,15 +116,11 @@ export default {
                                         <th scope="col"
                                             class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                             <input type="checkbox">
-                                            je no.
+                                            apv no.
                                         </th>
                                         <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                            class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
                                             {{ label.label }}
-                                        </th>
-                                        <th  v-if="user.role == 'verifier' || user.role == 'approver'" scope="col"
-                                            class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
-                                            action
                                         </th>
                                     </tr>
                                 </thead>
@@ -133,25 +129,25 @@ export default {
                                         <td
                                             class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                             <input type="checkbox">
-                                            <p :class="user.role == 'maker' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">    
-                                                je001
+                                            <p class="text-black">    
+                                                001
                                             </p>
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            09/28/2022
+                                            09/28/2022 10:55:09 aM
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            09/28/2022
+                                            metrobank
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            zenshin
+                                            inv000001
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            To reclass funding for payment payable to Zenshin for payment...
+                                            9,955.36
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -161,24 +157,13 @@ export default {
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
                                             for verification
                                         </td>
-                                        <td v-if="user.role == 'verifier' || user.role == 'approver'"
-                                            class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
-                                            <div class="flex justify-around">
-                                                <button class="tooltip tooltip-left" data-tip="reject">
-                                                    <img src="../../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
-                                                </button>
-                                                <button class="tooltip tooltip-left" data-tip="verify">
-                                                    <img src="../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
-                                                </button>
-                                            </div>
-                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getTPOPending()" :pagination="pagination"
+                <Pagination @paginate="getATPending()" :pagination="pagination"
                     :offset="1" class = "py-10"/>
             </div>
             <div v-else class="flex flex-col items-center justify-center py-20">

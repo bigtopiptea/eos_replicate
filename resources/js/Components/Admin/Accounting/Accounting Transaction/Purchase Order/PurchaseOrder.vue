@@ -99,7 +99,7 @@
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
                                 <!-- add increment/decrement button -->
-                                <FloatingLabelInput :inputWidth="'w-12/12'"  :inputType="'number'"/>
+                                <input type="number" class="bg-white uppercase h-7 p-1 border border-gray-300 text-[#3E3E3E] pl-2 text-center w-full">
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
@@ -112,8 +112,13 @@
                         </tr>
                     </tbody>
                 </table>
+
             </div>
-            <div class="flex flex-col gap-[30px] text-[10px] uppercase">
+            <div class="flex flex-col text-[10px] uppercase">
+                <div class="flex gap-[10px] mb-[5px]">
+                    <BorderButton :buttonLabel="'add new line'" :buttonPadding="'p-0'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                    <BorderButton :buttonLabel="'clear all'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#ee3e2c]'" :buttonBorderColor="'border-[#ee3e2c]'" :buttonHover="'hover:bg-[#ee3e2c]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                </div>
                 <div class="flex gap-[2px]  h-[110px]">
                     <div class="w-[75%] relative">
                         <label for="remarks" class="absolute top-[2px] left-[2px] pt-[10px] pl-[10px] bg-white w-[99%]">Remarks</label>
@@ -134,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center gap-[20px]">
+                <div class="flex justify-center gap-[20px] mt-[30px]">
                     <BorderButton @click.prevent="openModalToggle()" :buttonLabel="'CANCEL'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
                     <BorderButton :buttonLabel="'CREATE'" :buttonPadding="'p-1'" :buttonTextSize="'text-[13px]'"/>
                 </div>
