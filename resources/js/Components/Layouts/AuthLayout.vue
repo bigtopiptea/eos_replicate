@@ -345,21 +345,27 @@ export default {
                     to: '/app/other-services/pushback',
                     label: 'Other Services',
                     children: [
-                    {
+                        {
                             to: "/app/other-services/pushback",
                             label: "Pushback",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/other-services/upload-usf",
                             label: "Upload USF",
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                    {
+                        {
                             to: "/app/other-services/consolidated-proofsheet",
                             label: "Proofsheet",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/other-services/je-maintenance",
+                            label: "JE Maintenance",
                             children: [],
                             icon: CircleCheckIcon,
                         },

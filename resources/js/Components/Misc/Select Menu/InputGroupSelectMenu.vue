@@ -1,7 +1,10 @@
 <template>
     <Listbox as="div" v-model="selected">
       <div class="relative flex items-center h-7 w-full">
-        <ListboxLabel class="inline-flex items-center text-[10px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">{{ label }}</ListboxLabel>
+        <ListboxLabel class="inline-flex items-center text-[10px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">
+          {{ label }}
+          <span v-show="isRequired" class="ml-1 text-red-500">*</span>
+        </ListboxLabel>
         <ListboxButton class="relative h-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300  focus:outline-none text-[10px]" :class="inputWidth">
           <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.name }}</span>
@@ -64,6 +67,10 @@
         placeholder:{
             type:String,
             default:''
+        },
+        isRequired:{
+          type: Boolean,
+          default: false
         },
     },
 
