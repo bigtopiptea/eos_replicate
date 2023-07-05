@@ -104,6 +104,9 @@ import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monit
 import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
 import AccountingAccountsPayable from "@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/AccountsPayableVoucher.vue";
 
+// ACCOUNTING OTHER SERVICES
+import AccountingJEMaintenance from "@/Components/Admin/Accounting/Accounting Other Services/Journal Entry Maintenance/JEMaintenance.vue";
+
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
 import Outfile from "@/Components/Admin/Monitor & Transactions/Outfile.vue";
@@ -637,6 +640,16 @@ const routes = [
                 meta: {
                     title: `Consolidated Proofsheet`,
                     ability: `Consolidated Proofsheet`,
+                },
+            },
+            // Accounting Other services - JE Maintenance (7/5/2023)
+            {
+                path: "/app/other-services/je-maintenance",
+                name: "Accounting Journal Entry Maintenance",
+                component: AccountingJEMaintenance,
+                meta: {
+                    title: `Journal Entry Maintenance`,
+                    ability: `Accounting Journal Entry Maintenance`,
                 },
             },
             {
