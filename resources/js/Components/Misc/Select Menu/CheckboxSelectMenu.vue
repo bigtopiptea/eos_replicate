@@ -5,7 +5,7 @@
           {{ label }}
           <span :hidden="isRequired ? false : true" class="ml-1 text-red-500 text-[10px]">*</span>
         </ListboxLabel>
-        <ListboxButton class="relative w-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-gray-300 focus:outline-none text-[11px]" :class="buttonHeight">
+        <ListboxButton class="relative w-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 focus:outline-none text-[11px]" :class="[buttonHeight,showBorder]">
           <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.label }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -73,6 +73,10 @@
         buttonHeight:{
           type: String,
           default: "h-7"
+        },
+        showBorder:{
+          type: String,
+          default: "border border-gray-300"
         }
     },
 

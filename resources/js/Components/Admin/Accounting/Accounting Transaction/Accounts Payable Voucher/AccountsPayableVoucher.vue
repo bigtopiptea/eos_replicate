@@ -22,9 +22,15 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
         data(){
 
             return{
+                isLoad:false,
+                vatRateOption:[
+                    {label:'NON-VAT'},
+                    {label:'VAT-INCLUSIVE (12%)'},
+                    {label:'VAT-INCLUSIVE (20%)'},
+                ],
                 purchaseOrderLabels:[
                     {label:'ACCOUNTING TITLE'},
-                    {label:'BRANCH'},
+                    {label:'COST CENTER'},
                     {label:'SERVICES'},
                     {label:'DEBT'},
                     {label:'CREDIT'},
@@ -41,7 +47,7 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                 ],
                 selected:'Pending',
                 openModal:false,
-
+                testCounter:1,
             }
         },
 
@@ -51,6 +57,12 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
             },
             openModalToggle(){
                 this.openModal = false;
+            },
+            addNewLine(){
+                this.testCounter++;
+            },
+            clearAll(){
+                this.testCounter=1;
             }
         }
     }
@@ -72,14 +84,14 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
     <ModalTwo :show="openModal" @close="openModalToggle" :modalTitle="'Create AP Voucher'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
         <div class="w-full flex flex-col gap-[30px] p-5">
             <div class="uppercase text-[10px]">
-                <div class="flex items-center w-[35%] ">
+                <div class="flex items-center w-[35%] h-3 ">
                     <div class="w-[50%]">
                         <div class="flex item-center gap-[5px]">
-                            <input type="checkbox" name="load_purchase">
+                            <input v-model="isLoad" type="checkbox" name="load_purchase">
                             <label for="load_purchase">load from purchase order</label>
                         </div>
                     </div>
-                    <div class="relative w-[50%]">
+                    <div v-show="isLoad == true" class="relative w-[50%]">
                         <input type="text" class="bg-white uppercase h-7 p-1 border border-gray-300 text-[#3E3E3E] pr-[30px]  w-full">
                         <div class="absolute top-[4px] right-[5px] cursor-pointer">
                             <SearchIcon />
@@ -93,7 +105,7 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
             <div class="flex justify-between w-full">
                 <div class="flex flex-col justify-between w-[33%]">
                     <div>
-                        <InputGroup :inputLabel="'date'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'date'"/>
+                        <InputGroup :inputLabel="'date'" :inputWidth="'w-7/12'" :isDisabled="true" :labelWidth="'w-5/12'" :inputType="'date'"/>
                     </div>
                     <div>
                         <InputGroup :inputLabel="'ap voucher no.'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
@@ -106,6 +118,9 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                     </div>
                     <div>
                         <TextAreaGroup :inputLabel="'particulars'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
+                    </div>
+                    <div class="ml-1">
+                        <BorderButton :buttonLabel="'attachments'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3e3e3e]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
                     </div>
                 </div>
                 <div class="flex flex-col gap-[5px] w-[33%]">
@@ -138,74 +153,74 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
             <div class="relative">
                 <table class="min-w-full divide-y divide-gray-300 ">
                     <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0 border">
-                        <tr class="divide-x divide-gray-300">
+                        <tr class="divide-x divide-gray-300 w-full">
                             <th v-for="label in purchaseOrderLabels" :key="label.label" scope="col"
-                                class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                class=" whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                 {{ label.label }}
                             </th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center border-x">
-                        <tr class="divide-x divide-gray-300">
+                        <tr v-for="testCounter in testCounter" :key="testCounter" class="divide-x divide-gray-300 w-full">
                             <td
-                                class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                               -
+                                class="whitespace-nowrap uppercase tracking-wider text-left">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" :showBorder="'border-none'"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                                <CheckboxSelectMenu  :inputWidth="'w-12/12'"  :placeholder="'SELECT branch'" :options="branchOption"/>
+                                class="whitespace-nowrap uppercase  tracking-wider text-left">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" :showBorder="'border-none'"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                class="whitespace-nowrap uppercase px-2 tracking-wider text-left">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase px-2  tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase px-2  tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase  tracking-wider text-right">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" :showBorder="'border-none'"/>
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase px-2   tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase  tracking-wider text-right">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" :showBorder="'border-none'"/>
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase px-2 tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                -
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                -
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase px-2 tracking-wider text-right">
                                 -
                             </td>
                         </tr>
                     </tbody>
                     <tfoot class="font-light text-[10px] text-center">
-                        <td colspan="2" class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                            <div class="flex gap-[10px] mb-[5px]">
-                                <BorderButton :buttonLabel="'add new line'" :buttonPadding="'p-0'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
-                                <BorderButton :buttonLabel="'clear all'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#ee3e2c]'" :buttonBorderColor="'border-[#ee3e2c]'" :buttonHover="'hover:bg-[#ee3e2c]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                        <td colspan="2" class="whitespace-nowrap uppercase  tracking-wider text-right">
+                            <div class="flex gap-[10px] m-[5px]">
+                                <BorderButton @click="addNewLine" :buttonLabel="'add new line'" :buttonPadding="'p-0'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                                <BorderButton @click="clearAll" :buttonLabel="'clear all'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#ee3e2c]'" :buttonBorderColor="'border-[#ee3e2c]'" :buttonHover="'hover:bg-[#ee3e2c]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
                             </div>
                         </td>
-                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right font-bold ">
+                        <td class="whitespace-nowrap uppercase px-2 tracking-wider text-right font-bold ">
                             total
                         </td>
-                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right border">
+                        <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
                             -
                         </td>
-                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right border">
+                        <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
                             -
                         </td>
-                        <td colspan="5" class="whitespace-nowrap uppercase p-2 tracking-wider text-right"></td>
+                        <td colspan="5" class="whitespace-nowrap uppercase   tracking-wider text-right"></td>
                     </tfoot>
                 </table>
                 <div class="flex justify-center gap-[20px] mt-[30px]">

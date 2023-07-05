@@ -47,7 +47,7 @@
                     <div>
                         <TextAreaGroup :inputLabel="'delivery address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputHeight="'h-[70px]'" :isDisabled="true" />
                     </div>
-                    
+
                 </div>
                 <div class="flex flex-col justify-between w-[33%]">
                     <div>
@@ -196,7 +196,20 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                 ],
                 selected:'Pending',
                 openModal:false,
-
+                sampleOption:[
+                    {label:'A'},
+                    {label:'B'},
+                    {label:'C'},
+                ],
+                labels:[
+                    {label:'#'},
+                    {label:'Cost Center'},
+                    {label:'Description'},
+                    {label:'Unit'},
+                    {label:'Quantity'},
+                    {label:'Unit Price'},
+                    {label:'Amount'},
+                ]
             }
         },
 
