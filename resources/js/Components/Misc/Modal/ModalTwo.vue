@@ -17,7 +17,7 @@
                       </div>
                     </div>
                 </div>
-                <div class="flex justify-start flex-col mt-[30px]" :class="[heightModal, titlePosition]">
+                <div class="flex justify-start flex-col mt-[30px] overflow-y-auto" :class="[heightModal, titlePosition]">
                     <!-- <div class="text-center">
                         <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
                             {{ title }}

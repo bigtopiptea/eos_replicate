@@ -46,6 +46,8 @@ export default {
                 {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
+                {label:'APPROVED BY'},
+                {label:'DATE APPROVED'},
             ],
             isFiltered: false
         }
@@ -156,6 +158,14 @@ export default {
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
                                             for verification
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            asis, ginalyn ibarra
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            09/29/2022 10:55:09 aM
                                         </td>
                                     </tr>
                                 </tbody>

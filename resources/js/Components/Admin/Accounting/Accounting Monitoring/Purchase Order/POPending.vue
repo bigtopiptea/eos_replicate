@@ -12,10 +12,9 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
-import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 export default {
 
-    name:'CC Reply',
+    name:'PO Pending',
 
     components:{
         ChevRightIcon,
@@ -29,45 +28,41 @@ export default {
         ListIcon,
         DateInput,
         Pagination,
-        Slideover,
         TextAreaGroup,
         InputGroupSelectMenu,
     },
 
     data() {
         return {
-            CCReply: [],
+            user: this.$store.state.auth.user,
+            POPending: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
                 {label:'DATE'},
-                {label:'REFERENCE NO.'},
-                {label:'CANCELLATION REF. NO.'},
-                {label:'FROM'},
-                {label:'TO'},
-                {label:'CURRENCY'},
-                {label:'AMOUNT'},
-                {label:'REMARKS'},
-                {label:'ACTION'},
+                {label:'PAYEE'},
+                {label:'INVOICE NO.'},
+                {label:'ACCOUNTS PAYABLE'},
+                {label:'CREATED BY'},
+                {label:'STATUS'},
             ],
-            statusOption:[
-                {label: 'no credit bank'},
-                {label: 'with credit bank'},
-                {label: 'no credit bank'},
+            bulkOptionsVerifier:[
+                {label: 'verify'},
+                {label: 'reject'},
             ],
-            replyOpen: false,
+            bulkOptionsApprover:[
+                {label: 'approve'},
+                {label: 'reject'},
+            ],
         }
     },
     methods: {
-        replyToggle() {
-            this.replyOpen = false;
-        },
-        async getCCReply() {
+        async getPOPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.CCReply = response.data.data;
+                    this.POPending = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -83,7 +78,7 @@ export default {
         <div>
             <div class="inline-block min-w-full align-middle ">
                 <div class="flex justify-between h-full min-w-full ">
-                    <div class="flex justify-start flex-col space-x-3">
+                    <div class="flex justify-start flex-col gap-3">
                         <div class="flex items-end gap-3 left-side-col-1">
                             <div>
                                 <DateInput label="Start Date" />
@@ -95,6 +90,10 @@ export default {
                                 <NormalButton label="Filter"
                                 class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
                             </div>
+                        </div>
+                        <div v-if="user.role == 'verifier' || user.role == 'approver'" class="left-side-col-2 text-[10px] mb-2">
+                            <DropDown label="bulk action" :options="user.role == 'verifier' ? bulkOptionsVerifier : bulkOptionsApprover"/>
+                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
                         </div>
                     </div>
                     <div class="right-side mt-[5px]">
@@ -124,13 +123,17 @@ export default {
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="flex items-center justify-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         <input type="checkbox">
-                                        id
+                                        apv no.
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         {{ label.label }}
+                                    </th>
+                                    <th  v-if="user.role == 'verifier' || user.role == 'approver'" scope="col"
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        action
                                     </th>
                                 </tr>
                             </thead>
@@ -139,9 +142,9 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <p class="underline text-cyan-500 cursor-pointer">
+                                        <a class="underline text-cyan-600" href="">    
                                             01
-                                        </p>
+                                        </a>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -149,42 +152,32 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        REDHA-09282022-0001
+                                        metrobank
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="">
-                                            amd-09282022-0001
-                                        </a>
+                                        INV00000001
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        BDO 
+                                        10,000.00
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        OUT
+                                        sabado, christian peralta
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        PHP
+                                        for verification
                                     </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        58,650.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INVALID ACCOUNT NO.
-                                    </td>
-                                    <td
+                                    <td v-if="user.role == 'verifier' || user.role == 'approver'"
                                         class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
                                         <div class="flex justify-around">
-                                            <button class="tooltip tooltip-left" data-tip="view">
-                                                <img src="../../../../../../assets/images/EyeIcon.png" alt="Lists Icon" class="h-5 w-5">
+                                            <button class="tooltip tooltip-left" data-tip="reject">
+                                                <img src="../../../../../../assets/images/RejectIcon.png" alt="Reject Icon" class="h-5 w-5">
                                             </button>
-                                            <button @click="(replyOpen = !replyOpen)" class="tooltip tooltip-left" data-tip="reply">
-                                                <img src="../../../../../../assets/images/reply-icon.png" alt="Reply Icon" class="h-5 w-5">
+                                            <button class="tooltip tooltip-left" data-tip="verify">
+                                                <img src="../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
                                             </button>
                                         </div>
                                     </td>
@@ -195,41 +188,8 @@ export default {
                 </div>
             </div>
         </div>
-        <Pagination @paginate="getCCReply()" :pagination="pagination"
+        <Pagination @paginate="getPOPending()" :pagination="pagination"
             :offset="1" class = "py-10"/>
     </div>
 
-    <Slideover :show="replyOpen" @close="replyToggle" :title="'CANCELLATION'" :iconShow="''">
-        <div class="flex flex-col justify-between h-full pb-5 mx-10">
-            <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
-                    <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'cancellation ref. no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :isDisabled="true"/>
-                    <InputGroup :inputLabel="'beneficiary'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'account number'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup  :inputLabel="'bank'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'amount'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'remarks'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'operations maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                    <InputGroup :inputLabel="'cmt maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                </div>
-                <div class="flex flex-col gap-2 pb-[50px]">
-                    <div class="flex flex-col gap-2">
-                        <InputGroupSelectMenu :label="'confirmation status'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :options="statusOption"/>
-                        <div class="flex justify-end">
-                            <div class="flex items-center gap-[5px] w-[58%]">
-                                <input type="checkbox" name="confirm-status">
-                                <span class="uppercase text-[11px]">special handling</span>
-                            </div>
-                        </div>
-                    </div>
-                    <TextAreaGroup :inputLabel="'reply'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"/>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <BorderButton @click.prevent="replyToggle()" :buttonLabel="'cancel'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton :buttonLabel="'save'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
-            </div>
-        </div>
-    </Slideover>
 </template>

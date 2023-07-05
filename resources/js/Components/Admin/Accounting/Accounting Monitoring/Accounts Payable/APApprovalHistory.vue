@@ -40,7 +40,6 @@ export default {
                 current_page: 1,
             },
             labels:[
-                {label:'ID'},
                 {label:'DATE'},
                 {label:'PAYEE'},
                 {label:'INVOICE NO.'},
@@ -113,6 +112,11 @@ export default {
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
+                                    <th scope="col"
+                                        class="flex justify-center items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        <input type="checkbox">
+                                        id
+                                    </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         {{ label.label }}
@@ -122,10 +126,11 @@ export default {
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="#">
+                                        class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                        <input type="checkbox">
+                                        <p class="underline text-cyan-500 cursor-pointer">
                                             01
-                                        </a>
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">

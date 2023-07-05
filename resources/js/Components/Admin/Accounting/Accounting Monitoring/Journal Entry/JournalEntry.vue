@@ -3,15 +3,15 @@
 import SmallHeading from "@/Components/Misc/Heading/SmallHeading.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
-import APPending from "./APPending.vue";
-import APApprovalHistory from "./APApprovalHistory.vue";
+import JEPending from "./JEPending.vue";
+import JEApprovalHistory from "./JEApprovalHistory.vue";
 
 export default {
     components: {
         SmallHeading,
         TabNav,Tab,
-        APPending,
-        APApprovalHistory
+        JEPending,
+        JEApprovalHistory
     },
     data(){
         return {
@@ -32,12 +32,12 @@ export default {
         <TabNav :tabs="['Pending' , 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'">
             <Tab :isSelected="selected === 'Pending'" >
                 <div class="w-full h-auto">
-                    <APPending/>
+                    <JEPending/>
                 </div>
             </Tab>
             <Tab :isSelected="selected === 'Approval History'" >
                 <div class="w-full h-auto">
-                    <APApprovalHistory/>
+                    <JEApprovalHistory/>
                 </div>
             </Tab>
         </TabNav>

@@ -102,6 +102,7 @@ import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monit
 //ACCOUNTING TRANSACTIONS
 
 import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
+import AccountingAccountsPayable from "@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/AccountsPayableVoucher.vue";
 
 // import Settings from "@/Components/Admin/Settings/Settings.vue";
 import Process from "@/Components/Admin/Process/Process.vue";
@@ -816,7 +817,7 @@ const routes = [
                 name: "Accounting Home",
                 component: AccountingHome,
                 meta: {
-                    title: `Accounting Home`,
+                    title: `Home`,
                     ability: `Accounting Home`,
                 },
             },
@@ -825,7 +826,7 @@ const routes = [
                 name: "Monitoring",
                 component: AccountingMonitoring,
                 meta: {
-                    title: `Accounting Monitoring`,
+                    title: `Monitoring`,
                     ability: `Accounting Monitoring`,
                 },
             },
@@ -834,9 +835,18 @@ const routes = [
                 name: "Accounting Purchase Order",
                 component: AccountingPurchaseOrder,
                 meta: {
-                    title: `Accounting Purchase Order`,
+                    title: `Purchase Order`,
                     ability: `Accounting Purchase Order`,
                 },
+            },
+            {
+                path: "/app/accounting/transactions/accounts-payable-voucher",
+                name: "Accounting Accounts Payable Voucher",
+                component: AccountingAccountsPayable,
+                meta: {
+                    title: `Accounts Payable Voucher`,
+                    ability: `Accounting Accounts Payable Voucher`,
+            },
             },
             {
                 path: "/app/help",
