@@ -4,6 +4,7 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
 import TextAreaGroupMenu from '@/Components/Misc/Input/TextAreaGroupMenu.vue';
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
 import InputGroupSelectMenu from "@/Components/Misc/Select Menu/InputGroupSelectMenu.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
@@ -22,6 +23,7 @@ export default {
         BorderButton,
         TextAreaGroupMenu,
         InputGroupSelectMenu,
+        CheckboxSelectMenu,
         Slideover,
         Tags,
         JournalEntries,
@@ -31,30 +33,11 @@ export default {
     data(){
         return {
             selected: "Journal Entry",
-            clientOption:[
-                {label: 'CLIENT NAME 1'},
-                {label: 'CLIENT NAME 2'},
-                {label: 'CLIENT NAME 3'},
-            ],
-            deptOption:[
-                {label: 'DEPARTMENT 1'},
-                {label: 'DEPARTMENT 2'},
-                {label: 'DEPARTMENT 3'},
-            ],
-            moduleOption:[
-                {label: 'MODULE 1'},
-                {label: 'MODULE 2'},
-                {label: 'MODULE 3'},
-            ],
-            providerOption:[
-                {label: 'PROVIDER 1'},
-                {label: 'PROVIDER 2'},
-                {label: 'PROVIDER 3'},
-            ],
-            accountOption:[
-                {label: 'ACCOUNT NAME 1'},
-                {label: 'ACCOUNT NAME 2'},
-                {label: 'ACCOUNT NAME 3'},
+            addFormulaSelected: "Use Existing",
+            sampleOption:[
+                {label: 'OPTION 1'},
+                {label: 'OPTION 2'},
+                {label: 'OPTION 3'},
             ],
             remarksOption:[
                 {label: 'remarks templates'},
@@ -83,9 +66,36 @@ export default {
                 {label: 'reference_no', color: 'bg-[#3e3e3e]'},
                 {label: 'rate', color: 'bg-[#f9951e]'},
             ],
+            useExistingLabels:[
+                {label: 'ID'},
+                {label: 'FORMULA'},
+            ],
+            createNewLabels:[
+                {label: 'VALUE'},
+                {label: 'OPERATOR'},
+                {label: 'SOURCE'},
+            ],
+            operatorOptions:[
+                {label: '('},
+                {label: ')'},
+                {label: '+'},
+                {label: '-'},
+                {label: '*'},
+                {label: '/'},
+            ],
+            sourceOptions:[
+                {label: 'GROSS AMOUNT'},
+                {label: '0.12'},
+                {label: '1.12'},
+                {label: '2'},
+            ],
             selectedRemarksOption: '',
             remarksTemplateOpen: false,
             createTemplateOpen: false,
+            addFormulaOpen: false,
+            newFormulaCount: 1,
+            addedTags: [],
+            remarks: "",
         }
     },
     methods: {
@@ -97,12 +107,34 @@ export default {
             this.createTemplateOpen = false;
             this.selectedRemarksOption = '';
         },
+        addTag(tag) {
+            const existingTag = this.addedTags.find(t => t.label === tag);
+            if (!existingTag) {
+                this.addedTags.push({ label: tag, color: this.getTagColor(tag) });
+            }
+        },
+        getTagComponent(label, bgColor) {
+            return `<Tags :label="'${label}'" :bgColor="'${bgColor}'"/>`;
+        },
+        getTagColor(label) {
+            const tag = this.tagList.find(tag => tag.label === label);
+            return tag ? tag.color : '';
+        },
+        addFormulaToggle() {
+            this.addFormulaOpen = false;
+        },
         setSelected(tab) {
             this.selected = tab;
+        },
+        addFormulaSetSelected(tab) {
+            this.addFormulaSelected = tab;
         },
         handleOptionSelected(label) {
             console.log('Selected option:', label);
             this.selectedRemarksOption = label;
+        },
+        addNew(){
+            this.newFormulaCount++;
         }
     }
 }
@@ -112,10 +144,10 @@ export default {
         <div class="p-[20px]">
             <div class="flex flex-col gap-[20px] w-[37%]">
                 <div class="flex flex-col gap-[10px] ">
-                    <InputGroupSelectMenu :label="'department'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select department'" :isRequired="true" :options="deptOption"/>
-                    <InputGroupSelectMenu :label="'client name'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select client name'" :isRequired="true" :options="clientOption"/>
-                    <InputGroupSelectMenu :label="'module'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select module'" :isRequired="true" :options="moduleOption"/>
-                    <InputGroupSelectMenu :label="'provider'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select/search provider'" :options="providerOption"/>
+                    <InputGroupSelectMenu :label="'department'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select department'" :isRequired="true" :options="sampleOption"/>
+                    <InputGroupSelectMenu :label="'client name'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select client name'" :isRequired="true" :options="sampleOption"/>
+                    <InputGroupSelectMenu :label="'module'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select module'" :isRequired="true" :options="sampleOption"/>
+                    <InputGroupSelectMenu :label="'provider'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select/search provider'" :options="sampleOption"/>
                     <InputGroupSelectMenu :label="'account name'"  :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :placeholder="'select account name'" :isRequired="true" :options="accountOption"/>
                     <div class="flex justify-between text-[10px] w-full h-7 whitespace-nowrap">
                         <label for="name" class="uppercase inline-flex items-center h-full px-2 text-left border border-[#EAEAEA] text-[10px] w-[41.5%]">
@@ -132,7 +164,7 @@ export default {
                                 <label class="uppercase" for="credit">credit</label>
                             </div>
                             <div>
-                                <BorderButton :buttonLabel="'add formula'" :buttonPadding="'p-1'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                                <BorderButton @click="(addFormulaOpen = !addFormulaOpen)" :buttonLabel="'add formula'" :buttonPadding="'p-1'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
                             </div>
                         </div>
                     </div>
@@ -236,11 +268,16 @@ export default {
             <div class="flex flex-col gap-[20px]">
                 <div class="relative text-[12px]">
                     <label for="remarks" class="absolute -top-[7px] left-[15px] bg-white px-[5px] font-bold">REMARKS</label>
-                    <textarea class="w-full border-2 rounded-md p-3 resize-none" name="remarks" cols="30" rows="10"></textarea>
+                    <textarea class="w-full border-2 rounded-md p-3 resize-none" name="remarks" cols="30" rows="10" v-model="remarks"></textarea>
+                    <div class="tags-container">
+                        <Tags v-for="tag in addedTags" :key="tag.label" :label="tag.label" :bgColor="tag.color" :withButton="true"/>
+                    </div>
                 </div>
                 <div  class="flex justify-between flex-wrap gap-y-[15px] border-2 rounded-md p-3 relative">
                     <label for="remarks" class="absolute -top-[10px] left-[15px] bg-white text-[12px] px-[5px] font-bold">TAGS</label>
-                    <Tags @click="addTag(tag.label)" v-for="tag in tagList" :key="tag.label" :label="tag.label" :bgColor="tag.color"/>
+                    <Tags @click="addTag(tag.label)" v-for="tag in tagList" :key="tag.label" :label="tag.label" :bgColor="tag.color">
+                        <span v-html="getTagComponent(tag.label, tag.color)"></span>
+                    </Tags>
                 </div>
             </div>
             <div class="flex justify-center gap-[50px]">
@@ -248,5 +285,103 @@ export default {
                 <BorderButton :buttonLabel="'USE TEMPLATE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[13px]'"/>
             </div>
         </div>
+    </Slideover> 
+    
+    <Slideover :show="addFormulaOpen" @close="addFormulaToggle" :title="'ADD FORMULA'">
+        <div class="flex flex-col justify-between h-full pb-[30px]">
+            <div class="flex flex-col justify-center items-center h-auto w-full">
+                <TabNav :tabs="['Use Existing' , 'Create New']" :selected="addFormulaSelected" @selected="addFormulaSetSelected">
+                    <Tab :isSelected="addFormulaSelected === 'Use Existing'" class="w-full">
+                        <div class="w-full h-auto p-[30px]">
+                            <table class="w-full divide-y divide-gray-300 border">
+                                <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0 border">
+                                    <tr class="divide-x divide-gray-200">
+                                        <th v-for="label in useExistingLabels" :key="label.label" scope="col"
+                                            class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                            {{ label.label }}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                            <input type="radio" name="id" id="item1">
+                                            <label for="item1">1</label>
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            GROSS AMOUNT
+                                        </td>                     
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </Tab>
+                    <Tab :isSelected="addFormulaSelected === 'Create New'" class="w-full">
+                        <div class="flex flex-col  w-full h-auto p-[30px]">
+                            <div class="flex justify-end mb-[5px]">
+                                <BorderButton @click="addNew()" :buttonLabel="'ADD MORE'" :buttonPadding="'p-1'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-auto'"/>
+                            </div>
+                            <div class="overflow-auto max-h-[250px] mb-[30px]">
+                                <table class="w-full divide-y divide-gray-300 border">
+                                    <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0 border z-50">
+                                        <tr class="divide-x divide-gray-200">
+                                            <th v-for="label in createNewLabels" :key="label.label" scope="col"
+                                                class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                                {{ label.label }}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
+                                        <tr v-for="(item, id) in newFormulaCount" :key="id" class="divide-x divide-gray-200">
+                                            <td
+                                                class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                                {{ item }}
+                                            </td>
+                                            <td
+                                                class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                                <CheckboxSelectMenu :inputWidth="'w-12/12'"  :placeholder="'SELECT'" :options="operatorOptions" :showBorder="'border-0'"/>
+                                            </td>                     
+                                            <td
+                                                class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                                <CheckboxSelectMenu :inputWidth="'w-12/12'"  :placeholder="'SELECT source'" :options="sourceOptions" :showBorder="'border-0'"/>
+                                            </td>                     
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="relative p-3 border-2 border-dashed border-[#d7d7d7] rounded-md text-[12px]">
+                                <p class="absolute -top-[10px] left-[8px] bg-white px-[5px] font-bold">FORMULA</p>
+                                <div class="uppercase">
+                                    <h1 class="text-[#ff0000]">((Gross amount/2)/1.12)*0.12</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </Tab>
+                </TabNav>
+            </div>
+            <div class="flex justify-between px-[30px]">
+                <BorderButton @click="slideoverToggle()"  :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
+                <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[13px]'"/>
+            </div>
+        </div>
     </Slideover>
 </template>
+<style>
+.tags-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  padding: 10px;
+}
+
+.tags-container > * {
+  display: inline-block;
+  margin-right: 5px;
+}
+</style>

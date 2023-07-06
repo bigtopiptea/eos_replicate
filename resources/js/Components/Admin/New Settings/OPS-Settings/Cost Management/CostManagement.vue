@@ -1,7 +1,7 @@
 <template>
     <div class="bg-white w-full">
         <div class="px-3 py-5">
-            <form class="flex justify-between items-top">
+            <div class="flex justify-between items-top">
                 <div class="flex items-end gap-3 w-[40%]">
                     <div class="w-[50%]">
                         <CheckboxSelectMenu :label="'Currency'" :inputWidth="'w-full'" :placeholder="'PHP'" :options="currencyOption" />
@@ -26,11 +26,11 @@
                     <NormalButton label="Export"
                     class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] text-white" />
                 </div>
-            </form>
+            </div>
             <!-- TABLE-->
             <div class="min-w-full py-2 align-middle ">
                 <div class="relative h-[360px]">
-                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-x-auto absolute inset-x-0 min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
                             <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
@@ -59,11 +59,21 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        Fixed Amount
+                                        <span v-show="!isEdit">
+                                            Fixed Amount
+                                        </span>
+                                        <div v-show="isEdit">
+                                            <CheckboxSelectMenu :inputWidth="'w-12/12'"  :placeholder="'type of fee'" :options="feeOption"/>   
+                                        </div>
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        0.00
+                                        <span v-show="!isEdit">
+                                            5,500,000.00
+                                        </span>
+                                        <span v-show="isEdit">
+                                            <input type="number" class="h-7 px-1 py-[3px] w-[50px] border border-[#D7D7D7]">
+                                        </span>
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
@@ -76,11 +86,23 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                        BANARIA, JEFFREY CLIDORIO
+                                        9/30/2022 09:17:08 AM
                                     </td>
                                     <td
                                         class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
                                         BANARIA, JEFFREY CLIDORIO
+                                    </td>
+                                    <td class="flex justify-between items-center whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider border border-red-500">
+                                        <SwitchToggle
+                                        :status="true"
+                                        :isChecked="isEdit ? false : true"
+                                        />
+                                        <button class="tooltip tooltip-left" data-tip="update">
+                                            <img  v-show="!isEdit" @click="isEdit = true" class="w-5 h-5" src="../../../../../../assets/images/CycleIcon.png" alt="Cycle Icon">
+                                        </button>
+                                        <button class="tooltip tooltip-left" data-tip="confirm">
+                                            <img v-show="isEdit" @click="isEdit = false"  class="w-5 h-5" src="../../../../../../assets/images/VerifyIcon.png" alt="Verify icon">
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -105,11 +127,11 @@ import ResetIcon from '@/Components/Misc/Icons/ResetIcon.vue';
 
 <script>
 
-import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SwitchToggle from '@/Components/Misc/Switch(Toggle)/SwitchToggle.vue';
 import Pagination from '@/Components/Misc/Pagination/Pagination.vue';
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
 import AdvanceSettingsSelectMenu from '@/Components/Misc/Select Menu/AdvanceSettingsSelectMenu.vue';
 export default {
     components:{
@@ -143,11 +165,12 @@ export default {
                 {label:'BANK'},
                 {label:'ACCOUNT NO.'},
                 {label:'TYPE OF FEE'},
-                {label:'TRANSACTION COST'},
+                {label:'COST'},
                 {label:'AMOUNT FROM'},
                 {label:'AMOUNT TO'},
                 {label:'DATE ADDED'},
                 {label:'ADDED BY'},
+                {label:'ACTIONS'},
             ],
             advanceSettings:[
                 {checked: false, label:'ID'},
@@ -167,6 +190,12 @@ export default {
                 {checked: false, label:'DATE ADDED'},
                 {checked: false, label:'ADDED BY'},
             ],
+            feeOption:[
+                {label: 'Percentage %',value: 'Percentage'},
+                {label: 'Fixed Amount $', value: 'Fixed Amount'},
+            ],
+            isEdit: false,
+            counter: 5
 
         }
     },

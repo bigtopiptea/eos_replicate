@@ -57,7 +57,7 @@
                                         5,500,000.00
                                     </span>
                                     <span v-show="isEdit">
-                                        <input type="text" class="px-1 py-[3px] border border-[#D7D7D7]" placeholder="-">
+                                        <input type="number" class="px-1 py-[3px] border border-[#D7D7D7]" placeholder="-">
                                     </span>
                                 </td>
                                 <td
