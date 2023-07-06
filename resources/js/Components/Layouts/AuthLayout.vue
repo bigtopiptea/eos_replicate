@@ -105,6 +105,7 @@ export default {
                 {
                     to: "/app/accounting/home",
                     label: "Accounting",
+                    toggleOffIcon: ChevLeftIcon,
                     icon: ReportIcon,
                     children: [
                         {
