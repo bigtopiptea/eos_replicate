@@ -156,7 +156,7 @@ export default {
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
                                         <!-- set to user.role == 'approver' -->
-                                        <p @click.prevent="user.role? (createPurchaseModal = !createPurchaseModal) : ''" :class="user.role == 'approver' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">    
+                                        <p @click.prevent="user.role ? (createPurchaseModal = !createPurchaseModal) : ''" :class="user.role == 'approver' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">    
                                             01
                                         </p>
                                     </td>
