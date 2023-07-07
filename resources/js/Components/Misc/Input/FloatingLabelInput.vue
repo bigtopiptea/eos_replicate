@@ -5,7 +5,7 @@
             {{ inputLabel }}
             <span v-show="isRequired" :class="labelTextSize" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="disabled:bg-gray-300 bg-white uppercase h-7 p-1 z-8 border border-gray-300 text-[#3E3E3E] pl-2 text-left " :class="inputWidth" :value="inputValue" :disabled="isDisabled" :required="isRequired" :placeholder="placeholder">
+        <input :type="inputType" class="disabled:bg-gray-300 focus:outline-none bg-white uppercase h-7 p-1 z-8  text-[#3E3E3E] pl-2 " :class="[inputWidth,showBorder,(inputType == 'number' ? 'text-right' : 'text-left')]"  :value="inputValue" :disabled="isDisabled" :required="isRequired" :placeholder="placeholder" >
     </div>
 </template>
 
@@ -53,7 +53,12 @@ export default{
     placeholder:{
         type: String,
         default: ''
+    },
+    showBorder:{
+        type: String,
+        default: 'border border-gray-300'
     }
   },
 }
+
 </script>

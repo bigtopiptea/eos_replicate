@@ -5,7 +5,7 @@
             {{ inputLabel }}
             <span v-show="isRequired" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="bg-white h-full py-1 px-[14px]  border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA]" :class="[inputWidth, inputPadRight]" :disabled="isDisabled" :maxlength="setMax" :placeholder="placeholder" :required="isRequired">
+        <input :type="inputType" class="bg-white h-full py-1 px-[14px] focus:outline-none border border-gray-300 text-[#3E3E3E] text-left disabled:bg-[#EAEAEA]" :class="[inputWidth, inputPadRight]" :disabled="isDisabled" :maxlength="setMax" :placeholder="placeholder" :required="isRequired">
     </div>
 </template>
 

@@ -103,7 +103,7 @@ import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monit
 
 import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
 import AccountingAccountsPayable from "@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/AccountsPayableVoucher.vue";
-
+import AccountingJournalEntry from "@/Components/Admin/Accounting/Accounting Transaction/Journal Entry/JournalEntry.vue";
 // ACCOUNTING OTHER SERVICES
 import AccountingJEMaintenance from "@/Components/Admin/Accounting/Accounting Other Services/Journal Entry Maintenance/JEMaintenance.vue";
 
@@ -859,8 +859,18 @@ const routes = [
                 meta: {
                     title: `Accounts Payable Voucher`,
                     ability: `Accounting Accounts Payable Voucher`,
+                },
             },
+            {
+                path: "/app/accounting/transactions/accounts-journal-entry",
+                name: "Accounting Journal Entry",
+                component: AccountingJournalEntry,
+                meta: {
+                    title: `Accounting Journal Entry`,
+                    ability: `Accounting Journal Entry`,
+                },
             },
+
             {
                 path: "/app/help",
                 name: "Help",

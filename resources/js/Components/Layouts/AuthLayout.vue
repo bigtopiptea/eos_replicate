@@ -140,7 +140,14 @@ export default {
                             label: "Acc. Payable Voucher",
                             children: [],
                             icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/transactions/accounts-journal-entry",
+                            label: "Acc. Journal Entry",
+                            children: [],
+                            icon: CircleCheckIcon,
                         }
+
                     ],
                 },
                 {
