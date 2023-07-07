@@ -1,3 +1,86 @@
+<script>
+import Tab from '@/Components/Misc/Tabs/Tab.vue'
+import TabNav from '@/Components/Misc/Tabs/TabNav.vue'
+import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue'
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
+import InputGroup from '@/Components/Misc/Input/InputGroup.vue'
+import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelectMenu.vue'
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
+import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue'
+import TextAreaGroup from '@/Components/Misc/Input/TextAreaGroup.vue';
+import Pending from '@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/Tabs/Pending.vue'
+import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/Tabs/ApprovalHistory.vue'
+
+    export default {
+
+        components:{
+            TabNav, Tab,Pending, ApprovalHistory,BorderButton,ModalTwo,InputGroup
+            ,InputGroupSelectMenu, TextAreaGroup, CheckboxSelectMenu, FloatingLabelInput
+        },
+        data(){
+
+            return{
+                purchaseOrderLabels:[
+                    {label:'#'},
+                    {label:'COST CENTER'},
+                    {label:'DESCRIPTION'},
+                    {label:'UNIT'},
+                    {label:'QUANTITY'},
+                    {label:'UNIT PRICE'},
+                    {label:'AMOUNT'},
+                ],
+                supplierOptions: [
+                    {label: 'Inkline Office Solutions Inc.'},
+                    {label: 'Inkline Office Solutions Inc.'},
+                    {label: 'Inkline Office Solutions Inc.'},
+                ],
+                deliverToOptions:[
+                    {label: 'ALLCASH SJDM BULACAN'},
+                    {label: 'ALLCASH CAVITE'},
+                    {label: 'ALLCASH MANILA'},
+
+                ],
+                descriptionOptions:[
+                    {label: 'PRODUCT'},
+                    {label: 'SERVICE'},
+
+                ],
+                selected:'Pending',
+                openModal:false,
+                sampleOption:[
+                    {label:'A'},
+                    {label:'B'},
+                    {label:'C'},
+                ],
+                labels:[
+                    {label:'#'},
+                    {label:'Cost Center'},
+                    {label:'Description'},
+                    {label:'Unit'},
+                    {label:'Quantity'},
+                    {label:'Unit Price'},
+                    {label:'Amount'},
+                ],
+                counter:1,
+            }
+        },
+
+        methods:{
+            setSelected(tab) {
+                this.selected = tab;
+            },
+            openModalToggle(){
+                this.openModal = false;
+            },
+            addNewLine(){
+                this.counter++;
+            },
+            clearAll(){
+                this.counter=1;
+            }
+        }
+    }
+</script>
 <template>
     <div class="bg-white w-full min-h-screen max-h-auto relative">
         <div class="">
@@ -79,10 +162,10 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center">
-                        <tr class="divide-x divide-gray-300">
+                        <tr v-for="counter in counter" :key="counter" class="divide-x divide-gray-300">
                             <td
                                 class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase p-2 tracking-wider">
-                                01
+                                {{ counter }}
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
@@ -116,8 +199,8 @@
             </div>
             <div class="flex flex-col text-[10px] uppercase">
                 <div class="flex gap-[10px] mb-[5px]">
-                    <BorderButton :buttonLabel="'add new line'" :buttonPadding="'p-0'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
-                    <BorderButton :buttonLabel="'clear all'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#ee3e2c]'" :buttonBorderColor="'border-[#ee3e2c]'" :buttonHover="'hover:bg-[#ee3e2c]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                    <BorderButton @click="addNewLine" :buttonLabel="'add new line'" :buttonPadding="'p-0'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                    <BorderButton @click="clearAll" :buttonLabel="'clear all'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#ee3e2c]'" :buttonBorderColor="'border-[#ee3e2c]'" :buttonHover="'hover:bg-[#ee3e2c]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
                 </div>
                 <div class="flex gap-[2px]  h-[110px]">
                     <div class="w-[75%] relative">
@@ -147,79 +230,3 @@
         </div>
     </ModalTwo>
 </template>
-<script>
-import Tab from '@/Components/Misc/Tabs/Tab.vue'
-import TabNav from '@/Components/Misc/Tabs/TabNav.vue'
-import BorderButton from '@/Components/Misc/Buttons/BorderButton.vue'
-import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
-import InputGroup from '@/Components/Misc/Input/InputGroup.vue'
-import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelectMenu.vue'
-import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
-import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue'
-import TextAreaGroup from '@/Components/Misc/Input/TextAreaGroup.vue';
-import Pending from '@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/Tabs/Pending.vue'
-import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/Tabs/ApprovalHistory.vue'
-
-    export default {
-
-        components:{
-            TabNav, Tab,Pending, ApprovalHistory,BorderButton,ModalTwo,InputGroup
-            ,InputGroupSelectMenu, TextAreaGroup, CheckboxSelectMenu, FloatingLabelInput
-        },
-        data(){
-
-            return{
-                purchaseOrderLabels:[
-                    {label:'#'},
-                    {label:'COST CENTER'},
-                    {label:'DESCRIPTION'},
-                    {label:'UNIT'},
-                    {label:'QUANTITY'},
-                    {label:'UNIT PRICE'},
-                    {label:'AMOUNT'},
-                ],
-                supplierOptions: [
-                    {label: 'Inkline Office Solutions Inc.'},
-                    {label: 'Inkline Office Solutions Inc.'},
-                    {label: 'Inkline Office Solutions Inc.'},
-                ],
-                deliverToOptions:[
-                    {label: 'ALLCASH SJDM BULACAN'},
-                    {label: 'ALLCASH CAVITE'},
-                    {label: 'ALLCASH MANILA'},
-
-                ],
-                descriptionOptions:[
-                    {label: 'PRODUCT'},
-                    {label: 'SERVICE'},
-
-                ],
-                selected:'Pending',
-                openModal:false,
-                sampleOption:[
-                    {label:'A'},
-                    {label:'B'},
-                    {label:'C'},
-                ],
-                labels:[
-                    {label:'#'},
-                    {label:'Cost Center'},
-                    {label:'Description'},
-                    {label:'Unit'},
-                    {label:'Quantity'},
-                    {label:'Unit Price'},
-                    {label:'Amount'},
-                ]
-            }
-        },
-
-        methods:{
-            setSelected(tab) {
-                this.selected = tab;
-            },
-            openModalToggle(){
-                this.openModal = false;
-            }
-        }
-    }
-</script>

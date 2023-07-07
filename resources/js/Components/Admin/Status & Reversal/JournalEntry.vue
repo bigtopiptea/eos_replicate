@@ -14,6 +14,7 @@ export default{
     data(){
         return{
             viewToastOpen: false,
+            counter:1,
         }
     },
 
@@ -23,7 +24,13 @@ export default{
         },
 
         isShowToggle(){
-            isShow = false;
+            this.isShow = false;
+        },
+        addNewLine(){
+            this.counter++;
+        },
+        clearAll(){
+            this.counter=1;
         }
     },
 
@@ -56,7 +63,7 @@ export default{
                         </tr>
                     </thead>
                     <tbody class=" bg-white text-[10px]">
-                        <tr class="divide-x divide-gray-200 border-b border-b-gray-200">
+                        <tr v-for="counter in counter" :key="counter" class="divide-x divide-gray-200 border-b border-b-gray-200">
                             <td class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                 <SettingsInput placeholder="-"
                                     class="w-full uppercase" :isDisabled="true"/>
@@ -77,8 +84,8 @@ export default{
                         </tr>
                     </tbody>
                     <div class="flex gap-3 w-full mb-2 mt-1 mx-2">
-                        <BorderButton :buttonLabel="'Add New Line'" :buttonPadding="'p-0'" />
-                        <BorderButton :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#EE3E2C]'"
+                        <BorderButton @click="addNewLine" :buttonLabel="'Add New Line'" :buttonPadding="'p-0'" />
+                        <BorderButton @click="clearAll" :buttonLabel="'Clear All'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#EE3E2C]'"
                         :buttonTextSize="'text-[11px]'" :buttonBorderColor="'border-#EE3E2C'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
                     </div>
                     <tfoot class=" bg-#D7D7D7 text-[10px]">
