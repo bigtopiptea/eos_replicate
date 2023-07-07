@@ -68,6 +68,7 @@ export default {
                 {
                     to: "/app/billing-collection/home",
                     label: "Billing & Collection",
+                    toggleOffIcon: ChevLeftIcon,
                     icon: AmendmentIcon,
                     children: [
                         {

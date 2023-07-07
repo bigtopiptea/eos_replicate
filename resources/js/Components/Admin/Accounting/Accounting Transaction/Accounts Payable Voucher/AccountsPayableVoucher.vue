@@ -117,7 +117,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                 <h1 class="uppercase text-[12px] font-bold text-black">Accounts Payable Voucher</h1>
             </div>
             <div class="flex justify-between w-full">
-                <div class="flex flex-col justify-between w-[33%]">
+                <div class="flex flex-col gap-[5px] w-[33%]">
                     <div>
                         <InputGroup :inputLabel="'date'" :inputWidth="'w-7/12'" :isDisabled="true" :labelWidth="'w-5/12'" :inputType="'date'"/>
                     </div>
