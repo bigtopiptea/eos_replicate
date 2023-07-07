@@ -68,6 +68,7 @@ export default {
                 {
                     to: "/app/billing-collection/home",
                     label: "Billing & Collection",
+                    toggleOffIcon: ChevLeftIcon,
                     icon: AmendmentIcon,
                     children: [
                         {
@@ -105,6 +106,7 @@ export default {
                 {
                     to: "/app/accounting/home",
                     label: "Accounting",
+                    toggleOffIcon: ChevLeftIcon,
                     icon: ReportIcon,
                     children: [
                         {

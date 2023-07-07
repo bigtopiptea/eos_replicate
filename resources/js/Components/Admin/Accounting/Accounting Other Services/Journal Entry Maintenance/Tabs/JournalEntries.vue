@@ -3,7 +3,6 @@ import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
 import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
 import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
 import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
-import TextAreaGroup from '@/Components/Misc/Input/TextAreaGroup.vue';
 import InputGroupSelectMenu from "@/Components/Misc/Select Menu/InputGroupSelectMenu.vue";
 import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
@@ -13,10 +12,10 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import SwitchToggle from '@/Components/Misc/Switch(Toggle)/SwitchToggle.vue';
-import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+
 export default {
 
-    name:'JEMaintenance',
+    name:'JEJournalEntries',
 
     components:{
         ChevRightIcon,
@@ -30,46 +29,39 @@ export default {
         ListIcon,
         DateInput,
         Pagination,
-        TextAreaGroup,
         InputGroupSelectMenu,
-        SwitchToggle,
-        Slideover
+        SwitchToggle,    
     },
 
     data() {
         return {
             user: this.$store.state.auth.user,
-            JEMaintenance: [],
+            JEJournalEntries: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
                 {label:'ID'},
-                {label:'LABEL'},
+                {label:'CLIENT NAME'},
                 {label:'DEPARTMENT'},
-                {label:'TRANSACTION'},
-                {label:'FIELD NAME'},
-                {label:'DATE ADDED'},
-                {label:'ADDED BY'},
+                {label:'MODULE'},
+                {label:'PROVIDER'},
+                {label:'ACCOUNT NAME'},
+                {label:'ENTRY TYPE'},
+                {label:'FORMULA'},
+                {label:'DATE CREATED'},
+                {label:'CREATED BY'},
                 {label:'ACTIONS'},
             ],
-            sampleOption:[
-                {label: 'OPTION 1'},
-                {label: 'OPTION 2'},
-                {label: 'OPTION 3'},
-            ],
-            slideoverOpen: false,
+
         }
     },
     methods: {
-        slideoverToggle(){
-            this.slideoverOpen = false;
-        },
-        async getJEMaintenance() {
+        async getJEJournalEntries() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.JEMaintenance = response.data.data;
+                    this.JEJournalEntries = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -85,8 +77,14 @@ export default {
     <div class="flex flex-col justify-between h-full w-auto my-5 px-3">
         <div>
             <div class="inline-block min-w-full align-middle ">
-                <div class="flex justify-between items-center h-full min-w-full ">
+                <div class="flex justify-between h-full min-w-full ">
                     <div class="flex justify-start flex-col gap-3">
+                        <div class="left-side-col-2 text-[10px] mb-2">
+                            <DropDown label="bulk action"/>
+                            <NormalButton label="Apply" class="bg-[#F9951E] h-[34px] p-1.5 text-[10px] text-white px-3 uppercase" />
+                        </div>
+                    </div>
+                    <div class="right-side mt-[5px]">
                         <form class="flex items-start gap-3">
                             <div class="flex">
                                 <div class="relative w-full">
@@ -103,9 +101,6 @@ export default {
                             <NormalButton label="Export"
                             class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E]   tracking-wider text-[10px] font-medium text-white" />
                         </form>
-                    </div>
-                    <div class="right-side mt-[5px]">
-                        <BorderButton @click="(slideoverOpen = !slideoverOpen)" :buttonLabel="'ADD NEW'" :buttonPadding="'p-2'" :buttonTextSize="'text-[13px]'"/>
                     </div>
                 </div>
             </div>
@@ -130,7 +125,7 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            GROSS AMOUNT
+                                            AL EKTESAD UNITED EXCHANGE CO. W.L.L.
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -138,11 +133,23 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            processing
+                                            ops - processing
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            [gross_amount]
+                                            -
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            AP - al ektesad 
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            debt
+                                        </td>
+                                        <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        <p class="text-cyan-600 hover:underline cursor-pointer">SHOW FORMULA</p>
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -152,7 +159,8 @@ export default {
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
                                             SABADO, CHRISTIAN PERALTA
                                         </td>
-                                        <td class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
+                                        <td 
+                                    class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
                                         <div class="flex justify-around">
                                             <button class="tooltip tooltip-left" data-tip="edit">
                                                 <img src="../../../../../../../assets/images/EditIconTwo.png" alt="Reject Icon" class="h-5 w-6">
@@ -169,24 +177,9 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getJEMaintenance()" :pagination="pagination"
+                <Pagination @paginate="getJEJournalEntries()" :pagination="pagination"
                     :offset="1" class = "py-10"/>
             </div>
         </div>
     </div>
-    <Slideover :show="slideoverOpen" @close="slideoverToggle" :title="'ADD NEW'">
-        <div class="flex flex-col justify-between h-full px-[40px] py-[15px]">
-            <div class="flex flex-col gap-[10px]">
-                <InputGroup  :inputLabel="'id'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
-                <InputGroup  :inputLabel="'label'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :placeholder="'ENTER LABEL'" :isRequired="true"/>
-                <InputGroupSelectMenu :label="'department'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isRequired="true" :placeholder="'select department'" :options="sampleOption"/>
-                <InputGroupSelectMenu :label="'Transaction'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isRequired="true" :placeholder="'select transaction type'" :options="sampleOption"/>
-                <InputGroupSelectMenu :label="'Fieldname'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isRequired="true" :placeholder="'select field name'" :options="sampleOption"/>
-            </div>
-            <div class="flex justify-between">
-                <BorderButton @click="slideoverToggle()"  :buttonLabel="'CANCEL'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
-                <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'p-2'" :buttonTextSize="'text-[13px]'"/>
-            </div>
-        </div>
-    </Slideover>
 </template>

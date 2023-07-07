@@ -142,9 +142,9 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <a class="underline text-cyan-600" href="">    
+                                        <p class="underline text-cyan-600 cursor-pointer" >    
                                             01
-                                        </a>
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
