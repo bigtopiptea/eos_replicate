@@ -21,7 +21,7 @@
       </button>
       <div v-show="isOpen" @click.stop class="absolute z-10 w-full bg-white border border-gray-300 shadow-lg max-h-56 overflow-y-auto">
         <div v-for="(parent, parentIndex) in options"  :key="parentIndex">
-          <div class="pl-4 pr-2 py-2 border-b">
+          <div class="pl-4 pr-2 py-2">
             <label class="flex items-center">
               <input
                 :value="parent.label"

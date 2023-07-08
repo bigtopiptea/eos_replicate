@@ -35,7 +35,7 @@ export default{
     },
     inputPadRight:{
         type: String,
-        default: 'pr-0'
+        default: ''
     },
     isDisabled:{
         type: Boolean,
