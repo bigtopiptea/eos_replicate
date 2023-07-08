@@ -170,7 +170,7 @@ export default {
 <template>
     <div class="min-h-screen max-h-auto w-full bg-white">
         <div class="flex flex-col justify-end gap-[15px] min-w-full px-5 pt-10 pb-5">
-            <!-- {{ 'Category: ' + selectedCategory.map(option => option.label).join(', ') }} -->
+            <!-- {{ 'Category: ' + selectedCategory[1].label }} -->
             <div class="flex gap-[10px] w-[90%] ">
                 <div class="w-[25%]">
                     <CheckboxSelectMenu v-model="selectedReport" :placeholder="'select Type of Report'" :label="'Type of Report'" :options="reportType" />

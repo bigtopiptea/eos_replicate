@@ -64,6 +64,15 @@ import OPSEndDayReport from "@/Components/Admin/Reports/OPS-Reports/End Day Repo
 // B&C REPORT
 import BCEndDayReport from "@/Components/Admin/Reports/B&C-Reports/End Day Report/EndDayReport.vue";
 
+// ACCOUNTING REPORT
+import ACCAccountsPayableReport from"@/Components/Admin/Reports/ACC-Reports/Accounts Payable Report/AccountsPayableReport.vue";
+import ACCBIRAlphalistReport from"@/Components/Admin/Reports/ACC-Reports/BIR Alphalist Report/BIRAlphalistReport.vue";
+import ACCEndDayReport from"@/Components/Admin/Reports/ACC-Reports/End Day Report/EndDayReport.vue";
+import ACCConsolidatedEndDayReport from"@/Components/Admin/Reports/ACC-Reports/Consolidated End Day Report/ConsolidatedEndDayReport.vue";
+import ACCTrialBalanceReport from"@/Components/Admin/Reports/ACC-Reports/Trial Balance Report/TrialBalanceReport.vue";
+import ACCBalanceSheetReport from"@/Components/Admin/Reports/ACC-Reports/Balance Sheet Report/BalanceSheetReport.vue";
+
+
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
 import UploadUSF from "@/Components/Admin/Other Services/Upload USF/UploadUSF.vue";
 import ConsolidatedProofsheet from "@/Components/Admin/Other Services/Consolidated Proofsheet/ConsolidatedProofsheet.vue";
@@ -100,7 +109,6 @@ import AccountingHome from "@/Components/Admin/Accounting/Accounting Home/Accoun
 import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monitoring/AccountingMonitoring.vue";
 
 //ACCOUNTING TRANSACTIONS
-
 import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
 import AccountingAccountsPayable from "@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/AccountsPayableVoucher.vue";
 import AccountingJournalEntry from "@/Components/Admin/Accounting/Accounting Transaction/Journal Entry/JournalEntry.vue";
@@ -616,8 +624,61 @@ const routes = [
                     ability: `B&C - End Day Report`,
                 },
             },
-
-
+            // 7/8
+            {
+                path: "/app/reports/accounting/accounts-payable-report",
+                name: "Accounts Payable Report",
+                component: ACCAccountsPayableReport,
+                meta: {
+                    title: `Accounts Payable Report`,
+                ability: `ACC - Accounts Payable Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/bir-alphalist-report",
+                name: "BIR Alphalist Report",
+                component: ACCBIRAlphalistReport,
+                meta: {
+                    title: `BIR Alphalist Report`,
+                ability: `ACC - BIR Alphalist Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/end-day-report",
+                name: "End Day Report",
+                component: ACCEndDayReport,
+                meta: {
+                    title: `End Day Report`,
+                ability: `ACC - End Day Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/consolidated-end-day-report",
+                name: "Consolidated End Day Report",
+                component: ACCConsolidatedEndDayReport,
+                meta: {
+                    title: `Consolidated End Day Report`,
+                ability: `ACC - Consolidated End Day Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/trial-balance-report",
+                name: "Trial Balance Report",
+                component: ACCTrialBalanceReport,
+                meta: {
+                    title: `Trial Balance Report`,
+                ability: `ACC - Trial Balance Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/balance-sheet-report",
+                name: "Balance Sheet Report",
+                component: ACCBalanceSheetReport,
+                meta: {
+                    title: `Balance Sheet Report`,
+                ability: `ACC - Balance Sheet Report`,
+                },
+            },
 
             //Carl Mendoza 5-3
             {
