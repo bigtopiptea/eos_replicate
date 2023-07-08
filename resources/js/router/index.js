@@ -104,6 +104,11 @@ import AccountingMonitoring from "@/Components/Admin/Accounting/Accounting Monit
 import AccountingPurchaseOrder from "@/Components/Admin/Accounting/Accounting Transaction/Purchase Order/PurchaseOrder.vue";
 import AccountingAccountsPayable from "@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/AccountsPayableVoucher.vue";
 import AccountingJournalEntry from "@/Components/Admin/Accounting/Accounting Transaction/Journal Entry/JournalEntry.vue";
+import AccountingInventory from "@/Components/Admin/Accounting/Accounting Transaction/Inventory/Inventory.vue";
+import AccountingJournals from "@/Components/Admin/Accounting/Accounting Transaction/Journals/Journals.vue";
+import AccountingReconAcc from "@/Components/Admin/Accounting/Accounting Transaction/Reconciliation of Accounts/ReconAcc.vue";
+import AccountingViewSL from "@/Components/Admin/Accounting/Accounting Transaction/View SL/ViewSL.vue";
+
 // ACCOUNTING OTHER SERVICES
 import AccountingJEMaintenance from "@/Components/Admin/Accounting/Accounting Other Services/Journal Entry Maintenance/JEMaintenance.vue";
 
@@ -847,6 +852,7 @@ const routes = [
                 path: "/app/accounting/transactions/purchase-order",
                 name: "Accounting Purchase Order",
                 component: AccountingPurchaseOrder,
+                props: true,
                 meta: {
                     title: `Purchase Order`,
                     ability: `Accounting Purchase Order`,
@@ -870,7 +876,42 @@ const routes = [
                     ability: `Accounting Journal Entry`,
                 },
             },
-
+            {
+                path: "/app/accounting/transactions/inventory",
+                name: "Accounting Inventory",
+                component: AccountingInventory,
+                meta: {
+                    title: `Accounting Inventory`,
+                    ability: `Accounting Inventory`,
+                },
+            },
+            {
+                path: "/app/accounting/transactions/journals",
+                name: "Accounting Journals",
+                component: AccountingJournals,
+                meta: {
+                    title: `Accounting Journals`,
+                ability: `Accounting Journals`,
+                },
+            },
+            {
+                path: "/app/accounting/transactions/reconciliation-of-accounts",
+                name: "Accounting Reconciliation of Accounts",
+                component: AccountingReconAcc,
+                meta: {
+                    title: `Accounting Reconciliation of Accounts`,
+                    ability: `Accounting Reconciliation of Accounts`,
+                },
+            },
+            {
+                path: "/app/accounting/transactions/view-sl",
+                name: "Accounting View SL",
+                component: AccountingViewSL,
+                meta: {
+                    title: `Accounting View SL`,
+                    ability: `Accounting View SL`,
+                },
+            },
             {
                 path: "/app/help",
                 name: "Help",

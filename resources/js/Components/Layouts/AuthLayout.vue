@@ -147,7 +147,31 @@ export default {
                             label: "Acc. Journal Entry",
                             children: [],
                             icon: CircleCheckIcon,
-                        }
+                        },
+                        {
+                            to: "/app/accounting/transactions/inventory",
+                            label: "Acc. Inventory",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/transactions/journals",
+                            label: "Acc. Journals",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/transactions/reconciliation-of-accounts",
+                            label: "Acc. Recon Account",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/accounting/transactions/view-sl",
+                            label: "Acc. View SL",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
 
                     ],
                 },
@@ -945,10 +969,11 @@ export default {
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-input::-webkit-outer-spin-button,
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+} */
+
 
 </style>

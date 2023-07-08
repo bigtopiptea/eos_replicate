@@ -78,10 +78,17 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
             clearAll(){
                 this.counter=1;
             }
+        },
+        created(){
+            if( this.$route.params.isOpen)
+            {
+                this.openModal = true;
+            }
         }
     }
 </script>
 <template>
+    <!-- {{ this.$route.params.isOpen }} -->
     <div class="bg-white w-full min-h-screen max-h-auto relative">
         <div class="">
             <TabNav :tabs="['Pending', 'Approval History']" :selected="selected" @selected="setSelected" :setBorder="'border-[#EE3E2C]'" :setHover="'hover:bg-[#EE3E2C] '" :setSelectedBg="'bg-[#EE3E2C] text-white border-[#EE3E2C]'" >
