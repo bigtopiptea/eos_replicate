@@ -45,18 +45,18 @@ export default {
                 {label: 'save draft as template'},
             ],
             tagList:[
-                {label: 'gross_amount', color: 'bg-[#f9951e]'},
+                {label: 'gross_amount', color: 'bg-[#3e3e3e]'},
                 {label: 'amount', color: 'bg-[#3e3e3e]'},
                 {label: 'process_date', color: 'bg-[#3e3e3e]'},
                 {label: 'txn_date', color: 'bg-[#3e3e3e]'},
-                {label: 'from_ccy', color: 'bg-[#f9951e]'},
-                {label: 'to_ccy', color: 'bg-[#f9951e]'},
-                {label: 'currency', color: 'bg-[#f9951e]'},
-                {label: 'net_amount', color: 'bg-[#f9951e]'},
+                {label: 'from_ccy', color: 'bg-[#3e3e3e]'},
+                {label: 'to_ccy', color: 'bg-[#3e3e3e]'},
+                {label: 'currency', color: 'bg-[#3e3e3e]'},
+                {label: 'net_amount', color: 'bg-[#3e3e3e]'},
                 {label: 'handling_fee', color: 'bg-[#3e3e3e]'},
                 {label: 'value_date', color: 'bg-[#3e3e3e]'},
                 {label: 'provider', color: 'bg-[#3e3e3e]'},
-                {label: 'tieup_partner', color: 'bg-[#f9951e]'},
+                {label: 'tieup_partner', color: 'bg-[#3e3e3e]'},
                 {label: 'bank', color: 'bg-[#3e3e3e]'},
                 {label: 'biller', color: 'bg-[#3e3e3e]'},
                 {label: 'maker', color: 'bg-[#3e3e3e]'},
@@ -64,7 +64,7 @@ export default {
                 {label: 'approver', color: 'bg-[#3e3e3e]'},
                 {label: 'item_count', color: 'bg-[#3e3e3e]'},
                 {label: 'reference_no', color: 'bg-[#3e3e3e]'},
-                {label: 'rate', color: 'bg-[#f9951e]'},
+                {label: 'rate', color: 'bg-[#3e3e3e]'},
             ],
             useExistingLabels:[
                 {label: 'ID'},
@@ -323,7 +323,8 @@ export default {
                             <div class="flex justify-end mb-[5px]">
                                 <BorderButton @click="addNew()" :buttonLabel="'ADD MORE'" :buttonPadding="'p-1'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-auto'"/>
                             </div>
-                            <div class="overflow-auto max-h-[250px] mb-[30px]">
+                            <!-- overflow-auto max-h-[250px] -->
+                            <div class="mb-[30px]">
                                 <table class="w-full divide-y divide-gray-300 border">
                                     <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0 border z-50">
                                         <tr class="divide-x divide-gray-200">

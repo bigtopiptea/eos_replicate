@@ -17,7 +17,7 @@ export default{
         },
         bgColor:{
             type:String,
-            default: 'bg-[#f9951e]'
+            default: 'bg-[#3e3e3e]'
         },
         withButton:{
             type:Boolean,
