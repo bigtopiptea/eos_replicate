@@ -99,7 +99,7 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
         <div class="w-full flex flex-col gap-[30px] p-5">
             <div class="flex justify-end ">
                 <div class="w-[32.6%]">
-                    <InputGroup :inputLabel="'Product Order No'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    <InputGroup :inputLabel="'Purchase Order No'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
                 </div>
             </div>
             <div class="flex justify-center">

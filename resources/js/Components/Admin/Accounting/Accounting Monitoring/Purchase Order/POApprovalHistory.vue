@@ -156,7 +156,7 @@ export default {
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
                                         <!-- set to user.role == 'approver' -->
-                                        <p @click.prevent="user.role ? (createPurchaseModal = !createPurchaseModal) : ''" :class="user.role == 'approver' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">    
+                                        <p @click.prevent="user.role ? (createPurchaseModal = !createPurchaseModal) : ''" :class="user.role == 'approver' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">
                                             01
                                         </p>
                                     </td>
@@ -207,7 +207,7 @@ export default {
         <div class="w-full flex flex-col gap-[30px] p-5">
             <div class="flex justify-end ">
                 <div class="w-[32.6%]">
-                    <InputGroup :inputLabel="'Product Order No'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    <InputGroup :inputLabel="'Purchase Order No'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
                 </div>
             </div>
             <div class="flex justify-center">
@@ -238,7 +238,7 @@ export default {
                     <div>
                         <TextAreaGroup :inputLabel="'delivery address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputHeight="'h-[70px]'" :isDisabled="true" />
                     </div>
-                    
+
                 </div>
                 <div class="flex flex-col justify-between w-[33%]">
                     <div>
