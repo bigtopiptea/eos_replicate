@@ -14,7 +14,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 export default {
 
-    name:'Purchase Order Pending',
+    name:'POApproval History',
 
     components:{
         ChevRightIcon,
@@ -35,7 +35,7 @@ export default {
     data() {
         return {
             user: this.$store.state.auth.user,
-            POPending: [],
+            JEApprovalHistory: [],
             pagination: {
                 current_page: 1,
             },
@@ -46,16 +46,18 @@ export default {
                 {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
+                {label:'APPROVED BY'},
+                {label:'DATE APPROVED'},
             ],
             isFiltered: false
         }
     },
     methods: {
-        async getPOPending() {
+        async getJEApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.POPending = response.data.data;
+                    this.JEApprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -106,7 +108,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered" class="my-3">
+            <div v-if="isFiltered" class="mt-3">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
@@ -115,14 +117,13 @@ export default {
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
                                             class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
-                                            <div class="flex justify-between">
+                                            <div class="flex gap-7">
                                                 <div class="flex justify-start">
                                                     <input type="checkbox">
                                                 </div>
                                                 <span class="flex justify-center">
-                                                    PO NO.
+                                                    JE NO.
                                                 </span>
-                                                <span/>
                                             </div>
                                         </th>
                                         <th v-for="label in labels" :key="label.label" scope="col"
@@ -135,14 +136,13 @@ export default {
                                     <tr class="divide-x divide-gray-200">
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            <div class="flex justify-between">
+                                            <div class="flex gap-7">
                                                 <div class="flex justify-start">
                                                     <input type="checkbox">
                                                 </div>
                                                 <span class="flex justify-center">
-                                                    <p class="text-cyan-600 underline cursor-pointer" >PO0001</p>
+                                                   JE0001
                                                 </span>
-                                                <span/>
                                             </div>
                                         </td>
                                         <td
@@ -167,7 +167,15 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            for verification
+                                            Approved
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            Asis Ginalyn, Ibarra
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            09/28/2022 12:34:10 PM
                                         </td>
                                     </tr>
                                 </tbody>
@@ -175,7 +183,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getPOPending()" :pagination="pagination"
+                <Pagination @paginate="getJEApprovalHistory()" :pagination="pagination"
                     :offset="1" class = "py-10"/>
             </div>
             <div v-else class="flex flex-col items-center justify-center py-20">

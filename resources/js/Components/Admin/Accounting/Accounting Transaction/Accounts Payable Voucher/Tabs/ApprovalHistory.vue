@@ -108,7 +108,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered" class="mt-[30px]">
+            <div v-if="isFiltered" class="mt-3">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
@@ -116,9 +116,16 @@ export default {
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
-                                            <input type="checkbox">
-                                            apv no.
+                                            class=" py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                            <div class="flex justify-between">
+                                                <div class="flex justify-start">
+                                                    <input type="checkbox">
+                                                </div>
+                                                <span>
+                                                    APV. NO
+                                                </span>
+                                                <span/>
+                                            </div>
                                         </th>
                                         <th v-for="label in labels" :key="label.label" scope="col"
                                             class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
@@ -129,11 +136,16 @@ export default {
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                                     <tr class="divide-x divide-gray-200">
                                         <td
-                                            class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                            <input type="checkbox">
-                                            <p class="text-black">    
-                                                001
-                                            </p>
+                                            class="whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                            <div class="flex justify-between">
+                                                <div class="flex justify-start">
+                                                    <input type="checkbox">
+                                                </div>
+                                                <div>
+                                                    01
+                                                </div>
+                                                <span/>
+                                            </div>
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">

@@ -1,174 +1,184 @@
-    <script setup>
-    import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
-    import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
-    import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
-    import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
-    import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
-    import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
-    import DateInput from "@/Components/Misc/Input/DateInput.vue";
+<script>
+import ChevRightIcon from "@/Components/Misc/Icons/ChevRightIcon.vue";
+import EditIcon from "@/Components/Misc/Icons/EditIcon.vue";
+import InputLabel from "@/Components/Misc/Input/InputLabel.vue";
+import InputGroup from "@/Components/Misc/Input/InputGroup.vue";
+import TextAreaGroup from '@/Components/Misc/Input/TextAreaGroup.vue';
+import InputGroupSelectMenu from "@/Components/Misc/Select Menu/InputGroupSelectMenu.vue";
+import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
+import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
+import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
+import DateInput from "@/Components/Misc/Input/DateInput.vue";
+import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
+import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+export default {
 
+    name:'POApproval History',
 
-    </script>
+    components:{
+        ChevRightIcon,
+        DropDown,
+        EditIcon,
+        NormalButton,
+        BorderButton,
+        InputGroup,
+        SearchIcon,
+        InputLabel,
+        ListIcon,
+        DateInput,
+        Pagination,
+        TextAreaGroup,
+        InputGroupSelectMenu,
+    },
 
-    <script>
-    import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
-    import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
-
-    export default {
-
-        name:'InventoryLogs',
-
-        components:{
-            DropDown,
-            EditIcon,
-            NormalButton,
-            SearchIcon,
-            InputLabel,
-            ListIcon,
-            DateInput,
-            Pagination,
-        },
-
-        data() {
-            return {
-                InventoryLogs: [],
-                pagination: {
-                    current_page: 1,
-                },
-
-                    labels: [
-                    { label: 'LOG ID' },
-                    { label: 'Item Name'},
-                    { label: 'Action' },
-                    { label: 'Qty'},
-                    { label: 'Unit' },
-                    { label: 'Branch' },
-                    { label: 'Department' },
-                    { label: 'User' },
-                    { label: 'Date' },
-                ],
-
-            }
-        },
-        methods: {
-            async getInventoryLogs() {
-                await axios.get(`/api/billers?page=${this.pagination.current_page}`)
-                    .then((response) => {
-                        console.log(response.data);
-                        this.InventoryLogs = response.data.data;
-                        this.pagination = response.data;
-                    })
-                    .catch((errors) => {
-
-                    })
-                },
+    data() {
+        return {
+            user: this.$store.state.auth.user,
+            ILogs: [],
+            pagination: {
+                current_page: 1,
             },
+            labels:[
+                {label:'LOG ID'},
+                {label:'ITEM NAME'},
+                {label:'ACTION'},
+                {label:'QTY'},
+                {label:'UNIT '},
+                {label:'BRANCH'},
+                {label:'DEPARTMENT'},
+                {label:'RECEIVED BY'},
+                {label:'RELEASED BY'},
+                {label:'DATE'},
+            ],
+            isFiltered: false
         }
-    </script>
+    },
+    methods: {
+        async getILogs() {
+            await axios.get(`/api/billers?page=${this.pagination.current_page}`)
+                .then((response) => {
+                    console.log(response.data);
+                    this.ILogs = response.data.data;
+                    this.pagination = response.data;
+                })
+                .catch((errors) => {
 
-    <template>
-     <div class="w-full h-auto bg-white px-3 py-5  ">
-        <div class="inline-block min-w-full align-middle">
-            <div class="flex justify-between h-full min-w-full ">
-                <div class="flex justify-start flex-col space-x-3">
-                    <div class="flex items-end gap-3 left-side-col-1">
-                        <div>
-                            <DateInput label="Start Date" />
-                        </div>
-                        <div>
-                            <DateInput label="End Date" />
-                        </div>
-                        <div>
-                            <NormalButton label="Filter"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
+
+                })
+        },
+    },
+}
+</script>
+
+<template>
+    <div class="flex flex-col justify-between h-full w-auto my-5 px-3">
+        <div>
+            <div class="inline-block min-w-full align-middle ">
+                <div class="flex justify-between h-full min-w-full ">
+                    <div class="flex justify-start flex-col gap-3">
+                        <div class="flex items-end gap-3 left-side-col-1">
+                            <div>
+                                <DateInput label="Start Date" />
+                            </div>
+                            <div>
+                                <DateInput label="End Date" />
+                            </div>
+                            <div>
+                                <NormalButton @click="isFiltered = !isFiltered" label="Filter"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="right-side mt-[5px]">
-                    <form class="flex items-start gap-3">
-                        <div class="flex">
-                            <div class="relative w-full">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <div class="right-side mt-[5px]">
+                        <form class="flex items-start gap-3">
+                            <div class="flex">
+                                <div class="relative w-full">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                     <SearchIcon />
                                 </div>
                                 <input type="text" id="simple-search"
-                                class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
-                                placeholder="Search" required />
+                                    class="bg-gray-50 h-[34px] border border-r-0 border-[#EAEAEA] text-gray-900 text-[10px] font-light block w-full pl-10 p-2.5"
+                                    placeholder="Search" required />
+                                </div>
+                                <NormalButton label="Go"
+                                class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
                             </div>
-                            <NormalButton label="Go"
-                            class="p-1.5 px-3 uppercase h-[34px] bg-[#F9951E] text-[10px] text-white" />
-                        </div>
-                        <NormalButton label="Export"
-                        class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E] tracking-wider text-[10px] font-medium text-white" />
-                    </form>
+                            <NormalButton label="Export"
+                            class="p-1.5 px-3 uppercase h-[34px] bg-[#3E3E3E]   tracking-wider text-[10px] font-medium text-white" />
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="min-w-full py-3  align-middle ">
-            <div class="relative h-[360px]">
-                <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
-                    <table class="min-w-full divide-y divide-gray-300">
-                        <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
-                            <tr class="divide-x divide-gray-200">
-                                <th v-for="label in labels" :key="label.label" scope="col"
-                                class="py-1 px-2 uppercase tracking-wider text-center text-gray-900 w-1/8 ">
-                                {{ label.label }}
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] ">
-                            <tr class="divide-x divide-gray-200">
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    01
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    09/28/2022 12:00:05 PM
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    REDHA AL ANSARI exchange
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    REDHA-09282022-0001
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    CMT-09282022-0009
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    PHP
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    25,000.13
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    25,000.13
-                                </td>
-                                <td class="whitespace-nowrap text-center uppercase py-1 px-2 tracking-wider">
-                                    25,000.13
-                                </td>
-
-                            </tr>
-                        </tbody>
-                    </table>
+            <div v-if="isFiltered" class="my-3">
+                <div class="min-w-full py-2 align-middle ">
+                    <div class="relative h-[360px]">
+                        <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
+                            <table class="min-w-full divide-y divide-gray-300">
+                                <thead class="bg-[#EDEDED] font-medium text-[11px] whitespace-nowrap sticky top-0">
+                                    <tr class="divide-x divide-gray-200">
+                                        <th v-for="label in labels" :key="label.label" scope="col"
+                                            class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900  " >
+                                            {{ label.label }}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
+                                    <tr class="divide-x divide-gray-200">
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            05
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            LONG BOND PAPER
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            STOCK - OUT
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            1
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            REAMS
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            MAIN OFFICE
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            IT
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            LEMITA, ANGELOU C.
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            SABADO, CHRISTIAN
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            09/28/2022 12:34:10 PM
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+                <Pagination @paginate="getILogs()" :pagination="pagination"
+                    :offset="1" class = "py-10"/>
+            </div>
+            <div v-else class="flex flex-col items-center justify-center py-20">
+                <img src="../../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
+                <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
             </div>
         </div>
     </div>
-    <Pagination @paginate="getInventoryLogs()" :pagination="pagination"
-        :offset="1" class="mt-8" />
 
-    </template>
-    <style>
-    .slide-fade-enter-active {
-        transition: all 0.3s ease-out;
-    }
-
-    .slide-fade-leave-active {
-        transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-    }
-
-    .slide-fade-enter-from,
-    .slide-fade-leave-to {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    </style>
+</template>

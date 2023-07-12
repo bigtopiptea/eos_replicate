@@ -61,7 +61,15 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                     {label:'Unit Price'},
                     {label:'Amount'},
                 ],
+
+                unitOption:[
+                    {label:'PCS'},
+                    {label:'REAMS'},
+                ]
+                ,
                 counter:1,
+                quantity:0,
+                price:0,
             }
         },
 
@@ -171,33 +179,35 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                     <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center">
                         <tr v-for="counter in counter" :key="counter" class="divide-x divide-gray-300">
                             <td
-                                class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase p-2 tracking-wider">
-                                {{ counter }}
+                                class="whitespace-nowrap uppercase p-2 tracking-wider w-fit">
+                                <span class="flex items-center justify-center gap-[10px] ">
+                                    {{ counter }}
+                                </span>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[250px]">
                                 <CheckboxSelectMenu  :inputWidth="'w-12/12'"  :placeholder="'SELECT cost center '" :options="deliverToOptions"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                                <CheckboxSelectMenu  :inputWidth="'w-12/12'"  :placeholder="'SELECT item'" :options="descriptionOptions"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left ">
+                                <CheckboxSelectMenu  :placeholder="'SELECT item'" :options="descriptionOptions"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider">
-                                PCS
+                                class="whitespace-nowrap uppercase p-2 tracking-wider w-[150px]">
+                                <CheckboxSelectMenu  :inputWidth="'w-12/12'"  :placeholder="'SELECT UNIT'" :options="unitOption"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-center w-[150px]">
                                 <!-- add increment/decrement button -->
-                                <input type="number" class="bg-white uppercase h-7 p-1 border border-gray-300 text-[#3E3E3E] pl-2 text-center w-full">
+                                <input v-model="quantity" type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-center w-full">
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                1,800.00
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right w-[150px]">
+                                <input v-model="price" type="number" class="unit_price bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-center w-full">
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                3,600.00
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right w-[150px]">
+                                {{ this.quantity * this.price }}
                             </td>
                         </tr>
                     </tbody>
@@ -212,18 +222,18 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
                 <div class="flex gap-[2px]  h-[110px]">
                     <div class="w-[75%] relative">
                         <label for="remarks" class="absolute top-[2px] left-[2px] pt-[10px] pl-[10px] bg-white w-[99%]">Remarks</label>
-                        <textarea class="w-full  bg-white resize-none block pt-[30px] pb-2.5 px-2.5 text-[10px] text-gray-900 h-full border-2 border-[#EAEAEA]" name="remarks" cols="30" rows="10"></textarea>
+                        <textarea class="w-full  bg-white resize-none block pt-[30px] pb-2.5 px-2.5 text-[10px] text-gray-900 h-full border border-[#EAEAEA]" name="remarks" cols="30" rows="10"></textarea>
                     </div>
                     <div class="w-[25%] h-full flex flex-col justify-between">
-                        <div class="flex items-center justify-between h-[32%] p-2 border-2 border-[#EAEAEA]">
+                        <div class="flex items-center justify-between h-[32%] p-2 border border-[#EAEAEA]">
                             <p>ToTAL AMOUNT (VAT INCLUSIVE):</p>
                             <p>3,600.00</p>
                         </div>
-                        <div class="flex items-center justify-between h-[32%] p-2 border-2 border-[#EAEAEA]">
+                        <div class="flex items-center justify-between h-[32%] p-2 border border-[#EAEAEA]">
                             <p>vat-amount:</p>
                             <p>3,600.00</p>
                         </div>
-                        <div class="flex items-center justify-between h-[32%] p-2 border-2 border-[#EAEAEA]">
+                        <div class="flex items-center justify-between h-[32%] p-2 border border-[#EAEAEA]">
                             <p>grand total:</p>
                             <p>3,600.00</p>
                         </div>
@@ -237,3 +247,11 @@ import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transactio
         </div>
     </ModalTwo>
 </template>
+
+<style scoped>
+input.quantity::-webkit-outer-spin-button,
+input.quantity::-webkit-inner-spin-button {
+  -webkit-appearance: auto;
+    opacity: 1;
+}
+</style>

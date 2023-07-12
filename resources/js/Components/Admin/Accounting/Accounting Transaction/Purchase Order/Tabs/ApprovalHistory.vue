@@ -14,7 +14,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 export default {
 
-    name:'AT Pending',
+    name:'POApproval History',
 
     components:{
         ChevRightIcon,
@@ -35,27 +35,29 @@ export default {
     data() {
         return {
             user: this.$store.state.auth.user,
-            ATPending: [],
+            POApprovalHistory: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
                 {label:'DATE'},
-                {label:'PAYEE'},
-                {label:'INVOICE NO.'},
+                {label:'SUPPLIER'},
+                {label:'DELIVER TO'},
                 {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
+                {label:'APPROVED BY'},
+                {label:'DATE APPROVED'},
             ],
             isFiltered: false
         }
     },
     methods: {
-        async getATPending() {
+        async getPOApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.ATPending = response.data.data;
+                    this.POApprovalHistory = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -106,7 +108,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered" class="mt-[30px]">
+            <div v-if="isFiltered" class="mt-3">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
@@ -114,12 +116,18 @@ export default {
                                 <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
                                     <tr class="divide-x divide-gray-200">
                                         <th scope="col"
-                                            class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
-                                            <input type="checkbox">
-                                            apv no.
+                                            class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
+                                            <div class="flex gap-7">
+                                                <div class="flex justify-start">
+                                                    <input type="checkbox">
+                                                </div>
+                                                <span class="flex justify-center">
+                                                    PO NO.
+                                                </span>
+                                            </div>
                                         </th>
                                         <th v-for="label in labels" :key="label.label" scope="col"
-                                            class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                            class="py-1 px-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900  " >
                                             {{ label.label }}
                                         </th>
                                     </tr>
@@ -127,11 +135,15 @@ export default {
                                 <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                                     <tr class="divide-x divide-gray-200">
                                         <td
-                                            class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
-                                            <input type="checkbox">
-                                            <p class="text-black">    
-                                                001
-                                            </p>
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            <div class="flex gap-7">
+                                                <div class="flex justify-start">
+                                                    <input type="checkbox">
+                                                </div>
+                                                <span class="flex justify-center">
+                                                    <p class="text-cyan-600 underline cursor-pointer" >PO0001</p>
+                                                </span>
+                                            </div>
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -155,7 +167,15 @@ export default {
                                         </td>
                                         <td
                                             class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                            for verification
+                                            Approved
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            Asis Ginalyn, Ibarra
+                                        </td>
+                                        <td
+                                            class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                            09/28/2022 12:34:10 PM
                                         </td>
                                     </tr>
                                 </tbody>
@@ -163,7 +183,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getATPending()" :pagination="pagination"
+                <Pagination @paginate="getPOApprovalHistory()" :pagination="pagination"
                     :offset="1" class = "py-10"/>
             </div>
             <div v-else class="flex flex-col items-center justify-center py-20">

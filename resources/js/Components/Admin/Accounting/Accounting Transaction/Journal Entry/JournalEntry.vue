@@ -16,9 +16,9 @@ import InputGroupSelectMenu from '@/Components/Misc/Select Menu/InputGroupSelect
 import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue'
 import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue'
 import TextAreaGroup from '@/Components/Misc/Input/TextAreaGroup.vue';
-import Pending from '@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/Tabs/Pending.vue'
-import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transaction/Accounts Payable Voucher/Tabs/ApprovalHistory.vue'
-import FloatingTextArea from "../../../../Misc/Input/FloatingTextArea.vue";
+import Pending from '@/Components/Admin/Accounting/Accounting Transaction/Journal Entry/Tabs/Pending.vue'
+import ApprovalHistory from '@/Components/Admin/Accounting/Accounting Transaction/Journal Entry/Tabs/ApprovalHistory.vue'
+import FloatingTextArea from "@/Components/Misc/Input/FloatingTextArea.vue";
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 
 
