@@ -57,11 +57,15 @@ export default {
                 {label: 'no credit bank'},
             ],
             replyOpen: false,
+            approvalDetailsOpen: false
         }
     },
     methods: {
         replyToggle() {
             this.replyOpen = false;
+        },
+        approvalDetailsToggle() {
+            this.approvalDetailsOpen = false;
         },
         async getCCReply() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
@@ -139,7 +143,7 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <p class="underline text-cyan-500 cursor-pointer">
+                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)"  class="underline text-cyan-500 cursor-pointer">
                                             01
                                         </p>
                                     </td>
@@ -229,6 +233,24 @@ export default {
             <div class="flex justify-between">
                 <BorderButton @click.prevent="replyToggle()" :buttonLabel="'cancel'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
                 <BorderButton :buttonLabel="'save'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
+
+    <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
+        <div class="flex flex-col justify-between h-full pb-5 mx-10">
+            <div class="flex flex-col gap-[50px] mt-5">
+                <div class="flex flex-col gap-3">    
+                    <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date verified'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'approver'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date approved'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click.prevent="approvalDetailsToggle()" :buttonLabel="'close'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
             </div>
         </div>
     </Slideover>

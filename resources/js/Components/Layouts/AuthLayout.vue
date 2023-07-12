@@ -425,6 +425,12 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/accounting/intl-remittance-revenue-report",
+                            label: "ACC - Intl & F/X Revenue",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 //CM 5-3

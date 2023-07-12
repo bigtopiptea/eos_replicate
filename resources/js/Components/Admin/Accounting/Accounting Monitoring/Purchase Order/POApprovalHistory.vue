@@ -12,6 +12,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
 export default {
 
@@ -31,6 +32,7 @@ export default {
         Pagination,
         TextAreaGroup,
         InputGroupSelectMenu,
+        Slideover,
         ModalTwo
     },
 
@@ -68,12 +70,16 @@ export default {
                 {label: 'approve'},
                 {label: 'reject'},
             ],
-            createPurchaseModal:false,
+            viewPurchaseModal:false,
+            approvalDetailsOpen: false
         }
     },
     methods: {
-        createPurchaseToggle(){
-            this.createPurchaseModal = false;
+        approvalDetailsToggle(){
+            this.approvalDetailsOpen = false;
+        },
+        viewPurchaseToggle(){
+            this.viewPurchaseModal = false;
         },
         async getPOApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
@@ -142,7 +148,7 @@ export default {
                                     <th scope="col"
                                         class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         <input type="checkbox">
-                                        apv no.
+                                        id
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
@@ -155,8 +161,7 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <!-- set to user.role == 'approver' -->
-                                        <p @click.prevent="user.role ? (createPurchaseModal = !createPurchaseModal) : ''" :class="user.role == 'approver' ? 'underline text-cyan-600 cursor-pointer' : 'text-black'">
+                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)"  class="underline text-cyan-600 cursor-pointer">
                                             01
                                         </p>
                                     </td>
@@ -170,7 +175,9 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INV00000001
+                                        <p @click="(viewPurchaseModal = !viewPurchaseModal)" class="underline text-cyan-600 cursor-pointer">
+                                            PO0000001
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -203,7 +210,25 @@ export default {
             :offset="1" class = "py-10"/>
     </div>
 
-    <ModalTwo :show="createPurchaseModal" @close="createPurchaseToggle" :modalTitle="'Create Purchase Order'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
+    <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
+        <div class="flex flex-col justify-between h-full pb-5 mx-10">
+            <div class="flex flex-col gap-[50px] mt-5">
+                <div class="flex flex-col gap-3">    
+                    <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date verified'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'approver'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date approved'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click.prevent="approvalDetailsToggle()" :buttonLabel="'close'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
+
+    <ModalTwo :show="viewPurchaseModal" @close="viewPurchaseToggle" :modalTitle="'View Purchase Order'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
         <div class="w-full flex flex-col gap-[30px] p-5">
             <div class="flex justify-end ">
                 <div class="w-[32.6%]">
@@ -325,7 +350,7 @@ export default {
                     </div>
                 </div>
                 <div class="flex justify-center gap-[20px]">
-                    <BorderButton @click.prevent="createPurchaseToggle()" :buttonLabel="'CLOSE'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
+                    <BorderButton @click.prevent="viewPurchaseToggle()" :buttonLabel="'CLOSE'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
                     <BorderButton :buttonLabel="'PRINT'" :buttonPadding="'p-1'" :buttonTextSize="'text-[13px]'"/>
                 </div>
             </div>
