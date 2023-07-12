@@ -1,12 +1,12 @@
 <template>
-    <div class="relative pt-[20px]">
-        <div class="flex whitespace-nowrap font-medium text-center text-gray-500 ">
+    <div class="relative pt-[20px] shadow-gray-300 shadow-md">
+        <div class="flex whitespace-nowrap font-medium text-center text-[#6E6E6E] ">
             <div v-for="tab in tabs" :key="tab" class="mr-1">
                 <router-link @click="setTab(tab)"
                              to="" href="#" aria-current="page"
-                             :class="[tabLength,setHover, [selected === tab ? setSelectedBg : '']]"
+                             :class="[tabLength,setHover, [selected === tab ? setSelectedBg : ''] , [selected !== tab ? 'bg-[#EAEAEA]' : '']  ]"
                              class="inline-block py-2 border duration-300 my-1 uppercase
-                              hover:text-white text-[11px] shadow-md tracking-widest font-rubik-light rounded-t-lg"
+                              hover:text-white text-[11px]  shadow-md tracking-widest font-rubik-light rounded-t-lg"
                              >
                             <!-- <div class=" text-lg">
                             {{tab.value}}
@@ -19,7 +19,7 @@
             </div>
 
         </div>
-        <div class="border-4 absolute -bottom-[0.16rem] w-full"
+        <div class="border-4 absolute -bottom-[0.16rem] w-full "
             :class="setBorder">
         </div>
     </div>

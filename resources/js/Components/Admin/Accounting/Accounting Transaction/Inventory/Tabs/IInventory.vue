@@ -132,7 +132,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered" class="mt-[30px]">
+            <div v-if="isFiltered" class="mt-3">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">

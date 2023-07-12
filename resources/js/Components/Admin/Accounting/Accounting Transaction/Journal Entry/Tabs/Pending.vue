@@ -14,7 +14,7 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 export default {
 
-    name:'Purchase Order Pending',
+    name:'Journal Entry Pending',
 
     components:{
         ChevRightIcon,
@@ -35,15 +35,15 @@ export default {
     data() {
         return {
             user: this.$store.state.auth.user,
-            POPending: [],
+            JEPending: [],
             pagination: {
                 current_page: 1,
             },
             labels:[
-                {label:'DATE'},
-                {label:'SUPPLIER'},
-                {label:'DELIVER TO'},
-                {label:'ACCOUNTS PAYABLE'},
+                {label:'TRANSACTION DATE'},
+                {label:'VALUE DATE'},
+                {label:'NAME'},
+                {label:'PARTICULARS'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
             ],
@@ -51,11 +51,11 @@ export default {
         }
     },
     methods: {
-        async getPOPending() {
+        async getJEPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
                     console.log(response.data);
-                    this.POPending = response.data.data;
+                    this.JEPending = response.data.data;
                     this.pagination = response.data;
                 })
                 .catch((errors) => {
@@ -106,7 +106,7 @@ export default {
                     </div>
                 </div>
             </div>
-            <div v-if="isFiltered" class="my-3">
+            <div v-if="isFiltered" class="mt-3">
                 <div class="min-w-full py-2 align-middle ">
                     <div class="relative h-[360px]">
                         <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
@@ -120,7 +120,7 @@ export default {
                                                     <input type="checkbox">
                                                 </div>
                                                 <span class="flex justify-center">
-                                                    PO NO.
+                                                    JE NO.
                                                 </span>
                                                 <span/>
                                             </div>
@@ -140,7 +140,7 @@ export default {
                                                     <input type="checkbox">
                                                 </div>
                                                 <span class="flex justify-center">
-                                                    <p class="text-cyan-600 underline cursor-pointer" >PO0001</p>
+                                                    JE0001
                                                 </span>
                                                 <span/>
                                             </div>
@@ -175,7 +175,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <Pagination @paginate="getPOPending()" :pagination="pagination"
+                <Pagination @paginate="getJEPending()" :pagination="pagination"
                     :offset="1" class = "py-10"/>
             </div>
             <div v-else class="flex flex-col items-center justify-center py-20">
