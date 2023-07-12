@@ -3,17 +3,18 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-import BalanceSheetTable from "./Tables/BalanceSheetTable.vue";
+import IncomeStatementTable from "./Tables/IncomeStatementTable.vue";
 export default {
-    name: 'Accounts Payable Report',
+    name: 'Income Statement Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        BalanceSheetTable,
+        IncomeStatementTable
     },
     data() {
         return {
             startDate: '',
             endDate: '',
+            test: ''
         }
     },
     methods: {
@@ -24,7 +25,7 @@ export default {
 }
 </script>
 <template>
-    <div class="w-full h-screen bg-white">
+    <div class="w-full h-auto bg-white">
         <div class="flex flex-col gap-[15px] min-w-full py-5 px-[12px]">
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
@@ -63,7 +64,7 @@ export default {
         </div>
         <!-- MAIN CONTENT -->
         <div v-if="this.startDate && this.endDate">
-            <BalanceSheetTable :StartDate="this.startDate" :EndDate="this.endDate"/>
+            <IncomeStatementTable :StartDate="this.startDate" :EndDate="this.endDate"/>
         </div>
         <div v-else class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">

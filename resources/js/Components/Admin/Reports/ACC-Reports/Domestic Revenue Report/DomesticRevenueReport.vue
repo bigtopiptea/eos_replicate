@@ -3,28 +3,35 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-import BalanceSheetTable from "./Tables/BalanceSheetTable.vue";
+import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
+import DomesticRevenueTable from "./Tables/DomesticRevenueTable.vue";
 export default {
-    name: 'Accounts Payable Report',
+    name: 'Domestic Revenue Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        BalanceSheetTable,
+        CheckboxSelectMenu, DomesticRevenueTable
     },
     data() {
         return {
+            yearOptions:[
+                {label: '2010'}, {label: '2011'},
+                {label: '2012'}, {label: '2013'},
+                {label: '2014'}, {label: '2015'},
+                {label: '2016'}, {label: '2017'},
+                {label: '2018'}, {label: '2019'},
+                {label: '2020'}, {label: '2021'},
+                {label: '2022'}, {label: '2023'},
+                {label: '2024'}, {label: '2025'},
+                {label: '2026'}, {label: '2027'},
+            ],
             startDate: '',
             endDate: '',
         }
     },
-    methods: {
-        updateSelectedAccount(value) {
-            this.selectedAccount = value;
-        },
-    },
 }
 </script>
 <template>
-    <div class="w-full h-screen bg-white">
+    <div class="w-full h-auto bg-white">
         <div class="flex flex-col gap-[15px] min-w-full py-5 px-[12px]">
             <div class="flex justify-between items-end h-auto w-full border-b-2 border-[#EAEAEA] px-[11px] pb-[30px]">
                 <div class="flex justify-end flex-col">
@@ -63,7 +70,7 @@ export default {
         </div>
         <!-- MAIN CONTENT -->
         <div v-if="this.startDate && this.endDate">
-            <BalanceSheetTable :StartDate="this.startDate" :EndDate="this.endDate"/>
+            <DomesticRevenueTable :StartDate="this.startDate" :EndDate="this.endDate"/>
         </div>
         <div v-else class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">

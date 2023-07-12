@@ -33,7 +33,7 @@ export default{
                 {label:'OUTSTANDING BALANCE'},
                 {label:'PAYMENT PERCENTAGE'},
                 {label:'AGING (IN DAYS)'},
-                {label:'STATUS)'},
+                {label:'STATUS'},
             ],
             formattedStartDate: '',
             formattedEndDate: '',
@@ -115,7 +115,7 @@ export default{
                                 12 DAYS
                             </td>
                             <td
-                                class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
+                                class="whitespace-nowrap text-center uppercase py-2 px-1 tracking-wider">
                                 UNSETTLED
                             </td>
                         </tr>

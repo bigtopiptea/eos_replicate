@@ -35,17 +35,12 @@ export default{
             ],
             formattedStartDate: '',
             formattedEndDate: '',
-            count: 5,
-            selectedRowIndex: null,
         }
     },    
     mounted() {
         this.formatDates();
     },
     methods: {
-        selectRow(index) {
-            this.selectedRowIndex = index;
-        },
         formatDates() {
             this.formattedStartDate = moment(this.StartDate).format('L');
             this.formattedEndDate = moment(this.EndDate).format('L');
@@ -61,7 +56,6 @@ export default{
 
                 })
         },
-
     },
 }
 </script>
@@ -91,7 +85,7 @@ export default{
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px]">
-                        <tr v-for="(item, index) in count" :key="index" :class="{ 'selected-row': selectedRowIndex === index }" @click="selectRow(index)" class="divide-x divide-gray-200 hover:border hover:border-yellow-400" >
+                        <tr class="divide-x divide-gray-200">
                             <td
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
                                 AR - AL EKTESAD PHP
@@ -186,8 +180,3 @@ export default{
             :offset="1" class="mt-8" />
 </div>
 </template>
-<style>
-.selected-row {
-  border: 2px solid red; /* Add your desired border style */
-}
-</style>

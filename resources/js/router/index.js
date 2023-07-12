@@ -71,6 +71,9 @@ import ACCEndDayReport from"@/Components/Admin/Reports/ACC-Reports/End Day Repor
 import ACCConsolidatedEndDayReport from"@/Components/Admin/Reports/ACC-Reports/Consolidated End Day Report/ConsolidatedEndDayReport.vue";
 import ACCTrialBalanceReport from"@/Components/Admin/Reports/ACC-Reports/Trial Balance Report/TrialBalanceReport.vue";
 import ACCBalanceSheetReport from"@/Components/Admin/Reports/ACC-Reports/Balance Sheet Report/BalanceSheetReport.vue";
+import ACCIncomeStatementReport from"@/Components/Admin/Reports/ACC-Reports/Income Statement Report/IncomeStatementReport.vue";
+import ACCConsolidatedIncomeReport from"@/Components/Admin/Reports/ACC-Reports/Consolidated Income Report/ConsolidatedIncomeReport.vue";
+import ACCDomesticRevenueReport from"@/Components/Admin/Reports/ACC-Reports/Domestic Revenue Report/DomesticRevenueReport.vue";
 
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
@@ -679,6 +682,33 @@ const routes = [
                 ability: `ACC - Balance Sheet Report`,
                 },
             },
+            {
+                path: "/app/reports/accounting/income-statement-report",
+                name: "Income Statement Per Service",
+                component: ACCIncomeStatementReport,
+                meta: {
+                    title: `Income Statement Per Service`,
+                    ability: `Income Statement Per Service`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/consolidated-income-report",
+                name: "Consolidated Income Report",
+                component: ACCConsolidatedIncomeReport,
+                meta: {
+                    title: `Consolidated Income Report`,
+                    ability: `Consolidated Income Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/domestic-revenue-report",
+                name: "Domestic Revenue Report",
+                component: ACCDomesticRevenueReport,
+                meta: {
+                    title: `Domestic Revenue Report`,
+                    ability: `Domestic Revenue Report`,
+                },
+            },
 
             //Carl Mendoza 5-3
             {
@@ -883,11 +913,11 @@ const routes = [
             },
             {
                 path: "/app/billing-collection/monitoring",
-                name: "Monitoring",
+                name: "Billing Collection Monitoring",
                 component: BCMonitoring,
                 meta: {
                     title: `Monitoring`,
-                    ability: `PriMonitoringnt`,
+                    ability: `Monitoring`,
                 },
             },
             // Accounting 6/26
