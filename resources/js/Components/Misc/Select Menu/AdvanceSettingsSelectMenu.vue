@@ -25,7 +25,7 @@
             @change="toggleOption"
             class="mr-2 text-white"
           />
-          {{ option.label }}
+          {{ option.value }}
         </label>
       </div>
     </div>

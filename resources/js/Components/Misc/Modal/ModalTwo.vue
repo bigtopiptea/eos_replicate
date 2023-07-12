@@ -19,6 +19,9 @@
                       <div v-if="iconShow === 'UPLOAD'" class="w-[30px] h-[30px]">
                           <CloudUploadIcon/>
                       </div>
+                      <div v-if="iconShow === 'EDIT'" class="w-[30px] h-[30px] text-white">
+                        <EditIcon/>
+                      </div>
                     </div>
                 </div>
                 <div class="flex justify-start flex-col mt-[30px] overflow-y-auto" :class="[heightModal, titlePosition]">
@@ -43,11 +46,13 @@
 <script>
 import LockPinIcon from '../Icons/LockPinIcon.vue';
 import CloudUploadIcon from '../Icons/CloudUploadIcon.vue';
+import EditIcon from '../Icons/EditIcon.vue';
 export default {
     name: "ModalTwo",
     components:{
     LockPinIcon,
-    CloudUploadIcon
+    CloudUploadIcon,
+    EditIcon
 },
     props: {
         widthModal: {
@@ -89,6 +94,7 @@ export default {
 <script setup>
 import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+import EditIconVue from '../Icons/EditIcon.vue';
 // import { ExclamationTriangleIcon } from '@heroicons/vue/24/outline'
 
 const open = ref(true)

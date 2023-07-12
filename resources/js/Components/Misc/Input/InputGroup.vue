@@ -1,11 +1,11 @@
 <template>
     <!-- OJT -->
     <div class="flex items-center font-light text-[10px] w-full h-7 whitespace-nowrap">
-        <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="labelWidth">
+        <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="[labelWidth,labelTextColor]">
             {{ inputLabel }}
             <span v-show="isRequired" class="ml-1 text-red-500">*</span>
         </label>
-        <input :type="inputType" class="bg-white h-full py-1 px-[14px] focus:outline-none border border-[#EAEAEA] text-[#3E3E3E] text-left disabled:bg-[#EAEAEA]" :class="[inputWidth, inputPadRight]" :disabled="isDisabled" :maxlength="setMax" :placeholder="placeholder" :required="isRequired">
+        <input :type="inputType" class="bg-white h-full py-1 px-[14px] focus:outline-none border border-[#EAEAEA] disabled:bg-[#EAEAEA]" :class="[inputType == 'number' ? 'text-right' : '',inputWidth, inputPadRight,inputTextAlign]" :disabled="isDisabled" :maxlength="setMax" :placeholder="placeholder" :required="isRequired">
     </div>
 </template>
 
@@ -19,11 +19,18 @@ export default{
     inputWidth:{
         type: String,
         default: 'w-5/12',
-
     },
     labelWidth:{
         type: String,
         default: 'w-7/12',
+    },
+    labelTextColor:{
+        type: String,
+        default: 'text-[#3e3e3e]'
+    },
+    inputTextAlign:{
+        type: String,
+        default: 'text-left'
     },
     setMax:{
         type: Number,
@@ -50,5 +57,20 @@ export default{
         required: false
     }
   },
+  data() {
+    return {
+        value:false,
+    }
+  },
+  computed:{
+        checkNumber(value){
+            if(this.inputType == 'number'){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
 }
 </script>
