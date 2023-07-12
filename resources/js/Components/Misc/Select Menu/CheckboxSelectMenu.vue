@@ -76,7 +76,7 @@
         },
         showBorder:{
           type: String,
-          default: "border border-gray-300"
+          default: "border border-[#EAEAEA]"
         }
     },
 

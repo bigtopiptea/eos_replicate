@@ -1005,11 +1005,11 @@ export default {
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-/* input::-webkit-outer-spin-button,
+input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
-} */
+
+}
 
 
 </style>

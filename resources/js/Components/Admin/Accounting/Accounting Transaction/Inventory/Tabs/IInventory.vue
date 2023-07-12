@@ -15,7 +15,7 @@ import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import BoxIconDrop from '@/Components/Misc/Icons/BoxIconDrop.vue';
 import BoxIconX from '@/Components/Misc/Icons/BoxIconX.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
-import ModalTwo from '../../../../../Misc/Modal/ModalTwo.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue';
 export default {
 
     name:'AT Pending',
@@ -335,7 +335,7 @@ export default {
     </ModalTwo>
 </template>
 
-<style>
+<style scoped>
     /* Remove background color */
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {

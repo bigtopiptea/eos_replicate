@@ -1,7 +1,7 @@
 <template>
     <Listbox as="div" v-model="selected">
       <div class="relative flex items-center h-7 w-full">
-        <ListboxLabel class="inline-flex items-center text-[10px] h-full uppercase bg-white z-5 border border-[#EAEAEA] px-2" :class="labelWidth">
+        <ListboxLabel class="inline-flex items-center text-[10px] h-full uppercase bg-transparent z-5 border border-[#EAEAEA] px-2" :class="[labelWidth,labelTextColor]">
           {{ label }}
           <span v-show="isRequired" class="ml-1 text-red-500">*</span>
         </ListboxLabel>
@@ -12,7 +12,7 @@
             <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
-  
+
         <transition leave-active-class="transition ease-in duration-100" leave-from-class="opacity-100" leave-to-class="opacity-0">
           <ListboxOptions class="absolute -bottom-[100px] right-0 z-10 max-h-[100px]  overflow-auto bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-[11px] border" :class="inputWidth">
             <ListboxOption hidden>
@@ -37,7 +37,7 @@
       </div>
     </Listbox>
   </template>
-  
+
   <script>
 //   import { ref } from 'vue'
   import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } from '@headlessui/vue'
@@ -52,6 +52,10 @@
         label:{
             type: String,
             default: 'Label'
+        },
+        labelTextColor:{
+            type: String,
+            default: ''
         },
         inputWidth:{
             type: String,
