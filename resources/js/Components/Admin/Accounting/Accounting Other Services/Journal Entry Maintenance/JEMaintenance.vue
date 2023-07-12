@@ -42,7 +42,6 @@ export default {
             remarksOption:[
                 {label: 'remarks templates'},
                 {label: 'create new template'},
-                {label: 'save draft as template'},
             ],
             tagList:[
                 {label: 'gross_amount', color: 'bg-[#3e3e3e]'},

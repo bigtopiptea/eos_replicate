@@ -283,7 +283,7 @@ export default {
                         },
                         {
                             to: "/app/reports/payment-to-suppliers",
-                            label: "CMT - Payment to Suppliers",
+                            label: "CMT - Pymnt to Suppliers",
                             children: [],
                             icon: CircleCheckIcon,
                         },
@@ -407,6 +407,24 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
+                        {
+                            to: "/app/reports/accounting/income-statement-report",
+                            label: "ACC - Income Statement",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/accounting/consolidated-income-report",
+                            label: "ACC - Cnsldtd Income",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/accounting/domestic-revenue-report",
+                            label: "ACC - Domestic Revenue",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
                     ]
                 },
                 //CM 5-3
@@ -432,12 +450,7 @@ export default {
                             children: [],
                             icon: CircleCheckIcon,
                         },
-                        {
-                            to: "/app/other-services/je-maintenance",
-                            label: "JE Maintenance",
-                            children: [],
-                            icon: CircleCheckIcon,
-                        },
+
 
                     ],
                     icon: ReportIcon,
@@ -516,6 +529,12 @@ export default {
                         {
                             to: "/app/new-settings/b&c/maintenance",
                             label: "B&C Maintenance",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/other-services/je-maintenance",
+                            label: "ACC JE Maintenance",
                             children: [],
                             icon: CircleCheckIcon,
                         },

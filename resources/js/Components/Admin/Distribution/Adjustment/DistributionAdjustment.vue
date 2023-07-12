@@ -17,6 +17,8 @@ import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '../../../Misc/Dropdown/Dropdown.vue';
 import TabNav from "@/Components/Misc/Tabs/TabNav.vue";
 import Tab from "@/Components/Misc/Tabs/Tab.vue";
+import BorderButton from "@/Components/Misc/Buttons/BorderButton.vue";
+import Slideover from "@/Components/Misc/Slideover/Slideover.vue";
 import axios from "axios";
 
 
@@ -38,6 +40,8 @@ export default {
     SmallHeading,
     Accordion,
     NAIcon,
+    BorderButton,
+    Slideover
 },
 
     data() {
@@ -64,10 +68,15 @@ export default {
                 'Option 1',
                 'Option 2',
                 'Option 3',
-            ]
+            ],
+            slideoverOpen: false,
+            
         }
     },
     methods: {
+        slideOverToggle() {
+            this.slideoverOpen = false;
+        },
         async getDistributionAdjustment() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -182,14 +191,12 @@ export default {
                                         </td>
                                         <td class="whitespace-nowrap uppercase text-center py-1 px-2 tracking-wider">
                                             <div class="flex justify-center items-center gap-1">
-                                                <router-link class="relative justify-center items-center" to="/app/status-reversal/adjustment-entry">
-
-                                                    <button class="border h-[20px] z-30 w-[60px] bg-white border-#D7D7D7 text-center text-#000000 hover:text-white hover:bg-[#D7D7D7] pl-[15px]"><NAIcon class=" bg-inherit absolute h-3 w-3 top-1 left-1 uppercase whitespace-nowrap"/>N/A</button>
-                                                </router-link>
-                                                <router-link class="relative justify-center items-center" to="/app/status-reversal/adjustment-entry">
-
+                                                <div class="relative justify-center items-center">
+                                                    <button @click="slideoverOpen = !slideoverOpen" class="border h-[20px] z-30 w-[60px] bg-white border-#3E3E3E text-center text-#3E3E3E hover:text-white hover:bg-[#3E3E3E] pl-[15px]"><NAIcon class=" bg-inherit absolute h-3 w-3 top-1 left-1 uppercase whitespace-nowrap"/>N/A</button>
+                                                </div>
+                                                <div class="relative justify-center items-center">
                                                     <button class="border h-[20px] bg-white w-[60px] z-30 border-#FB9E30 text-center text-#FB9E30 hover:text-white hover:bg-[#FB9E30] pl-[15px] uppercase whitespace-nowrap"><EditIcon class="-z-1 absolute h-4 w-4 top-[1px] left-1"/>Create</button>
-                                                </router-link>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -209,6 +216,18 @@ export default {
     </TabNav>
 </div>
 
+<Slideover :show="slideoverOpen" @close="slideOverToggle" :title="'ADJUSTMENT ENTRY'">
+    <div class="flex flex-col justify-between items-center py-5 h-full w-full">
+        <div class="flex flex-col items-center mt-[20px]">
+            <p class="uppercase text-center text-[15px]">Transaction not applicable with Operations? <br> Click 'Yes' to proceed and 'No' to cancel.</p>
+        </div>
+
+        <div class="flex justify-between w-full px-[50px]">
+            <BorderButton @click.prevent="slideOverToggle()"  :buttonLabel="'NO'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            <BorderButton :buttonLabel="'YES'" :buttonPadding="'p-2'" :buttonTextSize="'text-[15px]'"/>
+        </div>
+    </div>
+</Slideover>
 </template>
 <style>
 .slide-fade-enter-active {

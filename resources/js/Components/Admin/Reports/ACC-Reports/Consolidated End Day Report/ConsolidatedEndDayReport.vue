@@ -3,6 +3,7 @@
         <div class="flex flex-col items-center gap-[30px]">
             <div class="flex justify-center gap-[10px]">
                 <button v-for="(label, id) in buttonLabels" :key="id" 
+                :value="label.label"
                 class="w-[180px] uppercase text-[10px] text-center px-2 py-3"
                 :class="!selected.includes(id) ? 'bg-[#d7d7d7]' : 'bg-[#f9951e] text-white'"
                 @click="toggleSelection(id)">
