@@ -13,17 +13,6 @@ export default {
     },
     data() {
         return {
-            yearOptions:[
-                {label: '2010'}, {label: '2011'},
-                {label: '2012'}, {label: '2013'},
-                {label: '2014'}, {label: '2015'},
-                {label: '2016'}, {label: '2017'},
-                {label: '2018'}, {label: '2019'},
-                {label: '2020'}, {label: '2021'},
-                {label: '2022'}, {label: '2023'},
-                {label: '2024'}, {label: '2025'},
-                {label: '2026'}, {label: '2027'},
-            ],
             startDate: '',
             endDate: '',
         }

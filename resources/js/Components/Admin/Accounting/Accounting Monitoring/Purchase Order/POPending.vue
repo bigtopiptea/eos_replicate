@@ -12,6 +12,8 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
 export default {
 
     name:'PO Pending',
@@ -30,6 +32,8 @@ export default {
         Pagination,
         TextAreaGroup,
         InputGroupSelectMenu,
+        Slideover,
+        ModalTwo
     },
 
     data() {
@@ -42,7 +46,7 @@ export default {
             labels:[
                 {label:'DATE'},
                 {label:'PAYEE'},
-                {label:'INVOICE NO.'},
+                {label:'PURCHASE ORDER NO.'},
                 {label:'ACCOUNTS PAYABLE'},
                 {label:'CREATED BY'},
                 {label:'STATUS'},
@@ -55,9 +59,17 @@ export default {
                 {label: 'approve'},
                 {label: 'reject'},
             ],
+            approvalDetailsOpen: false,
+            viewPurchaseModal:false,
         }
     },
     methods: {
+        viewPurchaseToggle(){
+            this.viewPurchaseModal = false;
+        },
+        approvalDetailsToggle(){
+            this.approvalDetailsOpen = false;
+        },
         async getPOPending() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -125,7 +137,7 @@ export default {
                                     <th scope="col"
                                         class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
                                         <input type="checkbox">
-                                        apv no.
+                                        id
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
                                         class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
@@ -142,7 +154,7 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <p class="underline text-cyan-600 cursor-pointer" >    
+                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)" class="underline text-cyan-600 cursor-pointer" >    
                                             01
                                         </p>
                                     </td>
@@ -156,7 +168,9 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INV00000001
+                                        <p @click="(viewPurchaseModal = !viewPurchaseModal)"  class="underline text-cyan-600 cursor-pointer">
+                                            PO0000001
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -192,4 +206,150 @@ export default {
             :offset="1" class = "py-10"/>
     </div>
 
+    <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
+        <div class="flex flex-col justify-between h-full pb-5 mx-10">
+            <div class="flex flex-col gap-[50px] mt-5">
+                <div class="flex flex-col gap-3">    
+                    <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date verified'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'approver'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date approved'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click.prevent="approvalDetailsToggle()" :buttonLabel="'close'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
+
+    <ModalTwo :show="viewPurchaseModal" @close="viewPurchaseToggle" :modalTitle="'View Purchase Order'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
+        <div class="w-full flex flex-col gap-[30px] p-5">
+            <div class="flex justify-end ">
+                <div class="w-[32.6%]">
+                    <InputGroup :inputLabel="'Purchase Order No'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <h1 class="uppercase text-[12px] font-bold text-black">Purchase Order</h1>
+            </div>
+            <div class="flex w-full gap-3">
+                <div class="flex flex-col justify-between w-[33%]">
+                    <div>
+                        <InputGroup :inputLabel="'supplier'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Contact Person'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Email Address'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Contact No.'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between gap-[10px] w-[33%]">
+                    <div>
+                        <TextAreaGroup :inputLabel="'supplier address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputHeight="'h-[70px]'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'deliver to'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'date'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <TextAreaGroup :inputLabel="'delivery address'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputHeight="'h-[70px]'" :isDisabled="true" />
+                    </div>
+
+                </div>
+                <div class="flex flex-col justify-between w-[33%]">
+                    <div>
+                        <InputGroup :inputLabel="'PO DATE'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'date'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Payment Terms'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Expected Del. Date'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"  :inputType="'date'"/>
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Contact Person'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'Contact No.'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                </div>
+            </div>
+            <!-- Table -->
+            <div>
+                <table class="min-w-full divide-y divide-white bg-[#EAEAEA]">
+                    <thead class="font-medium text-[11px] whitespace-nowrap sticky top-0">
+                        <tr class="divide-x divide-white">
+                            <th v-for="label in purchaseOrderLabels" :key="label.label" scope="col"
+                                class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                {{ label.label }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white font-light text-[10px] text-center">
+                        <tr class="divide-x divide-white">
+                            <td
+                                class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase p-2 tracking-wider">
+                                01
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                ALLCASH SJDM BULACAN
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                BROTHER 2540 TONER
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider">
+                                PCS
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider">
+                                2
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                1,800.00
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                3,600.00
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex flex-col gap-[30px] text-[10px] uppercase">
+                <div class="flex gap-[2px]  h-[110px]">
+                    <div class="w-[75%] relative">
+                        <label for="remarks" class="absolute top-[1px] left-[1px] pt-[10px] pl-[10px]  disabled:bg-[#EAEAEA] w-[99%]">Remarks</label>
+                        <textarea class="w-full disabled:bg-[#EAEAEA] bg-white resize-none block pt-[30px] pb-2.5 px-2.5 text-[10px] text-gray-900 h-full border-2 border-[#EAEAEA]" name="remarks" cols="30" rows="10" disabled></textarea>
+                    </div>
+                    <div class="w-[25%] h-full flex flex-col justify-between">
+                        <div class="flex items-center justify-between h-[32%] p-2 bg-[#EAEAEA]">
+                            <p>sub-total:</p>
+                            <p>3,600.00</p>
+                        </div>
+                        <div class="flex items-center justify-between h-[32%] p-2 bg-[#EAEAEA]">
+                            <p>vat-amount:</p>
+                            <p>3,600.00</p>
+                        </div>
+                        <div class="flex items-center justify-between h-[32%] p-2 bg-[#EAEAEA]">
+                            <p>grand total:</p>
+                            <p>3,600.00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center gap-[20px]">
+                    <BorderButton @click.prevent="viewPurchaseToggle()" :buttonLabel="'CLOSE'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
+                    <BorderButton :buttonLabel="'PRINT'" :buttonPadding="'p-1'" :buttonTextSize="'text-[13px]'"/>
+                </div>
+            </div>
+        </div>
+    </ModalTwo>
 </template>

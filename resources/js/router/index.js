@@ -74,6 +74,7 @@ import ACCBalanceSheetReport from"@/Components/Admin/Reports/ACC-Reports/Balance
 import ACCIncomeStatementReport from"@/Components/Admin/Reports/ACC-Reports/Income Statement Report/IncomeStatementReport.vue";
 import ACCConsolidatedIncomeReport from"@/Components/Admin/Reports/ACC-Reports/Consolidated Income Report/ConsolidatedIncomeReport.vue";
 import ACCDomesticRevenueReport from"@/Components/Admin/Reports/ACC-Reports/Domestic Revenue Report/DomesticRevenueReport.vue";
+import ACCIntlRemittanceRevenueReport from"@/Components/Admin/Reports/ACC-Reports/Intl Remittance & Revenue Report/IntlRemittanceRevenueReport.vue";
 
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
@@ -707,6 +708,15 @@ const routes = [
                 meta: {
                     title: `Domestic Revenue Report`,
                     ability: `Domestic Revenue Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/intl-remittance-revenue-report",
+                name: "International Remittance and F/X Revenue Report",
+                component: ACCIntlRemittanceRevenueReport,
+                meta: {
+                    title: `International Remittance and F/X Revenue Report`,
+                    ability: `International Remittance and F/X Revenue Report`,
                 },
             },
 

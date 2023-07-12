@@ -12,6 +12,7 @@ import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
+import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 export default {
 
     name:'AP Pending',
@@ -30,6 +31,7 @@ export default {
         Pagination,
         TextAreaGroup,
         InputGroupSelectMenu,
+        Slideover
     },
 
     data() {
@@ -49,9 +51,13 @@ export default {
                 {label:'WORKFLOW STATUS'},
                 {label:'APPROVED BY'},
             ],
+            approvalDetailsOpen: false
         }
     },
     methods: {
+        approvalDetailsToggle() {
+            this.approvalDetailsOpen = false;
+        },
         async getAPApprovalHistory() {
             await axios.get(`/api/billers?page=${this.pagination.current_page}`)
                 .then((response) => {
@@ -128,7 +134,7 @@ export default {
                                     <td
                                         class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <p class="underline text-cyan-500 cursor-pointer">
+                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)"  class="underline text-cyan-600 cursor-pointer">
                                             01
                                         </p>
                                     </td>
@@ -142,7 +148,9 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        INV00000001
+                                        <p class="underline text-cyan-600 cursor-pointer">
+                                            INV00000001
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -150,9 +158,9 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="#">
+                                        <p class="underline text-cyan-600 cursor-pointer">
                                             unpaid
-                                        </a>
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -166,17 +174,6 @@ export default {
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
                                         asis, ginalyn ibarra
                                     </td>
-                                    <!-- <td
-                                        class="whitespace-nowrap uppercase justify-evenly py-1   tracking-wider">
-                                        <div class="flex justify-around">
-                                            <button class="tooltip tooltip-left" data-tip="view">
-                                                <img src="../../../../../../assets/images/EyeIcon.png" alt="Eye Icon" class="h-5 w-5">
-                                            </button>
-                                            <button class="tooltip tooltip-left" data-tip="reply">
-                                                <img src="../../../../../../assets/images/reply-icon.png" alt="Reply Icon" class="h-5 w-5">
-                                            </button>
-                                        </div>
-                                    </td> -->
                                 </tr>
                             </tbody>
                         </table>
@@ -188,4 +185,21 @@ export default {
             :offset="1" class = "py-10"/>
     </div>
 
+    <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
+        <div class="flex flex-col justify-between h-full pb-5 mx-10">
+            <div class="flex flex-col gap-[50px] mt-5">
+                <div class="flex flex-col gap-3">    
+                    <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date verified'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                    <InputGroup :inputLabel="'approver'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
+                    <InputGroup :inputLabel="'date approved'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <BorderButton @click.prevent="approvalDetailsToggle()" :buttonLabel="'close'" :buttonPadding="'p-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+            </div>
+        </div>
+    </Slideover>
 </template>
