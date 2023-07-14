@@ -4,12 +4,12 @@ import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import IntlRemittanceRevenueTable from "./Tables/IntlRemittanceRevenueTable.vue";
+import MonthlyIncomeStatementTable from "./Tables/MonthlyIncomeStmtTable.vue";
 export default {
-    name: 'International Remittance & F/X Revenue Report',
+    name: 'Monthly Income Statement Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, IntlRemittanceRevenueTable
+        CheckboxSelectMenu, MonthlyIncomeStatementTable
     },
     data() {
         return {
@@ -58,13 +58,11 @@ export default {
             </div>
         </div>
         <!-- MAIN CONTENT -->
-        <div v-if="this.startDate && this.endDate">
-            <IntlRemittanceRevenueTable :StartDate="this.startDate" :EndDate="this.endDate"/>
-        </div>
-        <div v-else class="flex flex-col items-center justify-center py-20">
+        <MonthlyIncomeStatementTable :StartDate="this.startDate" :EndDate="this.endDate"/>
+
+        <!-- <div class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">
             <p class="uppercase text-center text-[16px] font-semibold">no records to display</p>
-        </div>
-  
+        </div> -->
     </div>
 </template>

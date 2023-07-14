@@ -3,19 +3,23 @@ import NormalButton from "@/Components/Misc/Buttons/NormalButton.vue";
 import SearchIcon from "@/Components/Misc/Icons/SearchIcon.vue";
 import ListIcon from "@/Components/Misc/Icons/ListIcon.vue";
 import DateInput from "@/Components/Misc/Input/DateInput.vue";
-import CheckboxSelectMenu from "@/Components/Misc/Select Menu/CheckboxSelectMenu.vue";
-import IntlRemittanceRevenueTable from "./Tables/IntlRemittanceRevenueTable.vue";
+import DetailedCommissionTable from "./Tables/DetailedCommissionTable.vue";
 export default {
-    name: 'International Remittance & F/X Revenue Report',
+    name: 'Detailed Commission Report',
     components: {
         NormalButton, SearchIcon, ListIcon, DateInput,
-        CheckboxSelectMenu, IntlRemittanceRevenueTable
+        DetailedCommissionTable,
     },
     data() {
         return {
             startDate: '',
             endDate: '',
         }
+    },
+    methods: {
+        updateSelectedAccount(value) {
+            this.selectedAccount = value;
+        },
     },
 }
 </script>
@@ -59,7 +63,7 @@ export default {
         </div>
         <!-- MAIN CONTENT -->
         <div v-if="this.startDate && this.endDate">
-            <IntlRemittanceRevenueTable :StartDate="this.startDate" :EndDate="this.endDate"/>
+            <DetailedCommissionTable :StartDate="this.startDate" :EndDate="this.endDate"/>
         </div>
         <div v-else class="flex flex-col items-center justify-center py-20">
             <img src="../../../../../../assets/images/no-records-img.png" alt="" class="h-[200px] w-[230px]">

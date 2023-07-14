@@ -420,6 +420,12 @@ export default {
                             icon: CircleCheckIcon,
                         },
                         {
+                            to: "/app/reports/accounting/monthly-income-statement-report",
+                            label: "ACC - Monthly Income Stmt",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
                             to: "/app/reports/accounting/domestic-revenue-report",
                             label: "ACC - Domestic Revenue",
                             children: [],
@@ -428,6 +434,12 @@ export default {
                         {
                             to: "/app/reports/accounting/intl-remittance-revenue-report",
                             label: "ACC - Intl & F/X Revenue",
+                            children: [],
+                            icon: CircleCheckIcon,
+                        },
+                        {
+                            to: "/app/reports/accounting/detailed-commission-report",
+                            label: "ACC - Detailed Commission",
                             children: [],
                             icon: CircleCheckIcon,
                         },
