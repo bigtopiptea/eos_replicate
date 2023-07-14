@@ -146,28 +146,28 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                     <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center border-x">
                         <tr v-for="testCounter in testCounter" :key="testCounter" class="divide-x divide-gray-300 ">
                             <td
-                                class="whitespace-nowrap uppercase tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="accountTitleOption" :showBorder="'border-none'"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="accountTitleOption" />
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase  tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" :showBorder="'border-none'"/>
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-left w-[200px]">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" />
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="serviceOption" :showBorder="'border-none'"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]   ">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="serviceOption"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase tracking-wider text-right w-[30%]">
+                                class="whitespace-nowrap uppercase tracking-wider p-1 text-right w-[300px]">
                                 <FloatingTextArea :inputHeight="'h-[50px]'" />
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase tracking-wider text-right">
-                                <FloatingLabelInput :placeholder="'-'" :showBorder="'border-none'"  :inputType="'number'"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right w-[100px]">
+                                <FloatingLabelInput :placeholder="'-'" :inputType="'number'"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase  tracking-wider text-right">
-                                <FloatingLabelInput :placeholder="'-'" :showBorder="'border-none'" :inputType="'number'" />
+                                class="whitespace-nowrap uppercase p-2 tracking-wider  text-right w-[100px]">
+                                <FloatingLabelInput :placeholder="'-'" :inputType="'number'" />
                             </td>
                         </tr>
                     </tbody>
