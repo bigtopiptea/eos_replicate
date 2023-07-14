@@ -75,6 +75,8 @@ import ACCIncomeStatementReport from"@/Components/Admin/Reports/ACC-Reports/Inco
 import ACCConsolidatedIncomeReport from"@/Components/Admin/Reports/ACC-Reports/Consolidated Income Report/ConsolidatedIncomeReport.vue";
 import ACCDomesticRevenueReport from"@/Components/Admin/Reports/ACC-Reports/Domestic Revenue Report/DomesticRevenueReport.vue";
 import ACCIntlRemittanceRevenueReport from"@/Components/Admin/Reports/ACC-Reports/Intl Remittance & Revenue Report/IntlRemittanceRevenueReport.vue";
+import ACCDetailedCommissionReport from"@/Components/Admin/Reports/ACC-Reports/Detailed Commission Report/DetailedCommissionReport.vue";
+import ACCMonthlyIncomeStatementReport from"@/Components/Admin/Reports/ACC-Reports/Monthly Income Statement Report/MonthlyIncomeStmtReport.vue";
 
 
 import Pushback from "@/Components/Admin/Other Services/Pushback/Pushback.vue";
@@ -621,7 +623,7 @@ const routes = [
             // 6/20
             {
                 path: "/app/reports/b&c/end-day-report",
-                name: "End Day Report",
+                name: "B&C End Day Report",
                 component: BCEndDayReport,
                 meta: {
                     title: `End Day Report`,
@@ -717,6 +719,24 @@ const routes = [
                 meta: {
                     title: `International Remittance and F/X Revenue Report`,
                     ability: `International Remittance and F/X Revenue Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/detailed-commission-report",
+                name: "Detailed Commission Report",
+                component: ACCDetailedCommissionReport,
+                meta: {
+                    title: `Detailed Commission Report`,
+                    ability: `Detailed Commission Report`,
+                },
+            },
+            {
+                path: "/app/reports/accounting/monthly-income-statement-report",
+                name: "Monthly Income Statement",
+                component: ACCMonthlyIncomeStatementReport,
+                meta: {
+                    title: `Monthly Income Statement`,
+                    ability: `Monthly Income Statement`,
                 },
             },
 
