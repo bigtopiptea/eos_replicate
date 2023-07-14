@@ -36,30 +36,30 @@ export default{
                 {
                     label: 'TOTAL REVENUE',
                     data: [
-                        'TOTAL REVENUE', 
+                        'TOTAL REVENUE',
                         '999,000.00', '999,000.00',
                         '999,000.00', '999,000.00',
                         '999,000.00', '999,000.00',
-                        '999,000.00', 
+                        '999,000.00',
                     ],
                     rowData: [
-                        { 
+                        {
                             data: [
-                                'Commission - Air Asia', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', 
-                            ] 
+                                'Commission - Air Asia',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00',
+                            ]
                         },
-                        { 
+                        {
                             data: [
-                                'Commission - ECPay', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', 
-                            ] 
+                                'Commission - ECPay',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00',
+                            ]
                         },
                     ]
                 }
@@ -68,30 +68,30 @@ export default{
                 {
                     label: 'TOTAL OPERATING EXPENSES',
                     data: [
-                        'TOTAL OPERATING EXPENSES', 
+                        'TOTAL OPERATING EXPENSES',
                         '999,000.00', '999,000.00',
                         '999,000.00', '999,000.00',
                         '999,000.00', '999,000.00',
-                        '999,000.00', 
+                        '999,000.00',
                     ],
                     rowData: [
-                        { 
+                        {
                             data: [
-                                'Salaries Expense', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', 
-                            ] 
+                                'Salaries Expense',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00',
+                            ]
                         },
-                        { 
+                        {
                             data: [
-                                '13th Month', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', '250,000.00', 
-                                '250,000.00', 
-                            ] 
+                                '13th Month',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00', '250,000.00',
+                                '250,000.00',
+                            ]
                         },
                     ]
                 }
@@ -100,21 +100,21 @@ export default{
                 {
                     label: 'TOTAL AMORTIZATION/DEPRECIATION EXPENSES',
                     data: [
-                        'TOTAL OPERATING EXPENSES', 
-                        '-', '-', '-', '-', '-', '-', '-' 
+                        'TOTAL OPERATING EXPENSES',
+                        '-', '-', '-', '-', '-', '-', '-'
                     ],
                     rowData: [
-                        { 
+                        {
                             data: [
-                                'AMORTIZATION - PREPAID INSURANCE', 
-                                '-', '-', '-', '-', '-', '-', '-' 
-                            ] 
+                                'AMORTIZATION - PREPAID INSURANCE',
+                                '-', '-', '-', '-', '-', '-', '-'
+                            ]
                         },
-                        { 
+                        {
                             data: [
-                                'DEPRECIATION EXPENSE - LRI', 
-                                '-', '-', '-', '-', '-', '-', '-' 
-                            ] 
+                                'DEPRECIATION EXPENSE - LRI',
+                                '-', '-', '-', '-', '-', '-', '-'
+                            ]
                         },
                     ]
                 }
@@ -123,9 +123,9 @@ export default{
             formattedStartDate: '',
             formattedEndDate: '',
             isRotated: false
-            
+
         }
-    },    
+    },
     mounted() {
         this.formatDates();
     },
@@ -158,7 +158,7 @@ export default{
         <div class="text-center mt-[20px]">
             <h3 class="text-[13px] font-semibold">ALLCASH BRANCHES income STATEMENT</h3>
             <p class="text-[12px]">
-                {{ formattedStartDate }} - 
+                {{ formattedStartDate }} -
                 {{ formattedEndDate }}
             </p>
         </div>
@@ -204,7 +204,7 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                
+
                             </td>
                         </tr>
                         <!-- DIVIDER 1 END-->
@@ -220,22 +220,22 @@ export default{
                                 75.00
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                             <td class="whitespace-nowrap text-right uppercase py-2 px-1 tracking-wider">
-                              
+
                             </td>
                         </tr>
                         <!-- COMMISSION EXPENSE END -->
@@ -244,7 +244,7 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                
+
                             </td>
                         </tr>
                         <!-- DIVIDER 2 END-->
@@ -284,7 +284,7 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                
+
                             </td>
                         </tr>
                         <!-- DIVIDER 3 END-->
@@ -316,7 +316,7 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-                                
+
                             </td>
                         </tr>
                         <!-- DIVIDER 4 END-->
@@ -350,7 +350,7 @@ export default{
                                 75.00
                             </td>
                         </tr>
-                        <!-- EBITDA END -->   
+                        <!-- EBITDA END -->
 
                         <!-- DIVIDER 5 END-->
                         <tr class="bg-white divide-x divide-gray-200">
@@ -381,7 +381,7 @@ export default{
                                 </td>
                             </tr>
                         </template>
-                        <!-- OPERATING EXPENSES END -->     
+                        <!-- OPERATING EXPENSES END -->
 
                         <!-- DIVIDER 6 END-->
                         <tr class="bg-white divide-x divide-gray-200">
@@ -420,7 +420,7 @@ export default{
                                 75.00
                             </td>
                         </tr>
-                        <!-- EBIT END -->   
+                        <!-- EBIT END -->
                     </tbody>
                 </table>
             </div>

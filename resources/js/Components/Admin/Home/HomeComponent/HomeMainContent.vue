@@ -10,31 +10,31 @@ export default{
             ],
             statsTracker: [
                 {
-                    id: 1, 
+                    id: 1,
                     value: '49.00',
                     tieUp: 'REDHA AL ANSARI EXCHANGE',
                     latestUpdate: '09/28/2022 8:00:00 AM'
                 },
                 {
-                    id: 2, 
+                    id: 2,
                     value: '50.01',
                     tieUp: 'REDHA AL ANSARI EXCHANGE',
                     latestUpdate: '09/28/2022 8:00:00 AM'
                 },
                 {
-                    id: 3, 
+                    id: 3,
                     value: '50.03',
                     tieUp: 'REDHA AL ANSARI EXCHANGE',
                     latestUpdate: '09/28/2022 8:00:00 AM'
                 },
                 {
-                    id: 4, 
+                    id: 4,
                     value: '45.00',
                     tieUp: 'REDHA AL ANSARI EXCHANGE',
                     latestUpdate: '09/28/2022 8:00:00 AM'
                 },
                 {
-                    id: 5, 
+                    id: 5,
                     value: '49.99',
                     tieUp: 'REDHA AL ANSARI EXCHANGE',
                     latestUpdate: '09/28/2022 8:00:00 AM'
@@ -53,7 +53,7 @@ export default{
     <div class="w-full h-auto p-3 bg-white">
         <div>
             <p class="text-base font-bold">COMMITED RATE AS OF: <br>
-               <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span> 
+               <span class="text-sm">SEPTEMBER 28,2022 08:00:00 AM</span>
             </p>
         </div>
         <div class="flex justify-center gap-2 mt-3 pb-5 border-b-2 border-[#EAEAEA] w-full">
@@ -68,12 +68,12 @@ export default{
                             <div>
                                 <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
+                                    <span class="font-semibold">Last update:</span>
                                     {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div id="item2" class="carousel-item flex justify-center gap-3 w-full">
                         <div v-for="(stat, id) in statsTracker" :key="id" class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
@@ -82,12 +82,12 @@ export default{
                             <div>
                                 <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
+                                    <span class="font-semibold">Last update:</span>
                                     {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div id="item3" class="carousel-item flex justify-center gap-3 w-full">
                         <div v-for="(stat, id) in statsTracker" :key="id" class="flex flex-col justify-center gap-3 h-[120px] w-[20%] py-2 px-1 bg-#F9951E text-center text-white rounded-md">
                             <div class="text-xl">
@@ -96,15 +96,15 @@ export default{
                             <div>
                                 <p class="text-[10px] font-semibold">{{ stat.tieUp }}</p>
                                 <p class="text-[8px] uppercase">
-                                    <span class="font-semibold">Last update:</span> 
+                                    <span class="font-semibold">Last update:</span>
                                     {{ stat.latestUpdate }}
                                 </p>
                             </div>
                         </div>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
                 <div class="flex justify-center w-full gap-2">
-                    <a v-for="item in items" :key="item.id" :href="item.href" 
+                    <a v-for="item in items" :key="item.id" :href="item.href"
                         :class="[
                             'w-3 h-3 rounded-full',
                             item.id === activeTab ? 'bg-[#F9951E]' : 'bg-[#D9D9D9]'

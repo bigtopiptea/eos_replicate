@@ -155,8 +155,8 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                     </div>
                     <div class="flex justify-between text-[10px] w-full h-7 whitespace-nowrap">
                         <label for="name" class="uppercase inline-flex items-center h-full px-2 text-left border border-[#EAEAEA] text-[10px] w-[41.5%]">covered period</label>
-                        <input type="date" class=" bg-white h-full p-1 border border-gray-300 text-[#3E3E3E] w-[29%]">
-                        <input type="date" class=" bg-white h-full p-1 border border-gray-300 text-[#3E3E3E] w-[29%]">
+                        <input type="date" class=" bg-white h-full px-3 border border-[#EAEAEA] text-[#3E3E3E] w-[29%]">
+                        <input type="date" class=" bg-white h-full px-3 border border-[#EAEAEA] text-[#3E3E3E] w-[29%]">
                     </div>
                     <div>
                         <InputGroup :inputLabel="'accounts payable'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
@@ -167,9 +167,9 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
             <div class="relative">
                 <table class="min-w-full divide-y divide-gray-300 ">
                     <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0 border">
-                        <tr class="divide-x divide-gray-300 w-full">
+                        <tr class="divide-x divide-gray-300 ">
                             <th v-for="label in purchaseOrderLabels" :key="label.label" scope="col"
-                                class=" whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
+                                class=" whitespace-nowrap uppercase px-2 py-1 tracking-wider text-center text-gray-900 ">
                                 {{ label.label }}
                             </th>
                         </tr>
@@ -177,43 +177,43 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                     <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center border-x">
                         <tr v-for="testCounter in testCounter" :key="testCounter" class="divide-x divide-gray-300 w-full">
                             <td
-                                class="whitespace-nowrap uppercase tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" :showBorder="'border-none'"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption"/>
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase  tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" :showBorder="'border-none'"/>
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" />
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase px-2 tracking-wider text-left">
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[150px]">
+                                <input class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-center w-full">
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
+                                <input type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
+                                <input type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-right">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" />
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2   tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase px-2  tracking-wider text-right">
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" />
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
                                 -
                             </td>
                             <td
-                                class="whitespace-nowrap uppercase px-2  tracking-wider text-right">
-                                -
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase  tracking-wider text-right">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" :showBorder="'border-none'"/>
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase px-2   tracking-wider text-right">
-                                -
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase  tracking-wider text-right">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" :showBorder="'border-none'"/>
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase px-2 tracking-wider text-right">
-                                -
-                            </td>
-                            <td
-                                class="whitespace-nowrap uppercase px-2 tracking-wider text-right">
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
                                 -
                             </td>
                         </tr>
@@ -229,7 +229,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                             total
                         </td>
                         <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
-                            -
+                            totaldebithere
                         </td>
                         <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
                             -

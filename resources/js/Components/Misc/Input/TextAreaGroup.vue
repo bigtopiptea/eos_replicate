@@ -4,7 +4,7 @@
         <label for="name" class="uppercase inline-flex items-start h-full  px-2 py-3 text-left border border-[#EAEAEA]"  :class="labelWidth">
             {{ inputLabel }}
         </label>
-        <textarea  class="disabled:bg-[#EAEAEA] bg-white resize-none block p-2.5 text-[10px] text-gray-900 border border-gray-300 h-full" :class="inputWidth"  :disabled="isDisabled"></textarea>
+        <textarea  class="disabled:bg-[#EAEAEA] bg-white resize-none block p-2.5 text-[10px] text-gray-900 border border-[#EAEAEA] h-full" :class="inputWidth"  :disabled="isDisabled"></textarea>
     </div>
 </template>
 

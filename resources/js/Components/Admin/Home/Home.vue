@@ -19,7 +19,7 @@ import FundingWorksheet from "./HomeComponent/FundingWorksheet.vue";
 
 export default defineComponent({
     components: {
-        HomeMainContent, SmallHeading, FundingWorksheet, 
+        HomeMainContent, SmallHeading, FundingWorksheet,
     },
     data(){
         return{
@@ -27,21 +27,12 @@ export default defineComponent({
             slideoverOpen: false, //Slideover 1 (Profile)
             profileSlideoverOpen: false, //Slideover 2 (Profile Image Upload)
             adjustProfileSlideoverOpen: false, //Slideover 3 (Profile Image Setup)
-        }   
+        }
     },
     methods: {
         openFundingWorksheet(){
             this.isOpen = !this.isOpen;
         },
-        // slideOverToggle() {
-        //     this.slideoverOpen = false;
-        // },
-        // profileSlideOverToggle() {
-        //     this.profileSlideoverOpen = false;
-        // },
-        // adjustProfileSlideoverToggle(){
-        //     this.adjustProfileSlideoverOpen = false;
-        // },
         getState(type) {
             this.state = type;
         },
