@@ -198,7 +198,7 @@ export default {
         </div>
     </div>
     <!-- SLIDEOVER INVENTORY STOCK OUT -->
-    <Slideover :show="slideoverOpen" @close="slideoverToggle" :title="'ADD NEW'">
+    <Slideover :show="slideoverOpen" @close="slideoverToggle" :title="'Inventory Stockout'">
         <div class="flex flex-col justify-between h-full px-[40px] py-[15px]">
             <div class="flex flex-col gap-[10px]">
                 <InputGroup  :inputLabel="'ITEM'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>

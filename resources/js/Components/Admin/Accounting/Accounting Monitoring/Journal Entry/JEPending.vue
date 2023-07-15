@@ -13,6 +13,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
 export default {
 
     name:'JE Pending',
@@ -31,7 +32,8 @@ export default {
         Pagination,
         TextAreaGroup,
         InputGroupSelectMenu,
-        Slideover
+        Slideover,
+        ModalTwo
     },
 
     data() {
@@ -58,10 +60,26 @@ export default {
                 {label: 'approve'},
                 {label: 'reject'},
             ],
-            approvalDetailsOpen: false
+            journalEntryLabels:[
+                {label:'ACCOUNT TITLE'},
+                {label:'COST CENTER'},
+                {label:'SERVICES'},
+                {label:'DEBT'},
+                {label:'CREDIT'},
+                {label:'VAT RATE'},
+                {label:'INPUT TAX (DR.)'},
+                {label:'ATC'},
+                {label:'EWT RATE'},
+                {label:'W/TAX - EXPANDED (CREDIT)'},
+            ],
+            approvalDetailsOpen: false,
+            openModal:false,
         }
     },
     methods: {
+        openModalToggle(){
+            this.openModal = false;
+        },
         approvalDetailsToggle() {
             this.approvalDetailsOpen = false;
         },
@@ -128,19 +146,22 @@ export default {
                 <div class="relative h-[360px]">
                     <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
                         <table class="min-w-full divide-y divide-gray-300">
-                            <thead class="bg-[#D7D7D7] font-medium text-[11px] whitespace-nowrap sticky top-0">
+                            <thead class="bg-[#D7D7D7] font-regular text-[11px] whitespace-nowrap sticky top-0">
                                 <tr class="divide-x divide-gray-200">
                                     <th scope="col"
-                                        class="flex items-center gap-[10px] py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="flex items-center justify-between py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                         <input type="checkbox">
-                                        id
+                                        <p>
+                                            id
+                                        </p>
+                                        <span/>
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                         {{ label.label }}
                                     </th>
                                     <th  v-if="user.role == 'verifier' || user.role == 'approver'" scope="col"
-                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                         action
                                     </th>
                                 </tr>
@@ -148,11 +169,12 @@ export default {
                             <tbody class="divide-y divide-gray-200 bg-white font-light text-[10px] text-center">
                                 <tr class="divide-x divide-gray-200">
                                     <td
-                                        class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
+                                        class="flex items-center justify-between gap-[10px] whitespace-nowrap uppercase py-2 px-2 tracking-wider">
                                         <input type="checkbox">
-                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)" class="underline text-cyan-600 cursor-pointer'">    
+                                        <p @click="(approvalDetailsOpen = !approvalDetailsOpen)" class="underline text-cyan-600 cursor-pointer'">
                                             01
                                         </p>
+                                        <span/>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -168,7 +190,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <p class="underline text-cyan-600 cursor-pointer">
+                                        <p @click="openModal = !openModal" class="underline text-cyan-600 cursor-pointer">
                                             je001
                                         </p>
                                     </td>
@@ -210,7 +232,7 @@ export default {
     <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
         <div class="flex flex-col justify-between h-full pb-5 mx-10">
             <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
+                <div class="flex flex-col gap-3">
                     <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
                     <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
@@ -224,4 +246,90 @@ export default {
             </div>
         </div>
     </Slideover>
+
+
+    <ModalTwo :show="openModal" @close="openModalToggle" :modalTitle="'View Journal Entry'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
+        <div class="w-full flex flex-col gap-[20px] p-5">
+            <div class="w-full flex items-end justify-end">
+                <div class="w-[30%] ">
+                    <div>
+                        <InputGroup :inputLabel="'Journal Entry No.'" :isDisabled="true" :placeholder="'[SYSTEM GENERATED]'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <h1 class="uppercase text-[12px] font-bold text-black">Journal Entry</h1>
+            </div>
+            <div class="w-full flex items-start justify-start">
+                <div class="w-[70%] flex flex-col gap-3">
+                    <div class="flex gap-1">
+                        <InputGroup :inputLabel="'Transaction Date'" :isDisabled="true" :inputType="'date'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                        <InputGroup :inputLabel="'Value Date'" :inputType="'date'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'"/>
+                    </div>
+                    <div class="relative">
+                        <InputGroup :inputLabel="'payee'" :placeholder="'SEARCH'" :inputWidth="'w-[79.3%]'" :labelWidth="'w-[20.7%]'" :inputPadRight="'pr-[30px]'"/>
+                        <div class="absolute top-[4px] right-[5px] cursor-pointer">
+                            <SearchIcon />
+                        </div>
+                    </div>
+                    <div>
+                        <TextAreaGroup :inputLabel="'payee'" :placeholder="'SEARCH'" :inputWidth="'w-[79.3%]'" :labelWidth="'w-[20.7%]'"/>
+                    </div>
+                    <div class="-mt-2">
+                        <BorderButton @click="(openSlideover = !openSlideover)" :buttonLabel="'attachments'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3e3e3e]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <table class="min-w-full divide-y divide-gray-300 ">
+                    <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0 border">
+                        <tr class="divide-x divide-gray-300 w-full">
+                            <th v-for="label in journalEntryLabels" :key="label.label" scope="col"
+                                class=" whitespace-nowrap uppercase tracking-wider text-center p-2 text-gray-900 ">
+                                {{ label.label }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center border-x">
+                        <tr  class="divide-x divide-gray-300 ">
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-left w-[200px]">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]   ">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase tracking-wider p-1 text-right w-[300px]">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]   ">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase tracking-wider p-1 text-right w-[300px]">
+                                -
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="font-light text-[10px] text-center">
+                        <td colspan="2" class="whitespace-nowrap uppercase  tracking-wider text-right">
+
+                        </td>
+                        <td colspan="4" class="whitespace-nowrap uppercase   tracking-wider text-right"></td>
+                    </tfoot>
+                </table>
+                <div class="flex justify-center gap-[20px] mt-[30px]">
+                    <BorderButton @click.prevent="openModalToggle()" :buttonLabel="'Close'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
+                    <BorderButton :buttonLabel="'Print'" :buttonPadding="'p-1'" :buttonTextSize="'text-[13px]'"/>
+                </div>
+            </div>
+        </div>
+    </ModalTwo>
 </template>

@@ -133,7 +133,7 @@ export default {
                                         id
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                         {{ label.label }}
                                     </th>
                                 </tr>
@@ -163,7 +163,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        BDO 
+                                        BDO
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -206,7 +206,7 @@ export default {
     <Slideover :show="replyOpen" @close="replyToggle" :title="'CANCELLATION'" :iconShow="''">
         <div class="flex flex-col justify-between h-full pb-5 mx-10">
             <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
+                <div class="flex flex-col gap-3">
                     <InputGroup :inputLabel="'reference no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputLabel="'cancellation ref. no.'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :isDisabled="true"/>
                     <InputGroup :inputLabel="'beneficiary'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
@@ -240,7 +240,7 @@ export default {
     <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
         <div class="flex flex-col justify-between h-full pb-5 mx-10">
             <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
+                <div class="flex flex-col gap-3">
                     <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
                     <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>

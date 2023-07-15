@@ -121,7 +121,8 @@ import AccountingJournalEntry from "@/Components/Admin/Accounting/Accounting Tra
 import AccountingInventory from "@/Components/Admin/Accounting/Accounting Transaction/Inventory/Inventory.vue";
 import AccountingJournals from "@/Components/Admin/Accounting/Accounting Transaction/Journals/Journals.vue";
 import AccountingReconAcc from "@/Components/Admin/Accounting/Accounting Transaction/Reconciliation of Accounts/ReconAcc.vue";
-import AccountingViewSL from "@/Components/Admin/Accounting/Accounting Transaction/View SL/ViewSL.vue";
+import AccountingViewJE from "@/Components/Admin/Accounting/Accounting Transaction/View JE/ViewJE.vue";
+
 
 // ACCOUNTING OTHER SERVICES
 import AccountingJEMaintenance from "@/Components/Admin/Accounting/Accounting Other Services/Journal Entry Maintenance/JEMaintenance.vue";
@@ -1025,12 +1026,12 @@ const routes = [
                 },
             },
             {
-                path: "/app/accounting/transactions/view-sl",
-                name: "Accounting View SL",
-                component: AccountingViewSL,
+                path: "/app/accounting/transactions/view-je",
+                name: "Accounting View JE",
+                component: AccountingViewJE,
                 meta: {
-                    title: `Accounting View SL`,
-                    ability: `Accounting View SL`,
+                    title: `Accounting View JE`,
+                    ability: `Accounting View JE`,
                 },
             },
             {

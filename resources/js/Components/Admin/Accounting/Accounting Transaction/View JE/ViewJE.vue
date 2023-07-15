@@ -69,7 +69,7 @@ export default {
 </script>
 
 <template>
- <div class="w-full h-auto bg-white px-3 py-5  ">
+ <div class="w-full min-h-screen  max-h-auto bg-white px-3 py-5  ">
     <div class="inline-block min-w-full align-middle">
         <div class="flex justify-end h-full min-w-full ">
             <div class="right-side mt-[5px]">

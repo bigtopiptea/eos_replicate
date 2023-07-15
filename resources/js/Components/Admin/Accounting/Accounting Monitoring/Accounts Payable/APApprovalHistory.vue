@@ -144,7 +144,7 @@ export default {
                                         id
                                     </th>
                                     <th v-for="label in labels" :key="label.label" scope="col"
-                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 w-full">
+                                        class="py-1 px-5 whitespace-nowrap uppercase tracking-wider text-center text-gray-900 ">
                                         {{ label.label }}
                                     </th>
                                 </tr>
@@ -168,7 +168,7 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <p  @click="(openModal = !openModal)" class="underline text-cyan-600 cursor-pointer">                                           
+                                        <p  @click="(openModal = !openModal)" class="underline text-cyan-600 cursor-pointer">
                                             092022-0001
                                         </p>
                                     </td>
@@ -212,7 +212,7 @@ export default {
     <Slideover :show="approvalDetailsOpen" @close="approvalDetailsToggle" :title="'APPROVAL DETAILS'" >
         <div class="flex flex-col justify-between h-full pb-5 mx-10">
             <div class="flex flex-col gap-[50px] mt-5">
-                <div class="flex flex-col gap-3">    
+                <div class="flex flex-col gap-3">
                     <InputGroup :inputLabel="'maker'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
                     <InputGroup :inputLabel="'date requested'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :inputType="'date'" :isDisabled="true"/>
                     <InputGroup :inputLabel="'verifier'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'"  :isDisabled="true"/>
@@ -226,7 +226,7 @@ export default {
             </div>
         </div>
     </Slideover>
-    
+
     <ModalTwo :show="openModal" @close="openModalToggle" :modalTitle="'View AP Voucher'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
         <div class="w-full flex flex-col gap-[20px] p-5">
             <div class="uppercase text-[10px]">
