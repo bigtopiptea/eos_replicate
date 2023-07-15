@@ -1,7 +1,7 @@
 <template>
     <!-- OJT -->
     <div class="flex items-center font-light text-[10px] w-full h-7 whitespace-nowrap">
-        <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="[labelWidth,labelTextColor]">
+        <label for="name" class="uppercase inline-flex items-center h-full  px-2 text-left border border-[#EAEAEA]"  :class="[labelColor,labelWidth,labelTextColor]">
             {{ inputLabel }}
             <span v-show="isRequired" class="ml-1 text-red-500">*</span>
         </label>
@@ -12,6 +12,7 @@
 <script>
 export default{
   props: {
+
     inputLabel:{
         type: String,
         default: ''
@@ -27,6 +28,10 @@ export default{
     labelTextColor:{
         type: String,
         default: 'text-[#3e3e3e]'
+    },
+    labelColor:{
+        type: String,
+        default: ''
     },
     inputTextAlign:{
         type: String,

@@ -6,7 +6,8 @@
           <span v-show="isRequired" class="ml-1 text-red-500">*</span>
         </ListboxLabel>
         <ListboxButton class="relative h-full cursor-default bg-white pl-3 pr-10 text-left text-gray-900 border border-[#EAEAEA]  focus:outline-none text-[10px]" :class="inputWidth">
-          <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
+
+  <span v-if="selected === false" class="block truncate uppercase">{{ placeholder }}</span>
           <span v-else class="block truncate uppercase">{{ this.selected.name }}</span>
           <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
             <ChevronDownIcon class="h-5 w-5 text-gray-400" aria-hidden="true" />

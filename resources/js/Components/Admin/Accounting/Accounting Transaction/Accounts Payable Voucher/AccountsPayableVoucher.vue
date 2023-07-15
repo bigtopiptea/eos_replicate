@@ -41,7 +41,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                     {label:'ACCOUNTING TITLE'},
                     {label:'COST CENTER'},
                     {label:'SERVICES'},
-                    {label:'DEBT'},
+                    {label:'DEBIT'},
                     {label:'CREDIT'},
                     {label:'VAT RATE'},
                     {label:'INPUT TAX (DR.)'},
@@ -176,27 +176,27 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                         <tr v-for="testCounter in testCounter" :key="testCounter" class="divide-x divide-gray-300 w-full">
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption"/>
+                                <CheckboxSelectMenu :placeholder="'Select Acc Title'" :options="branchOption"/>
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" />
+                                <CheckboxSelectMenu :placeholder="'Select Cost Center'" :options="branchOption" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[150px]">
-                                <input class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-center w-full">
+                                <input placeholder="Input Service" class="placeholder:text-[#3e3e3e] placeholder:tracking-wider quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-center w-full">
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
-                                <input type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                <input placeholder="-" type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
-                                <input type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                <input placeholder="-"  type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2  tracking-wider text-right">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" />
+                                <CheckboxSelectMenu :placeholder="'Select Vat Rate'" :options="vatRateOption" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2   tracking-wider text-right">
@@ -204,7 +204,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="vatRateOption" />
+                                <CheckboxSelectMenu :placeholder="'Select ATC'" :options="vatRateOption" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
@@ -227,7 +227,7 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                             total
                         </td>
                         <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
-                            totaldebithere
+                            -
                         </td>
                         <td class="whitespace-nowrap uppercase px-2  tracking-wider text-right border">
                             -

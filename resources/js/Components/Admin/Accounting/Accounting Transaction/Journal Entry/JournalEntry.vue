@@ -147,19 +147,19 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
                         <tr v-for="testCounter in testCounter" :key="testCounter" class="divide-x divide-gray-300 ">
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="accountTitleOption" />
+                                <CheckboxSelectMenu :placeholder="'Select Account Title'" :options="accountTitleOption" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2  tracking-wider text-left w-[200px]">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="branchOption" />
+                                <CheckboxSelectMenu :placeholder="'Select Branch'" :options="branchOption" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[200px]   ">
-                                <CheckboxSelectMenu :placeholder="'-'" :options="serviceOption"/>
+                                <CheckboxSelectMenu :placeholder="'Select Service'" :options="serviceOption"/>
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase tracking-wider p-1 text-right w-[300px]">
-                                <FloatingTextArea :inputHeight="'h-[50px]'" />
+                                <FloatingTextArea :placeholder="'-'" :inputHeight="'h-[50px]'" />
                             </td>
                             <td
                                 class="whitespace-nowrap uppercase p-2 tracking-wider text-right w-[100px]">
