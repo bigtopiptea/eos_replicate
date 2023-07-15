@@ -71,7 +71,7 @@ export default{
         <h2 class="text-[16px] text-center font-semibold">{{ Report }}</h2>
         <div class="text-center">
             <h3 class="text-[13px] font-semibold">TIN: 006-651-461-000</h3>
-            <h3 class="text-[13px] font-semibold">WITHHOLDING AGENT’S NAME: OPTIMUM EXCHANGE REMIT INC.</h3>
+            <h3 class="text-[13px] font-semibold">WITHOLDING AGENT’S NAME: OPTIMUM EXCHANGE REMIT INC.</h3>
             <p class="text-[12px]">
                 {{ formattedStartDate }} - 
                 {{ formattedEndDate }}
