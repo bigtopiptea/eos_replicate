@@ -161,9 +161,9 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <a class="underline text-cyan-500" href="#">
+                                        <p class="underline text-cyan-500">
                                             amd-09282022-0001
-                                        </a>
+                                        </p>
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">

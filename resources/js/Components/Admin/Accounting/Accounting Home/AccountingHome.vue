@@ -1,10 +1,10 @@
 <template>
     <div class="bg-white w-full h-auto px-2">
         <div class="p-4">
-            <p class="text-[15px] font-bold">SEPTEMBER 28, 2022 11:10:00 AM</p>
+            <p class="text-[15px] font-bold uppercase">{{ formattedDateTime }}</p>
         </div>
-        <div class="flex flex-col gap-[8px] text-white uppercase">
-            <div class="flex justify-between gap-[8px]">
+        <div class="text-white uppercase">
+            <div class="grid grid-cols-6 place-items-center gap-[8px]">
                 <div v-for="(stat, id) in firstRowStats" :key="id" class="flex flex-col gap-[15px] h-[100px] w-[190px] py-3 px-5 bg-[#3e3e3e] rounded-md">
                     <h1 class="text-[13px] font-bold text-center">{{ stat.label }}</h1>
                     <div class="text-[9px]">
@@ -48,8 +48,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex gap-[8px]">
                 <div v-for="(stat, id) in secondRowStats" :key="id" class="flex flex-col gap-[15px] h-[100px] w-[190px] py-3 px-5 bg-[#f9951e] rounded-md">
                     <h1 class="text-[13px] font-bold text-center">{{ stat.label }}</h1>
                     <div class="text-[9px]">
@@ -94,6 +92,7 @@
     </div>
 </template>
 <script>
+  import moment from 'moment';
   import { Line, Doughnut } from 'vue-chartjs'
   import {   
   Chart as ChartJS,
@@ -117,7 +116,7 @@
   Legend)
 export default {
     components: { 
-        Line, Doughnut
+        Line, Doughnut, moment
     },
     data(){
         return{
@@ -220,7 +219,19 @@ export default {
                 responsive: true,
                 maintainAspectRatio: true
             },
+            currentDateTime: ''
         }
+    },
+    computed: {
+        formattedDateTime() {
+            return moment(this.currentDateTime).format('MMMM D, YYYY h:mm:ss A');
+        }
+    },
+    mounted() {
+        // Update the currentDateTime property every second
+        setInterval(() => {
+            this.currentDateTime = moment();
+        }, 1000);
     }
 }
 </script>
