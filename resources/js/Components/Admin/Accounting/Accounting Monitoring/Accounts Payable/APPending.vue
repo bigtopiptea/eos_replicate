@@ -13,6 +13,7 @@ import DateInput from "@/Components/Misc/Input/DateInput.vue";
 import Pagination from "@/Components/Misc/Pagination/Pagination.vue";
 import DropDown from '@/Components/Misc/Dropdown/Dropdown.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
+import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue'
 export default {
 
     name:'AP Pending',
@@ -31,7 +32,8 @@ export default {
         Pagination,
         TextAreaGroup,
         InputGroupSelectMenu,
-        Slideover
+        Slideover,
+        ModalTwo
     },
 
     data() {
@@ -44,6 +46,7 @@ export default {
             labels:[
                 {label:'DATE'},
                 {label:'PAYEE'},
+                {label:'PV NO.'},
                 {label:'INVOICE NO.'},
                 {label:'INVOICE AMOUNT'},
                 {label:'CREATED BY'},
@@ -57,10 +60,27 @@ export default {
                 {label: 'approve'},
                 {label: 'reject'},
             ],
-            approvalDetailsOpen: false
+            purchaseOrderLabels:[
+                {label:'ACCOUNT TITLE'},
+                {label:'COST CENTER'},
+                {label:'SERVICES'},
+                {label:'DEBT'},
+                {label:'CREDIT'},
+                {label:'VAT RATE'},
+                {label:'INPUT TAX (DR.)'},
+                {label:'ATC'},
+                {label:'EWT RATE'},
+                {label:'W/TAX - EXPANDED (CREDIT)'},
+            ],
+            approvalDetailsOpen: false,
+            openModal:false,
+            isLoad:false,
         }
     },
     methods: {
+        openModalToggle(){
+            this.openModal = false;
+        },
         approvalDetailsToggle() {
             this.approvalDetailsOpen = false;
         },
@@ -162,9 +182,13 @@ export default {
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
-                                        <p class="underline text-cyan-600 cursor-pointer">
-                                            INV00000001
+                                        <p @click="(openModal = !openModal)" class="underline text-cyan-600 cursor-pointer">
+                                            092022-0001
                                         </p>
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
+                                        INV00000001
                                     </td>
                                     <td
                                         class="whitespace-nowrap uppercase py-1 px-2 tracking-wider">
@@ -217,4 +241,139 @@ export default {
             </div>
         </div>
     </Slideover>
+    
+    <ModalTwo :show="openModal" @close="openModalToggle" :modalTitle="'View AP Voucher'" :widthModal="'w-[90%]'" :heightModal="'h-[500px]'" :modalTitlePosition="'text-right'" :modalTitleSize="'text-[12px]'">
+        <div class="w-full flex flex-col gap-[20px] p-5">
+            <div class="uppercase text-[10px]">
+                <div class="flex items-center w-[35%] h-3 ">
+                    <div class="w-[50%]">
+                        <div class="flex item-center gap-[5px]">
+                            <input v-model="isLoad" type="checkbox" name="load_purchase">
+                            <label for="load_purchase">load from purchase order</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <h1 class="uppercase text-[12px] font-bold text-black">Accounts Payable Voucher</h1>
+            </div>
+            <div class="flex justify-between w-full">
+                <div class="flex flex-col gap-[5px] w-[33%]">
+                    <div>
+                        <InputGroup :inputLabel="'date'" :inputWidth="'w-7/12'" :isDisabled="true" :labelWidth="'w-5/12'" :inputType="'date'"/>
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'ap voucher no.'" :isDisabled="true" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'payee'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <TextAreaGroup :inputLabel="'particulars'" :labelWidth="'w-5/12'" :inputWidth="'w-7/12'" :isDisabled="true" />
+                    </div>
+                    <div class="ml-1">
+                        <BorderButton @click="(openSlideover = !openSlideover)" :buttonLabel="'attachments'" :buttonPadding="'p-0'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3e3e3e]'" :buttonTextSize="'text-[10px]'" :buttonSize="'h-auto w-[100px]'"/>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-[5px] w-[33%]">
+                    <div>
+                        <InputGroup :inputLabel="'invoice no.'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'invoice date'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'date'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'invoice amount'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isDisabled="true" />
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'due date'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :inputType="'date'" :isDisabled="true" />
+                    </div>
+                    <div class="flex justify-between text-[10px] w-full h-7 whitespace-nowrap">
+                        <label for="name" class="uppercase inline-flex items-center h-full px-2 text-left border border-[#EAEAEA] text-[10px] w-[41.5%]">covered period</label>
+                        <input type="date" class=" bg-white h-full px-3 border border-[#EAEAEA] text-[#3E3E3E] w-[29%] disabled:bg-[#EAEAEA]" disabled>
+                        <input type="date" class=" bg-white h-full px-3 border border-[#EAEAEA] text-[#3E3E3E] w-[29%] disabled:bg-[#EAEAEA]" disabled>
+                    </div>
+                    <div>
+                        <InputGroup :inputLabel="'accounts payable'" :inputWidth="'w-7/12'" :labelWidth="'w-5/12'" :isDisabled="true" />
+                    </div>
+                </div>
+            </div>
+            <!-- Table -->
+            <div class="relative">
+                <table class="min-w-full divide-y divide-gray-300 ">
+                    <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0 border">
+                        <tr class="divide-x divide-gray-300 ">
+                            <th v-for="label in purchaseOrderLabels" :key="label.label" scope="col"
+                                class=" whitespace-nowrap uppercase px-2 py-1 tracking-wider text-center text-gray-900 ">
+                                {{ label.label }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center border-x">
+                        <tr  class="divide-x divide-gray-300 w-full">
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                               other services
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                head office
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-left w-[150px]">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
+                                8,928.57
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-right w-[100px]">
+                                -
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2  tracking-wider text-center">
+                                VAT INCLUSIVE (12%)
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2   tracking-wider text-right">
+                                1,071.00
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                WC158
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                1%
+                            </td>
+                            <td
+                                class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                44.64
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="font-light text-[10px] text-center">
+                        <td colspan="2" class="whitespace-nowrap uppercase  tracking-wider text-right">
+
+                        </td>
+                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right font-bold ">
+                            total
+                        </td>
+                        <td class="whitespace-nowrap uppercase p-2  tracking-wider text-right border">
+                            10,000.00
+                        </td>
+                        <td class="whitespace-nowrap uppercase p-2  tracking-wider text-right border">
+                            10,000.00
+                        </td>
+                        <td colspan="5" class="whitespace-nowrap uppercase   tracking-wider text-right"></td>
+                    </tfoot>
+                </table>
+                <div class="flex justify-center gap-[20px] mt-[30px]">
+                    <BorderButton @click.prevent="openModalToggle()" :buttonLabel="'CLOSE'" :buttonPadding="'p-1'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[13px]'"/>
+                    <BorderButton :buttonLabel="'PRINT'" :buttonPadding="'p-1'" :buttonTextSize="'text-[13px]'"/>
+                </div>
+            </div>
+        </div>
+    </ModalTwo>
 </template>

@@ -29,11 +29,9 @@ import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
             ,InputGroupSelectMenu, TextAreaGroup, CheckboxSelectMenu, FloatingLabelInput, DateInput,Slideover
         },
         data(){
-
             return{
                 isLoad:false,
                 openSlideover:false,
-
                 vatRateOption:[
                     {label:'NON-VAT'},
                     {label:'VAT-INCLUSIVE (12%)'},

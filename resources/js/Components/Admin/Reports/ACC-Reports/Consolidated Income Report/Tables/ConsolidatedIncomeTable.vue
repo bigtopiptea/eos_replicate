@@ -641,6 +641,36 @@ export default{
             
         }
     },    
+    created() {
+        // Set the initial expanded rows
+        this.revenueData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'revenueData', key: buttonDataKey });
+        });
+
+        this.commissionExpData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'commissionExpData', key: buttonDataKey });
+        });
+
+        this.grossProfitData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'grossProfitData', key: buttonDataKey });
+        });
+
+        this.operatingExpData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'operatingExpData', key: buttonDataKey });
+        });
+
+        this.ebitOneData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'ebitOneData', key: buttonDataKey });
+        });
+
+        this.depreAmortData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'depreAmortData', key: buttonDataKey });
+        });
+
+        this.ebitTwoData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'ebitTwoData', key: buttonDataKey });
+        });
+    },
     mounted() {
         this.displayYearDates();
     },
@@ -663,7 +693,8 @@ export default{
         },
         toggleRotation() {
             this.isRotated = !this.isRotated;
-        }
+        },
+        
     },
 }
 </script>
@@ -727,14 +758,14 @@ export default{
                         <template v-for="(buttonData, buttonDataKey) in revenueData" :key="buttonDataKey">
                             <template v-if="isExpanded('revenueData', buttonDataKey)">
                                 <tr v-for="(rowData, rowDataIndex) in buttonData.rowData" :key="rowDataIndex" class="divide-x divide-gray-200">
-                                    <td v-for="(cell, cellIndex) in rowData.data" :key="cellIndex"  class="whitespace-nowrap  uppercase py-2 px-1 tracking-wider pl-[15px]" :class="cellIndex == 0 ? 'text-left' : ''">
+                                    <td v-for="(cell, cellIndex) in rowData.data" :key="cellIndex"  class="whitespace-nowrap  uppercase py-2 px-1 tracking-wider pl-[15px]" :class="cellIndex == 0 ? 'text-left' : 'text-right'">
                                     {{ cell }}
                                     </td>
                                 </tr>
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('revenueData', buttonDataKey)" :class="{ expanded: isExpanded('revenueData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('revenueData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -773,7 +804,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('commissionExpData', buttonDataKey)" :class="{ expanded: isExpanded('commissionExpData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4"  :class="{ 'rotate-180 transition-all': isExpanded('commissionExpData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -812,7 +843,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('grossProfitData', buttonDataKey)" :class="{ expanded: isExpanded('grossProfitData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('grossProfitData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -851,7 +882,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('operatingExpData', buttonDataKey)" :class="{ expanded: isExpanded('operatingExpData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('operatingExpData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -890,7 +921,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('ebitOneData', buttonDataKey)" :class="{ expanded: isExpanded('ebitOneData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('ebitOneData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -928,7 +959,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('depreAmortData', buttonDataKey)" :class="{ expanded: isExpanded('depreAmortData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('depreAmortData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -966,7 +997,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('ebitTwoData', buttonDataKey)" :class="{ expanded: isExpanded('ebitTwoData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}

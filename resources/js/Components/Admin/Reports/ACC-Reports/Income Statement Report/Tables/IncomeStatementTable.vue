@@ -126,6 +126,20 @@ export default{
 
         }
     },
+    created() {
+        // Set the initial expanded rows
+        this.revenueData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'revenueData', key: buttonDataKey });
+        });
+
+        this.operatingExpenseData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'operatingExpenseData', key: buttonDataKey });
+        });
+
+        this.amortDepreData.forEach((buttonData, buttonDataKey) => {
+            this.expandedRows.push({ group: 'amortDepreData', key: buttonDataKey });
+        });
+    },
     mounted() {
         this.formatDates();
     },
@@ -182,13 +196,13 @@ export default{
                             <template v-if="isExpanded('revenueData', buttonDataKey)">
                                 <tr v-for="(rowData, rowDataIndex) in buttonData.rowData" :key="rowDataIndex" class="divide-x divide-gray-200">
                                     <td v-for="(cell, cellIndex) in rowData.data" :key="cellIndex"  class="whitespace-nowrap  uppercase py-2 px-1 tracking-wider" :class="cellIndex == 0 ? 'text-left' : 'text-right'">
-                                    {{ cell }}
+                                        {{ cell }}
                                     </td>
                                 </tr>
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('revenueData', buttonDataKey)" :class="{ expanded: isExpanded('revenueData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('revenueData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -204,7 +218,6 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-
                             </td>
                         </tr>
                         <!-- DIVIDER 1 END-->
@@ -244,7 +257,6 @@ export default{
                         <tr class="bg-white divide-x divide-gray-200">
                             <td colspan="100%"
                                 class="whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider">
-
                             </td>
                         </tr>
                         <!-- DIVIDER 2 END-->
@@ -300,7 +312,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('operatingExpenseData', buttonDataKey)" :class="{ expanded: isExpanded('operatingExpenseData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('operatingExpenseData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -371,7 +383,7 @@ export default{
                             </template>
                             <tr class="bg-[#EAEAEA] divide-x divide-white font-bold">
                                 <td  class="flex items-center gap-[5px] whitespace-nowrap text-left uppercase py-2 px-1 tracking-wider" @click="toggleRow('amortDepreData', buttonDataKey)" :class="{ expanded: isExpanded('amortDepreData', buttonDataKey) }">
-                                    <div class="w-4 h-4">
+                                    <div class="h-4" :class="{ 'rotate-180 transition-all': isExpanded('amortDepreData', buttonDataKey) }">
                                         <ChevronDownIcon/>
                                     </div>
                                     {{ buttonData.label }}
@@ -428,3 +440,14 @@ export default{
     </div>
 </div>
 </template>
+
+<style scoped>
+.fade-transition {
+  transition: opacity 0.3s ease;
+}
+
+.fade-transition-enter-active,
+.fade-transition-leave-active {
+  opacity: 0;
+}
+</style>
