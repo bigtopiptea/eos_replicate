@@ -17,7 +17,9 @@ import BoxIconX from '@/Components/Misc/Icons/BoxIconX.vue';
 import Slideover from '@/Components/Misc/Slideover/Slideover.vue';
 import ModalTwo from '@/Components/Misc/Modal/ModalTwo.vue';
 import FloatingLabelInput from '@/Components/Misc/Input/FloatingLabelInput.vue';
-import Accordion from '../../../../../Misc/Accordion.vue';
+import Accordion from '@/Components/Misc/Accordion.vue';
+import CheckboxSelectMenu from '@/Components/Misc/Select Menu/CheckboxSelectMenu.vue';
+import FloatingTextArea from '@/Components/Misc/Input/FloatingTextArea.vue';
 
 export default {
 
@@ -43,10 +45,13 @@ export default {
         ModalTwo,
         FloatingLabelInput,
         Accordion,
+        CheckboxSelectMenu,
+        FloatingTextArea
     },
 
     data() {
         return {
+            finding:0,
             counter:1,
             labels:[
                 {label:'STATEMENT DATE'},
@@ -816,73 +821,74 @@ export default {
                 </div>
             </div>
             <div class="flex justify-end py-3">
-                <BorderButton :buttonLabel="'+ Findings'" :buttonPadding="'px-2 py-1'" :buttonTextColor="'text-[#EE3E2C]'" :buttonSize="'h-auto w-auto'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
+                <BorderButton @click="finding++" :isDisabled="finding == 1 ? true : false"  :buttonLabel="'+ Findings'" :buttonPadding="'px-2 py-1'" :buttonTextColor="'text-[#EE3E2C]'" :buttonSize="'h-auto w-auto'" :buttonBorderColor="'border-[#EE3E2C]'" :buttonHover="'hover:bg-[#EE3E2C]'"/>
             </div>
         </div>
-        <Accordion sectiontitle="FINDINGS" :setOpen=true :accordionColor="'bg-[#EE3E2C]'">
+        <Accordion v-for="finding in finding" :key="finding" sectiontitle="FINDINGS" :setOpen=true :accordionColor="'bg-[#EE3E2C]'">
             <div class="min-w-full py-3 align-middle">
-                <div class="relative min-h-auto max-h-[360px] border border-red-500">
-                    <div class="shadow ring-1 ring-black ring-opacity-5 overflow-auto absolute inset-x-0 min-h-auto max-h-full">
-                        <table class="min-w-full  divide-y divide-gray-300  border">
-                            <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0">
-                                <tr class="divide-x divide-gray-300">
-                                    <th v-for="label in FindingLabels" :key="label.label" scope="col"
-                                        class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                        {{ label.label }}
-                                    </th>
-                                    <th class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-gray-300 font-light text-[10px] text-center">
-                                <tr v-for="counter in counter" :key="counter" class="divide-x divide-gray-300">
-                                    <td
-                                        class="flex items-center justify-center gap-[10px] whitespace-nowrap uppercase p-2 tracking-wider">
-                                        09/28/2022
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
-                                        -
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-left truncate max-w-[250px]">
-                                        ALLDAY DEPOSITS for Sept. 1, 2023 Transactions
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider">
-                                        -
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
-                                        -
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
-                                        CMT
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
-                                        -
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
-                                        -
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                        1,800.00
-                                    </td>
-                                    <td
-                                        class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
-                                        3,600.00
-                                    </td>
-                                    <td>
-                                        action tab
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="relative w-auto">
+                    <div class="shadow ring-1 ring-black ring-opacity-5">
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-300 border">
+                                <thead class="font-medium text-[11px] whitespace-nowrap bg-[#EAEAEA] sticky top-0">
+                                    <tr class="divide-x divide-gray-300">
+                                        <th v-for="label in FindingLabels" :key="label.label" scope="col"
+                                            class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                            {{ label.label }}
+                                        </th>
+                                        <th class="p-2 whitespace-nowrap uppercase tracking-wider text-center text-gray-900">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-light text-[10px] text-center overflow-y-auto" style="max-height: calc(100vh - 150px);">
+                                    <tr v-for="counter in counter" :key="counter" class="divide-x divide-gray-300">
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider">
+                                            <FloatingLabelInput :inputType="'date'"/>
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-left">
+                                            <FloatingLabelInput :inputType="'date'"/>
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-1 tracking-wider text-left  w-[250px]">
+                                            <FloatingTextArea :placeholder="'-'" :inputHeight="'h-[50px]'" />
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider">
+                                            <FloatingLabelInput :placeholder="'Input Voucher'" />
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider">
+                                            <FloatingLabelInput :placeholder="'Input Cheque'" />
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
+                                            <div class="w-full">
+                                                <CheckboxSelectMenu :placeholder="'Select Department'"/>
+                                            </div>
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
+                                            <input placeholder="-"  type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-center">
+                                            <input placeholder="-"  type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                            <input placeholder="-"  type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right">
+                                            <input placeholder="-"  type="number" class="quantity bg-white uppercase h-7 p-1 border border-[#EAEAEA] text-[#3E3E3E] pl-2 text-right w-full">
+                                        </td>
+                                        <td class="whitespace-nowrap uppercase p-2 tracking-wider text-right w-[70px]">
+                                            <div class="flex justify-around">
+                                                <button class="tooltip tooltip-left" data-tip="Edit">
+                                                    <img src="../../../../../../../assets/images/EditIconTwo.png" alt="Edit Icon" class="h-5 w-6">
+                                                </button>
+                                                <button class="tooltip tooltip-left" data-tip="Verify">
+                                                    <img src="../../../../../../../assets/images/VerifyIcon.png" alt="Verify Icon" class="h-5 w-5">
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="flex gap-[10px] mt-[5px]">
@@ -893,16 +899,10 @@ export default {
         </Accordion>
     </div>
     <div class="flex justify-center gap-5 w-full h-auto py-5">
-                <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
-                <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'" />
-            </div>
+        <BorderButton :buttonLabel="'CANCEL'" :buttonPadding="'py-2'" :buttonTextColor="'text-[#3e3e3e]'" :buttonBorderColor="'border-[#3e3e3e]'" :buttonHover="'hover:bg-[#3E3E3E]'" :buttonTextSize="'text-[15px]'"/>
+        <BorderButton :buttonLabel="'SAVE'" :buttonPadding="'py-2'" :buttonTextSize="'text-[15px]'" />
+    </div>
 </template>
 
-<style scoped>
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: 1;
 
-}
-</style>
 
